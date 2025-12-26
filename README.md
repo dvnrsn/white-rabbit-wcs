@@ -1,32 +1,30 @@
-# Astro Starter Kit: Basics
+# White Rabbit - Phoenix WCS Community
 
-```sh
-pnpm create astro@latest -- --template basics
-```
+A static website for the West Coast Swing (WCS) dance community in Phoenix, Arizona. This site helps dancers discover WCS events, venues, teachers, and community resources across Arizona.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Features
 
-## 🚀 Project Structure
+- Event calendar for local WCS dances and workshops
+- Directory of venues and teachers
+- Instagram feed integration
+- Light ecommerce for merchandise and event tickets
+- SEO-optimized for local dance community discovery
 
-Inside of your Astro project, you'll see the following folders and files:
+## Project Structure
 
 ```text
 /
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+├── public/              # Static assets
+├── src/
+│   ├── assets/         # Images, icons, etc.
+│   ├── components/     # Reusable Astro components
+│   ├── layouts/        # Page layouts
+│   ├── pages/          # Routes (file-based routing)
+│   └── styles/         # Global styles
+└── PLAN.md             # Detailed implementation roadmap
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+See [PLAN.md](./PLAN.md) for the full feature roadmap and implementation details.
 
 ## 🧞 Commands
 
@@ -41,6 +39,13 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Tech Stack
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- [Astro 5](https://astro.build) - Static site framework
+- Built with performance and SEO in mind
+- Mobile-first responsive design
+
+## Learn More
+
+- [Astro documentation](https://docs.astro.build)
+- [West Coast Swing basics](https://en.wikipedia.org/wiki/West_Coast_Swing)

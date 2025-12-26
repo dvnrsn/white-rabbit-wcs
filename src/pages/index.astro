@@ -1,11 +1,203 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<main>
+		<section class="hero">
+			<div class="container">
+				<h1 class="title gradient-text">WHITE RABBIT</h1>
+				<p class="tagline">Phoenix WCS</p>
+				<div class="typed-text" id="typed-text">
+					<span class="cursor"></span>
+				</div>
+
+				<div class="cta-buttons">
+					<a href="/events" class="btn">View Events</a>
+					<a href="/about" class="btn">Learn More</a>
+					<a href="/moodboards/" class="btn btn-secondary">Design Themes</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="features">
+			<div class="container">
+				<div class="features-grid">
+					<div class="card feature">
+						<h3>> Events</h3>
+						<p>Find West Coast Swing dances, workshops, and socials happening around Phoenix and Arizona.</p>
+					</div>
+
+					<div class="card feature">
+						<h3>> Community</h3>
+						<p>Connect with dancers, teachers, and venues in the Phoenix WCS scene.</p>
+					</div>
+
+					<div class="card feature">
+						<h3>> Resources</h3>
+						<p>Discover teachers, practice spaces, and everything you need to level up your dancing.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	.hero {
+		min-height: 80vh;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.title {
+		font-size: clamp(3rem, 10vw, 6rem);
+		margin-bottom: 1rem;
+		letter-spacing: 0.15em;
+		font-weight: 700;
+		animation: fadeInGlow 1s ease-out;
+	}
+
+	@keyframes fadeInGlow {
+		from {
+			opacity: 0;
+			filter: drop-shadow(0 0 0px var(--accent-primary));
+		}
+		to {
+			opacity: 1;
+			filter: drop-shadow(0 0 20px var(--accent-primary));
+		}
+	}
+
+	.tagline {
+		font-size: 1.2rem;
+		color: var(--accent-primary);
+		margin-bottom: 3rem;
+		letter-spacing: 0.3em;
+		text-transform: uppercase;
+		animation: fadeIn 1s ease-out 0.3s both;
+	}
+
+	@keyframes fadeIn {
+		from { opacity: 0; transform: translateY(20px); }
+		to { opacity: 1; transform: translateY(0); }
+	}
+
+	.typed-text {
+		min-height: 100px;
+		max-width: 800px;
+		margin: 0 auto 3rem;
+		font-size: 1.2rem;
+		line-height: 1.8;
+		color: var(--text-secondary);
+		animation: fadeIn 1s ease-out 0.6s both;
+	}
+
+	.cta-buttons {
+		display: flex;
+		gap: 1rem;
+		justify-content: center;
+		flex-wrap: wrap;
+		animation: fadeIn 1s ease-out 0.9s both;
+	}
+
+	.btn-secondary {
+		opacity: 0.7;
+		font-size: 0.9rem;
+	}
+
+	.features {
+		padding: 4rem 0;
+		background: var(--bg-secondary);
+	}
+
+	.features-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+		margin-top: 2rem;
+	}
+
+	.feature {
+		text-align: center;
+	}
+
+	.feature h3 {
+		font-size: 1.5rem;
+		margin-bottom: 1rem;
+		color: var(--accent-primary);
+	}
+
+	.feature p {
+		color: var(--text-secondary);
+		line-height: 1.8;
+	}
+
+	/* Floating particles effect */
+	.hero::before {
+		content: '';
+		position: absolute;
+		top: -50%;
+		left: -50%;
+		width: 200%;
+		height: 200%;
+		background: radial-gradient(circle, var(--accent-primary) 1px, transparent 1px);
+		background-size: 50px 50px;
+		opacity: 0.05;
+		animation: float 20s linear infinite;
+		pointer-events: none;
+	}
+
+	@keyframes float {
+		0% { transform: translate(0, 0); }
+		100% { transform: translate(50px, 50px); }
+	}
+
+	@media (max-width: 768px) {
+		.hero {
+			min-height: 70vh;
+		}
+
+		.title {
+			letter-spacing: 0.1em;
+		}
+
+		.tagline {
+			letter-spacing: 0.2em;
+		}
+
+		.typed-text {
+			font-size: 1rem;
+			padding: 0 1rem;
+		}
+
+		.cta-buttons {
+			flex-direction: column;
+			align-items: stretch;
+			padding: 0 2rem;
+		}
+	}
+</style>
+
+<script>
+	// Typing effect
+	const text = "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Follow the white rabbit to find events, connect with dancers, and discover your flow.";
+	const typedTextElement = document.getElementById('typed-text');
+	let index = 0;
+
+	function typeText() {
+		if (typedTextElement && index < text.length) {
+			const currentText = text.substring(0, index + 1);
+			typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
+			index++;
+			setTimeout(typeText, 50);
+		}
+	}
+
+	// Start typing after a short delay
+	setTimeout(typeText, 1200);
+</script>

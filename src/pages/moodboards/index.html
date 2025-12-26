@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>White Rabbit - Design Mood Boards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+            padding: 3rem 2rem;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+            text-shadow: 0 0 20px #00ff41;
+            letter-spacing: 0.2em;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: #fff;
+            letter-spacing: 0.1em;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 4rem;
+            color: #999;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .mood-card {
+            border: 2px solid #00ff41;
+            padding: 0;
+            background: #0a0a0a;
+            transition: all 0.4s;
+            text-decoration: none;
+            display: block;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .mood-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .mood-card:hover::before {
+            left: 100%;
+        }
+
+        .mood-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 255, 65, 0.3);
+            border-color: #fff;
+        }
+
+        .card-preview {
+            height: 250px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-content {
+            padding: 2rem;
+        }
+
+        .card-title {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #00ff41;
+        }
+
+        .card-description {
+            color: #999;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .card-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            padding: 0.3rem 0.8rem;
+            border: 1px solid #333;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        /* Individual card styles */
+        .classic-matrix .card-preview {
+            background: #000;
+            color: #00ff41;
+            font-family: 'Courier New', monospace;
+        }
+
+        .white-rabbit .card-preview {
+            background: linear-gradient(135deg, #0d0d0d 0%, #1a1a1a 100%);
+            color: #fff;
+        }
+
+        .neo-modern .card-preview {
+            background: linear-gradient(135deg, #0a0e1a 0%, #111827 100%);
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .minimal-matrix .card-preview {
+            background: #0a0a0a;
+            color: #ffffff;
+            font-weight: 300;
+        }
+
+        .cta {
+            text-align: center;
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .cta p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>WHITE RABBIT</h1>
+        <div class="subtitle">Design Mood Boards</div>
+        <div class="intro">
+            <p>Four Matrix-inspired design directions for the Phoenix West Coast Swing community site. Each concept explores different aesthetics while maintaining the core "follow the white rabbit" theme.</p>
+        </div>
+
+        <div class="grid">
+            <a href="/moodboards/01-classic-matrix" class="mood-card classic-matrix">
+                <div class="card-preview">
+                    <span style="font-family: 'Courier New', monospace;">MATRIX</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">> Classic Matrix</div>
+                    <div class="card-description">
+                        Pure Matrix vibes. Electric green on pure black with falling code, terminal aesthetics, and heavy tech atmosphere.
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Nostalgic</span>
+                        <span class="tag">Bold</span>
+                        <span class="tag">Immersive</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/moodboards/02-white-rabbit" class="mood-card white-rabbit">
+                <div class="card-preview" style="display: flex; flex-direction: column; gap: 1rem;">
+                    <span style="background: linear-gradient(135deg, #ffffff 0%, #00ff41 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">WHITE</span>
+                    <span style="color: #00ff41;">RABBIT</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">> White Rabbit</div>
+                    <div class="card-description">
+                        Refined Matrix aesthetic with white and green. More accessible and elegant while maintaining tech mystique.
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Sophisticated</span>
+                        <span class="tag">Balanced</span>
+                        <span class="tag">Welcoming</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/moodboards/03-neo-modern" class="mood-card neo-modern">
+                <div class="card-preview">
+                    <span style="background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-family: -apple-system, sans-serif; font-weight: 700;">NEO</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">> Neo-Modern</div>
+                    <div class="card-description">
+                        Contemporary take with teal and blue gradients. Modern web aesthetic meets Matrix vibes for 2025.
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Contemporary</span>
+                        <span class="tag">Professional</span>
+                        <span class="tag">Polished</span>
+                    </div>
+                </div>
+            </a>
+
+            <a href="/moodboards/04-minimal-matrix" class="mood-card minimal-matrix">
+                <div class="card-preview">
+                    <span style="font-family: 'SF Mono', monospace; font-weight: 300; font-size: 3rem;">_MINIMAL</span>
+                </div>
+                <div class="card-content">
+                    <div class="card-title">> Minimal Matrix</div>
+                    <div class="card-description">
+                        Less is more. Subtle Matrix elements with focus on usability. Production-ready elegance.
+                    </div>
+                    <div class="card-tags">
+                        <span class="tag">Elegant</span>
+                        <span class="tag">Focused</span>
+                        <span class="tag">Subtle</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <div class="cta">
+            <p>> Click any concept to explore the full design mood board</p>
+            <p style="margin-top: 2rem; color: #333;">// Each mood board includes color palettes, typography, interactions, and design philosophy</p>
+        </div>
+    </div>
+
+    <script>
+        // Matrix rain on hover
+        const cards = document.querySelectorAll('.mood-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Add subtle effect on hover
+            });
+        });
+    </script>
+</body>
+</html>

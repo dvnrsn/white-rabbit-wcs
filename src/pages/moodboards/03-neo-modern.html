@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Board 3: Neo-Modern</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e1a 0%, #111827 100%);
+            color: #e0e7ff;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1 {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.1em;
+            font-weight: 700;
+            animation: gradientShift 5s ease infinite;
+            background-size: 200% 200%;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #06b6d4;
+            margin-bottom: 3rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .typed-text {
+            font-size: 1.4rem;
+            min-height: 100px;
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            color: #cbd5e1;
+            font-weight: 300;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1.4rem;
+            background: linear-gradient(to bottom, #06b6d4, #3b82f6);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 4rem 0;
+        }
+
+        .feature-card {
+            border: 1px solid rgba(6, 182, 212, 0.3);
+            padding: 2.5rem;
+            background: rgba(15, 23, 42, 0.6);
+            backdrop-filter: blur(10px);
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), transparent);
+            transition: left 0.6s;
+        }
+
+        .feature-card:hover::before {
+            left: 100%;
+        }
+
+        .feature-card:hover {
+            border-color: #06b6d4;
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(6, 182, 212, 0.3);
+        }
+
+        .feature-card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.6rem;
+            background: linear-gradient(135deg, #06b6d4, #3b82f6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .color-palette {
+            display: flex;
+            gap: 1rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .color-swatch {
+            width: 150px;
+            height: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .color-swatch:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            border: 2px solid #06b6d4;
+            color: #e0e7ff;
+            text-decoration: none;
+            margin: 1rem 1rem 1rem 0;
+            transition: all 0.3s;
+            background: transparent;
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            font-weight: 500;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            transition: width 0.3s;
+            z-index: -1;
+        }
+
+        .btn:hover::before {
+            width: 100%;
+        }
+
+        .btn:hover {
+            color: #ffffff;
+            border-color: #3b82f6;
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.5);
+        }
+
+        .mood-title {
+            font-size: 2.5rem;
+            margin-top: 4rem;
+            margin-bottom: 2rem;
+            color: #ffffff;
+            font-weight: 700;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+
+        .mood-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6);
+            border-radius: 2px;
+        }
+
+        p {
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* Animated grid background */
+        .grid-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+            z-index: -1;
+            animation: gridMove 20s linear infinite;
+        }
+
+        @keyframes gridMove {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="grid-bg"></div>
+
+    <div class="content">
+        <h1>WHITE RABBIT</h1>
+        <div class="tagline">Phoenix West Coast Swing</div>
+        <div class="typed-text" id="typed-text"><span class="cursor"></span></div>
+
+        <div class="mood-title">Neo-Modern</div>
+
+        <p>A contemporary reinterpretation of the Matrix aesthetic. Teal and blue gradients replace traditional green, while maintaining the tech-forward vibe. Modern, sleek, and perfectly suited for today's dance community.</p>
+
+        <div class="color-palette">
+            <div class="color-swatch" style="background: #0a0e1a; color: #e0e7ff; border: 1px solid rgba(6, 182, 212, 0.3);">#0A0E1A<br>Background</div>
+            <div class="color-swatch" style="background: #06b6d4; color: #000;">#06B6D4<br>Cyan</div>
+            <div class="color-swatch" style="background: #3b82f6; color: #fff;">#3B82F6<br>Blue</div>
+            <div class="color-swatch" style="background: #8b5cf6; color: #fff;">#8B5CF6<br>Purple</div>
+            <div class="color-swatch" style="background: #e0e7ff; color: #0a0e1a;">#E0E7FF<br>Text</div>
+        </div>
+
+        <div class="features">
+            <div class="feature-card">
+                <h3>Typography</h3>
+                <p>Modern sans-serif fonts (Inter, SF Pro). Clean, highly readable, with gradient text effects for headlines.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Interactions</h3>
+                <p>Smooth animations, gradient sweeps, glassmorphism effects, animated grid backgrounds.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Layout</h3>
+                <p>Rounded corners, card-based design, generous white space, modern web app aesthetic.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Mood</h3>
+                <p>Contemporary, professional, approachable. Tech-savvy without being intimidating.</p>
+            </div>
+        </div>
+
+        <a href="/moodboards/04-minimal-matrix" class="btn">NEXT CONCEPT</a>
+        <a href="/moodboards/02-white-rabbit" class="btn">PREVIOUS</a>
+        <a href="/moodboards/" class="btn">ALL CONCEPTS</a>
+    </div>
+
+    <script>
+        // Typing effect
+        const text = "Enter the new Matrix. Where cyan gradients meet West Coast Swing. A modern, polished take that feels at home in 2025 while honoring the rabbit's legacy.";
+        const typedTextElement = document.getElementById('typed-text');
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                const currentText = text.substring(0, index + 1);
+                typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
+                index++;
+                setTimeout(typeText, 45);
+            }
+        }
+
+        setTimeout(typeText, 500);
+    </script>
+</body>
+</html>
