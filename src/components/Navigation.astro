@@ -1,0 +1,243 @@
+---
+// Navigation Component
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/events', label: 'Events' },
+  { href: '/about', label: 'About' },
+  { href: '/teachers', label: 'Teachers' },
+  { href: '/venues', label: 'Venues' },
+];
+---
+
+<nav class="main-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-brand">
+      <span class="brand-text gradient-text">WHITE RABBIT</span>
+      <span class="brand-subtitle">Phoenix WCS</span>
+    </a>
+
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+      <span class="hamburger"></span>
+    </button>
+
+    <div class="nav-links" id="nav-links">
+      {navLinks.map(link => (
+        <a
+          href={link.href}
+          class={`nav-link ${currentPath === link.href ? 'active' : ''}`}
+        >
+          <span class="nav-link-text">{link.label}</span>
+          <span class="nav-link-underline"></span>
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<style>
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    background: var(--bg-primary);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+  }
+
+  .nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    gap: 0.25rem;
+  }
+
+  .brand-text {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    line-height: 1;
+  }
+
+  .brand-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .mobile-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+  }
+
+  .hamburger {
+    width: 25px;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: all 0.3s;
+  }
+
+  .mobile-toggle.active .hamburger:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+  }
+
+  .mobile-toggle.active .hamburger:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-toggle.active .hamburger:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-link {
+    position: relative;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    display: inline-block;
+  }
+
+  .nav-link-text {
+    position: relative;
+    z-index: 1;
+  }
+
+  .nav-link-underline {
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-primary);
+    transition: width 0.3s;
+  }
+
+  .nav-link:hover {
+    color: var(--text-primary);
+  }
+
+  .nav-link:hover .nav-link-underline {
+    width: 100%;
+  }
+
+  .nav-link.active {
+    color: var(--accent-primary);
+  }
+
+  .nav-link.active .nav-link-underline {
+    width: 100%;
+  }
+
+  /* Mobile styles */
+  @media (max-width: 768px) {
+    .mobile-toggle {
+      display: flex;
+    }
+
+    .nav-links {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--bg-secondary);
+      border-bottom: 1px solid var(--border-color);
+      flex-direction: column;
+      gap: 0;
+      padding: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+
+    .nav-links.active {
+      max-height: 400px;
+    }
+
+    .nav-link {
+      width: 100%;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-link:last-child {
+      border-bottom: none;
+    }
+
+    .nav-link-underline {
+      bottom: 0;
+      height: 100%;
+      opacity: 0.1;
+    }
+
+    .nav-link:hover .nav-link-underline,
+    .nav-link.active .nav-link-underline {
+      width: 4px;
+      opacity: 1;
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 1024px) and (min-width: 769px) {
+    .nav-links {
+      gap: 1.5rem;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+    }
+  }
+</style>
+
+<script>
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobile-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  mobileToggle?.addEventListener('click', () => {
+    mobileToggle.classList.toggle('active');
+    navLinks?.classList.toggle('active');
+  });
+
+  // Close mobile menu when clicking a link
+  const links = navLinks?.querySelectorAll('.nav-link');
+  links?.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileToggle?.classList.remove('active');
+      navLinks?.classList.remove('active');
+    });
+  });
+
+  // Close mobile menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mobileToggle?.contains(e.target as Node) && !navLinks?.contains(e.target as Node)) {
+      mobileToggle?.classList.remove('active');
+      navLinks?.classList.remove('active');
+    }
+  });
+</script>

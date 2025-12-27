@@ -1,4 +1,5 @@
 ---
+import Navigation from '../components/Navigation.astro';
 import ThemeSwitcher from '../components/ThemeSwitcher.astro';
 import '../styles/themes.css';
 
@@ -35,6 +36,7 @@ const {
 		</script>
 	</head>
 	<body>
+		<Navigation />
 		<ThemeSwitcher />
 		<slot />
 	</body>
@@ -77,6 +79,7 @@ const {
 		-webkit-background-clip: text;
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
+		color: transparent;
 	}
 
 	/* Link styles */
