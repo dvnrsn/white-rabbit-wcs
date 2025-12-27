@@ -20,28 +20,35 @@ interface Props {
 const { event } = Astro.props;
 
 // Format date
-const eventDate = new Date(event.date + 'T00:00:00');
-const dayName = eventDate.toLocaleDateString('en-US', { weekday: 'short' });
-const monthName = eventDate.toLocaleDateString('en-US', { month: 'short' });
+const eventDate = new Date(event.date + "T00:00:00");
+const dayName = eventDate.toLocaleDateString("en-US", { weekday: "short" });
+const monthName = eventDate.toLocaleDateString("en-US", { month: "short" });
 const day = eventDate.getDate();
 
 // Format time
 const formatTime = (time: string) => {
-  const [hours, minutes] = time.split(':');
+  const [hours, minutes] = time.split(":");
   const hour = parseInt(hours);
-  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const ampm = hour >= 12 ? "PM" : "AM";
   const displayHour = hour % 12 || 12;
   return `${displayHour}:${minutes} ${ampm}`;
 };
 
 const typeColors: Record<string, string> = {
-  social: 'var(--accent-primary)',
-  workshop: 'var(--accent-secondary)',
-  competition: '#8b5cf6',
+  social: "var(--accent-primary)",
+  workshop: "var(--accent-secondary)",
+  competition: "#8b5cf6",
 };
 ---
 
 <article class="event-card">
+  <span
+    class="event-type"
+    style={`border-color: ${typeColors[event.type]}`}
+  >
+    {event.type}
+  </span>
+
   <div class="event-date-badge">
     <div class="date-day">{day}</div>
     <div class="date-month">{monthName}</div>
@@ -51,12 +58,7 @@ const typeColors: Record<string, string> = {
   <div class="event-content">
     <div class="event-header">
       <h3 class="event-title">{event.title}</h3>
-      <span class="event-type" style={`border-color: ${typeColors[event.type]}`}>
-        {event.type}
-      </span>
     </div>
-
-    <p class="event-description">{event.description}</p>
 
     <div class="event-details">
       <div class="detail-item">
@@ -66,7 +68,13 @@ const typeColors: Record<string, string> = {
 
       <div class="detail-item">
         <span class="detail-icon">📍</span>
-        <span>{event.venue}</span>
+        <button
+          class="venue-link"
+          data-venue-button
+          data-address={event.address || event.venue}
+        >
+          {event.venue}
+        </button>
       </div>
 
       <div class="detail-item">
@@ -74,25 +82,123 @@ const typeColors: Record<string, string> = {
         <span>{event.price}</span>
       </div>
 
-      <div class="detail-item">
-        <span class="detail-icon">🎯</span>
-        <span>{event.level}</span>
-      </div>
+      {
+        event.level && (
+          <div class="detail-item">
+            <span class="detail-icon">🎯</span>
+            <span>{event.level}</span>
+          </div>
+        )
+      }
     </div>
 
     <div class="event-footer">
       <span class="event-organizer">by {event.organizer}</span>
-      {event.url && (
-        <a href={event.url} class="event-link" target="_blank" rel="noopener noreferrer">
-          Learn More →
-        </a>
-      )}
+      <button
+        class="event-link"
+        data-event-details
+        data-event-id={event.id}
+      >
+        Learn More →
+      </button>
     </div>
   </div>
 </article>
 
+<dialog data-maps-dialog>
+  <div class="maps-modal">
+    <button class="maps-option" data-maps-option="apple">
+      <span>Apple</span>
+    </button>
+    <button class="maps-option" data-maps-option="google">
+      <span>Google</span>
+    </button>
+  </div>
+</dialog>
+
+<dialog data-event-dialog>
+  <div class="event-dialog-content">
+    <h2 class="dialog-title">{event.title}</h2>
+
+    <div class="dialog-description">
+      <p>{event.description}</p>
+    </div>
+
+    <button class="dialog-close-btn" data-close-event-dialog>Close</button>
+  </div>
+</dialog>
+
+<script>
+  let currentAddress = "";
+
+  // Detect if user is on an Apple device
+  const isAppleDevice = /(iPhone|iPad|iPod|Mac)/i.test(navigator.userAgent);
+
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    const venueButton = target.closest("[data-venue-button]");
+    const mapsDialog = document.querySelector(
+      "[data-maps-dialog]"
+    ) as HTMLDialogElement;
+    const mapsOption = target.closest("[data-maps-option]");
+    const eventDetailsButton = target.closest("[data-event-details]");
+    const eventDialog = document.querySelector(
+      "[data-event-dialog]"
+    ) as HTMLDialogElement;
+    const closeEventDialog = target.closest("[data-close-event-dialog]");
+
+    if (venueButton) {
+      e.preventDefault();
+      currentAddress = (venueButton as HTMLElement).dataset.address || "";
+
+      if (isAppleDevice) {
+        // Show modal for Apple devices
+        mapsDialog?.showModal();
+      } else {
+        // Directly open Google Maps for non-Apple devices
+        window.location.href = `https://maps.google.com/?q=${encodeURIComponent(currentAddress)}`;
+      }
+    } else if (mapsOption) {
+      const option = (mapsOption as HTMLElement).dataset.mapsOption;
+      const query = encodeURIComponent(currentAddress);
+
+      if (option === "apple") {
+        window.location.href = `https://maps.apple.com/?q=${query}`;
+      } else if (option === "google") {
+        window.location.href = `https://maps.google.com/?q=${query}`;
+      }
+
+      mapsDialog?.close();
+    } else if (eventDetailsButton) {
+      eventDialog?.showModal();
+    } else if (closeEventDialog) {
+      eventDialog?.close();
+    }
+  });
+
+  // Close dialogs when clicking backdrop
+  document
+    .querySelector("[data-maps-dialog]")
+    ?.addEventListener("click", (e) => {
+      const dialog = e.target as HTMLDialogElement;
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+
+  document
+    .querySelector("[data-event-dialog]")
+    ?.addEventListener("click", (e) => {
+      const dialog = e.target as HTMLDialogElement;
+      if (e.target === dialog) {
+        dialog.close();
+      }
+    });
+</script>
+
 <style>
   .event-card {
+    position: relative;
     display: flex;
     gap: 1.5rem;
     background: var(--bg-secondary);
@@ -149,9 +255,8 @@ const typeColors: Record<string, string> = {
 
   .event-header {
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 1rem;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .event-title {
@@ -161,6 +266,9 @@ const typeColors: Record<string, string> = {
   }
 
   .event-type {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
     font-size: 0.75rem;
     text-transform: uppercase;
     padding: 0.25rem 0.75rem;
@@ -168,6 +276,7 @@ const typeColors: Record<string, string> = {
     color: var(--text-secondary);
     white-space: nowrap;
     letter-spacing: 0.05em;
+    background: var(--bg-secondary);
   }
 
   .event-description {
@@ -208,16 +317,201 @@ const typeColors: Record<string, string> = {
   }
 
   .event-link {
+    background: none;
+    border: none;
     color: var(--accent-primary);
     text-decoration: none;
     font-size: 0.9rem;
     transition: all 0.2s;
     font-weight: 500;
+    cursor: pointer;
+    padding: 0;
+    font-family: inherit;
   }
 
   .event-link:hover {
     color: var(--text-primary);
     transform: translateX(4px);
+  }
+
+  dialog[data-event-dialog] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-accent);
+    padding: 0;
+    box-shadow: var(--shadow-card);
+    width: 95vw;
+    max-width: 900px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  dialog[data-event-dialog]::backdrop {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 200vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .event-dialog-content {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .dialog-title {
+    color: var(--text-primary);
+    margin: 0;
+    font-size: 1.75rem;
+  }
+
+  .dialog-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+  }
+
+  .dialog-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--text-secondary);
+  }
+
+  .dialog-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .dialog-description p {
+    margin: 0;
+    white-space: pre-wrap;
+  }
+
+  .dialog-external-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .dialog-external-link:hover {
+    background: var(--text-primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+  }
+
+  .dialog-close-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 0.9rem;
+  }
+
+  .dialog-close-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  .venue-link {
+    color: var(--text-secondary);
+    background: none;
+    border: none;
+    border-bottom: 1px dashed var(--border-color);
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .venue-link:hover {
+    color: var(--accent-primary);
+    border-bottom-color: var(--accent-primary);
+  }
+
+  dialog[data-maps-dialog] {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-accent);
+    padding: 0;
+    box-shadow: var(--shadow-card);
+    max-width: 90vw;
+  }
+
+  dialog[data-maps-dialog]::backdrop {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: 200vh;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  html:has(dialog[data-maps-dialog][open]),
+  body:has(dialog[data-maps-dialog][open]),
+  html:has(dialog[data-event-dialog][open]),
+  body:has(dialog[data-event-dialog][open]) {
+    overflow: hidden;
+  }
+
+  .maps-modal {
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+  }
+
+  .maps-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1.5rem 2rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+    font-size: 0.9rem;
+  }
+
+  .maps-option:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-2px);
+  }
+
+  .maps-icon {
+    font-size: 2rem;
   }
 
   @media (max-width: 640px) {

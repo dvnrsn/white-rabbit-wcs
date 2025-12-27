@@ -12,6 +12,8 @@ const {
 	title = 'White Rabbit - Phoenix WCS',
 	description = 'Follow the white rabbit into Phoenix\'s West Coast Swing scene. Find events, connect with dancers, and discover your flow.'
 } = Astro.props;
+
+const showThemeSwitcher = Astro.url.pathname.includes('/moodboards/');
 ---
 
 <!doctype html>
@@ -37,7 +39,7 @@ const {
 	</head>
 	<body>
 		<Navigation />
-		<ThemeSwitcher />
+		{showThemeSwitcher && <ThemeSwitcher />}
 		<slot />
 	</body>
 </html>

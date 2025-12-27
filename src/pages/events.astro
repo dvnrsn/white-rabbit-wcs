@@ -31,7 +31,7 @@ today.setHours(0, 0, 0, 0);
 const upcomingEvents = events.filter(event => new Date(event.date) >= today);
 const pastEvents = events.filter(event => new Date(event.date) < today);
 
-console.log(pastEvents)
+console.log(upcomingEvents)
 ---
 
 <Layout title="Events - White Rabbit WCS" description="Find West Coast Swing events, socials, and workshops in Phoenix and Arizona.">
@@ -39,7 +39,7 @@ console.log(pastEvents)
     <div class="container">
       <header class="page-header">
         <h1 class="page-title gradient-text">Events</h1>
-        <p class="page-subtitle">West Coast Swing in Phoenix & Arizona</p>
+        <p class="page-subtitle">Phoenix, Arizona</p>
       </header>
 
       <div class="events-filters" id="events-filters">

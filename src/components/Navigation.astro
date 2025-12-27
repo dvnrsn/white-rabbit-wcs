@@ -3,11 +3,11 @@
 const currentPath = Astro.url.pathname;
 
 const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/events', label: 'Events' },
-  { href: '/about', label: 'About' },
-  { href: '/teachers', label: 'Teachers' },
-  { href: '/venues', label: 'Venues' },
+  { href: "/", label: "Home" },
+  { href: "/events", label: "Events" },
+  { href: "/about", label: "About" },
+  { href: "/teachers", label: "Teachers" },
+  { href: "/venues", label: "Venues" },
 ];
 ---
 
@@ -15,25 +15,31 @@ const navLinks = [
   <div class="nav-container">
     <a href="/" class="nav-brand">
       <span class="brand-text gradient-text">WHITE RABBIT</span>
-      <span class="brand-subtitle">Phoenix WCS</span>
+      <span class="brand-subtitle">Phoenix West Coast Swing</span>
     </a>
 
-    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+    <button
+      class="mobile-toggle"
+      id="mobile-toggle"
+      aria-label="Toggle navigation"
+    >
       <span class="hamburger"></span>
       <span class="hamburger"></span>
       <span class="hamburger"></span>
     </button>
 
     <div class="nav-links" id="nav-links">
-      {navLinks.map(link => (
-        <a
-          href={link.href}
-          class={`nav-link ${currentPath === link.href ? 'active' : ''}`}
-        >
-          <span class="nav-link-text">{link.label}</span>
-          <span class="nav-link-underline"></span>
-        </a>
-      ))}
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class={`nav-link ${currentPath === link.href ? "active" : ""}`}
+          >
+            <span class="nav-link-text">{link.label}</span>
+            <span class="nav-link-underline" />
+          </a>
+        ))
+      }
     </div>
   </div>
 </nav>
@@ -216,28 +222,31 @@ const navLinks = [
 
 <script>
   // Mobile menu toggle
-  const mobileToggle = document.getElementById('mobile-toggle');
-  const navLinks = document.getElementById('nav-links');
+  const mobileToggle = document.getElementById("mobile-toggle");
+  const navLinks = document.getElementById("nav-links");
 
-  mobileToggle?.addEventListener('click', () => {
-    mobileToggle.classList.toggle('active');
-    navLinks?.classList.toggle('active');
+  mobileToggle?.addEventListener("click", () => {
+    mobileToggle.classList.toggle("active");
+    navLinks?.classList.toggle("active");
   });
 
   // Close mobile menu when clicking a link
-  const links = navLinks?.querySelectorAll('.nav-link');
-  links?.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileToggle?.classList.remove('active');
-      navLinks?.classList.remove('active');
+  const links = navLinks?.querySelectorAll(".nav-link");
+  links?.forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileToggle?.classList.remove("active");
+      navLinks?.classList.remove("active");
     });
   });
 
   // Close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!mobileToggle?.contains(e.target as Node) && !navLinks?.contains(e.target as Node)) {
-      mobileToggle?.classList.remove('active');
-      navLinks?.classList.remove('active');
+  document.addEventListener("click", (e) => {
+    if (
+      !mobileToggle?.contains(e.target as Node) &&
+      !navLinks?.contains(e.target as Node)
+    ) {
+      mobileToggle?.classList.remove("active");
+      navLinks?.classList.remove("active");
     }
   });
 </script>

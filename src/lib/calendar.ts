@@ -55,8 +55,8 @@ function parseICalData(icalData: string): CalendarEvent[] {
     const startDate = event.startDate.toJSDate();
     const endDate = event.endDate.toJSDate();
 
-    // Format date and time
-    const dateStr = startDate.toISOString().split('T')[0];
+    // Format date and time in local timezone (not UTC)
+    const dateStr = formatDate(startDate);
     const startTimeStr = formatTime(startDate);
     const endTimeStr = formatTime(endDate);
 
@@ -74,12 +74,20 @@ function parseICalData(icalData: string): CalendarEvent[] {
       venue: customFields.venue || event.location || 'TBA',
       address: event.location || '',
       price: customFields.price || 'Free',
-      level: customFields.level || 'All Levels',
+      level: customFields.level || '',
       type: customFields.type || 'social',
-      organizer: event.organizer || 'White Rabbit WCS',
+      organizer: customFields.organizer || 'White Rabbit WCS',
       url: customFields.url || undefined,
     };
   });
+}
+
+function formatDate(date: Date): string {
+  // Format date in local timezone, not UTC
+  const year = date.getFullYear();
+  const month = (date.getMonth() + 1).toString().padStart(2, '0');
+  const day = date.getDate().toString().padStart(2, '0');
+  return `${year}-${month}-${day}`;
 }
 
 function formatTime(date: Date): string {
@@ -97,11 +105,17 @@ function parseDescription(description: string): Partial<CalendarEvent> {
   let descriptionLines: string[] = [];
 
   for (const line of lines) {
-    const match = line.match(/^(Venue|Price|Level|Type|Organizer|URL):\s*(.+)$/i);
+    const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL):\s*(.+)$/i);
     if (match) {
       const [, field, value] = match;
       const fieldLower = field.toLowerCase() as keyof CalendarEvent;
-      fields[fieldLower] = value.trim();
+
+      // Handle Description field specially - it goes into description, not as a separate field
+      if (fieldLower === 'description') {
+        descriptionLines.push(value.trim());
+      } else {
+        fields[fieldLower] = value.trim();
+      }
     } else {
       descriptionLines.push(line);
     }
