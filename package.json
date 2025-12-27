@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
-    "astro": "^5.16.6"
+    "astro": "^5.16.6",
+    "ical.js": "^2.2.1"
   },
   "devDependencies": {
     "wrangler": "^4.54.0"

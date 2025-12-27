@@ -1,0 +1,248 @@
+---
+interface Props {
+  event: {
+    id: string;
+    title: string;
+    description: string;
+    date: string;
+    startTime: string;
+    endTime: string;
+    venue: string;
+    address: string;
+    price: string;
+    level: string;
+    type: string;
+    organizer: string;
+    url?: string;
+  };
+}
+
+const { event } = Astro.props;
+
+// Format date
+const eventDate = new Date(event.date + 'T00:00:00');
+const dayName = eventDate.toLocaleDateString('en-US', { weekday: 'short' });
+const monthName = eventDate.toLocaleDateString('en-US', { month: 'short' });
+const day = eventDate.getDate();
+
+// Format time
+const formatTime = (time: string) => {
+  const [hours, minutes] = time.split(':');
+  const hour = parseInt(hours);
+  const ampm = hour >= 12 ? 'PM' : 'AM';
+  const displayHour = hour % 12 || 12;
+  return `${displayHour}:${minutes} ${ampm}`;
+};
+
+const typeColors: Record<string, string> = {
+  social: 'var(--accent-primary)',
+  workshop: 'var(--accent-secondary)',
+  competition: '#8b5cf6',
+};
+---
+
+<article class="event-card">
+  <div class="event-date-badge">
+    <div class="date-day">{day}</div>
+    <div class="date-month">{monthName}</div>
+    <div class="date-weekday">{dayName}</div>
+  </div>
+
+  <div class="event-content">
+    <div class="event-header">
+      <h3 class="event-title">{event.title}</h3>
+      <span class="event-type" style={`border-color: ${typeColors[event.type]}`}>
+        {event.type}
+      </span>
+    </div>
+
+    <p class="event-description">{event.description}</p>
+
+    <div class="event-details">
+      <div class="detail-item">
+        <span class="detail-icon">⏰</span>
+        <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-icon">📍</span>
+        <span>{event.venue}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-icon">💵</span>
+        <span>{event.price}</span>
+      </div>
+
+      <div class="detail-item">
+        <span class="detail-icon">🎯</span>
+        <span>{event.level}</span>
+      </div>
+    </div>
+
+    <div class="event-footer">
+      <span class="event-organizer">by {event.organizer}</span>
+      {event.url && (
+        <a href={event.url} class="event-link" target="_blank" rel="noopener noreferrer">
+          Learn More →
+        </a>
+      )}
+    </div>
+  </div>
+</article>
+
+<style>
+  .event-card {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .event-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+  }
+
+  .event-date-badge {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: var(--bg-primary);
+    border: 2px solid var(--accent-primary);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .date-day {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    line-height: 1;
+  }
+
+  .date-month {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .date-weekday {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+  }
+
+  .event-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .event-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .event-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+  }
+
+  .event-type {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    padding: 0.25rem 0.75rem;
+    border: 1px solid;
+    color: var(--text-secondary);
+    white-space: nowrap;
+    letter-spacing: 0.05em;
+  }
+
+  .event-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .event-details {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .detail-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+  }
+
+  .detail-icon {
+    font-size: 1rem;
+  }
+
+  .event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border-color);
+  }
+
+  .event-organizer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  .event-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+    font-weight: 500;
+  }
+
+  .event-link:hover {
+    color: var(--text-primary);
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 640px) {
+    .event-card {
+      flex-direction: column;
+    }
+
+    .event-date-badge {
+      width: 100%;
+      height: 60px;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .date-day {
+      font-size: 1.5rem;
+    }
+
+    .event-header {
+      flex-direction: column;
+    }
+
+    .event-details {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
