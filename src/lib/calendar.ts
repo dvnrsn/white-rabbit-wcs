@@ -1,4 +1,4 @@
-import ICAL from 'ical.js';
+import ICAL from "ical.js";
 
 export interface CalendarEvent {
   id: string;
@@ -18,7 +18,8 @@ export interface CalendarEvent {
 
 // This will be set via environment variable or config
 // For now, using a placeholder - you'll replace this with your actual calendar ID
-const CALENDAR_ID = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID || 'YOUR_CALENDAR_ID@group.calendar.google.com';
+const CALENDAR_ID =
+  import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID || "YOUR_CALENDAR_ID@group.calendar.google.com";
 
 export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
   try {
@@ -27,7 +28,7 @@ export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 
     const response = await fetch(calendarUrl, {
       // Cache for 5 minutes
-      next: { revalidate: 300 }
+      next: { revalidate: 300 },
     });
 
     if (!response.ok) {
@@ -37,7 +38,7 @@ export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
     const icalData = await response.text();
     return parseICalData(icalData);
   } catch (error) {
-    console.error('Error fetching Google Calendar:', error);
+    console.error("Error fetching Google Calendar:", error);
     // Return empty array on error to fail gracefully
     return [];
   }
@@ -46,9 +47,9 @@ export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 function parseICalData(icalData: string): CalendarEvent[] {
   const jcalData = ICAL.parse(icalData);
   const comp = new ICAL.Component(jcalData);
-  const vevents = comp.getAllSubcomponents('vevent');
+  const vevents = comp.getAllSubcomponents("vevent");
 
-  return vevents.map(vevent => {
+  return vevents.map((vevent) => {
     const event = new ICAL.Event(vevent);
 
     // Extract event details
@@ -61,22 +62,23 @@ function parseICalData(icalData: string): CalendarEvent[] {
     const endTimeStr = formatTime(endDate);
 
     // Parse description for custom fields
-    const description = event.description || '';
+    const description = event.description || "";
+    console.log(description);
     const customFields = parseDescription(description);
 
     return {
       id: event.uid,
-      title: event.summary || 'Untitled Event',
+      title: event.summary || "Untitled Event",
       description: customFields.description || description,
       date: dateStr,
       startTime: startTimeStr,
       endTime: endTimeStr,
-      venue: customFields.venue || event.location || 'TBA',
-      address: event.location || '',
-      price: customFields.price || 'Free',
-      level: customFields.level || '',
-      type: customFields.type || 'social',
-      organizer: customFields.organizer || 'White Rabbit WCS',
+      venue: customFields.venue || event.location || "TBA",
+      address: event.location || "",
+      price: customFields.price || "Free",
+      level: customFields.level || "",
+      type: customFields.type || "social",
+      organizer: customFields.organizer || "White Rabbit WCS",
       url: customFields.url || undefined,
     };
   });
@@ -85,23 +87,29 @@ function parseICalData(icalData: string): CalendarEvent[] {
 function formatDate(date: Date): string {
   // Format date in local timezone, not UTC
   const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, '0');
-  const day = date.getDate().toString().padStart(2, '0');
+  const month = (date.getMonth() + 1).toString().padStart(2, "0");
+  const day = date.getDate().toString().padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
 
 function formatTime(date: Date): string {
-  const hours = date.getHours().toString().padStart(2, '0');
-  const minutes = date.getMinutes().toString().padStart(2, '0');
+  const hours = date.getHours().toString().padStart(2, "0");
+  const minutes = date.getMinutes().toString().padStart(2, "0");
   return `${hours}:${minutes}`;
 }
 
 function parseDescription(description: string): Partial<CalendarEvent> {
   const fields: Partial<CalendarEvent> = {};
 
+  // Clean up HTML formatting that Google Calendar adds
+  let cleanDescription = description
+    .replace(/<\/?span[^>]*>/g, "") // Remove <span> tags
+    .replace(/<br\s*\/?>/gi, "\n") // Convert <br> to newlines
+    .replace(/&nbsp;/g, " "); // Convert &nbsp; to spaces
+
   // Parse custom fields from description
   // Format: Field: Value (each on new line)
-  const lines = description.split('\n');
+  const lines = cleanDescription.split("\n");
   let descriptionLines: string[] = [];
 
   for (const line of lines) {
@@ -111,7 +119,7 @@ function parseDescription(description: string): Partial<CalendarEvent> {
       const fieldLower = field.toLowerCase() as keyof CalendarEvent;
 
       // Handle Description field specially - it goes into description, not as a separate field
-      if (fieldLower === 'description') {
+      if (fieldLower === "description") {
         descriptionLines.push(value.trim());
       } else {
         fields[fieldLower] = value.trim();
@@ -123,7 +131,7 @@ function parseDescription(description: string): Partial<CalendarEvent> {
 
   // Set cleaned description
   if (descriptionLines.length > 0) {
-    fields.description = descriptionLines.join('\n').trim();
+    fields.description = descriptionLines.join("\n").trim();
   }
 
   return fields;
