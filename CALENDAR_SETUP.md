@@ -27,6 +27,7 @@ Follow these steps to connect your Google Calendar to the White Rabbit WCS site.
 ## Step 4: Add Calendar ID to Your Site
 
 ### For Local Development:
+
 1. Create a `.env` file in the project root (if it doesn't exist)
 2. Add this line:
    ```
@@ -35,6 +36,7 @@ Follow these steps to connect your Google Calendar to the White Rabbit WCS site.
 3. Replace with your actual calendar ID
 
 ### For Cloudflare Pages:
+
 1. Go to your Cloudflare Pages dashboard
 2. Select your project
 3. Go to **Settings** → **Environment variables**
@@ -85,12 +87,14 @@ The site will automatically parse these fields and display them nicely!
 ## Troubleshooting
 
 **Events not showing up?**
+
 - Make sure calendar is set to public
 - Check that Calendar ID is correct in environment variables
 - Redeploy your site after adding the environment variable
 - Wait ~5 minutes for cache to clear
 
 **Missing custom fields?**
+
 - Make sure you're using the exact field names (Venue:, Price:, etc.)
 - Each field should be on its own line
 - Use the format: `Field: Value`

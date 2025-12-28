@@ -26,6 +26,7 @@ This guide shows how to add short updates/announcements that appear on the homep
    - The date determines the order (newest shows first)
 
 5. **Write Your Post**
+
    ```markdown
    ---
    # Leave this part as-is (optional metadata)
@@ -59,16 +60,19 @@ This guide shows how to add short updates/announcements that appear on the homep
 ## Formatting Tips
 
 **Bold Text:**
+
 ```markdown
 This is **bold** and this is *italic*
 ```
 
 **Links:**
+
 ```markdown
 Check out [our Instagram](https://instagram.com/whiterabbit.wcs)
 ```
 
 **Lists:**
+
 ```markdown
 What to bring:
 - Dance shoes
@@ -77,6 +81,7 @@ What to bring:
 ```
 
 **Emojis:**
+
 ```markdown
 Big event tonight! 🎉💃🕺
 ```
@@ -84,6 +89,7 @@ Big event tonight! 🎉💃🕺
 ## Post Ideas
 
 Good things to post:
+
 - Event announcements
 - Last-minute updates
 - Shoutouts to the community
@@ -95,6 +101,7 @@ Good things to post:
 ## Examples
 
 **Event Announcement:**
+
 ```markdown
 ---
 ---
@@ -111,6 +118,7 @@ Join us at The Imperial Ballroom for our biggest dance yet.
 ```
 
 **Quick Update:**
+
 ```markdown
 ---
 ---
@@ -121,6 +129,7 @@ Same time, just a different spot. See you there! 💃
 ```
 
 **Community Shoutout:**
+
 ```markdown
 ---
 ---
@@ -133,12 +142,14 @@ Huge thanks to everyone who came out last Friday!
 ## Editing or Deleting Posts
 
 **To Edit:**
+
 1. Navigate to the post file on GitHub
 2. Click the pencil icon (top right)
 3. Make your changes
 4. Commit changes
 
 **To Delete:**
+
 1. Navigate to the post file on GitHub
 2. Click the trash icon (top right)
 3. Commit the deletion
@@ -154,16 +165,19 @@ Huge thanks to everyone who came out last Friday!
 ## Troubleshooting
 
 **Post not showing up?**
+
 - Check the filename format is correct: `YYYY-MM-DD-something.md`
 - Make sure the file is in `src/content/posts/` folder
 - Wait a few minutes for the site to rebuild
 
 **Formatting looks weird?**
+
 - Check your markdown syntax
 - Make sure you have the `---` lines at the top
 - Use the Preview tab on GitHub to check before committing
 
 **Need help?**
+
 - Ask someone technical to check the file
 - You can always delete and recreate the post
 - Markdown mistakes won't break the site!

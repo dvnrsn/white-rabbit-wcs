@@ -136,9 +136,7 @@ export function generateVenueSchema(venue: {
 /**
  * Generate BreadcrumbList schema for navigation
  */
-export function generateBreadcrumbSchema(
-  items: Array<{ name: string; url: string }>
-) {
+export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",

@@ -1,241 +1,267 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Mood Board 1: Classic Matrix</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+      }
 
-        body {
-            background: #000;
-            color: #00ff41;
-            font-family: 'Courier New', monospace;
-            overflow-x: hidden;
-            position: relative;
-        }
+      body {
+          background: #000;
+          color: #00ff41;
+          font-family: 'Courier New', monospace;
+          overflow-x: hidden;
+          position: relative;
+      }
 
-        /* Matrix rain background */
-        #matrix-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 0;
-            opacity: 0.15;
-        }
+      /* Matrix rain background */
+      #matrix-canvas {
+          position: fixed;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          opacity: 0.15;
+      }
 
-        .content {
-            position: relative;
-            z-index: 1;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
+      .content {
+          position: relative;
+          z-index: 1;
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 4rem 2rem;
+      }
 
-        h1 {
-            font-size: 4rem;
-            margin-bottom: 2rem;
-            text-shadow: 0 0 10px #00ff41;
-            letter-spacing: 0.1em;
-        }
+      h1 {
+          font-size: 4rem;
+          margin-bottom: 2rem;
+          text-shadow: 0 0 10px #00ff41;
+          letter-spacing: 0.1em;
+      }
 
-        .typed-text {
-            font-size: 1.5rem;
-            min-height: 100px;
-            margin-bottom: 3rem;
-            line-height: 1.8;
-        }
+      .typed-text {
+          font-size: 1.5rem;
+          min-height: 100px;
+          margin-bottom: 3rem;
+          line-height: 1.8;
+      }
 
-        .cursor {
-            display: inline-block;
-            width: 3px;
-            height: 1.5rem;
-            background-color: #00ff41;
-            margin-left: 5px;
-            animation: blink 1s infinite;
-            vertical-align: middle;
-        }
+      .cursor {
+          display: inline-block;
+          width: 3px;
+          height: 1.5rem;
+          background-color: #00ff41;
+          margin-left: 5px;
+          animation: blink 1s infinite;
+          vertical-align: middle;
+      }
 
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0; }
-        }
+      @keyframes blink {
+          0%, 50% { opacity: 1; }
+          51%, 100% { opacity: 0; }
+      }
 
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 4rem 0;
-        }
+      .features {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 2rem;
+          margin: 4rem 0;
+      }
 
-        .feature-card {
-            border: 1px solid #00ff41;
-            padding: 2rem;
-            background: rgba(0, 255, 65, 0.05);
-            transition: all 0.3s;
-        }
+      .feature-card {
+          border: 1px solid #00ff41;
+          padding: 2rem;
+          background: rgba(0, 255, 65, 0.05);
+          transition: all 0.3s;
+      }
 
-        .feature-card:hover {
-            background: rgba(0, 255, 65, 0.1);
-            box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-            transform: translateY(-5px);
-        }
+      .feature-card:hover {
+          background: rgba(0, 255, 65, 0.1);
+          box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+          transform: translateY(-5px);
+      }
 
-        .feature-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.5rem;
-            text-shadow: 0 0 5px #00ff41;
-        }
+      .feature-card h3 {
+          margin-bottom: 1rem;
+          font-size: 1.5rem;
+          text-shadow: 0 0 5px #00ff41;
+      }
 
-        .color-palette {
-            display: flex;
-            gap: 1rem;
-            margin: 3rem 0;
-            flex-wrap: wrap;
-        }
+      .color-palette {
+          display: flex;
+          gap: 1rem;
+          margin: 3rem 0;
+          flex-wrap: wrap;
+      }
 
-        .color-swatch {
-            width: 150px;
-            height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid #00ff41;
-            font-size: 0.9rem;
-        }
+      .color-swatch {
+          width: 150px;
+          height: 150px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #00ff41;
+          font-size: 0.9rem;
+      }
 
-        .btn {
-            display: inline-block;
-            padding: 1rem 2rem;
-            border: 2px solid #00ff41;
-            color: #00ff41;
-            text-decoration: none;
-            margin: 1rem 1rem 1rem 0;
-            transition: all 0.3s;
-            background: transparent;
-        }
+      .btn {
+          display: inline-block;
+          padding: 1rem 2rem;
+          border: 2px solid #00ff41;
+          color: #00ff41;
+          text-decoration: none;
+          margin: 1rem 1rem 1rem 0;
+          transition: all 0.3s;
+          background: transparent;
+      }
 
-        .btn:hover {
-            background: #00ff41;
-            color: #000;
-            box-shadow: 0 0 20px #00ff41;
-        }
+      .btn:hover {
+          background: #00ff41;
+          color: #000;
+          box-shadow: 0 0 20px #00ff41;
+      }
 
-        .mood-title {
-            font-size: 2rem;
-            margin-top: 4rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid #00ff41;
-            padding-bottom: 1rem;
-        }
+      .mood-title {
+          font-size: 2rem;
+          margin-top: 4rem;
+          margin-bottom: 2rem;
+          border-bottom: 2px solid #00ff41;
+          padding-bottom: 1rem;
+      }
 
-        p {
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
+      p {
+          line-height: 1.8;
+          margin-bottom: 1rem;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <canvas id="matrix-canvas"></canvas>
 
     <div class="content">
-        <h1>WHITE RABBIT</h1>
-        <div class="typed-text" id="typed-text"><span class="cursor"></span></div>
+      <h1>WHITE RABBIT</h1>
+      <div class="typed-text" id="typed-text"><span class="cursor"></span></div>
 
-        <div class="mood-title">> DESIGN CONCEPT: CLASSIC MATRIX</div>
+      <div class="mood-title">> DESIGN CONCEPT: CLASSIC MATRIX</div>
 
-        <p>Follow the white rabbit into Phoenix's West Coast Swing scene. This design embraces the iconic Matrix aesthetic with falling code, terminal-style typography, and electric green on pure black.</p>
+      <p>
+        Follow the white rabbit into Phoenix's West Coast Swing scene. This design embraces the
+        iconic Matrix aesthetic with falling code, terminal-style typography, and electric green on
+        pure black.
+      </p>
 
-        <div class="color-palette">
-            <div class="color-swatch" style="background: #000; color: #00ff41;">#000000<br>Primary</div>
-            <div class="color-swatch" style="background: #00ff41; color: #000;">#00FF41<br>Accent</div>
-            <div class="color-swatch" style="background: #008f11; color: #00ff41;">#008F11<br>Hover</div>
-            <div class="color-swatch" style="background: #0a0a0a; color: #00ff41; border-color: #00ff41;">#0A0A0A<br>Surface</div>
+      <div class="color-palette">
+        <div class="color-swatch" style="background: #000; color: #00ff41;">
+          #000000<br />Primary
         </div>
-
-        <div class="features">
-            <div class="feature-card">
-                <h3>> Typography</h3>
-                <p>Monospace fonts (Courier, Consolas) for that terminal aesthetic. Text typing animations throughout.</p>
-            </div>
-            <div class="feature-card">
-                <h3>> Interactions</h3>
-                <p>Glowing hover effects, typing animations, matrix rain background, terminal-style loading states.</p>
-            </div>
-            <div class="feature-card">
-                <h3>> Layout</h3>
-                <p>Sharp edges, grid-based layouts, command-line inspired navigation, minimal visual noise.</p>
-            </div>
-            <div class="feature-card">
-                <h3>> Mood</h3>
-                <p>Mysterious, tech-forward, immersive. Makes finding WCS events feel like entering the Matrix.</p>
-            </div>
+        <div class="color-swatch" style="background: #00ff41; color: #000;">
+          #00FF41<br />Accent
         </div>
+        <div class="color-swatch" style="background: #008f11; color: #00ff41;">
+          #008F11<br />Hover
+        </div>
+        <div
+          class="color-swatch"
+          style="background: #0a0a0a; color: #00ff41; border-color: #00ff41;"
+        >
+          #0A0A0A<br />Surface
+        </div>
+      </div>
 
-        <a href="/moodboards/02-white-rabbit" class="btn">> NEXT CONCEPT</a>
-        <a href="/moodboards/" class="btn">> ALL CONCEPTS</a>
+      <div class="features">
+        <div class="feature-card">
+          <h3>> Typography</h3>
+          <p>
+            Monospace fonts (Courier, Consolas) for that terminal aesthetic. Text typing animations
+            throughout.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>> Interactions</h3>
+          <p>
+            Glowing hover effects, typing animations, matrix rain background, terminal-style loading
+            states.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>> Layout</h3>
+          <p>
+            Sharp edges, grid-based layouts, command-line inspired navigation, minimal visual noise.
+          </p>
+        </div>
+        <div class="feature-card">
+          <h3>> Mood</h3>
+          <p>
+            Mysterious, tech-forward, immersive. Makes finding WCS events feel like entering the
+            Matrix.
+          </p>
+        </div>
+      </div>
+
+      <a href="/moodboards/02-white-rabbit" class="btn">> NEXT CONCEPT</a>
+      <a href="/moodboards/" class="btn">> ALL CONCEPTS</a>
     </div>
 
     <script>
-        // Matrix rain effect
-        const canvas = document.getElementById('matrix-canvas');
-        const ctx = canvas.getContext('2d');
+      // Matrix rain effect
+      const canvas = document.getElementById('matrix-canvas');
+      const ctx = canvas.getContext('2d');
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
 
-        const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
-        const charArray = chars.split('');
+      const chars = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン01';
+      const charArray = chars.split('');
 
-        const fontSize = 16;
-        const columns = canvas.width / fontSize;
+      const fontSize = 16;
+      const columns = canvas.width / fontSize;
 
-        const drops = Array(Math.floor(columns)).fill(1);
+      const drops = Array(Math.floor(columns)).fill(1);
 
-        function drawMatrix() {
-            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
+      function drawMatrix() {
+          ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-            ctx.fillStyle = '#00ff41';
-            ctx.font = fontSize + 'px monospace';
+          ctx.fillStyle = '#00ff41';
+          ctx.font = fontSize + 'px monospace';
 
-            for (let i = 0; i < drops.length; i++) {
-                const text = charArray[Math.floor(Math.random() * charArray.length)];
-                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+          for (let i = 0; i < drops.length; i++) {
+              const text = charArray[Math.floor(Math.random() * charArray.length)];
+              ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-                    drops[i] = 0;
-                }
-                drops[i]++;
-            }
-        }
+              if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+                  drops[i] = 0;
+              }
+              drops[i]++;
+          }
+      }
 
-        setInterval(drawMatrix, 35);
+      setInterval(drawMatrix, 35);
 
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
+      window.addEventListener('resize', () => {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+      });
 
-        // Typing effect
-        const text = "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Follow the white rabbit to find events, connect with dancers, and discover your flow.";
-        const typedTextElement = document.getElementById('typed-text');
-        let index = 0;
+      // Typing effect
+      const text = "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Follow the white rabbit to find events, connect with dancers, and discover your flow.";
+      const typedTextElement = document.getElementById('typed-text');
+      let index = 0;
 
-        function typeText() {
-            if (index < text.length) {
-                const currentText = text.substring(0, index + 1);
-                typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
-                index++;
-                setTimeout(typeText, 50);
-            }
-        }
+      function typeText() {
+          if (index < text.length) {
+              const currentText = text.substring(0, index + 1);
+              typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
+              index++;
+              setTimeout(typeText, 50);
+          }
+      }
 
-        setTimeout(typeText, 500);
+      setTimeout(typeText, 500);
     </script>
-</body>
+  </body>
 </html>

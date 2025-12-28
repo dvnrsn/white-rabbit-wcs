@@ -14,6 +14,7 @@ Open `index.html` in your browser to see all concepts, or view them individually
 ## Features
 
 Each mood board includes:
+
 - Live typing animations
 - Matrix-inspired visual effects
 - Color palette
@@ -40,6 +41,7 @@ pnpm dev
 ## Next Steps
 
 After reviewing the mood boards, choose a direction and we can:
+
 1. Integrate the chosen design into the Astro project
 2. Create reusable components based on the aesthetic
 3. Build out the actual site pages with the selected theme

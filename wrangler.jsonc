@@ -5,12 +5,12 @@
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
   "assets": {
     "binding": "ASSETS",
-    "directory": "./dist"
+    "directory": "./dist",
   },
   "observability": {
-    "enabled": true
+    "enabled": true,
   },
   "vars": {
-    "PUBLIC_GOOGLE_CALENDAR_ID": "871229fba6168965d02d691832a50e64059cfe7128c4f0d75781425ce5c8520f@group.calendar.google.com"
-  }
+    "PUBLIC_GOOGLE_CALENDAR_ID": "871229fba6168965d02d691832a50e64059cfe7128c4f0d75781425ce5c8520f@group.calendar.google.com",
+  },
 }

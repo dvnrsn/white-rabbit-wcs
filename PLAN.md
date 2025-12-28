@@ -1,11 +1,13 @@
 # White Rabbit - Project Implementation Plan
 
 ## Project Overview
+
 White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS) dance community. The site helps dancers find WCS events, venues, teachers, and community resources across Arizona.
 
 ## Core Features & Implementation Plan
 
 ### Phase 1: Foundation & Content Structure
+
 - [ ] **Site Structure & Navigation**
   - Create main navigation layout
   - Set up routing for key pages (Home, Events, About, Teachers, Venues)
@@ -25,6 +27,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - FAQ section
 
 ### Phase 2: Event Calendar
+
 - [ ] **Event Calendar System**
   - Design event data structure (JSON/YAML)
   - Create event listing component
@@ -34,6 +37,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - Add "Add to Calendar" functionality (ICS export)
 
 ### Phase 3: Directory & Resources
+
 - [ ] **Venues Directory**
   - Create venues data structure
   - Build venue listing page
@@ -47,6 +51,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - Include bio, contact, specialties, class schedule
 
 ### Phase 4: Social Integration
+
 - [ ] **Instagram Integration**
   - Set up Instagram Basic Display API
   - Create Instagram feed component
@@ -55,6 +60,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - Consider fallback for when API limits are reached
 
 ### Phase 5: Light Ecommerce
+
 - [ ] **Ecommerce Setup**
   - Decide on products (merchandise, event tickets, workshops)
   - Choose payment processor (Stripe, Square, etc.)
@@ -66,6 +72,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - Add order confirmation
 
 ### Phase 6: Polish & Launch
+
 - [ ] **Performance Optimization**
   - Optimize images
   - Review bundle size
@@ -85,6 +92,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
   - Set up analytics
 
 ## Technical Decisions to Make
+
 - **Event Data Management**: Hardcoded JSON/YAML files vs. CMS (Decap, Sanity, etc.)
 - **Instagram**: API integration vs. embed widget
 - **Ecommerce**: Full integration vs. external link to Shopify/Square
@@ -92,6 +100,7 @@ White Rabbit is a static website for the Phoenix, Arizona West Coast Swing (WCS)
 - **Forms**: Contact form handling (Formspree, Netlify Forms, etc.)
 
 ## Notes
+
 - Prioritize mobile experience (dancers often check events on phones)
 - Keep design clean and uncluttered
 - Focus on fast load times for good UX and SEO

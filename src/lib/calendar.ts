@@ -19,7 +19,7 @@ export interface CalendarEvent {
 type CloudflareRuntime = import("@astrojs/cloudflare").Runtime<Env>;
 
 export async function fetchGoogleCalendarEvents(
-  runtime?: CloudflareRuntime
+  runtime?: CloudflareRuntime,
 ): Promise<CalendarEvent[]> {
   // Get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
   const CALENDAR_ID =
@@ -44,9 +44,7 @@ export async function fetchGoogleCalendarEvents(
     if (!response.ok) {
       const errorText = await response.text();
       console.error(`Calendar fetch failed (${response.status}):`, errorText.substring(0, 200));
-      throw new Error(
-        `Failed to fetch calendar: ${response.status} ${response.statusText}`
-      );
+      throw new Error(`Failed to fetch calendar: ${response.status} ${response.statusText}`);
     }
 
     const icalData = await response.text();
