@@ -16,8 +16,10 @@ export interface CalendarEvent {
   url?: string;
 }
 
+type CloudflareRuntime = import("@astrojs/cloudflare").Runtime<Env>;
+
 export async function fetchGoogleCalendarEvents(
-  runtime?: { env: Record<string, string> }
+  runtime?: CloudflareRuntime
 ): Promise<CalendarEvent[]> {
   // Get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
   const CALENDAR_ID =

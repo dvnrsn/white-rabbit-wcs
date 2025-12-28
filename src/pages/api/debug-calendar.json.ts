@@ -1,6 +1,8 @@
+import type { APIContext } from "astro";
+
 export const prerender = false;
 
-export async function GET({ locals }: { locals: any }) {
+export async function GET({ locals }: APIContext) {
   const runtime = locals.runtime;
 
   // Try to get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
@@ -14,7 +16,9 @@ export async function GET({ locals }: { locals: any }) {
   const debugInfo: any = {
     calendarId,
     calendarUrl,
-    envVarPresent: !!(runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID || import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID),
+    envVarPresent: !!(
+      runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID || import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID
+    ),
     runtimeAvailable: !!runtime,
     runtimeEnvAvailable: !!runtime?.env,
     timestamp: new Date().toISOString(),
