@@ -1,10 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import { generateOrganizationSchema } from "../lib/schema";
+
+const schema = generateOrganizationSchema();
 ---
 
 <Layout
   title="About - White Rabbit WCS"
   description="The story of Phoenix's premier West Coast Swing community. Follow the white rabbit into a world where community comes first."
+  type="website"
+  schema={schema}
 >
   <main class="about-page">
     <div class="container">

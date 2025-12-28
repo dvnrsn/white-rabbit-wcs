@@ -1,16 +1,23 @@
 ---
 import Navigation from '../components/Navigation.astro';
 import ThemeSwitcher from '../components/ThemeSwitcher.astro';
+import SEO from '../components/SEO.astro';
 import '../styles/themes.css';
 
 interface Props {
 	title?: string;
 	description?: string;
+	image?: string;
+	type?: "website" | "article" | "event";
+	schema?: object;
 }
 
 const {
 	title = 'White Rabbit - Phoenix WCS',
-	description = 'Follow the white rabbit into Phoenix\'s West Coast Swing scene. Find events, connect with dancers, and discover your flow.'
+	description = 'Follow the white rabbit into Phoenix\'s West Coast Swing scene. Find events, connect with dancers, and discover your flow.',
+	image,
+	type = "website",
+	schema
 } = Astro.props;
 
 const showThemeSwitcher = Astro.url.pathname.includes('/moodboards/');
@@ -19,17 +26,14 @@ const showThemeSwitcher = Astro.url.pathname.includes('/moodboards/');
 <!doctype html>
 <html lang="en" data-theme="white-rabbit">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="description" content={description} />
+		<SEO
+			title={title}
+			description={description}
+			image={image}
+			type={type}
+			schema={schema}
+		/>
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-
-		<!-- SEO Meta Tags -->
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
 
 		<!-- Preload theme to prevent flash -->
 		<script is:inline>

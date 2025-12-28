@@ -1,9 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
+import { generateOrganizationSchema } from "../lib/schema";
+
+const schema = generateOrganizationSchema();
 ---
 
-<Layout>
+<Layout
+  title="White Rabbit - Phoenix West Coast Swing"
+  description="Follow the white rabbit into Phoenix's West Coast Swing scene. Find events, workshops, socials, and connect with the Arizona WCS dance community."
+  schema={schema}
+>
   <main>
     <section class="hero">
       <div class="container">

@@ -2,6 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import { fetchGoogleCalendarEvents } from '../lib/calendar';
+import { generateEventListSchema } from '../lib/schema';
 import eventsData from '../data/events.json';
 
 // Try to fetch from Google Calendar, fall back to JSON file
@@ -31,9 +32,16 @@ today.setHours(0, 0, 0, 0);
 const upcomingEvents = events.filter(event => new Date(event.date) >= today);
 const pastEvents = events.filter(event => new Date(event.date) < today);
 
+// Generate structured data for upcoming events
+const schema = generateEventListSchema(upcomingEvents);
+
 ---
 
-<Layout title="Events - White Rabbit WCS" description="Find West Coast Swing events, socials, and workshops in Phoenix and Arizona.">
+<Layout
+  title="Events - White Rabbit WCS"
+  description="Find West Coast Swing events, socials, and workshops in Phoenix and Arizona."
+  schema={schema}
+>
   <main class="events-page">
     <div class="container">
       <header class="page-header">
