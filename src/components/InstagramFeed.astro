@@ -1,0 +1,143 @@
+---
+// Add Instagram post URLs here
+// To get embed URL: Go to post → Click "..." → Click "Embed" → Copy the post URL
+const instagramPosts = [
+  // Example: 'https://www.instagram.com/p/POST_ID/'
+  // Add 6 recent post URLs below:
+];
+---
+
+<section class="instagram-feed">
+  <div class="container">
+    <div class="feed-header">
+      <h2 class="section-title gradient-text">Follow the Community</h2>
+      <a
+        href="https://www.instagram.com/whiterabbit.wcs/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="instagram-link"
+      >
+        @whiterabbit.wcs →
+      </a>
+    </div>
+
+    {instagramPosts.length > 0 ? (
+      <div class="posts-grid">
+        {instagramPosts.map((postUrl) => (
+          <div class="instagram-embed-container">
+            <blockquote
+              class="instagram-media"
+              data-instgrm-permalink={postUrl}
+              data-instgrm-version="14"
+            />
+          </div>
+        ))}
+      </div>
+    ) : (
+      <div class="feed-fallback">
+        <p>
+          See our latest updates on{' '}
+          <a
+            href="https://www.instagram.com/whiterabbit.wcs/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Instagram
+          </a>
+        </p>
+      </div>
+    )}
+  </div>
+</section>
+
+<script async src="https://www.instagram.com/embed.js"></script>
+
+<style>
+  .instagram-feed {
+    padding: 4rem 0;
+    background: var(--bg-secondary);
+  }
+
+  .feed-header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .section-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .instagram-link {
+    display: inline-block;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: all 0.2s;
+    border-bottom: 2px solid transparent;
+  }
+
+  .instagram-link:hover {
+    border-bottom-color: var(--accent-primary);
+  }
+
+  .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .instagram-embed-container {
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Style Instagram embeds to match theme */
+  .instagram-embed-container :global(.instagram-media) {
+    max-width: 100% !important;
+    min-width: 100% !important;
+  }
+
+  .feed-fallback {
+    text-align: center;
+    padding: 3rem 2rem;
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+  }
+
+  .feed-fallback a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-primary);
+    transition: all 0.2s;
+  }
+
+  .feed-fallback a:hover {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+  }
+
+  @media (max-width: 768px) {
+    .instagram-feed {
+      padding: 3rem 0;
+    }
+
+    .posts-grid {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+
+    .feed-header {
+      margin-bottom: 2rem;
+    }
+
+    .instagram-embed-container {
+      min-height: 500px;
+    }
+  }
+</style>
