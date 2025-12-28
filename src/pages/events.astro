@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import { fetchGoogleCalendarEvents } from '../lib/calendar';
@@ -11,7 +13,8 @@ let calendarError: string | null = null;
 let usingFallback = false;
 
 try {
-  events = await fetchGoogleCalendarEvents();
+  // Pass Cloudflare runtime to access env vars
+  events = await fetchGoogleCalendarEvents(Astro.locals.runtime);
   // If no events from calendar, use fallback data
   if (events.length === 0) {
     console.warn('No events from Google Calendar, using fallback data');

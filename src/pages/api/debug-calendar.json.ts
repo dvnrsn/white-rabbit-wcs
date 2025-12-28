@@ -1,15 +1,22 @@
 export const prerender = false;
 
-export async function GET() {
+export async function GET({ locals }: { locals: any }) {
+  const runtime = locals.runtime;
+
+  // Try to get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
   const calendarId =
-    import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID || "NOT_SET";
+    runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID ||
+    import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID ||
+    "NOT_SET";
 
   const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(calendarId)}/public/basic.ics`;
 
   const debugInfo: any = {
     calendarId,
     calendarUrl,
-    envVarPresent: !!import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID,
+    envVarPresent: !!(runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID || import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID),
+    runtimeAvailable: !!runtime,
+    runtimeEnvAvailable: !!runtime?.env,
     timestamp: new Date().toISOString(),
   };
 

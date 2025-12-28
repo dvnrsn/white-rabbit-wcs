@@ -16,12 +16,15 @@ export interface CalendarEvent {
   url?: string;
 }
 
-// This will be set via environment variable or config
-// For now, using a placeholder - you'll replace this with your actual calendar ID
-const CALENDAR_ID =
-  import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID || "YOUR_CALENDAR_ID@group.calendar.google.com";
+export async function fetchGoogleCalendarEvents(
+  runtime?: { env: Record<string, string> }
+): Promise<CalendarEvent[]> {
+  // Get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
+  const CALENDAR_ID =
+    runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID ||
+    import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID ||
+    "YOUR_CALENDAR_ID@group.calendar.google.com";
 
-export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
   // Check if calendar ID is set
   if (!CALENDAR_ID || CALENDAR_ID === "YOUR_CALENDAR_ID@group.calendar.google.com") {
     console.error("Google Calendar ID not configured");
