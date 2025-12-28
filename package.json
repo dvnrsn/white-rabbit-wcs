@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "lint": "oxlint --type-aware",
+    "format": "oxfmt"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",
@@ -14,6 +16,9 @@
     "ical.js": "^2.2.1"
   },
   "devDependencies": {
+    "oxfmt": "^0.20.0",
+    "oxlint": "^1.35.0",
+    "oxlint-tsgolint": "^0.10.0",
     "wrangler": "^4.54.0"
   }
 }
