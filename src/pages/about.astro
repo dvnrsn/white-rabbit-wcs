@@ -1,0 +1,257 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About - White Rabbit WCS"
+  description="The story of Phoenix's premier West Coast Swing community. Follow the white rabbit into a world where community comes first."
+>
+  <main class="about-page">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title gradient-text">Follow the White Rabbit</h1>
+        <p class="page-subtitle">The Story of Phoenix's Premier WCS Community</p>
+      </header>
+
+      <div class="story-content">
+        <section class="story-section">
+          <div class="section-icon">🐇</div>
+          <h2 class="section-title">> The Beginning</h2>
+          <p>
+            In 2018-2019, Phoenix's West Coast Swing scene had stalled. Younger dancers
+            craved modern music and fresh energy, but established venues weren't listening.
+            When COVID restrictions lifted in Arizona, we saw an opportunity.
+          </p>
+          <p>
+            What started as intimate speakeasy-style home socials—just friends dancing
+            in living rooms—evolved into something extraordinary. During our final home
+            event, a joke about "90's rave style" marketing with bunny stencils and a
+            "Follow the White Rabbit" message sparked something real. The name stuck,
+            and White Rabbit Society was born.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <div class="section-icon">💚</div>
+          <h2 class="section-title">> Community First, Always</h2>
+          <p>
+            White Rabbit isn't about profit—it's about people. We operate on a simple
+            philosophy: put the community's needs first, and everything else follows.
+          </p>
+          <p>
+            Every year, we survey our dancers. Real voices. Real input. Real change.
+            This isn't just our community—it's yours. From 24 dancers in a tiny venue
+            to 130-200 at our monthly socials, we've grown because we listen.
+          </p>
+          <p>
+            We celebrate what matters: connection, growth, and the joy of dance.
+            Our annual Social Dance Champions aren't crowned by judges—they're
+            chosen by you, the community, through democratic voting.
+          </p>
+        </section>
+
+        <section class="story-section">
+          <div class="section-icon">✨</div>
+          <h2 class="section-title">> What Makes Us Different</h2>
+          <p>
+            We believe in going far, together. Not fast, alone. This philosophy
+            shapes everything we do:
+          </p>
+          <ul class="features-list">
+            <li>
+              <strong>Modern Energy:</strong> Contemporary music, fresh vibes, and
+              an atmosphere that welcomes everyone
+            </li>
+            <li>
+              <strong>True Community:</strong> Annual surveys, democratic voting,
+              and genuine care for every dancer's experience
+            </li>
+            <li>
+              <strong>All Levels Welcome:</strong> Whether you're stepping onto
+              the floor for the first time or you're a seasoned pro, there's a
+              place for you here
+            </li>
+            <li>
+              <strong>Phoenix Proud:</strong> We're building something special
+              right here in the Valley—Arizona's premier West Coast Swing destination
+            </li>
+          </ul>
+        </section>
+
+        <section class="story-section">
+          <div class="section-icon">🌟</div>
+          <h2 class="section-title">> The Journey Continues</h2>
+          <p>
+            From speakeasy socials to Arizona's biggest monthly West Coast Swing
+            event, White Rabbit has become more than a dance community—it's a
+            movement. A place where the music is modern, the energy is electric,
+            and every dancer matters.
+          </p>
+          <p>
+            The white rabbit led us down this path. Now we're inviting you to
+            follow it too.
+          </p>
+          <p class="cta-text">
+            Ready to see how deep the rabbit hole goes?
+          </p>
+        </section>
+
+        <div class="quote-block">
+          <blockquote>
+            "If you want to go fast, go alone.<br>
+            If you want to go far, go together."
+          </blockquote>
+          <cite>— African Proverb</cite>
+        </div>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .about-page {
+    padding: 3rem 0;
+    min-height: calc(100vh - 80px);
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .story-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .story-section {
+    margin-bottom: 4rem;
+    position: relative;
+  }
+
+  .section-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0.8;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    font-family: var(--font-primary);
+  }
+
+  .story-section p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+  }
+
+  .features-list li {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+    font-size: 1.1rem;
+  }
+
+  .features-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent-primary);
+    font-size: 1.2rem;
+  }
+
+  .features-list strong {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .quote-block {
+    margin: 4rem 0;
+    padding: 3rem 2rem;
+    background: var(--bg-secondary);
+    border-left: 4px solid var(--accent-primary);
+    text-align: center;
+  }
+
+  blockquote {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    font-style: italic;
+    margin: 0 0 1rem 0;
+    line-height: 1.6;
+  }
+
+  cite {
+    color: var(--text-muted);
+    font-size: 1rem;
+    font-style: normal;
+  }
+
+  .cta-text {
+    font-size: 1.3rem;
+    color: var(--accent-primary);
+    font-weight: 600;
+    text-align: center;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    .about-page {
+      padding: 2rem 0;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .story-section {
+      margin-bottom: 3rem;
+    }
+
+    .section-icon {
+      font-size: 2rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+    }
+
+    .story-section p,
+    .features-list li {
+      font-size: 1rem;
+    }
+
+    blockquote {
+      font-size: 1.2rem;
+    }
+
+    .quote-block {
+      padding: 2rem 1.5rem;
+    }
+  }
+</style>
