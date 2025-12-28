@@ -22,18 +22,35 @@ const CALENDAR_ID =
   import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID || "YOUR_CALENDAR_ID@group.calendar.google.com";
 
 export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
+  // Check if calendar ID is set
+  if (!CALENDAR_ID || CALENDAR_ID === "YOUR_CALENDAR_ID@group.calendar.google.com") {
+    console.error("Google Calendar ID not configured");
+    return [];
+  }
+
   try {
     // Google Calendar public iCal URL format
     const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
 
+    console.log("Fetching calendar from:", calendarUrl);
+
     const response = await fetch(calendarUrl);
 
     if (!response.ok) {
-      throw new Error(`Failed to fetch calendar: ${response.statusText}`);
+      const errorText = await response.text();
+      console.error(`Calendar fetch failed (${response.status}):`, errorText.substring(0, 200));
+      throw new Error(
+        `Failed to fetch calendar: ${response.status} ${response.statusText}`
+      );
     }
 
     const icalData = await response.text();
-    return parseICalData(icalData);
+    console.log(`Fetched iCal data, length: ${icalData.length}`);
+
+    const events = parseICalData(icalData);
+    console.log(`Parsed ${events.length} events from calendar`);
+
+    return events;
   } catch (error) {
     console.error("Error fetching Google Calendar:", error);
     // Return empty array on error to fail gracefully
