@@ -1,0 +1,163 @@
+---
+import { getCollection } from "astro:content";
+
+// Get all posts and sort by date (newest first)
+const allPosts = await getCollection("posts");
+
+const posts = allPosts
+  .map((post) => {
+    // Extract date from filename (YYYY-MM-DD-slug.md)
+    const match = post.id.match(/^(\d{4}-\d{2}-\d{2})/);
+    const dateStr = match ? match[1] : null;
+    const date = dateStr ? new Date(dateStr) : new Date();
+
+    return { ...post, date };
+  })
+  .sort((a, b) => b.date.getTime() - a.date.getTime())
+  .slice(0, 5); // Show latest 5 posts
+---
+
+{
+  posts.length > 0 && (
+    <section class="recent-posts">
+      <div class="container">
+        <h2 class="section-title gradient-text">Latest Updates</h2>
+
+        <div class="posts-list">
+          {posts.map(async (post: (typeof posts)[0]) => {
+            const { Content } = await post.render();
+            const dateStr = post.date.toLocaleDateString("en-US", {
+              month: "short",
+              day: "numeric",
+              year: "numeric",
+            });
+
+            return (
+              <article class="post-card">
+                <div class="post-meta">
+                  <span class="post-date">{dateStr}</span>
+                  {post.data.author && (
+                    <span class="post-author">by {post.data.author}</span>
+                  )}
+                </div>
+                <div class="post-content">
+                  <Content />
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style>
+  .recent-posts {
+    padding: 4rem 0;
+    background: var(--bg-primary);
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 3rem;
+    letter-spacing: 0.05em;
+  }
+
+  .posts-list {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .post-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 2rem;
+    transition: all 0.3s;
+  }
+
+  .post-card:hover {
+    border-color: var(--border-accent);
+    box-shadow: var(--shadow-card);
+    transform: translateX(4px);
+  }
+
+  .post-meta {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .post-date {
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+  }
+
+  .post-author {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  .post-content {
+    color: var(--text-secondary);
+    line-height: 1.8;
+  }
+
+  .post-content :global(p) {
+    margin: 0 0 1rem 0;
+  }
+
+  .post-content :global(p:last-child) {
+    margin-bottom: 0;
+  }
+
+  .post-content :global(strong) {
+    color: var(--text-primary);
+    font-weight: 600;
+  }
+
+  .post-content :global(a) {
+    color: var(--accent-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-primary);
+    transition: all 0.2s;
+  }
+
+  .post-content :global(a:hover) {
+    color: var(--text-primary);
+    border-bottom-color: var(--text-primary);
+  }
+
+  .post-content :global(ul),
+  .post-content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .post-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  @media (max-width: 768px) {
+    .recent-posts {
+      padding: 3rem 0;
+    }
+
+    .post-card {
+      padding: 1.5rem;
+    }
+
+    .section-title {
+      margin-bottom: 2rem;
+    }
+  }
+</style>
