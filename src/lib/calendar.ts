@@ -26,10 +26,7 @@ export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
     // Google Calendar public iCal URL format
     const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
 
-    const response = await fetch(calendarUrl, {
-      // Cache for 5 minutes
-      next: { revalidate: 300 },
-    });
+    const response = await fetch(calendarUrl);
 
     if (!response.ok) {
       throw new Error(`Failed to fetch calendar: ${response.statusText}`);
