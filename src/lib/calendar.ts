@@ -42,7 +42,9 @@ export async function fetchGoogleCalendarEvents(calendarId?: string) {
     const icalData = await response.text();
     console.log(`Fetched iCal data, length: ${icalData.length}`);
 
+    console.log(icalData);
     const events = parseICalData(icalData);
+    console.log(events);
     console.log(`Parsed ${events.length} events from calendar`);
 
     return events;
@@ -61,11 +63,27 @@ function parseICalData(icalData: string): CalendarEvent[] {
   return vevents.map((vevent) => {
     const event = new ICAL.Event(vevent);
 
-    // Extract event details using ICAL.Time directly to preserve timezone
-    const startDate = event.startDate;
-    const endDate = event.endDate;
+    // Extract event details and ALWAYS convert to Arizona time (MST, UTC-7, no DST)
+    // Don't rely on local system timezone
+    let startDate = event.startDate.clone();
+    let endDate = event.endDate.clone();
 
-    // Format date and time from ICAL.Time properties (preserves original timezone)
+    // Convert to UTC first, then adjust to Arizona time
+    if (startDate.zone && startDate.zone.tzid !== 'UTC') {
+      // Convert to UTC first if it's in another timezone
+      startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
+    }
+    // Adjust from UTC to MST (UTC-7)
+    startDate.adjust(0, -7, 0, 0);
+
+    if (endDate.zone && endDate.zone.tzid !== 'UTC') {
+      // Convert to UTC first if it's in another timezone
+      endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
+    }
+    // Adjust from UTC to MST (UTC-7)
+    endDate.adjust(0, -7, 0, 0);
+
+    // Format date and time from converted ICAL.Time
     const dateStr = formatDate(startDate);
     const startTimeStr = formatTime(startDate);
     const endTimeStr = formatTime(endDate);
