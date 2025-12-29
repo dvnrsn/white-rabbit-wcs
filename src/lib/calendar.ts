@@ -16,16 +16,8 @@ export interface CalendarEvent {
   url?: string;
 }
 
-type CloudflareRuntime = import("@astrojs/cloudflare").Runtime<Env>;
-
-export async function fetchGoogleCalendarEvents(
-  runtime?: CloudflareRuntime,
-): Promise<CalendarEvent[]> {
-  // Get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
-  const CALENDAR_ID =
-    runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID ||
-    import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID ||
-    "YOUR_CALENDAR_ID@group.calendar.google.com";
+export async function fetchGoogleCalendarEvents(calendarId?: string) {
+  const CALENDAR_ID = calendarId || "YOUR_CALENDAR_ID@group.calendar.google.com";
 
   // Check if calendar ID is set
   if (!CALENDAR_ID || CALENDAR_ID === "YOUR_CALENDAR_ID@group.calendar.google.com") {

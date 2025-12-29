@@ -13,8 +13,9 @@ let calendarError: string | null = null;
 let usingFallback = false;
 
 try {
-  // Pass Cloudflare runtime to access env vars
-  events = await fetchGoogleCalendarEvents(Astro.locals.runtime);
+  // Get calendar ID from Cloudflare runtime env vars
+  const calendarId = Astro.locals.runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID;
+  events = await fetchGoogleCalendarEvents(calendarId);
   // If no events from calendar, use fallback data
   if (events.length === 0) {
     console.warn('No events from Google Calendar, using fallback data');
