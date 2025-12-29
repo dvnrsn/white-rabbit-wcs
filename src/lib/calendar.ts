@@ -61,11 +61,11 @@ function parseICalData(icalData: string): CalendarEvent[] {
   return vevents.map((vevent) => {
     const event = new ICAL.Event(vevent);
 
-    // Extract event details
-    const startDate = event.startDate.toJSDate();
-    const endDate = event.endDate.toJSDate();
+    // Extract event details using ICAL.Time directly to preserve timezone
+    const startDate = event.startDate;
+    const endDate = event.endDate;
 
-    // Format date and time in local timezone (not UTC)
+    // Format date and time from ICAL.Time properties (preserves original timezone)
     const dateStr = formatDate(startDate);
     const startTimeStr = formatTime(startDate);
     const endTimeStr = formatTime(endDate);
@@ -93,17 +93,18 @@ function parseICalData(icalData: string): CalendarEvent[] {
   });
 }
 
-function formatDate(date: Date): string {
-  // Format date in local timezone, not UTC
-  const year = date.getFullYear();
-  const month = (date.getMonth() + 1).toString().padStart(2, "0");
-  const day = date.getDate().toString().padStart(2, "0");
+function formatDate(date: ICAL.Time): string {
+  // Use ICAL.Time properties directly to preserve timezone
+  const year = date.year;
+  const month = date.month.toString().padStart(2, "0");
+  const day = date.day.toString().padStart(2, "0");
   return `${year}-${month}-${day}`;
 }
 
-function formatTime(date: Date): string {
-  const hours = date.getHours().toString().padStart(2, "0");
-  const minutes = date.getMinutes().toString().padStart(2, "0");
+function formatTime(date: ICAL.Time): string {
+  // Use ICAL.Time properties directly to preserve timezone
+  const hours = date.hour.toString().padStart(2, "0");
+  const minutes = date.minute.toString().padStart(2, "0");
   return `${hours}:${minutes}`;
 }
 
