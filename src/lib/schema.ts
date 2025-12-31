@@ -12,13 +12,12 @@ export function generateOrganizationSchema() {
     url: "https://whiterabbitwcs.com",
     logo: "https://whiterabbitwcs.com/logo.png",
     description:
-      "Phoenix, Arizona's West Coast Swing dance community. Find WCS events, socials, workshops, and connect with dancers across Arizona.",
+      "Arizona's West Coast Swing dance community. Find WCS events, socials, workshops, and connect with dancers across Arizona.",
     areaServed: {
-      "@type": "City",
-      name: "Phoenix",
+      "@type": "State",
+      name: "Arizona",
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Phoenix",
         addressRegion: "AZ",
         addressCountry: "US",
       },
@@ -56,12 +55,16 @@ export function generateEventSchema(event: CalendarEvent) {
 
   // Add location if venue is available
   if (event.venue) {
+    // Extract city from address (format: "123 Street, Phoenix, AZ 85001")
+    const cityMatch = event.address?.match(/,\s*([^,]+),\s*AZ/);
+    const city = cityMatch ? cityMatch[1].trim() : "Phoenix";
+
     schema.location = {
       "@type": "Place",
       name: event.venue,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Phoenix",
+        addressLocality: city,
         addressRegion: "AZ",
         addressCountry: "US",
       },
@@ -115,6 +118,10 @@ export function generateVenueSchema(venue: {
   phone?: string;
   website?: string;
 }) {
+  // Extract city from address if available
+  const cityMatch = venue.address?.match(/,\s*([^,]+),\s*AZ/);
+  const city = cityMatch ? cityMatch[1].trim() : "Phoenix";
+
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
@@ -123,7 +130,7 @@ export function generateVenueSchema(venue: {
       ? {
           "@type": "PostalAddress",
           streetAddress: venue.address,
-          addressLocality: "Phoenix",
+          addressLocality: city,
           addressRegion: "AZ",
           addressCountry: "US",
         }

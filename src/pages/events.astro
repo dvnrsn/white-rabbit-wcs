@@ -57,7 +57,63 @@ const schema = generateEventListSchema(upcomingEvents);
     <div class="container">
       <header class="page-header">
         <h1 class="page-title gradient-text">Events</h1>
-        <p class="page-subtitle">Phoenix, Arizona</p>
+        <div class="filters-container">
+          <button id="filter-trigger" class="filter-trigger" aria-label="Open filters">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
+            </svg>
+            <span class="filter-trigger-text">Filters</span>
+            <span id="filter-badge" class="filter-badge hidden">2</span>
+          </button>
+
+          <div id="filter-dropdown" class="filter-dropdown hidden">
+          <div class="filter-section">
+            <div class="filter-section-header">Type</div>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="type" value="all" checked>
+                <span>All Events</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="type" value="social">
+                <span>Socials</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="type" value="workshop,class">
+                <span>Workshops & Classes</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="type" value="competition">
+                <span>Competitions</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="filter-divider"></div>
+
+          <div class="filter-section">
+            <div class="filter-section-header">City</div>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="radio" name="city" value="all" checked>
+                <span>All Cities</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="city" value="Phoenix">
+                <span>Phoenix</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="city" value="Tucson">
+                <span>Tucson</span>
+              </label>
+              <label class="filter-option">
+                <input type="radio" name="city" value="Prescott">
+                <span>Prescott</span>
+              </label>
+            </div>
+          </div>
+          </div>
+        </div>
       </header>
 
       {usingFallback && (
@@ -72,22 +128,24 @@ const schema = generateEventListSchema(upcomingEvents);
         </div>
       )}
 
-      <div class="events-filters" id="events-filters">
-        <button class="filter-btn active" data-filter="all">All Events</button>
-        <button class="filter-btn" data-filter="social">Socials</button>
-        <button class="filter-btn" data-filter="workshop">Workshops</button>
-        <button class="filter-btn" data-filter="competition">Competitions</button>
-      </div>
-
       {upcomingEvents.length > 0 && (
         <section class="events-section">
-          <h2 class="section-title">> Upcoming Events</h2>
           <div class="events-list">
-            {upcomingEvents.map(event => (
-              <div class="event-item" data-type={event.type}>
-                <EventCard event={event} />
-              </div>
-            ))}
+            {upcomingEvents.map(event => {
+              // Extract city from address (format: "123 Street, Phoenix, AZ 85001")
+              const cityMatch = event.address.match(/,\s*([^,]+),\s*AZ/);
+              const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
+
+              // Map Phoenix metro area cities to "Phoenix"
+              const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
+              const city = phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
+
+              return (
+                <div class="event-item" data-type={event.type} data-city={city}>
+                  <EventCard event={event} />
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
@@ -96,11 +154,21 @@ const schema = generateEventListSchema(upcomingEvents);
         <section class="events-section past-events">
           <h2 class="section-title">> Past Events</h2>
           <div class="events-list">
-            {pastEvents.map(event => (
-              <div class="event-item" data-type={event.type}>
-                <EventCard event={event} />
-              </div>
-            ))}
+            {pastEvents.map(event => {
+              // Extract city from address (format: "123 Street, Phoenix, AZ 85001")
+              const cityMatch = event.address.match(/,\s*([^,]+),\s*AZ/);
+              const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
+
+              // Map Phoenix metro area cities to "Phoenix"
+              const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
+              const city = phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
+
+              return (
+                <div class="event-item" data-type={event.type} data-city={city}>
+                  <EventCard event={event} />
+                </div>
+              );
+            })}
           </div>
         </section>
       )}
@@ -116,7 +184,6 @@ const schema = generateEventListSchema(upcomingEvents);
 
 <style>
   .events-page {
-    padding: 3rem 0;
     min-height: calc(100vh - 80px);
   }
 
@@ -147,14 +214,17 @@ const schema = generateEventListSchema(upcomingEvents);
   }
 
   .page-header {
-    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 3rem;
+    gap: 1rem;
   }
 
   .page-title {
     font-size: clamp(2.5rem, 8vw, 4rem);
-    margin-bottom: 0.5rem;
     letter-spacing: 0.1em;
+    margin: 0;
   }
 
   .page-subtitle {
@@ -164,34 +234,157 @@ const schema = generateEventListSchema(upcomingEvents);
     text-transform: uppercase;
   }
 
-  .events-filters {
+  .filters-container {
+    position: relative;
     display: flex;
-    gap: 1rem;
-    margin-bottom: 3rem;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-shrink: 0;
+  }
+
+  .filter-trigger {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    min-width: 44px;
     justify-content: center;
   }
 
-  .filter-btn {
-    padding: 0.75rem 1.5rem;
-    background: transparent;
-    border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    cursor: pointer;
-    transition: all 0.3s;
-    font-family: var(--font-primary);
-    font-size: 0.9rem;
+  .filter-trigger-text {
+    display: none;
   }
 
-  .filter-btn:hover {
+  .filter-trigger:hover {
     border-color: var(--accent-primary);
-    color: var(--text-primary);
+    background-color: var(--bg-primary);
   }
 
-  .filter-btn.active {
+  .filter-trigger svg {
+    color: var(--accent-primary);
+  }
+
+  .filter-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
     background: var(--accent-primary);
-    border-color: var(--accent-primary);
     color: var(--bg-primary);
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    min-width: 20px;
+    text-align: center;
+  }
+
+  .filter-badge.hidden {
+    display: none;
+  }
+
+  .filter-dropdown {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    min-width: 280px;
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+    z-index: 1000;
+    animation: dropdownFadeIn 0.2s ease-out;
+  }
+
+  .filter-dropdown.hidden {
+    display: none;
+  }
+
+  @keyframes dropdownFadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .filter-section {
+    padding: 1rem;
+  }
+
+  .filter-section-header {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+  }
+
+  .filter-options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .filter-option {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .filter-option:hover {
+    background: var(--bg-primary);
+  }
+
+  .filter-option input[type="radio"] {
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+  }
+
+  .filter-option input[type="radio"]:checked {
+    border-color: var(--accent-primary);
+  }
+
+  .filter-option input[type="radio"]:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 8px;
+    height: 8px;
+    background: var(--accent-primary);
+    border-radius: 50%;
+  }
+
+  .filter-option span {
+    color: var(--text-primary);
+    font-size: 0.95rem;
+  }
+
+  .filter-divider {
+    height: 1px;
+    background: var(--border-color);
   }
 
   .events-section {
@@ -246,48 +439,95 @@ const schema = generateEventListSchema(upcomingEvents);
   }
 
   @media (max-width: 768px) {
-    .events-page {
-      padding: 2rem 0;
-    }
-
     .page-header {
       margin-bottom: 2rem;
+      align-items: center;
     }
 
-    .events-filters {
-      gap: 0.5rem;
+    .page-title {
+      font-size: clamp(2rem, 8vw, 3rem);
     }
 
-    .filter-btn {
-      padding: 0.5rem 1rem;
-      font-size: 0.85rem;
+    .filter-dropdown {
+      right: 0;
+      min-width: 260px;
+      max-width: calc(100vw - 2rem);
     }
   }
 </style>
 
 <script>
-  // Event filtering
-  const filterBtns = document.querySelectorAll('.filter-btn');
+  // Filter dropdown functionality
+  const filterTrigger = document.getElementById('filter-trigger');
+  const filterDropdown = document.getElementById('filter-dropdown');
+  const filterBadge = document.getElementById('filter-badge');
   const eventItems = document.querySelectorAll('.event-item');
+  const typeRadios = document.querySelectorAll<HTMLInputElement>('input[name="type"]');
+  const cityRadios = document.querySelectorAll<HTMLInputElement>('input[name="city"]');
 
-  filterBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const filter = btn.getAttribute('data-filter');
+  let isDropdownOpen = false;
 
-      // Update active button
-      filterBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+  // Toggle dropdown
+  filterTrigger?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    isDropdownOpen = !isDropdownOpen;
+    filterDropdown?.classList.toggle('hidden', !isDropdownOpen);
+  });
 
-      // Filter events
-      eventItems.forEach(item => {
-        const eventType = item.getAttribute('data-type');
+  // Close dropdown when clicking outside
+  document.addEventListener('click', (e) => {
+    if (isDropdownOpen && !filterDropdown?.contains(e.target as Node)) {
+      isDropdownOpen = false;
+      filterDropdown?.classList.add('hidden');
+    }
+  });
 
-        if (filter === 'all' || eventType === filter) {
-          item.classList.remove('hidden');
-        } else {
-          item.classList.add('hidden');
-        }
-      });
+  // Prevent dropdown from closing when clicking inside
+  filterDropdown?.addEventListener('click', (e) => {
+    e.stopPropagation();
+  });
+
+  // Apply filters
+  function applyFilters() {
+    const currentTypeFilter = Array.from(typeRadios).find(r => r.checked)?.value || 'all';
+    const currentCityFilter = Array.from(cityRadios).find(r => r.checked)?.value || 'all';
+
+    // Update badge
+    let activeFilters = 0;
+    if (currentTypeFilter !== 'all') activeFilters++;
+    if (currentCityFilter !== 'all') activeFilters++;
+
+    if (activeFilters > 0) {
+      filterBadge?.classList.remove('hidden');
+      if (filterBadge) filterBadge.textContent = activeFilters.toString();
+    } else {
+      filterBadge?.classList.add('hidden');
+    }
+
+    // Filter events
+    eventItems.forEach(item => {
+      const eventType = item.getAttribute('data-type');
+      const eventCity = item.getAttribute('data-city');
+
+      // Handle comma-separated type values (e.g., "workshop,class")
+      const allowedTypes = currentTypeFilter.split(',');
+      const typeMatch = currentTypeFilter === 'all' || allowedTypes.includes(eventType || '');
+      const cityMatch = currentCityFilter === 'all' || eventCity === currentCityFilter;
+
+      if (typeMatch && cityMatch) {
+        item.classList.remove('hidden');
+      } else {
+        item.classList.add('hidden');
+      }
     });
+  }
+
+  // Listen to radio changes
+  typeRadios.forEach(radio => {
+    radio.addEventListener('change', applyFilters);
+  });
+
+  cityRadios.forEach(radio => {
+    radio.addEventListener('change', applyFilters);
   });
 </script>

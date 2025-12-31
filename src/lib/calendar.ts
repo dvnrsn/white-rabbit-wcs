@@ -14,6 +14,7 @@ export interface CalendarEvent {
   type: string;
   organizer: string;
   url?: string;
+  isRecurring?: boolean;
 }
 
 export async function fetchGoogleCalendarEvents(calendarId?: string) {
@@ -60,55 +61,103 @@ function parseICalData(icalData: string): CalendarEvent[] {
   const comp = new ICAL.Component(jcalData);
   const vevents = comp.getAllSubcomponents("vevent");
 
-  return vevents.map((vevent) => {
+  const allEvents: CalendarEvent[] = [];
+
+  vevents.forEach((vevent) => {
     const event = new ICAL.Event(vevent);
 
-    // Extract event details and ALWAYS convert to Arizona time (MST, UTC-7, no DST)
-    // Don't rely on local system timezone
-    let startDate = event.startDate.clone();
-    let endDate = event.endDate.clone();
+    // Check if this is a recurring event
+    if (event.isRecurring()) {
+      // Only show the next 2 occurrences
+      const iterator = event.iterator();
+      let count = 0;
+      const maxOccurrences = 2;
 
-    // Convert to UTC first, then adjust to Arizona time
-    if (startDate.zone && startDate.zone.tzid !== 'UTC') {
-      // Convert to UTC first if it's in another timezone
-      startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
+      let next;
+      while (count < maxOccurrences && (next = iterator.next())) {
+        // Check if this occurrence is excluded
+        if (event.isRecurrenceException(next)) {
+          continue; // Skip excluded dates
+        }
+
+        const occurrence = event.getOccurrenceDetails(next);
+        const startDate = occurrence.startDate.clone();
+        const endDate = occurrence.endDate.clone();
+
+        // Convert to Arizona time
+        let convertedStart = startDate;
+        let convertedEnd = endDate;
+
+        if (convertedStart.zone && convertedStart.zone.tzid !== 'UTC') {
+          convertedStart = convertedStart.convertToZone(ICAL.Timezone.utcTimezone);
+        }
+        convertedStart.adjust(0, -7, 0, 0);
+
+        if (convertedEnd.zone && convertedEnd.zone.tzid !== 'UTC') {
+          convertedEnd = convertedEnd.convertToZone(ICAL.Timezone.utcTimezone);
+        }
+        convertedEnd.adjust(0, -7, 0, 0);
+
+        const description = event.description || "";
+        const customFields = parseDescription(description);
+
+        allEvents.push({
+          id: `${event.uid}-${count}`,
+          title: event.summary || "Untitled Event",
+          description: customFields.description || description,
+          date: formatDate(convertedStart),
+          startTime: formatTime(convertedStart),
+          endTime: formatTime(convertedEnd),
+          venue: customFields.venue || event.location || "TBA",
+          address: event.location || "",
+          price: customFields.price || "Free",
+          level: customFields.level || "",
+          type: customFields.type || "social",
+          organizer: customFields.organizer || "White Rabbit WCS",
+          url: customFields.url || undefined,
+          isRecurring: true,
+        });
+
+        count++;
+      }
+    } else {
+      // Non-recurring event - process normally
+      let startDate = event.startDate.clone();
+      let endDate = event.endDate.clone();
+
+      // Convert to UTC first, then adjust to Arizona time
+      if (startDate.zone && startDate.zone.tzid !== 'UTC') {
+        startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
+      }
+      startDate.adjust(0, -7, 0, 0);
+
+      if (endDate.zone && endDate.zone.tzid !== 'UTC') {
+        endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
+      }
+      endDate.adjust(0, -7, 0, 0);
+
+      const description = event.description || "";
+      const customFields = parseDescription(description);
+
+      allEvents.push({
+        id: event.uid,
+        title: event.summary || "Untitled Event",
+        description: customFields.description || description,
+        date: formatDate(startDate),
+        startTime: formatTime(startDate),
+        endTime: formatTime(endDate),
+        venue: customFields.venue || event.location || "TBA",
+        address: event.location || "",
+        price: customFields.price || "Free",
+        level: customFields.level || "",
+        type: customFields.type || "social",
+        organizer: customFields.organizer || "White Rabbit WCS",
+        url: customFields.url || undefined,
+      });
     }
-    // Adjust from UTC to MST (UTC-7)
-    startDate.adjust(0, -7, 0, 0);
-
-    if (endDate.zone && endDate.zone.tzid !== 'UTC') {
-      // Convert to UTC first if it's in another timezone
-      endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
-    }
-    // Adjust from UTC to MST (UTC-7)
-    endDate.adjust(0, -7, 0, 0);
-
-    // Format date and time from converted ICAL.Time
-    const dateStr = formatDate(startDate);
-    const startTimeStr = formatTime(startDate);
-    const endTimeStr = formatTime(endDate);
-
-    // Parse description for custom fields
-    const description = event.description || "";
-    console.log(description);
-    const customFields = parseDescription(description);
-
-    return {
-      id: event.uid,
-      title: event.summary || "Untitled Event",
-      description: customFields.description || description,
-      date: dateStr,
-      startTime: startTimeStr,
-      endTime: endTimeStr,
-      venue: customFields.venue || event.location || "TBA",
-      address: event.location || "",
-      price: customFields.price || "Free",
-      level: customFields.level || "",
-      type: customFields.type || "social",
-      organizer: customFields.organizer || "White Rabbit WCS",
-      url: customFields.url || undefined,
-    };
   });
+
+  return allEvents;
 }
 
 function formatDate(date: ICAL.Time): string {
