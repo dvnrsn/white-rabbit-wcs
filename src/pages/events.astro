@@ -467,6 +467,34 @@ const schema = generateEventListSchema(upcomingEvents);
 
   let isDropdownOpen = false;
 
+  // Restore filters from localStorage
+  function restoreFilters() {
+    const savedTypeFilter = localStorage.getItem('white-rabbit-type-filter') || 'all';
+    const savedCityFilter = localStorage.getItem('white-rabbit-city-filter') || 'all';
+
+    // Set the radio buttons to saved values
+    typeRadios.forEach(radio => {
+      if (radio.value === savedTypeFilter) {
+        radio.checked = true;
+      }
+    });
+
+    cityRadios.forEach(radio => {
+      if (radio.value === savedCityFilter) {
+        radio.checked = true;
+      }
+    });
+
+    // Apply the filters
+    applyFilters();
+  }
+
+  // Save filters to localStorage
+  function saveFilters(typeFilter: string, cityFilter: string) {
+    localStorage.setItem('white-rabbit-type-filter', typeFilter);
+    localStorage.setItem('white-rabbit-city-filter', cityFilter);
+  }
+
   // Toggle dropdown
   filterTrigger?.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -491,6 +519,9 @@ const schema = generateEventListSchema(upcomingEvents);
   function applyFilters() {
     const currentTypeFilter = Array.from(typeRadios).find(r => r.checked)?.value || 'all';
     const currentCityFilter = Array.from(cityRadios).find(r => r.checked)?.value || 'all';
+
+    // Save to localStorage
+    saveFilters(currentTypeFilter, currentCityFilter);
 
     // Update badge
     let activeFilters = 0;
@@ -530,4 +561,7 @@ const schema = generateEventListSchema(upcomingEvents);
   cityRadios.forEach(radio => {
     radio.addEventListener('change', applyFilters);
   });
+
+  // Restore filters on page load
+  restoreFilters();
 </script>

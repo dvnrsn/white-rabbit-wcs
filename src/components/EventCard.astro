@@ -54,6 +54,9 @@ const cleanVenueName = (venue: string) => {
   if (venueLower.includes('nrg ballroom')) {
     return 'NRG Ballroom';
   }
+  if (venueLower.includes('dream dance')) {
+    return 'Dream Dance';
+  }
 
   return venue;
 };
@@ -86,7 +89,7 @@ const displayVenue = cleanVenueName(event.venue);
     <div class="event-details">
       <div class="detail-item">
         <span class="detail-icon">⏰</span>
-        <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
+        <span>{formatTime(event.startTime)}</span>
       </div>
 
       <div class="detail-item">
@@ -99,20 +102,6 @@ const displayVenue = cleanVenueName(event.venue);
           {displayVenue}
         </button>
       </div>
-
-      <div class="detail-item">
-        <span class="detail-icon">💵</span>
-        <span>{event.price}</span>
-      </div>
-
-      {
-        event.level && (
-          <div class="detail-item">
-            <span class="detail-icon">🎯</span>
-            <span>{event.level}</span>
-          </div>
-        )
-      }
     </div>
 
     <div class="event-footer">
@@ -121,8 +110,9 @@ const displayVenue = cleanVenueName(event.venue);
         class="event-link"
         data-event-details
         data-event-id={event.id}
+        aria-label="View event details"
       >
-        Learn More →
+        →
       </button>
     </div>
   </div>
@@ -143,9 +133,36 @@ const displayVenue = cleanVenueName(event.venue);
   <div class="event-dialog-content">
     <h2 class="dialog-title">{event.title}</h2>
 
+    <div class="dialog-meta">
+      <div class="dialog-meta-item">
+        <span class="detail-icon">⏰</span>
+        <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
+      </div>
+      <div class="dialog-meta-item">
+        <span class="detail-icon">📍</span>
+        <span>{displayVenue}</span>
+      </div>
+      <div class="dialog-meta-item">
+        <span class="detail-icon">💵</span>
+        <span>{event.price}</span>
+      </div>
+      {event.level && (
+        <div class="dialog-meta-item">
+          <span class="detail-icon">🎯</span>
+          <span>{event.level}</span>
+        </div>
+      )}
+    </div>
+
     <div class="dialog-description">
       <p>{event.description}</p>
     </div>
+
+    {event.url && (
+      <a href={event.url} target="_blank" rel="noopener noreferrer" class="dialog-external-link">
+        More Info →
+      </a>
+    )}
 
     <button class="dialog-close-btn" data-close-event-dialog>Close</button>
   </div>
@@ -354,7 +371,7 @@ const displayVenue = cleanVenueName(event.venue);
     border: none;
     color: var(--accent-primary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 1.5rem;
     transition: all 0.2s;
     font-weight: 500;
     cursor: pointer;
