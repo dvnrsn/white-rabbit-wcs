@@ -14,6 +14,8 @@ export interface CalendarEvent {
   type: string;
   organizer: string;
   url?: string;
+  instagram?: string;
+  website?: string;
   isRecurring?: boolean;
 }
 
@@ -115,6 +117,8 @@ function parseICalData(icalData: string): CalendarEvent[] {
           type: customFields.type || "social",
           organizer: customFields.organizer || "White Rabbit WCS",
           url: customFields.url || undefined,
+          instagram: customFields.instagram || undefined,
+          website: customFields.website || undefined,
           isRecurring: true,
         });
 
@@ -153,6 +157,8 @@ function parseICalData(icalData: string): CalendarEvent[] {
         type: customFields.type || "social",
         organizer: customFields.organizer || "White Rabbit WCS",
         url: customFields.url || undefined,
+        instagram: customFields.instagram || undefined,
+        website: customFields.website || undefined,
       });
     }
   });
@@ -180,6 +186,8 @@ function parseDescription(description: string): Partial<CalendarEvent> {
 
   // Clean up HTML formatting that Google Calendar adds
   let cleanDescription = description
+    .replace(/<a[^>]*><br\s*\/?><\/a>/gi, "") // Remove empty links like <a href="..."><br></a>
+    .replace(/<a[^>]*>\s*<\/a>/gi, "") // Remove empty links
     .replace(/<\/?span[^>]*>/g, "") // Remove <span> tags
     .replace(/<br\s*\/?>/gi, "\n") // Convert <br> to newlines
     .replace(/&nbsp;/g, " "); // Convert &nbsp; to spaces
@@ -190,7 +198,7 @@ function parseDescription(description: string): Partial<CalendarEvent> {
   let descriptionLines: string[] = [];
 
   for (const line of lines) {
-    const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL):\s*(.+)$/i);
+    const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
     if (match) {
       const [, field, value] = match;
       const fieldLower = field.toLowerCase() as keyof CalendarEvent;

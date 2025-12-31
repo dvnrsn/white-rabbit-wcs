@@ -1,4 +1,6 @@
 ---
+import { Instagram, X } from 'lucide-astro';
+
 interface Props {
   event: {
     id: string;
@@ -14,6 +16,8 @@ interface Props {
     type: string;
     organizer: string;
     url?: string;
+    instagram?: string;
+    website?: string;
     isRecurring?: boolean;
   };
 }
@@ -62,6 +66,18 @@ const cleanVenueName = (venue: string) => {
 };
 
 const displayVenue = cleanVenueName(event.venue);
+
+// Extract Instagram handle from URL
+const getInstagramHandle = (url: string) => {
+  try {
+    const match = url.match(/instagram\.com\/([^\/\?]+)/i);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+};
+
+const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : null;
 ---
 
 <article class="event-card">
@@ -102,14 +118,18 @@ const displayVenue = cleanVenueName(event.venue);
           {displayVenue}
         </button>
       </div>
+
+      <div class="detail-item detail-item-price">
+        <span class="detail-icon">💵</span>
+        <span>{event.price}</span>
+      </div>
     </div>
 
     <div class="event-footer">
       <span class="event-organizer">by {event.organizer}</span>
       <button
         class="event-link"
-        data-event-details
-        data-event-id={event.id}
+        data-event-details={event.id}
         aria-label="View event details"
       >
         →
@@ -118,7 +138,7 @@ const displayVenue = cleanVenueName(event.venue);
   </div>
 </article>
 
-<dialog data-maps-dialog>
+<dialog data-maps-dialog={event.id}>
   <div class="maps-modal">
     <button class="maps-option" data-maps-option="apple">
       <span>Apple</span>
@@ -129,8 +149,12 @@ const displayVenue = cleanVenueName(event.venue);
   </div>
 </dialog>
 
-<dialog data-event-dialog>
+<dialog data-event-dialog={event.id}>
   <div class="event-dialog-content">
+    <button class="dialog-close-x" data-close-event-dialog aria-label="Close">
+      <X size={20} />
+    </button>
+
     <h2 class="dialog-title">{event.title}</h2>
 
     <div class="dialog-meta">
@@ -158,10 +182,13 @@ const displayVenue = cleanVenueName(event.venue);
       <p>{event.description}</p>
     </div>
 
-    {event.url && (
-      <a href={event.url} target="_blank" rel="noopener noreferrer" class="dialog-external-link">
-        More Info →
-      </a>
+    {instagramHandle && (
+      <div class="dialog-instagram-text">
+        <Instagram size={16} />
+        <a href={event.instagram} target="_blank" rel="noopener noreferrer">
+          {instagramHandle}
+        </a>
+      </div>
     )}
 
     <button class="dialog-close-btn" data-close-event-dialog>Close</button>
@@ -170,6 +197,7 @@ const displayVenue = cleanVenueName(event.venue);
 
 <script>
   let currentAddress = "";
+  let currentEventId = "";
 
   // Detect if user is on an Apple device
   const isAppleDevice = /(iPhone|iPad|iPod|Mac)/i.test(navigator.userAgent);
@@ -177,19 +205,20 @@ const displayVenue = cleanVenueName(event.venue);
   document.addEventListener("click", (e) => {
     const target = e.target as HTMLElement;
     const venueButton = target.closest("[data-venue-button]");
-    const mapsDialog = document.querySelector(
-      "[data-maps-dialog]"
-    ) as HTMLDialogElement;
     const mapsOption = target.closest("[data-maps-option]");
     const eventDetailsButton = target.closest("[data-event-details]");
-    const eventDialog = document.querySelector(
-      "[data-event-dialog]"
-    ) as HTMLDialogElement;
     const closeEventDialog = target.closest("[data-close-event-dialog]");
 
     if (venueButton) {
       e.preventDefault();
       currentAddress = (venueButton as HTMLElement).dataset.address || "";
+      // Get the event ID from the card
+      const card = venueButton.closest(".event-card");
+      currentEventId = card?.querySelector("[data-event-details]")?.getAttribute("data-event-details") || "";
+
+      const mapsDialog = document.querySelector(
+        `[data-maps-dialog="${currentEventId}"]`
+      ) as HTMLDialogElement;
 
       if (isAppleDevice) {
         // Show modal for Apple devices
@@ -208,32 +237,30 @@ const displayVenue = cleanVenueName(event.venue);
         window.location.href = `https://maps.google.com/?q=${query}`;
       }
 
+      const mapsDialog = document.querySelector(
+        `[data-maps-dialog="${currentEventId}"]`
+      ) as HTMLDialogElement;
       mapsDialog?.close();
     } else if (eventDetailsButton) {
+      const eventId = (eventDetailsButton as HTMLElement).getAttribute("data-event-details");
+      const eventDialog = document.querySelector(
+        `[data-event-dialog="${eventId}"]`
+      ) as HTMLDialogElement;
       eventDialog?.showModal();
     } else if (closeEventDialog) {
-      eventDialog?.close();
+      // Find the dialog that contains this button
+      const dialog = closeEventDialog.closest("dialog") as HTMLDialogElement;
+      dialog?.close();
     }
   });
 
-  // Close dialogs when clicking backdrop
-  document
-    .querySelector("[data-maps-dialog]")
-    ?.addEventListener("click", (e) => {
-      const dialog = e.target as HTMLDialogElement;
-      if (e.target === dialog) {
-        dialog.close();
-      }
-    });
-
-  document
-    .querySelector("[data-event-dialog]")
-    ?.addEventListener("click", (e) => {
-      const dialog = e.target as HTMLDialogElement;
-      if (e.target === dialog) {
-        dialog.close();
-      }
-    });
+  // Close dialogs when clicking backdrop (using event delegation)
+  document.addEventListener("click", (e) => {
+    const target = e.target as HTMLElement;
+    if (target.tagName === "DIALOG") {
+      (target as HTMLDialogElement).close();
+    }
+  });
 </script>
 
 <style>
@@ -417,12 +444,39 @@ const displayVenue = cleanVenueName(event.venue);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    position: relative;
+  }
+
+  .dialog-close-x {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+  }
+
+  .dialog-close-x:hover {
+    color: var(--text-primary);
+  }
+
+  @media (max-width: 640px) {
+    .dialog-close-x {
+      display: none;
+    }
   }
 
   .dialog-title {
     color: var(--text-primary);
     margin: 0;
     font-size: 1.75rem;
+    padding-right: 2rem;
   }
 
   .dialog-meta {
@@ -451,21 +505,22 @@ const displayVenue = cleanVenueName(event.venue);
     white-space: pre-wrap;
   }
 
-  .dialog-external-link {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background: var(--accent-primary);
-    color: var(--bg-primary);
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.2s;
-    font-weight: 500;
+  .dialog-instagram-text {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
   }
 
-  .dialog-external-link:hover {
-    background: var(--text-primary);
-    color: var(--bg-primary);
-    transform: translateY(-2px);
+  .dialog-instagram-text a {
+    color: var(--accent-primary);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .dialog-instagram-text a:hover {
+    color: var(--text-primary);
   }
 
   .dialog-close-btn {
@@ -477,11 +532,18 @@ const displayVenue = cleanVenueName(event.venue);
     transition: all 0.2s;
     font-family: inherit;
     font-size: 0.9rem;
+    display: none;
   }
 
   .dialog-close-btn:hover {
     border-color: var(--accent-primary);
     color: var(--accent-primary);
+  }
+
+  @media (max-width: 640px) {
+    .dialog-close-btn {
+      display: block;
+    }
   }
 
   .venue-link {
@@ -587,6 +649,10 @@ const displayVenue = cleanVenueName(event.venue);
 
     .event-details {
       grid-template-columns: 1fr;
+    }
+
+    .detail-item-price {
+      display: none;
     }
   }
 </style>
