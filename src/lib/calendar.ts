@@ -75,14 +75,9 @@ function parseICalData(icalData: string): CalendarEvent[] {
       let count = 0;
       const maxOccurrences = 2;
 
-      let next;
+      let next: ICAL.Time | null;
       while (count < maxOccurrences && (next = iterator.next())) {
-        // Check if this occurrence is excluded
-        if (event.isRecurrenceException(next)) {
-          continue; // Skip excluded dates
-        }
-
-        const occurrence = event.getOccurrenceDetails(next);
+        const occurrence = event.getOccurrenceDetails(next!);
         const startDate = occurrence.startDate.clone();
         const endDate = occurrence.endDate.clone();
 
@@ -90,12 +85,12 @@ function parseICalData(icalData: string): CalendarEvent[] {
         let convertedStart = startDate;
         let convertedEnd = endDate;
 
-        if (convertedStart.zone && convertedStart.zone.tzid !== 'UTC') {
+        if (convertedStart.zone && convertedStart.zone.tzid !== "UTC") {
           convertedStart = convertedStart.convertToZone(ICAL.Timezone.utcTimezone);
         }
         convertedStart.adjust(0, -7, 0, 0);
 
-        if (convertedEnd.zone && convertedEnd.zone.tzid !== 'UTC') {
+        if (convertedEnd.zone && convertedEnd.zone.tzid !== "UTC") {
           convertedEnd = convertedEnd.convertToZone(ICAL.Timezone.utcTimezone);
         }
         convertedEnd.adjust(0, -7, 0, 0);
@@ -130,12 +125,12 @@ function parseICalData(icalData: string): CalendarEvent[] {
       let endDate = event.endDate.clone();
 
       // Convert to UTC first, then adjust to Arizona time
-      if (startDate.zone && startDate.zone.tzid !== 'UTC') {
+      if (startDate.zone && startDate.zone.tzid !== "UTC") {
         startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
       }
       startDate.adjust(0, -7, 0, 0);
 
-      if (endDate.zone && endDate.zone.tzid !== 'UTC') {
+      if (endDate.zone && endDate.zone.tzid !== "UTC") {
         endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
       }
       endDate.adjust(0, -7, 0, 0);
@@ -186,6 +181,14 @@ function parseDescription(description: string): Partial<CalendarEvent> {
 
   // Clean up HTML formatting that Google Calendar adds
   let cleanDescription = description
+    // Decode HTML entities first
+    .replace(/&lt;/g, "<")
+    .replace(/&gt;/g, ">")
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&amp;/g, "&")
+    // Remove all anchor tags completely
+    .replace(/<a[^>]*>([^<]*)<\/a>/gi, "$1") // Replace links with just their text content
     .replace(/<a[^>]*><br\s*\/?><\/a>/gi, "") // Remove empty links like <a href="..."><br></a>
     .replace(/<a[^>]*>\s*<\/a>/gi, "") // Remove empty links
     .replace(/<\/?span[^>]*>/g, "") // Remove <span> tags
@@ -198,7 +201,9 @@ function parseDescription(description: string): Partial<CalendarEvent> {
   let descriptionLines: string[] = [];
 
   for (const line of lines) {
-    const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
+    const match = line.match(
+      /^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i,
+    );
     if (match) {
       const [, field, value] = match;
       const fieldLower = field.toLowerCase() as keyof CalendarEvent;
@@ -207,7 +212,9 @@ function parseDescription(description: string): Partial<CalendarEvent> {
       if (fieldLower === "description") {
         descriptionLines.push(value.trim());
       } else {
-        fields[fieldLower] = value.trim();
+        // Lowercase the type field for consistent filtering
+        const processedValue = fieldLower === "type" ? value.trim().toLowerCase() : value.trim();
+        (fields as any)[fieldLower] = processedValue;
       }
     } else {
       descriptionLines.push(line);

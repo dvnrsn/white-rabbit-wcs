@@ -1,5 +1,5 @@
 ---
-import { Instagram, X } from 'lucide-astro';
+import { Instagram, X } from "lucide-astro";
 
 interface Props {
   event: {
@@ -49,17 +49,17 @@ const typeColors: Record<string, string> = {
 const cleanVenueName = (venue: string) => {
   const venueLower = venue.toLowerCase();
 
-  if (venueLower.includes('creative dance collective')) {
-    return 'Creative Dance Collective';
+  if (venueLower.includes("creative dance collective")) {
+    return "Creative Dance Collective";
   }
-  if (venueLower.includes('imperial ballroom')) {
-    return 'Imperial Ballroom';
+  if (venueLower.includes("imperial ballroom")) {
+    return "Imperial Ballroom";
   }
-  if (venueLower.includes('nrg ballroom')) {
-    return 'NRG Ballroom';
+  if (venueLower.includes("nrg ballroom")) {
+    return "NRG Ballroom";
   }
-  if (venueLower.includes('dream dance')) {
-    return 'Dream Dance';
+  if (venueLower.includes("dream dance")) {
+    return "Dream Dance";
   }
 
   return venue;
@@ -70,21 +70,20 @@ const displayVenue = cleanVenueName(event.venue);
 // Extract Instagram handle from URL
 const getInstagramHandle = (url: string) => {
   try {
-    const match = url.match(/instagram\.com\/([^\/\?]+)/i);
+    const match = url.match(/instagram\.com\/([^/?]+)/i);
     return match ? match[1] : null;
   } catch {
     return null;
   }
 };
 
-const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : null;
+const instagramHandle = event.instagram
+  ? getInstagramHandle(event.instagram)
+  : null;
 ---
 
 <article class="event-card">
-  <span
-    class="event-type"
-    style={`border-color: ${typeColors[event.type]}`}
-  >
+  <span class="event-type" style={`border-color: ${typeColors[event.type]}`}>
     {event.type}
   </span>
 
@@ -92,9 +91,7 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
     <div class="date-day">{day}</div>
     <div class="date-month">{monthName}</div>
     <div class="date-weekday">{dayName}</div>
-    {event.isRecurring && (
-      <span class="recurring-icon">🔁</span>
-    )}
+    {event.isRecurring && <span class="recurring-icon">🔁</span>}
   </div>
 
   <div class="event-content">
@@ -105,7 +102,7 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
     <div class="event-details">
       <div class="detail-item">
         <span class="detail-icon">⏰</span>
-        <span>{formatTime(event.startTime)}</span>
+        <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
       </div>
 
       <div class="detail-item">
@@ -170,26 +167,42 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
         <span class="detail-icon">💵</span>
         <span>{event.price}</span>
       </div>
-      {event.level && (
-        <div class="dialog-meta-item">
-          <span class="detail-icon">🎯</span>
-          <span>{event.level}</span>
-        </div>
-      )}
+      {
+        event.level && (
+          <div class="dialog-meta-item">
+            <span class="detail-icon">🎯</span>
+            <span>{event.level}</span>
+          </div>
+        )
+      }
     </div>
 
     <div class="dialog-description">
       <p>{event.description}</p>
     </div>
 
-    {instagramHandle && (
-      <div class="dialog-instagram-text">
-        <Instagram size={16} />
-        <a href={event.instagram} target="_blank" rel="noopener noreferrer">
-          {instagramHandle}
-        </a>
-      </div>
-    )}
+    <div class="dialog-social-links">
+      {
+        instagramHandle && (
+          <div class="dialog-social-text">
+            <Instagram size={16} />
+            <a href={event.instagram} target="_blank" rel="noopener noreferrer">
+              {instagramHandle}
+            </a>
+          </div>
+        )
+      }
+      {
+        event.website && (
+          <div class="dialog-social-text">
+            <span>🌐</span>
+            <a href={event.website} target="_blank" rel="noopener noreferrer">
+              Website
+            </a>
+          </div>
+        )
+      }
+    </div>
 
     <button class="dialog-close-btn" data-close-event-dialog>Close</button>
   </div>
@@ -214,7 +227,10 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
       currentAddress = (venueButton as HTMLElement).dataset.address || "";
       // Get the event ID from the card
       const card = venueButton.closest(".event-card");
-      currentEventId = card?.querySelector("[data-event-details]")?.getAttribute("data-event-details") || "";
+      currentEventId =
+        card
+          ?.querySelector("[data-event-details]")
+          ?.getAttribute("data-event-details") || "";
 
       const mapsDialog = document.querySelector(
         `[data-maps-dialog="${currentEventId}"]`
@@ -242,11 +258,17 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
       ) as HTMLDialogElement;
       mapsDialog?.close();
     } else if (eventDetailsButton) {
-      const eventId = (eventDetailsButton as HTMLElement).getAttribute("data-event-details");
+      const eventId = (eventDetailsButton as HTMLElement).getAttribute(
+        "data-event-details"
+      );
       const eventDialog = document.querySelector(
         `[data-event-dialog="${eventId}"]`
       ) as HTMLDialogElement;
       eventDialog?.showModal();
+      // Prevent auto-focus on links in the dialog
+      setTimeout(() => {
+        (document.activeElement as HTMLElement)?.blur();
+      }, 0);
     } else if (closeEventDialog) {
       // Find the dialog that contains this button
       const dialog = closeEventDialog.closest("dialog") as HTMLDialogElement;
@@ -505,7 +527,13 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
     white-space: pre-wrap;
   }
 
-  .dialog-instagram-text {
+  .dialog-social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .dialog-social-text {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -513,13 +541,13 @@ const instagramHandle = event.instagram ? getInstagramHandle(event.instagram) : 
     font-size: 0.95rem;
   }
 
-  .dialog-instagram-text a {
+  .dialog-social-text a {
     color: var(--accent-primary);
     text-decoration: none;
     transition: color 0.2s;
   }
 
-  .dialog-instagram-text a:hover {
+  .dialog-social-text a:hover {
     color: var(--text-primary);
   }
 
