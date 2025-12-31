@@ -1,62 +1,145 @@
-# Instagram Feed Setup Guide
+# Instagram Feed Setup Guide (2025)
 
-Follow these steps to connect your Instagram feed to the White Rabbit WCS site.
+This guide uses the **new Instagram API with Instagram Login** (launched July 2024) - the simplest way to access your Instagram posts.
+
+## What's New?
+
+✅ **NO Facebook Page required** (unlike the old method)
+✅ Direct Instagram authentication
+✅ Simpler OAuth flow
+✅ Same 60-day token validity
+
+---
 
 ## Prerequisites
 
 You need:
-- An Instagram **Business** or **Creator** account (personal accounts won't work)
-- A Facebook Page connected to your Instagram account
-- A Facebook Developer account
+- An Instagram **Business** or **Creator** account (personal accounts don't work with the API)
+- A Facebook/Meta Developer account
+
+---
 
 ## Step 1: Convert to Instagram Business Account
 
 1. Open your Instagram app
-2. Go to **Settings** → **Account**
+2. Go to **Settings** → **Account Type and Tools**
 3. Tap **Switch to Professional Account**
 4. Choose **Business** or **Creator**
-5. Connect to your Facebook Page (create one if needed)
+5. Complete the setup (you can skip connecting to a Facebook Page - not needed!)
 
-## Step 2: Create a Facebook App
+---
 
-1. Go to [Facebook Developers](https://developers.facebook.com/)
+## Step 2: Create a Meta Developer App
+
+1. Go to [Meta for Developers](https://developers.facebook.com/)
 2. Click **My Apps** → **Create App**
-3. Choose **Business** as app type
+3. Choose **"Business"** as app type (or select "Other" → "Business")
 4. Fill in:
    - **App Name**: "White Rabbit WCS Website"
    - **Contact Email**: Your email
 5. Click **Create App**
 
-## Step 3: Add Instagram Graph API
+---
+
+## Step 3: Add Instagram Platform Product
 
 1. In your app dashboard, click **Add Product**
-2. Find **Instagram** and click **Set Up**
-3. Click **Settings** under Instagram in the left menu
-4. Add **Instagram Graph API** if not already added
+2. Find **"Instagram Platform"** (not the old "Instagram" product)
+3. Click **Set Up**
+4. Select **"Instagram API with Instagram Login"** (NOT "Instagram API with Facebook Login")
+5. You'll be taken to the API Setup page
 
-## Step 4: Get Your User ID
+---
 
-1. In your app, go to **Tools** → **Graph API Explorer**
-2. Click **Generate Access Token**
-3. Select your Instagram account
-4. Grant permissions:
-   - `instagram_basic`
-   - `pages_show_list`
-   - `pages_read_engagement`
-5. Copy the **Access Token** that appears
-6. In the Graph API Explorer, make a request to `me/accounts`
-7. Find your page and copy the **Instagram Business Account ID**
+## Step 4: Configure OAuth Settings
 
-## Step 5: Generate Long-Lived Access Token
+1. In **Instagram > API Setup with Instagram Login**, find **OAuth Redirect URIs**
+2. Add these redirect URIs:
+   - For local dev: `http://localhost:4321/api/instagram/callback`
+   - For production: `https://whiterabbitwcs.com/api/instagram/callback`
+3. Save changes
+4. Copy your **Instagram App ID** and **Instagram App Secret** (you'll need these)
 
-Short-lived tokens expire in 1 hour. You need a long-lived token (60 days):
+---
 
-1. Go to [Access Token Debugger](https://developers.facebook.com/tools/debug/accesstoken/)
-2. Paste your access token
-3. Click **Extend Access Token**
-4. Copy the new long-lived token
+## Step 5: Get Access Token via OAuth
 
-Note: You'll need to refresh this every 60 days, or set up automatic refresh.
+You need to implement an OAuth flow. Here's the process:
+
+### A. Authorization URL
+
+Direct the user (yourself) to this URL in a browser:
+
+```
+https://api.instagram.com/oauth/authorize?client_id={YOUR_APP_ID}&redirect_uri={YOUR_REDIRECT_URI}&scope=instagram_business_basic,instagram_business_content_publish&response_type=code
+```
+
+Replace:
+- `{YOUR_APP_ID}` with your Instagram App ID from Step 4
+- `{YOUR_REDIRECT_URI}` with `https://whiterabbitwcs.com/api/instagram/callback` (must match what you set in Step 4)
+
+**Example:**
+```
+https://api.instagram.com/oauth/authorize?client_id=123456789&redirect_uri=https://whiterabbitwcs.com/api/instagram/callback&scope=instagram_business_basic,instagram_business_content_publish&response_type=code
+```
+
+### B. Authorize the App
+
+1. You'll be redirected to Instagram login
+2. Log in with your Business/Creator account
+3. Grant permissions
+4. You'll be redirected back to your redirect URI with a `code` parameter
+
+**Example redirect:**
+```
+https://whiterabbitwcs.com/api/instagram/callback?code=AQD...xyz#_
+```
+
+Copy the **code** value from the URL.
+
+### C. Exchange Code for Short-Lived Token
+
+Use this `curl` command (replace the placeholders):
+
+```bash
+curl -X POST https://api.instagram.com/oauth/access_token \
+  -F client_id=YOUR_APP_ID \
+  -F client_secret=YOUR_APP_SECRET \
+  -F grant_type=authorization_code \
+  -F redirect_uri=YOUR_REDIRECT_URI \
+  -F code=THE_CODE_FROM_STEP_B
+```
+
+**Response:**
+```json
+{
+  "access_token": "IGQWRN...",
+  "user_id": 123456789
+}
+```
+
+Copy both the `access_token` and `user_id`.
+
+### D. Exchange for Long-Lived Token (60 days)
+
+Use this `curl` command:
+
+```bash
+curl -X GET "https://graph.instagram.com/access_token?grant_type=ig_exchange_token&client_secret=YOUR_APP_SECRET&access_token=SHORT_LIVED_TOKEN_FROM_STEP_C"
+```
+
+**Response:**
+```json
+{
+  "access_token": "IGQWRN...",
+  "token_type": "bearer",
+  "expires_in": 5184000
+}
+```
+
+This is your **long-lived token** that lasts 60 days.
+
+---
 
 ## Step 6: Add to Your Site
 
@@ -66,7 +149,7 @@ Create a `.env` file in the project root:
 
 ```bash
 INSTAGRAM_ACCESS_TOKEN=your-long-lived-access-token
-INSTAGRAM_USER_ID=your-instagram-business-account-id
+INSTAGRAM_USER_ID=your-instagram-user-id
 ```
 
 ### For Cloudflare Pages:
@@ -79,20 +162,31 @@ INSTAGRAM_USER_ID=your-instagram-business-account-id
      **Value:** Your long-lived access token
      **Environment:** Production (and Preview if desired)
    - **Name:** `INSTAGRAM_USER_ID`
-     **Value:** Your Instagram Business Account ID
+     **Value:** Your Instagram user ID (from Step 5C)
      **Environment:** Production (and Preview if desired)
 5. Save and redeploy
+
+---
 
 ## Step 7: Test
 
 1. Start your dev server: `pnpm dev`
 2. Visit `http://localhost:4321/`
-3. You should see your Instagram feed at the bottom of the homepage
-4. If you see "See our latest updates on Instagram" instead, check:
-   - Environment variables are set correctly
-   - Access token is valid (check in Access Token Debugger)
-   - Instagram account is a Business/Creator account
-   - App has proper permissions
+3. You should see your Instagram feed
+
+### Test the API Manually
+
+You can verify your token works:
+
+```bash
+# Get your profile info
+curl "https://graph.instagram.com/me?fields=id,username&access_token=YOUR_TOKEN"
+
+# Get your media posts
+curl "https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,permalink,timestamp&access_token=YOUR_TOKEN"
+```
+
+---
 
 ## Troubleshooting
 
@@ -100,34 +194,103 @@ INSTAGRAM_USER_ID=your-instagram-business-account-id
 - Make sure `.env` file exists and has both variables
 - Restart dev server after creating/updating `.env`
 
-**"Instagram API error: 400"**
+**"Instagram API error: 400 or 401"**
 - Access token might be invalid or expired
-- Generate a new long-lived token
-- Make sure you're using a Business/Creator account
+- Make sure you're using a Business/Creator account (not personal)
+- Verify you completed the long-lived token exchange (Step 5D)
+- Check that your token hasn't expired (60 days)
 
 **"No posts showing"**
 - Check that your Instagram account has public posts
 - Verify the User ID is correct (it should be a number)
-- Check API Explorer to make sure token has proper permissions
+- Test the API endpoint manually (see Step 7)
+
+**OAuth redirect errors**
+- Make sure your redirect URI exactly matches what's configured in the app
+- Check for typos in the authorization URL
 
 **Feed works locally but not in production**
 - Verify environment variables are set in Cloudflare Pages
 - Redeploy after adding environment variables
 - Check build logs for errors
 
+---
+
 ## API Limits
 
-Instagram Graph API has rate limits:
-- 200 calls per hour per user
-- The site caches feed for 1 hour, so you should be well under limits
+Instagram API has rate limits:
+- **200 calls per hour** per Instagram account
+- The site should cache the feed for 1 hour to stay well under limits
+
+---
 
 ## Refreshing Access Tokens
 
-Long-lived tokens expire after 60 days. To avoid downtime:
+Long-lived tokens expire after **60 days**. To avoid downtime:
+
+### Manual Refresh
 
 1. Set a calendar reminder for 50 days from now
-2. Generate a new long-lived token following Step 5
+2. Repeat Step 5 (OAuth flow) to generate a new token
 3. Update the environment variable in Cloudflare Pages
 4. Redeploy
 
-For automatic refresh, you'd need to implement token refresh logic (more complex).
+### Automatic Refresh (Advanced)
+
+You can implement automatic token refresh by:
+1. Using the `ig_refresh_token` grant type before the 60-day expiration
+2. Storing the token in a database/KV store instead of environment variables
+3. Setting up a scheduled worker to refresh the token every 50 days
+
+**Token refresh endpoint:**
+```bash
+curl -X GET "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=CURRENT_LONG_LIVED_TOKEN"
+```
+
+This returns a new 60-day token.
+
+---
+
+## Required Scopes
+
+- `instagram_business_basic` - Basic profile information
+- `instagram_business_content_publish` - Read and publish content
+
+---
+
+## API Endpoints
+
+Base URL: `https://graph.instagram.com/`
+
+**Get user info:**
+```
+GET /me?fields=id,username,account_type,media_count
+```
+
+**Get media posts:**
+```
+GET /me/media?fields=id,caption,media_type,media_url,permalink,thumbnail_url,timestamp,username
+```
+
+**Get specific media:**
+```
+GET /{media_id}?fields=id,caption,media_type,media_url,permalink,timestamp
+```
+
+---
+
+## Resources
+
+- [Instagram Platform API Docs](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login)
+- [OAuth Authorization](https://developers.facebook.com/docs/instagram-platform/instagram-api-with-instagram-login/authorization)
+- [Instagram Graph API Reference](https://developers.facebook.com/docs/instagram-api)
+
+---
+
+## Alternative: Static Embed Method
+
+If this OAuth flow seems too complex, you can use the **static embed approach** instead (see `INSTAGRAM_EMBED.md`):
+- No API setup required
+- Manually add Instagram post URLs to the component
+- Uses Instagram's official embed script
+- Perfect for simple, occasional updates
