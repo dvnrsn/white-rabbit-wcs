@@ -61,6 +61,9 @@ const cleanVenueName = (venue: string) => {
   if (venueLower.includes("dream dance")) {
     return "Dream Dance";
   }
+  if (venueLower.includes("country nomads")) {
+    return "Country Nomads";
+  }
 
   return venue;
 };
@@ -248,7 +251,8 @@ const instagramHandle = event.instagram
       const query = encodeURIComponent(currentAddress);
 
       if (option === "apple") {
-        window.location.href = `https://maps.apple.com/?q=${query}`;
+        // Use maps:// URL scheme to open native Maps app
+        window.location.href = `maps://?q=${query}`;
       } else if (option === "google") {
         window.location.href = `https://maps.google.com/?q=${query}`;
       }
