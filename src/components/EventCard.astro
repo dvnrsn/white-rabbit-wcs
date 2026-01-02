@@ -85,7 +85,7 @@ const instagramHandle = event.instagram
   : null;
 ---
 
-<article class="event-card">
+<article class="event-card" data-event-card data-event-id={event.id}>
   <span class="event-type" style={`border-color: ${typeColors[event.type]}`}>
     {event.type}
   </span>
@@ -127,13 +127,7 @@ const instagramHandle = event.instagram
 
     <div class="event-footer">
       <span class="event-organizer">by {event.organizer}</span>
-      <button
-        class="event-link"
-        data-event-details={event.id}
-        aria-label="View event details"
-      >
-        →
-      </button>
+      <span class="event-link">→</span>
     </div>
   </div>
 </article>
@@ -222,18 +216,16 @@ const instagramHandle = event.instagram
     const target = e.target as HTMLElement;
     const venueButton = target.closest("[data-venue-button]");
     const mapsOption = target.closest("[data-maps-option]");
-    const eventDetailsButton = target.closest("[data-event-details]");
+    const eventCard = target.closest("[data-event-card]");
     const closeEventDialog = target.closest("[data-close-event-dialog]");
 
     if (venueButton) {
       e.preventDefault();
+      e.stopPropagation(); // Prevent card click
       currentAddress = (venueButton as HTMLElement).dataset.address || "";
       // Get the event ID from the card
       const card = venueButton.closest(".event-card");
-      currentEventId =
-        card
-          ?.querySelector("[data-event-details]")
-          ?.getAttribute("data-event-details") || "";
+      currentEventId = card?.getAttribute("data-event-id") || "";
 
       const mapsDialog = document.querySelector(
         `[data-maps-dialog="${currentEventId}"]`
@@ -261,10 +253,9 @@ const instagramHandle = event.instagram
         `[data-maps-dialog="${currentEventId}"]`
       ) as HTMLDialogElement;
       mapsDialog?.close();
-    } else if (eventDetailsButton) {
-      const eventId = (eventDetailsButton as HTMLElement).getAttribute(
-        "data-event-details"
-      );
+    } else if (eventCard && !closeEventDialog) {
+      // Click on card (but not on close button)
+      const eventId = (eventCard as HTMLElement).getAttribute("data-event-id");
       const eventDialog = document.querySelector(
         `[data-event-dialog="${eventId}"]`
       ) as HTMLDialogElement;
@@ -298,6 +289,7 @@ const instagramHandle = event.instagram
     border: 1px solid var(--border-color);
     padding: 1.5rem;
     transition: all 0.3s;
+    cursor: pointer;
   }
 
   .event-card:hover {
