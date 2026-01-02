@@ -191,9 +191,21 @@ function parseDescription(description: string): Partial<CalendarEvent> {
     .replace(/<a[^>]*>([^<]*)<\/a>/gi, "$1") // Replace links with just their text content
     .replace(/<a[^>]*><br\s*\/?><\/a>/gi, "") // Remove empty links like <a href="..."><br></a>
     .replace(/<a[^>]*>\s*<\/a>/gi, "") // Remove empty links
+    // Convert heading tags to uppercase text with newlines
+    .replace(/<h[1-6][^>]*><b>([^<]+)<\/b><\/h[1-6]>/gi, "\n$1\n")
+    .replace(/<h[1-6][^>]*>([^<]+)<\/h[1-6]>/gi, "\n$1\n")
+    // Keep bold text but remove tags
+    .replace(/<\/?b>/gi, "")
+    .replace(/<\/?strong>/gi, "")
+    // Remove paragraph tags but preserve spacing
+    .replace(/<\/p>\s*<p>/gi, "\n")
+    .replace(/<\/?p>/gi, "\n")
     .replace(/<\/?span[^>]*>/g, "") // Remove <span> tags
     .replace(/<br\s*\/?>/gi, "\n") // Convert <br> to newlines
-    .replace(/&nbsp;/g, " "); // Convert &nbsp; to spaces
+    .replace(/&nbsp;/g, " ") // Convert &nbsp; to spaces
+    // Clean up multiple consecutive newlines
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
 
   // Parse custom fields from description
   // Format: Field: Value (each on new line)
