@@ -15,7 +15,8 @@ const navLinks = [
   <div class="nav-container">
     <a href="/" class="nav-brand">
       <span class="brand-text gradient-text">WHITE RABBIT</span>
-      <span class="brand-subtitle">Arizona West Coast Swing</span>
+      <span class="brand-subtitle desktop-subtitle">Arizona West Coast Swing</span>
+      <span class="brand-subtitle mobile-subtitle">AZ West Coast Swing</span>
     </a>
 
     <button
@@ -83,6 +84,10 @@ const navLinks = [
     font-weight: 500;
     letter-spacing: 0.3em;
     text-transform: uppercase;
+  }
+
+  .mobile-subtitle {
+    display: none;
   }
 
   .mobile-toggle {
@@ -163,6 +168,14 @@ const navLinks = [
 
   /* Mobile styles */
   @media (max-width: 768px) {
+    .desktop-subtitle {
+      display: none;
+    }
+
+    .mobile-subtitle {
+      display: block;
+    }
+
     .mobile-toggle {
       display: flex;
     }

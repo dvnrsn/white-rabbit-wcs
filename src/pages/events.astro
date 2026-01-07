@@ -30,18 +30,41 @@ try {
   events = eventsData;
 }
 
-// Sort events by date
+// Sort events by date and time
 events = [...events].sort((a, b) => {
-  return new Date(a.date).getTime() - new Date(b.date).getTime();
+  // First compare dates
+  const dateComparison = new Date(a.date).getTime() - new Date(b.date).getTime();
+  if (dateComparison !== 0) {
+    return dateComparison;
+  }
+
+  // If dates are the same, compare start times
+  // Convert "HH:MM" to minutes for comparison
+  const [aHours, aMinutes] = a.startTime.split(':').map(Number);
+  const [bHours, bMinutes] = b.startTime.split(':').map(Number);
+  const aTimeInMinutes = aHours * 60 + aMinutes;
+  const bTimeInMinutes = bHours * 60 + bMinutes;
+
+  return aTimeInMinutes - bTimeInMinutes;
 });
 
-// Get current date
-const today = new Date();
-today.setHours(0, 0, 0, 0);
+// Get current date in Arizona time (UTC-7)
+// Create a date in UTC and adjust to Arizona time
+const nowUtc = new Date();
+const arizonaOffset = -7 * 60; // Arizona is UTC-7
+const nowArizona = new Date(nowUtc.getTime() + arizonaOffset * 60 * 1000);
+const todayArizona = new Date(nowArizona.getFullYear(), nowArizona.getMonth(), nowArizona.getDate());
 
 // Separate upcoming and past events
-const upcomingEvents = events.filter(event => new Date(event.date) >= today);
-const pastEvents = events.filter(event => new Date(event.date) < today);
+// Event dates are stored as "YYYY-MM-DD" strings in Arizona time
+const upcomingEvents = events.filter(event => {
+  const eventDate = new Date(event.date + 'T00:00:00'); // Parse as local date
+  return eventDate >= todayArizona;
+});
+const pastEvents = events.filter(event => {
+  const eventDate = new Date(event.date + 'T00:00:00'); // Parse as local date
+  return eventDate < todayArizona;
+});
 
 // Generate structured data for upcoming events
 const schema = generateEventListSchema(upcomingEvents);
