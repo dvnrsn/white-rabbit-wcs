@@ -32,8 +32,6 @@ export async function fetchGoogleCalendarEvents(calendarId?: string) {
     // Google Calendar public iCal URL format
     const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
 
-    console.log("Fetching calendar from:", calendarUrl);
-
     const response = await fetch(calendarUrl);
 
     if (!response.ok) {
@@ -43,12 +41,12 @@ export async function fetchGoogleCalendarEvents(calendarId?: string) {
     }
 
     const icalData = await response.text();
-    console.log(`Fetched iCal data, length: ${icalData.length}`);
+    // console.log(`Fetched iCal data, length: ${icalData.length}`);
 
-    console.log(icalData);
+    // console.log(icalData);
     const events = parseICalData(icalData);
-    console.log(events);
-    console.log(`Parsed ${events.length} events from calendar`);
+    // console.log(events);
+    // console.log(`Parsed ${events.length} events from calendar`);
 
     return events;
   } catch (error) {
