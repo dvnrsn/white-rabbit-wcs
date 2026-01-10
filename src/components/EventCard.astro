@@ -260,10 +260,6 @@ const instagramHandle = event.instagram
         `[data-event-dialog="${eventId}"]`
       ) as HTMLDialogElement;
       eventDialog?.showModal();
-      // Prevent auto-focus on links in the dialog
-      setTimeout(() => {
-        (document.activeElement as HTMLElement)?.blur();
-      }, 0);
     } else if (closeEventDialog) {
       // Find the dialog that contains this button
       const dialog = closeEventDialog.closest("dialog") as HTMLDialogElement;
@@ -483,12 +479,6 @@ const instagramHandle = event.instagram
 
   .dialog-close-x:hover {
     color: var(--text-primary);
-  }
-
-  @media (max-width: 640px) {
-    .dialog-close-x {
-      display: none;
-    }
   }
 
   .dialog-title {
