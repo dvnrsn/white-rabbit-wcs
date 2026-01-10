@@ -471,10 +471,14 @@ const schema = generateEventListSchema(upcomingEvents);
       font-size: clamp(2rem, 8vw, 3rem);
     }
 
+    /* Mobile: pin dropdown to the top-right of the viewport */
     .filter-dropdown {
-      right: 0;
+      position: fixed;
+      top: 16px;
+      right: 16px;
       min-width: 260px;
       max-width: calc(100vw - 2rem);
+      max-height: calc(100vh - 32px);
     }
   }
 </style>
