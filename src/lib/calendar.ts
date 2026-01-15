@@ -68,8 +68,9 @@ function parseICalData(icalData: string): CalendarEvent[] {
 
     // Check if this is a recurring event
     if (event.isRecurring()) {
-      // Only show the next 2 occurrences
-      const iterator = event.iterator();
+      // Only show the next 2 occurrences starting from today
+      const now = ICAL.Time.now();
+      const iterator = event.iterator(now);
       let count = 0;
       const maxOccurrences = 2;
 
