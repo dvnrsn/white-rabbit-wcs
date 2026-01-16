@@ -19,11 +19,6 @@ export interface CalendarEvent {
   isRecurring?: boolean;
 }
 
-// Simple in-memory cache to avoid hammering Google Calendar and to fall back to last good data.
-const CACHE_TTL_MS = 30 * 60 * 1000; // 30 minutes
-let cachedEvents: CalendarEvent[] | null = null;
-let cacheTimestamp = 0;
-
 export async function fetchGoogleCalendarEvents(calendarId?: string) {
   const CALENDAR_ID = calendarId || "YOUR_CALENDAR_ID@group.calendar.google.com";
 
@@ -34,13 +29,6 @@ export async function fetchGoogleCalendarEvents(calendarId?: string) {
   }
 
   try {
-    // Serve fresh cache if within TTL
-    const now = Date.now();
-    if (cachedEvents && now - cacheTimestamp < CACHE_TTL_MS) {
-      console.log("Using cached calendar events (fresh)");
-      return [...cachedEvents];
-    }
-
     // Google Calendar public iCal URL format
     const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
 
@@ -60,17 +48,10 @@ export async function fetchGoogleCalendarEvents(calendarId?: string) {
     // console.log(events);
     // console.log(`Parsed ${events.length} events from calendar`);
 
-    cachedEvents = events;
-    cacheTimestamp = Date.now();
-    return [...events];
+    return events;
   } catch (error) {
     console.error("Error fetching Google Calendar:", error);
-    // On error, fall back to any cached events, even if stale
-    if (cachedEvents) {
-      console.warn("Serving stale cached calendar events due to fetch error");
-      return [...cachedEvents];
-    }
-    // Return empty array on error if no cache exists
+    // Return empty array on error to fail gracefully
     return [];
   }
 }
