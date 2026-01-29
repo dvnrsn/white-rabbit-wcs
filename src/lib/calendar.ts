@@ -20,6 +20,11 @@ export interface CalendarEvent {
 }
 
 export async function fetchGoogleCalendarEvents(calendarId?: string) {
+  console.log(
+    "[Calendar Debug] calendarId received:",
+    calendarId ? `${calendarId.substring(0, 10)}...` : "undefined",
+  );
+
   const CALENDAR_ID = calendarId || "YOUR_CALENDAR_ID@group.calendar.google.com";
 
   // Check if calendar ID is set
