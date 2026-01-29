@@ -1,10 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
-import { fetchGoogleCalendarEvents } from '../lib/calendar';
+import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
 import { generateEventListSchema } from '../lib/schema';
-import eventsData from '../data/events.json';
-
 export function getStaticPaths() {
   return [
     {
@@ -48,17 +46,13 @@ export function getStaticPaths() {
 
 const { filterType, filterValue, title, description } = Astro.props;
 
-// Fetch events
-let events;
+// Fetch events from Google Calendar
+let events: CalendarEvent[] = [];
 try {
   const calendarId = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID;
   events = await fetchGoogleCalendarEvents(calendarId);
-  if (events.length === 0) {
-    events = eventsData;
-  }
 } catch (error) {
-  console.error('Error fetching Google Calendar, using fallback data:', error);
-  events = eventsData;
+  console.error('Error fetching Google Calendar:', error);
 }
 
 // Helper to extract city from address
@@ -146,7 +140,7 @@ const schema = generateEventListSchema(upcomingEvents);
 
       {upcomingEvents.length === 0 && pastEvents.length === 0 && (
         <div class="no-events">
-          <p>No {filterType === 'city' ? `events in ${filterValue}` : 'competitions'} scheduled yet.</p>
+          <p>Your events are currently chasing the White Rabbit. Please stand by.</p>
           <a href="/events" class="view-all-link">View All Events →</a>
         </div>
       )}

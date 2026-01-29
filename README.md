@@ -59,7 +59,7 @@ white-rabbit/
 │   │   ├── config.ts       # Content collections config
 │   │   └── posts/          # Blog-style posts
 │   ├── data/
-│   │   └── events.json     # Fallback event data
+│   │   └── events.json     # example event dummy data
 │   ├── layouts/
 │   │   └── Layout.astro
 │   ├── lib/
