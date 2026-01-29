@@ -1,4 +1,4 @@
-name: Daily Rebuild
+name: Daily Calendar Sync
 
 on:
   schedule:
@@ -11,15 +11,30 @@ permissions:
   contents: write
 
 jobs:
-  trigger-rebuild:
+  sync-calendar:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Trigger rebuild
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch calendar data
+        run: node scripts/fetch-calendar.js
+        env:
+          PUBLIC_GOOGLE_CALENDAR_ID: ${{ secrets.PUBLIC_GOOGLE_CALENDAR_ID }}
+
+      - name: Commit and push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git commit --allow-empty -m "chore: daily rebuild for calendar sync"
-          git push
+          git add src/data/calendar.ics
+          if git diff --staged --quiet; then
+            echo "No changes to calendar data"
+          else
+            git commit -m "chore: sync calendar data"
+            git push
+          fi

@@ -1,4 +1,6 @@
 import ICAL from "ical.js";
+import { readFileSync, existsSync } from "fs";
+import { join } from "path";
 
 export interface CalendarEvent {
   id: string;
@@ -20,43 +22,42 @@ export interface CalendarEvent {
 }
 
 export async function fetchGoogleCalendarEvents(calendarId?: string) {
-  console.log(
-    "[Calendar Debug] calendarId received:",
-    calendarId ? `${calendarId.substring(0, 10)}...` : "undefined",
-  );
-
-  const CALENDAR_ID = calendarId || "YOUR_CALENDAR_ID@group.calendar.google.com";
-
-  // Check if calendar ID is set
-  if (!CALENDAR_ID || CALENDAR_ID === "YOUR_CALENDAR_ID@group.calendar.google.com") {
-    console.error("Google Calendar ID not configured");
-    return [];
-  }
-
   try {
-    // Google Calendar public iCal URL format
-    const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
+    let icalData: string;
 
-    const response = await fetch(calendarUrl);
+    // First, try to read from local cached file (used in CI/CD builds)
+    const cachedPath = join(process.cwd(), "src/data/calendar.ics");
+    if (existsSync(cachedPath)) {
+      console.log("[Calendar] Reading from cached calendar.ics");
+      icalData = readFileSync(cachedPath, "utf-8");
+    } else {
+      // Fall back to fetching from Google (local dev)
+      console.log("[Calendar] Fetching from Google Calendar...");
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error(`Calendar fetch failed (${response.status}):`, errorText.substring(0, 200));
-      throw new Error(`Failed to fetch calendar: ${response.status} ${response.statusText}`);
+      const CALENDAR_ID = calendarId || "YOUR_CALENDAR_ID@group.calendar.google.com";
+
+      if (!CALENDAR_ID || CALENDAR_ID === "YOUR_CALENDAR_ID@group.calendar.google.com") {
+        console.error("Google Calendar ID not configured");
+        return [];
+      }
+
+      const calendarUrl = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
+
+      const response = await fetch(calendarUrl);
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error(`Calendar fetch failed (${response.status}):`, errorText.substring(0, 200));
+        throw new Error(`Failed to fetch calendar: ${response.status} ${response.statusText}`);
+      }
+
+      icalData = await response.text();
     }
 
-    const icalData = await response.text();
-    // console.log(`Fetched iCal data, length: ${icalData.length}`);
-
-    // console.log(icalData);
     const events = parseICalData(icalData);
-    // console.log(events);
-    // console.log(`Parsed ${events.length} events from calendar`);
-
     return events;
   } catch (error) {
     console.error("Error fetching Google Calendar:", error);
-    // Return empty array on error to fail gracefully
     return [];
   }
 }
