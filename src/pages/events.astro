@@ -1,13 +1,4 @@
 ---
-export const prerender = false;
-
-// Cache the page at Cloudflare edge for 30 minutes
-// stale-while-revalidate allows serving stale content while fetching fresh
-Astro.response.headers.set(
-  'Cache-Control',
-  'public, s-maxage=1800, stale-while-revalidate=3600'
-);
-
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import { fetchGoogleCalendarEvents } from '../lib/calendar';
@@ -20,8 +11,8 @@ let calendarError: string | null = null;
 let usingFallback = false;
 
 try {
-  // Get calendar ID from Cloudflare runtime env vars
-  const calendarId = Astro.locals.runtime?.env?.PUBLIC_GOOGLE_CALENDAR_ID;
+  // Get calendar ID from build-time env vars
+  const calendarId = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID;
   events = await fetchGoogleCalendarEvents(calendarId);
   // If no events from calendar, use fallback data
   if (events.length === 0) {
