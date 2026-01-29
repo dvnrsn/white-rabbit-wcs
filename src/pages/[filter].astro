@@ -1,0 +1,250 @@
+---
+import Layout from '../layouts/Layout.astro';
+import EventCard from '../components/EventCard.astro';
+import { fetchGoogleCalendarEvents } from '../lib/calendar';
+import { generateEventListSchema } from '../lib/schema';
+import eventsData from '../data/events.json';
+
+export function getStaticPaths() {
+  return [
+    {
+      params: { filter: 'phoenix' },
+      props: {
+        filterType: 'city',
+        filterValue: 'Phoenix',
+        title: 'Phoenix Events',
+        description: 'Find West Coast Swing events, socials, and workshops in Phoenix and the surrounding metro area.'
+      }
+    },
+    {
+      params: { filter: 'tucson' },
+      props: {
+        filterType: 'city',
+        filterValue: 'Tucson',
+        title: 'Tucson Events',
+        description: 'Find West Coast Swing events, socials, and workshops in Tucson, Arizona.'
+      }
+    },
+    {
+      params: { filter: 'prescott' },
+      props: {
+        filterType: 'city',
+        filterValue: 'Prescott',
+        title: 'Prescott Events',
+        description: 'Find West Coast Swing events, socials, and workshops in Prescott, Arizona.'
+      }
+    },
+    {
+      params: { filter: 'competitions' },
+      props: {
+        filterType: 'type',
+        filterValue: 'competition',
+        title: 'Competitions in Arizona',
+        description: 'Find West Coast Swing competitions and contests in Arizona.'
+      }
+    },
+  ];
+}
+
+const { filterType, filterValue, title, description } = Astro.props;
+
+// Fetch events
+let events;
+try {
+  const calendarId = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID;
+  events = await fetchGoogleCalendarEvents(calendarId);
+  if (events.length === 0) {
+    events = eventsData;
+  }
+} catch (error) {
+  console.error('Error fetching Google Calendar, using fallback data:', error);
+  events = eventsData;
+}
+
+// Helper to extract city from address
+function getCity(address: string): string {
+  const cityMatch = address.match(/,\s*([^,]+),\s*AZ/);
+  const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
+  const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
+  return phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
+}
+
+// Filter events based on filter type
+events = events.filter(event => {
+  if (filterType === 'city') {
+    return getCity(event.address) === filterValue;
+  } else if (filterType === 'type') {
+    return event.type === filterValue;
+  }
+  return true;
+});
+
+// Sort events by date and time
+events = [...events].sort((a, b) => {
+  const dateComparison = new Date(a.date).getTime() - new Date(b.date).getTime();
+  if (dateComparison !== 0) return dateComparison;
+
+  const [aHours, aMinutes] = a.startTime.split(':').map(Number);
+  const [bHours, bMinutes] = b.startTime.split(':').map(Number);
+  return (aHours * 60 + aMinutes) - (bHours * 60 + bMinutes);
+});
+
+// Separate upcoming and past events
+const nowUtc = new Date();
+const arizonaOffset = -7 * 60;
+const nowArizona = new Date(nowUtc.getTime() + arizonaOffset * 60 * 1000);
+const todayArizona = new Date(nowArizona.getFullYear(), nowArizona.getMonth(), nowArizona.getDate());
+
+const upcomingEvents = events.filter(event => {
+  const eventDate = new Date(event.date + 'T00:00:00');
+  return eventDate >= todayArizona;
+});
+const pastEvents = events.filter(event => {
+  const eventDate = new Date(event.date + 'T00:00:00');
+  return eventDate < todayArizona;
+});
+
+const schema = generateEventListSchema(upcomingEvents);
+---
+
+<Layout
+  title={`${title} - White Rabbit WCS`}
+  description={description}
+  schema={schema}
+>
+  <main class="events-page">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title gradient-text">{title}</h1>
+        <a href="/events" class="view-all-link">View All Events →</a>
+      </header>
+
+      {upcomingEvents.length > 0 && (
+        <section class="events-section">
+          <div class="events-list">
+            {upcomingEvents.map(event => (
+              <div class="event-item">
+                <EventCard event={event} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {pastEvents.length > 0 && (
+        <section class="events-section past-events">
+          <h2 class="section-title">> Past Events</h2>
+          <div class="events-list">
+            {pastEvents.map(event => (
+              <div class="event-item">
+                <EventCard event={event} />
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {upcomingEvents.length === 0 && pastEvents.length === 0 && (
+        <div class="no-events">
+          <p>No {filterType === 'city' ? `events in ${filterValue}` : 'competitions'} scheduled yet.</p>
+          <a href="/events" class="view-all-link">View All Events →</a>
+        </div>
+      )}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .events-page {
+    min-height: calc(100vh - 80px);
+  }
+
+  .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    letter-spacing: 0.05em;
+    margin: 0;
+  }
+
+  .view-all-link {
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    transition: opacity 0.3s;
+  }
+
+  .view-all-link:hover {
+    opacity: 0.8;
+  }
+
+  .events-section {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 2rem;
+    font-family: var(--font-primary);
+  }
+
+  .events-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .event-item {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .past-events {
+    opacity: 0.7;
+  }
+
+  .past-events .section-title {
+    color: var(--text-muted);
+  }
+
+  .no-events {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-muted);
+    font-size: 1.2rem;
+  }
+
+  .no-events .view-all-link {
+    display: inline-block;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .page-title {
+      font-size: clamp(1.5rem, 6vw, 2rem);
+    }
+  }
+</style>
