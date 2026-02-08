@@ -16,30 +16,127 @@ DTSTART:19700101T000000
 END:STANDARD
 END:VTIMEZONE
 BEGIN:VEVENT
-DTSTART;TZID=America/Phoenix:20260106T213000
-DTEND;TZID=America/Phoenix:20260106T235900
-RRULE:FREQ=WEEKLY;UNTIL=20260120T065959Z;BYDAY=TU
-DTSTAMP:20260208T180933Z
-UID:20q9itufnfp94roi936ntg6ol3@google.com
-CREATED:20251228T041443Z
-DESCRIPTION:<span>Description: </span><a href="https://www.instagram.com/fu
- llswing.az/" target="_blank"><br></a><br><span>Price: $10<br>Venue: The Imp
- erial Ballroom<br>Type: social<br>Organizer: Full Swing Team<br></span><spa
- n>Instagram: </span><span><a href="https://www.instagram.com/fullswing.az/"
-  target="_blank">https://www.instagram.com/fullswing.az/</a></span>
-LAST-MODIFIED:20260116T192536Z
-LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
- te 17 B\, Scottsdale\, AZ 85260\, USA
+DTSTART:20260103T200000Z
+DTEND:20260103T233000Z
+DTSTAMP:20260208T181843Z
+UID:2ni0dabvafghmcqe8sepcfdsvb@google.com
+CREATED:20260101T025751Z
+DESCRIPTION:Type: Competition\nWebsite: https://ucwdc.org/worlds-wcs/\nVenu
+ e: Arizona Grand Resort
+LAST-MODIFIED:20260103T182104Z
+LOCATION:Arizona Grand Resort & Spa\, 8000 South Arizona Grand E\, Phoenix\
+ , AZ 85044\, USA
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Worlds
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Phoenix:20260114T190000
+DTEND;TZID=America/Phoenix:20260114T233000
+RRULE:FREQ=WEEKLY;BYDAY=WE
+DTSTAMP:20260208T181843Z
+UID:dlbqokvmlrk5df5m4a1nq2la4n@google.com
+CREATED:20251227T203113Z
+DESCRIPTION:Description: Join Late Nite Vibe for our weekly Wednesday night
+  WCS social! DJs spinning the best tracks all night. <br><br>7 pm - Beginne
+ r lesson ($5)<br>8 pm - Intermediate lesson ($5)<br>9 pm - 12 am - Social (
+ $8)<br>(Or $15 for whole night) <br><br>Venue: Creative Dance Collective<br
+ >Type: social<br>Organizer: Yu Sun<br><span><span>Price: $8</span></span>
+LAST-MODIFIED:20260115T073551Z
+LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
+ , USA
 SEQUENCE:2
 STATUS:CONFIRMED
+SUMMARY:Late Nite Vibe
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Phoenix:20251230T214500
+DTEND;TZID=America/Phoenix:20251230T235900
+RRULE:FREQ=WEEKLY;UNTIL=20260106T065959Z;BYDAY=TU
+DTSTAMP:20260208T181843Z
+UID:7u4p304ukd2iomnudlmm6dps9v@google.com
+CREATED:20251228T041443Z
+DESCRIPTION:<span>Description: Come celebrate the New Year<br></span><a hre
+ f="https://www.instagram.com/fullswing.az/" target="_blank"><br></a><br><sp
+ an>Price: $15<br>Venue: The Imperial Ballroom<br>Type: social<br>Organizer:
+  Full Swing Team<br></span><span>Instagram: </span><span><a href="https://w
+ ww.instagram.com/fullswing.az/" target="_blank">https://www.instagram.com/f
+ ullswing.az/</a></span>
+LAST-MODIFIED:20260101T234337Z
+LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
+ te 17 B\, Scottsdale\, AZ 85260\, USA
+SEQUENCE:1
+STATUS:CONFIRMED
 SUMMARY:Full Swing
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260425
+DTEND;VALUE=DATE:20260426
+DTSTAMP:20260208T181843Z
+UID:7dfeuthacqru3dh7sdujee6hf2@google.com
+CLASS:PUBLIC
+CREATED:20260208T174049Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181709Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit at CDC
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260822
+DTEND;VALUE=DATE:20260823
+DTSTAMP:20260208T181843Z
+UID:1e8u9e1k5fl17b7n5vbfodr8lc@google.com
+CLASS:PUBLIC
+CREATED:20260208T174502Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181800Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit at CDC
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=America/Phoenix:20260107T190000
+DTEND;TZID=America/Phoenix:20260107T210000
+RRULE:FREQ=WEEKLY;BYDAY=WE
+DTSTAMP:20260208T181843Z
+UID:609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com
+CREATED:20251229T213458Z
+DESCRIPTION:<span><span>Description: Beginner and intermediate lessons<br><
+ br>Price: $15<br>Venue: Country Nomads<br>Type: class<br>Organizer: Gabe Se
+ bastian</span></span>
+LAST-MODIFIED:20260107T212922Z
+LOCATION:Country Nomads\, 835 E Southern Ave\, Mesa\, AZ 85204\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Westie Wednesday Classes
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260201T030000Z
+DTEND:20260201T080000Z
+DTSTAMP:20260208T181843Z
+UID:2i3kj3g9hhnlm85i2u8l1ggh3a@google.com
+CREATED:20251229T210533Z
+DESCRIPTION:Price: $15
+LAST-MODIFIED:20260115T073844Z
+LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
+ , USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit Unplugged
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;TZID=America/Phoenix:20260120T213000
 DTEND;TZID=America/Phoenix:20260120T235900
 RRULE:FREQ=WEEKLY;BYDAY=TU
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com
 CREATED:20251228T041443Z
 DESCRIPTION:<span>Description: WEST COAST SWING SOCIAL DANCE<br><br>$10</sp
@@ -59,29 +156,9 @@ SUMMARY:Full Swing
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;TZID=America/Phoenix:20251231T200000
-DTEND;TZID=America/Phoenix:20251231T210000
-RRULE:FREQ=WEEKLY;UNTIL=20260107T065959Z;BYDAY=WE
-EXDATE;TZID=America/Phoenix:20251231T200000
-DTSTAMP:20260208T180933Z
-UID:7r3lk5obq4e9vc7idd9h7pgr6s@google.com
-CREATED:20251227T203113Z
-DESCRIPTION:Description: Join us for our weekly Wednesday night WCS social!
-  DJ spinning the best tracks all night. Beginner lesson at 7pm.\n\nPrice: $
- 15\nVenue: Creative Dance Collective\nType: social\nOrganizer: Yu Sun\nURL:
-  https://example.com/tickets
-LAST-MODIFIED:20260114T203948Z
-LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
- , USA
-SEQUENCE:1
-STATUS:CONFIRMED
-SUMMARY:Late Nite Vibe
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
 DTSTART:20260110T201500Z
 DTEND:20260111T011500Z
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:3u7n07sa4dcebat6un60ni5ksu@google.com
 CREATED:20260102T000858Z
 DESCRIPTION:Description: Chantelle and Joel have been partners in life and 
@@ -105,55 +182,92 @@ SUMMARY:Joel and Chantelle
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260802T003000Z
-DTEND:20260802T033000Z
-DTSTAMP:20260208T180933Z
-UID:33mvgba2t0lkk3c213sqcbb5i4@google.com
-CREATED:20260115T204104Z
-DESCRIPTION:https://arizonadanceclassic.com/\n\nType: Competition\nPrice: $
- 50\nOrganizer: UCWDC
-LAST-MODIFIED:20260115T204548Z
-SEQUENCE:0
+DTSTART;TZID=America/Phoenix:20251231T200000
+DTEND;TZID=America/Phoenix:20251231T210000
+RRULE:FREQ=WEEKLY;UNTIL=20260107T065959Z;BYDAY=WE
+EXDATE;TZID=America/Phoenix:20251231T200000
+DTSTAMP:20260208T181843Z
+UID:7r3lk5obq4e9vc7idd9h7pgr6s@google.com
+CREATED:20251227T203113Z
+DESCRIPTION:Description: Join us for our weekly Wednesday night WCS social!
+  DJ spinning the best tracks all night. Beginner lesson at 7pm.\n\nPrice: $
+ 15\nVenue: Creative Dance Collective\nType: social\nOrganizer: Yu Sun\nURL:
+  https://example.com/tickets
+LAST-MODIFIED:20260114T203948Z
+LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
+ , USA
+SEQUENCE:1
 STATUS:CONFIRMED
-SUMMARY:Arizona Dance Classic
+SUMMARY:Late Nite Vibe
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260103T020000Z
-DTEND:20260103T030000Z
-DTSTAMP:20260208T180933Z
-UID:3dmgu3nnnehvf9tl1e13jgh2lj@google.com
-CREATED:20251227T203147Z
-DESCRIPTION:Title: Friday Night Social\nDescription: Join us for our weekly
-  Friday night WCS social!\n\nVenue: NRG Ballroom\nPrice: $15\nType: social\
- nOrganizer: Mike
-LAST-MODIFIED:20251231T231144Z
-LOCATION:NRG Ballroom\, 931 E Elliot Rd # 101\, Tempe\, AZ 85284\, USA
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:NRG
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260322T030000Z
-DTEND:20260322T080000Z
-DTSTAMP:20260208T180933Z
-UID:7a66s8ac0bbr85idt4jtvtgmn4@google.com
+DTSTART;VALUE=DATE:20260725
+DTEND;VALUE=DATE:20260726
+DTSTAMP:20260208T181843Z
+UID:5a91vvp1rg0bfg4mjph74r1eee@google.com
 CLASS:PUBLIC
-CREATED:20260208T022420Z
-LAST-MODIFIED:20260208T174021Z
-LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
- te 17 B\, Scottsdale\, AZ 85260\, USA
+CREATED:20260208T174409Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181750Z
 SEQUENCE:0
 STATUS:CONFIRMED
-SUMMARY:White Rabbit: Unplugged
+SUMMARY:White Rabbit at Imperial Ballroom
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260703
+DTEND;VALUE=DATE:20260706
+DTSTAMP:20260208T181843Z
+UID:1jnu5npid56sbim899cn5fku9h@google.com
+CREATED:20260115T190217Z
+DESCRIPTION:https://phoenix4thofjuly.com/\n \nType: Competition\nOrganizer:
+  GPSDC\nPrice: $250
+LAST-MODIFIED:20260202T154656Z
+LOCATION:JW Marriott Scottsdale Camelback Inn Resort & Spa\, 5402 E Lincoln
+  Dr\, Scottsdale\, AZ 85253\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Phoenix 4th of July
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20261121
+DTEND;VALUE=DATE:20261122
+DTSTAMP:20260208T181843Z
+UID:6oomo5icna60segv6rg9nebimj@google.com
+CLASS:PUBLIC
+CREATED:20260208T174628Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181822Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit at Imperial Ballroom (Dancegiving!)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260111T200000Z
+DTEND:20260111T220000Z
+DTSTAMP:20260208T181843Z
+UID:g7lr6b9qhcm0k6hg0h685qetis@google.com
+CREATED:20251231T221445Z
+DESCRIPTION:Aaron Nuno workshop in Tucson! Intensive style\, ravp to Amanda
+  Ho to get prepay rate<br><a href="https://tsdc.net/" target="_blank"><br><
+ /a>Website: <a href="https://tsdc.net/" target="_blank">https://tsdc.net/</
+ a><br>Type: Workshop<br>Organizer: Country Bandits<br><span><span><span><sp
+ an>Price: $15</span></span></span></span>
+LAST-MODIFIED:20251231T224731Z
+LOCATION:Dream Dance\, 405 E Wetmore Rd #125\, Tucson\, AZ 85705\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Aaron Nuno- Tucson
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;TZID=America/Phoenix:20260114T183000
 DTEND;TZID=America/Phoenix:20260114T213000
 RRULE:FREQ=WEEKLY;INTERVAL=2;BYDAY=WE
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:d9fp7vfieoaidsovqmjc945g70@google.com
 CREATED:20260109T010047Z
 DESCRIPTION:Join us at Northern Arizona’s friendliest dance social 😃! Come
@@ -171,31 +285,99 @@ SUMMARY:Prescott BeatMob 🪩
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;TZID=America/Phoenix:20251230T214500
-DTEND;TZID=America/Phoenix:20251230T235900
-RRULE:FREQ=WEEKLY;UNTIL=20260106T065959Z;BYDAY=TU
-DTSTAMP:20260208T180933Z
-UID:7u4p304ukd2iomnudlmm6dps9v@google.com
-CREATED:20251228T041443Z
-DESCRIPTION:<span>Description: Come celebrate the New Year<br></span><a hre
- f="https://www.instagram.com/fullswing.az/" target="_blank"><br></a><br><sp
- an>Price: $15<br>Venue: The Imperial Ballroom<br>Type: social<br>Organizer:
-  Full Swing Team<br></span><span>Instagram: </span><span><a href="https://w
- ww.instagram.com/fullswing.az/" target="_blank">https://www.instagram.com/f
- ullswing.az/</a></span>
-LAST-MODIFIED:20260101T234337Z
+DTSTART:20260222T030000Z
+DTEND:20260222T080000Z
+DTSTAMP:20260208T181843Z
+UID:1dvgprtj9fiublvv6rtgt6l3k4@google.com
+CLASS:PUBLIC
+CREATED:20260207T214132Z
+DESCRIPTION:Follow the white rabbit.\n\nLast month's Unplugged was awesome!
+  Let's do it again! This time Nivens is super excited to bring in one of hi
+ s very favorite local dancers to offer something a little different\, a lot
+  fun\, and incredibly powerful as a tool for your dance. Zeus Zalevskyi is 
+ excited to offer his expertise in Contact Improv\, to develop connection an
+ d self-expression\, while sharing something fun and valuable that you might
+  not have experienced before. As far as Nivens is concerned\, Zeus epitomiz
+ es self-expression and creativity\, and couldn't be happier to have him tea
+ ch.\n\n8pm: "Beyond the Steps: Self-Expression through Contact Improvisatio
+ n" w/Zeus Zalevskyi\nDevelop connection\, presence\, and your ability for s
+ elf-expression (All levels)\n\n9pm: Party\nPrice: $15 (includes class)\n\nR
+ emember:\n- If it glows it won't say "no"\n- White Rabbit is a safe space f
+ or all\n- No unsolicited feedback on the social floor\n\nAll are welcome! S
+ ee you there!
+LAST-MODIFIED:20260208T181551Z
 LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
  te 17 B\, Scottsdale\, AZ 85260\, USA
-SEQUENCE:1
+SEQUENCE:0
 STATUS:CONFIRMED
-SUMMARY:Full Swing
+SUMMARY:White Rabbit: Unplugged
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260322T030000Z
+DTEND:20260322T080000Z
+DTSTAMP:20260208T181843Z
+UID:7a66s8ac0bbr85idt4jtvtgmn4@google.com
+CLASS:PUBLIC
+CREATED:20260208T022420Z
+DESCRIPTION:Details TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181650Z
+LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
+ te 17 B\, Scottsdale\, AZ 85260\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit: Unplugged
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260530
+DTEND;VALUE=DATE:20260531
+DTSTAMP:20260208T181843Z
+UID:7k52ti6vamofbd74bb3gep67ja@google.com
+CLASS:PUBLIC
+CREATED:20260208T174123Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181720Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit at CDC (5th Anniversary!)
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260103T020000Z
+DTEND:20260103T030000Z
+DTSTAMP:20260208T181843Z
+UID:3dmgu3nnnehvf9tl1e13jgh2lj@google.com
+CREATED:20251227T203147Z
+DESCRIPTION:Title: Friday Night Social\nDescription: Join us for our weekly
+  Friday night WCS social!\n\nVenue: NRG Ballroom\nPrice: $15\nType: social\
+ nOrganizer: Mike
+LAST-MODIFIED:20251231T231144Z
+LOCATION:NRG Ballroom\, 931 E Elliot Rd # 101\, Tempe\, AZ 85284\, USA
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:NRG
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20260926
+DTEND;VALUE=DATE:20260927
+DTSTAMP:20260208T181843Z
+UID:3chritqf1qa2vo1hb095jdc4nc@google.com
+CLASS:PUBLIC
+CREATED:20260208T174533Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181810Z
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:White Rabbit at CDC
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;TZID=America/Phoenix:20260107T200000
 DTEND;TZID=America/Phoenix:20260107T230000
 RRULE:FREQ=WEEKLY;UNTIL=20260114T065959Z;BYDAY=WE
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:7r3lk5obq4e9vc7idd9h7pgr6s_R20260108T030000@google.com
 CREATED:20251227T203113Z
 DESCRIPTION:Description: Join us for our weekly Wednesday night WCS social!
@@ -211,182 +393,51 @@ SUMMARY:Late Nite Vibe
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART:20260222T030000Z
-DTEND:20260222T080000Z
-DTSTAMP:20260208T180933Z
-UID:1dvgprtj9fiublvv6rtgt6l3k4@google.com
-CLASS:PUBLIC
-CREATED:20260207T214132Z
-DESCRIPTION:Follow the white rabbit.\n\nLast month's Unplugged was awesome!
-  Let's do it again! This time Nivens is super excited to bring in one of hi
- s very favorite local dancers to offer something a little different\, a lot
-  fun\, and incredibly powerful as a tool for your dance. Zeus Zalevskyi is 
- excited to offer his expertise in Contact Improv\, to develop connection an
- d self-expression\, while sharing something fun and valuable that you might
-  not have experienced before. As far as Nivens is concerned\, Zeus epitomiz
- es self-expression and creativity\, and couldn't be happier to have him tea
- ch.\n\n8pm: "Beyond the Steps: Self-Expression through Contact Improvisatio
- n" w/Zeus Zalevskyi\nDevelop connection\, presence\, and your ability for s
- elf-expression (All levels)\n\n9pm: Party\nCost: $15 (includes class)\n\nRe
- member:\n- If it glows it won't say "no"\n- White Rabbit is a safe space fo
- r all\n- No unsolicited feedback on the social floor\n\nAll are welcome! Se
- e you there!
-LAST-MODIFIED:20260208T180714Z
+DTSTART;TZID=America/Phoenix:20260106T213000
+DTEND;TZID=America/Phoenix:20260106T235900
+RRULE:FREQ=WEEKLY;UNTIL=20260120T065959Z;BYDAY=TU
+DTSTAMP:20260208T181843Z
+UID:20q9itufnfp94roi936ntg6ol3@google.com
+CREATED:20251228T041443Z
+DESCRIPTION:<span>Description: </span><a href="https://www.instagram.com/fu
+ llswing.az/" target="_blank"><br></a><br><span>Price: $10<br>Venue: The Imp
+ erial Ballroom<br>Type: social<br>Organizer: Full Swing Team<br></span><spa
+ n>Instagram: </span><span><a href="https://www.instagram.com/fullswing.az/"
+  target="_blank">https://www.instagram.com/fullswing.az/</a></span>
+LAST-MODIFIED:20260116T192536Z
 LOCATION:Imperial Ballroom Dance Company\, 15475 N Greenway Hayden Loop Sui
  te 17 B\, Scottsdale\, AZ 85260\, USA
-SEQUENCE:0
+SEQUENCE:2
 STATUS:CONFIRMED
-SUMMARY:White Rabbit: Unplugged
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260822
-DTEND;VALUE=DATE:20260823
-DTSTAMP:20260208T180933Z
-UID:1e8u9e1k5fl17b7n5vbfodr8lc@google.com
-CLASS:PUBLIC
-CREATED:20260208T174502Z
-LAST-MODIFIED:20260208T174502Z
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit at CDC
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260111T200000Z
-DTEND:20260111T220000Z
-DTSTAMP:20260208T180933Z
-UID:g7lr6b9qhcm0k6hg0h685qetis@google.com
-CREATED:20251231T221445Z
-DESCRIPTION:Aaron Nuno workshop in Tucson! Intensive style\, ravp to Amanda
-  Ho to get prepay rate<br><a href="https://tsdc.net/" target="_blank"><br><
- /a>Website: <a href="https://tsdc.net/" target="_blank">https://tsdc.net/</
- a><br>Type: Workshop<br>Organizer: Country Bandits<br><span><span><span><sp
- an>Price: $15</span></span></span></span>
-LAST-MODIFIED:20251231T224731Z
-LOCATION:Dream Dance\, 405 E Wetmore Rd #125\, Tucson\, AZ 85705\, USA
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:Aaron Nuno- Tucson
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260103T200000Z
-DTEND:20260103T233000Z
-DTSTAMP:20260208T180933Z
-UID:2ni0dabvafghmcqe8sepcfdsvb@google.com
-CREATED:20260101T025751Z
-DESCRIPTION:Type: Competition\nWebsite: https://ucwdc.org/worlds-wcs/\nVenu
- e: Arizona Grand Resort
-LAST-MODIFIED:20260103T182104Z
-LOCATION:Arizona Grand Resort & Spa\, 8000 South Arizona Grand E\, Phoenix\
- , AZ 85044\, USA
-SEQUENCE:1
-STATUS:CONFIRMED
-SUMMARY:Worlds
+SUMMARY:Full Swing
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
 DTSTART;VALUE=DATE:20260627
 DTEND;VALUE=DATE:20260628
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:1d35pap14slp1080bo2doclrof@google.com
 CLASS:PUBLIC
 CREATED:20260208T174335Z
-LAST-MODIFIED:20260208T174335Z
+DESCRIPTION:\nDetails TBA!\nPrice: $15
+LAST-MODIFIED:20260208T181732Z
 SEQUENCE:0
 STATUS:CONFIRMED
 SUMMARY:White Rabbit at CDC
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
-DTSTART;VALUE=DATE:20261121
-DTEND;VALUE=DATE:20261122
-DTSTAMP:20260208T180933Z
-UID:6oomo5icna60segv6rg9nebimj@google.com
-CLASS:PUBLIC
-CREATED:20260208T174628Z
-LAST-MODIFIED:20260208T174628Z
+DTSTART:20260802T003000Z
+DTEND:20260802T033000Z
+DTSTAMP:20260208T181843Z
+UID:33mvgba2t0lkk3c213sqcbb5i4@google.com
+CREATED:20260115T204104Z
+DESCRIPTION:https://arizonadanceclassic.com/\n\nType: Competition\nPrice: $
+ 50\nOrganizer: UCWDC
+LAST-MODIFIED:20260115T204548Z
 SEQUENCE:0
 STATUS:CONFIRMED
-SUMMARY:White Rabbit at Imperial Ballroom (Dancegiving!)
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART:20260201T030000Z
-DTEND:20260201T080000Z
-DTSTAMP:20260208T180933Z
-UID:2i3kj3g9hhnlm85i2u8l1ggh3a@google.com
-CREATED:20251229T210533Z
-DESCRIPTION:Price: $15
-LAST-MODIFIED:20260115T073844Z
-LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
- , USA
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit Unplugged
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260703
-DTEND;VALUE=DATE:20260706
-DTSTAMP:20260208T180933Z
-UID:1jnu5npid56sbim899cn5fku9h@google.com
-CREATED:20260115T190217Z
-DESCRIPTION:https://phoenix4thofjuly.com/\n \nType: Competition\nOrganizer:
-  GPSDC\nPrice: $250
-LAST-MODIFIED:20260202T154656Z
-LOCATION:JW Marriott Scottsdale Camelback Inn Resort & Spa\, 5402 E Lincoln
-  Dr\, Scottsdale\, AZ 85253\, USA
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:Phoenix 4th of July
-TRANSP:TRANSPARENT
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260926
-DTEND;VALUE=DATE:20260927
-DTSTAMP:20260208T180933Z
-UID:3chritqf1qa2vo1hb095jdc4nc@google.com
-CLASS:PUBLIC
-CREATED:20260208T174533Z
-LAST-MODIFIED:20260208T174533Z
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit at CDC
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260725
-DTEND;VALUE=DATE:20260726
-DTSTAMP:20260208T180933Z
-UID:5a91vvp1rg0bfg4mjph74r1eee@google.com
-CLASS:PUBLIC
-CREATED:20260208T174409Z
-LAST-MODIFIED:20260208T174409Z
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit at Imperial Ballroom
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;TZID=America/Phoenix:20260114T190000
-DTEND;TZID=America/Phoenix:20260114T233000
-RRULE:FREQ=WEEKLY;BYDAY=WE
-DTSTAMP:20260208T180933Z
-UID:dlbqokvmlrk5df5m4a1nq2la4n@google.com
-CREATED:20251227T203113Z
-DESCRIPTION:Description: Join Late Nite Vibe for our weekly Wednesday night
-  WCS social! DJs spinning the best tracks all night. <br><br>7 pm - Beginne
- r lesson ($5)<br>8 pm - Intermediate lesson ($5)<br>9 pm - 12 am - Social (
- $8)<br>(Or $15 for whole night) <br><br>Venue: Creative Dance Collective<br
- >Type: social<br>Organizer: Yu Sun<br><span><span>Price: $8</span></span>
-LAST-MODIFIED:20260115T073551Z
-LOCATION:Creative Dance Collective\, 2107 W Guadalupe Rd\, Mesa\, AZ 85202\
- , USA
-SEQUENCE:2
-STATUS:CONFIRMED
-SUMMARY:Late Nite Vibe
+SUMMARY:Arizona Dance Classic
 TRANSP:OPAQUE
 END:VEVENT
 BEGIN:VEVENT
@@ -394,7 +445,7 @@ DTSTART;TZID=America/Phoenix:20251231T190000
 DTEND;TZID=America/Phoenix:20251231T210000
 RRULE:FREQ=WEEKLY;UNTIL=20260107T065959Z;BYDAY=WE
 EXDATE;TZID=America/Phoenix:20251231T190000
-DTSTAMP:20260208T180933Z
+DTSTAMP:20260208T181843Z
 UID:609qb5283ntbhuu3e8jonroln8@google.com
 CREATED:20251229T213458Z
 DESCRIPTION:<span><span>Description: Beginner and intermediate lessons<br><
@@ -405,49 +456,6 @@ LOCATION:Country Nomads\, 835 E Southern Ave\, Mesa\, AZ 85204\, USA
 SEQUENCE:0
 STATUS:CONFIRMED
 SUMMARY:White Rabbit Classes
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260425
-DTEND;VALUE=DATE:20260426
-DTSTAMP:20260208T180933Z
-UID:7dfeuthacqru3dh7sdujee6hf2@google.com
-CLASS:PUBLIC
-CREATED:20260208T174049Z
-LAST-MODIFIED:20260208T174140Z
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit at CDC
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;VALUE=DATE:20260530
-DTEND;VALUE=DATE:20260531
-DTSTAMP:20260208T180933Z
-UID:7k52ti6vamofbd74bb3gep67ja@google.com
-CLASS:PUBLIC
-CREATED:20260208T174123Z
-LAST-MODIFIED:20260208T174305Z
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:White Rabbit at CDC (5th Anniversary!)
-TRANSP:OPAQUE
-END:VEVENT
-BEGIN:VEVENT
-DTSTART;TZID=America/Phoenix:20260107T190000
-DTEND;TZID=America/Phoenix:20260107T210000
-RRULE:FREQ=WEEKLY;BYDAY=WE
-DTSTAMP:20260208T180933Z
-UID:609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com
-CREATED:20251229T213458Z
-DESCRIPTION:<span><span>Description: Beginner and intermediate lessons<br><
- br>Price: $15<br>Venue: Country Nomads<br>Type: class<br>Organizer: Gabe Se
- bastian</span></span>
-LAST-MODIFIED:20260107T212922Z
-LOCATION:Country Nomads\, 835 E Southern Ave\, Mesa\, AZ 85204\, USA
-SEQUENCE:0
-STATUS:CONFIRMED
-SUMMARY:Westie Wednesday Classes
 TRANSP:OPAQUE
 END:VEVENT
 END:VCALENDAR
