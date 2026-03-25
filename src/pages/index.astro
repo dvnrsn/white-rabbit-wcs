@@ -16,9 +16,9 @@ const schema = generateOrganizationSchema();
       <div class="container">
         <h1 class="title gradient-text">WHITE RABBIT</h1>
         <p class="tagline">Arizona WCS</p>
-        <div class="typed-text" id="typed-text">
-          <span class="cursor"></span>
-        </div>
+        <div class="typed-text" id="typed-text"></div>
+
+        <div class="typed-text" id="typed-text-2"></div>
 
         <div class="cta-buttons">
           <a href="/events" class="btn">View Events</a>
@@ -217,9 +217,20 @@ const schema = generateOrganizationSchema();
 <script>
   // Typing effect
   const text =
-    "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Find events, connect with dancers, and discover your flow.<br>Follow the white rabbit.";
+    "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Find events, connect with dancers, and discover your flow.";
+  const text2 = "Follow the white rabbit.";
   const typedTextElement = document.getElementById("typed-text");
+  const typedTextElement2 = document.getElementById("typed-text-2");
   let index = 0;
+
+  function typeText2() {
+    if (typedTextElement2 && index < text2.length) {
+      const currentText = text2.substring(0, index + 1);
+      typedTextElement2.innerHTML = currentText + '<span class="cursor"></span>';
+      index++;
+      setTimeout(typeText2, 50);
+    }
+  }
 
   function typeText() {
     if (typedTextElement && index < text.length) {
@@ -227,6 +238,10 @@ const schema = generateOrganizationSchema();
       typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
       index++;
       setTimeout(typeText, 50);
+    } else if (typedTextElement) {
+      typedTextElement.innerHTML = text;
+      index = 0;
+      setTimeout(typeText2, 400);
     }
   }
 
