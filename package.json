@@ -14,7 +14,8 @@
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.16.6",
-    "lucide-astro": "^0.556.0"
+    "lucide-astro": "^0.556.0",
+    "rrule": "^2.8.1"
   },
   "devDependencies": {
     "ical.js": "^2.2.1",

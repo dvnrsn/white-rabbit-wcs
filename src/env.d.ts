@@ -8,4 +8,6 @@ declare namespace App {
 
 interface Env {
   PUBLIC_GOOGLE_CALENDAR_ID: string;
+  DB: D1Database;
+  ADMIN_PASSWORD: string;
 }

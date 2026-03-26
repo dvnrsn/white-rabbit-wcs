@@ -1,0 +1,139 @@
+---
+export const prerender = false;
+
+import "../../styles/themes.css";
+
+let error = "";
+
+if (Astro.request.method === "POST") {
+  const formData = await Astro.request.formData();
+  const password = formData.get("password") as string;
+  const adminPassword = Astro.locals.runtime?.env?.ADMIN_PASSWORD;
+
+  if (password && adminPassword && password === adminPassword) {
+    Astro.cookies.set("admin_session", "1", {
+      path: "/",
+      httpOnly: true,
+      secure: true,
+      sameSite: "strict",
+      maxAge: 60 * 60 * 8, // 8 hours
+    });
+    return Astro.redirect("/admin");
+  } else {
+    error = "Invalid password.";
+  }
+}
+---
+
+<!doctype html>
+<html lang="en" data-theme="white-rabbit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login — White Rabbit</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("white-rabbit-theme") || "white-rabbit";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </head>
+  <body>
+    <div class="login-wrap">
+      <div class="login-card">
+        <h1>Admin Login</h1>
+        {error && <p class="error">{error}</p>}
+        <form method="POST">
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            name="password"
+            required
+            autofocus
+            autocomplete="current-password"
+          />
+          <button type="submit">Sign In</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .login-wrap {
+    width: 100%;
+    padding: 32px 16px;
+    box-sizing: border-box;
+  }
+
+  .login-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  h1 {
+    margin: 0 0 24px;
+    font-size: 1.4rem;
+    color: var(--accent-primary);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+  }
+
+  input {
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    padding: 10px 12px;
+    margin-bottom: 20px;
+    outline: none;
+  }
+
+  input:focus {
+    border-color: var(--accent-primary);
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    background: transparent;
+    border: 2px solid var(--accent-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  button:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+  }
+
+  .error {
+    color: #ff4444;
+    margin: 0 0 16px;
+    font-size: 0.9rem;
+  }
+</style>
