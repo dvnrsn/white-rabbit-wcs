@@ -105,6 +105,7 @@ function parseICalData(icalData) {
   const comp = new ICAL.Component(jcalData);
   const vevents = comp.getAllSubcomponents('vevent');
   const allEvents = [];
+  const today = Temporal.Now.plainDateISO(TZ);
 
   vevents.forEach((vevent) => {
     const event = new ICAL.Event(vevent);
@@ -115,7 +116,6 @@ function parseICalData(icalData) {
       let iterations = 0;
       const maxFutureOccurrences = 2;
       const maxIterations = 365;
-
       let next;
       while (count < maxFutureOccurrences && iterations < maxIterations && (next = iterator.next())) {
         iterations++;
@@ -123,7 +123,7 @@ function parseICalData(icalData) {
         const startPlainDate = icalToPlainDate(occurrence.startDate);
         if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) continue;
         allEvents.push(buildEvent(`${event.uid}-${count}`, event, occurrence.startDate, occurrence.endDate, { isRecurring: true }));
-        count++;
+        if (Temporal.PlainDate.compare(startPlainDate, today) >= 0) count++;
       }
     } else {
       const startPlainDate = icalToPlainDate(event.startDate);
@@ -132,7 +132,15 @@ function parseICalData(icalData) {
     }
   });
 
-  return allEvents.sort((a, b) => b.date.localeCompare(a.date));
+  const sorted = allEvents.sort((a, b) => b.date.localeCompare(a.date));
+  const todayStr = today.toString();
+  const pastCounts = {};
+  return sorted.filter(event => {
+    if (!event.isRecurring || event.date >= todayStr) return true;
+    const baseUid = event.id.replace(/-\d+$/, '');
+    pastCounts[baseUid] = (pastCounts[baseUid] || 0) + 1;
+    return pastCounts[baseUid] <= 2;
+  });
 }
 
 async function fetchCalendar() {

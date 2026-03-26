@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
 import { generateEventListSchema } from '../lib/schema';
+import { Temporal } from 'temporal-polyfill';
 // Fetch events from Google Calendar
 let events: CalendarEvent[] = [];
 let calendarError: string | null = null;
@@ -16,41 +17,15 @@ try {
   calendarError = error instanceof Error ? error.message : 'Unknown error';
 }
 
-// Sort events by date and time
-events = [...events].sort((a, b) => {
-  // First compare dates
-  const dateComparison = new Date(a.date).getTime() - new Date(b.date).getTime();
-  if (dateComparison !== 0) {
-    return dateComparison;
-  }
+const today = Temporal.Now.plainDateISO('America/Phoenix').toString();
 
-  // If dates are the same, compare start times
-  // Convert "HH:MM" to minutes for comparison
-  const [aHours, aMinutes] = a.startTime.split(':').map(Number);
-  const [bHours, bMinutes] = b.startTime.split(':').map(Number);
-  const aTimeInMinutes = aHours * 60 + aMinutes;
-  const bTimeInMinutes = bHours * 60 + bMinutes;
+const upcomingEvents = events
+  .filter(e => e.date >= today)
+  .sort((a, b) => a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime));
 
-  return aTimeInMinutes - bTimeInMinutes;
-});
-
-// Get current date in Arizona time (UTC-7)
-// Create a date in UTC and adjust to Arizona time
-const nowUtc = new Date();
-const arizonaOffset = -7 * 60; // Arizona is UTC-7
-const nowArizona = new Date(nowUtc.getTime() + arizonaOffset * 60 * 1000);
-const todayArizona = new Date(nowArizona.getFullYear(), nowArizona.getMonth(), nowArizona.getDate());
-
-// Separate upcoming and past events
-// Event dates are stored as "YYYY-MM-DD" strings in Arizona time
-const upcomingEvents = events.filter(event => {
-  const eventDate = new Date(event.date + 'T00:00:00'); // Parse as local date
-  return eventDate >= todayArizona;
-});
-const pastEvents = events.filter(event => {
-  const eventDate = new Date(event.date + 'T00:00:00'); // Parse as local date
-  return eventDate < todayArizona;
-});
+const pastEvents = events
+  .filter(e => e.date < today)
+  .sort((a, b) => b.date.localeCompare(a.date) || b.startTime.localeCompare(a.startTime));
 
 // Generate structured data for upcoming events
 const schema = generateEventListSchema(upcomingEvents);
