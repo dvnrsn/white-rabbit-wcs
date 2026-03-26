@@ -1,0 +1,413 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { generateOrganizationSchema } from "../lib/schema";
+
+const schema = generateOrganizationSchema();
+
+const instructors = [
+  {
+    name: "Sarah M.",
+    level: "Advanced / Pro",
+    specialties: ["Footwork", "Connection", "Musicality"],
+    location: "Phoenix",
+    contact: "Coming soon",
+  },
+  {
+    name: "Marcus T.",
+    level: "Advanced / Competitive",
+    specialties: ["West Coast Swing", "Hustle", "Choreography"],
+    location: "Scottsdale",
+    contact: "Coming soon",
+  },
+  {
+    name: "Lena K.",
+    level: "Intermediate–Advanced",
+    specialties: ["Beginner Fundamentals", "Musicality", "Styling"],
+    location: "Tempe",
+    contact: "Coming soon",
+  },
+  {
+    name: "Jordan P.",
+    level: "Advanced",
+    specialties: ["Competition Prep", "Footwork", "Partnering"],
+    location: "Phoenix",
+    contact: "Coming soon",
+  },
+];
+
+const venues = [
+  {
+    name: "TBD Venue 1",
+    neighborhood: "Central Phoenix",
+    floor: "Hardwood",
+    notes: "Monthly White Rabbit social home base",
+  },
+  {
+    name: "TBD Venue 2",
+    neighborhood: "Scottsdale",
+    floor: "Sprung hardwood",
+    notes: "Weekly practice nights",
+  },
+  {
+    name: "TBD Venue 3",
+    neighborhood: "Tempe",
+    floor: "Tile",
+    notes: "Beginner-friendly drop-in classes",
+  },
+];
+
+const resources = [
+  {
+    name: "Desert City Swing (DCS)",
+    type: "Regional Event",
+    description:
+      "Phoenix's premier WCS convention. Multi-day event with workshops, Jack & Jills, and showcases.",
+    url: "#",
+  },
+  {
+    name: "Phoenix 4th",
+    type: "Monthly Social",
+    description:
+      "Long-running Phoenix WCS social on the 4th Friday of every month. Mixed levels, great community.",
+    url: "#",
+  },
+  {
+    name: "WCS Online",
+    type: "Learning Resource",
+    description:
+      "Video lessons, breakdowns, and community forums for dancers at every level.",
+    url: "#",
+  },
+  {
+    name: "WSDC",
+    type: "Governing Body",
+    description:
+      "West Coast Swing Dance Council — official points registry for competitive dancers.",
+    url: "#",
+  },
+];
+---
+
+<Layout
+  title="Community - The White Rabbit Society"
+  description="Connect with the Arizona WCS community. Find local instructors, venues, events, and resources to level up your West Coast Swing journey."
+  schema={schema}
+>
+  <main class="community-page">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title gradient-text">The Community</h1>
+        <p class="page-subtitle">Arizona's WCS Network</p>
+      </header>
+
+      <section class="content-section">
+        <h2 class="section-title">> Local Instructors</h2>
+        <p class="section-intro">
+          Arizona has a deep bench of talent. These are some of the local
+          instructors worth knowing.
+        </p>
+        <div class="cards-grid">
+          {
+            instructors.map((instructor) => (
+              <div class="card instructor-card">
+                <div class="instructor-header">
+                  <span class="instructor-name">{instructor.name}</span>
+                  <span class="instructor-level">{instructor.level}</span>
+                </div>
+                <div class="instructor-location">📍 {instructor.location}</div>
+                <div class="tags">
+                  {instructor.specialties.map((s) => (
+                    <span class="tag">{s}</span>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="section-title">> Local Venues</h2>
+        <p class="section-intro">
+          Places to dance in and around the Phoenix metro.
+        </p>
+        <div class="cards-grid">
+          {
+            venues.map((venue) => (
+              <div class="card venue-card">
+                <div class="venue-name">{venue.name}</div>
+                <div class="venue-meta">
+                  <span>📍 {venue.neighborhood}</span>
+                  <span>🪵 {venue.floor}</span>
+                </div>
+                <p class="venue-notes">{venue.notes}</p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="section-title">> WCS Resources</h2>
+        <p class="section-intro">
+          Key events, organizations, and platforms in the Arizona and national
+          WCS world.
+        </p>
+        <div class="resource-list">
+          {
+            resources.map((resource) => (
+              <a href={resource.url} class="card resource-card">
+                <div class="resource-header">
+                  <span class="resource-name">{resource.name}</span>
+                  <span class="resource-type">{resource.type}</span>
+                </div>
+                <p class="resource-desc">{resource.description}</p>
+              </a>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="content-section">
+        <h2 class="section-title">> Gear Up</h2>
+        <p class="section-intro">
+          New to WCS or just looking to upgrade? Here's what to know.
+        </p>
+        <div class="gear-grid">
+          <div class="card gear-card">
+            <h3>Shoes</h3>
+            <p>
+              Suede-soled dance shoes are the standard. Look for low heels with
+              a flexible sole. Popular brands include Very Fine, Ray Rose, and
+              Freed of London. Budget pick: any suede-soled Latin shoe.
+            </p>
+          </div>
+          <div class="card gear-card">
+            <h3>Floor Prep</h3>
+            <p>
+              Most Phoenix venues have hardwood or tile. Bring a sole brush to
+              keep your suede clean. Avoid dancing on rubber-soled shoes — your
+              knees will thank you.
+            </p>
+          </div>
+          <div class="card gear-card">
+            <h3>Where to Shop</h3>
+            <p>
+              Discount Dance Supply and Dance Naturals carry WCS-appropriate
+              shoes online. Locally, check with instructors — some carry
+              inventory or can point you to current deals.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .community-page {
+    padding: 3rem 0;
+    min-height: calc(100vh - 80px);
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .page-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+
+  .content-section {
+    margin-bottom: 4rem;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 0.75rem;
+    font-family: var(--font-primary);
+  }
+
+  .section-intro {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .instructor-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .instructor-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .instructor-level {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
+  .instructor-location {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    border-radius: 2px;
+  }
+
+  .venue-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+  }
+
+  .venue-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+  }
+
+  .venue-notes {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .resource-card {
+    display: block;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .resource-card:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-glow);
+  }
+
+  .resource-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .resource-name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .resource-type {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .resource-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .gear-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .gear-card h3 {
+    font-size: 1.1rem;
+    color: var(--accent-primary);
+    margin-bottom: 10px;
+  }
+
+  .gear-card p {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .community-page {
+      padding: 2rem 0;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .content-section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+    }
+
+    .instructor-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 4px;
+    }
+
+    .resource-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

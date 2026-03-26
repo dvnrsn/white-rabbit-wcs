@@ -1,0 +1,410 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { generateOrganizationSchema } from "../lib/schema";
+
+const schema = generateOrganizationSchema();
+
+const djs = [
+  {
+    handle: "DJ Nyx",
+    realName: "Nicole Y.",
+    bio: "Nyx brings a dark, hypnotic energy to the floor — deep house grooves layered over neo-soul and trip-hop. Known for late-night sets that keep dancers moving long past closing.",
+    style: ["Neo Soul", "Deep House", "Trip-Hop"],
+    resident: true,
+  },
+  {
+    handle: "DJ Cipher",
+    realName: "Chris M.",
+    bio: "Cipher's sets are a master class in musicality — he reads the room and builds narratives across the night. Expect modern RnB, left-field pop, and the occasional surprise throwback.",
+    style: ["Modern RnB", "Alternative Pop", "Funk"],
+    resident: true,
+  },
+  {
+    handle: "DJ Flux",
+    realName: "Felicia O.",
+    bio: "Flux specializes in the 120–128 BPM sweet spot that WCS dancers live in. Her library spans indie electronic to neo-funk, always with impeccable phrasing.",
+    style: ["Indie Electronic", "Neo-Funk", "Downtempo"],
+    resident: false,
+  },
+  {
+    handle: "DJ Static",
+    realName: "Sam T.",
+    bio: "The anchor of early evening sets. Static builds the room up slowly — smooth vocals, laid-back grooves, and just enough tension to pull dancers onto the floor.",
+    style: ["Soul", "Smooth RnB", "Chill Hop"],
+    resident: false,
+  },
+];
+
+const playlists = [
+  {
+    title: "Rabbit Hole Vol. 1",
+    description: "The essential White Rabbit sound. 90 minutes of floor-filling WCS cuts.",
+    tracks: 22,
+    bpm: "115–128",
+    mood: "Social / Late Night",
+  },
+  {
+    title: "Down the Rabbit Hole",
+    description: "Darker, slower, deeper. For when the night gets interesting.",
+    tracks: 18,
+    bpm: "100–118",
+    mood: "Intimate / Moody",
+  },
+  {
+    title: "Morning Dew",
+    description: "The after-hours wind-down. Smooth grooves for tired legs and happy hearts.",
+    tracks: 14,
+    bpm: "95–112",
+    mood: "Chill / Cool-Down",
+  },
+];
+---
+
+<Layout
+  title="Music - The White Rabbit Society"
+  description="Discover the sounds of White Rabbit WCS. Meet our DJs, explore playlists, and learn about our approach to music and dance."
+  schema={schema}
+>
+  <main class="music-page">
+    <div class="container">
+      <header class="page-header">
+        <div class="header-glyph">//</div>
+        <h1 class="page-title gradient-text">The Sound</h1>
+        <p class="page-subtitle">Music · Philosophy · DJs</p>
+      </header>
+
+      <section class="philosophy-section">
+        <div class="philosophy-grid">
+          <div class="philosophy-block">
+            <h2 class="section-title">> Our Approach</h2>
+            <p>
+              Music is the reason we're all here. West Coast Swing was built on
+              the idea that great dancing follows great music — not the other way
+              around. We take that seriously.
+            </p>
+            <p>
+              Every White Rabbit event is curated, not shuffled. Our DJs don't
+              just play songs; they build sets with intention, reading the room
+              and shaping the energy of the night from the first note to the
+              last.
+            </p>
+          </div>
+          <div class="philosophy-block">
+            <h2 class="section-title">> The Philosophy</h2>
+            <p>
+              We play music that moves people — literally. That means staying
+              contemporary without chasing trends, honoring the roots of WCS
+              while staying open to where music is going. Neo-soul, indie
+              electronic, modern RnB, left-field pop. Anything that hits the
+              right pocket.
+            </p>
+            <p>
+              The tempo sweet spot we live in: 110–128 BPM. Wide enough for
+              expression, tight enough to dance.
+            </p>
+          </div>
+        </div>
+
+        <div class="manifesto-block">
+          <div class="manifesto-line">IF IT GROOVES, IT QUALIFIES.</div>
+          <div class="manifesto-line secondary">
+            Genre is a suggestion. Phrasing is law.
+          </div>
+        </div>
+      </section>
+
+      <section class="dj-section">
+        <h2 class="section-title">> The DJs</h2>
+        <p class="section-intro">
+          The people behind the music. Our resident and guest DJs define the
+          White Rabbit sound.
+        </p>
+        <div class="dj-grid">
+          {
+            djs.map((dj) => (
+              <div class={`card dj-card ${dj.resident ? "resident" : ""}`}>
+                <div class="dj-header">
+                  <div>
+                    <div class="dj-handle">{dj.handle}</div>
+                    <div class="dj-real">{dj.realName}</div>
+                  </div>
+                  {dj.resident && (
+                    <span class="resident-badge">Resident</span>
+                  )}
+                </div>
+                <p class="dj-bio">{dj.bio}</p>
+                <div class="dj-tags">
+                  {dj.style.map((s) => (
+                    <span class="tag">{s}</span>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section class="playlist-section">
+        <h2 class="section-title">> Playlists</h2>
+        <p class="section-intro">
+          Curated sets for home listening, practice, and late-night winding
+          down. Full streaming links coming soon.
+        </p>
+        <div class="playlist-list">
+          {
+            playlists.map((playlist) => (
+              <div class="card playlist-card">
+                <div class="playlist-header">
+                  <span class="playlist-title">{playlist.title}</span>
+                  <span class="playlist-mood">{playlist.mood}</span>
+                </div>
+                <p class="playlist-desc">{playlist.description}</p>
+                <div class="playlist-meta">
+                  <span>{playlist.tracks} tracks</span>
+                  <span>{playlist.bpm} BPM</span>
+                  <span class="coming-soon">Streaming link coming soon</span>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .music-page {
+    padding: 3rem 0;
+    min-height: calc(100vh - 80px);
+  }
+
+  .page-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .header-glyph {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    color: var(--accent-primary);
+    opacity: 0.5;
+    margin-bottom: 8px;
+    letter-spacing: 0.3em;
+  }
+
+  .page-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1em;
+  }
+
+  .page-subtitle {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+    margin-bottom: 1rem;
+    font-family: var(--font-primary);
+  }
+
+  .section-intro {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+  }
+
+  /* Philosophy */
+  .philosophy-section {
+    margin-bottom: 5rem;
+  }
+
+  .philosophy-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-bottom: 3rem;
+  }
+
+  .philosophy-block p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+    font-size: 1.05rem;
+  }
+
+  .manifesto-block {
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    padding: 32px 0;
+    text-align: center;
+  }
+
+  .manifesto-line {
+    font-family: var(--font-primary);
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--accent-primary);
+    line-height: 1.4;
+  }
+
+  .manifesto-line.secondary {
+    font-size: clamp(0.9rem, 2.5vw, 1.2rem);
+    color: var(--text-secondary);
+    font-weight: 400;
+    margin-top: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* DJs */
+  .dj-section {
+    margin-bottom: 5rem;
+  }
+
+  .dj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+  }
+
+  .dj-card.resident {
+    border-color: var(--accent-primary);
+  }
+
+  .dj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
+  }
+
+  .dj-handle {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+  }
+
+  .dj-real {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  .resident-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .dj-bio {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  .dj-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tag {
+    font-size: 0.75rem;
+    padding: 3px 8px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+  }
+
+  /* Playlists */
+  .playlist-section {
+    margin-bottom: 4rem;
+  }
+
+  .playlist-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .playlist-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    gap: 8px;
+  }
+
+  .playlist-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+  }
+
+  .playlist-mood {
+    font-size: 0.75rem;
+    color: var(--accent-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    white-space: nowrap;
+  }
+
+  .playlist-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0 0 10px;
+  }
+
+  .playlist-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: var(--font-primary);
+    flex-wrap: wrap;
+  }
+
+  .coming-soon {
+    color: var(--accent-secondary);
+    font-style: italic;
+  }
+
+  @media (max-width: 768px) {
+    .music-page {
+      padding: 2rem 0;
+    }
+
+    .page-header {
+      margin-bottom: 3rem;
+    }
+
+    .philosophy-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+    }
+
+    .playlist-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

@@ -31,29 +31,34 @@ const schema = generateOrganizationSchema();
     <section class="features">
       <div class="container">
         <div class="features-grid">
-          <div class="card feature">
+          <a href="/events" class="card feature">
             <h3>> Events</h3>
             <p>
               Find West Coast Swing dances, workshops, and socials happening
               across Arizona - Phoenix, Tucson, Prescott and beyond.
             </p>
-          </div>
+          </a>
 
-          <div class="card feature">
+          <a href="/community" class="card feature">
             <h3>> Community</h3>
             <p>
-              Connect with dancers, teachers, and venues in the Arizona WCS
-              scene.
+              Connect with dancers, teachers, venues, and other resources in
+              the Arizona WCS scene.
             </p>
-          </div>
+          </a>
 
-          <div class="card feature">
-            <h3>> Resources</h3>
+          <a href="/music" class="card feature">
+            <h3>> Music</h3>
             <p>
-              Discover teachers, practice spaces, and everything you need to
-              level up your dancing.
+              Discover new music, read about our approach and philosophy, and
+              get to know our DJs.
             </p>
-          </div>
+          </a>
+
+          <a href="/shop" class="card feature">
+            <h3>> Shop</h3>
+            <p>Cop the merch, support White Rabbit.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -161,6 +166,13 @@ const schema = generateOrganizationSchema();
 
   .feature {
     text-align: center;
+    text-decoration: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .feature:hover {
+    border-color: var(--accent-primary);
+    box-shadow: var(--shadow-glow);
   }
 
   .feature h3 {
