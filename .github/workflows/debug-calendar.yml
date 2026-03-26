@@ -1,0 +1,30 @@
+name: Debug Calendar Feed
+
+on:
+  workflow_dispatch:
+
+jobs:
+  debug:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Fetch raw ICS
+        run: |
+          ENCODED_ID=$(python3 -c "import urllib.parse; print(urllib.parse.quote('${{ secrets.PUBLIC_GOOGLE_CALENDAR_ID }}'))")
+          curl -s "https://calendar.google.com/calendar/ical/${ENCODED_ID}/public/basic.ics" -o calendar.ics
+          echo "Fetched $(wc -c < calendar.ics) bytes"
+
+      - name: Parse to JSON
+        run: node scripts/fetch-calendar.js
+        env:
+          PUBLIC_GOOGLE_CALENDAR_ID: ${{ secrets.PUBLIC_GOOGLE_CALENDAR_ID }}
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: calendar-debug
+          path: |
+            calendar.ics
+            src/data/events.json
