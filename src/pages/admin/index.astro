@@ -1,0 +1,139 @@
+---
+export const prerender = false;
+
+import "../../styles/themes.css";
+
+// Auth guard
+const session = Astro.cookies.get("admin_session");
+if (!session?.value) {
+  return Astro.redirect("/admin/login");
+}
+---
+
+<!doctype html>
+<html lang="en" data-theme="white-rabbit">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin — White Rabbit</title>
+    <script is:inline>
+      const savedTheme = localStorage.getItem("white-rabbit-theme") || "white-rabbit";
+      document.documentElement.setAttribute("data-theme", savedTheme);
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>White Rabbit <span class="accent">CMS</span></h1>
+        <a href="/admin/login" class="logout">Sign out</a>
+      </header>
+
+      <nav class="dashboard-grid">
+        <a href="/admin/events" class="tile">
+          <span class="tile-icon">📅</span>
+          <span class="tile-label">Events</span>
+          <span class="tile-sub">Manage upcoming events</span>
+        </a>
+        <a href="/api/organizers.json" class="tile" target="_blank">
+          <span class="tile-icon">👤</span>
+          <span class="tile-label">Organizers</span>
+          <span class="tile-sub">View organizers (API)</span>
+        </a>
+        <a href="/api/venues.json" class="tile" target="_blank">
+          <span class="tile-icon">📍</span>
+          <span class="tile-label">Venues</span>
+          <span class="tile-sub">View venues (API)</span>
+        </a>
+        <a href="/api/events.json" class="tile" target="_blank">
+          <span class="tile-icon">🔗</span>
+          <span class="tile-label">Events API</span>
+          <span class="tile-sub">View events JSON feed</span>
+        </a>
+      </nav>
+    </div>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: var(--font-primary);
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 20px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .accent {
+    color: var(--accent-primary);
+  }
+
+  .logout {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    border: 1px solid var(--border-color);
+    padding: 6px 14px;
+  }
+
+  .logout:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
+  .tile {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    padding: 24px 20px;
+    text-decoration: none;
+    color: var(--text-primary);
+    transition: border-color 0.2s;
+  }
+
+  .tile:hover {
+    border-color: var(--accent-primary);
+  }
+
+  .tile-icon {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+  }
+
+  .tile-label {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+
+  .tile-sub {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+  }
+</style>
