@@ -21,7 +21,6 @@
     "oxfmt": "^0.20.0",
     "oxlint": "^1.35.0",
     "oxlint-tsgolint": "^0.10.0",
-    "temporal-polyfill": "^0.3.2",
     "wrangler": "^4.54.0"
   }
 }

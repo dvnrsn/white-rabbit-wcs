@@ -5,7 +5,6 @@ import { writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import ICAL from 'ical.js';
-import { Temporal } from 'temporal-polyfill';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
