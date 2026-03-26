@@ -19,8 +19,13 @@ Replacing the Google Calendar + iCal pipeline with a Cloudflare D1 database and 
 | `organizers` | name, slug, bio, instagram, website, email |
 | `venues` | name, slug, address, city, state, maps_url |
 | `teachers` | name, slug, bio, instagram, website, email |
+| `djs` | name, slug, bio, instagram, website, email |
 | `artists` | name, slug, bio, instagram, website, email, points |
+| `organizations` | name, slug, bio, website, instagram, email |
 | `events` | title, organizer_id, venue_id, date, start/end_time, price, level, type, rrule, is_recurring |
+| `event_djs` | event_id, dj_id |
+| `event_teachers` | event_id, teacher_id |
+| `artist_organizations` | artist_id, organization_id, role, points |
 
 Recurring events store an RRULE string (e.g. `FREQ=WEEKLY;INTERVAL=2`). The `rrule` package expands them at read time.
 
@@ -29,9 +34,11 @@ Recurring events store an RRULE string (e.g. `FREQ=WEEKLY;INTERVAL=2`). The `rru
 ## Status
 
 ### Done
-- [x] D1 schema (`migrations/001_initial.sql`)
-- [x] Drizzle schema (`src/lib/db/schema.ts`) + client (`src/lib/db/index.ts`)
+- [x] D1 database created (`wcs-cms`, ID: `5bc90ba6-b149-432c-9b31-a41c0a8556d4`)
+- [x] Drizzle schema (`src/lib/db/schema.ts`) — all 10 tables including djs, organizations, junction tables
+- [x] Drizzle client (`src/lib/db/index.ts`)
 - [x] `drizzle.config.ts`
+- [x] Migrations generated: `0000_tranquil_morlocks.sql` (core tables), `0001_spotty_strong_guy.sql` (djs, organizations, junction tables)
 - [x] REST API: `GET /api/events.json`, `/api/organizers.json`, `/api/venues.json`
 - [x] Admin: login, dashboard, events list, new event form
 - [x] Admin POST `api/admin/events` — inserts event, converts recurrence to RRULE
@@ -39,17 +46,18 @@ Recurring events store an RRULE string (e.g. `FREQ=WEEKLY;INTERVAL=2`). The `rru
 ### Outstanding
 
 #### High priority
-- [ ] **Wire main events page to D1** — `src/pages/events.astro` still reads `events.json`; add a D1 path alongside the JSON fallback
+- [ ] **Apply migrations to remote D1** — `wrangler d1 migrations apply wcs-cms --remote`
 - [ ] **Edit/delete events** — admin has create only
 - [ ] **Organizer CRUD** — list, new, edit pages under `/admin/organizers`
 - [ ] **Venue CRUD** — list, new, edit pages under `/admin/venues`
-- [ ] **Real D1 setup** — run `wrangler d1 create wcs-cms`, paste real `database_id` into `wrangler.jsonc`
+- [ ] **DJ CRUD** — list, new, edit pages under `/admin/djs`
 
 #### Medium priority
 - [ ] **Teacher CRUD** — list, new, edit pages
 - [ ] **Artist CRUD** — list, new, edit pages (include points field)
+- [ ] **Organization CRUD** — list, new, edit pages
 - [ ] **Import existing events** — migrate current `events.json` data into D1
-- [ ] **drizzle-kit migrations** — run `drizzle-kit generate` to produce proper versioned migrations from schema
+- [ ] **Wire main events page to D1** — `src/pages/events.astro` still reads `events.json` (intentionally deferred)
 
 #### Future / post-prototype
 - [ ] **Per-user auth** — organizers log in with their own accounts, RLS so they only edit their own data
@@ -62,12 +70,8 @@ Recurring events store an RRULE string (e.g. `FREQ=WEEKLY;INTERVAL=2`). The `rru
 ## Setup (first-time)
 
 ```bash
-# Create the D1 database
-wrangler d1 create wcs-cms
-# Paste the returned database_id into wrangler.jsonc
-
-# Apply schema
-wrangler d1 execute wcs-cms --file=migrations/001_initial.sql
+# Apply migrations to remote D1
+wrangler d1 migrations apply wcs-cms --remote
 
 # Local dev
 echo "ADMIN_PASSWORD=yourpassword" >> .dev.vars
