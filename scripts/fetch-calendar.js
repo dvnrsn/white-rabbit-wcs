@@ -5,6 +5,7 @@ import { writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import ICAL from 'ical.js';
+import { Temporal } from 'temporal-polyfill';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -15,17 +16,15 @@ if (!CALENDAR_ID) {
   process.exit(1);
 }
 
-function formatDate(date) {
-  const year = date.year;
-  const month = date.month.toString().padStart(2, '0');
-  const day = date.day.toString().padStart(2, '0');
-  return `${year}-${month}-${day}`;
+const TZ = 'America/Phoenix';
+const cutoff = Temporal.Now.plainDateISO(TZ).subtract({ months: 1 });
+
+function icalToPlainDate(icalTime) {
+  return Temporal.PlainDate.from({ year: icalTime.year, month: icalTime.month, day: icalTime.day });
 }
 
-function formatTime(date) {
-  const hours = date.hour.toString().padStart(2, '0');
-  const minutes = date.minute.toString().padStart(2, '0');
-  return `${hours}:${minutes}`;
+function icalToTimeString(icalTime) {
+  return Temporal.PlainTime.from({ hour: icalTime.hour, minute: icalTime.minute }).toString().slice(0, 5);
 }
 
 function parseDescription(description) {
@@ -54,19 +53,17 @@ function parseDescription(description) {
     .trim();
 
   const lines = cleanDescription.split('\n');
-  let descriptionLines = [];
+  const descriptionLines = [];
 
   for (const line of lines) {
     const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
     if (match) {
       const [, field, value] = match;
       const fieldLower = field.toLowerCase();
-
       if (fieldLower === 'description') {
         descriptionLines.push(value.trim());
       } else {
-        const processedValue = fieldLower === 'type' ? value.trim().toLowerCase() : value.trim();
-        fields[fieldLower] = processedValue;
+        fields[fieldLower] = fieldLower === 'type' ? value.trim().toLowerCase() : value.trim();
       }
     } else {
       descriptionLines.push(line);
@@ -80,108 +77,62 @@ function parseDescription(description) {
   return fields;
 }
 
+function buildEvent(id, event, startDate, endDate, extra = {}) {
+  const description = event.description || '';
+  const customFields = parseDescription(description);
+  return {
+    id,
+    title: event.summary || 'Untitled Event',
+    description: customFields.description || description,
+    date: icalToPlainDate(startDate).toString(),
+    startTime: icalToTimeString(startDate),
+    endTime: icalToTimeString(endDate),
+    venue: customFields.venue || event.location || 'TBA',
+    address: event.location || '',
+    price: customFields.price || 'Free',
+    level: customFields.level || '',
+    type: customFields.type || 'social',
+    organizer: customFields.organizer || 'White Rabbit WCS',
+    url: customFields.url || undefined,
+    instagram: customFields.instagram || undefined,
+    website: customFields.website || undefined,
+    ...extra,
+  };
+}
+
 function parseICalData(icalData) {
   const jcalData = ICAL.parse(icalData);
   const comp = new ICAL.Component(jcalData);
   const vevents = comp.getAllSubcomponents('vevent');
-
   const allEvents = [];
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
 
   vevents.forEach((vevent) => {
     const event = new ICAL.Event(vevent);
 
-    // Check if this is a recurring event
     if (event.isRecurring()) {
       const iterator = event.iterator();
       let count = 0;
       let iterations = 0;
-      const maxOccurrences = 2;
+      const maxFutureOccurrences = 2;
       const maxIterations = 365;
 
       let next;
-      while (count < maxOccurrences && iterations < maxIterations && (next = iterator.next())) {
+      while (count < maxFutureOccurrences && iterations < maxIterations && (next = iterator.next())) {
         iterations++;
-        if (next.toJSDate() < today) {
-          continue;
-        }
         const occurrence = event.getOccurrenceDetails(next);
-        let startDate = occurrence.startDate.clone();
-        let endDate = occurrence.endDate.clone();
-
-        if (startDate.zone && startDate.zone.tzid !== 'UTC') {
-          startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
-        }
-        startDate.adjust(0, -7, 0, 0);
-
-        if (endDate.zone && endDate.zone.tzid !== 'UTC') {
-          endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
-        }
-        endDate.adjust(0, -7, 0, 0);
-
-        const description = event.description || '';
-        const customFields = parseDescription(description);
-
-        allEvents.push({
-          id: `${event.uid}-${count}`,
-          title: event.summary || 'Untitled Event',
-          description: customFields.description || description,
-          date: formatDate(startDate),
-          startTime: formatTime(startDate),
-          endTime: formatTime(endDate),
-          venue: customFields.venue || event.location || 'TBA',
-          address: event.location || '',
-          price: customFields.price || 'Free',
-          level: customFields.level || '',
-          type: customFields.type || 'social',
-          organizer: customFields.organizer || 'White Rabbit WCS',
-          url: customFields.url || undefined,
-          instagram: customFields.instagram || undefined,
-          website: customFields.website || undefined,
-          isRecurring: true,
-        });
-
+        const startPlainDate = icalToPlainDate(occurrence.startDate);
+        if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) continue;
+        allEvents.push(buildEvent(`${event.uid}-${count}`, event, occurrence.startDate, occurrence.endDate, { isRecurring: true }));
         count++;
       }
     } else {
-      let startDate = event.startDate.clone();
-      let endDate = event.endDate.clone();
-
-      if (startDate.zone && startDate.zone.tzid !== 'UTC') {
-        startDate = startDate.convertToZone(ICAL.Timezone.utcTimezone);
-      }
-      startDate.adjust(0, -7, 0, 0);
-
-      if (endDate.zone && endDate.zone.tzid !== 'UTC') {
-        endDate = endDate.convertToZone(ICAL.Timezone.utcTimezone);
-      }
-      endDate.adjust(0, -7, 0, 0);
-
-      const description = event.description || '';
-      const customFields = parseDescription(description);
-
-      allEvents.push({
-        id: event.uid,
-        title: event.summary || 'Untitled Event',
-        description: customFields.description || description,
-        date: formatDate(startDate),
-        startTime: formatTime(startDate),
-        endTime: formatTime(endDate),
-        venue: customFields.venue || event.location || 'TBA',
-        address: event.location || '',
-        price: customFields.price || 'Free',
-        level: customFields.level || '',
-        type: customFields.type || 'social',
-        organizer: customFields.organizer || 'White Rabbit WCS',
-        url: customFields.url || undefined,
-        instagram: customFields.instagram || undefined,
-        website: customFields.website || undefined,
-      });
+      const startPlainDate = icalToPlainDate(event.startDate);
+      if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) return;
+      allEvents.push(buildEvent(event.uid, event, event.startDate, event.endDate));
     }
   });
 
-  return allEvents;
+  return allEvents.sort((a, b) => b.date.localeCompare(a.date));
 }
 
 async function fetchCalendar() {
@@ -197,7 +148,7 @@ async function fetchCalendar() {
   console.log(`Fetched ${icalData.length} bytes of iCal data`);
 
   const events = parseICalData(icalData);
-  
+
   const outputPath = join(__dirname, '../src/data/events.json');
   writeFileSync(outputPath, JSON.stringify(events, null, 2));
   console.log(`Parsed and saved ${events.length} events to ${outputPath}`);

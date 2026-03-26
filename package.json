@@ -15,7 +15,8 @@
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.16.6",
     "ical.js": "^2.2.1",
-    "lucide-astro": "^0.556.0"
+    "lucide-astro": "^0.556.0",
+    "temporal-polyfill": "^0.3.2"
   },
   "devDependencies": {
     "oxfmt": "^0.20.0",
