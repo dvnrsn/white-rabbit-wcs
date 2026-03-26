@@ -17,6 +17,9 @@ pnpm-debug.log*
 .env
 .env.production
 
+# calendar data
+src/data/calendar.ics
+
 # macOS-specific files
 .DS_Store
 
