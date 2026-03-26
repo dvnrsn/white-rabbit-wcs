@@ -14,14 +14,14 @@
     "@astrojs/cloudflare": "^12.6.12",
     "@astrojs/sitemap": "^3.6.0",
     "astro": "^5.16.6",
-    "ical.js": "^2.2.1",
-    "lucide-astro": "^0.556.0",
-    "temporal-polyfill": "^0.3.2"
+    "lucide-astro": "^0.556.0"
   },
   "devDependencies": {
+    "ical.js": "^2.2.1",
     "oxfmt": "^0.20.0",
     "oxlint": "^1.35.0",
     "oxlint-tsgolint": "^0.10.0",
+    "temporal-polyfill": "^0.3.2",
     "wrangler": "^4.54.0"
   }
 }

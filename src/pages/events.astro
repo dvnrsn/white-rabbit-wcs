@@ -3,7 +3,6 @@ import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
 import { generateEventListSchema } from '../lib/schema';
-import { Temporal } from 'temporal-polyfill';
 // Fetch events from Google Calendar
 let events: CalendarEvent[] = [];
 let calendarError: string | null = null;
@@ -17,7 +16,7 @@ try {
   calendarError = error instanceof Error ? error.message : 'Unknown error';
 }
 
-const today = Temporal.Now.plainDateISO('America/Phoenix').toString();
+const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
 
 const upcomingEvents = events
   .filter(e => e.date >= today)

@@ -1,6 +1,7 @@
 [
   {
     "id": "6oomo5icna60segv6rg9nebimj@google.com",
+    "baseUid": "6oomo5icna60segv6rg9nebimj@google.com",
     "title": "White Rabbit at Imperial Ballroom (Dancegiving!)",
     "description": "Details TBA!",
     "date": "2026-11-21",
@@ -15,6 +16,7 @@
   },
   {
     "id": "3chritqf1qa2vo1hb095jdc4nc@google.com",
+    "baseUid": "3chritqf1qa2vo1hb095jdc4nc@google.com",
     "title": "White Rabbit at CDC",
     "description": "Details TBA!",
     "date": "2026-09-26",
@@ -29,6 +31,7 @@
   },
   {
     "id": "1e8u9e1k5fl17b7n5vbfodr8lc@google.com",
+    "baseUid": "1e8u9e1k5fl17b7n5vbfodr8lc@google.com",
     "title": "White Rabbit at CDC",
     "description": "Details TBA!",
     "date": "2026-08-22",
@@ -43,6 +46,7 @@
   },
   {
     "id": "33mvgba2t0lkk3c213sqcbb5i4@google.com",
+    "baseUid": "33mvgba2t0lkk3c213sqcbb5i4@google.com",
     "title": "Arizona Dance Classic",
     "description": "https://arizonadanceclassic.com/",
     "date": "2026-08-02",
@@ -57,6 +61,7 @@
   },
   {
     "id": "5a91vvp1rg0bfg4mjph74r1eee@google.com",
+    "baseUid": "5a91vvp1rg0bfg4mjph74r1eee@google.com",
     "title": "White Rabbit at Imperial Ballroom",
     "description": "Details TBA!",
     "date": "2026-07-25",
@@ -71,12 +76,13 @@
   },
   {
     "id": "1jnu5npid56sbim899cn5fku9h@google.com",
+    "baseUid": "1jnu5npid56sbim899cn5fku9h@google.com",
     "title": "Phoenix 4th of July",
     "description": "https://phoenix4thofjuly.com/",
     "date": "2026-07-03",
     "startTime": "00:00",
     "endTime": "00:00",
-    "venue": "JW Marriott Scottsdale Camelback Inn Resort & Spa, 5402 E Lincoln Dr, Scottsdale, AZ 85253, USA",
+    "venue": "Camelback Inn",
     "address": "JW Marriott Scottsdale Camelback Inn Resort & Spa, 5402 E Lincoln Dr, Scottsdale, AZ 85253, USA",
     "price": "$250",
     "level": "",
@@ -85,6 +91,7 @@
   },
   {
     "id": "1d35pap14slp1080bo2doclrof@google.com",
+    "baseUid": "1d35pap14slp1080bo2doclrof@google.com",
     "title": "White Rabbit at CDC",
     "description": "Details TBA!",
     "date": "2026-06-27",
@@ -99,6 +106,7 @@
   },
   {
     "id": "7k52ti6vamofbd74bb3gep67ja@google.com",
+    "baseUid": "7k52ti6vamofbd74bb3gep67ja@google.com",
     "title": "White Rabbit at CDC (5th Anniversary!)",
     "description": "Details TBA!",
     "date": "2026-05-30",
@@ -113,6 +121,7 @@
   },
   {
     "id": "7dfeuthacqru3dh7sdujee6hf2@google.com",
+    "baseUid": "7dfeuthacqru3dh7sdujee6hf2@google.com",
     "title": "White Rabbit at CDC",
     "description": "Details TBA!",
     "date": "2026-04-25",
@@ -127,6 +136,7 @@
   },
   {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-1",
+    "baseUid": "1v2p6iduemnk5b851im9oqot0p@google.com",
     "title": "Prescott BeatMob 🪩",
     "description": "Join us at Northern Arizona’s friendliest dance social 😃! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in🎶💃🏻 No experience necessary! \n\nLesson | 6pm | $5\nSocial | 7pm | $5",
     "date": "2026-04-08",
@@ -143,6 +153,7 @@
   },
   {
     "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-1",
+    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
     "title": "Full Swing",
     "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
     "date": "2026-04-07",
@@ -158,22 +169,8 @@
     "isRecurring": true
   },
   {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-1",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-04-01",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
-    "isRecurring": true
-  },
-  {
     "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-1",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
     "title": "Late Nite Vibe",
     "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
     "date": "2026-04-01",
@@ -188,7 +185,24 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-1",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-04-01",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-0",
+    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
     "title": "Full Swing",
     "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
     "date": "2026-03-31",
@@ -204,22 +218,8 @@
     "isRecurring": true
   },
   {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-03-25",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
-    "isRecurring": true
-  },
-  {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-0",
+    "baseUid": "1v2p6iduemnk5b851im9oqot0p@google.com",
     "title": "Prescott BeatMob 🪩",
     "description": "Join us at Northern Arizona’s friendliest dance social 😃! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in🎶💃🏻 No experience necessary! \n\nLesson | 6pm | $5\nSocial | 7pm | $5",
     "date": "2026-03-25",
@@ -236,6 +236,7 @@
   },
   {
     "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-0",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
     "title": "Late Nite Vibe",
     "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
     "date": "2026-03-25",
@@ -250,7 +251,24 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-03-25",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-0",
+    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
     "title": "Full Swing",
     "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
     "date": "2026-03-24",
@@ -267,6 +285,7 @@
   },
   {
     "id": "7a66s8ac0bbr85idt4jtvtgmn4@google.com",
+    "baseUid": "7a66s8ac0bbr85idt4jtvtgmn4@google.com",
     "title": "White Rabbit: Unplugged",
     "description": "Follow the white rabbit.\n\nNivens is extra excited this month! Not only does Unplugged fall directly upon the equinox (making it perfect to celebrate the start of Spring! Nivens' favorite time of year, of course), but we get to host one of AZ's most promising and magnetic young stars on the circuit: WSDC All-Star Justin Kereszturi!\n\nJustin is incredibly talented, and his meteoric rise to All-Star level is testament to his dedication and commitment to the craft of West Coast Swing.\n\n8pm: \"Linear Vs Rotational\" w/Justin Kereszturi (All levels)\nExplore the difference between linear and rotational movement within west coast swing. Learn how to manipulate your frame to control the type of connection and clearly communicate with your partner.\n\n9pm: Party\n\nRemember:\n- If it glows it won't say \"no\"\n- White Rabbit is a safe space for all\n- No unsolicited feedback on the social floor\n\nAll are welcome! See you there!",
     "date": "2026-03-22",
@@ -280,22 +299,8 @@
     "organizer": "White Rabbit WCS"
   },
   {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-03-18",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
-    "isRecurring": true
-  },
-  {
     "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-0",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
     "title": "Late Nite Vibe",
     "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
     "date": "2026-03-18",
@@ -310,7 +315,24 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-03-18",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-0",
+    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
     "title": "Full Swing",
     "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
     "date": "2026-03-17",
@@ -327,6 +349,7 @@
   },
   {
     "id": "d9fp7vfieoaidsovqmjc945g70@google.com-0",
+    "baseUid": "d9fp7vfieoaidsovqmjc945g70@google.com",
     "title": "Prescott BeatMob 🪩",
     "description": "Join us at Northern Arizona’s friendliest dance social 😃! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in🎶💃🏻 No experience necessary!",
     "date": "2026-03-11",
@@ -342,22 +365,8 @@
     "isRecurring": true
   },
   {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-03-11",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
-    "isRecurring": true
-  },
-  {
     "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-0",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
     "title": "Late Nite Vibe",
     "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
     "date": "2026-03-11",
@@ -372,7 +381,24 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-03-11",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "d9fp7vfieoaidsovqmjc945g70@google.com-0",
+    "baseUid": "d9fp7vfieoaidsovqmjc945g70@google.com",
     "title": "Prescott BeatMob 🪩",
     "description": "Join us at Northern Arizona’s friendliest dance social 😃! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in🎶💃🏻 No experience necessary!",
     "date": "2026-02-25",

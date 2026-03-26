@@ -17,16 +17,13 @@ importers:
       astro:
         specifier: ^5.16.6
         version: 5.16.6(@types/node@25.0.3)(rollup@4.54.0)(typescript@5.9.3)
-      ical.js:
-        specifier: ^2.2.1
-        version: 2.2.1
       lucide-astro:
         specifier: ^0.556.0
         version: 0.556.0(astro@5.16.6(@types/node@25.0.3)(rollup@4.54.0)(typescript@5.9.3))
-      temporal-polyfill:
-        specifier: ^0.3.2
-        version: 0.3.2
     devDependencies:
+      ical.js:
+        specifier: ^2.2.1
+        version: 2.2.1
       oxfmt:
         specifier: ^0.20.0
         version: 0.20.0
@@ -36,6 +33,9 @@ importers:
       oxlint-tsgolint:
         specifier: ^0.10.0
         version: 0.10.0
+      temporal-polyfill:
+        specifier: ^0.3.2
+        version: 0.3.2
       wrangler:
         specifier: ^4.54.0
         version: 4.54.0(@cloudflare/workers-types@4.20251225.0)

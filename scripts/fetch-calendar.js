@@ -77,11 +77,12 @@ function parseDescription(description) {
   return fields;
 }
 
-function buildEvent(id, event, startDate, endDate, extra = {}) {
+function buildEvent(id, baseUid, event, startDate, endDate, extra = {}) {
   const description = event.description || '';
   const customFields = parseDescription(description);
   return {
     id,
+    baseUid,
     title: event.summary || 'Untitled Event',
     description: customFields.description || description,
     date: icalToPlainDate(startDate).toString(),
@@ -122,13 +123,16 @@ function parseICalData(icalData) {
         const occurrence = event.getOccurrenceDetails(next);
         const startPlainDate = icalToPlainDate(occurrence.startDate);
         if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) continue;
-        allEvents.push(buildEvent(`${event.uid}-${count}`, event, occurrence.startDate, occurrence.endDate, { isRecurring: true }));
+        allEvents.push(buildEvent(`${event.uid}-${count}`, event.uid, event, occurrence.startDate, occurrence.endDate, { isRecurring: true }));
         if (Temporal.PlainDate.compare(startPlainDate, today) >= 0) count++;
+      }
+      if (iterations === maxIterations) {
+        console.warn(`[calendar] maxIterations hit for recurring event "${event.summary}" (${event.uid}) — some occurrences may be missing`);
       }
     } else {
       const startPlainDate = icalToPlainDate(event.startDate);
       if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) return;
-      allEvents.push(buildEvent(event.uid, event, event.startDate, event.endDate));
+      allEvents.push(buildEvent(event.uid, event.uid, event, event.startDate, event.endDate));
     }
   });
 
@@ -137,9 +141,8 @@ function parseICalData(icalData) {
   const pastCounts = {};
   return sorted.filter(event => {
     if (!event.isRecurring || event.date >= todayStr) return true;
-    const baseUid = event.id.replace(/-\d+$/, '');
-    pastCounts[baseUid] = (pastCounts[baseUid] || 0) + 1;
-    return pastCounts[baseUid] <= 2;
+    pastCounts[event.baseUid] = (pastCounts[event.baseUid] || 0) + 1;
+    return pastCounts[event.baseUid] <= 2;
   });
 }
 
