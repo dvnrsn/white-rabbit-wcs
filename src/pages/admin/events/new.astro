@@ -2,6 +2,9 @@
 export const prerender = false;
 
 import "../../../styles/themes.css";
+import { getDb } from "../../../lib/db";
+import { events as eventsTable, organizers as organizersTable, venues as venuesTable } from "../../../lib/db/schema";
+import { asc } from "drizzle-orm";
 
 // Auth guard
 const session = Astro.cookies.get("admin_session");
@@ -9,32 +12,25 @@ if (!session?.value) {
   return Astro.redirect("/admin/login");
 }
 
-const db = Astro.locals.runtime?.env?.DB;
+const env = Astro.locals.runtime?.env;
 
-interface OrganizerRow {
-  id: string;
-  name: string;
-}
+let organizers: { id: string; name: string }[] = [];
+let venues: { id: string; name: string; city: string | null }[] = [];
 
-interface VenueRow {
-  id: string;
-  name: string;
-  city: string | null;
-}
-
-let organizers: OrganizerRow[] = [];
-let venues: VenueRow[] = [];
-
-if (db) {
-  const [orgResult, venueResult] = await Promise.all([
-    db.prepare("SELECT id, name FROM organizers ORDER BY name ASC").all<OrganizerRow>(),
-    db.prepare("SELECT id, name, city FROM venues ORDER BY name ASC").all<VenueRow>(),
+if (env?.DB) {
+  const db = getDb(env);
+  const [orgRows, venueRows] = await Promise.all([
+    db.select({ id: organizersTable.id, name: organizersTable.name })
+      .from(organizersTable)
+      .orderBy(asc(organizersTable.name)),
+    db.select({ id: venuesTable.id, name: venuesTable.name, city: venuesTable.city })
+      .from(venuesTable)
+      .orderBy(asc(venuesTable.name)),
   ]);
-  organizers = orgResult.results;
-  venues = venueResult.results;
+  organizers = orgRows;
+  venues = venueRows;
 }
 
-let successId = "";
 let formError = "";
 
 if (Astro.request.method === "POST") {
@@ -49,35 +45,32 @@ if (Astro.request.method === "POST") {
   };
 
   const rrule = recurringMap[body.recurring ?? "once"] ?? null;
-  const is_recurring = rrule ? 1 : 0;
+  const isRecurring = rrule ? 1 : 0;
 
   if (!body.title || !body.date) {
     formError = "Title and date are required.";
-  } else if (!db) {
+  } else if (!env?.DB) {
     formError = "Database not available.";
   } else {
     try {
-      const result = await db
-        .prepare(
-          `INSERT INTO events (title, description, organizer_id, venue_id, date, start_time, end_time, price, level, type, rrule, is_recurring)
-           VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-           RETURNING id`
-        )
-        .bind(
-          body.title,
-          body.description || null,
-          body.organizer_id || null,
-          body.venue_id || null,
-          body.date,
-          body.start_time || null,
-          body.end_time || null,
-          body.price || null,
-          body.level || null,
-          body.type || "social",
+      const db = getDb(env);
+      const [result] = await db
+        .insert(eventsTable)
+        .values({
+          title: body.title,
+          description: body.description || null,
+          organizerId: body.organizer_id || null,
+          venueId: body.venue_id || null,
+          date: body.date,
+          startTime: body.start_time || null,
+          endTime: body.end_time || null,
+          price: body.price || null,
+          level: body.level || null,
+          type: body.type || "social",
           rrule,
-          is_recurring
-        )
-        .first<{ id: string }>();
+          isRecurring,
+        })
+        .returning({ id: eventsTable.id });
 
       if (result?.id) {
         return Astro.redirect("/admin/events");

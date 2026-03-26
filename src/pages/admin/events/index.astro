@@ -2,6 +2,9 @@
 export const prerender = false;
 
 import "../../../styles/themes.css";
+import { getDb } from "../../../lib/db";
+import { events as eventsTable, organizers, venues } from "../../../lib/db/schema";
+import { desc } from "drizzle-orm";
 
 // Auth guard
 const session = Astro.cookies.get("admin_session");
@@ -9,36 +12,41 @@ if (!session?.value) {
   return Astro.redirect("/admin/login");
 }
 
-const db = Astro.locals.runtime?.env?.DB;
+const env = Astro.locals.runtime?.env;
 
 interface EventRow {
   id: string;
   title: string;
   date: string;
-  start_time: string | null;
+  startTime: string | null;
   type: string | null;
-  is_recurring: number;
-  organizer_name: string | null;
-  venue_name: string | null;
+  isRecurring: number | null;
+  organizerName: string | null;
+  venueName: string | null;
 }
 
 let events: EventRow[] = [];
 let dbError = "";
 
-if (db) {
+if (env?.DB) {
   try {
-    const { results } = await db
-      .prepare(
-        `SELECT e.id, e.title, e.date, e.start_time, e.type, e.is_recurring,
-                o.name AS organizer_name, v.name AS venue_name
-         FROM events e
-         LEFT JOIN organizers o ON e.organizer_id = o.id
-         LEFT JOIN venues v ON e.venue_id = v.id
-         ORDER BY e.date DESC
-         LIMIT 100`
-      )
-      .all<EventRow>();
-    events = results;
+    const db = getDb(env);
+    events = await db
+      .select({
+        id: eventsTable.id,
+        title: eventsTable.title,
+        date: eventsTable.date,
+        startTime: eventsTable.startTime,
+        type: eventsTable.type,
+        isRecurring: eventsTable.isRecurring,
+        organizerName: organizers.name,
+        venueName: venues.name,
+      })
+      .from(eventsTable)
+      .leftJoin(organizers, (eq) => eq(eventsTable.organizerId, organizers.id))
+      .leftJoin(venues, (eq) => eq(eventsTable.venueId, venues.id))
+      .orderBy(desc(eventsTable.date))
+      .limit(100);
   } catch (e) {
     dbError = e instanceof Error ? e.message : String(e);
   }
@@ -89,12 +97,12 @@ if (db) {
             <tbody>
               {events.map((ev) => (
                 <tr>
-                  <td class="date">{ev.date}{ev.start_time ? ` ${ev.start_time}` : ""}</td>
+                  <td class="date">{ev.date}{ev.startTime ? ` ${ev.startTime}` : ""}</td>
                   <td class="title">{ev.title}</td>
                   <td><span class={`badge badge-${ev.type ?? "social"}`}>{ev.type ?? "social"}</span></td>
-                  <td>{ev.organizer_name ?? "—"}</td>
-                  <td>{ev.venue_name ?? "—"}</td>
-                  <td>{ev.is_recurring ? "Yes" : "No"}</td>
+                  <td>{ev.organizerName ?? "—"}</td>
+                  <td>{ev.venueName ?? "—"}</td>
+                  <td>{ev.isRecurring ? "Yes" : "No"}</td>
                 </tr>
               ))}
             </tbody>

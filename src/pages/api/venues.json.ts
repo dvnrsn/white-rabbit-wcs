@@ -1,20 +1,22 @@
 import type { APIContext } from "astro";
+import { getDb } from "../../lib/db";
+import { venues } from "../../lib/db/schema";
+import { asc } from "drizzle-orm";
 
 export const prerender = false;
 
 export async function GET({ locals }: APIContext) {
-  const db = locals.runtime?.env?.DB;
+  const env = locals.runtime?.env;
 
-  if (!db) {
+  if (!env?.DB) {
     return new Response(JSON.stringify({ error: "Database not available" }), {
       status: 503,
       headers: { "Content-Type": "application/json" },
     });
   }
 
-  const { results } = await db
-    .prepare("SELECT * FROM venues ORDER BY name ASC")
-    .all();
+  const db = getDb(env);
+  const results = await db.select().from(venues).orderBy(asc(venues.name));
 
   return new Response(JSON.stringify(results), {
     status: 200,
