@@ -16,7 +16,7 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "white-rabbit-cms",
+      "database_name": "wcs-cms",
       "database_id": "placeholder-run-wrangler-d1-create-to-get-real-id",
     },
   ],
