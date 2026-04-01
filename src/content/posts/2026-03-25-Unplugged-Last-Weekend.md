@@ -4,4 +4,4 @@ I really enjoy the new Imperial space, it has a great "house party" vibe, but we
 
 I've received several requests for this past Saturday's playlist, so here it is...enjoy!
 
-[White Rabbit: Unplugged 3/21/26, The Music](https://open.spotify.com/playlist/3FX1guCpBZgrFp5DFPyvmo?si=7d6bbd883e5e483e)
+[White Rabbit: Unplugged 3/21/26, The Music](https://open.spotify.com/playlist/2lh8k6DmYFn4JRUxOuOg2q?si=Usi8ulIHSpS4DtSEkkxBOw)
