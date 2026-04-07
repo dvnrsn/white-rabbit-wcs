@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { generateOrganizationSchema } from "../lib/schema";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 const schema = generateOrganizationSchema();
 
@@ -25,13 +25,30 @@ const DUMMY_RESOURCES = [
   { name: "WSDC", type: "Governing Body", description: "West Coast Swing Dance Council — official points registry for competitive dancers.", url: "#" },
 ];
 
-const instructorEntries = await getCollection("instructors");
-const venueEntries = await getCollection("venues");
-const resourceEntries = await getCollection("resources");
+const DUMMY_GEAR_CARDS = [
+  { title: "Shoes", body: "Suede-soled dance shoes are the standard. Look for low heels with a flexible sole. Popular brands include Very Fine, Ray Rose, and Freed of London. Budget pick: any suede-soled Latin shoe." },
+  { title: "Floor Prep", body: "Most Phoenix venues have hardwood or tile. Bring a sole brush to keep your suede clean. Avoid dancing on rubber-soled shoes — your knees will thank you." },
+  { title: "Where to Shop", body: "Discount Dance Supply and Dance Naturals carry WCS-appropriate shoes online. Locally, check with instructors — some carry inventory or can point you to current deals." },
+];
+
+const [instructorEntries, venueEntries, resourceEntries, pageEntry] = await Promise.all([
+  getCollection("instructors"),
+  getCollection("venues"),
+  getCollection("resources"),
+  getEntry("pages", "community"),
+]);
 
 const instructors = instructorEntries.length > 0 ? instructorEntries.map((e) => e.data) : DUMMY_INSTRUCTORS;
 const venues = venueEntries.length > 0 ? venueEntries.map((e) => e.data) : DUMMY_VENUES;
 const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data) : DUMMY_RESOURCES;
+
+const copy = {
+  instructorsIntro: pageEntry?.data.instructorsIntro ?? "Arizona has a deep bench of talent. These are some of the local instructors worth knowing.",
+  venuesIntro: pageEntry?.data.venuesIntro ?? "Places to dance in and around the Phoenix metro.",
+  resourcesIntro: pageEntry?.data.resourcesIntro ?? "Key events, organizations, and platforms in the Arizona and national WCS world.",
+  gearIntro: pageEntry?.data.gearIntro ?? "New to WCS or just looking to upgrade? Here's what to know.",
+  gearCards: pageEntry?.data.gearCards?.length ? pageEntry.data.gearCards : DUMMY_GEAR_CARDS,
+};
 ---
 
 <Layout
@@ -48,10 +65,7 @@ const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data
 
       <section class="content-section">
         <h2 class="section-title">> Local Instructors</h2>
-        <p class="section-intro">
-          Arizona has a deep bench of talent. These are some of the local
-          instructors worth knowing.
-        </p>
+        <p class="section-intro">{copy.instructorsIntro}</p>
         <div class="cards-grid">
           {
             instructors.map((instructor) => (
@@ -74,9 +88,7 @@ const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data
 
       <section class="content-section">
         <h2 class="section-title">> Local Venues</h2>
-        <p class="section-intro">
-          Places to dance in and around the Phoenix metro.
-        </p>
+        <p class="section-intro">{copy.venuesIntro}</p>
         <div class="cards-grid">
           {
             venues.map((venue) => (
@@ -95,10 +107,7 @@ const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data
 
       <section class="content-section">
         <h2 class="section-title">> WCS Resources</h2>
-        <p class="section-intro">
-          Key events, organizations, and platforms in the Arizona and national
-          WCS world.
-        </p>
+        <p class="section-intro">{copy.resourcesIntro}</p>
         <div class="resource-list">
           {
             resources.map((resource) => (
@@ -116,34 +125,14 @@ const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data
 
       <section class="content-section">
         <h2 class="section-title">> Gear Up</h2>
-        <p class="section-intro">
-          New to WCS or just looking to upgrade? Here's what to know.
-        </p>
+        <p class="section-intro">{copy.gearIntro}</p>
         <div class="gear-grid">
-          <div class="card gear-card">
-            <h3>Shoes</h3>
-            <p>
-              Suede-soled dance shoes are the standard. Look for low heels with
-              a flexible sole. Popular brands include Very Fine, Ray Rose, and
-              Freed of London. Budget pick: any suede-soled Latin shoe.
-            </p>
-          </div>
-          <div class="card gear-card">
-            <h3>Floor Prep</h3>
-            <p>
-              Most Phoenix venues have hardwood or tile. Bring a sole brush to
-              keep your suede clean. Avoid dancing on rubber-soled shoes — your
-              knees will thank you.
-            </p>
-          </div>
-          <div class="card gear-card">
-            <h3>Where to Shop</h3>
-            <p>
-              Discount Dance Supply and Dance Naturals carry WCS-appropriate
-              shoes online. Locally, check with instructors — some carry
-              inventory or can point you to current deals.
-            </p>
-          </div>
+          {copy.gearCards.map((card) => (
+            <div class="card gear-card">
+              <h3>{card.title}</h3>
+              <p>{card.body}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

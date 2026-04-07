@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { generateOrganizationSchema } from "../lib/schema";
-import { getCollection } from "astro:content";
+import { getCollection, getEntry } from "astro:content";
 
 const schema = generateOrganizationSchema();
 
@@ -12,8 +12,20 @@ const DUMMY_DJS = [
   { handle: "DJ Static", realName: "Sam T.", bio: "The anchor of early evening sets. Static builds the room up slowly — smooth vocals, laid-back grooves, and just enough tension to pull dancers onto the floor.", style: ["Soul", "Smooth RnB", "Chill Hop"], resident: false },
 ];
 
-const djEntries = await getCollection("djs");
+const [djEntries, pageEntry] = await Promise.all([
+  getCollection("djs"),
+  getEntry("pages", "music"),
+]);
+
 const djs = djEntries.length > 0 ? djEntries.map((e) => e.data) : DUMMY_DJS;
+
+const copy = {
+  approachText: pageEntry?.data.approachText ?? "Music is the reason we're all here. West Coast Swing was built on the idea that great dancing follows great music — not the other way around. We take that seriously.\n\nEvery White Rabbit event is curated, not shuffled. Our DJs don't just play songs; they build sets with intention, reading the room and shaping the energy of the night from the first note to the last.",
+  philosophyText: pageEntry?.data.philosophyText ?? "We play music that moves people — literally. That means staying contemporary without chasing trends, honoring the roots of WCS while staying open to where music is going. Neo-soul, indie electronic, modern RnB, left-field pop. Anything that hits the right pocket.\n\nThe tempo sweet spot we live in: 110–128 BPM. Wide enough for expression, tight enough to dance.",
+  manifestoLine: pageEntry?.data.manifestoLine ?? "IF IT GROOVES, IT QUALIFIES.",
+  manifestoSubline: pageEntry?.data.manifestoSubline ?? "Genre is a suggestion. Phrasing is law.",
+  playlistsIntro: pageEntry?.data.playlistsIntro ?? "Curated sets for home listening, practice, and late-night winding down. Full streaming links coming soon.",
+};
 
 const playlists = [
   {
@@ -57,39 +69,17 @@ const playlists = [
         <div class="philosophy-grid">
           <div class="philosophy-block">
             <h2 class="section-title">> Our Approach</h2>
-            <p>
-              Music is the reason we're all here. West Coast Swing was built on
-              the idea that great dancing follows great music — not the other way
-              around. We take that seriously.
-            </p>
-            <p>
-              Every White Rabbit event is curated, not shuffled. Our DJs don't
-              just play songs; they build sets with intention, reading the room
-              and shaping the energy of the night from the first note to the
-              last.
-            </p>
+            {copy.approachText.split("\n\n").map((p) => <p>{p}</p>)}
           </div>
           <div class="philosophy-block">
             <h2 class="section-title">> The Philosophy</h2>
-            <p>
-              We play music that moves people — literally. That means staying
-              contemporary without chasing trends, honoring the roots of WCS
-              while staying open to where music is going. Neo-soul, indie
-              electronic, modern RnB, left-field pop. Anything that hits the
-              right pocket.
-            </p>
-            <p>
-              The tempo sweet spot we live in: 110–128 BPM. Wide enough for
-              expression, tight enough to dance.
-            </p>
+            {copy.philosophyText.split("\n\n").map((p) => <p>{p}</p>)}
           </div>
         </div>
 
         <div class="manifesto-block">
-          <div class="manifesto-line">IF IT GROOVES, IT QUALIFIES.</div>
-          <div class="manifesto-line secondary">
-            Genre is a suggestion. Phrasing is law.
-          </div>
+          <div class="manifesto-line">{copy.manifestoLine}</div>
+          <div class="manifesto-line secondary">{copy.manifestoSubline}</div>
         </div>
       </section>
 
@@ -127,8 +117,7 @@ const playlists = [
       <section class="playlist-section">
         <h2 class="section-title">> Playlists</h2>
         <p class="section-intro">
-          Curated sets for home listening, practice, and late-night winding
-          down. Full streaming links coming soon.
+          {copy.playlistsIntro}
         </p>
         <div class="playlist-list">
           {

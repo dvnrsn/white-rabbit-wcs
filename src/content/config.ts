@@ -60,4 +60,23 @@ const djs = defineCollection({
   }),
 });
 
-export const collections = { posts, instructors, venues, resources, djs };
+// Singleton page copy — written by Keystatic to src/content/pages/*.yaml
+const pages = defineCollection({
+  type: "data",
+  schema: z.object({
+    // Community page
+    instructorsIntro: z.string().optional(),
+    venuesIntro: z.string().optional(),
+    resourcesIntro: z.string().optional(),
+    gearIntro: z.string().optional(),
+    gearCards: z.array(z.object({ title: z.string(), body: z.string() })).optional(),
+    // Music page
+    approachText: z.string().optional(),
+    philosophyText: z.string().optional(),
+    manifestoLine: z.string().optional(),
+    manifestoSubline: z.string().optional(),
+    playlistsIntro: z.string().optional(),
+  }),
+});
+
+export const collections = { posts, instructors, venues, resources, djs, pages };
