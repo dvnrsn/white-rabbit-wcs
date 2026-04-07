@@ -30,7 +30,7 @@ export default config({
             title: fields.text({ label: "Title" }),
             body: fields.text({ label: "Body", multiline: true }),
           }),
-          { label: "Gear cards", itemLabel: (props) => props.fields.title.value }
+          { label: "Gear cards", itemLabel: (props) => props.fields.title.value ?? "" }
         ),
       },
     }),
@@ -61,7 +61,7 @@ export default config({
         location: fields.text({ label: "Location", description: 'e.g. "Phoenix"' }),
         specialties: fields.array(fields.text({ label: "Specialty" }), {
           label: "Specialties",
-          itemLabel: (props) => props.fields.value.value,
+          itemLabel: (props) => props.value ?? "",
         }),
         bio: fields.text({ label: "Bio", multiline: true, validation: { isRequired: false } }),
         photo: fields.image({
@@ -114,7 +114,7 @@ export default config({
         bio: fields.text({ label: "Bio", multiline: true }),
         style: fields.array(fields.text({ label: "Style tag" }), {
           label: "Style tags",
-          itemLabel: (props) => props.fields.value.value,
+          itemLabel: (props) => props.value ?? "",
         }),
         resident: fields.checkbox({ label: "Resident DJ", defaultValue: false }),
         photo: fields.image({
