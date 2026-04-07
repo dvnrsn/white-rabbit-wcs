@@ -2,7 +2,8 @@ import { config, collection, fields, singleton } from "@keystatic/core";
 
 export default config({
   storage:
-    process.env.NODE_ENV === "production"
+    import.meta.env.PROD ||
+    import.meta.env.PUBLIC_KEYSTATIC_STORAGE_KIND === "github"
       ? {
           kind: "github",
           repo: "dvnrsn/white-rabbit-wcs",

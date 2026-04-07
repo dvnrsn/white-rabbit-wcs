@@ -26,3 +26,4 @@ src/data/calendar.ics
 # jetbrains setting folder
 .idea/
 .dev.vars
+.env.local
