@@ -16,6 +16,25 @@ export default config({
   },
 
   singletons: {
+    homePage: singleton({
+      label: "Home page",
+      path: "src/content/pages/home",
+      format: { data: "yaml" },
+      schema: {
+        heroImages: fields.array(
+          fields.object({
+            image: fields.image({
+              label: "Image",
+              directory: "public/images/hero",
+              publicPath: "/images/hero/",
+            }),
+            alt: fields.text({ label: "Alt text" }),
+          }),
+          { label: "Hero images", itemLabel: (props) => props.fields.alt.value ?? "Image" }
+        ),
+      },
+    }),
+
     communityPage: singleton({
       label: "Community page",
       path: "src/content/pages/community",
