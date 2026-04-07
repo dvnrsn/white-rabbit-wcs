@@ -1,39 +1,19 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { generateOrganizationSchema } from "../lib/schema";
+import { getCollection } from "astro:content";
 
 const schema = generateOrganizationSchema();
 
-const djs = [
-  {
-    handle: "DJ Nyx",
-    realName: "Nicole Y.",
-    bio: "Nyx brings a dark, hypnotic energy to the floor — deep house grooves layered over neo-soul and trip-hop. Known for late-night sets that keep dancers moving long past closing.",
-    style: ["Neo Soul", "Deep House", "Trip-Hop"],
-    resident: true,
-  },
-  {
-    handle: "DJ Cipher",
-    realName: "Chris M.",
-    bio: "Cipher's sets are a master class in musicality — he reads the room and builds narratives across the night. Expect modern RnB, left-field pop, and the occasional surprise throwback.",
-    style: ["Modern RnB", "Alternative Pop", "Funk"],
-    resident: true,
-  },
-  {
-    handle: "DJ Flux",
-    realName: "Felicia O.",
-    bio: "Flux specializes in the 120–128 BPM sweet spot that WCS dancers live in. Her library spans indie electronic to neo-funk, always with impeccable phrasing.",
-    style: ["Indie Electronic", "Neo-Funk", "Downtempo"],
-    resident: false,
-  },
-  {
-    handle: "DJ Static",
-    realName: "Sam T.",
-    bio: "The anchor of early evening sets. Static builds the room up slowly — smooth vocals, laid-back grooves, and just enough tension to pull dancers onto the floor.",
-    style: ["Soul", "Smooth RnB", "Chill Hop"],
-    resident: false,
-  },
+const DUMMY_DJS = [
+  { handle: "DJ Nyx", realName: "Nicole Y.", bio: "Nyx brings a dark, hypnotic energy to the floor — deep house grooves layered over neo-soul and trip-hop. Known for late-night sets that keep dancers moving long past closing.", style: ["Neo Soul", "Deep House", "Trip-Hop"], resident: true },
+  { handle: "DJ Cipher", realName: "Chris M.", bio: "Cipher's sets are a master class in musicality — he reads the room and builds narratives across the night. Expect modern RnB, left-field pop, and the occasional surprise throwback.", style: ["Modern RnB", "Alternative Pop", "Funk"], resident: true },
+  { handle: "DJ Flux", realName: "Felicia O.", bio: "Flux specializes in the 120–128 BPM sweet spot that WCS dancers live in. Her library spans indie electronic to neo-funk, always with impeccable phrasing.", style: ["Indie Electronic", "Neo-Funk", "Downtempo"], resident: false },
+  { handle: "DJ Static", realName: "Sam T.", bio: "The anchor of early evening sets. Static builds the room up slowly — smooth vocals, laid-back grooves, and just enough tension to pull dancers onto the floor.", style: ["Soul", "Smooth RnB", "Chill Hop"], resident: false },
 ];
+
+const djEntries = await getCollection("djs");
+const djs = djEntries.length > 0 ? djEntries.map((e) => e.data) : DUMMY_DJS;
 
 const playlists = [
   {

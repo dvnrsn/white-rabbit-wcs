@@ -57,15 +57,17 @@ export default config({
       format: { data: "yaml" },
       schema: {
         name: fields.slug({ name: { label: "Name" } }),
-        bio: fields.text({ label: "Bio", multiline: true }),
+        level: fields.text({ label: "Level", description: 'e.g. "Advanced / Pro"' }),
+        location: fields.text({ label: "Location", description: 'e.g. "Phoenix"' }),
+        specialties: fields.array(fields.text({ label: "Specialty" }), {
+          label: "Specialties",
+          itemLabel: (props) => props.fields.value.value,
+        }),
+        bio: fields.text({ label: "Bio", multiline: true, validation: { isRequired: false } }),
         photo: fields.image({
           label: "Photo",
           directory: "public/images/instructors",
           publicPath: "/images/instructors/",
-        }),
-        specialties: fields.array(fields.text({ label: "Specialty" }), {
-          label: "Specialties",
-          itemLabel: (props) => props.fields.value.value,
         }),
         website: fields.url({ label: "Website", validation: { isRequired: false } }),
         instagram: fields.text({ label: "Instagram handle", validation: { isRequired: false } }),
@@ -79,8 +81,9 @@ export default config({
       format: { data: "yaml" },
       schema: {
         name: fields.slug({ name: { label: "Name" } }),
-        address: fields.text({ label: "Address" }),
-        description: fields.text({ label: "Description", multiline: true, validation: { isRequired: false } }),
+        neighborhood: fields.text({ label: "Neighborhood", description: 'e.g. "Central Phoenix"' }),
+        floor: fields.text({ label: "Floor type", description: 'e.g. "Hardwood"' }),
+        notes: fields.text({ label: "Notes", multiline: true }),
         website: fields.url({ label: "Website", validation: { isRequired: false } }),
         mapUrl: fields.url({ label: "Map URL", validation: { isRequired: false } }),
       },
@@ -93,17 +96,7 @@ export default config({
       format: { data: "yaml" },
       schema: {
         name: fields.slug({ name: { label: "Name" } }),
-        category: fields.select({
-          label: "Category",
-          options: [
-            { label: "Events", value: "events" },
-            { label: "Learning", value: "learning" },
-            { label: "Music", value: "music" },
-            { label: "Gear", value: "gear" },
-            { label: "Community", value: "community" },
-          ],
-          defaultValue: "community",
-        }),
+        type: fields.text({ label: "Type", description: 'e.g. "Regional Event", "Monthly Social"' }),
         description: fields.text({ label: "Description", multiline: true }),
         url: fields.url({ label: "URL" }),
       },
@@ -115,14 +108,20 @@ export default config({
       path: "src/content/djs/*",
       format: { data: "yaml" },
       schema: {
-        name: fields.slug({ name: { label: "Name" } }),
+        name: fields.slug({ name: { label: "Name / slug" } }),
+        handle: fields.text({ label: "DJ handle", description: 'e.g. "DJ Nyx"' }),
+        realName: fields.text({ label: "Real name", description: 'e.g. "Nicole Y."' }),
         bio: fields.text({ label: "Bio", multiline: true }),
+        style: fields.array(fields.text({ label: "Style tag" }), {
+          label: "Style tags",
+          itemLabel: (props) => props.fields.value.value,
+        }),
+        resident: fields.checkbox({ label: "Resident DJ", defaultValue: false }),
         photo: fields.image({
           label: "Photo",
           directory: "public/images/djs",
           publicPath: "/images/djs/",
         }),
-        style: fields.text({ label: "Style / vibe", multiline: true, validation: { isRequired: false } }),
         mixcloud: fields.url({ label: "Mixcloud", validation: { isRequired: false } }),
         soundcloud: fields.url({ label: "SoundCloud", validation: { isRequired: false } }),
         instagram: fields.text({ label: "Instagram handle", validation: { isRequired: false } }),

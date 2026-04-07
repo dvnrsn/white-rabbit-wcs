@@ -3,9 +3,7 @@ import { defineCollection, z } from "astro:content";
 const posts = defineCollection({
   type: "content",
   schema: z.object({
-    // Optional: can override date from filename
     date: z.date().optional(),
-    // Optional: author name
     author: z.string().default("White Rabbit WCS"),
   }),
 });
@@ -14,9 +12,11 @@ const instructors = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    bio: z.string(),
-    photo: z.string().optional(),
+    level: z.string(),
+    location: z.string(),
     specialties: z.array(z.string()).default([]),
+    bio: z.string().optional(),
+    photo: z.string().optional(),
     website: z.string().url().optional(),
     instagram: z.string().optional(),
   }),
@@ -26,8 +26,9 @@ const venues = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    address: z.string(),
-    description: z.string().optional(),
+    neighborhood: z.string(),
+    floor: z.string(),
+    notes: z.string(),
     website: z.string().url().optional(),
     mapUrl: z.string().url().optional(),
   }),
@@ -37,7 +38,7 @@ const resources = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    category: z.enum(["events", "learning", "music", "gear", "community"]),
+    type: z.string(),
     description: z.string(),
     url: z.string().url(),
   }),
@@ -47,9 +48,12 @@ const djs = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
+    handle: z.string(),
+    realName: z.string(),
     bio: z.string(),
+    style: z.array(z.string()).default([]),
+    resident: z.boolean().default(false),
     photo: z.string().optional(),
-    style: z.string().optional(),
     mixcloud: z.string().url().optional(),
     soundcloud: z.string().url().optional(),
     instagram: z.string().optional(),

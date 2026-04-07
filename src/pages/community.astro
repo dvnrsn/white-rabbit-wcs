@@ -1,91 +1,37 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { generateOrganizationSchema } from "../lib/schema";
+import { getCollection } from "astro:content";
 
 const schema = generateOrganizationSchema();
 
-const instructors = [
-  {
-    name: "Sarah M.",
-    level: "Advanced / Pro",
-    specialties: ["Footwork", "Connection", "Musicality"],
-    location: "Phoenix",
-    contact: "Coming soon",
-  },
-  {
-    name: "Marcus T.",
-    level: "Advanced / Competitive",
-    specialties: ["West Coast Swing", "Hustle", "Choreography"],
-    location: "Scottsdale",
-    contact: "Coming soon",
-  },
-  {
-    name: "Lena K.",
-    level: "Intermediate–Advanced",
-    specialties: ["Beginner Fundamentals", "Musicality", "Styling"],
-    location: "Tempe",
-    contact: "Coming soon",
-  },
-  {
-    name: "Jordan P.",
-    level: "Advanced",
-    specialties: ["Competition Prep", "Footwork", "Partnering"],
-    location: "Phoenix",
-    contact: "Coming soon",
-  },
+const DUMMY_INSTRUCTORS = [
+  { name: "Sarah M.", level: "Advanced / Pro", specialties: ["Footwork", "Connection", "Musicality"], location: "Phoenix" },
+  { name: "Marcus T.", level: "Advanced / Competitive", specialties: ["West Coast Swing", "Hustle", "Choreography"], location: "Scottsdale" },
+  { name: "Lena K.", level: "Intermediate–Advanced", specialties: ["Beginner Fundamentals", "Musicality", "Styling"], location: "Tempe" },
+  { name: "Jordan P.", level: "Advanced", specialties: ["Competition Prep", "Footwork", "Partnering"], location: "Phoenix" },
 ];
 
-const venues = [
-  {
-    name: "TBD Venue 1",
-    neighborhood: "Central Phoenix",
-    floor: "Hardwood",
-    notes: "Monthly White Rabbit social home base",
-  },
-  {
-    name: "TBD Venue 2",
-    neighborhood: "Scottsdale",
-    floor: "Sprung hardwood",
-    notes: "Weekly practice nights",
-  },
-  {
-    name: "TBD Venue 3",
-    neighborhood: "Tempe",
-    floor: "Tile",
-    notes: "Beginner-friendly drop-in classes",
-  },
+const DUMMY_VENUES = [
+  { name: "TBD Venue 1", neighborhood: "Central Phoenix", floor: "Hardwood", notes: "Monthly White Rabbit social home base" },
+  { name: "TBD Venue 2", neighborhood: "Scottsdale", floor: "Sprung hardwood", notes: "Weekly practice nights" },
+  { name: "TBD Venue 3", neighborhood: "Tempe", floor: "Tile", notes: "Beginner-friendly drop-in classes" },
 ];
 
-const resources = [
-  {
-    name: "Desert City Swing (DCS)",
-    type: "Regional Event",
-    description:
-      "Phoenix's premier WCS convention. Multi-day event with workshops, Jack & Jills, and showcases.",
-    url: "#",
-  },
-  {
-    name: "Phoenix 4th",
-    type: "Monthly Social",
-    description:
-      "Long-running Phoenix WCS social on the 4th Friday of every month. Mixed levels, great community.",
-    url: "#",
-  },
-  {
-    name: "WCS Online",
-    type: "Learning Resource",
-    description:
-      "Video lessons, breakdowns, and community forums for dancers at every level.",
-    url: "#",
-  },
-  {
-    name: "WSDC",
-    type: "Governing Body",
-    description:
-      "West Coast Swing Dance Council — official points registry for competitive dancers.",
-    url: "#",
-  },
+const DUMMY_RESOURCES = [
+  { name: "Desert City Swing (DCS)", type: "Regional Event", description: "Phoenix's premier WCS convention. Multi-day event with workshops, Jack & Jills, and showcases.", url: "#" },
+  { name: "Phoenix 4th", type: "Monthly Social", description: "Long-running Phoenix WCS social on the 4th Friday of every month. Mixed levels, great community.", url: "#" },
+  { name: "WCS Online", type: "Learning Resource", description: "Video lessons, breakdowns, and community forums for dancers at every level.", url: "#" },
+  { name: "WSDC", type: "Governing Body", description: "West Coast Swing Dance Council — official points registry for competitive dancers.", url: "#" },
 ];
+
+const instructorEntries = await getCollection("instructors");
+const venueEntries = await getCollection("venues");
+const resourceEntries = await getCollection("resources");
+
+const instructors = instructorEntries.length > 0 ? instructorEntries.map((e) => e.data) : DUMMY_INSTRUCTORS;
+const venues = venueEntries.length > 0 ? venueEntries.map((e) => e.data) : DUMMY_VENUES;
+const resources = resourceEntries.length > 0 ? resourceEntries.map((e) => e.data) : DUMMY_RESOURCES;
 ---
 
 <Layout
