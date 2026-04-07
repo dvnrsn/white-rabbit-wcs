@@ -65,7 +65,7 @@ const pages = defineCollection({
   type: "data",
   schema: z.object({
     // Home page
-    heroImages: z.array(z.object({ image: z.string(), alt: z.string() })).optional(),
+    heroImages: z.array(z.object({ image: z.string(), alt: z.string().optional() })).optional(),
     // Community page
     instructorsIntro: z.string().optional(),
     venuesIntro: z.string().optional(),
