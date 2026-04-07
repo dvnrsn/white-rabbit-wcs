@@ -1,199 +1,72 @@
-# White Rabbit - Phoenix WCS Community
+# The White Rabbit Society
 
-> Follow the white rabbit into Phoenix's West Coast Swing scene.
+Arizona's West Coast Swing community site. Find events, meet local instructors and DJs, and follow the white rabbit.
 
-A modern website for the West Coast Swing (WCS) dance community in Phoenix, Arizona. Find events, connect with dancers, and discover your flow.
-
-🌐 **Live Site:** [whiterabbitwcs.com](https://whiterabbitwcs.com)
+**Live site**: [whiterabbitwcs.com](https://whiterabbitwcs.com)
 
 ---
 
-## ✨ Features
+## Stack
 
-### 🗓️ Event Calendar
-- Google Calendar integration for real-time event updates
-- Filter by event type (socials, workshops, competitions)
-- Event cards with detailed modals
-- Server-rendered for fresh data on every visit
+- **Framework**: Astro 5 (static output, Cloudflare Workers adapter)
+- **CMS**: Keystatic (Git-based, admin UI at `/keystatic`)
+- **Deployment**: Cloudflare Workers (auto-deploys on push to `main`)
+- **Package manager**: pnpm
 
-### 📝 Community Posts
-- Latest updates and announcements on homepage
-- Markdown-powered content
-- Easy contribution via GitHub (see [POSTS_GUIDE.md](./POSTS_GUIDE.md))
-
-### 🎨 Matrix-Themed Design
-- Custom Matrix-inspired aesthetic
-- Multiple theme moodboards
-- Theme switcher component
-- Fully responsive, mobile-first design
-
-### 🚀 SEO Optimized
-- Comprehensive meta tags (Open Graph, Twitter Cards)
-- Structured data (JSON-LD) for events and organization
-- Automatic sitemap generation
-- Local SEO optimization for Phoenix, AZ
-
-### 📱 Modern Stack
-- Built with [Astro 5](https://astro.build)
-- Deployed on [Cloudflare Workers](https://workers.cloudflare.com)
-- Lightning-fast static generation with server-rendered updates
-
----
-
-## 🏗️ Project Structure
-
-```text
-white-rabbit/
-├── public/
-│   ├── favicon.svg
-│   ├── robots.txt
-│   └── moodboards/         # Design inspiration
-├── src/
-│   ├── components/
-│   │   ├── EventCard.astro
-│   │   ├── Navigation.astro
-│   │   ├── RecentPosts.astro
-│   │   ├── SEO.astro
-│   │   └── ThemeSwitcher.astro
-│   ├── content/
-│   │   ├── config.ts       # Content collections config
-│   │   └── posts/          # Blog-style posts
-│   ├── data/
-│   │   └── events.json     # example event dummy data
-│   ├── layouts/
-│   │   └── Layout.astro
-│   ├── lib/
-│   │   ├── calendar.ts     # Google Calendar integration
-│   │   └── schema.ts       # Structured data helpers
-│   ├── pages/
-│   │   ├── about.astro
-│   │   ├── events.astro
-│   │   ├── index.astro
-│   │   └── api/
-│   │       └── debug-calendar.json.ts
-│   ├── styles/
-│   │   └── themes.css
-│   └── env.d.ts            # TypeScript definitions
-├── PLAN.md                 # Project roadmap
-├── POSTS_GUIDE.md          # How to add posts
-└── CALENDAR_SETUP.md       # Calendar integration guide
-```
-
----
-
-## 🛠️ Development
-
-### Prerequisites
-- [Node.js](https://nodejs.org/) 18+
-- [pnpm](https://pnpm.io/)
-
-### Commands
-
-| Command                | Action                                           |
-| :--------------------- | :----------------------------------------------- |
-| `pnpm install`         | Install dependencies                             |
-| `pnpm dev`             | Start local dev server at `localhost:4321`       |
-| `pnpm build`           | Build production site to `./dist/`               |
-| `pnpm preview`         | Preview build locally before deploying           |
-| `pnpm astro ...`       | Run Astro CLI commands                           |
-| `oxlint`               | Lint code (run before committing)                |
-| `oxfmt`                | Format code (run before committing)              |
-
-### Environment Variables
-
-Create a `.dev.vars` file (and set in Cloudflare Workers):
+## Development
 
 ```bash
-PUBLIC_GOOGLE_CALENDAR_ID=your-calendar-id@group.calendar.google.com
+pnpm install
+pnpm dev        # http://localhost:4321
+pnpm build
+pnpm preview
+pnpm lint
+pnpm format
 ```
 
-See [CALENDAR_SETUP.md](./CALENDAR_SETUP.md) for detailed setup instructions.
+Local environment variables go in `.dev.vars` (gitignored):
 
----
+```
+PUBLIC_GOOGLE_CALENDAR_ID=...
+KEYSTATIC_GITHUB_CLIENT_ID=...
+KEYSTATIC_GITHUB_CLIENT_SECRET=...
+KEYSTATIC_SECRET=...
+PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=...
+```
 
-## 📝 Contributing
+## Content Management
 
-### Adding Posts
+Non-technical editors manage content at `/keystatic`. Requires a GitHub account with write access to this repo.
 
-Community members can add announcements and updates by creating markdown files. See [POSTS_GUIDE.md](./POSTS_GUIDE.md) for step-by-step instructions.
+| Collection | Path | Description |
+|---|---|---|
+| Instructors | `src/content/instructors/` | Local instructor profiles |
+| Venues | `src/content/venues/` | Dance venues |
+| Resources | `src/content/resources/` | WCS resources and links |
+| DJs | `src/content/djs/` | DJ profiles |
+| Page copy | `src/content/pages/` | Hero images, community/music section text |
 
-**Quick version:**
-1. Create a file in `src/content/posts/`
-2. Name it: `YYYY-MM-DD-title.md`
-3. Add your content in markdown
-4. Commit and push (or create PR)
+Pages fall back to placeholder content when CMS fields are empty — a partial entry will never break the build.
 
-### Development Workflow
+**Alt text**: Always fill in alt text when uploading images. Describe who/what/where in one sentence. Screen readers and search engines depend on it.
 
-1. Create a feature branch
-2. Make your changes
-3. Run `oxfmt` to format code
-4. Commit with descriptive message
-5. Push and create a pull request
+## Event Calendar
 
----
+Events are pulled from Google Calendar and stored in `src/data/events.json`. A GitHub Actions workflow (`daily-rebuild.yml`) refreshes this daily at 6 AM UTC.
 
-## 🚀 Deployment
+To refresh manually:
+```bash
+PUBLIC_GOOGLE_CALENDAR_ID=xxx node scripts/fetch-calendar.js
+```
 
-The site automatically deploys to Cloudflare Workers when pushing to `main` branch.
+## Adding a City Filter Page
 
-**Production:** https://whiterabbitwcs.com
+Edit `src/pages/[filter].astro` and add a new entry to `getStaticPaths()`.
 
-### Environment Setup (Cloudflare Workers)
+## Posts / Blog
 
-1. Go to your Cloudflare Workers & Pages project
-2. Settings → Variables and Secrets
-3. Add `PUBLIC_GOOGLE_CALENDAR_ID` with your calendar ID
-4. Trigger a new deployment
+Markdown posts live in `src/content/posts/` with filename convention `YYYY-MM-DD-slug.md`. See `POSTS_GUIDE.md` for non-technical contributors.
 
----
+## Deployment
 
-## 📋 Roadmap
-
-See [PLAN.md](./PLAN.md) for the complete feature roadmap.
-
-### ✅ Completed
-- Site structure and navigation
-- Event calendar with Google Calendar integration
-- Posts/announcements system
-- About page
-- Comprehensive SEO
-- Matrix-themed design system
-
-### 🎯 Next Up
-- Venues directory
-- Teachers directory
-- Event enhancements (Add to Calendar, detail pages)
-
----
-
-## 🔧 Tech Stack
-
-- **Framework:** [Astro 5](https://astro.build)
-- **Hosting:** [Cloudflare Workers](https://workers.cloudflare.com)
-- **Calendar:** Google Calendar (public iCal feed)
-- **Content:** Astro Content Collections
-- **Styling:** Custom CSS with CSS variables
-- **SEO:** Built-in with structured data
-
----
-
-## 📚 Documentation
-
-- [PLAN.md](./PLAN.md) - Project roadmap and feature planning
-- [POSTS_GUIDE.md](./POSTS_GUIDE.md) - How to add posts to the site
-- [CALENDAR_SETUP.md](./CALENDAR_SETUP.md) - Google Calendar integration setup
-
----
-
-## 🌐 Learn More
-
-- [Astro Documentation](https://docs.astro.build)
-- [Cloudflare Workers Docs](https://developers.cloudflare.com/workers/)
-- [West Coast Swing](https://en.wikipedia.org/wiki/West_Coast_Swing)
-
----
-
-## 📄 License
-
-Built for the Phoenix WCS community. Follow the white rabbit. 🐇
+Cloudflare Workers. Push to `main` triggers an automatic redeploy. Secrets are managed via `wrangler secret put` or the Cloudflare dashboard.

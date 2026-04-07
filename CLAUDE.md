@@ -42,6 +42,41 @@ The environment variable `PUBLIC_GOOGLE_CALENDAR_ID` is required to run the fetc
 
 `src/pages/[filter].astro` generates static city-filtered event pages (e.g. `/phoenix`, `/tucson`) via `getStaticPaths()`. Adding a new city requires adding a new entry there.
 
+### CMS (Keystatic)
+
+Non-technical editors manage content at `/keystatic`. Uses Git-based storage — edits create commits directly to the repo via GitHub OAuth.
+
+- **Local dev**: uses `local` storage mode (reads/writes files directly)
+- **Production**: uses `github` storage mode (commits via GitHub API); requires a GitHub App installed on the repo
+- **Config**: `keystatic.config.ts` — uses `import.meta.env.PROD` to switch storage modes (not `process.env`, which is unavailable in the browser bundle)
+
+Collections (stored as JSON in `src/content/`):
+
+| Collection | Path | Fields |
+|---|---|---|
+| Instructors | `src/content/instructors/` | name, level, location, specialties, bio, photo, website, instagram |
+| Venues | `src/content/venues/` | name, neighborhood, floor, notes, website, mapUrl |
+| Resources | `src/content/resources/` | name, type, description, url |
+| DJs | `src/content/djs/` | name, handle, realName, bio, style, resident, photo, mixcloud, soundcloud, instagram |
+
+Singletons (stored as JSON in `src/content/pages/`):
+
+| Singleton | File | Fields |
+|---|---|---|
+| Home page | `src/content/pages/home.json` | heroImages (image + alt array) |
+| Community page | `src/content/pages/community.json` | instructorsIntro, venuesIntro, resourcesIntro, gearIntro, gearCards |
+| Music page | `src/content/pages/music.json` | approachText, philosophyText, manifestoLine, manifestoSubline, playlistsIntro |
+
+Pages read CMS data via `getCollection()` / `getEntry()` from `astro:content` and fall back to hardcoded dummy data when collections are empty — partial or missing entries never break the build.
+
+Required env vars for production Keystatic (set via `wrangler secret put`):
+- `KEYSTATIC_GITHUB_CLIENT_ID`
+- `KEYSTATIC_GITHUB_CLIENT_SECRET`
+- `KEYSTATIC_SECRET`
+- `PUBLIC_KEYSTATIC_GITHUB_APP_SLUG`
+
+`wrangler.jsonc` must include a `SESSION` KV namespace binding for Keystatic's auth session handling.
+
 ### Content Posts
 
 Markdown posts live in `src/content/posts/` and are managed via Astro Content Collections with Zod schema validation. Filename convention: `YYYY-MM-DD-slug.md`. Non-technical contributors add posts via the GitHub web UI (documented in `POSTS_GUIDE.md`).
@@ -57,6 +92,8 @@ Markdown posts live in `src/content/posts/` and are managed via Astro Content Co
 | `src/layouts/Layout.astro` | Root layout wrapping all pages |
 | `scripts/fetch-calendar.js` | iCal → JSON pipeline |
 | `src/data/events.json` | Pre-generated event data (source of truth at build time) |
+| `keystatic.config.ts` | Keystatic CMS schema — collections and singletons |
+| `src/content/pages/` | Singleton CMS data (home, community, music page copy) |
 
 ### CI / Automated Refresh
 
