@@ -12,8 +12,8 @@ const instructors = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    level: z.string(),
-    location: z.string(),
+    level: z.string().optional(),
+    location: z.string().optional(),
     specialties: z.array(z.string()).default([]),
     bio: z.string().optional(),
     photo: z.string().optional(),
@@ -26,9 +26,9 @@ const venues = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    neighborhood: z.string(),
-    floor: z.string(),
-    notes: z.string(),
+    neighborhood: z.string().optional(),
+    floor: z.string().optional(),
+    notes: z.string().optional(),
     website: z.string().url().optional(),
     mapUrl: z.string().url().optional(),
   }),
@@ -38,9 +38,9 @@ const resources = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    type: z.string(),
-    description: z.string(),
-    url: z.string().url(),
+    type: z.string().optional(),
+    description: z.string().optional(),
+    url: z.string().url().optional(),
   }),
 });
 
@@ -48,9 +48,9 @@ const djs = defineCollection({
   type: "data",
   schema: z.object({
     name: z.string(),
-    handle: z.string(),
-    realName: z.string(),
-    bio: z.string(),
+    handle: z.string().optional(),
+    realName: z.string().optional(),
+    bio: z.string().optional(),
     style: z.array(z.string()).default([]),
     resident: z.boolean().default(false),
     photo: z.string().optional(),
