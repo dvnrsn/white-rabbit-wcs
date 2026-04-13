@@ -6,6 +6,41 @@ Arizona's West Coast Swing community site. Find events, meet local instructors a
 
 ---
 
+## Features
+
+### Event Calendar
+- Google Calendar integration via public iCal feed
+- Filter by event type (socials, workshops, competitions) and city
+- Event cards with map links (Apple Maps on iOS, Google Maps otherwise)
+- Refreshed daily via GitHub Actions; data stored in `src/data/events.json`
+
+### Community
+- Local instructor and venue directories, managed via Keystatic CMS
+- WCS resources and links
+- Gear guide for new dancers
+
+### Music
+- DJ profiles with Mixcloud/SoundCloud links
+- Philosophy and approach copy, editable in CMS
+
+### Posts / Blog
+- Markdown posts in `src/content/posts/`, filename convention `YYYY-MM-DD-slug.md`
+- Latest posts shown on homepage
+- Non-technical contributors can add posts via the GitHub web UI — see `POSTS_GUIDE.md`
+
+### SEO
+- Comprehensive meta tags (Open Graph, Twitter Cards)
+- Structured data (JSON-LD) for events and organization
+- Automatic sitemap generation
+- Local SEO for Phoenix, Tucson, Prescott, and beyond
+
+### Design
+- Matrix-inspired theme with CSS custom properties (`src/styles/themes.css`)
+- Theme switcher component persists choice to `localStorage`
+- Fully responsive, mobile-first
+
+---
+
 ## Stack
 
 - **Framework**: Astro 5 (static output, Cloudflare Workers adapter)
@@ -62,10 +97,6 @@ PUBLIC_GOOGLE_CALENDAR_ID=xxx node scripts/fetch-calendar.js
 ## Adding a City Filter Page
 
 Edit `src/pages/[filter].astro` and add a new entry to `getStaticPaths()`.
-
-## Posts / Blog
-
-Markdown posts live in `src/content/posts/` with filename convention `YYYY-MM-DD-slug.md`. See `POSTS_GUIDE.md` for non-technical contributors.
 
 ## Deployment
 
