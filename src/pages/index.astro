@@ -142,6 +142,8 @@ const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
     z-index: 1;
   }
 
+  /* Carousel technique adapted from https://theosoti.com/short/autoplay-carousel/
+     from value uses width*(quantity-1) instead of 100% to keep images gapless at any viewport width */
   @keyframes autoRun {
     from { left: calc(var(--width) * (var(--quantity) - 1)); }
     to { left: calc(var(--width) * -1); }
