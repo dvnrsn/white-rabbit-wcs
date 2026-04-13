@@ -143,7 +143,7 @@ const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
   }
 
   @keyframes autoRun {
-    from { left: 100%; }
+    from { left: calc(var(--width) * (var(--quantity) - 1)); }
     to { left: calc(var(--width) * -1); }
   }
 
