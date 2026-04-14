@@ -1,5 +1,4 @@
 import type { APIContext } from "astro";
-import { Resend } from "resend";
 
 export const prerender = false;
 
@@ -18,6 +17,45 @@ const PHOENIX_CITIES = [
   "Prescott",
 ];
 
+const FROM = "White Rabbit <noreply@whiterabbitwcs.com>";
+const TO = "whiterabbitwcs@gmail.com";
+
+function buildMime(subject: string, text: string): string {
+  return [
+    `From: ${FROM}`,
+    `To: ${TO}`,
+    `Subject: ${subject}`,
+    `MIME-Version: 1.0`,
+    `Content-Type: text/plain; charset=utf-8`,
+    ``,
+    text,
+  ].join("\r\n");
+}
+
+async function sendEmail(
+  env: Record<string, unknown>,
+  subject: string,
+  text: string
+): Promise<void> {
+  const binding = env.SEND_EMAIL as { send: (msg: unknown) => Promise<void> } | undefined;
+  if (!binding) {
+    // Dev: log instead of sending
+    console.log(`[contact] would send email\nSubject: ${subject}\n\n${text}`);
+    return;
+  }
+  const { EmailMessage } = await import("cloudflare:email");
+  const raw = buildMime(subject, text);
+  const encoder = new TextEncoder();
+  const stream = new ReadableStream({
+    start(controller) {
+      controller.enqueue(encoder.encode(raw));
+      controller.close();
+    },
+  });
+  const msg = new EmailMessage(FROM, TO, stream);
+  await binding.send(msg);
+}
+
 async function verifyTurnstile(token: string, secretKey: string): Promise<boolean> {
   const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
@@ -29,16 +67,8 @@ async function verifyTurnstile(token: string, secretKey: string): Promise<boolea
 }
 
 export async function POST({ request, locals }: APIContext) {
-  const env = locals.runtime?.env ?? import.meta.env;
-
-  const resendKey = env.RESEND_API_KEY;
-  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
-  const contactEmail = env.CONTACT_EMAIL ?? "whiterabbitwcs@gmail.com";
-  const discordUrl = env.DISCORD_INVITE_URL;
-
-  if (!resendKey) {
-    return new Response(JSON.stringify({ error: "Server misconfiguration" }), { status: 500 });
-  }
+  const env = (locals.runtime?.env ?? {}) as Record<string, unknown>;
+  const turnstileSecret = env.TURNSTILE_SECRET_KEY as string | undefined;
 
   let body: Record<string, string>;
   try {
@@ -49,7 +79,6 @@ export async function POST({ request, locals }: APIContext) {
 
   const { type, name, email, message, city, turnstileToken } = body;
 
-  // Validate required fields
   if (!type || !name || !email || !turnstileToken) {
     return new Response(JSON.stringify({ error: "Missing required fields" }), { status: 400 });
   }
@@ -63,7 +92,6 @@ export async function POST({ request, locals }: APIContext) {
     return new Response(JSON.stringify({ error: "Invalid city" }), { status: 400 });
   }
 
-  // Verify Turnstile
   if (turnstileSecret) {
     const valid = await verifyTurnstile(turnstileToken, turnstileSecret);
     if (!valid) {
@@ -71,59 +99,27 @@ export async function POST({ request, locals }: APIContext) {
     }
   }
 
-  const resend = new Resend(resendKey);
-
   if (type === "feedback") {
-    await resend.emails.send({
-      from: "White Rabbit Site <noreply@whiterabbitwcs.com>",
-      to: contactEmail,
-      subject: `New feedback from ${name}`,
-      text: [
-        `Name: ${name}`,
-        `Email: ${email}`,
-        ``,
-        `Message:`,
-        message,
-      ].join("\n"),
-    });
-
-    return new Response(JSON.stringify({ ok: true }), { status: 200 });
+    await sendEmail(
+      env,
+      `New feedback from ${name}`,
+      [`Name: ${name}`, `Email: ${email}`, ``, `Message:`, message].join("\n")
+    );
   }
 
   if (type === "discord") {
-    // Notify the admin
-    await resend.emails.send({
-      from: "White Rabbit Site <noreply@whiterabbitwcs.com>",
-      to: contactEmail,
-      subject: `New Discord request from ${name}`,
-      text: [
+    await sendEmail(
+      env,
+      `New Discord request from ${name}`,
+      [
         `Name: ${name}`,
         `Email: ${email}`,
         city ? `City: ${city}` : null,
       ]
         .filter(Boolean)
-        .join("\n"),
-    });
-
-    // Send the invite link to the user if available
-    if (discordUrl) {
-      await resend.emails.send({
-        from: "White Rabbit WCS <noreply@whiterabbitwcs.com>",
-        to: email,
-        subject: "You're invited to the White Rabbit Discord",
-        text: [
-          `Hey ${name},`,
-          ``,
-          `Welcome to the White Rabbit WCS community! Here's your Discord invite:`,
-          ``,
-          discordUrl,
-          ``,
-          `See you on the dance floor.`,
-          `— White Rabbit WCS`,
-        ].join("\n"),
-      });
-    }
-
-    return new Response(JSON.stringify({ ok: true, sentInvite: !!discordUrl }), { status: 200 });
+        .join("\n")
+    );
   }
+
+  return new Response(JSON.stringify({ ok: true }), { status: 200 });
 }

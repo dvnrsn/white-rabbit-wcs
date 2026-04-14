@@ -21,8 +21,7 @@
     "astro": "^5.16.6",
     "lucide-astro": "^0.556.0",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "resend": "^6.11.0"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "ical.js": "^2.2.1",

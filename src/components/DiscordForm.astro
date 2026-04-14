@@ -69,13 +69,11 @@ const PHOENIX_CITIES = [
         body: JSON.stringify({ type: "discord", name, email, city: city || undefined, turnstileToken }),
       });
 
-      const data = await res.json() as { ok?: boolean; sentInvite?: boolean; error?: string };
+      const data = await res.json() as { ok?: boolean; error?: string };
 
       if (res.ok) {
         form.reset();
-        status.textContent = data.sentInvite
-          ? "Check your inbox — your invite is on the way!"
-          : "You're on the list! We'll send your invite soon.";
+        status.textContent = "You're on the list! We'll send your invite soon.";
         status.className = "form-status success";
       } else {
         status.textContent = data.error ?? "Something went wrong. Please try again.";
