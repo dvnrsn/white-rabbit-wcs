@@ -64,6 +64,10 @@ const djs = defineCollection({
 const pages = defineCollection({
   type: "data",
   schema: z.object({
+    // Site settings
+    discordUrl: z.string().url().optional(),
+    instagramUrl: z.string().url().optional(),
+    facebookUrl: z.string().url().optional(),
     // Home page
     heroImages: z.array(z.object({ image: z.string(), alt: z.string().optional() })).optional(),
     // Community page

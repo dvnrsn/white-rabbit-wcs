@@ -1,5 +1,10 @@
 ---
+import { getEntry } from "astro:content";
 
+const siteSettings = await getEntry("pages", "site-settings");
+const discordUrl = siteSettings?.data.discordUrl ?? "https://discord.gg/U9BYSrxH";
+const instagramUrl = siteSettings?.data.instagramUrl ?? "https://www.instagram.com/whiterabbit.wcs/";
+const facebookUrl = siteSettings?.data.facebookUrl ?? "https://www.facebook.com/groups/183446960374256";
 ---
 
 <footer class="site-footer">
@@ -10,7 +15,7 @@
     </div>
     <div class="footer-right">
       <a
-        href="https://www.instagram.com/whiterabbit.wcs/"
+        href={instagramUrl}
         class="footer-link"
         aria-label="Visit our Instagram"
         target="_blank"
@@ -19,7 +24,7 @@
         <span class="footer-link-text">Instagram</span>
       </a>
       <a
-        href="https://www.facebook.com/groups/183446960374256"
+        href={facebookUrl}
         class="footer-link"
         aria-label="Visit our Facebook group"
         target="_blank"
@@ -28,7 +33,7 @@
         <span class="footer-link-text">Facebook</span>
       </a>
       <a
-        href="https://discord.gg/U9BYSrxH"
+        href={discordUrl}
         class="footer-link"
         aria-label="Join our Discord"
         target="_blank"

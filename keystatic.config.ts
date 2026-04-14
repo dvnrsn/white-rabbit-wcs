@@ -16,6 +16,17 @@ export default config({
   },
 
   singletons: {
+    siteSettings: singleton({
+      label: "Site settings",
+      path: "src/content/pages/site-settings",
+      format: { data: "yaml" },
+      schema: {
+        discordUrl: fields.url({ label: "Discord invite URL", validation: { isRequired: false } }),
+        instagramUrl: fields.url({ label: "Instagram URL", validation: { isRequired: false } }),
+        facebookUrl: fields.url({ label: "Facebook URL", validation: { isRequired: false } }),
+      },
+    }),
+
     homePage: singleton({
       label: "Home page",
       path: "src/content/pages/home",
