@@ -1,4 +1,5 @@
 import type { APIContext } from "astro";
+import { createMimeMessage } from "mimetext";
 
 export const prerender = false;
 
@@ -17,20 +18,9 @@ const PHOENIX_CITIES = [
   "Prescott",
 ];
 
-const FROM = "White Rabbit <noreply@whiterabbitwcs.com>";
+const FROM_ADDR = "noreply@whiterabbitwcs.com";
+const FROM_NAME = "White Rabbit WCS";
 const TO = "whiterabbitwcs@gmail.com";
-
-function buildMime(subject: string, text: string): string {
-  return [
-    `From: ${FROM}`,
-    `To: ${TO}`,
-    `Subject: ${subject}`,
-    `MIME-Version: 1.0`,
-    `Content-Type: text/plain; charset=utf-8`,
-    ``,
-    text,
-  ].join("\r\n");
-}
 
 async function sendEmail(
   env: Record<string, unknown>,
@@ -39,21 +29,17 @@ async function sendEmail(
 ): Promise<void> {
   const binding = env.SEND_EMAIL as { send: (msg: unknown) => Promise<void> } | undefined;
   if (!binding) {
-    // Dev: log instead of sending
     console.log(`[contact] would send email\nSubject: ${subject}\n\n${text}`);
     return;
   }
   const { EmailMessage } = await import("cloudflare:email");
-  const raw = buildMime(subject, text);
-  const encoder = new TextEncoder();
-  const stream = new ReadableStream({
-    start(controller) {
-      controller.enqueue(encoder.encode(raw));
-      controller.close();
-    },
-  });
-  const msg = new EmailMessage(FROM, TO, stream);
-  await binding.send(msg);
+  const msg = createMimeMessage();
+  msg.setSender({ name: FROM_NAME, addr: FROM_ADDR });
+  msg.setRecipient(TO);
+  msg.setSubject(subject);
+  msg.addMessage({ contentType: "text/plain", data: text });
+  const message = new EmailMessage(FROM_ADDR, TO, msg.asRaw());
+  await binding.send(message);
 }
 
 async function verifyTurnstile(token: string, secretKey: string): Promise<boolean> {
