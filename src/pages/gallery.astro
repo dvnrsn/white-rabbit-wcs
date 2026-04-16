@@ -10,8 +10,6 @@ const bucket = Astro.locals.runtime?.env?.GALLERY_BUCKET as
   | { list: (opts?: { limit?: number; cursor?: string }) => Promise<{ objects: { key: string; uploaded: Date }[]; truncated: boolean; cursor?: string }> }
   | undefined;
 
-const baseUrl = (import.meta.env.PUBLIC_GALLERY_URL ?? "").replace(/\/$/, "");
-
 type GalleryItem = {
   key: string;
   url: string;
@@ -23,7 +21,7 @@ type GalleryItem = {
 
 let items: GalleryItem[] = [];
 
-if (bucket && baseUrl) {
+if (bucket) {
   // Paginate through all objects (R2 list maxes at 1000 per call)
   let cursor: string | undefined;
   do {
@@ -35,7 +33,7 @@ if (bucket && baseUrl) {
       const name = segments[segments.length - 1];
       items.push({
         key: obj.key,
-        url: `${baseUrl}/${obj.key}`,
+        url: `/api/gallery/${obj.key}`,
         name,
         album,
         isVideo: VIDEO_EXTS.test(obj.key),
