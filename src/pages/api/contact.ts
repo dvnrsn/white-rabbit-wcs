@@ -42,14 +42,14 @@ async function sendEmail(
   await binding.send(message);
 }
 
-async function verifyTurnstile(token: string, secretKey: string): Promise<boolean> {
+async function verifyTurnstile(token: string, secretKey: string): Promise<{ success: boolean; codes: string[] }> {
   const res = await fetch("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({ secret: secretKey, response: token }),
   });
-  const data = (await res.json()) as { success: boolean };
-  return data.success;
+  const data = (await res.json()) as { success: boolean; "error-codes": string[] };
+  return { success: data.success, codes: data["error-codes"] ?? [] };
 }
 
 export async function POST({ request, locals }: APIContext) {
@@ -79,9 +79,9 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   if (turnstileSecret) {
-    const valid = await verifyTurnstile(turnstileToken, turnstileSecret);
-    if (!valid) {
-      return new Response(JSON.stringify({ error: "CAPTCHA verification failed" }), { status: 400 });
+    const { success, codes } = await verifyTurnstile(turnstileToken, turnstileSecret);
+    if (!success) {
+      return new Response(JSON.stringify({ error: "CAPTCHA verification failed", codes }), { status: 400 });
     }
   }
 
