@@ -13,10 +13,14 @@
   "kv_namespaces": [
     { "binding": "SESSION" },
   ],
+  "send_email": [
+    { "name": "SEND_EMAIL", "destination_address": "whiterabbitwcs@gmail.com" },
+  ],
   "r2_buckets": [
     { "binding": "GALLERY_BUCKET", "bucket_name": "white-rabbit-gallery" },
   ],
   "vars": {
     "PUBLIC_GOOGLE_CALENDAR_ID": "871229fba6168965d02d691832a50e64059cfe7128c4f0d75781425ce5c8520f@group.calendar.google.com",
+    "PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAC-SjNYO1rM3LezP",
   },
 }

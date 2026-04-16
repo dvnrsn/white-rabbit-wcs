@@ -1,0 +1,164 @@
+---
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+
+const PHOENIX_CITIES = [
+  "Phoenix",
+  "Scottsdale",
+  "Tempe",
+  "Mesa",
+  "Chandler",
+  "Gilbert",
+  "Glendale",
+  "Peoria",
+  "Surprise",
+  "Tucson",
+  "Flagstaff",
+  "Prescott",
+];
+---
+
+<div class="discord-form-wrap">
+  <form class="discord-form" id="discord-form" novalidate>
+    <div class="form-field">
+      <label for="dc-name">Name</label>
+      <input type="text" id="dc-name" name="name" required autocomplete="name" />
+    </div>
+    <div class="form-field">
+      <label for="dc-email">Email</label>
+      <input type="email" id="dc-email" name="email" required autocomplete="email" />
+    </div>
+    <div class="form-field">
+      <label for="dc-city">City <span class="optional">(optional)</span></label>
+      <select id="dc-city" name="city">
+        <option value="">Select your city</option>
+        {PHOENIX_CITIES.map((city) => <option value={city}>{city}</option>)}
+      </select>
+    </div>
+    {siteKey && (
+      <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>
+    )}
+    <button type="submit" class="btn submit-btn">Request invite</button>
+    <p class="form-status" id="dc-status" aria-live="polite"></p>
+  </form>
+</div>
+
+{siteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.getElementById("discord-form") as HTMLFormElement;
+  const status = document.getElementById("dc-status") as HTMLParagraphElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const city = (form.elements.namedItem("city") as HTMLSelectElement).value;
+    const turnstileInput = form.querySelector<HTMLInputElement>("[name=cf-turnstile-response]");
+    const turnstileToken = turnstileInput?.value ?? "dev";
+
+    const submitBtn = form.querySelector<HTMLButtonElement>(".submit-btn")!;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    status.textContent = "";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "discord", name, email, city: city || undefined, turnstileToken }),
+      });
+
+      const data = await res.json() as { ok?: boolean; error?: string };
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = "You're on the list! We'll send your invite soon.";
+        status.className = "form-status success";
+      } else {
+        status.textContent = data.error ?? "Something went wrong. Please try again.";
+        status.className = "form-status error";
+      }
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+      status.className = "form-status error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Request invite";
+    }
+  });
+</script>
+
+<style>
+  .discord-form-wrap {
+    width: 100%;
+  }
+
+  .discord-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  .optional {
+    text-transform: none;
+    font-size: 0.75rem;
+    opacity: 0.6;
+  }
+
+  input,
+  select {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+  }
+
+  select option {
+    background: var(--bg-secondary);
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    font-size: 0.9rem;
+    min-height: 1.2em;
+  }
+
+  .form-status.success {
+    color: var(--accent-primary);
+  }
+
+  .form-status.error {
+    color: #ff4444;
+  }
+</style>

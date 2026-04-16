@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
+import FeedbackForm from "../components/FeedbackForm.astro";
 import { generateOrganizationSchema } from "../lib/schema";
 import { getEntry } from "astro:content";
 
@@ -77,6 +78,7 @@ const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
       </div>
     </section>
     <RecentPosts />
+    <FeedbackForm />
   </main>
 </Layout>
 

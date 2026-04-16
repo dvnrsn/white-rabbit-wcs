@@ -1,0 +1,169 @@
+---
+const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+---
+
+<section class="feedback-section">
+  <div class="container">
+    <div class="feedback-inner">
+      <h2 class="feedback-heading">We always love to hear from you</h2>
+      <form class="feedback-form" id="feedback-form" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fb-name">Name</label>
+            <input type="text" id="fb-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="fb-email">Email</label>
+            <input type="email" id="fb-email" name="email" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="fb-message">Message</label>
+          <textarea id="fb-message" name="message" rows="4" required></textarea>
+        </div>
+        {siteKey && (
+          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>
+        )}
+        <button type="submit" class="btn submit-btn">Send message</button>
+        <p class="form-status" id="fb-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+{siteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.getElementById("feedback-form") as HTMLFormElement;
+  const status = document.getElementById("fb-status") as HTMLParagraphElement;
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+    const turnstileInput = form.querySelector<HTMLInputElement>("[name=cf-turnstile-response]");
+    const turnstileToken = turnstileInput?.value ?? "dev";
+
+    const submitBtn = form.querySelector<HTMLButtonElement>(".submit-btn")!;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Sending...";
+    status.textContent = "";
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ type: "feedback", name, email, message, turnstileToken }),
+      });
+
+      if (res.ok) {
+        form.reset();
+        status.textContent = "Message sent — thank you!";
+        status.className = "form-status success";
+      } else {
+        const data = await res.json() as { error?: string };
+        status.textContent = data.error ?? "Something went wrong. Please try again.";
+        status.className = "form-status error";
+      }
+    } catch {
+      status.textContent = "Something went wrong. Please try again.";
+      status.className = "form-status error";
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = "Send message";
+    }
+  });
+</script>
+
+<style>
+  .feedback-section {
+    border-top: 1px solid var(--border-color);
+    padding: 80px 0;
+  }
+
+  .feedback-inner {
+    max-width: 640px;
+  }
+
+  .feedback-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-bottom: 32px;
+  }
+
+  .feedback-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  label {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+  }
+
+  input,
+  textarea {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 10px 12px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    resize: none;
+  }
+
+  input:focus,
+  textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+  }
+
+  .submit-btn {
+    align-self: flex-start;
+  }
+
+  .submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .form-status {
+    font-size: 0.9rem;
+    min-height: 1.2em;
+  }
+
+  .form-status.success {
+    color: var(--accent-primary);
+  }
+
+  .form-status.error {
+    color: #ff4444;
+  }
+
+  @media (max-width: 600px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
