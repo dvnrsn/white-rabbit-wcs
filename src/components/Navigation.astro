@@ -1,6 +1,6 @@
 ---
 // Navigation Component
-const currentPath = Astro.url.pathname;
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
 
 const navLinks = [
   { href: "/", label: "Home" },
@@ -37,7 +37,7 @@ const navLinks = [
         navLinks.map((link) => (
           <a
             href={link.href}
-            class={`nav-link ${currentPath === link.href ? "active" : ""}`}
+            class={`nav-link ${(link.href === "/" ? currentPath === "/" : currentPath.startsWith(link.href)) ? "active" : ""}`}
           >
             <span class="nav-link-text">{link.label}</span>
             <span class="nav-link-underline" />
