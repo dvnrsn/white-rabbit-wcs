@@ -43,8 +43,15 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
     const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
     const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
+    const turnstileWidget = form.querySelector(".cf-turnstile");
     const turnstileInput = form.querySelector<HTMLInputElement>("[name=cf-turnstile-response]");
-    const turnstileToken = turnstileInput?.value ?? "dev";
+    const turnstileToken = turnstileInput?.value ?? "";
+
+    if (turnstileWidget && !turnstileToken) {
+      status.textContent = "Please wait for the security check to complete.";
+      status.className = "form-status error";
+      return;
+    }
 
     const submitBtn = form.querySelector<HTMLButtonElement>(".submit-btn")!;
     submitBtn.disabled = true;
@@ -55,7 +62,7 @@ const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "feedback", name, email, message, turnstileToken }),
+        body: JSON.stringify({ type: "feedback", name, email, message, turnstileToken: turnstileToken || "dev" }),
       });
 
       if (res.ok) {
