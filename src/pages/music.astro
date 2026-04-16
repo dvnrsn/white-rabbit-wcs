@@ -316,21 +316,21 @@ function toSpotifyEmbed(url: string): string {
   }
 
   .playlist-list {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
   }
 
   .playlist-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 6px;
+    margin-bottom: 10px;
     gap: 8px;
   }
 
   .playlist-title {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: var(--text-primary);
     font-family: var(--font-primary);
@@ -352,7 +352,7 @@ function toSpotifyEmbed(url: string): string {
   }
 
   .playlist-card iframe {
-    border: 1px solid var(--border-color);
+    border: none;
     border-radius: 0;
     display: block;
   }
@@ -391,6 +391,11 @@ function toSpotifyEmbed(url: string): string {
 
     .section-title {
       font-size: 1.4rem;
+    }
+
+    .playlist-list {
+      grid-template-columns: 1fr;
+      gap: 16px;
     }
 
     .playlist-header {
