@@ -132,6 +132,19 @@ export default config({
       },
     }),
 
+    playlists: collection({
+      label: "Playlists",
+      slugField: "title",
+      path: "src/content/playlists/*",
+      format: { data: "yaml" },
+      schema: {
+        title: fields.slug({ name: { label: "Title" } }),
+        description: fields.text({ label: "Description", multiline: true, validation: { isRequired: false } }),
+        spotifyUrl: fields.url({ label: "Spotify URL" }),
+        mood: fields.text({ label: "Mood / vibe", description: 'e.g. "Social / Late Night"', validation: { isRequired: false } }),
+      },
+    }),
+
     djs: collection({
       label: "DJs",
       slugField: "name",
@@ -152,6 +165,7 @@ export default config({
           directory: "public/images/djs",
           publicPath: "/images/djs/",
         }),
+        spotify: fields.url({ label: "Spotify", validation: { isRequired: false } }),
         mixcloud: fields.url({ label: "Mixcloud", validation: { isRequired: false } }),
         soundcloud: fields.url({ label: "SoundCloud", validation: { isRequired: false } }),
         instagram: fields.text({ label: "Instagram handle", validation: { isRequired: false } }),
