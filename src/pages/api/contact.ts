@@ -79,7 +79,9 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   if (turnstileSecret) {
+    console.log(`[turnstile] token length=${turnstileToken?.length}, prefix=${turnstileToken?.slice(0, 10)}, secret length=${turnstileSecret.length}`);
     const { success, codes } = await verifyTurnstile(turnstileToken, turnstileSecret);
+    console.log(`[turnstile] success=${success}, codes=${JSON.stringify(codes)}`);
     if (!success) {
       return new Response(JSON.stringify({ error: "CAPTCHA verification failed", codes }), { status: 400 });
     }
