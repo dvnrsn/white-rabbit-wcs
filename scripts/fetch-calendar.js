@@ -5,6 +5,7 @@ import { writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import ICAL from 'ical.js';
+import { Temporal } from '@js-temporal/polyfill';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -19,11 +20,13 @@ const TZ = 'America/Phoenix';
 const cutoff = Temporal.Now.plainDateISO(TZ).subtract({ months: 1 });
 
 function icalToPlainDate(icalTime) {
-  return Temporal.PlainDate.from({ year: icalTime.year, month: icalTime.month, day: icalTime.day });
+  const jsDate = icalTime.toJSDate();
+  return Temporal.PlainDate.from(jsDate.toLocaleDateString('en-CA', { timeZone: TZ }));
 }
 
 function icalToTimeString(icalTime) {
-  return Temporal.PlainTime.from({ hour: icalTime.hour, minute: icalTime.minute }).toString().slice(0, 5);
+  const jsDate = icalTime.toJSDate();
+  return jsDate.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
 }
 
 function parseDescription(description) {

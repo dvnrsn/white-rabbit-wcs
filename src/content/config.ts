@@ -54,6 +54,7 @@ const djs = defineCollection({
     style: z.array(z.string()).default([]),
     resident: z.boolean().default(false),
     photo: z.string().optional(),
+    spotify: z.string().url().optional(),
     mixcloud: z.string().url().optional(),
     soundcloud: z.string().url().optional(),
     instagram: z.string().optional(),
@@ -85,4 +86,14 @@ const pages = defineCollection({
   }),
 });
 
-export const collections = { posts, instructors, venues, resources, djs, pages };
+const playlists = defineCollection({
+  type: "data",
+  schema: z.object({
+    title: z.string(),
+    description: z.string().optional(),
+    spotifyUrl: z.string().url(),
+    mood: z.string().optional(),
+  }),
+});
+
+export const collections = { posts, instructors, venues, resources, djs, pages, playlists };

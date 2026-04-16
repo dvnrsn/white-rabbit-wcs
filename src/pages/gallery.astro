@@ -1,0 +1,262 @@
+---
+export const prerender = false;
+
+import Layout from "../layouts/Layout.astro";
+
+const VIDEO_EXTS = /\.(mp4|mov|webm)$/i;
+const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp|avif)$/i;
+
+const bucket = Astro.locals.runtime?.env?.GALLERY_BUCKET as
+  | { list: (opts?: { limit?: number; cursor?: string }) => Promise<{ objects: { key: string; uploaded: Date }[]; truncated: boolean; cursor?: string }> }
+  | undefined;
+
+type GalleryItem = {
+  key: string;
+  url: string;
+  name: string;
+  album: string | null;
+  isVideo: boolean;
+  uploaded: Date;
+};
+
+let items: GalleryItem[] = [];
+
+if (bucket) {
+  // Paginate through all objects (R2 list maxes at 1000 per call)
+  let cursor: string | undefined;
+  do {
+    const result = await bucket.list({ limit: 1000, ...(cursor ? { cursor } : {}) });
+    for (const obj of result.objects) {
+      if (!IMAGE_EXTS.test(obj.key) && !VIDEO_EXTS.test(obj.key)) continue;
+      const segments = obj.key.split("/");
+      const album = segments.length > 1 ? segments[0] : null;
+      const name = segments[segments.length - 1];
+      items.push({
+        key: obj.key,
+        url: `/api/gallery/${obj.key}`,
+        name,
+        album,
+        isVideo: VIDEO_EXTS.test(obj.key),
+        uploaded: obj.uploaded,
+      });
+    }
+    cursor = result.truncated ? result.cursor : undefined;
+  } while (cursor);
+
+  items.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+}
+
+// Group by album (null = ungrouped, shown first)
+const albums = new Map<string, GalleryItem[]>();
+albums.set("", []);
+for (const item of items) {
+  const key = item.album ?? "";
+  if (!albums.has(key)) albums.set(key, []);
+  albums.get(key)!.push(item);
+}
+// Move ungrouped to end if albums exist
+if (albums.size > 1 && albums.get("")!.length > 0) {
+  const ungrouped = albums.get("")!;
+  albums.delete("");
+  albums.set("", ungrouped);
+}
+const hasContent = items.length > 0;
+---
+
+<Layout
+  title="Gallery — White Rabbit WCS"
+  description="Photos and videos from White Rabbit WCS events in Arizona."
+>
+  <main class="gallery-page">
+    <div class="container">
+      <header class="page-header">
+        <h1 class="page-title">Gallery</h1>
+        <p class="page-subtitle">Arizona West Coast Swing</p>
+      </header>
+
+      {!hasContent && (
+        <p class="empty">No photos yet — check back soon.</p>
+      )}
+
+      {hasContent && Array.from(albums.entries()).map(([album, albumItems]) => (
+        <section class="album">
+          {album && <h2 class="album-title">{album.replace(/-/g, " ")}</h2>}
+          <div class="grid">
+            {albumItems.map((item) => (
+              <button
+                class="grid-item"
+                data-url={item.url}
+                data-video={item.isVideo ? "true" : undefined}
+                aria-label={item.name}
+              >
+                {item.isVideo ? (
+                  <video src={item.url} muted preload="metadata" />
+                ) : (
+                  <img src={item.url} alt={item.name} loading="lazy" decoding="async" />
+                )}
+              </button>
+            ))}
+          </div>
+        </section>
+      ))}
+    </div>
+  </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-media" id="lightbox-media"></div>
+  </div>
+</Layout>
+
+<script>
+  const lightbox = document.getElementById("lightbox")!;
+  const mediaEl = document.getElementById("lightbox-media")!;
+  const closeBtn = document.getElementById("lightbox-close")!;
+
+  function open(url: string, isVideo: boolean) {
+    mediaEl.innerHTML = isVideo
+      ? `<video src="${url}" controls autoplay playsinline></video>`
+      : `<img src="${url}" alt="" />`;
+    lightbox.setAttribute("aria-hidden", "false");
+    lightbox.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+
+  function close() {
+    lightbox.setAttribute("aria-hidden", "true");
+    lightbox.classList.remove("open");
+    mediaEl.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  document.querySelectorAll<HTMLButtonElement>(".grid-item").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      open(btn.dataset.url!, btn.dataset.video === "true");
+    });
+  });
+
+  closeBtn.addEventListener("click", close);
+  lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+</script>
+
+<style>
+  .gallery-page {
+    padding: 60px 0 80px;
+  }
+
+  .page-header {
+    margin-bottom: 48px;
+  }
+
+  .page-title {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+  }
+
+  .page-subtitle {
+    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-top: 4px;
+  }
+
+  .empty {
+    color: var(--text-secondary);
+  }
+
+  .album {
+    margin-bottom: 56px;
+  }
+
+  .album-title {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    margin-bottom: 20px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 8px;
+  }
+
+  .grid-item {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    padding: 0;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .grid-item:hover {
+    border-color: var(--accent-primary);
+    transform: scale(1.02);
+  }
+
+  .grid-item img,
+  .grid-item video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  .lightbox-media {
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lightbox-media img,
+  .lightbox-media video {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+  }
+
+  .lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+
+  .lightbox-close:hover {
+    opacity: 1;
+  }
+</style>
