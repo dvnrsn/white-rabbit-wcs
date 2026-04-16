@@ -137,6 +137,23 @@
     "isRecurring": true
   },
   {
+    "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-1",
+    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
+    "title": "Full Swing",
+    "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
+    "date": "2026-04-28",
+    "startTime": "21:30",
+    "endTime": "23:59",
+    "venue": "The Imperial Ballroom",
+    "address": "Imperial Ballroom Dance Company, 15475 N Greenway Hayden Loop Suite 17 B, Scottsdale, AZ 85260, USA",
+    "price": "$10",
+    "level": "",
+    "type": "social",
+    "organizer": "Full Swing Team",
+    "instagram": "https://www.instagram.com/fullswing.az/",
+    "isRecurring": true
+  },
+  {
     "id": "7dfeuthacqru3dh7sdujee6hf2@google.com",
     "baseUid": "7dfeuthacqru3dh7sdujee6hf2@google.com",
     "title": "White Rabbit: Unplugged - Aloha Open Edition, ep. 3",
@@ -150,6 +167,22 @@
     "level": "",
     "type": "social",
     "organizer": "White Rabbit WCS"
+  },
+  {
+    "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-1",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
+    "title": "Late Nite Vibe",
+    "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
+    "date": "2026-04-22",
+    "startTime": "19:00",
+    "endTime": "23:30",
+    "venue": "Creative Dance Collective",
+    "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+    "price": "$8",
+    "level": "",
+    "type": "social",
+    "organizer": "Yu Sun",
+    "isRecurring": true
   },
   {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-0",
@@ -169,22 +202,6 @@
     "isRecurring": true
   },
   {
-    "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-1",
-    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
-    "title": "Late Nite Vibe",
-    "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
-    "date": "2026-04-22",
-    "startTime": "19:00",
-    "endTime": "23:30",
-    "venue": "Creative Dance Collective",
-    "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-    "price": "$8",
-    "level": "",
-    "type": "social",
-    "organizer": "Yu Sun",
-    "isRecurring": true
-  },
-  {
     "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-1",
     "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
     "title": "Westie Wednesday Classes",
@@ -201,7 +218,7 @@
     "isRecurring": true
   },
   {
-    "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-1",
+    "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-0",
     "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
     "title": "Full Swing",
     "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
@@ -267,6 +284,22 @@
     "isRecurring": true
   },
   {
+    "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-0",
+    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
+    "title": "Late Nite Vibe",
+    "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
+    "date": "2026-04-08",
+    "startTime": "19:00",
+    "endTime": "23:30",
+    "venue": "Creative Dance Collective",
+    "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+    "price": "$8",
+    "level": "",
+    "type": "social",
+    "organizer": "Yu Sun",
+    "isRecurring": true
+  },
+  {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-0",
     "baseUid": "1v2p6iduemnk5b851im9oqot0p@google.com",
     "title": "Prescott BeatMob 🪩",
@@ -281,22 +314,6 @@
     "type": "social",
     "organizer": "Sky",
     "instagram": "https://www.instagram.com/prescottbeatmob/",
-    "isRecurring": true
-  },
-  {
-    "id": "dlbqokvmlrk5df5m4a1nq2la4n@google.com-0",
-    "baseUid": "dlbqokvmlrk5df5m4a1nq2la4n@google.com",
-    "title": "Late Nite Vibe",
-    "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
-    "date": "2026-04-08",
-    "startTime": "19:00",
-    "endTime": "23:30",
-    "venue": "Creative Dance Collective",
-    "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-    "price": "$8",
-    "level": "",
-    "type": "social",
-    "organizer": "Yu Sun",
     "isRecurring": true
   },
   {
@@ -362,23 +379,6 @@
     "level": "",
     "type": "class",
     "organizer": "Gabe Sebastian",
-    "isRecurring": true
-  },
-  {
-    "id": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com-0",
-    "baseUid": "20q9itufnfp94roi936ntg6ol3_R20260121T043000@google.com",
-    "title": "Full Swing",
-    "description": "WEST COAST SWING SOCIAL DANCE\n\n$10\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!\n\nFULL HEARTS • FULL SWING ❤️‍🔥",
-    "date": "2026-03-31",
-    "startTime": "21:30",
-    "endTime": "23:59",
-    "venue": "The Imperial Ballroom",
-    "address": "Imperial Ballroom Dance Company, 15475 N Greenway Hayden Loop Suite 17 B, Scottsdale, AZ 85260, USA",
-    "price": "$10",
-    "level": "",
-    "type": "social",
-    "organizer": "Full Swing Team",
-    "instagram": "https://www.instagram.com/fullswing.az/",
     "isRecurring": true
   },
   {
