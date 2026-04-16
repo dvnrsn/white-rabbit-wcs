@@ -1,5 +1,6 @@
 ---
-const siteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
+const runtimeEnv = (Astro.locals as any).runtime?.env;
+const siteKey = runtimeEnv?.PUBLIC_TURNSTILE_SITE_KEY ?? import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? "";
 
 const PHOENIX_CITIES = [
   "Phoenix",
