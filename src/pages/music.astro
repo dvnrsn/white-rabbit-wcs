@@ -12,8 +12,9 @@ const DUMMY_DJS = [
   { handle: "DJ Static", realName: "Sam T.", bio: "The anchor of early evening sets. Static builds the room up slowly — smooth vocals, laid-back grooves, and just enough tension to pull dancers onto the floor.", style: ["Soul", "Smooth RnB", "Chill Hop"], resident: false },
 ];
 
-const [djEntries, pageEntry] = await Promise.all([
+const [djEntries, playlistEntries, pageEntry] = await Promise.all([
   getCollection("djs"),
+  getCollection("playlists"),
   getEntry("pages", "music"),
 ]);
 
@@ -27,29 +28,11 @@ const copy = {
   playlistsIntro: pageEntry?.data.playlistsIntro ?? "Curated sets for home listening, practice, and late-night winding down. Full streaming links coming soon.",
 };
 
-const playlists = [
-  {
-    title: "Rabbit Hole Vol. 1",
-    description: "The essential White Rabbit sound. 90 minutes of floor-filling WCS cuts.",
-    tracks: 22,
-    bpm: "115–128",
-    mood: "Social / Late Night",
-  },
-  {
-    title: "Down the Rabbit Hole",
-    description: "Darker, slower, deeper. For when the night gets interesting.",
-    tracks: 18,
-    bpm: "100–118",
-    mood: "Intimate / Moody",
-  },
-  {
-    title: "Morning Dew",
-    description: "The after-hours wind-down. Smooth grooves for tired legs and happy hearts.",
-    tracks: 14,
-    bpm: "95–112",
-    mood: "Chill / Cool-Down",
-  },
-];
+const playlists = playlistEntries.map((e) => e.data);
+
+function toSpotifyEmbed(url: string): string {
+  return url.replace("open.spotify.com/", "open.spotify.com/embed/").split("?")[0];
+}
 ---
 
 <Layout
@@ -108,6 +91,11 @@ const playlists = [
                     <span class="tag">{s}</span>
                   ))}
                 </div>
+                {dj.spotify && (
+                  <a href={dj.spotify} class="dj-spotify" target="_blank" rel="noopener noreferrer">
+                    Spotify
+                  </a>
+                )}
               </div>
             ))
           }
@@ -119,24 +107,29 @@ const playlists = [
         <p class="section-intro">
           {copy.playlistsIntro}
         </p>
-        <div class="playlist-list">
-          {
-            playlists.map((playlist) => (
-              <div class="card playlist-card">
+        {playlists.length === 0 ? (
+          <p class="section-intro">Playlists coming soon.</p>
+        ) : (
+          <div class="playlist-list">
+            {playlists.map((playlist) => (
+              <div class="playlist-card">
                 <div class="playlist-header">
                   <span class="playlist-title">{playlist.title}</span>
-                  <span class="playlist-mood">{playlist.mood}</span>
+                  {playlist.mood && <span class="playlist-mood">{playlist.mood}</span>}
                 </div>
-                <p class="playlist-desc">{playlist.description}</p>
-                <div class="playlist-meta">
-                  <span>{playlist.tracks} tracks</span>
-                  <span>{playlist.bpm} BPM</span>
-                  <span class="coming-soon">Streaming link coming soon</span>
-                </div>
+                {playlist.description && <p class="playlist-desc">{playlist.description}</p>}
+                <iframe
+                  src={toSpotifyEmbed(playlist.spotifyUrl)}
+                  width="100%"
+                  height="352"
+                  frameborder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                  loading="lazy"
+                ></iframe>
               </div>
-            ))
-          }
-        </div>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   </main>
@@ -339,18 +332,28 @@ const playlists = [
     margin: 0 0 10px;
   }
 
-  .playlist-meta {
-    display: flex;
-    gap: 16px;
-    font-size: 0.8rem;
-    color: var(--text-muted);
-    font-family: var(--font-primary);
-    flex-wrap: wrap;
+  .playlist-card iframe {
+    border: 1px solid var(--border-color);
+    border-radius: 0;
+    display: block;
   }
 
-  .coming-soon {
-    color: var(--accent-secondary);
-    font-style: italic;
+  .dj-spotify {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    text-decoration: none;
+    border: 1px solid var(--accent-primary);
+    padding: 4px 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .dj-spotify:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
   }
 
   @media (max-width: 768px) {
