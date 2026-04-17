@@ -22,7 +22,7 @@ const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
           <textarea id="fb-message" name="message" rows="4" required></textarea>
         </div>
         {siteKey && (
-          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>
+          <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark" style="display:none"></div>
         )}
         <button type="submit" class="btn submit-btn">Send message</button>
         <p class="form-status" id="fb-status" aria-live="polite"></p>
@@ -36,6 +36,16 @@ const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
 <script>
   const form = document.getElementById("feedback-form") as HTMLFormElement;
   const status = document.getElementById("fb-status") as HTMLParagraphElement;
+
+  const turnstileContainer = form?.querySelector<HTMLElement>(".cf-turnstile");
+  if (turnstileContainer) {
+    form.querySelectorAll("input, textarea").forEach((el) => {
+      el.addEventListener("focus", () => { turnstileContainer.style.display = ""; }, { once: true });
+    });
+    form.querySelector<HTMLButtonElement>(".submit-btn")?.addEventListener("click", () => {
+      turnstileContainer.style.display = "";
+    }, { once: true });
+  }
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
