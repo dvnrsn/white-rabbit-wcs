@@ -35,7 +35,7 @@ const PHOENIX_CITIES = [
       </select>
     </div>
     {siteKey && (
-      <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>
+      <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark" style="display:none"></div>
     )}
     <button type="submit" class="btn submit-btn">Request invite</button>
     <p class="form-status" id="dc-status" aria-live="polite"></p>
@@ -47,6 +47,16 @@ const PHOENIX_CITIES = [
 <script>
   const form = document.getElementById("discord-form") as HTMLFormElement;
   const status = document.getElementById("dc-status") as HTMLParagraphElement;
+
+  const turnstileContainer = form?.querySelector<HTMLElement>(".cf-turnstile");
+  if (turnstileContainer) {
+    form.querySelectorAll("input, select").forEach((el) => {
+      el.addEventListener("focus", () => { turnstileContainer.style.display = ""; }, { once: true });
+    });
+    form.querySelector<HTMLButtonElement>(".submit-btn")?.addEventListener("click", () => {
+      turnstileContainer.style.display = "";
+    }, { once: true });
+  }
 
   form?.addEventListener("submit", async (e) => {
     e.preventDefault();
