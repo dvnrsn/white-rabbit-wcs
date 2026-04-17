@@ -86,13 +86,21 @@ const copy = {
                 {(instructor.instagram || instructor.website) && (
                   <div class="instructor-links">
                     {instructor.instagram && (
-                      <a href={`https://instagram.com/${instructor.instagram.replace(/^@/, "")}`} class="instructor-link" target="_blank" rel="noopener noreferrer">
-                        Instagram
+                      <a href={`https://instagram.com/${instructor.instagram.replace(/^@/, "")}`} class="instructor-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                          <circle cx="12" cy="12" r="4"/>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
                       </a>
                     )}
                     {instructor.website && (
-                      <a href={instructor.website} class="instructor-link" target="_blank" rel="noopener noreferrer">
-                        Website
+                      <a href={instructor.website} class="instructor-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="2" y1="12" x2="22" y2="12"/>
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
                       </a>
                     )}
                   </div>
@@ -204,6 +212,11 @@ const copy = {
     gap: 16px;
   }
 
+  .instructor-card {
+    display: flex;
+    flex-direction: column;
+  }
+
   .instructor-photo {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -260,23 +273,34 @@ const copy = {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: auto;
+    padding-top: 12px;
   }
 
   .instructor-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
     text-decoration: none;
-    border: 1px solid var(--accent-primary);
-    padding: 4px 10px;
-    transition: background 0.2s, color 0.2s;
+    line-height: 1;
+    transition: none;
+  }
+
+  .instructor-link svg {
+    width: 28px;
+    height: 28px;
   }
 
   .instructor-link:hover {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    color: var(--accent-primary);
+  }
+
+  @media (max-width: 768px) {
+    .instructor-link svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   .venue-name {

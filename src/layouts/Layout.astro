@@ -123,7 +123,6 @@ const showThemeSwitcher = Astro.url.pathname.includes("/moodboards/");
   a {
     color: var(--accent-primary);
     text-decoration: none;
-    transition: color 0.2s;
   }
 
   a:hover {
@@ -154,10 +153,10 @@ const showThemeSwitcher = Astro.url.pathname.includes("/moodboards/");
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
     padding: 2rem;
-    transition: all 0.3s;
+    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
   }
 
-  .card:hover {
+  a.card:hover {
     border-color: var(--border-accent);
     box-shadow: var(--shadow-card);
     transform: translateY(-5px);

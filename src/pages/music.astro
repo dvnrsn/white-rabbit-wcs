@@ -75,20 +75,15 @@ function toSpotifyEmbed(url: string): string {
         <div class="dj-grid">
           {
             djs.map((dj) => (
-              <div class={`card dj-card ${dj.resident ? "resident" : ""}`}>
+              <div class="card dj-card">
                 {dj.photo && (
                   <div class="dj-photo">
                     <img src={dj.photo} alt={dj.handle ?? dj.name} loading="lazy" decoding="async" />
                   </div>
                 )}
                 <div class="dj-header">
-                  <div>
-                    <div class="dj-handle">{dj.handle}</div>
-                    <div class="dj-real">{dj.realName}</div>
-                  </div>
-                  {dj.resident && (
-                    <span class="resident-badge">Resident</span>
-                  )}
+                  <div class="dj-handle">{dj.handle}</div>
+                  <div class="dj-real">{dj.realName}</div>
                 </div>
                 <p class="dj-bio">{dj.bio}</p>
                 <div class="dj-tags">
@@ -99,13 +94,19 @@ function toSpotifyEmbed(url: string): string {
                 {(dj.instagram || dj.spotify || dj.mixcloud || dj.soundcloud) && (
                   <div class="dj-links">
                     {dj.instagram && (
-                      <a href={`https://instagram.com/${dj.instagram.replace(/^@/, "")}`} class="dj-link" target="_blank" rel="noopener noreferrer">
-                        Instagram
+                      <a href={`https://instagram.com/${dj.instagram.replace(/^@/, "")}`} class="dj-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                          <circle cx="12" cy="12" r="4"/>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
                       </a>
                     )}
                     {dj.spotify && (
-                      <a href={dj.spotify} class="dj-link" target="_blank" rel="noopener noreferrer">
-                        Spotify
+                      <a href={dj.spotify} class="dj-link" target="_blank" rel="noopener noreferrer" aria-label="Spotify">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.586 14.424c-.18.295-.563.387-.857.207-2.35-1.434-5.305-1.76-8.786-.963-.335.077-.67-.133-.746-.469-.077-.336.132-.67.469-.746 3.809-.87 7.076-.496 9.713 1.115.293.18.386.563.207.856zm1.223-2.722c-.226.367-.706.482-1.072.257-2.687-1.652-6.785-2.131-9.965-1.166-.413.127-.848-.106-.973-.517-.125-.413.108-.848.518-.973 3.632-1.102 8.147-.568 11.234 1.328.366.226.48.707.258 1.072zm.105-2.835C14.692 8.95 9.375 8.775 6.297 9.71c-.493.15-1.016-.129-1.166-.623-.148-.495.13-1.016.624-1.166 3.532-1.073 9.404-.866 13.115 1.337.445.264.59.838.327 1.282-.264.443-.838.59-1.283.326z"/>
+                        </svg>
                       </a>
                     )}
                     {dj.mixcloud && (
@@ -141,7 +142,7 @@ function toSpotifyEmbed(url: string): string {
                   <span class="playlist-title">{playlist.title}</span>
                   {playlist.mood && <span class="playlist-mood">{playlist.mood}</span>}
                 </div>
-                {playlist.description && <p class="playlist-desc">{playlist.description}</p>}
+                <p class="playlist-desc">{playlist.description ?? ""}</p>
                 <iframe
                   src={toSpotifyEmbed(playlist.spotifyUrl)}
                   width="100%"
@@ -260,11 +261,12 @@ function toSpotifyEmbed(url: string): string {
     gap: 16px;
   }
 
-  .dj-card.resident {
-    border-color: var(--accent-primary);
+  .dj-card {
+    display: flex;
+    flex-direction: column;
   }
 
-  .dj-photo {
+.dj-photo {
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
@@ -279,9 +281,6 @@ function toSpotifyEmbed(url: string): string {
   }
 
   .dj-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     margin-bottom: 12px;
   }
 
@@ -298,17 +297,7 @@ function toSpotifyEmbed(url: string): string {
     margin-top: 2px;
   }
 
-  .resident-badge {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--accent-primary);
-    border: 1px solid var(--accent-primary);
-    padding: 2px 8px;
-    white-space: nowrap;
-  }
-
-  .dj-bio {
+.dj-bio {
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.7;
@@ -337,14 +326,15 @@ function toSpotifyEmbed(url: string): string {
   .playlist-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
+    grid-template-rows: repeat(3, auto);
+    column-gap: 40px;
+    row-gap: 48px;
   }
 
   .playlist-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 10px;
     gap: 8px;
   }
 
@@ -367,7 +357,14 @@ function toSpotifyEmbed(url: string): string {
     font-size: 0.9rem;
     color: var(--text-secondary);
     line-height: 1.6;
-    margin: 0 0 10px;
+    margin: 0;
+  }
+
+  .playlist-card {
+    display: grid;
+    grid-template-rows: subgrid;
+    grid-row: span 3;
+    row-gap: 8px;
   }
 
   .playlist-card iframe {
@@ -380,23 +377,34 @@ function toSpotifyEmbed(url: string): string {
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-top: 12px;
+    margin-top: auto;
+    padding-top: 12px;
   }
 
   .dj-link {
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--accent-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
     text-decoration: none;
-    border: 1px solid var(--accent-primary);
-    padding: 4px 10px;
-    transition: background 0.2s, color 0.2s;
+    line-height: 1;
+    transition: none;
+  }
+
+  .dj-link svg {
+    width: 28px;
+    height: 28px;
   }
 
   .dj-link:hover {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
+    color: var(--accent-primary);
+  }
+
+  @media (max-width: 768px) {
+    .dj-link svg {
+      width: 40px;
+      height: 40px;
+    }
   }
 
   @media (max-width: 768px) {
@@ -419,7 +427,8 @@ function toSpotifyEmbed(url: string): string {
 
     .playlist-list {
       grid-template-columns: 1fr;
-      gap: 16px;
+      column-gap: 0;
+      row-gap: 40px;
     }
 
     .playlist-header {
