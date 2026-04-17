@@ -96,10 +96,29 @@ function toSpotifyEmbed(url: string): string {
                     <span class="tag">{s}</span>
                   ))}
                 </div>
-                {dj.spotify && (
-                  <a href={dj.spotify} class="dj-spotify" target="_blank" rel="noopener noreferrer">
-                    Spotify
-                  </a>
+                {(dj.instagram || dj.spotify || dj.mixcloud || dj.soundcloud) && (
+                  <div class="dj-links">
+                    {dj.instagram && (
+                      <a href={`https://instagram.com/${dj.instagram.replace(/^@/, "")}`} class="dj-link" target="_blank" rel="noopener noreferrer">
+                        Instagram
+                      </a>
+                    )}
+                    {dj.spotify && (
+                      <a href={dj.spotify} class="dj-link" target="_blank" rel="noopener noreferrer">
+                        Spotify
+                      </a>
+                    )}
+                    {dj.mixcloud && (
+                      <a href={dj.mixcloud} class="dj-link" target="_blank" rel="noopener noreferrer">
+                        Mixcloud
+                      </a>
+                    )}
+                    {dj.soundcloud && (
+                      <a href={dj.soundcloud} class="dj-link" target="_blank" rel="noopener noreferrer">
+                        SoundCloud
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
             ))
@@ -357,10 +376,15 @@ function toSpotifyEmbed(url: string): string {
     display: block;
   }
 
-  .dj-spotify {
-    display: inline-block;
-    margin-top: 10px;
-    font-size: 0.8rem;
+  .dj-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .dj-link {
+    font-size: 0.75rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--accent-primary);
@@ -370,7 +394,7 @@ function toSpotifyEmbed(url: string): string {
     transition: background 0.2s, color 0.2s;
   }
 
-  .dj-spotify:hover {
+  .dj-link:hover {
     background: var(--accent-primary);
     color: var(--bg-primary);
   }

@@ -83,6 +83,20 @@ const copy = {
                     <span class="tag">{s}</span>
                   ))}
                 </div>
+                {(instructor.instagram || instructor.website) && (
+                  <div class="instructor-links">
+                    {instructor.instagram && (
+                      <a href={`https://instagram.com/${instructor.instagram.replace(/^@/, "")}`} class="instructor-link" target="_blank" rel="noopener noreferrer">
+                        Instagram
+                      </a>
+                    )}
+                    {instructor.website && (
+                      <a href={instructor.website} class="instructor-link" target="_blank" rel="noopener noreferrer">
+                        Website
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             ))
           }
@@ -240,6 +254,29 @@ const copy = {
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
     border-radius: 2px;
+  }
+
+  .instructor-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .instructor-link {
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent-primary);
+    text-decoration: none;
+    border: 1px solid var(--accent-primary);
+    padding: 4px 10px;
+    transition: background 0.2s, color 0.2s;
+  }
+
+  .instructor-link:hover {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
   }
 
   .venue-name {
