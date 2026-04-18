@@ -324,36 +324,43 @@ const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
 </style>
 
 <script>
-  // Typing effect
   const text =
     "Wake up, Neo... The dance floor is calling. Phoenix's underground West Coast Swing community awaits. Find events, connect with dancers, and discover your flow.";
   const text2 = "Follow the white rabbit.";
   const typedTextElement = document.getElementById("typed-text");
   const typedTextElement2 = document.getElementById("typed-text-2");
-  let index = 0;
 
-  function typeText2() {
-    if (typedTextElement2 && index < text2.length) {
-      const currentText = text2.substring(0, index + 1);
-      typedTextElement2.innerHTML = currentText + '<span class="cursor"></span>';
-      index++;
-      setTimeout(typeText2, 50);
+  if (localStorage.getItem("wr-intro-seen")) {
+    // Already seen — show final state immediately with cursor
+    if (typedTextElement) typedTextElement.textContent = text;
+    if (typedTextElement2) typedTextElement2.innerHTML = text2 + '<span class="cursor"></span>';
+  } else {
+    // First visit — run the animation, then mark as seen
+    let index = 0;
+
+    function typeText2() {
+      if (typedTextElement2 && index < text2.length) {
+        typedTextElement2.innerHTML = text2.substring(0, index + 1) + '<span class="cursor"></span>';
+        index++;
+        setTimeout(typeText2, 50);
+      } else if (typedTextElement2) {
+        typedTextElement2.textContent = text2;
+        localStorage.setItem("wr-intro-seen", "1");
+      }
     }
-  }
 
-  function typeText() {
-    if (typedTextElement && index < text.length) {
-      const currentText = text.substring(0, index + 1);
-      typedTextElement.innerHTML = currentText + '<span class="cursor"></span>';
-      index++;
-      setTimeout(typeText, 50);
-    } else if (typedTextElement) {
-      typedTextElement.innerHTML = text;
-      index = 0;
-      setTimeout(typeText2, 400);
+    function typeText() {
+      if (typedTextElement && index < text.length) {
+        typedTextElement.innerHTML = text.substring(0, index + 1) + '<span class="cursor"></span>';
+        index++;
+        setTimeout(typeText, 50);
+      } else if (typedTextElement) {
+        typedTextElement.textContent = text;
+        index = 0;
+        setTimeout(typeText2, 400);
+      }
     }
-  }
 
-  // Start typing after a short delay
-  setTimeout(typeText, 1200);
+    setTimeout(typeText, 1200);
+  }
 </script>
