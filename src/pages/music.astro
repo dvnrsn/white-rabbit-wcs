@@ -75,15 +75,20 @@ function toSpotifyEmbed(url: string): string {
         <div class="dj-grid">
           {
             djs.map((dj) => (
-              <div class="card dj-card">
+              <div class={`card dj-card ${dj.resident ? "resident" : ""}`}>
                 {dj.photo && (
                   <div class="dj-photo">
                     <img src={dj.photo} alt={dj.handle ?? dj.name} loading="lazy" decoding="async" />
                   </div>
                 )}
                 <div class="dj-header">
-                  <div class="dj-handle">{dj.handle}</div>
-                  <div class="dj-real">{dj.realName}</div>
+                  <div>
+                    <div class="dj-handle">{dj.handle}</div>
+                    <div class="dj-real">{dj.realName}</div>
+                  </div>
+                  {dj.resident && (
+                    <span class="resident-badge">Resident</span>
+                  )}
                 </div>
                 <p class="dj-bio">{dj.bio}</p>
                 <div class="dj-tags">
@@ -266,6 +271,10 @@ function toSpotifyEmbed(url: string): string {
     flex-direction: column;
   }
 
+  .dj-card.resident {
+    border-color: var(--accent-primary);
+  }
+
 .dj-photo {
     width: 100%;
     aspect-ratio: 4 / 3;
@@ -281,6 +290,9 @@ function toSpotifyEmbed(url: string): string {
   }
 
   .dj-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
     margin-bottom: 12px;
   }
 
@@ -289,6 +301,16 @@ function toSpotifyEmbed(url: string): string {
     font-weight: 700;
     color: var(--text-primary);
     font-family: var(--font-primary);
+  }
+
+  .resident-badge {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-primary);
+    border: 1px solid var(--accent-primary);
+    padding: 2px 8px;
+    white-space: nowrap;
   }
 
   .dj-real {
