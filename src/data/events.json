@@ -217,6 +217,22 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-04-22",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-0",
     "baseUid": "1v2p6iduemnk5b851im9oqot0p@google.com",
     "title": "Prescott BeatMob 🪩",
@@ -231,22 +247,6 @@
     "type": "social",
     "organizer": "Sky",
     "instagram": "https://www.instagram.com/prescottbeatmob/",
-    "isRecurring": true
-  },
-  {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
-    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-04-22",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
     "isRecurring": true
   },
   {
@@ -332,6 +332,22 @@
     "isRecurring": true
   },
   {
+    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
+    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
+    "title": "Westie Wednesday Classes",
+    "description": "Beginner and intermediate lessons",
+    "date": "2026-04-08",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "venue": "Country Nomads",
+    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+    "price": "$15",
+    "level": "",
+    "type": "class",
+    "organizer": "Gabe Sebastian",
+    "isRecurring": true
+  },
+  {
     "id": "1v2p6iduemnk5b851im9oqot0p@google.com-0",
     "baseUid": "1v2p6iduemnk5b851im9oqot0p@google.com",
     "title": "Prescott BeatMob 🪩",
@@ -346,22 +362,6 @@
     "type": "social",
     "organizer": "Sky",
     "instagram": "https://www.instagram.com/prescottbeatmob/",
-    "isRecurring": true
-  },
-  {
-    "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com-0",
-    "baseUid": "609qb5283ntbhuu3e8jonroln8_R20260108T020000@google.com",
-    "title": "Westie Wednesday Classes",
-    "description": "Beginner and intermediate lessons",
-    "date": "2026-04-08",
-    "startTime": "19:00",
-    "endTime": "21:00",
-    "venue": "Country Nomads",
-    "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-    "price": "$15",
-    "level": "",
-    "type": "class",
-    "organizer": "Gabe Sebastian",
     "isRecurring": true
   },
   {
