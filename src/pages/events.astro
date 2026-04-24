@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
+import MonthCalendar from '../components/MonthCalendar.astro';
 import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
 import { generateEventListSchema } from '../lib/schema';
 // Fetch events from Google Calendar
@@ -40,7 +41,22 @@ const schema = generateEventListSchema(upcomingEvents);
     <div class="container">
       <header class="page-header">
         <h1 class="page-title gradient-text">Events</h1>
-        <div class="filters-container">
+        <div class="header-controls">
+          <div class="view-toggle" role="group" aria-label="View mode">
+            <button id="view-list-btn" class="view-btn" aria-label="List view" title="List view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+                <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+              </svg>
+            </button>
+            <button id="view-month-btn" class="view-btn" aria-label="Month view" title="Month view">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+              </svg>
+            </button>
+          </div>
+          <div class="filters-container">
           <button id="filter-trigger" class="filter-trigger" aria-label="Open filters">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon>
@@ -96,9 +112,15 @@ const schema = generateEventListSchema(upcomingEvents);
             </div>
           </div>
           </div>
-        </div>
+          </div> <!-- /filters-container -->
+        </div> <!-- /header-controls -->
       </header>
 
+      <div id="month-view" class="hidden">
+        <MonthCalendar events={events} today={today} />
+      </div>
+
+      <div id="list-view">
       {upcomingEvents.length > 0 && (
         <section class="events-section">
           <div class="events-list">
@@ -149,13 +171,13 @@ const schema = generateEventListSchema(upcomingEvents);
           <p>Your events are currently chasing the White Rabbit. Please stand by.</p>
         </div>
       )}
+      </div> <!-- /list-view -->
     </div>
   </main>
 </Layout>
 
 <style>
   .events-page {
-    min-height: calc(100vh - 80px);
   }
 
   .debug-banner {
@@ -190,6 +212,59 @@ const schema = generateEventListSchema(upcomingEvents);
     align-items: flex-start;
     margin-bottom: 3rem;
     gap: 1rem;
+  }
+
+  .header-controls {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .view-toggle {
+    display: flex;
+    border: 1px solid var(--border-color);
+    background: var(--bg-secondary);
+    overflow: hidden;
+  }
+
+  .view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    padding: 0;
+  }
+
+  .view-btn + .view-btn {
+    border-left: 1px solid var(--border-color);
+  }
+
+  .view-btn:hover {
+    color: var(--text-primary);
+    background: var(--bg-primary);
+  }
+
+  .view-btn.is-active {
+    color: var(--accent-primary);
+    background: var(--bg-primary);
+  }
+
+  #month-view {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  #month-view.hidden,
+  #list-view.hidden {
+    display: none;
   }
 
   .page-title {
@@ -415,6 +490,10 @@ const schema = generateEventListSchema(upcomingEvents);
       align-items: center;
     }
 
+    #month-view {
+      max-width: 100%;
+    }
+
     .page-title {
       font-size: clamp(2rem, 8vw, 3rem);
     }
@@ -432,6 +511,28 @@ const schema = generateEventListSchema(upcomingEvents);
 </style>
 
 <script>
+  // View toggle (list / month)
+  const viewListBtn = document.getElementById('view-list-btn') as HTMLButtonElement | null;
+  const viewMonthBtn = document.getElementById('view-month-btn') as HTMLButtonElement | null;
+  const listView = document.getElementById('list-view');
+  const monthView = document.getElementById('month-view');
+
+  let activeView = localStorage.getItem('white-rabbit-view') || 'list';
+
+  function applyView() {
+    const isMonth = activeView === 'month';
+    listView?.classList.toggle('hidden', isMonth);
+    monthView?.classList.toggle('hidden', !isMonth);
+    viewListBtn?.classList.toggle('is-active', !isMonth);
+    viewMonthBtn?.classList.toggle('is-active', isMonth);
+    localStorage.setItem('white-rabbit-view', activeView);
+  }
+
+  viewListBtn?.addEventListener('click', () => { activeView = 'list'; applyView(); });
+  viewMonthBtn?.addEventListener('click', () => { activeView = 'month'; applyView(); });
+
+  applyView();
+
   // Filter dropdown functionality
   const filterTrigger = document.getElementById('filter-trigger');
   const filterDropdown = document.getElementById('filter-dropdown');

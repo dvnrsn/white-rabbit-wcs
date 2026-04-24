@@ -55,7 +55,9 @@ const showThemeSwitcher = Astro.url.pathname.includes("/moodboards/");
   <body>
     <Navigation />
     {showThemeSwitcher && <ThemeSwitcher />}
-    <slot />
+    <div class="page-content">
+      <slot />
+    </div>
     <Footer />
   </body>
 </html>
@@ -72,8 +74,14 @@ const showThemeSwitcher = Astro.url.pathname.includes("/moodboards/");
   body {
     margin: 0;
     width: 100%;
-    min-height: 100%;
+    min-height: 100dvh;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .page-content {
+    flex: 1;
   }
 
   /* Cursor blink animation */
