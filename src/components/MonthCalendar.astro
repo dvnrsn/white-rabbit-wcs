@@ -1,0 +1,684 @@
+---
+import type { CalendarEvent } from '../lib/calendar';
+
+interface Props {
+  events: CalendarEvent[];
+  today: string; // YYYY-MM-DD
+}
+
+const { events, today } = Astro.props;
+---
+
+<div class="month-calendar">
+  <div class="cal-pane">
+    <div class="cal-header">
+      <button class="cal-nav" id="cal-prev" aria-label="Previous month">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"/>
+        </svg>
+      </button>
+      <span class="cal-month-label" id="cal-month-label"></span>
+      <button class="cal-nav" id="cal-next" aria-label="Next month">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="cal-dow-row" aria-hidden="true">
+      <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+    </div>
+
+    <div class="cal-grid" id="cal-grid"></div>
+  </div>
+
+  <div class="cal-day-events" id="cal-day-events" aria-live="polite"></div>
+</div>
+
+<script define:vars={{ calEvents: events, calToday: today }}>
+  const MONTHS = [
+    'January','February','March','April','May','June',
+    'July','August','September','October','November','December'
+  ];
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function toDateStr(d) {
+    return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
+  }
+
+  function fmtTime(t) {
+    if (!t) return '';
+    const [h, m] = t.split(':').map(Number);
+    return `${h % 12 || 12}:${pad(m)} ${h >= 12 ? 'PM' : 'AM'}`;
+  }
+
+  const TYPE_COLORS = {
+    social:      'var(--type-social)',
+    class:       'var(--type-class)',
+    workshop:    'var(--type-workshop)',
+    competition: 'var(--type-competition)',
+  };
+  function typeColor(type) {
+    return TYPE_COLORS[type] || 'var(--text-muted)';
+  }
+
+  // Index events by date
+  const byDate = Object.create(null);
+  for (const ev of calEvents) {
+    if (!byDate[ev.date]) byDate[ev.date] = [];
+    byDate[ev.date].push(ev);
+  }
+
+  const todayParts = calToday.split('-').map(Number);
+  let year = todayParts[0];
+  let month = todayParts[1] - 1; // 0-indexed
+  let selected = calToday;
+
+  // Lazily create a single dialog on <body> for event details
+  function openEventDialog(ev) {
+    const trigger = document.activeElement;
+
+    let dialog = document.getElementById('cal-event-detail');
+    if (!dialog) {
+      dialog = document.createElement('dialog');
+      dialog.id = 'cal-event-detail';
+      dialog.setAttribute('aria-modal', 'true');
+      dialog.setAttribute('aria-labelledby', 'ced-title');
+      document.body.appendChild(dialog);
+      dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+    }
+
+    dialog.addEventListener('close', () => trigger?.focus(), { once: true });
+
+    const color = typeColor(ev.type);
+    const time = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+
+    dialog.innerHTML = `
+      <div class="ced-inner">
+        <button class="ced-close" aria-label="Close dialog">✕</button>
+        <div class="ced-type" style="color:${color};border-color:${color}" aria-hidden="true">${ev.type}</div>
+        <h2 class="ced-title" id="ced-title">${ev.title}</h2>
+        <div class="ced-meta">
+          <div class="ced-meta-row"><span aria-hidden="true">🕰️</span> ${time}</div>
+          ${ev.venue ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> ${ev.venue}</div>` : ''}
+          ${ev.price ? `<div class="ced-meta-row"><span aria-hidden="true">💵</span> ${ev.price}</div>` : ''}
+          ${ev.level ? `<div class="ced-meta-row"><span aria-hidden="true">🎯</span> ${ev.level}</div>` : ''}
+        </div>
+        ${ev.description ? `<p class="ced-desc">${ev.description}</p>` : ''}
+        <div class="ced-links">
+          ${ev.url      ? `<a href="${ev.url}"       target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🔗</span> Event page</a>` : ''}
+          ${ev.instagram? `<a href="${ev.instagram}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📸</span> Instagram</a>`  : ''}
+          ${ev.website  ? `<a href="${ev.website}"   target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🌐</span> Website</a>`    : ''}
+        </div>
+        <button class="ced-close-btn">Close</button>
+      </div>
+    `;
+
+    dialog.querySelector('.ced-close').addEventListener('click', () => dialog.close());
+    dialog.querySelector('.ced-close-btn').addEventListener('click', () => dialog.close());
+    dialog.showModal();
+    dialog.querySelector('.ced-close').focus();
+  }
+
+  function render() {
+    document.getElementById('cal-month-label').textContent =
+      `${MONTHS[month]} ${year}`;
+
+    const grid = document.getElementById('cal-grid');
+    grid.innerHTML = '';
+
+    const firstDow = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    // Leading overflow from prev month
+    for (let i = 0; i < firstDow; i++) {
+      const d = new Date(year, month, 1 - firstDow + i);
+      grid.appendChild(makeCell(d.getDate(), toDateStr(d), true));
+    }
+
+    // Current month
+    for (let n = 1; n <= daysInMonth; n++) {
+      const d = new Date(year, month, n);
+      grid.appendChild(makeCell(n, toDateStr(d), false));
+    }
+
+    // Trailing overflow into next month
+    const total = firstDow + daysInMonth;
+    const trail = total % 7 === 0 ? 0 : 7 - (total % 7);
+    for (let n = 1; n <= trail; n++) {
+      const d = new Date(year, month + 1, n);
+      grid.appendChild(makeCell(n, toDateStr(d), true));
+    }
+
+    renderDayEvents();
+  }
+
+  function makeIndicator(ds) {
+    const evs = byDate[ds];
+    if (!evs) return null;
+
+    const isToday = ds === calToday;
+    const isPast  = ds < calToday;
+    const types   = [...new Set(evs.map(ev => ev.type))];
+
+    const wrap = document.createElement('div');
+    wrap.className = 'ev-indicators';
+    if (isPast && !isToday) wrap.style.opacity = '0.35';
+
+    if (types.length === 1) {
+      const dot = document.createElement('span');
+      dot.className = 'ev-dot';
+      dot.style.background = isToday ? 'var(--bg-primary)' : typeColor(types[0]);
+      wrap.appendChild(dot);
+    } else {
+      const pill = document.createElement('span');
+      pill.className = 'ev-pill';
+      types.forEach(type => {
+        const seg = document.createElement('span');
+        seg.className = 'ev-pill-seg';
+        seg.style.background = isToday ? 'var(--bg-primary)' : typeColor(type);
+        pill.appendChild(seg);
+      });
+      wrap.appendChild(pill);
+    }
+
+    return wrap;
+  }
+
+  function makeCell(dayNum, ds, dim) {
+    const btn = document.createElement('button');
+    btn.className = 'cal-day';
+    if (dim) btn.classList.add('dim');
+    if (ds < calToday) btn.classList.add('is-past');
+    if (ds === calToday) btn.classList.add('is-today');
+    if (ds === selected) btn.classList.add('is-selected');
+
+    const d = new Date(ds + 'T12:00:00');
+    const evCount = byDate[ds]?.length || 0;
+    const dateLabel = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+    btn.setAttribute('aria-label', evCount > 0 ? `${dateLabel}, ${evCount} event${evCount > 1 ? 's' : ''}` : dateLabel);
+    if (ds === calToday) btn.setAttribute('aria-current', 'date');
+    if (ds === selected) btn.setAttribute('aria-pressed', 'true');
+
+    const numEl = document.createElement('span');
+    numEl.className = 'day-num';
+    numEl.textContent = dayNum;
+    btn.appendChild(numEl);
+
+    const indicator = makeIndicator(ds);
+    if (indicator) btn.appendChild(indicator);
+
+    btn.addEventListener('click', () => {
+      // Navigate to the clicked month if it's an overflow cell
+      const clicked = new Date(ds + 'T12:00:00');
+      if (clicked.getMonth() !== month || clicked.getFullYear() !== year) {
+        year = clicked.getFullYear();
+        month = clicked.getMonth();
+      }
+      selected = ds;
+      render();
+    });
+
+    return btn;
+  }
+
+  function renderDayEvents() {
+    const el = document.getElementById('cal-day-events');
+    el.innerHTML = '';
+
+    const d = new Date(selected + 'T12:00:00');
+    const label = document.createElement('div');
+    label.className = 'day-label';
+    label.textContent = `${MONTHS[d.getMonth()]} ${d.getDate()}`;
+    el.appendChild(label);
+
+    const evs = (byDate[selected] || [])
+      .slice()
+      .sort((a, b) => a.startTime.localeCompare(b.startTime));
+
+    if (!evs.length) {
+      const p = document.createElement('p');
+      p.className = 'day-empty';
+      p.textContent = 'No events';
+      el.appendChild(p);
+      return;
+    }
+
+    evs.forEach((ev, i) => {
+      const item = document.createElement('button');
+      item.className = 'day-ev';
+      item.setAttribute('aria-label', `${ev.title}, ${fmtTime(ev.startTime)}`);
+      item.addEventListener('click', () => openEventDialog(ev));
+
+      const dotEl = document.createElement('span');
+      dotEl.className = 'day-ev-dot';
+      dotEl.style.background = typeColor(ev.type);
+
+      const timeEl = document.createElement('div');
+      timeEl.className = 'day-ev-time';
+      timeEl.textContent = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+
+      const titleEl = document.createElement('div');
+      titleEl.className = 'day-ev-title';
+      titleEl.textContent = ev.title;
+
+      const arrowEl = document.createElement('span');
+      arrowEl.className = 'day-ev-arrow';
+      arrowEl.textContent = '→';
+
+      item.append(dotEl, timeEl, titleEl, arrowEl);
+      el.appendChild(item);
+
+      if (i < evs.length - 1) {
+        const hr = document.createElement('hr');
+        hr.className = 'day-ev-hr';
+        el.appendChild(hr);
+      }
+    });
+  }
+
+  document.getElementById('cal-prev').addEventListener('click', () => {
+    month = (month + 11) % 12;
+    if (month === 11) year--;
+    render();
+  });
+
+  document.getElementById('cal-next').addEventListener('click', () => {
+    month = (month + 1) % 12;
+    if (month === 0) year++;
+    render();
+  });
+
+  render();
+</script>
+
+<style is:global>
+  .month-calendar {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+
+    --type-social:      oklch(88% 0.29 142);
+    --type-class:       oklch(74% 0.14 215);
+    --type-workshop:    oklch(74% 0.18 47);
+    --type-competition: oklch(68% 0.18 292);
+  }
+
+  .cal-pane {
+    min-width: 0;
+  }
+
+  @media (min-width: 768px) {
+    .month-calendar {
+      grid-template-columns: 1fr 320px;
+      gap: 0 2rem;
+      align-items: start;
+    }
+
+    .cal-day-events {
+      margin-top: 0 !important;
+      border-top: none !important;
+      border-left: 1px solid var(--border-color);
+      padding-top: 0 !important;
+      padding-left: 2rem;
+    }
+  }
+
+  .cal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    padding: 0 2px;
+  }
+
+  .cal-month-label {
+    font-family: var(--font-secondary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+  }
+
+  .cal-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    border-radius: 50%;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+
+  .cal-nav:hover {
+    background: var(--bg-secondary);
+    color: var(--accent-primary);
+  }
+
+  .cal-dow-row {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-family: var(--font-secondary);
+  }
+
+  .cal-dow-row span {
+    padding: 4px 0;
+  }
+
+  .cal-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 2px;
+  }
+
+  .cal-day {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px 0 6px;
+    min-height: 48px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    gap: 4px;
+    border-radius: 4px;
+    transition: background 0.15s;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .cal-day:hover {
+    background: var(--bg-secondary);
+  }
+
+  .day-num {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.88rem;
+    color: var(--text-secondary);
+    transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  /* Other-month overflow days: very dim */
+  .cal-day.dim .day-num {
+    color: #333;
+  }
+
+  /* Past days within the displayed month: noticeably muted */
+  .cal-day.is-past:not(.dim) .day-num {
+    color: var(--text-muted);
+  }
+
+  .cal-day.is-today .day-num {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-weight: 700;
+  }
+
+  .cal-day.is-selected:not(.is-today) .day-num {
+    border: 1.5px solid var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  .ev-indicators {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .ev-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .ev-pill {
+    display: flex;
+    height: 5px;
+    border-radius: 3px;
+    overflow: hidden;
+    gap: 1.5px;
+  }
+
+  .ev-pill-seg {
+    width: 9px;
+  }
+
+  /* Day events panel */
+  .cal-day-events {
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+  }
+
+  .day-label {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-family: var(--font-secondary);
+  }
+
+  .day-empty {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    padding: 12px 0;
+    font-family: var(--font-secondary);
+  }
+
+  .day-ev {
+    display: grid;
+    grid-template-columns: 10px 1fr auto;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    align-items: center;
+    width: 100%;
+    padding: 12px 0;
+    background: none;
+    border: none;
+    text-align: left;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-secondary);
+  }
+
+  .day-ev:hover .day-ev-title {
+    color: var(--accent-primary);
+  }
+
+  .day-ev:hover .day-ev-arrow {
+    color: var(--accent-primary);
+    transform: translateX(3px);
+  }
+
+  .day-ev-dot {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  .day-ev-time {
+    grid-column: 2;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    margin-bottom: 3px;
+    font-family: var(--font-secondary);
+  }
+
+  .day-ev-title {
+    grid-column: 2;
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    transition: color 0.15s;
+    line-height: 1.3;
+  }
+
+  .day-ev-arrow {
+    grid-column: 3;
+    grid-row: 1 / 3;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    transition: color 0.15s, transform 0.15s;
+    align-self: center;
+  }
+
+  .day-ev-hr {
+    border: none;
+    border-top: 1px solid var(--border-color);
+    margin: 0;
+  }
+
+  /* Event detail dialog */
+  #cal-event-detail {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 95vw;
+    max-width: 520px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-accent);
+    padding: 0;
+    box-shadow: var(--shadow-card);
+  }
+
+  #cal-event-detail::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .ced-inner {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    position: relative;
+  }
+
+  .ced-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.15s;
+  }
+
+  .ced-close:hover { color: var(--text-primary); }
+
+  .ced-type {
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border: 1px solid;
+    display: inline-block;
+    padding: 2px 10px;
+    align-self: flex-start;
+    font-family: var(--font-secondary);
+  }
+
+  .ced-title {
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    margin: 0;
+    padding-right: 2rem;
+    font-family: var(--font-secondary);
+  }
+
+  .ced-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 1rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+  }
+
+  .ced-meta-row {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-family: var(--font-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .ced-desc {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: var(--font-secondary);
+  }
+
+  .ced-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .ced-links a {
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+    text-decoration: none;
+    font-family: var(--font-secondary);
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .ced-links a:hover { text-decoration: underline; }
+
+  .ced-close-btn {
+    align-self: flex-start;
+    padding: 0.6rem 1.25rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    transition: border-color 0.2s, color 0.2s;
+    display: none;
+  }
+
+  .ced-close-btn:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  @media (max-width: 640px) {
+    .ced-close-btn { display: block; }
+  }
+</style>
