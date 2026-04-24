@@ -1,14 +1,14 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import { generateOrganizationSchema } from "../lib/schema";
+import Layout from '../layouts/Layout.astro';
+import type { Product } from '../lib/printful';
+import productsData from '../data/products.json';
 
-const schema = generateOrganizationSchema();
+const products = productsData as Product[];
 ---
 
 <Layout
   title="Shop - The White Rabbit Society"
-  description="Cop the merch, support White Rabbit. WCS apparel and gear coming soon."
-  schema={schema}
+  description="WCS apparel and gear. Cop the merch, support White Rabbit."
 >
   <main class="shop-page">
     <div class="container">
@@ -17,29 +17,235 @@ const schema = generateOrganizationSchema();
         <p class="page-subtitle">Cop the Merch · Support White Rabbit</p>
       </header>
 
-      <div class="coming-soon-block">
-        <div class="terminal-line">$ loading shop...</div>
-        <div class="terminal-line blink">_ </div>
-        <p class="coming-soon-text">Merch drop incoming.</p>
-        <p class="coming-soon-sub">
-          T-shirts, stickers, and gear for the Arizona WCS scene. Stay tuned.
-        </p>
-      </div>
+      {products.length === 0 ? (
+        <div class="coming-soon-block">
+          <div class="terminal-line">$ loading shop...</div>
+          <div class="terminal-line blink">_ </div>
+          <p class="coming-soon-text">Merch drop incoming.</p>
+          <p class="coming-soon-sub">T-shirts, stickers, and gear for the Arizona WCS scene. Stay tuned.</p>
+        </div>
+      ) : (
+        <div class="product-grid">
+          {products.map(product => {
+            const minPrice = Math.min(...product.variants.map(v => parseFloat(v.price)));
+            const maxPrice = Math.max(...product.variants.map(v => parseFloat(v.price)));
+            const priceRange = minPrice === maxPrice
+              ? `$${minPrice.toFixed(2)}`
+              : `$${minPrice.toFixed(2)} – $${maxPrice.toFixed(2)}`;
+
+            return (
+              <article
+                class="product-card"
+                data-product={JSON.stringify(product)}
+                role="button"
+                tabindex="0"
+                aria-label={`${product.name}, ${priceRange}`}
+              >
+                <div class="product-image-wrap">
+                  <img
+                    src={product.thumbnailUrl}
+                    alt={product.name}
+                    class="product-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="product-info">
+                  <h2 class="product-name">{product.name}</h2>
+                  <span class="product-price">{priceRange}</span>
+                </div>
+              </article>
+            );
+          })}
+        </div>
+      )}
     </div>
   </main>
+
+  <!-- Product detail dialog -->
+  <dialog id="product-dialog" aria-modal="true" aria-labelledby="dialog-product-name">
+    <div class="dialog-inner">
+      <button class="dialog-close" id="dialog-close" aria-label="Close">✕</button>
+
+      <div class="dialog-layout">
+        <div class="dialog-image-wrap">
+          <img id="dialog-image" src="" alt="" class="dialog-image" />
+        </div>
+
+        <div class="dialog-details">
+          <h2 class="dialog-product-name" id="dialog-product-name"></h2>
+          <p class="dialog-description" id="dialog-description"></p>
+
+          <div class="dialog-selectors">
+            <div class="selector-group" id="color-group">
+              <label class="selector-label">Color</label>
+              <div class="selector-options" id="color-options"></div>
+            </div>
+
+            <div class="selector-group" id="size-group">
+              <label class="selector-label">Size</label>
+              <div class="selector-options" id="size-options"></div>
+            </div>
+          </div>
+
+          <div class="dialog-price" id="dialog-price"></div>
+
+          <div class="dialog-actions">
+            <button class="btn-buy" id="btn-stripe" aria-label="Pay by card">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
+              </svg>
+              Pay by Card
+            </button>
+          </div>
+
+          <p class="dialog-note" id="dialog-error" role="alert"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
 </Layout>
+
+<script>
+  import type { Product, ProductVariant } from '../lib/printful';
+
+  const dialog = document.getElementById('product-dialog') as HTMLDialogElement;
+  const dialogClose = document.getElementById('dialog-close');
+  const dialogImage = document.getElementById('dialog-image') as HTMLImageElement;
+  const dialogName = document.getElementById('dialog-product-name') as HTMLElement;
+  const dialogDesc = document.getElementById('dialog-description') as HTMLElement;
+  const dialogPrice = document.getElementById('dialog-price') as HTMLElement;
+  const colorOptions = document.getElementById('color-options') as HTMLElement;
+  const sizeOptions = document.getElementById('size-options') as HTMLElement;
+  const colorGroup = document.getElementById('color-group') as HTMLElement;
+  const sizeGroup = document.getElementById('size-group') as HTMLElement;
+  const btnStripe = document.getElementById('btn-stripe') as HTMLButtonElement;
+  const dialogError = document.getElementById('dialog-error') as HTMLElement;
+
+  let currentProduct: Product | null = null;
+  let selectedColor = '';
+  let selectedSize = '';
+
+  function getVariant(): ProductVariant | null {
+    if (!currentProduct) return null;
+    return currentProduct.variants.find(v => {
+      const colorMatch = !v.color || v.color === selectedColor;
+      const sizeMatch = !v.size || v.size === selectedSize;
+      return colorMatch && sizeMatch;
+    }) ?? null;
+  }
+
+  function updateDialog() {
+    const variant = getVariant();
+    dialogPrice.textContent = variant ? `$${parseFloat(variant.price).toFixed(2)}` : 'Select options';
+    if (variant?.previewUrl) dialogImage.src = variant.previewUrl;
+    btnStripe.disabled = !variant || !variant.inStock;
+    btnStripe.textContent = variant?.inStock === false ? 'Out of Stock' : 'Pay by Card';
+    dialogError.textContent = '';
+  }
+
+  function renderOptions() {
+    if (!currentProduct) return;
+
+    const colors = [...new Set(currentProduct.variants.map(v => v.color).filter(Boolean))];
+    const sizes  = [...new Set(currentProduct.variants.map(v => v.size).filter(Boolean))];
+
+    colorGroup.style.display = colors.length > 0 ? '' : 'none';
+    sizeGroup.style.display  = sizes.length  > 0 ? '' : 'none';
+
+    colorOptions.innerHTML = '';
+    colors.forEach(color => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn' + (color === selectedColor ? ' selected' : '');
+      btn.textContent = color;
+      btn.addEventListener('click', () => { selectedColor = color; renderOptions(); updateDialog(); });
+      colorOptions.appendChild(btn);
+    });
+
+    sizeOptions.innerHTML = '';
+    sizes.forEach(size => {
+      const btn = document.createElement('button');
+      btn.className = 'option-btn' + (size === selectedSize ? ' selected' : '');
+      btn.textContent = size;
+      btn.addEventListener('click', () => { selectedSize = size; renderOptions(); updateDialog(); });
+      sizeOptions.appendChild(btn);
+    });
+  }
+
+  function openProduct(product: Product) {
+    currentProduct = product;
+    selectedColor = product.variants[0]?.color ?? '';
+    selectedSize  = product.variants[0]?.size  ?? '';
+
+    dialogName.textContent = product.name;
+    dialogDesc.textContent = product.description;
+    dialogImage.src = product.thumbnailUrl;
+    dialogImage.alt = product.name;
+
+    renderOptions();
+    updateDialog();
+
+    dialog.showModal();
+  }
+
+  // Open dialog when clicking a product card
+  document.querySelectorAll<HTMLElement>('.product-card').forEach(card => {
+    const open = () => {
+      const product = JSON.parse(card.dataset.product ?? '{}') as Product;
+      openProduct(product);
+    };
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+  });
+
+  // Close
+  dialogClose?.addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+  // Return focus on close
+  dialog.addEventListener('close', () => {
+    (document.activeElement as HTMLElement)?.blur();
+  });
+
+  // Stripe checkout
+  btnStripe?.addEventListener('click', async () => {
+    const variant = getVariant();
+    if (!variant || !currentProduct) return;
+
+    btnStripe.disabled = true;
+    btnStripe.textContent = 'Redirecting…';
+
+    try {
+      const res = await fetch('/api/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          variantId: variant.id,
+          variantName: variant.name,
+          price: variant.price,
+          productName: currentProduct.name,
+          quantity: 1,
+        }),
+      });
+
+      const { url } = await res.json();
+      if (url) window.location.href = url;
+      else throw new Error('No checkout URL returned');
+    } catch (err) {
+      dialogError.textContent = 'Something went wrong. Please try again.';
+      btnStripe.disabled = false;
+      btnStripe.textContent = 'Pay by Card';
+    }
+  });
+</script>
 
 <style>
   .shop-page {
     padding: 3rem 0;
-    min-height: calc(100vh - 80px);
-    display: flex;
-    flex-direction: column;
   }
 
   .page-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 
   .page-title {
@@ -55,6 +261,7 @@ const schema = generateOrganizationSchema();
     text-transform: uppercase;
   }
 
+  /* Coming soon */
   .coming-soon-block {
     max-width: 480px;
     margin: 0 auto;
@@ -76,22 +283,249 @@ const schema = generateOrganizationSchema();
     50% { opacity: 0; }
   }
 
-  .blink {
-    animation: blink 1s step-start infinite;
-    margin-bottom: 32px;
+  .blink { animation: blink 1s step-start infinite; margin-bottom: 32px; }
+  .coming-soon-text { font-size: 1.4rem; font-weight: 700; color: var(--text-primary); margin-bottom: 12px; }
+  .coming-soon-sub { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; margin: 0; }
+
+  /* Product grid */
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 24px;
   }
 
-  .coming-soon-text {
-    font-size: 1.4rem;
-    font-weight: 700;
+  .product-card {
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card:hover {
+    border-color: var(--border-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-card);
+  }
+
+  .product-image-wrap {
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #111;
+  }
+
+  .product-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+  }
+
+  .product-card:hover .product-image {
+    transform: scale(1.03);
+  }
+
+  .product-info {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .product-name {
+    font-size: 1rem;
+    font-family: var(--font-secondary);
+    font-weight: 600;
     color: var(--text-primary);
-    margin-bottom: 12px;
+    margin: 0;
   }
 
-  .coming-soon-sub {
-    font-size: 0.95rem;
-    color: var(--text-secondary);
-    line-height: 1.7;
+  .product-price {
+    font-size: 0.9rem;
+    color: var(--accent-primary);
+    font-family: var(--font-secondary);
+  }
+
+  /* Dialog */
+  #product-dialog {
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    width: 95vw;
+    max-width: 860px;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--bg-primary);
+    border: 1px solid var(--border-accent);
+    padding: 0;
+    box-shadow: var(--shadow-card);
+  }
+
+  #product-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+
+  .dialog-inner {
+    padding: 2rem;
+    position: relative;
+  }
+
+  .dialog-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    padding: 6px 10px;
+    transition: color 0.15s;
+  }
+
+  .dialog-close:hover { color: var(--text-primary); }
+
+  .dialog-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: start;
+  }
+
+  @media (max-width: 600px) {
+    .dialog-layout { grid-template-columns: 1fr; }
+  }
+
+  .dialog-image-wrap {
+    aspect-ratio: 1;
+    background: #111;
+    overflow: hidden;
+  }
+
+  .dialog-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .dialog-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding-top: 0.5rem;
+  }
+
+  .dialog-product-name {
+    font-size: 1.5rem;
+    color: var(--text-primary);
     margin: 0;
+    font-family: var(--font-secondary);
+  }
+
+  .dialog-description {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+
+  .dialog-selectors {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .selector-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .selector-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    font-family: var(--font-secondary);
+  }
+
+  .selector-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .option-btn {
+    padding: 6px 14px;
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    font-family: var(--font-secondary);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+  }
+
+  .option-btn:hover {
+    border-color: var(--text-secondary);
+    color: var(--text-primary);
+  }
+
+  .option-btn.selected {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    background: rgba(0, 255, 65, 0.06);
+  }
+
+  .dialog-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-primary);
+    font-family: var(--font-secondary);
+  }
+
+  .dialog-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn-buy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 24px;
+    border: 2px solid var(--accent-primary);
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-family: var(--font-secondary);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    width: 100%;
+  }
+
+  .btn-buy:hover:not(:disabled) {
+    background: transparent;
+    color: var(--accent-primary);
+  }
+
+  .btn-buy:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .dialog-note {
+    font-size: 0.8rem;
+    color: #ef4444;
+    margin: 0;
+    min-height: 1.2em;
+    font-family: var(--font-secondary);
   }
 </style>
