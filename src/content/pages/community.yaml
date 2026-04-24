@@ -1,7 +1,27 @@
-instructorsIntro: 'Arizona has a deep bench of talent, many of whom have taught at White Rabbit! '
+instructorsIntro: >-
+  Arizona has a deep bench of talent, many of whom have taught at White Rabbit!
+  We'll keep this listing as up to date as possible with all local WCS
+  instructors - let us know if you'd like to be added!
 venuesIntro: >-
   Local venues that feature West Coast Swing and related events, like Westie
   Bombs!
 resourcesIntro: Friends, events, and resources we recommend.
 gearIntro: New to WCS or just looking to upgrade? Here's what to know.
-gearCards: []
+gearCards:
+  - title: Shoes
+    body: >-
+      Suede-soled dance shoes are the standard. Look for low heels with a
+      flexible sole. Popular brands include Very Fine, Ray Rose, and Freed of
+      London. Budget pick: any suede-soled Latin shoe. Tom's slip-ons work very
+      well too, as well as adding suede to a shoe of your choice.
+  - title: Floor Prep
+    body: >-
+      Most Phoenix venues have hardwood or tile. Bring a sole brush to keep your
+      suede clean. Avoid dancing on rubber-soled shoes — your knees will thank
+      you.
+  - title: Where to Shop
+    body: >-
+      Locally, Dee's Dancewear is great, and Nordstrom Rack and Ross will
+      occasionally have excellent footwear options. Discount Dance Supply and
+      Dance Naturals carry WCS-appropriate shoes online. Also check with
+      instructors — some carry inventory or can point you to current deals. 
