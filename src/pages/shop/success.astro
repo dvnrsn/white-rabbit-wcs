@@ -1,0 +1,63 @@
+---
+import Layout from '../../layouts/Layout.astro';
+---
+
+<Layout title="Order Confirmed - White Rabbit Shop" description="Your order is confirmed.">
+  <main class="result-page">
+    <div class="container">
+      <div class="result-block">
+        <div class="result-icon">✓</div>
+        <h1 class="result-title gradient-text">Order Confirmed</h1>
+        <p class="result-text">
+          Your order is in. Printful will handle production and shipping — expect a
+          confirmation email shortly.
+        </p>
+        <a href="/shop" class="btn">Back to Shop</a>
+      </div>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .result-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6rem 0;
+  }
+
+  .result-block {
+    text-align: center;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .result-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+
+  .result-title {
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    margin: 0;
+  }
+
+  .result-text {
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin: 0;
+    font-family: var(--font-secondary);
+  }
+</style>
