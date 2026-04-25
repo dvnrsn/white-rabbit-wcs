@@ -1,170 +1,136 @@
-// Fetches Google Calendar data and saves as JSON
-// Run with: PUBLIC_GOOGLE_CALENDAR_ID=xxx node scripts/fetch-calendar.js
+// Fetches Google Calendar data via the Calendar API v3 and saves as JSON.
+// Run with: PUBLIC_GOOGLE_CALENDAR_ID=xxx GOOGLE_CALENDAR_API_KEY=xxx node scripts/fetch-calendar.js
 
 import { writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
-import ICAL from 'ical.js';
-import { Temporal } from '@js-temporal/polyfill';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const CALENDAR_ID = process.env.PUBLIC_GOOGLE_CALENDAR_ID;
+const API_KEY = process.env.GOOGLE_CALENDAR_API_KEY;
 
-if (!CALENDAR_ID) {
-  console.error('PUBLIC_GOOGLE_CALENDAR_ID not set');
-  process.exit(1);
-}
+if (!CALENDAR_ID) { console.error('PUBLIC_GOOGLE_CALENDAR_ID not set'); process.exit(1); }
+if (!API_KEY) { console.error('GOOGLE_CALENDAR_API_KEY not set'); process.exit(1); }
 
 const TZ = 'America/Phoenix';
-const cutoff = Temporal.Now.plainDateISO(TZ).subtract({ months: 1 });
-
-function icalToPlainDate(icalTime) {
-  const jsDate = icalTime.toJSDate();
-  return Temporal.PlainDate.from(jsDate.toLocaleDateString('en-CA', { timeZone: TZ }));
-}
-
-function icalToTimeString(icalTime) {
-  const jsDate = icalTime.toJSDate();
-  return jsDate.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
-}
 
 function parseDescription(description) {
   const fields = {};
 
-  // Clean up HTML formatting that Google Calendar adds
-  let cleanDescription = description
-    .replace(/&lt;/g, '<')
-    .replace(/&gt;/g, '>')
-    .replace(/&quot;/g, '"')
-    .replace(/&#39;/g, "'")
-    .replace(/&amp;/g, '&')
+  // Strip HTML that Google Calendar adds to descriptions
+  let clean = description
+    .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'").replace(/&amp;/g, '&')
     .replace(/<a[^>]*>([^<]*)<\/a>/gi, '$1')
-    .replace(/<a[^>]*><br\s*\/?><\/a>/gi, '')
     .replace(/<a[^>]*>\s*<\/a>/gi, '')
     .replace(/<h[1-6][^>]*><b>([^<]+)<\/b><\/h[1-6]>/gi, '\n$1\n')
     .replace(/<h[1-6][^>]*>([^<]+)<\/h[1-6]>/gi, '\n$1\n')
-    .replace(/<\/?b>/gi, '')
-    .replace(/<\/?strong>/gi, '')
-    .replace(/<\/p>\s*<p>/gi, '\n')
-    .replace(/<\/?p>/gi, '\n')
-    .replace(/<\/?span[^>]*>/g, '')
-    .replace(/<br\s*\/?>/gi, '\n')
-    .replace(/&nbsp;/g, ' ')
-    .replace(/\n{3,}/g, '\n\n')
-    .trim();
+    .replace(/<\/?b>/gi, '').replace(/<\/?strong>/gi, '')
+    .replace(/<\/p>\s*<p>/gi, '\n').replace(/<\/?p>/gi, '\n')
+    .replace(/<\/?span[^>]*>/g, '').replace(/<br\s*\/?>/gi, '\n')
+    .replace(/&nbsp;/g, ' ').replace(/\n{3,}/g, '\n\n').trim();
 
-  const lines = cleanDescription.split('\n');
-  const descriptionLines = [];
-
-  for (const line of lines) {
-    const match = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
-    if (match) {
-      const [, field, value] = match;
-      const fieldLower = field.toLowerCase();
-      if (fieldLower === 'description') {
-        descriptionLines.push(value.trim());
-      } else {
-        fields[fieldLower] = fieldLower === 'type' ? value.trim().toLowerCase() : value.trim();
-      }
+  const descLines = [];
+  for (const line of clean.split('\n')) {
+    const m = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
+    if (m) {
+      const key = m[1].toLowerCase();
+      fields[key] = key === 'type' ? m[2].trim().toLowerCase() : m[2].trim();
+      if (key === 'description') descLines.push(m[2].trim());
     } else {
-      descriptionLines.push(line);
+      descLines.push(line);
     }
   }
 
-  if (descriptionLines.length > 0) {
-    fields.description = descriptionLines.join('\n').trim();
-  }
-
+  if (descLines.length > 0) fields.description = descLines.join('\n').trim();
   return fields;
 }
 
-function buildEvent(id, baseUid, event, startDate, endDate, extra = {}) {
-  const description = event.description || '';
-  const customFields = parseDescription(description);
+function parseDateTime(dt) {
+  // All-day: { date: "2026-05-30" }  Timed: { dateTime: "2026-05-30T20:00:00-07:00" }
+  if (dt.date) {
+    return { date: dt.date, time: '00:00' };
+  }
+  const d = new Date(dt.dateTime);
+  const date = d.toLocaleDateString('en-CA', { timeZone: TZ });
+  const time = d.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit' });
+  return { date, time };
+}
+
+function buildEvent(item) {
+  const custom = parseDescription(item.description || '');
+  const start = parseDateTime(item.start);
+  const end = parseDateTime(item.end);
+
   return {
-    id,
-    baseUid,
-    title: event.summary || 'Untitled Event',
-    description: customFields.description || description,
-    date: icalToPlainDate(startDate).toString(),
-    startTime: icalToTimeString(startDate),
-    endTime: icalToTimeString(endDate),
-    venue: customFields.venue || event.location || 'TBA',
-    address: event.location || '',
-    price: customFields.price || 'Free',
-    level: customFields.level || '',
-    type: customFields.type || 'social',
-    organizer: customFields.organizer || 'White Rabbit WCS',
-    url: customFields.url || undefined,
-    instagram: customFields.instagram || undefined,
-    website: customFields.website || undefined,
-    ...extra,
+    id: item.id,
+    baseUid: item.recurringEventId ?? item.id,
+    title: item.summary || 'Untitled Event',
+    description: custom.description || '',
+    date: start.date,
+    startTime: start.time,
+    endTime: end.time,
+    venue: custom.venue || item.location || 'TBA',
+    address: item.location || '',
+    price: custom.price || 'Free',
+    level: custom.level || '',
+    type: custom.type || 'social',
+    organizer: custom.organizer || 'White Rabbit WCS',
+    ...(custom.url && { url: custom.url }),
+    ...(custom.instagram && { instagram: custom.instagram }),
+    ...(custom.website && { website: custom.website }),
+    ...(item.recurringEventId && { isRecurring: true }),
   };
 }
 
-function parseICalData(icalData) {
-  const jcalData = ICAL.parse(icalData);
-  const comp = new ICAL.Component(jcalData);
-  const vevents = comp.getAllSubcomponents('vevent');
-  const allEvents = [];
-  const today = Temporal.Now.plainDateISO(TZ);
-
-  vevents.forEach((vevent) => {
-    const event = new ICAL.Event(vevent);
-
-    if (event.isRecurring()) {
-      const iterator = event.iterator();
-      let count = 0;
-      let iterations = 0;
-      const maxFutureOccurrences = 2;
-      const maxIterations = 365;
-      let next;
-      while (count < maxFutureOccurrences && iterations < maxIterations && (next = iterator.next())) {
-        iterations++;
-        const occurrence = event.getOccurrenceDetails(next);
-        const startPlainDate = icalToPlainDate(occurrence.startDate);
-        if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) continue;
-        allEvents.push(buildEvent(`${event.uid}-${count}`, event.uid, event, occurrence.startDate, occurrence.endDate, { isRecurring: true }));
-        if (Temporal.PlainDate.compare(startPlainDate, today) >= 0) count++;
-      }
-      if (iterations === maxIterations) {
-        console.warn(`[calendar] maxIterations hit for recurring event "${event.summary}" (${event.uid}) — some occurrences may be missing`);
-      }
-    } else {
-      const startPlainDate = icalToPlainDate(event.startDate);
-      if (Temporal.PlainDate.compare(startPlainDate, cutoff) < 0) return;
-      allEvents.push(buildEvent(event.uid, event.uid, event, event.startDate, event.endDate));
+async function fetchAll(baseUrl) {
+  const items = [];
+  let pageToken;
+  do {
+    const url = pageToken ? `${baseUrl}&pageToken=${pageToken}` : baseUrl;
+    const res = await fetch(url);
+    if (!res.ok) {
+      const body = await res.text();
+      throw new Error(`Calendar API ${res.status}: ${body}`);
     }
-  });
-
-  const sorted = allEvents.sort((a, b) => b.date.localeCompare(a.date));
-  const todayStr = today.toString();
-  const pastCounts = {};
-  return sorted.filter(event => {
-    if (!event.isRecurring || event.date >= todayStr) return true;
-    pastCounts[event.baseUid] = (pastCounts[event.baseUid] || 0) + 1;
-    return pastCounts[event.baseUid] <= 2;
-  });
+    const data = await res.json();
+    items.push(...(data.items ?? []));
+    pageToken = data.nextPageToken;
+  } while (pageToken);
+  return items;
 }
 
 async function fetchCalendar() {
-  const url = `https://calendar.google.com/calendar/ical/${encodeURIComponent(CALENDAR_ID)}/public/basic.ics`;
-  console.log('Fetching calendar from Google...');
+  const now = new Date();
+  const timeMin = new Date(now);
+  timeMin.setMonth(timeMin.getMonth() - 1);
+  const timeMax = new Date(now);
+  timeMax.setMonth(timeMax.getMonth() + 9);
 
-  const response = await fetch(url);
-  if (!response.ok) {
-    throw new Error(`Failed to fetch: ${response.status} ${response.statusText}`);
-  }
+  const params = new URLSearchParams({
+    key: API_KEY,
+    singleEvents: 'true',
+    orderBy: 'startTime',
+    timeMin: timeMin.toISOString(),
+    timeMax: timeMax.toISOString(),
+    maxResults: '500',
+  });
 
-  const icalData = await response.text();
-  console.log(`Fetched ${icalData.length} bytes of iCal data`);
+  const url = `https://www.googleapis.com/calendar/v3/calendars/${encodeURIComponent(CALENDAR_ID)}/events?${params}`;
+  console.log('Fetching from Google Calendar API...');
 
-  const events = parseICalData(icalData);
+  const items = await fetchAll(url);
+  console.log(`Fetched ${items.length} events`);
 
-  const outputPath = join(__dirname, '../src/data/events.json');
-  writeFileSync(outputPath, JSON.stringify(events, null, 2));
-  console.log(`Parsed and saved ${events.length} events to ${outputPath}`);
+  const events = items
+    .filter(i => i.status !== 'cancelled' && (i.start?.date || i.start?.dateTime))
+    .map(buildEvent)
+    .sort((a, b) => a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime));
+
+  const outPath = join(__dirname, '../src/data/events.json');
+  writeFileSync(outPath, JSON.stringify(events, null, 2));
+  console.log(`Saved ${events.length} events to src/data/events.json`);
 }
 
 fetchCalendar().catch(err => {
