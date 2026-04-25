@@ -34,7 +34,15 @@ function parseDescription(description) {
     const m = line.match(/^(Description|Venue|Price|Level|Type|Organizer|URL|Instagram|Website):\s*(.+)$/i);
     if (m) {
       const key = m[1].toLowerCase();
-      fields[key] = key === 'type' ? m[2].trim().toLowerCase() : m[2].trim();
+      let val = m[2].trim();
+      // Extract href if the value is an HTML anchor (e.g. Website: <a href="...">...</a>)
+      if (key === 'url' || key === 'website' || key === 'instagram') {
+        const hrefMatch = val.match(/href=["']([^"']+)["']/i);
+        if (hrefMatch) val = hrefMatch[1];
+        // Strip any remaining tags
+        val = val.replace(/<[^>]+>/g, '').trim();
+      }
+      fields[key] = key === 'type' ? val.toLowerCase() : val;
       if (key === 'description') descLines.push(m[2].trim());
     } else {
       descLines.push(line);
@@ -127,22 +135,35 @@ async function fetchCalendar() {
   });
   console.log(`  ${items.length} items`);
 
+  // Exception instances: modified occurrences that have their own entry (recurringEventId set, no recurrence)
+  // Map parent series ID → the original dates that were modified, so we can exclude them from expansion
+  const exceptionsByParent = new Map();
+  for (const item of items) {
+    if (item.recurringEventId && !item.recurrence && item.status !== 'cancelled' && item.originalStartTime) {
+      const origDate = parseDateTime(item.originalStartTime).date;
+      const list = exceptionsByParent.get(item.recurringEventId) ?? [];
+      list.push(origDate);
+      exceptionsByParent.set(item.recurringEventId, list);
+    }
+  }
+
   const recurring = items
     .filter(i => i.recurrence && i.status !== 'cancelled')
     .map(item => {
       const { rrule, exdates } = parseRecurrence(item.recurrence);
       if (!rrule) return null;
       const { date: dtstart } = parseDateTime(item.start);
+      const allExdates = [...exdates, ...(exceptionsByParent.get(item.id) ?? [])];
       return {
         ...commonFields(item),
         dtstart,
         rrule,
-        ...(exdates.length > 0 && { exdates }),
+        ...(allExdates.length > 0 && { exdates: allExdates }),
       };
     })
     .filter(Boolean);
 
-  // Single events + exception instances (modified occurrences of a recurring series)
+  // Single events + exception instances (modified occurrences rendered as standalone events)
   const single = items
     .filter(i => !i.recurrence && i.status !== 'cancelled' && (i.start?.date || i.start?.dateTime))
     .map(item => ({ ...commonFields(item), date: parseDateTime(item.start).date }));
