@@ -1,4 +1,4 @@
-// Converts hero images (PNG/JPG) to WebP at 3 sizes if not already done.
+// Converts hero images (PNG/JPG/WebP) to WebP at 3 sizes if not already done.
 // Removes orphaned WebP files whose source image no longer exists.
 // Requires ffmpeg on PATH; skips gracefully if unavailable.
 
@@ -32,7 +32,7 @@ let removed = 0;
 
 for (const entry of readdirSync(heroDir)) {
   const dir = join(heroDir, entry);
-  const source = ['image.png', 'image.jpg', 'image.jpeg']
+  const source = ['image.png', 'image.jpg', 'image.jpeg', 'image.webp']
     .map(f => join(dir, f))
     .find(f => existsSync(f));
 
