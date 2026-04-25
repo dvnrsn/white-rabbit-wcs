@@ -201,6 +201,36 @@ const { events, today } = Astro.props;
     if (ds === calToday) btn.setAttribute('aria-current', 'date');
     if (ds === selected) btn.setAttribute('aria-pressed', 'true');
 
+    const hasWR = (byDate[ds] ?? []).some(e => e.title.toLowerCase().includes('white rabbit'));
+    if (hasWR) {
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 40 52');
+      svg.setAttribute('width', '40');
+      svg.setAttribute('height', '52');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('stroke', '#fff');
+      svg.setAttribute('stroke-width', '1.5');
+      svg.setAttribute('stroke-opacity', '0.15');
+      svg.setAttribute('fill', 'none');
+      svg.style.cssText = 'position:absolute;top:-16px;left:50%;transform:translateX(-50%);pointer-events:none;overflow:visible';
+      // Left ear
+      const le = document.createElementNS(svgNS, 'ellipse');
+      le.setAttribute('cx', '12'); le.setAttribute('cy', '11');
+      le.setAttribute('rx', '5'); le.setAttribute('ry', '13');
+      le.setAttribute('transform', 'rotate(-7 12 11)');
+      // Right ear
+      const re = document.createElementNS(svgNS, 'ellipse');
+      re.setAttribute('cx', '28'); re.setAttribute('cy', '11');
+      re.setAttribute('rx', '5'); re.setAttribute('ry', '13');
+      re.setAttribute('transform', 'rotate(7 28 11)');
+      // Head
+      const head = document.createElementNS(svgNS, 'circle');
+      head.setAttribute('cx', '20'); head.setAttribute('cy', '36'); head.setAttribute('r', '15');
+      svg.appendChild(le); svg.appendChild(re); svg.appendChild(head);
+      btn.appendChild(svg);
+    }
+
     const numEl = document.createElement('span');
     numEl.className = 'day-num';
     numEl.textContent = dayNum;
@@ -381,9 +411,11 @@ const { events, today } = Astro.props;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     gap: 2px;
+    overflow: visible;
   }
 
   .cal-day {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -414,6 +446,19 @@ const { events, today } = Astro.props;
     font-size: 0.88rem;
     color: var(--text-secondary);
     transition: background 0.15s, color 0.15s, border-color 0.15s;
+  }
+
+  .day-rabbit-svg {
+    position: absolute;
+    top: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    fill: none;
+    stroke: #fff;
+    stroke-width: 1.5;
+    opacity: 0.5;
+    pointer-events: none;
+    overflow: visible;
   }
 
   /* Other-month overflow days: very dim */
