@@ -1,7 +1,6 @@
 import { readFileSync, existsSync } from "fs";
 import { join } from "path";
-import pkg from "rrule";
-const { RRule } = pkg;
+import { RRule } from "rrule";
 
 export interface CalendarEvent {
   id: string;
