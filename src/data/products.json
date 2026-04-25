@@ -1,13 +1,13 @@
 [
   {
     "id": 429717565,
-    "name": "Short-Sleeve Unisex T-Shirt",
+    "name": "\"Follow Front\" OG WRS T-shirt",
     "description": "",
     "thumbnailUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
     "variants": [
       {
         "id": 5281194248,
-        "name": "Short-Sleeve Unisex T-Shirt / S",
+        "name": "\"Follow Front\" OG WRS T-shirt / S",
         "size": "S",
         "color": "Black",
         "price": "32.00",
@@ -16,7 +16,7 @@
       },
       {
         "id": 5281194249,
-        "name": "Short-Sleeve Unisex T-Shirt / M",
+        "name": "\"Follow Front\" OG WRS T-shirt / M",
         "size": "M",
         "color": "Black",
         "price": "32.00",
@@ -25,7 +25,7 @@
       },
       {
         "id": 5281194250,
-        "name": "Short-Sleeve Unisex T-Shirt / L",
+        "name": "\"Follow Front\" OG WRS T-shirt / L",
         "size": "L",
         "color": "Black",
         "price": "32.00",
@@ -34,7 +34,7 @@
       },
       {
         "id": 5281194251,
-        "name": "Short-Sleeve Unisex T-Shirt / XL",
+        "name": "\"Follow Front\" OG WRS T-shirt / XL",
         "size": "XL",
         "color": "Black",
         "price": "32.00",
@@ -43,7 +43,7 @@
       },
       {
         "id": 5281194252,
-        "name": "Short-Sleeve Unisex T-Shirt / 2XL",
+        "name": "\"Follow Front\" OG WRS T-shirt / 2XL",
         "size": "2XL",
         "color": "Black",
         "price": "32.00",
@@ -52,7 +52,7 @@
       },
       {
         "id": 5281194253,
-        "name": "Short-Sleeve Unisex T-Shirt / 3XL",
+        "name": "\"Follow Front\" OG WRS T-shirt / 3XL",
         "size": "3XL",
         "color": "Black",
         "price": "32.00",
@@ -152,116 +152,116 @@
   },
   {
     "id": 429713301,
-    "name": "Unisex t-shirt",
+    "name": "\"Rabbit Front\" OG T-Shirt",
     "description": "",
     "thumbnailUrl": "https://files.cdn.printful.com/files/62f/62f008d3efdb70f983d957dc973e21dd_preview.png",
     "variants": [
       {
         "id": 5281161310,
-        "name": "Unisex t-shirt / XS",
+        "name": "\"Rabbit Front\" OG T-Shirt / XS",
         "size": "XS",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161311,
-        "name": "Unisex t-shirt / S",
+        "name": "\"Rabbit Front\" OG T-Shirt / S",
         "size": "S",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161312,
-        "name": "Unisex t-shirt / M",
+        "name": "\"Rabbit Front\" OG T-Shirt / M",
         "size": "M",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161313,
-        "name": "Unisex t-shirt / L",
+        "name": "\"Rabbit Front\" OG T-Shirt / L",
         "size": "L",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161314,
-        "name": "Unisex t-shirt / XL",
+        "name": "\"Rabbit Front\" OG T-Shirt / XL",
         "size": "XL",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161315,
-        "name": "Unisex t-shirt / 2XL",
+        "name": "\"Rabbit Front\" OG T-Shirt / 2XL",
         "size": "2XL",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161316,
-        "name": "Unisex t-shirt / 3XL",
+        "name": "\"Rabbit Front\" OG T-Shirt / 3XL",
         "size": "3XL",
         "color": "Black",
         "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161317,
-        "name": "Unisex t-shirt / 4XL",
+        "name": "\"Rabbit Front\" OG T-Shirt / 4XL",
         "size": "4XL",
         "color": "Black",
         "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       },
       {
         "id": 5281161318,
-        "name": "Unisex t-shirt / 5XL",
+        "name": "\"Rabbit Front\" OG T-Shirt / 5XL",
         "size": "5XL",
         "color": "Black",
         "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png"
       }
     ]
   },
   {
     "id": 429713300,
-    "name": "Trucker Cap",
+    "name": "Rabbit Trucker",
     "description": "",
     "thumbnailUrl": "https://files.cdn.printful.com/files/90e/90e5bf7cdb4dbe451c4826d5af97b894_preview.png",
     "variants": [
       {
         "id": 5281161308,
-        "name": "Trucker Cap / Black/ White",
+        "name": "Rabbit Trucker / Black/ White",
         "size": "One size",
         "color": "Black/ White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/533/5331e7529c67ff660afb37d8c598bfe4_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/4f9/4f9fcd42b734f80441b030d96498e30c_preview.png"
       },
       {
         "id": 5281161309,
-        "name": "Trucker Cap / White",
+        "name": "Rabbit Trucker / White",
         "size": "One size",
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/05b/05b488585d2b583329572f1552df11ca_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/54d/54d0eb3eb5061246bb2b6eba10c205d8_preview.png"
       }
     ]
   }
