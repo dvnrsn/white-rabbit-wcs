@@ -99,7 +99,7 @@ async function calFetch(path) {
   return res.json();
 }
 
-async function fetchAllInstances(params) {
+async function fetchAll(params) {
   const items = [];
   let pageToken;
   do {
@@ -117,34 +117,21 @@ async function fetchCalendar() {
   const timeMin = new Date(now); timeMin.setMonth(timeMin.getMonth() - 1);
   const timeMax = new Date(now); timeMax.setMonth(timeMax.getMonth() + 12);
 
-  // Pass 1: expanded instances to discover recurring series IDs + one-off events
-  console.log('Pass 1: fetching instances...');
-  const instances = await fetchAllInstances({
-    singleEvents: 'true',
-    orderBy: 'startTime',
+  // singleEvents omitted (defaults to false) — returns master recurring events directly
+  console.log('Fetching events...');
+  const items = await fetchAll({
     timeMin: timeMin.toISOString(),
     timeMax: timeMax.toISOString(),
     maxResults: '500',
   });
-  console.log(`  ${instances.length} instances`);
+  console.log(`  ${items.length} items`);
 
-  const singleItems  = instances.filter(i => !i.recurringEventId && i.status !== 'cancelled');
-  const recurringIds = [...new Set(instances.filter(i => i.recurringEventId).map(i => i.recurringEventId))];
-  console.log(`  ${singleItems.length} single events, ${recurringIds.length} recurring series`);
-
-  // Pass 2: fetch each master event to get the RRULE
-  console.log('Pass 2: fetching master events...');
-  const masters = await Promise.all(
-    recurringIds.map(id =>
-      calFetch(`/calendars/${encodeURIComponent(CALENDAR_ID)}/events/${id}`)
-    )
-  );
-
-  const recurring = masters
+  const recurring = items
+    .filter(i => i.recurrence && i.status !== 'cancelled')
     .map(item => {
       const { rrule, exdates } = parseRecurrence(item.recurrence);
       if (!rrule) return null;
-      const { date: dtstart } = parseDateTime(item.originalStartTime ?? item.start);
+      const { date: dtstart } = parseDateTime(item.start);
       return {
         ...commonFields(item),
         dtstart,
@@ -154,8 +141,9 @@ async function fetchCalendar() {
     })
     .filter(Boolean);
 
-  const single = singleItems
-    .filter(i => i.start?.date || i.start?.dateTime)
+  // Single events + exception instances (modified occurrences of a recurring series)
+  const single = items
+    .filter(i => !i.recurrence && i.status !== 'cancelled' && (i.start?.date || i.start?.dateTime))
     .map(item => ({ ...commonFields(item), date: parseDateTime(item.start).date }));
 
   const outPath = join(__dirname, '../src/data/events.json');
