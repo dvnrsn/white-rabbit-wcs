@@ -10,7 +10,7 @@ import { getEntry } from "astro:content";
 const schema = generateOrganizationSchema();
 const homeData = await getEntry("pages", "home");
 const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map((item) => {
-  const base = item.image.replace(/\.png$/, "");
+  const base = item.image.replace(/\.(png|jpe?g)$/i, "");
   const hasWebp = existsSync(join(process.cwd(), "public", `${base}.webp`));
   return { ...item, base, hasWebp };
 });
