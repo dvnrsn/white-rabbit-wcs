@@ -4,6 +4,7 @@
 import { writeFileSync } from 'fs';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { Temporal } from '@js-temporal/polyfill';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
@@ -45,10 +46,10 @@ function parseDescription(description) {
 
 function parseDateTime(dt) {
   if (dt.date) return { date: dt.date, time: '00:00' };
-  const d = new Date(dt.dateTime);
+  const zdt = Temporal.Instant.from(dt.dateTime).toZonedDateTimeISO(TZ);
   return {
-    date: d.toLocaleDateString('en-CA', { timeZone: TZ }),
-    time: d.toLocaleTimeString('en-GB', { timeZone: TZ, hour: '2-digit', minute: '2-digit' }),
+    date: zdt.toPlainDate().toString(),
+    time: zdt.toPlainTime().toString().slice(0, 5),
   };
 }
 
