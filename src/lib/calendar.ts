@@ -65,7 +65,7 @@ export async function fetchGoogleCalendarEvents(): Promise<CalendarEvent[]> {
 
     const now = new Date();
     const windowStart = new Date(Date.UTC(now.getFullYear(), now.getMonth() - 1, 1));
-    const windowEnd = new Date(Date.UTC(now.getFullYear(), now.getMonth() + 3, 0));
+    const windowEnd = new Date(Date.UTC(now.getFullYear(), now.getMonth(), now.getDate() + 49)); // 7 weeks out
 
     const expanded = recurring.flatMap((r) => expandRecurring(r, windowStart, windowEnd));
     const all = [...expanded, ...single].sort((a, b) =>
