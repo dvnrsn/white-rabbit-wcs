@@ -14,7 +14,7 @@ pnpm format       # Format with oxfmt
 
 To fetch/refresh calendar data from Google Calendar:
 ```bash
-PUBLIC_GOOGLE_CALENDAR_ID=xxx node scripts/fetch-calendar.js
+PUBLIC_GOOGLE_CALENDAR_ID=xxx GOOGLE_CALENDAR_API_KEY=xxx node scripts/fetch-calendar.js
 ```
 
 ## Architecture
