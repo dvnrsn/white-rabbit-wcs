@@ -1,90 +1,152 @@
 [
   {
+    "id": 429717565,
+    "name": "Short-Sleeve Unisex T-Shirt",
+    "description": "",
+    "thumbnailUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
+    "variants": [
+      {
+        "id": 5281194248,
+        "name": "Short-Sleeve Unisex T-Shirt / S",
+        "size": "S",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      },
+      {
+        "id": 5281194249,
+        "name": "Short-Sleeve Unisex T-Shirt / M",
+        "size": "M",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      },
+      {
+        "id": 5281194250,
+        "name": "Short-Sleeve Unisex T-Shirt / L",
+        "size": "L",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      },
+      {
+        "id": 5281194251,
+        "name": "Short-Sleeve Unisex T-Shirt / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      },
+      {
+        "id": 5281194252,
+        "name": "Short-Sleeve Unisex T-Shirt / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      },
+      {
+        "id": 5281194253,
+        "name": "Short-Sleeve Unisex T-Shirt / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
+      }
+    ]
+  },
+  {
     "id": 429713304,
-    "name": "Unisex t-shirt",
+    "name": "\"White Rabbit West Coast\" t-shirt",
     "description": "",
     "thumbnailUrl": "https://files.cdn.printful.com/files/346/3461d666f3eb06fa1a19e86661111a2c_preview.png",
     "variants": [
       {
         "id": 5281161347,
-        "name": "Unisex t-shirt / XS",
+        "name": "\"White Rabbit West Coast\" t-shirt / XS",
         "size": "XS",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161348,
-        "name": "Unisex t-shirt / S",
+        "name": "\"White Rabbit West Coast\" t-shirt / S",
         "size": "S",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161349,
-        "name": "Unisex t-shirt / M",
+        "name": "\"White Rabbit West Coast\" t-shirt / M",
         "size": "M",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161350,
-        "name": "Unisex t-shirt / L",
+        "name": "\"White Rabbit West Coast\" t-shirt / L",
         "size": "L",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161351,
-        "name": "Unisex t-shirt / XL",
+        "name": "\"White Rabbit West Coast\" t-shirt / XL",
         "size": "XL",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161353,
-        "name": "Unisex t-shirt / 2XL",
+        "name": "\"White Rabbit West Coast\" t-shirt / 2XL",
         "size": "2XL",
         "color": "Black",
-        "price": "19.51",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161354,
-        "name": "Unisex t-shirt / 3XL",
+        "name": "\"White Rabbit West Coast\" t-shirt / 3XL",
         "size": "3XL",
         "color": "Black",
-        "price": "22.11",
+        "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161355,
-        "name": "Unisex t-shirt / 4XL",
+        "name": "\"White Rabbit West Coast\" t-shirt / 4XL",
         "size": "4XL",
         "color": "Black",
-        "price": "24.71",
+        "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       },
       {
         "id": 5281161357,
-        "name": "Unisex t-shirt / 5XL",
+        "name": "\"White Rabbit West Coast\" t-shirt / 5XL",
         "size": "5XL",
         "color": "Black",
-        "price": "27.31",
+        "price": "35.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/077/0775b20e7bdfc4e5b8d4043957a72971_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
       }
     ]
   },
@@ -99,7 +161,7 @@
         "name": "Unisex t-shirt / XS",
         "size": "XS",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -108,7 +170,7 @@
         "name": "Unisex t-shirt / S",
         "size": "S",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -117,7 +179,7 @@
         "name": "Unisex t-shirt / M",
         "size": "M",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -126,7 +188,7 @@
         "name": "Unisex t-shirt / L",
         "size": "L",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -135,7 +197,7 @@
         "name": "Unisex t-shirt / XL",
         "size": "XL",
         "color": "Black",
-        "price": "16.91",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -144,7 +206,7 @@
         "name": "Unisex t-shirt / 2XL",
         "size": "2XL",
         "color": "Black",
-        "price": "19.51",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -153,7 +215,7 @@
         "name": "Unisex t-shirt / 3XL",
         "size": "3XL",
         "color": "Black",
-        "price": "22.11",
+        "price": "35.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -162,7 +224,7 @@
         "name": "Unisex t-shirt / 4XL",
         "size": "4XL",
         "color": "Black",
-        "price": "24.71",
+        "price": "35.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       },
@@ -171,7 +233,7 @@
         "name": "Unisex t-shirt / 5XL",
         "size": "5XL",
         "color": "Black",
-        "price": "27.31",
+        "price": "35.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/d4b/d4b23aa3133e29425bc49000c7b2c9e3_preview.png"
       }
@@ -188,18 +250,18 @@
         "name": "Trucker Cap / Black/ White",
         "size": "One size",
         "color": "Black/ White",
-        "price": "19.31",
+        "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/6f2/6f2b0535abaa4e1b8daa3f9a162cc2c9_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/533/5331e7529c67ff660afb37d8c598bfe4_preview.png"
       },
       {
         "id": 5281161309,
         "name": "Trucker Cap / White",
         "size": "One size",
         "color": "White",
-        "price": "19.31",
+        "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/685/685d8b29b6c273c90294f7d2476cda0f_preview.png"
+        "previewUrl": "https://files.cdn.printful.com/files/05b/05b488585d2b583329572f1552df11ca_preview.png"
       }
     ]
   }
