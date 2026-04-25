@@ -43,7 +43,7 @@ const products = productsData as Product[];
               >
                 <div class="product-image-wrap">
                   <img
-                    src={product.thumbnailUrl}
+                    src={product.variants[0]?.previewUrl || product.thumbnailUrl}
                     alt={product.name}
                     class="product-image"
                     loading="lazy"
@@ -77,24 +77,21 @@ const products = productsData as Product[];
 
           <div class="dialog-selectors">
             <div class="selector-group" id="color-group">
-              <label class="selector-label">Color</label>
-              <div class="selector-options" id="color-options"></div>
+              <label class="selector-label" for="color-select">Color</label>
+              <select id="color-select" class="selector-select"></select>
             </div>
 
             <div class="selector-group" id="size-group">
-              <label class="selector-label">Size</label>
-              <div class="selector-options" id="size-options"></div>
+              <label class="selector-label" for="size-select">Size</label>
+              <select id="size-select" class="selector-select"></select>
             </div>
           </div>
 
           <div class="dialog-price" id="dialog-price"></div>
 
           <div class="dialog-actions">
-            <button class="btn-buy" id="btn-stripe" aria-label="Pay by card">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/>
-              </svg>
-              Pay by Card
+            <button class="btn-buy" id="btn-stripe" disabled aria-label="Coming soon">
+              Coming Soon
             </button>
           </div>
 
@@ -114,8 +111,8 @@ const products = productsData as Product[];
   const dialogName = document.getElementById('dialog-product-name') as HTMLElement;
   const dialogDesc = document.getElementById('dialog-description') as HTMLElement;
   const dialogPrice = document.getElementById('dialog-price') as HTMLElement;
-  const colorOptions = document.getElementById('color-options') as HTMLElement;
-  const sizeOptions = document.getElementById('size-options') as HTMLElement;
+  const colorSelect = document.getElementById('color-select') as HTMLSelectElement;
+  const sizeSelect = document.getElementById('size-select') as HTMLSelectElement;
   const colorGroup = document.getElementById('color-group') as HTMLElement;
   const sizeGroup = document.getElementById('size-group') as HTMLElement;
   const btnStripe = document.getElementById('btn-stripe') as HTMLButtonElement;
@@ -138,9 +135,6 @@ const products = productsData as Product[];
     const variant = getVariant();
     dialogPrice.textContent = variant ? `$${parseFloat(variant.price).toFixed(2)}` : 'Select options';
     if (variant?.previewUrl) dialogImage.src = variant.previewUrl;
-    btnStripe.disabled = !variant || !variant.inStock;
-    btnStripe.textContent = variant?.inStock === false ? 'Out of Stock' : 'Pay by Card';
-    dialogError.textContent = '';
   }
 
   function renderOptions() {
@@ -152,24 +146,27 @@ const products = productsData as Product[];
     colorGroup.style.display = colors.length > 0 ? '' : 'none';
     sizeGroup.style.display  = sizes.length  > 0 ? '' : 'none';
 
-    colorOptions.innerHTML = '';
+    colorSelect.innerHTML = '';
     colors.forEach(color => {
-      const btn = document.createElement('button');
-      btn.className = 'option-btn' + (color === selectedColor ? ' selected' : '');
-      btn.textContent = color;
-      btn.addEventListener('click', () => { selectedColor = color; renderOptions(); updateDialog(); });
-      colorOptions.appendChild(btn);
+      const opt = document.createElement('option');
+      opt.value = color;
+      opt.textContent = color;
+      if (color === selectedColor) opt.selected = true;
+      colorSelect.appendChild(opt);
     });
 
-    sizeOptions.innerHTML = '';
+    sizeSelect.innerHTML = '';
     sizes.forEach(size => {
-      const btn = document.createElement('button');
-      btn.className = 'option-btn' + (size === selectedSize ? ' selected' : '');
-      btn.textContent = size;
-      btn.addEventListener('click', () => { selectedSize = size; renderOptions(); updateDialog(); });
-      sizeOptions.appendChild(btn);
+      const opt = document.createElement('option');
+      opt.value = size;
+      opt.textContent = size;
+      if (size === selectedSize) opt.selected = true;
+      sizeSelect.appendChild(opt);
     });
   }
+
+  colorSelect.addEventListener('change', () => { selectedColor = colorSelect.value; updateDialog(); });
+  sizeSelect.addEventListener('change', () => { selectedSize = sizeSelect.value; updateDialog(); });
 
   function openProduct(product: Product) {
     currentProduct = product;
@@ -178,7 +175,7 @@ const products = productsData as Product[];
 
     dialogName.textContent = product.name;
     dialogDesc.textContent = product.description;
-    dialogImage.src = product.thumbnailUrl;
+    dialogImage.src = product.variants[0]?.previewUrl || product.thumbnailUrl;
     dialogImage.alt = product.name;
 
     renderOptions();
@@ -206,7 +203,7 @@ const products = productsData as Product[];
     (document.activeElement as HTMLElement)?.blur();
   });
 
-  // Stripe checkout
+  // Stripe checkout (coming soon — enable once STRIPE_SECRET_KEY is set)
   btnStripe?.addEventListener('click', async () => {
     const variant = getVariant();
     if (!variant || !currentProduct) return;
@@ -233,7 +230,7 @@ const products = productsData as Product[];
     } catch (err) {
       dialogError.textContent = 'Something went wrong. Please try again.';
       btnStripe.disabled = false;
-      btnStripe.textContent = 'Pay by Card';
+      btnStripe.textContent = 'Coming Soon';
     }
   });
 </script>
@@ -453,32 +450,32 @@ const products = productsData as Product[];
     font-family: var(--font-secondary);
   }
 
-  .selector-options {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-
-  .option-btn {
-    padding: 6px 14px;
-    background: none;
+  .selector-select {
+    width: 100%;
+    padding: 8px 12px;
+    background: var(--bg-primary);
     border: 1px solid var(--border-color);
-    color: var(--text-secondary);
-    font-family: var(--font-secondary);
-    font-size: 0.85rem;
-    cursor: pointer;
-    transition: border-color 0.15s, color 0.15s, background 0.15s;
-  }
-
-  .option-btn:hover {
-    border-color: var(--text-secondary);
     color: var(--text-primary);
+    font-family: var(--font-secondary);
+    font-size: 0.9rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 36px;
+    transition: border-color 0.15s;
   }
 
-  .option-btn.selected {
+  .selector-select:focus {
+    outline: none;
     border-color: var(--accent-primary);
-    color: var(--accent-primary);
-    background: rgba(0, 255, 65, 0.06);
+  }
+
+  .selector-select option {
+    background: var(--bg-primary);
+    color: var(--text-primary);
   }
 
   .dialog-price {
