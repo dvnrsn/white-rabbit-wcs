@@ -1,4 +1,6 @@
 ---
+import { existsSync } from "fs";
+import { join } from "path";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 import FeedbackForm from "../components/FeedbackForm.astro";
@@ -7,7 +9,11 @@ import { getEntry } from "astro:content";
 
 const schema = generateOrganizationSchema();
 const homeData = await getEntry("pages", "home");
-const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
+const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map((item) => {
+  const base = item.image.replace(/\.png$/, "");
+  const hasWebp = existsSync(join(process.cwd(), "public", `${base}.webp`));
+  return { ...item, base, hasWebp };
+});
 ---
 
 <Layout
@@ -20,32 +26,28 @@ const heroImages = homeData?.data.heroImages?.filter((i) => i.image) ?? [];
       {heroImages.length > 0 && (
         <div class="hero-slider" style={`--quantity: ${heroImages.length}; --duration: ${heroImages.length * 8}s;`}>
           <ul class="slider-list">
-            {heroImages.map((item, i) => {
-              const base = item.image.replace(/\.png$/, '');
-              const webp = `${base}.webp`;
-              const webp800 = `${base}-800.webp`;
-              const webp400 = `${base}-400.webp`;
-              return (
-                <li class="slider-item" style={`--position: ${i + 1};`}>
-                  <picture>
+            {heroImages.map((item, i) => (
+              <li class="slider-item" style={`--position: ${i + 1};`}>
+                <picture>
+                  {item.hasWebp && (
                     <source
                       type="image/webp"
-                      srcset={`${webp400} 400w, ${webp800} 800w, ${webp} 1600w`}
+                      srcset={`${item.base}-400.webp 400w, ${item.base}-800.webp 800w, ${item.base}.webp 1600w`}
                       sizes="100vw"
                     />
-                    <img
-                      src={item.image}
-                      alt={item.alt ?? ""}
-                      width="1600"
-                      height="1067"
-                      loading={i === 0 ? "eager" : "lazy"}
-                      fetchpriority={i === 0 ? "high" : "auto"}
-                      decoding={i === 0 ? "sync" : "async"}
-                    />
-                  </picture>
-                </li>
-              );
-            })}
+                  )}
+                  <img
+                    src={item.image}
+                    alt={item.alt ?? ""}
+                    width="1600"
+                    height="1067"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    fetchpriority={i === 0 ? "high" : "auto"}
+                    decoding={i === 0 ? "sync" : "async"}
+                  />
+                </picture>
+              </li>
+            ))}
           </ul>
         </div>
       )}
