@@ -12,18 +12,24 @@ if (!STORE_ID) throw new Error('PRINTFUL_STORE_ID is required');
 
 async function pf(path) {
   const res = await fetch(`https://api.printful.com${path}`, {
-    headers: { Authorization: `Bearer ${API_KEY}` },
+    headers: {
+      Authorization: `Bearer ${API_KEY}`,
+      'X-PF-Store-Id': STORE_ID,
+    },
   });
-  if (!res.ok) throw new Error(`Printful ${path} → ${res.status}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Printful ${path} → ${res.status}: ${body}`);
+  }
   const { result } = await res.json();
   return result;
 }
 
-const syncProducts = await pf(`/store/products?store_id=${STORE_ID}&limit=100`);
+const syncProducts = await pf('/store/products?limit=100');
 
 const products = await Promise.all(
   syncProducts.map(async (p) => {
-    const detail = await pf(`/store/products/${p.id}?store_id=${STORE_ID}`);
+    const detail = await pf(`/store/products/${p.id}`);
     const variants = detail.sync_variants.map((v) => ({
       id: v.id,
       name: v.name,
