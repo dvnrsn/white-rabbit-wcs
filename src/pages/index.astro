@@ -10,9 +10,17 @@ import { getEntry } from "astro:content";
 const schema = generateOrganizationSchema();
 const homeData = await getEntry("pages", "home");
 const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map((item) => {
-  const base = item.image.replace(/\.(png|jpe?g)$/i, "");
-  const hasWebp = existsSync(join(process.cwd(), "public", `${base}.webp`));
-  return { ...item, base, hasWebp };
+  const isAlreadyWebp = /\.webp$/i.test(item.image);
+  const base = item.image.replace(/\.(png|jpe?g|webp)$/i, "");
+  const publicDir = join(process.cwd(), "public");
+  const srcset = isAlreadyWebp
+    ? [{ url: item.image, width: 1600 }]
+    : [
+        { url: `${base}-400.webp`, width: 400 },
+        { url: `${base}-800.webp`, width: 800 },
+        { url: `${base}.webp`,     width: 1600 },
+      ].filter(({ url }) => existsSync(join(publicDir, url)));
+  return { ...item, srcset };
 });
 ---
 
@@ -29,10 +37,10 @@ const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map
             {heroImages.map((item, i) => (
               <li class="slider-item" style={`--position: ${i + 1};`}>
                 <picture>
-                  {item.hasWebp && (
+                  {item.srcset.length > 0 && (
                     <source
                       type="image/webp"
-                      srcset={`${item.base}-400.webp 400w, ${item.base}-800.webp 800w, ${item.base}.webp 1600w`}
+                      srcset={item.srcset.map(({ url, width }) => `${url} ${width}w`).join(", ")}
                       sizes="100vw"
                     />
                   )}

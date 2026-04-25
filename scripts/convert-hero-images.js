@@ -32,9 +32,12 @@ let removed = 0;
 
 for (const entry of readdirSync(heroDir)) {
   const dir = join(heroDir, entry);
-  const source = ['image.png', 'image.jpg', 'image.jpeg']
+  const source = ['image.png', 'image.jpg', 'image.jpeg', 'image.webp']
     .map(f => join(dir, f))
     .find(f => existsSync(f));
+
+  // Already WebP — no conversion needed, skip
+  if (source?.endsWith('.webp')) continue;
 
   // No source image — remove any orphaned WebP files
   if (!source) {
