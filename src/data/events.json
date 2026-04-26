@@ -16,36 +16,6 @@
       "rrule": "FREQ=WEEKLY;BYDAY=WE"
     },
     {
-      "id": "609qb5283ntbhuu3e8jonroln8",
-      "title": "White Rabbit Classes",
-      "description": "Beginner and intermediate lessons",
-      "startTime": "19:00",
-      "endTime": "21:00",
-      "venue": "Country Nomads",
-      "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-      "price": "$15",
-      "level": "",
-      "type": "class",
-      "organizer": "Gabe Sebastian",
-      "dtstart": "2025-12-31",
-      "rrule": "FREQ=WEEKLY;UNTIL=20260107T065959Z;BYDAY=WE"
-    },
-    {
-      "id": "609qb5283ntbhuu3e8jonroln8_R20260108T020000",
-      "title": "Westie Wednesday Classes",
-      "description": "Beginner and intermediate lessons",
-      "startTime": "19:00",
-      "endTime": "21:00",
-      "venue": "Country Nomads",
-      "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-      "price": "$15",
-      "level": "",
-      "type": "class",
-      "organizer": "Gabe Sebastian",
-      "dtstart": "2026-01-07",
-      "rrule": "FREQ=WEEKLY;UNTIL=20260401T065959Z;BYDAY=WE"
-    },
-    {
       "id": "5ack9ht4a7urs4kd1fhumfmqj2",
       "title": "Scootin' Boots",
       "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
