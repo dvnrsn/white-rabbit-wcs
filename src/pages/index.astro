@@ -140,7 +140,8 @@ const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map
     width: var(--width);
     height: 100%;
     position: absolute;
-    left: 100%;
+    left: 0;
+    will-change: transform;
     animation: autoRun var(--duration) linear infinite;
     animation-delay: calc(
       (var(--duration) / var(--quantity)) * (var(--position) - 1) - var(--duration)
@@ -170,8 +171,24 @@ const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map
   /* Carousel technique adapted from https://theosoti.com/short/autoplay-carousel/
      from value uses width*(quantity-1) instead of 100% to keep images gapless at any viewport width */
   @keyframes autoRun {
-    from { left: calc(var(--width) * (var(--quantity) - 1)); }
-    to { left: calc(var(--width) * -1); }
+    from { transform: translateX(calc(var(--width) * (var(--quantity) - 1))); }
+    to { transform: translateX(calc(var(--width) * -1)); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .slider-item,
+    .hero::before {
+      animation: none;
+    }
+
+    .title,
+    .tagline,
+    .typed-text,
+    .cta-buttons {
+      animation: none;
+      opacity: 1;
+      transform: none;
+    }
   }
 
   .hero-content {
