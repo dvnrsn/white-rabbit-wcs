@@ -334,6 +334,14 @@ const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map
       grid-template-columns: 1fr;
     }
 
+    .hero::before {
+      display: none;
+    }
+
+    .slider-item {
+      will-change: auto;
+    }
+
     .hero {
       min-height: 70vh;
     }
