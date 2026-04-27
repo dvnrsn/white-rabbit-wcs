@@ -307,35 +307,12 @@ const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map
 
   /* Floating particles effect */
   .hero::before {
-    content: "";
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(
-      circle,
-      var(--accent-primary) 1px,
-      transparent 1px
-    );
-    background-size: 50px 50px;
-    opacity: 0.05;
-    animation: float 20s linear infinite;
-    pointer-events: none;
-  }
-
-  @keyframes float {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(50px, 50px); }
+    display: none;
   }
 
   @media (max-width: 768px) {
     .features-grid {
       grid-template-columns: 1fr;
-    }
-
-    .hero::before {
-      display: none;
     }
 
     .slider-item {
