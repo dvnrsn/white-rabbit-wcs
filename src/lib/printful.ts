@@ -6,6 +6,7 @@ export interface ProductVariant {
   price: string; // e.g. "35.00"
   inStock: boolean;
   previewUrl: string;
+  backPreviewUrl?: string;
 }
 
 export interface Product {
