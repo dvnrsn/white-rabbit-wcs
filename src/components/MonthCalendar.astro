@@ -3,10 +3,9 @@ import type { CalendarEvent } from '../lib/calendar';
 
 interface Props {
   events: CalendarEvent[];
-  today: string; // YYYY-MM-DD
 }
 
-const { events, today } = Astro.props;
+const { events } = Astro.props;
 ---
 
 <div class="month-calendar">
@@ -35,7 +34,8 @@ const { events, today } = Astro.props;
   <div class="cal-day-events" id="cal-day-events" aria-live="polite"></div>
 </div>
 
-<script define:vars={{ calEvents: events, calToday: today }}>
+<script define:vars={{ calEvents: events }}>
+  const calToday = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
   const MONTHS = [
     'January','February','March','April','May','June',
     'July','August','September','October','November','December'
