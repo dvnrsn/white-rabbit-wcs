@@ -1,5 +1,253 @@
 [
   {
+    "id": 430288428,
+    "name": "\"If It Glows\" #3",
+    "description": "",
+    "thumbnailUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png",
+    "variants": [
+      {
+        "id": 5285299597,
+        "name": "\"If It Glows\" #3 / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      },
+      {
+        "id": 5285299598,
+        "name": "\"If It Glows\" #3 / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      },
+      {
+        "id": 5285299599,
+        "name": "\"If It Glows\" #3 / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      },
+      {
+        "id": 5285299600,
+        "name": "\"If It Glows\" #3 / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      },
+      {
+        "id": 5285299601,
+        "name": "\"If It Glows\" #3 / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      },
+      {
+        "id": 5285299602,
+        "name": "\"If It Glows\" #3 / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+      }
+    ]
+  },
+  {
+    "id": 430288169,
+    "name": "\"If It Glows\" #2",
+    "description": "",
+    "thumbnailUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png",
+    "variants": [
+      {
+        "id": 5285297545,
+        "name": "\"If It Glows\" #2 / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      },
+      {
+        "id": 5285297546,
+        "name": "\"If It Glows\" #2 / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      },
+      {
+        "id": 5285297547,
+        "name": "\"If It Glows\" #2 / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      },
+      {
+        "id": 5285297548,
+        "name": "\"If It Glows\" #2 / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      },
+      {
+        "id": 5285297549,
+        "name": "\"If It Glows\" #2 / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      },
+      {
+        "id": 5285297550,
+        "name": "\"If It Glows\" #2 / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
+      }
+    ]
+  },
+  {
+    "id": 430287852,
+    "name": "\"If It Glows\" #1",
+    "description": "",
+    "thumbnailUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png",
+    "variants": [
+      {
+        "id": 5285295343,
+        "name": "\"If It Glows\" #1 / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      },
+      {
+        "id": 5285295344,
+        "name": "\"If It Glows\" #1 / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      },
+      {
+        "id": 5285295345,
+        "name": "\"If It Glows\" #1 / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      },
+      {
+        "id": 5285295346,
+        "name": "\"If It Glows\" #1 / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      },
+      {
+        "id": 5285295347,
+        "name": "\"If It Glows\" #1 / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      },
+      {
+        "id": 5285295348,
+        "name": "\"If It Glows\" #1 / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
+      }
+    ]
+  },
+  {
+    "id": 430275848,
+    "name": "\"New Rabbit\" WRS T-shirt",
+    "description": "",
+    "thumbnailUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
+    "variants": [
+      {
+        "id": 5285210020,
+        "name": "\"New Rabbit\" WRS T-shirt / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      },
+      {
+        "id": 5285210021,
+        "name": "\"New Rabbit\" WRS T-shirt / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      },
+      {
+        "id": 5285210022,
+        "name": "\"New Rabbit\" WRS T-shirt / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      },
+      {
+        "id": 5285210023,
+        "name": "\"New Rabbit\" WRS T-shirt / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      },
+      {
+        "id": 5285210024,
+        "name": "\"New Rabbit\" WRS T-shirt / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      },
+      {
+        "id": 5285210025,
+        "name": "\"New Rabbit\" WRS T-shirt / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png"
+      }
+    ]
+  },
+  {
     "id": 429717565,
     "name": "\"Follow Front\" OG WRS T-shirt",
     "description": "",
@@ -10,7 +258,7 @@
         "name": "\"Follow Front\" OG WRS T-shirt / S",
         "size": "S",
         "color": "Black",
-        "price": "32.00",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
       },
@@ -19,7 +267,7 @@
         "name": "\"Follow Front\" OG WRS T-shirt / M",
         "size": "M",
         "color": "Black",
-        "price": "32.00",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
       },
@@ -28,7 +276,7 @@
         "name": "\"Follow Front\" OG WRS T-shirt / L",
         "size": "L",
         "color": "Black",
-        "price": "32.00",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
       },
@@ -37,7 +285,7 @@
         "name": "\"Follow Front\" OG WRS T-shirt / XL",
         "size": "XL",
         "color": "Black",
-        "price": "32.00",
+        "price": "30.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
       },
@@ -55,7 +303,7 @@
         "name": "\"Follow Front\" OG WRS T-shirt / 3XL",
         "size": "3XL",
         "color": "Black",
-        "price": "32.00",
+        "price": "35.00",
         "inStock": true,
         "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png"
       }
