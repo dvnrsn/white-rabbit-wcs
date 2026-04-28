@@ -34,8 +34,13 @@ const { events } = Astro.props;
   <div class="cal-day-events" id="cal-day-events" aria-live="polite"></div>
 </div>
 
-<script define:vars={{ calEvents: events }}>
-  const calToday = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
+<script type="application/json" id="cal-event-data" set:html={JSON.stringify(events).replace(/<\//g, '<\\/')}></script>
+
+<script>
+  import { Temporal } from '@js-temporal/polyfill';
+
+  const calEvents = JSON.parse(document.getElementById('cal-event-data')!.textContent!);
+  const calToday = Temporal.Now.plainDateISO('America/Phoenix').toString();
   const MONTHS = [
     'January','February','March','April','May','June',
     'July','August','September','October','November','December'

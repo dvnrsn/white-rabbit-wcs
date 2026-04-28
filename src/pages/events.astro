@@ -27,8 +27,14 @@ const pastEvents = events
   .filter(e => e.date < today)
   .sort((a, b) => b.date.localeCompare(a.date) || b.startTime.localeCompare(a.startTime));
 
-// Generate structured data for upcoming events
 const schema = generateEventListSchema(upcomingEvents);
+
+const PHOENIX_METRO = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
+function eventCity(address: string) {
+  const match = address.match(/,\s*([^,]+),\s*AZ/);
+  const raw = match ? match[1].trim() : 'Phoenix';
+  return PHOENIX_METRO.some(c => raw.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : raw;
+}
 
 ---
 
@@ -134,21 +140,11 @@ const schema = generateEventListSchema(upcomingEvents);
       {upcomingEvents.length > 0 && (
         <section class="events-section">
           <div class="events-list">
-            {upcomingEvents.map(event => {
-              // Extract city from address (format: "123 Street, Phoenix, AZ 85001")
-              const cityMatch = event.address.match(/,\s*([^,]+),\s*AZ/);
-              const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
-
-              // Map Phoenix metro area cities to "Phoenix"
-              const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
-              const city = phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
-
-              return (
-                <div class="event-item" data-type={event.type} data-city={city}>
-                  <EventCard event={event} />
-                </div>
-              );
-            })}
+            {upcomingEvents.map(event => (
+              <div class="event-item" data-type={event.type} data-city={eventCity(event.address)}>
+                <EventCard event={event} />
+              </div>
+            ))}
           </div>
         </section>
       )}
@@ -157,21 +153,11 @@ const schema = generateEventListSchema(upcomingEvents);
         <section class="events-section past-events">
           <h2 class="section-title">> Past Events</h2>
           <div class="events-list">
-            {pastEvents.map(event => {
-              // Extract city from address (format: "123 Street, Phoenix, AZ 85001")
-              const cityMatch = event.address.match(/,\s*([^,]+),\s*AZ/);
-              const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
-
-              // Map Phoenix metro area cities to "Phoenix"
-              const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
-              const city = phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
-
-              return (
-                <div class="event-item" data-type={event.type} data-city={city}>
-                  <EventCard event={event} />
-                </div>
-              );
-            })}
+            {pastEvents.map(event => (
+              <div class="event-item" data-type={event.type} data-city={eventCity(event.address)}>
+                <EventCard event={event} />
+              </div>
+            ))}
           </div>
         </section>
       )}
