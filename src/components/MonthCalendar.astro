@@ -163,7 +163,6 @@ const { events } = Astro.props;
     const evs = byDate[ds];
     if (!evs) return null;
 
-    const isToday = ds === calToday;
     const isPast  = ds < calToday;
     const types   = [...new Set(evs.map(ev => ev.type))];
 
@@ -174,7 +173,7 @@ const { events } = Astro.props;
     if (types.length === 1) {
       const dot = document.createElement('span');
       dot.className = 'ev-dot';
-      dot.style.background = isToday ? 'var(--bg-primary)' : typeColor(types[0]);
+      dot.style.background = typeColor(types[0]);
       wrap.appendChild(dot);
     } else {
       const pill = document.createElement('span');
@@ -182,7 +181,7 @@ const { events } = Astro.props;
       types.forEach(type => {
         const seg = document.createElement('span');
         seg.className = 'ev-pill-seg';
-        seg.style.background = isToday ? 'var(--bg-primary)' : typeColor(type);
+        seg.style.background = typeColor(type);
         pill.appendChild(seg);
       });
       wrap.appendChild(pill);
