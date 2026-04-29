@@ -168,7 +168,7 @@ const { events } = Astro.props;
 
     const wrap = document.createElement('div');
     wrap.className = 'ev-indicators';
-    if (isPast && !isToday) wrap.style.opacity = '0.35';
+    if (isPast) wrap.style.opacity = '0.35';
 
     if (types.length === 1) {
       const dot = document.createElement('span');
