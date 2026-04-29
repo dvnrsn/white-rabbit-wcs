@@ -1,8 +1,8 @@
 # The White Rabbit Society
 
-Astro 5 site for Arizona's West Coast Swing dance community — static-first with Cloudflare Workers, a Git-backed CMS, Google Calendar integration, and a Printful-connected merch shop.
+The White Rabbit Society is the hub for West Coast Swing dancing in Arizona — connecting dancers to local events, instructors, venues, DJs, and community resources across Phoenix, Tucson, Prescott, and beyond.
 
-**Live site**: [whiterabbitwcs.com](https://whiterabbitwcs.com)
+This repo is the source for [whiterabbitwcs.com](https://whiterabbitwcs.com): an Astro 5 static site deployed on Cloudflare Workers, with a Git-backed CMS, Google Calendar integration, and a Printful-connected merch shop.
 
 ---
 
