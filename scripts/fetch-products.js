@@ -38,7 +38,7 @@ const products = await Promise.all(
       price: v.retail_price,
       inStock: v.availability_status === 'active',
       previewUrl: v.files?.find((f) => f.type === 'preview')?.preview_url || p.thumbnail_url,
-      backPreviewUrl: v.files?.find((f) => f.type === 'back')?.preview_url || undefined,
+      backPreviewUrl: v.files?.find((f) => f.type === 'back_dtf')?.preview_url || undefined,
     }));
 
     return {
