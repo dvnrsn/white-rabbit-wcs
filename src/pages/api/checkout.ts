@@ -11,7 +11,7 @@ export async function POST({ request, locals }: APIContext) {
 
   const origin = request.headers.get('origin') ?? 'http://localhost:4321';
 
-  let body: { variantId: number; variantName: string; price: string; productName: string; quantity?: number };
+  let body: { productId: string; variantId: number; variantName: string; price: string; productName: string; quantity?: number };
   try {
     body = await request.json();
   } catch {
@@ -44,7 +44,8 @@ export async function POST({ request, locals }: APIContext) {
       allowed_countries: ['US'],
     },
     metadata: {
-      printful_variant_id: String(variantId),
+      printify_product_id: String(body.productId ?? ''),
+      printify_variant_id: String(variantId),
       quantity: String(quantity),
     },
     success_url: `${origin}/shop/success?session_id={CHECKOUT_SESSION_ID}`,

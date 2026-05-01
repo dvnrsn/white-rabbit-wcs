@@ -1,6 +1,6 @@
 import type { APIContext } from 'astro';
 import Stripe from 'stripe';
-import { createPrintfulOrder } from '../../lib/printful';
+import { createPrintifyOrder } from '../../lib/printful';
 
 export const prerender = false;
 
@@ -9,9 +9,10 @@ export async function POST({ request, locals }: APIContext) {
 
   const stripeKey = env.STRIPE_SECRET_KEY;
   const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
-  const printfulKey = env.PRINTFUL_API_KEY;
+  const printifyToken = env.PRINTIFY_API_TOKEN;
+  const printifyShopId = env.PRINTIFY_SHOP_ID;
 
-  if (!stripeKey || !webhookSecret || !printfulKey) {
+  if (!stripeKey || !webhookSecret || !printifyToken || !printifyShopId) {
     return new Response('Missing env vars', { status: 500 });
   }
 
@@ -33,11 +34,12 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
-  const variantId = Number(session.metadata?.printful_variant_id);
+  const productId = session.metadata?.printify_product_id ?? '';
+  const variantId = Number(session.metadata?.printify_variant_id);
   const quantity = Number(session.metadata?.quantity ?? 1);
 
-  if (!variantId) {
-    console.error('[stripe-webhook] Missing printful_variant_id in session metadata');
+  if (!productId || !variantId) {
+    console.error('[stripe-webhook] Missing printify metadata in session');
     return new Response('Missing variant', { status: 400 });
   }
 
@@ -47,20 +49,26 @@ export async function POST({ request, locals }: APIContext) {
     return new Response('No shipping address', { status: 400 });
   }
 
-  await createPrintfulOrder(
-    printfulKey,
+  const nameParts = (shipping.name ?? session.customer_details?.name ?? 'Customer').split(' ');
+  const firstName = nameParts[0];
+  const lastName = nameParts.slice(1).join(' ') || '-';
+
+  await createPrintifyOrder(
+    printifyToken,
+    printifyShopId,
     {
-      name: shipping.name ?? session.customer_details?.name ?? 'Customer',
+      first_name: firstName,
+      last_name: lastName,
       email: session.customer_details?.email ?? '',
       address1: shipping.address.line1 ?? '',
       city: shipping.address.city ?? '',
-      state_code: shipping.address.state ?? '',
-      country_code: shipping.address.country ?? 'US',
+      region: shipping.address.state ?? '',
+      country: shipping.address.country ?? 'US',
       zip: shipping.address.postal_code ?? '',
     },
-    [{ variantId, quantity }]
+    [{ productId, variantId, quantity }]
   );
 
-  console.log(`[stripe-webhook] Printful order created for session ${session.id}`);
+  console.log(`[stripe-webhook] Printify order created for session ${session.id}`);
   return new Response('OK', { status: 200 });
 }
