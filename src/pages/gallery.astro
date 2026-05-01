@@ -3,12 +3,14 @@ export const prerender = false;
 
 import Layout from "../layouts/Layout.astro";
 
+const PUBLIC_BUCKET_URL = "https://pub-acd9a4df04b04e13a687ac0f697b36c5.r2.dev";
+const BUCKET_NAME = "white-rabbit-gallery";
 const VIDEO_EXTS = /\.(mp4|mov|webm)$/i;
 const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp|avif)$/i;
 
-const bucket = Astro.locals.runtime?.env?.GALLERY_BUCKET as
-  | { list: (opts?: { limit?: number; cursor?: string }) => Promise<{ objects: { key: string; uploaded: Date }[]; truncated: boolean; cursor?: string }> }
-  | undefined;
+const env = (Astro.locals as any).runtime?.env;
+const accountId = env?.WHITE_RABBIT_ACCOUNT_ID;
+const apiToken = env?.WHITE_RABBIT_R2_API_TOKEN;
 
 type GalleryItem = {
   key: string;
@@ -21,32 +23,43 @@ type GalleryItem = {
 
 let items: GalleryItem[] = [];
 
-if (bucket) {
-  // Paginate through all objects (R2 list maxes at 1000 per call)
+if (accountId && apiToken) {
   let cursor: string | undefined;
   do {
-    const result = await bucket.list({ limit: 1000, ...(cursor ? { cursor } : {}) });
-    for (const obj of result.objects) {
+    const url = new URL(
+      `https://api.cloudflare.com/client/v4/accounts/${accountId}/r2/buckets/${BUCKET_NAME}/objects`
+    );
+    if (cursor) url.searchParams.set("cursor", cursor);
+    url.searchParams.set("per_page", "1000");
+
+    const res = await fetch(url.toString(), {
+      headers: { Authorization: `Bearer ${apiToken}` },
+    });
+    const data = await res.json() as {
+      result: { objects: { key: string; uploaded: string }[]; truncated: boolean; cursor?: string };
+    };
+
+    for (const obj of data.result.objects) {
       if (!IMAGE_EXTS.test(obj.key) && !VIDEO_EXTS.test(obj.key)) continue;
       const segments = obj.key.split("/");
       const album = segments.length > 1 ? segments[0] : null;
       const name = segments[segments.length - 1];
       items.push({
         key: obj.key,
-        url: `/api/gallery/${obj.key}`,
+        url: `${PUBLIC_BUCKET_URL}/${obj.key}`,
         name,
         album,
         isVideo: VIDEO_EXTS.test(obj.key),
-        uploaded: obj.uploaded,
+        uploaded: new Date(obj.uploaded),
       });
     }
-    cursor = result.truncated ? result.cursor : undefined;
+    cursor = data.result.truncated ? data.result.cursor : undefined;
   } while (cursor);
 
   items.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
 }
 
-// Group by album (null = ungrouped, shown first)
+// Group by album
 const albums = new Map<string, GalleryItem[]>();
 albums.set("", []);
 for (const item of items) {
@@ -54,13 +67,14 @@ for (const item of items) {
   if (!albums.has(key)) albums.set(key, []);
   albums.get(key)!.push(item);
 }
-// Move ungrouped to end if albums exist
 if (albums.size > 1 && albums.get("")!.length > 0) {
   const ungrouped = albums.get("")!;
   albums.delete("");
   albums.set("", ungrouped);
 }
 const hasContent = items.length > 0;
+
+Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=86400");
 ---
 
 <Layout
