@@ -1,536 +1,3874 @@
 [
   {
-    "id": 430288428,
-    "name": "\"If It Glows\" #3",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png",
+    "id": "69f532a1005bc962f70312f4",
+    "name": "Unisex Softstyle T-Shirt",
+    "description": "The Gildan Softstyle® 64000 redefines casual comfort with a modern unisex cut and ultra-soft materials. Solid colors are 100% cotton, while heathers and sport grey use polyester blends for added durability. Shoulders are reinforced with twill tape, there are no side seams for a smoother fit, and the ribbed-knit collar helps prevent curling. Whether for printing or everyday wear, the Gildan 64000 stands out as a dependable wardrobe staple.Disclaimer:- Due to the fabric properties, the White color variant may appear off-white rather than bright white.- Sleeve prints and neck labels are produced using DTF (Direct-to-Film) printing technology. This applies only to products fulfilled by the print providers OPT OnDemand and Shirt Monkey among the providers offering this item..: Made with 100% ring-spun cotton, the Gildan 64000 from the Gildan Softstyle® collection is a lightweight fabric (4.5 oz/yd² (153 g/m²)) that feels blissful to wear all year round. .: The classic fit with the crew neckline deliver a clean, versatile style that can match any occasion, whether it's formal or semi-formal. .: All shirts feature a pearlized, tear-away label for total wearing comfort. .: Made using ethically grown and harvested US cotton. Gildan is also a proud member of the US Cotton Trust Protocol ensuring ethical and sustainable means of production. This blank tee is certified by Oeko-Tex for safety and quality assurance..: Fabric blends: Heather colors - 35% ring-spun cotton, 65% polyester; Sport Grey and Antique colors - 90% cotton, 10% polyester, Graphite Heather - 50% ring-spun cotton, 50% polyester",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
     "variants": [
       {
-        "id": 5285299597,
-        "name": "\"If It Glows\" #3 / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
-      },
-      {
-        "id": 5285299598,
-        "name": "\"If It Glows\" #3 / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
-      },
-      {
-        "id": 5285299599,
-        "name": "\"If It Glows\" #3 / L",
+        "id": 63300,
+        "name": "Unisex Softstyle T-Shirt / Dark Heather / L",
         "size": "L",
-        "color": "Black",
-        "price": "30.00",
+        "color": "Dark Heather",
+        "price": "25.91",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
       },
       {
-        "id": 5285299600,
-        "name": "\"If It Glows\" #3 / XL",
+        "id": 38161,
+        "name": "Unisex Softstyle T-Shirt / Royal / S",
+        "size": "S",
+        "color": "Royal",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38197,
+        "name": "Unisex Softstyle T-Shirt / Dark Chocolate / XL",
+        "size": "XL",
+        "color": "Dark Chocolate",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 63295,
+        "name": "Unisex Softstyle T-Shirt / Dark Heather / M",
+        "size": "M",
+        "color": "Dark Heather",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38180,
+        "name": "Unisex Softstyle T-Shirt / Military Green / M",
+        "size": "M",
+        "color": "Military Green",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38191,
+        "name": "Unisex Softstyle T-Shirt / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38200,
+        "name": "Unisex Softstyle T-Shirt / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38186,
+        "name": "Unisex Softstyle T-Shirt / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38203,
+        "name": "Unisex Softstyle T-Shirt / Royal / XL",
+        "size": "XL",
+        "color": "Royal",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38158,
+        "name": "Unisex Softstyle T-Shirt / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38189,
+        "name": "Unisex Softstyle T-Shirt / Royal / L",
+        "size": "L",
+        "color": "Royal",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38205,
+        "name": "Unisex Softstyle T-Shirt / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38155,
+        "name": "Unisex Softstyle T-Shirt / Dark Chocolate / S",
+        "size": "S",
+        "color": "Dark Chocolate",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38166,
+        "name": "Unisex Softstyle T-Shirt / Military Green / S",
+        "size": "S",
+        "color": "Military Green",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 63290,
+        "name": "Unisex Softstyle T-Shirt / Dark Heather / S",
+        "size": "S",
+        "color": "Dark Heather",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38183,
+        "name": "Unisex Softstyle T-Shirt / Dark Chocolate / L",
+        "size": "L",
+        "color": "Dark Chocolate",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38163,
+        "name": "Unisex Softstyle T-Shirt / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38175,
+        "name": "Unisex Softstyle T-Shirt / Royal / M",
+        "size": "M",
+        "color": "Royal",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38206,
+        "name": "Unisex Softstyle T-Shirt / Black / XL",
         "size": "XL",
         "color": "Black",
-        "price": "30.00",
+        "price": "25.91",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
       },
       {
-        "id": 5285299601,
-        "name": "\"If It Glows\" #3 / 2XL",
+        "id": 38192,
+        "name": "Unisex Softstyle T-Shirt / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38178,
+        "name": "Unisex Softstyle T-Shirt / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38177,
+        "name": "Unisex Softstyle T-Shirt / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38169,
+        "name": "Unisex Softstyle T-Shirt / Dark Chocolate / M",
+        "size": "M",
+        "color": "Dark Chocolate",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 63305,
+        "name": "Unisex Softstyle T-Shirt / Dark Heather / XL",
+        "size": "XL",
+        "color": "Dark Heather",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38164,
+        "name": "Unisex Softstyle T-Shirt / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38194,
+        "name": "Unisex Softstyle T-Shirt / Military Green / L",
+        "size": "L",
+        "color": "Military Green",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38172,
+        "name": "Unisex Softstyle T-Shirt / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "25.91",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 42118,
+        "name": "Unisex Softstyle T-Shirt / Royal / 3XL",
+        "size": "3XL",
+        "color": "Royal",
+        "price": "30.25",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 42115,
+        "name": "Unisex Softstyle T-Shirt / Navy / 3XL",
+        "size": "3XL",
+        "color": "Navy",
+        "price": "30.25",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38219,
+        "name": "Unisex Softstyle T-Shirt / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "28.26",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38191/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38217,
+        "name": "Unisex Softstyle T-Shirt / Royal / 2XL",
+        "size": "2XL",
+        "color": "Royal",
+        "price": "28.26",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38189/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38220,
+        "name": "Unisex Softstyle T-Shirt / Black / 2XL",
         "size": "2XL",
         "color": "Black",
-        "price": "30.00",
+        "price": "28.26",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38192/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
       },
       {
-        "id": 5285299602,
-        "name": "\"If It Glows\" #3 / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "30.00",
+        "id": 63310,
+        "name": "Unisex Softstyle T-Shirt / Dark Heather / 2XL",
+        "size": "2XL",
+        "color": "Dark Heather",
+        "price": "28.26",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/866/8666d2b065234b41de5268f75b139b12_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/63300/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38211,
+        "name": "Unisex Softstyle T-Shirt / Dark Chocolate / 2XL",
+        "size": "2XL",
+        "color": "Dark Chocolate",
+        "price": "28.26",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38183/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38214,
+        "name": "Unisex Softstyle T-Shirt / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "28.26",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38186/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 38222,
+        "name": "Unisex Softstyle T-Shirt / Military Green / 2XL",
+        "size": "2XL",
+        "color": "Military Green",
+        "price": "28.26",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97992/unisex-softstyle-t-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f532a1005bc962f70312f4/38194/97993/unisex-softstyle-t-shirt.jpg?camera_label=back"
       }
     ]
   },
   {
-    "id": 430288169,
-    "name": "\"If It Glows\" #2",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png",
+    "id": "69f41922632399bb16087dd4",
+    "name": "\"Follow Me\" Tee",
+    "description": "SMLXL2XL3XL Width, in 18.00 20.00 22.00 24.00 26.00 28.00 Length, in 28.00 29.00 30.00 31.00 32.00 33.00 Sleeve length, in 8.23 8.50 8.74 9.02 9.25 9.49 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 SMLXL2XL3XL Width, in 18.00 20.00 22.00 24.00 26.00 28.00 Length, in 28.00 29.00 30.00 31.00 32.00 33.00 Sleeve length, in 8.23 8.50 8.74 9.02 9.25 9.49 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 A lightweight, ring-spun cotton tee that brings a gentle, whimsical touch to everyday wear. The shirt features a calm, bespectacled bunny illustration—soft lines, muted colors, and a subtle portal-like glow beneath—giving it a quiet, imaginative energy. It sits comfortably at the chest on a clean crew neckline and a classic fit, pairing easily with jeans, layered looks, or loungewear. Wear it when you want something soft against your skin and a little story on your front: curious, thoughtful, and quietly playful.Product features- 100% ring-spun cotton (lightweight 153 g/m²) for a soft, breathable feel- Tubular knit construction—no side seams for a smooth, clean silhouette- Ribbed crew neckline with shoulder tape to maintain shape and prevent stretching- Pearlized tear-away label for itch-free comfort; meets Oeko-Tex and EU safety standards- DTG/DTF printing options for vibrant front artwork and detailed sleeve/neck printsCare instructions- Do not dryclean- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Machine wash: cold (max 30C or 90F), with similar colors",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
     "variants": [
       {
-        "id": 5285297545,
-        "name": "\"If It Glows\" #2 / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      },
-      {
-        "id": 5285297546,
-        "name": "\"If It Glows\" #2 / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      },
-      {
-        "id": 5285297547,
-        "name": "\"If It Glows\" #2 / L",
+        "id": 63300,
+        "name": "\"Follow Me\" Tee / Dark Heather / L",
         "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      },
-      {
-        "id": 5285297548,
-        "name": "\"If It Glows\" #2 / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      },
-      {
-        "id": 5285297549,
-        "name": "\"If It Glows\" #2 / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      },
-      {
-        "id": 5285297550,
-        "name": "\"If It Glows\" #2 / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/311/311db6b3f689a851cc71a3e7bc1804ad_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 430287852,
-    "name": "\"If It Glows\" #1",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png",
-    "variants": [
-      {
-        "id": 5285295343,
-        "name": "\"If It Glows\" #1 / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      },
-      {
-        "id": 5285295344,
-        "name": "\"If It Glows\" #1 / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      },
-      {
-        "id": 5285295345,
-        "name": "\"If It Glows\" #1 / L",
-        "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      },
-      {
-        "id": 5285295346,
-        "name": "\"If It Glows\" #1 / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      },
-      {
-        "id": 5285295347,
-        "name": "\"If It Glows\" #1 / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      },
-      {
-        "id": 5285295348,
-        "name": "\"If It Glows\" #1 / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/747/747137570ac87a8fe8455232b4de51c2_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 430275848,
-    "name": "\"New Rabbit\" WRS T-shirt",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-    "variants": [
-      {
-        "id": 5285210020,
-        "name": "\"New Rabbit\" WRS T-shirt / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      },
-      {
-        "id": 5285210021,
-        "name": "\"New Rabbit\" WRS T-shirt / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      },
-      {
-        "id": 5285210022,
-        "name": "\"New Rabbit\" WRS T-shirt / L",
-        "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      },
-      {
-        "id": 5285210023,
-        "name": "\"New Rabbit\" WRS T-shirt / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      },
-      {
-        "id": 5285210024,
-        "name": "\"New Rabbit\" WRS T-shirt / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      },
-      {
-        "id": 5285210025,
-        "name": "\"New Rabbit\" WRS T-shirt / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/202/2025a0762b5640fa02a9574ddd8c63ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/files/58e/58ed1bc941e86236af06a4a7f142dd5a_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 429717565,
-    "name": "\"Follow Front\" OG WRS T-shirt",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-    "variants": [
-      {
-        "id": 5281194248,
-        "name": "\"Follow Front\" OG WRS T-shirt / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      },
-      {
-        "id": 5281194249,
-        "name": "\"Follow Front\" OG WRS T-shirt / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      },
-      {
-        "id": 5281194250,
-        "name": "\"Follow Front\" OG WRS T-shirt / L",
-        "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      },
-      {
-        "id": 5281194251,
-        "name": "\"Follow Front\" OG WRS T-shirt / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      },
-      {
-        "id": 5281194252,
-        "name": "\"Follow Front\" OG WRS T-shirt / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "32.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      },
-      {
-        "id": 5281194253,
-        "name": "\"Follow Front\" OG WRS T-shirt / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/cd5/cd51a444c28804d1880a57a949e349ff_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979864502/844ef4e133114b847b807ea5ab499ee8_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 429713304,
-    "name": "\"White Rabbit West Coast\" t-shirt",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/346/3461d666f3eb06fa1a19e86661111a2c_preview.png",
-    "variants": [
-      {
-        "id": 5281161347,
-        "name": "\"White Rabbit West Coast\" t-shirt / XS",
-        "size": "XS",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161348,
-        "name": "\"White Rabbit West Coast\" t-shirt / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161349,
-        "name": "\"White Rabbit West Coast\" t-shirt / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161350,
-        "name": "\"White Rabbit West Coast\" t-shirt / L",
-        "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161351,
-        "name": "\"White Rabbit West Coast\" t-shirt / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161353,
-        "name": "\"White Rabbit West Coast\" t-shirt / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161354,
-        "name": "\"White Rabbit West Coast\" t-shirt / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161355,
-        "name": "\"White Rabbit West Coast\" t-shirt / 4XL",
-        "size": "4XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      },
-      {
-        "id": 5281161357,
-        "name": "\"White Rabbit West Coast\" t-shirt / 5XL",
-        "size": "5XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/71c/71ce6431d205cc97322378128470cab3_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 429713301,
-    "name": "\"Rabbit Front\" OG T-Shirt",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/62f/62f008d3efdb70f983d957dc973e21dd_preview.png",
-    "variants": [
-      {
-        "id": 5281161310,
-        "name": "\"Rabbit Front\" OG T-Shirt / XS",
-        "size": "XS",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161311,
-        "name": "\"Rabbit Front\" OG T-Shirt / S",
-        "size": "S",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161312,
-        "name": "\"Rabbit Front\" OG T-Shirt / M",
-        "size": "M",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161313,
-        "name": "\"Rabbit Front\" OG T-Shirt / L",
-        "size": "L",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161314,
-        "name": "\"Rabbit Front\" OG T-Shirt / XL",
-        "size": "XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161315,
-        "name": "\"Rabbit Front\" OG T-Shirt / 2XL",
-        "size": "2XL",
-        "color": "Black",
-        "price": "30.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161316,
-        "name": "\"Rabbit Front\" OG T-Shirt / 3XL",
-        "size": "3XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161317,
-        "name": "\"Rabbit Front\" OG T-Shirt / 4XL",
-        "size": "4XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      },
-      {
-        "id": 5281161318,
-        "name": "\"Rabbit Front\" OG T-Shirt / 5XL",
-        "size": "5XL",
-        "color": "Black",
-        "price": "35.00",
-        "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/70e/70e1c61bea0654b556327f30e687d636_preview.png",
-        "backPreviewUrl": "https://files.cdn.printful.com/printfile-preview/979842143/bc5ba0c00ecd68dd15169f0ee148b5a3_preview.png"
-      }
-    ]
-  },
-  {
-    "id": 429713300,
-    "name": "Rabbit Trucker",
-    "description": "",
-    "thumbnailUrl": "https://files.cdn.printful.com/files/90e/90e5bf7cdb4dbe451c4826d5af97b894_preview.png",
-    "variants": [
-      {
-        "id": 5281161308,
-        "name": "Rabbit Trucker / Black/ White",
-        "size": "One size",
-        "color": "Black/ White",
+        "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/4f9/4f9fcd42b734f80441b030d96498e30c_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
       },
       {
-        "id": 5281161309,
-        "name": "Rabbit Trucker / White",
-        "size": "One size",
+        "id": 38160,
+        "name": "\"Follow Me\" Tee / Red / S",
+        "size": "S",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38161,
+        "name": "\"Follow Me\" Tee / Royal / S",
+        "size": "S",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38197,
+        "name": "\"Follow Me\" Tee / Dark Chocolate / XL",
+        "size": "XL",
+        "color": "Dark Chocolate",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 63295,
+        "name": "\"Follow Me\" Tee / Dark Heather / M",
+        "size": "M",
+        "color": "Dark Heather",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38180,
+        "name": "\"Follow Me\" Tee / Military Green / M",
+        "size": "M",
+        "color": "Military Green",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38191,
+        "name": "\"Follow Me\" Tee / White / L",
+        "size": "L",
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://files.cdn.printful.com/files/54d/54d0eb3eb5061246bb2b6eba10c205d8_preview.png"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38200,
+        "name": "\"Follow Me\" Tee / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38188,
+        "name": "\"Follow Me\" Tee / Red / L",
+        "size": "L",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38186,
+        "name": "\"Follow Me\" Tee / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38203,
+        "name": "\"Follow Me\" Tee / Royal / XL",
+        "size": "XL",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38202,
+        "name": "\"Follow Me\" Tee / Red / XL",
+        "size": "XL",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38158,
+        "name": "\"Follow Me\" Tee / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38174,
+        "name": "\"Follow Me\" Tee / Red / M",
+        "size": "M",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38189,
+        "name": "\"Follow Me\" Tee / Royal / L",
+        "size": "L",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38205,
+        "name": "\"Follow Me\" Tee / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38155,
+        "name": "\"Follow Me\" Tee / Dark Chocolate / S",
+        "size": "S",
+        "color": "Dark Chocolate",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38190,
+        "name": "\"Follow Me\" Tee / Sport Grey / L",
+        "size": "L",
+        "color": "Sport Grey",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38176,
+        "name": "\"Follow Me\" Tee / Sport Grey / M",
+        "size": "M",
+        "color": "Sport Grey",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38166,
+        "name": "\"Follow Me\" Tee / Military Green / S",
+        "size": "S",
+        "color": "Military Green",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 63290,
+        "name": "\"Follow Me\" Tee / Dark Heather / S",
+        "size": "S",
+        "color": "Dark Heather",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38183,
+        "name": "\"Follow Me\" Tee / Dark Chocolate / L",
+        "size": "L",
+        "color": "Dark Chocolate",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38163,
+        "name": "\"Follow Me\" Tee / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38175,
+        "name": "\"Follow Me\" Tee / Royal / M",
+        "size": "M",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38206,
+        "name": "\"Follow Me\" Tee / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38192,
+        "name": "\"Follow Me\" Tee / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38162,
+        "name": "\"Follow Me\" Tee / Sport Grey / S",
+        "size": "S",
+        "color": "Sport Grey",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38178,
+        "name": "\"Follow Me\" Tee / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38177,
+        "name": "\"Follow Me\" Tee / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38204,
+        "name": "\"Follow Me\" Tee / Sport Grey / XL",
+        "size": "XL",
+        "color": "Sport Grey",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38169,
+        "name": "\"Follow Me\" Tee / Dark Chocolate / M",
+        "size": "M",
+        "color": "Dark Chocolate",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 63305,
+        "name": "\"Follow Me\" Tee / Dark Heather / XL",
+        "size": "XL",
+        "color": "Dark Heather",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38164,
+        "name": "\"Follow Me\" Tee / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38194,
+        "name": "\"Follow Me\" Tee / Military Green / L",
+        "size": "L",
+        "color": "Military Green",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38172,
+        "name": "\"Follow Me\" Tee / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 42118,
+        "name": "\"Follow Me\" Tee / Royal / 3XL",
+        "size": "3XL",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 42117,
+        "name": "\"Follow Me\" Tee / Red / 3XL",
+        "size": "3XL",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 42115,
+        "name": "\"Follow Me\" Tee / Navy / 3XL",
+        "size": "3XL",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38219,
+        "name": "\"Follow Me\" Tee / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38217,
+        "name": "\"Follow Me\" Tee / Royal / 2XL",
+        "size": "2XL",
+        "color": "Royal",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38220,
+        "name": "\"Follow Me\" Tee / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 63310,
+        "name": "\"Follow Me\" Tee / Dark Heather / 2XL",
+        "size": "2XL",
+        "color": "Dark Heather",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38211,
+        "name": "\"Follow Me\" Tee / Dark Chocolate / 2XL",
+        "size": "2XL",
+        "color": "Dark Chocolate",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38214,
+        "name": "\"Follow Me\" Tee / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38218,
+        "name": "\"Follow Me\" Tee / Sport Grey / 2XL",
+        "size": "2XL",
+        "color": "Sport Grey",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38222,
+        "name": "\"Follow Me\" Tee / Military Green / 2XL",
+        "size": "2XL",
+        "color": "Military Green",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+      },
+      {
+        "id": 38216,
+        "name": "\"Follow Me\" Tee / Red / 2XL",
+        "size": "2XL",
+        "color": "Red",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+      }
+    ]
+  },
+  {
+    "id": "69f41786d289a2e3d000a234",
+    "name": "Rabbit Ticket Tank",
+    "description": "A high-quality print of this slim fit tank-top will turn heads. Bystanders won't be disappointed - the racerback cut looks good on any woman's shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit. .: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/rabbit-ticket-tank.jpg?camera_label=front-2",
+    "variants": [
+      {
+        "id": 19289,
+        "name": "Rabbit Ticket Tank / L / Solid Black",
+        "size": "Solid Black",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 22208,
+        "name": "Rabbit Ticket Tank / XS / Solid Black",
+        "size": "Solid Black",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19287,
+        "name": "Rabbit Ticket Tank / S / Solid Black",
+        "size": "Solid Black",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19290,
+        "name": "Rabbit Ticket Tank / XL / Solid Black",
+        "size": "Solid Black",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19288,
+        "name": "Rabbit Ticket Tank / M / Solid Black",
+        "size": "Solid Black",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19291,
+        "name": "Rabbit Ticket Tank / 2XL / Solid Black",
+        "size": "Solid Black",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+      }
+    ]
+  },
+  {
+    "id": "69f3ef38ecf20bee5e091484",
+    "name": "\"Precious Nivens\" Crop Hoodie",
+    "description": "XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 Nothing looks more stylish and chic than a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a super stylish crop-top hoodie, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
+    "variants": [
+      {
+        "id": 68286,
+        "name": "\"Precious Nivens\" Crop Hoodie / Black / XS",
+        "size": "XS",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68289,
+        "name": "\"Precious Nivens\" Crop Hoodie / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68292,
+        "name": "\"Precious Nivens\" Crop Hoodie / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68295,
+        "name": "\"Precious Nivens\" Crop Hoodie / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": false,
+        "previewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
+      }
+    ]
+  },
+  {
+    "id": "69f3ebb04610656b2d0f5311",
+    "name": "Follow the Nivens Hoodie ",
+    "description": "This midweight fleece hoodie wraps you in a quiet, curious energy — like slipping into a warm alleyway that leads somewhere unexpected. The front shows a subtle circular emblem, while the back features a soft-illustrated white rabbit beneath a cool, blue waterfall and the words “FOLLOW THE WHITE RABBIT.” It reads gentle and whimsical, built for slow mornings with a book or late-night walks searching for small adventures. The dropped shoulders and classic fit give a relaxed silhouette that layers easily over tees. Wear it when you want comfort that nudges toward wonder: cozy enough for coffee runs, breathable for travel days, and thoughtfully made with sustainable and socially responsible production standards.Product features- 2-piece color-matched jersey lined hood for warmth and clean lines- Relaxed fit with dropped shoulders for easy layering- Front pouch pocket for hands and small items- Medium-heavy 8.4 oz fabric: soft 80/20 ring-spun cotton/poly blend (color-dependent blends)- OEKO-TEX Standard 100, FLA partner and WRAP-certified manufacturingCare instructions- Machine wash: cold (max 30C or 90F), gentle cycle- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+    "variants": [
+      {
+        "id": 109414,
+        "name": "Follow the Nivens Hoodie  / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109419,
+        "name": "Follow the Nivens Hoodie  / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109442,
+        "name": "Follow the Nivens Hoodie  / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109443,
+        "name": "Follow the Nivens Hoodie  / Forest Green / XL",
+        "size": "XL",
+        "color": "Forest Green",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109391,
+        "name": "Follow the Nivens Hoodie  / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109433,
+        "name": "Follow the Nivens Hoodie  / Purple / XL",
+        "size": "XL",
+        "color": "Purple",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109364,
+        "name": "Follow the Nivens Hoodie  / Purple / S",
+        "size": "S",
+        "color": "Purple",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109387,
+        "name": "Follow the Nivens Hoodie  / Purple / M",
+        "size": "M",
+        "color": "Purple",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109431,
+        "name": "Follow the Nivens Hoodie  / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109420,
+        "name": "Follow the Nivens Hoodie  / Forest Green / L",
+        "size": "L",
+        "color": "Forest Green",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109384,
+        "name": "Follow the Nivens Hoodie  / Maroon / M",
+        "size": "M",
+        "color": "Maroon",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109361,
+        "name": "Follow the Nivens Hoodie  / Maroon / S",
+        "size": "S",
+        "color": "Maroon",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109374,
+        "name": "Follow the Nivens Hoodie  / Forest Green / S",
+        "size": "S",
+        "color": "Forest Green",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109385,
+        "name": "Follow the Nivens Hoodie  / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109410,
+        "name": "Follow the Nivens Hoodie  / Purple / L",
+        "size": "L",
+        "color": "Purple",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109397,
+        "name": "Follow the Nivens Hoodie  / Forest Green / M",
+        "size": "M",
+        "color": "Forest Green",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109396,
+        "name": "Follow the Nivens Hoodie  / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109437,
+        "name": "Follow the Nivens Hoodie  / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109430,
+        "name": "Follow the Nivens Hoodie  / Maroon / XL",
+        "size": "XL",
+        "color": "Maroon",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109368,
+        "name": "Follow the Nivens Hoodie  / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109408,
+        "name": "Follow the Nivens Hoodie  / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109362,
+        "name": "Follow the Nivens Hoodie  / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109407,
+        "name": "Follow the Nivens Hoodie  / Maroon / L",
+        "size": "L",
+        "color": "Maroon",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109373,
+        "name": "Follow the Nivens Hoodie  / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109500,
+        "name": "Follow the Nivens Hoodie  / Navy / 4XL",
+        "size": "4XL",
+        "color": "Navy",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109511,
+        "name": "Follow the Nivens Hoodie  / Black / 4XL",
+        "size": "4XL",
+        "color": "Black",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109502,
+        "name": "Follow the Nivens Hoodie  / Purple / 4XL",
+        "size": "4XL",
+        "color": "Purple",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109512,
+        "name": "Follow the Nivens Hoodie  / Forest Green / 4XL",
+        "size": "4XL",
+        "color": "Forest Green",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109506,
+        "name": "Follow the Nivens Hoodie  / White / 4XL",
+        "size": "4XL",
+        "color": "White",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109499,
+        "name": "Follow the Nivens Hoodie  / Maroon / 4XL",
+        "size": "4XL",
+        "color": "Maroon",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109479,
+        "name": "Follow the Nivens Hoodie  / Purple / 3XL",
+        "size": "3XL",
+        "color": "Purple",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109483,
+        "name": "Follow the Nivens Hoodie  / White / 3XL",
+        "size": "3XL",
+        "color": "White",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109477,
+        "name": "Follow the Nivens Hoodie  / Navy / 3XL",
+        "size": "3XL",
+        "color": "Navy",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109476,
+        "name": "Follow the Nivens Hoodie  / Maroon / 3XL",
+        "size": "3XL",
+        "color": "Maroon",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109488,
+        "name": "Follow the Nivens Hoodie  / Black / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109489,
+        "name": "Follow the Nivens Hoodie  / Forest Green / 3XL",
+        "size": "3XL",
+        "color": "Forest Green",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109466,
+        "name": "Follow the Nivens Hoodie  / Forest Green / 2XL",
+        "size": "2XL",
+        "color": "Forest Green",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109420/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109454,
+        "name": "Follow the Nivens Hoodie  / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109456,
+        "name": "Follow the Nivens Hoodie  / Purple / 2XL",
+        "size": "2XL",
+        "color": "Purple",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109410/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109460,
+        "name": "Follow the Nivens Hoodie  / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109465,
+        "name": "Follow the Nivens Hoodie  / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109453,
+        "name": "Follow the Nivens Hoodie  / Maroon / 2XL",
+        "size": "2XL",
+        "color": "Maroon",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109407/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109534,
+        "name": "Follow the Nivens Hoodie  / Black / 5XL",
+        "size": "5XL",
+        "color": "Black",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109523,
+        "name": "Follow the Nivens Hoodie  / Navy / 5XL",
+        "size": "5XL",
+        "color": "Navy",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109408/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 109529,
+        "name": "Follow the Nivens Hoodie  / White / 5XL",
+        "size": "5XL",
+        "color": "White",
+        "price": "45.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109414/104655/follow-the-nivens-hoodie.jpg?camera_label=back"
+      }
+    ]
+  },
+  {
+    "id": "69f3da116bea0ab7a7072a38",
+    "name": "Precious Nivens Tank",
+    "description": "XSSMLXL2XL Width, in 13.98 15.00 15.98 16.97 17.99 18.98 Length, in 26.97 27.48 27.95 28.46 28.98 29.49 A high-quality print of this slim fit tank-top will turn heads. Bystanders won't be disappointed - the racerback cut looks good on any woman's shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit. .: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+    "variants": [
+      {
+        "id": 25940,
+        "name": "Precious Nivens Tank / M / Heather Grey",
+        "size": "Heather Grey",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 25941,
+        "name": "Precious Nivens Tank / L / Heather Grey",
+        "size": "Heather Grey",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19328,
+        "name": "Precious Nivens Tank / M / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19289,
+        "name": "Precious Nivens Tank / L / Solid Black",
+        "size": "Solid Black",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19357,
+        "name": "Precious Nivens Tank / S / Solid Royal",
+        "size": "Solid Royal",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 25942,
+        "name": "Precious Nivens Tank / XL / Heather Grey",
+        "size": "Heather Grey",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19360,
+        "name": "Precious Nivens Tank / XL / Solid Royal",
+        "size": "Solid Royal",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22208,
+        "name": "Precious Nivens Tank / XS / Solid Black",
+        "size": "Solid Black",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19385,
+        "name": "Precious Nivens Tank / XL / Solid White",
+        "size": "Solid White",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19287,
+        "name": "Precious Nivens Tank / S / Solid Black",
+        "size": "Solid Black",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19329,
+        "name": "Precious Nivens Tank / L / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19290,
+        "name": "Precious Nivens Tank / XL / Solid Black",
+        "size": "Solid Black",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19382,
+        "name": "Precious Nivens Tank / S / Solid White",
+        "size": "Solid White",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19359,
+        "name": "Precious Nivens Tank / L / Solid Royal",
+        "size": "Solid Royal",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19327,
+        "name": "Precious Nivens Tank / S / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19330,
+        "name": "Precious Nivens Tank / XL / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19358,
+        "name": "Precious Nivens Tank / M / Solid Royal",
+        "size": "Solid Royal",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22216,
+        "name": "Precious Nivens Tank / XS / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19288,
+        "name": "Precious Nivens Tank / M / Solid Black",
+        "size": "Solid Black",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19384,
+        "name": "Precious Nivens Tank / L / Solid White",
+        "size": "Solid White",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 25939,
+        "name": "Precious Nivens Tank / S / Heather Grey",
+        "size": "Heather Grey",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22227,
+        "name": "Precious Nivens Tank / XS / Solid White",
+        "size": "Solid White",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19383,
+        "name": "Precious Nivens Tank / M / Solid White",
+        "size": "Solid White",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22212,
+        "name": "Precious Nivens Tank / XS / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19334,
+        "name": "Precious Nivens Tank / L / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19313,
+        "name": "Precious Nivens Tank / M / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22213,
+        "name": "Precious Nivens Tank / XS / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19333,
+        "name": "Precious Nivens Tank / M / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22219,
+        "name": "Precious Nivens Tank / XS / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19335,
+        "name": "Precious Nivens Tank / XL / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 25938,
+        "name": "Precious Nivens Tank / XS / Heather Grey",
+        "size": "Heather Grey",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19312,
+        "name": "Precious Nivens Tank / S / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19315,
+        "name": "Precious Nivens Tank / XL / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22217,
+        "name": "Precious Nivens Tank / XS / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19345,
+        "name": "Precious Nivens Tank / XL / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19307,
+        "name": "Precious Nivens Tank / S / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 22222,
+        "name": "Precious Nivens Tank / XS / Solid Royal",
+        "size": "Solid Royal",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19343,
+        "name": "Precious Nivens Tank / M / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19308,
+        "name": "Precious Nivens Tank / M / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19314,
+        "name": "Precious Nivens Tank / L / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19344,
+        "name": "Precious Nivens Tank / L / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19332,
+        "name": "Precious Nivens Tank / S / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19309,
+        "name": "Precious Nivens Tank / L / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19310,
+        "name": "Precious Nivens Tank / XL / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19342,
+        "name": "Precious Nivens Tank / S / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19331,
+        "name": "Precious Nivens Tank / 2XL / Solid Midnight Navy",
+        "size": "Solid Midnight Navy",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19291,
+        "name": "Precious Nivens Tank / 2XL / Solid Black",
+        "size": "Solid Black",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19361,
+        "name": "Precious Nivens Tank / 2XL / Solid Royal",
+        "size": "Solid Royal",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19386,
+        "name": "Precious Nivens Tank / 2XL / Solid White",
+        "size": "Solid White",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 25943,
+        "name": "Precious Nivens Tank / 2XL / Heather Grey",
+        "size": "Heather Grey",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19316,
+        "name": "Precious Nivens Tank / 2XL / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19311,
+        "name": "Precious Nivens Tank / 2XL / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19346,
+        "name": "Precious Nivens Tank / 2XL / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 19336,
+        "name": "Precious Nivens Tank / 2XL / Solid Military Green",
+        "size": "Solid Military Green",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120724,
+        "name": "Precious Nivens Tank / 2XL / Hot Pink",
+        "size": "Hot Pink",
+        "color": "2XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120716,
+        "name": "Precious Nivens Tank / S / Hot Pink",
+        "size": "Hot Pink",
+        "color": "S",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120720,
+        "name": "Precious Nivens Tank / L / Hot Pink",
+        "size": "Hot Pink",
+        "color": "L",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120718,
+        "name": "Precious Nivens Tank / M / Hot Pink",
+        "size": "Hot Pink",
+        "color": "M",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120714,
+        "name": "Precious Nivens Tank / XS / Hot Pink",
+        "size": "Hot Pink",
+        "color": "XS",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      },
+      {
+        "id": 120722,
+        "name": "Precious Nivens Tank / XL / Hot Pink",
+        "size": "Hot Pink",
+        "color": "XL",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+      }
+    ]
+  },
+  {
+    "id": "69f3d8634da671d6620487fe",
+    "name": "Follow Nivens Tee",
+    "description": "This lightweight crew-neck tee carries a playful, slightly rebellious energy. A crisp white canvas showcases a bold, neon-green graphic of a bespectacled white rabbit mid-stride, framed by the rallying line “Follow the White Rabbit” and the subtle WCS emblem on the chest and sleeve. The shirt feels breathable and easy to layer — wear it to shows, late-night meetups, or while wandering city streets hunting the next secret spot. The vibe is curious and adventurous: smart, a little mischievous, and unmistakably club-like. Thoughtful details like a tear-away label, ribbed collar, and side seams keep the fit neat and comfortable through repeated wear.This tee suits collectors of graphic streetwear and fans of modern, slightly retro-inspired illustration. It pairs well with denim, layered under an open flannel or bomber, or worn solo to make the neon rabbit the focal point. Suitable for evenings out, fan gatherings, conventions, or casual weekend outings where you want to signal curiosity and community.Product features- 100% Airlume combed & ring-spun cotton (lightweight 4.2 oz) for breathability and a soft hand- Retail crew-neck fit with ribbed knit collar, side seams and shoulder tape for shape and durability- Crisp, detailed prints: DTF or DTG techniques used depending on placement for vibrant, long-lasting graphics- Tear-away label for comfort; age: adult sizing; REACH certified- Multiple fabric blends for heathered colors; responsibly produced under fair-labor certificationsCare instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2",
+    "variants": [
+      {
+        "id": 18328,
+        "name": "Follow Nivens Tee / Heather True Royal / 2XL",
+        "size": "2XL",
+        "color": "Heather True Royal",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18160,
+        "name": "Follow Nivens Tee / Deep Heather / 2XL",
+        "size": "2XL",
+        "color": "Deep Heather",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39547,
+        "name": "Follow Nivens Tee / Heather Maroon / 2XL",
+        "size": "2XL",
+        "color": "Heather Maroon",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18544,
+        "name": "Follow Nivens Tee / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80581,
+        "name": "Follow Nivens Tee / Oxblood Black / 2XL",
+        "size": "2XL",
+        "color": "Oxblood Black",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18296,
+        "name": "Follow Nivens Tee / Heather Red / 2XL",
+        "size": "2XL",
+        "color": "Heather Red",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64313,
+        "name": "Follow Nivens Tee / Dark Olive / 2XL",
+        "size": "2XL",
+        "color": "Dark Olive",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18104,
+        "name": "Follow Nivens Tee / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18400,
+        "name": "Follow Nivens Tee / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18384,
+        "name": "Follow Nivens Tee / Mint / 2XL",
+        "size": "2XL",
+        "color": "Mint",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39589,
+        "name": "Follow Nivens Tee / Brown / 2XL",
+        "size": "2XL",
+        "color": "Brown",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18144,
+        "name": "Follow Nivens Tee / Dark Grey / 2XL",
+        "size": "2XL",
+        "color": "Dark Grey",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18297,
+        "name": "Follow Nivens Tee / Heather Red / 3XL",
+        "size": "3XL",
+        "color": "Heather Red",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18401,
+        "name": "Follow Nivens Tee / Navy / 3XL",
+        "size": "3XL",
+        "color": "Navy",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18545,
+        "name": "Follow Nivens Tee / White / 3XL",
+        "size": "3XL",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18105,
+        "name": "Follow Nivens Tee / Black / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64314,
+        "name": "Follow Nivens Tee / Dark Olive / 3XL",
+        "size": "3XL",
+        "color": "Dark Olive",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18161,
+        "name": "Follow Nivens Tee / Deep Heather / 3XL",
+        "size": "3XL",
+        "color": "Deep Heather",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18329,
+        "name": "Follow Nivens Tee / Heather True Royal / 3XL",
+        "size": "3XL",
+        "color": "Heather True Royal",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18385,
+        "name": "Follow Nivens Tee / Mint / 3XL",
+        "size": "3XL",
+        "color": "Mint",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80582,
+        "name": "Follow Nivens Tee / Oxblood Black / 3XL",
+        "size": "3XL",
+        "color": "Oxblood Black",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39550,
+        "name": "Follow Nivens Tee / Heather Maroon / 3XL",
+        "size": "3XL",
+        "color": "Heather Maroon",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39592,
+        "name": "Follow Nivens Tee / Brown / 3XL",
+        "size": "3XL",
+        "color": "Brown",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18145,
+        "name": "Follow Nivens Tee / Dark Grey / 3XL",
+        "size": "3XL",
+        "color": "Dark Grey",
+        "price": "46.67",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 45078,
+        "name": "Follow Nivens Tee / Brown / 4XL",
+        "size": "4XL",
+        "color": "Brown",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18106,
+        "name": "Follow Nivens Tee / Black / 4XL",
+        "size": "4XL",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18162,
+        "name": "Follow Nivens Tee / Deep Heather / 4XL",
+        "size": "4XL",
+        "color": "Deep Heather",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80583,
+        "name": "Follow Nivens Tee / Oxblood Black / 4XL",
+        "size": "4XL",
+        "color": "Oxblood Black",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 45084,
+        "name": "Follow Nivens Tee / Heather Maroon / 4XL",
+        "size": "4XL",
+        "color": "Heather Maroon",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18298,
+        "name": "Follow Nivens Tee / Heather Red / 4XL",
+        "size": "4XL",
+        "color": "Heather Red",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18386,
+        "name": "Follow Nivens Tee / Mint / 4XL",
+        "size": "4XL",
+        "color": "Mint",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18402,
+        "name": "Follow Nivens Tee / Navy / 4XL",
+        "size": "4XL",
+        "color": "Navy",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18546,
+        "name": "Follow Nivens Tee / White / 4XL",
+        "size": "4XL",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64315,
+        "name": "Follow Nivens Tee / Dark Olive / 4XL",
+        "size": "4XL",
+        "color": "Dark Olive",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18146,
+        "name": "Follow Nivens Tee / Dark Grey / 4XL",
+        "size": "4XL",
+        "color": "Dark Grey",
+        "price": "51.12",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101666,
+        "name": "Follow Nivens Tee / Black / 5XL",
+        "size": "5XL",
+        "color": "Black",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101776,
+        "name": "Follow Nivens Tee / White / 5XL",
+        "size": "5XL",
+        "color": "White",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101747,
+        "name": "Follow Nivens Tee / Navy / 5XL",
+        "size": "5XL",
+        "color": "Navy",
+        "price": "53.93",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18397,
+        "name": "Follow Nivens Tee / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18381,
+        "name": "Follow Nivens Tee / Mint / M",
+        "size": "M",
+        "color": "Mint",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18156,
+        "name": "Follow Nivens Tee / Deep Heather / S",
+        "size": "S",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18158,
+        "name": "Follow Nivens Tee / Deep Heather / L",
+        "size": "L",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18541,
+        "name": "Follow Nivens Tee / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39583,
+        "name": "Follow Nivens Tee / Brown / L",
+        "size": "L",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18396,
+        "name": "Follow Nivens Tee / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18100,
+        "name": "Follow Nivens Tee / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39586,
+        "name": "Follow Nivens Tee / Brown / XL",
+        "size": "XL",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18399,
+        "name": "Follow Nivens Tee / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39544,
+        "name": "Follow Nivens Tee / Heather Maroon / XL",
+        "size": "XL",
+        "color": "Heather Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80580,
+        "name": "Follow Nivens Tee / Oxblood Black / XL",
+        "size": "XL",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80578,
+        "name": "Follow Nivens Tee / Oxblood Black / M",
+        "size": "M",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18103,
+        "name": "Follow Nivens Tee / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18295,
+        "name": "Follow Nivens Tee / Heather Red / XL",
+        "size": "XL",
+        "color": "Heather Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64309,
+        "name": "Follow Nivens Tee / Dark Olive / S",
+        "size": "S",
+        "color": "Dark Olive",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18380,
+        "name": "Follow Nivens Tee / Mint / S",
+        "size": "S",
+        "color": "Mint",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64311,
+        "name": "Follow Nivens Tee / Dark Olive / L",
+        "size": "L",
+        "color": "Dark Olive",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39541,
+        "name": "Follow Nivens Tee / Heather Maroon / L",
+        "size": "L",
+        "color": "Heather Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18292,
+        "name": "Follow Nivens Tee / Heather Red / S",
+        "size": "S",
+        "color": "Heather Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80579,
+        "name": "Follow Nivens Tee / Oxblood Black / L",
+        "size": "L",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18159,
+        "name": "Follow Nivens Tee / Deep Heather / XL",
+        "size": "XL",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39580,
+        "name": "Follow Nivens Tee / Brown / M",
+        "size": "M",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18101,
+        "name": "Follow Nivens Tee / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18542,
+        "name": "Follow Nivens Tee / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18398,
+        "name": "Follow Nivens Tee / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64310,
+        "name": "Follow Nivens Tee / Dark Olive / M",
+        "size": "M",
+        "color": "Dark Olive",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39535,
+        "name": "Follow Nivens Tee / Heather Maroon / S",
+        "size": "S",
+        "color": "Heather Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18324,
+        "name": "Follow Nivens Tee / Heather True Royal / S",
+        "size": "S",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39577,
+        "name": "Follow Nivens Tee / Brown / S",
+        "size": "S",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18294,
+        "name": "Follow Nivens Tee / Heather Red / L",
+        "size": "L",
+        "color": "Heather Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18102,
+        "name": "Follow Nivens Tee / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39538,
+        "name": "Follow Nivens Tee / Heather Maroon / M",
+        "size": "M",
+        "color": "Heather Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18383,
+        "name": "Follow Nivens Tee / Mint / XL",
+        "size": "XL",
+        "color": "Mint",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18540,
+        "name": "Follow Nivens Tee / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18293,
+        "name": "Follow Nivens Tee / Heather Red / M",
+        "size": "M",
+        "color": "Heather Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18327,
+        "name": "Follow Nivens Tee / Heather True Royal / XL",
+        "size": "XL",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18382,
+        "name": "Follow Nivens Tee / Mint / L",
+        "size": "L",
+        "color": "Mint",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18543,
+        "name": "Follow Nivens Tee / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18157,
+        "name": "Follow Nivens Tee / Deep Heather / M",
+        "size": "M",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18326,
+        "name": "Follow Nivens Tee / Heather True Royal / L",
+        "size": "L",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18325,
+        "name": "Follow Nivens Tee / Heather True Royal / M",
+        "size": "M",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64312,
+        "name": "Follow Nivens Tee / Dark Olive / XL",
+        "size": "XL",
+        "color": "Dark Olive",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80577,
+        "name": "Follow Nivens Tee / Oxblood Black / S",
+        "size": "S",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18142,
+        "name": "Follow Nivens Tee / Dark Grey / L",
+        "size": "L",
+        "color": "Dark Grey",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18140,
+        "name": "Follow Nivens Tee / Dark Grey / S",
+        "size": "S",
+        "color": "Dark Grey",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18141,
+        "name": "Follow Nivens Tee / Dark Grey / M",
+        "size": "M",
+        "color": "Dark Grey",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18143,
+        "name": "Follow Nivens Tee / Dark Grey / XL",
+        "size": "XL",
+        "color": "Dark Grey",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18099,
+        "name": "Follow Nivens Tee / Black / XS",
+        "size": "XS",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67480,
+        "name": "Follow Nivens Tee / Heather Grass Green / XS",
+        "size": "XS",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64308,
+        "name": "Follow Nivens Tee / Dark Olive / XS",
+        "size": "XS",
+        "color": "Dark Olive",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39574,
+        "name": "Follow Nivens Tee / Brown / XS",
+        "size": "XS",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80576,
+        "name": "Follow Nivens Tee / Oxblood Black / XS",
+        "size": "XS",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18395,
+        "name": "Follow Nivens Tee / Navy / XS",
+        "size": "XS",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67481,
+        "name": "Follow Nivens Tee / Heather Grass Green / S",
+        "size": "S",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18155,
+        "name": "Follow Nivens Tee / Deep Heather / XS",
+        "size": "XS",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18379,
+        "name": "Follow Nivens Tee / Mint / XS",
+        "size": "XS",
+        "color": "Mint",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39532,
+        "name": "Follow Nivens Tee / Heather Maroon / XS",
+        "size": "XS",
+        "color": "Heather Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18539,
+        "name": "Follow Nivens Tee / White / XS",
+        "size": "XS",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18291,
+        "name": "Follow Nivens Tee / Heather Red / XS",
+        "size": "XS",
+        "color": "Heather Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18139,
+        "name": "Follow Nivens Tee / Dark Grey / XS",
+        "size": "XS",
+        "color": "Dark Grey",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18323,
+        "name": "Follow Nivens Tee / Heather True Royal / XS",
+        "size": "XS",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
+      }
+    ]
+  },
+  {
+    "id": "69f3d39f19578904a201b330",
+    "name": "Dance Anyway - Nivens Tee",
+    "description": "This lightweight crew-neck tee brings playful energy to everyday wear. A bold graphic of a rocket-powered bunny wearing retro goggles bursts forward beneath the cheeky slogan “DANCE ANYWAY.” Neon green accents and motion lines give the artwork a cyberclub vibe. The retail fit sits cleanly for layering or standing alone, while the soft Airlume combed ring-spun cotton keeps things breathable during long days or late-night sets. Subtle sleeve prints echo the main design for a cohesive look that reads like streetwear with a wink. Wear it to a set, rehearsal, or while you’re out chasing beats — it carries movement, attitude, and a little bit of mischief.Product features- 100% Airlume combed and ring-spun cotton for a soft, breathable feel- Retail crew-neck fit with ribbed knit collar and shoulder tape for shape retention- Side seams provide structure and longer-lasting shape- Printed labels and sleeve/graphic prints using DTF or DTG methods for crisp, vibrant detail- Tear-away label, REACH certified, ethically produced (Bella+Canvas sourcing)Care instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
+    "variants": [
+      {
+        "id": 18328,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / 2XL",
+        "size": "2XL",
+        "color": "Heather True Royal",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18160,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / 2XL",
+        "size": "2XL",
+        "color": "Deep Heather",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18176,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / 2XL",
+        "size": "2XL",
+        "color": "Evergreen",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64321,
+        "name": "Dance Anyway - Nivens Tee / Military Green / 2XL",
+        "size": "2XL",
+        "color": "Military Green",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18544,
+        "name": "Dance Anyway - Nivens Tee / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80581,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / 2XL",
+        "size": "2XL",
+        "color": "Oxblood Black",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80605,
+        "name": "Dance Anyway - Nivens Tee / Synthetic Green / 2XL",
+        "size": "2XL",
+        "color": "Synthetic Green",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18104,
+        "name": "Dance Anyway - Nivens Tee / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18376,
+        "name": "Dance Anyway - Nivens Tee / Maroon / 2XL",
+        "size": "2XL",
+        "color": "Maroon",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18400,
+        "name": "Dance Anyway - Nivens Tee / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39589,
+        "name": "Dance Anyway - Nivens Tee / Brown / 2XL",
+        "size": "2XL",
+        "color": "Brown",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67485,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / 2XL",
+        "size": "2XL",
+        "color": "Heather Grass Green",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18401,
+        "name": "Dance Anyway - Nivens Tee / Navy / 3XL",
+        "size": "3XL",
+        "color": "Navy",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18377,
+        "name": "Dance Anyway - Nivens Tee / Maroon / 3XL",
+        "size": "3XL",
+        "color": "Maroon",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18545,
+        "name": "Dance Anyway - Nivens Tee / White / 3XL",
+        "size": "3XL",
+        "color": "White",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64322,
+        "name": "Dance Anyway - Nivens Tee / Military Green / 3XL",
+        "size": "3XL",
+        "color": "Military Green",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18105,
+        "name": "Dance Anyway - Nivens Tee / Black / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18449,
+        "name": "Dance Anyway - Nivens Tee / Red / 3XL",
+        "size": "3XL",
+        "color": "Red",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80606,
+        "name": "Dance Anyway - Nivens Tee / Synthetic Green / 3XL",
+        "size": "3XL",
+        "color": "Synthetic Green",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18177,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / 3XL",
+        "size": "3XL",
+        "color": "Evergreen",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18161,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / 3XL",
+        "size": "3XL",
+        "color": "Deep Heather",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80582,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / 3XL",
+        "size": "3XL",
+        "color": "Oxblood Black",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39592,
+        "name": "Dance Anyway - Nivens Tee / Brown / 3XL",
+        "size": "3XL",
+        "color": "Brown",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67486,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / 3XL",
+        "size": "3XL",
+        "color": "Heather Grass Green",
+        "price": "46.66",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 45078,
+        "name": "Dance Anyway - Nivens Tee / Brown / 4XL",
+        "size": "4XL",
+        "color": "Brown",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18178,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / 4XL",
+        "size": "4XL",
+        "color": "Evergreen",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18378,
+        "name": "Dance Anyway - Nivens Tee / Maroon / 4XL",
+        "size": "4XL",
+        "color": "Maroon",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18106,
+        "name": "Dance Anyway - Nivens Tee / Black / 4XL",
+        "size": "4XL",
+        "color": "Black",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18162,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / 4XL",
+        "size": "4XL",
+        "color": "Deep Heather",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80583,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / 4XL",
+        "size": "4XL",
+        "color": "Oxblood Black",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80607,
+        "name": "Dance Anyway - Nivens Tee / Synthetic Green / 4XL",
+        "size": "4XL",
+        "color": "Synthetic Green",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18450,
+        "name": "Dance Anyway - Nivens Tee / Red / 4XL",
+        "size": "4XL",
+        "color": "Red",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64323,
+        "name": "Dance Anyway - Nivens Tee / Military Green / 4XL",
+        "size": "4XL",
+        "color": "Military Green",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18402,
+        "name": "Dance Anyway - Nivens Tee / Navy / 4XL",
+        "size": "4XL",
+        "color": "Navy",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18546,
+        "name": "Dance Anyway - Nivens Tee / White / 4XL",
+        "size": "4XL",
+        "color": "White",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67487,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / 4XL",
+        "size": "4XL",
+        "color": "Heather Grass Green",
+        "price": "51.11",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101666,
+        "name": "Dance Anyway - Nivens Tee / Black / 5XL",
+        "size": "5XL",
+        "color": "Black",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101776,
+        "name": "Dance Anyway - Nivens Tee / White / 5XL",
+        "size": "5XL",
+        "color": "White",
+        "price": "53.93",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 101756,
+        "name": "Dance Anyway - Nivens Tee / Red / 5XL",
+        "size": "5XL",
+        "color": "Red",
+        "price": "53.93",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18397,
+        "name": "Dance Anyway - Nivens Tee / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18156,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / S",
+        "size": "S",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18175,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / XL",
+        "size": "XL",
+        "color": "Evergreen",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18158,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / L",
+        "size": "L",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18541,
+        "name": "Dance Anyway - Nivens Tee / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18447,
+        "name": "Dance Anyway - Nivens Tee / Red / XL",
+        "size": "XL",
+        "color": "Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39583,
+        "name": "Dance Anyway - Nivens Tee / Brown / L",
+        "size": "L",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18396,
+        "name": "Dance Anyway - Nivens Tee / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18100,
+        "name": "Dance Anyway - Nivens Tee / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18173,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / M",
+        "size": "M",
+        "color": "Evergreen",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39586,
+        "name": "Dance Anyway - Nivens Tee / Brown / XL",
+        "size": "XL",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18399,
+        "name": "Dance Anyway - Nivens Tee / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80580,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / XL",
+        "size": "XL",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18172,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / S",
+        "size": "S",
+        "color": "Evergreen",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80578,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / M",
+        "size": "M",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18103,
+        "name": "Dance Anyway - Nivens Tee / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18373,
+        "name": "Dance Anyway - Nivens Tee / Maroon / M",
+        "size": "M",
+        "color": "Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64319,
+        "name": "Dance Anyway - Nivens Tee / Military Green / L",
+        "size": "L",
+        "color": "Military Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80579,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / L",
+        "size": "L",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18159,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / XL",
+        "size": "XL",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39580,
+        "name": "Dance Anyway - Nivens Tee / Brown / M",
+        "size": "M",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18101,
+        "name": "Dance Anyway - Nivens Tee / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18446,
+        "name": "Dance Anyway - Nivens Tee / Red / L",
+        "size": "L",
+        "color": "Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18542,
+        "name": "Dance Anyway - Nivens Tee / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18398,
+        "name": "Dance Anyway - Nivens Tee / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64320,
+        "name": "Dance Anyway - Nivens Tee / Military Green / XL",
+        "size": "XL",
+        "color": "Military Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64317,
+        "name": "Dance Anyway - Nivens Tee / Military Green / S",
+        "size": "S",
+        "color": "Military Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18324,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / S",
+        "size": "S",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39577,
+        "name": "Dance Anyway - Nivens Tee / Brown / S",
+        "size": "S",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18444,
+        "name": "Dance Anyway - Nivens Tee / Red / S",
+        "size": "S",
+        "color": "Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18102,
+        "name": "Dance Anyway - Nivens Tee / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18372,
+        "name": "Dance Anyway - Nivens Tee / Maroon / S",
+        "size": "S",
+        "color": "Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18540,
+        "name": "Dance Anyway - Nivens Tee / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18174,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / L",
+        "size": "L",
+        "color": "Evergreen",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18327,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / XL",
+        "size": "XL",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18543,
+        "name": "Dance Anyway - Nivens Tee / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18157,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / M",
+        "size": "M",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18374,
+        "name": "Dance Anyway - Nivens Tee / Maroon / L",
+        "size": "L",
+        "color": "Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64318,
+        "name": "Dance Anyway - Nivens Tee / Military Green / M",
+        "size": "M",
+        "color": "Military Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18445,
+        "name": "Dance Anyway - Nivens Tee / Red / M",
+        "size": "M",
+        "color": "Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18326,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / L",
+        "size": "L",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18375,
+        "name": "Dance Anyway - Nivens Tee / Maroon / XL",
+        "size": "XL",
+        "color": "Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18325,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / M",
+        "size": "M",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80577,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / S",
+        "size": "S",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18099,
+        "name": "Dance Anyway - Nivens Tee / Black / XS",
+        "size": "XS",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 64316,
+        "name": "Dance Anyway - Nivens Tee / Military Green / XS",
+        "size": "XS",
+        "color": "Military Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67480,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / XS",
+        "size": "XS",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18371,
+        "name": "Dance Anyway - Nivens Tee / Maroon / XS",
+        "size": "XS",
+        "color": "Maroon",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18171,
+        "name": "Dance Anyway - Nivens Tee / Evergreen / XS",
+        "size": "XS",
+        "color": "Evergreen",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39574,
+        "name": "Dance Anyway - Nivens Tee / Brown / XS",
+        "size": "XS",
+        "color": "Brown",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80576,
+        "name": "Dance Anyway - Nivens Tee / Oxblood Black / XS",
+        "size": "XS",
+        "color": "Oxblood Black",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67482,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / M",
+        "size": "M",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67483,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / L",
+        "size": "L",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18395,
+        "name": "Dance Anyway - Nivens Tee / Navy / XS",
+        "size": "XS",
+        "color": "Navy",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67481,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / S",
+        "size": "S",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18155,
+        "name": "Dance Anyway - Nivens Tee / Deep Heather / XS",
+        "size": "XS",
+        "color": "Deep Heather",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18539,
+        "name": "Dance Anyway - Nivens Tee / White / XS",
+        "size": "XS",
+        "color": "White",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18443,
+        "name": "Dance Anyway - Nivens Tee / Red / XS",
+        "size": "XS",
+        "color": "Red",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 67484,
+        "name": "Dance Anyway - Nivens Tee / Heather Grass Green / XL",
+        "size": "XL",
+        "color": "Heather Grass Green",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18323,
+        "name": "Dance Anyway - Nivens Tee / Heather True Royal / XS",
+        "size": "XS",
+        "color": "Heather True Royal",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18448,
+        "name": "Dance Anyway - Nivens Tee / Red / 2XL",
+        "size": "2XL",
+        "color": "Red",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
+      }
+    ]
+  },
+  {
+    "id": "69f3b353b6929f396905e10c",
+    "name": "WRS OG Rabbit Crop Hoodie",
+    "description": "Nothing looks more stylish and chic than a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a super stylish crop-top hoodie, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
+    "variants": [
+      {
+        "id": 68286,
+        "name": "WRS OG Rabbit Crop Hoodie / Black / XS",
+        "size": "XS",
+        "color": "Black",
+        "price": "50.35",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68289,
+        "name": "WRS OG Rabbit Crop Hoodie / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "50.35",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68292,
+        "name": "WRS OG Rabbit Crop Hoodie / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "50.35",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
+      },
+      {
+        "id": 68295,
+        "name": "WRS OG Rabbit Crop Hoodie / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "50.35",
+        "inStock": false,
+        "previewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
+      }
+    ]
+  },
+  {
+    "id": "69f3a3af436937417709add9",
+    "name": "\"If It Glows\" Shirt",
+    "description": "This relaxed, heavyweight tee brings playful attitude and street-ready comfort together. The garment-dyed cotton has a lived-in softness and depth of color that settles into your wardrobe like an old favorite. Bold, slightly distressed green lettering reads “IF IT GLOWS IT WON’T SAY NO” with a small rabbit motif—a cheeky, rebellious graphic that reads loud without shouting. Wear it on late-night runs, to underground shows, or when you want a statement that’s equal parts ironic and confident. The roomy fit and substantial 6.1 oz fabric feel steady on the body while the tubular knit and sewn-in label keep the silhouette clean. Sized from S to 4XL and offered in many colors, this tee is built to be lived in and lived up to.Product features- 100% ring-spun US cotton for durable, soft comfort- Garment-dyed finish for soft texture and vintage look- Heavyweight 6.1 oz fabric with relaxed fit- Tubular, no side seams and double-needle stitching for durability- Available S–4XL with a sewn-in labelCare instructions- Machine wash: cold (max 30C or 90F)- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+    "variants": [
+      {
+        "id": 79114,
+        "name": "\"If It Glows\" Shirt / Black / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73204,
+        "name": "\"If It Glows\" Shirt / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73208,
+        "name": "\"If It Glows\" Shirt / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73200,
+        "name": "\"If It Glows\" Shirt / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73196,
+        "name": "\"If It Glows\" Shirt / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73207,
+        "name": "\"If It Glows\" Shirt / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 73212,
+        "name": "\"If It Glows\" Shirt / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "25.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+      },
+      {
+        "id": 101423,
+        "name": "\"If It Glows\" Shirt / Black / 4XL",
+        "size": "4XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
       }
     ]
   }

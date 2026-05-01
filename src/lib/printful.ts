@@ -10,42 +10,49 @@ export interface ProductVariant {
 }
 
 export interface Product {
-  id: number;
+  id: string;
   name: string;
   description: string;
   thumbnailUrl: string;
   variants: ProductVariant[];
 }
 
-export interface PrintfulOrderRecipient {
-  name: string;
+export interface PrintifyOrderRecipient {
+  first_name: string;
+  last_name: string;
   email: string;
   address1: string;
   city: string;
-  state_code: string;
-  country_code: string;
+  region: string;
+  country: string;
   zip: string;
 }
 
-export async function createPrintfulOrder(
-  apiKey: string,
-  recipient: PrintfulOrderRecipient,
-  items: { variantId: number; quantity: number }[]
+export async function createPrintifyOrder(
+  apiToken: string,
+  shopId: string,
+  recipient: PrintifyOrderRecipient,
+  items: { productId: string; variantId: number; quantity: number }[]
 ): Promise<void> {
-  const res = await fetch('https://api.printful.com/orders', {
+  const res = await fetch(`https://api.printify.com/v1/shops/${shopId}/orders.json`, {
     method: 'POST',
     headers: {
-      'Authorization': `Bearer ${apiKey}`,
+      Authorization: `Bearer ${apiToken}`,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      recipient,
-      items: items.map(i => ({ variant_id: i.variantId, quantity: i.quantity })),
+      line_items: items.map(i => ({
+        product_id: i.productId,
+        variant_id: i.variantId,
+        quantity: i.quantity,
+      })),
+      shipping_method: 1,
+      address_to: recipient,
     }),
   });
 
   if (!res.ok) {
     const body = await res.text();
-    throw new Error(`Printful order failed: ${res.status} ${body}`);
+    throw new Error(`Printify order failed: ${res.status} ${body}`);
   }
 }

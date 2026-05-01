@@ -1,55 +1,69 @@
+// Fetches product data from Printify and saves as JSON.
+// Run with: PRINTIFY_API_TOKEN=xxx PRINTIFY_SHOP_ID=xxx node scripts/fetch-products.js
+
 import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-const API_KEY = process.env.PRINTFUL_API_KEY;
-const STORE_ID = process.env.PRINTFUL_STORE_ID;
+const API_TOKEN = process.env.PRINTIFY_API_TOKEN;
+const SHOP_ID = process.env.PRINTIFY_SHOP_ID;
 
-if (!API_KEY) throw new Error('PRINTFUL_API_KEY is required');
-if (!STORE_ID) throw new Error('PRINTFUL_STORE_ID is required');
+if (!API_TOKEN) { console.error('PRINTIFY_API_TOKEN not set'); process.exit(1); }
+if (!SHOP_ID) { console.error('PRINTIFY_SHOP_ID not set'); process.exit(1); }
 
-async function pf(path) {
-  const res = await fetch(`https://api.printful.com${path}`, {
-    headers: {
-      Authorization: `Bearer ${API_KEY}`,
-      'X-PF-Store-Id': STORE_ID,
-    },
-  });
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`Printful ${path} → ${res.status}: ${body}`);
-  }
-  const { result } = await res.json();
-  return result;
+function stripHtml(html) {
+  return html.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').replace(/\s+/g, ' ').trim();
 }
 
-const syncProducts = await pf('/store/products?limit=100');
+function parseVariantTitle(title) {
+  const parts = title.split(' / ');
+  if (parts.length >= 2) {
+    return { color: parts.slice(0, -1).join(' / '), size: parts[parts.length - 1] };
+  }
+  return { color: '', size: title };
+}
 
-const products = await Promise.all(
-  syncProducts.map(async (p) => {
-    const detail = await pf(`/store/products/${p.id}`);
-    const variants = detail.sync_variants.map((v) => ({
-      id: v.id,
-      name: v.name,
-      size: v.size || '',
-      color: v.color || '',
-      price: v.retail_price,
-      inStock: v.availability_status === 'active',
-      previewUrl: v.files?.find((f) => f.type === 'preview')?.preview_url || p.thumbnail_url,
-      backPreviewUrl: v.files?.find((f) => f.type === 'back_dtf')?.preview_url || undefined,
-    }));
+const headers = { Authorization: `Bearer ${API_TOKEN}` };
+
+const res = await fetch(`https://api.printify.com/v1/shops/${SHOP_ID}/products.json?limit=50`, { headers });
+if (!res.ok) { console.error(`Printify API failed: ${res.status} ${await res.text()}`); process.exit(1); }
+
+const { data } = await res.json();
+
+const products = data
+  .filter(p => p.variants.some(v => v.is_enabled && v.is_available))
+  .map(p => {
+    const defaultImage = p.images.find(i => i.is_default && i.position === 'front') ?? p.images[0];
+    const thumbnailUrl = defaultImage?.src ?? '';
+
+    const variants = p.variants
+      .filter(v => v.is_enabled)
+      .map(v => {
+        const { color, size } = parseVariantTitle(v.title);
+        const frontImage = p.images.find(i => i.variant_ids.includes(v.id) && i.position === 'front');
+        const backImage = p.images.find(i => i.variant_ids.includes(v.id) && i.position === 'back');
+        return {
+          id: v.id,
+          name: `${p.title} / ${v.title}`,
+          size,
+          color,
+          price: (v.price / 100).toFixed(2),
+          inStock: v.is_available,
+          previewUrl: frontImage?.src ?? thumbnailUrl,
+          ...(backImage ? { backPreviewUrl: backImage.src } : {}),
+        };
+      });
 
     return {
       id: p.id,
-      name: p.name,
-      description: detail.sync_product.description || '',
-      thumbnailUrl: p.thumbnail_url,
+      name: p.title,
+      description: p.description ? stripHtml(p.description) : '',
+      thumbnailUrl,
       variants,
     };
-  })
-);
+  });
 
 const outPath = join(__dirname, '../src/data/products.json');
 writeFileSync(outPath, JSON.stringify(products, null, 2));
