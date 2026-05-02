@@ -1,5 +1,544 @@
 [
   {
+    "id": "69f67d989110dda910062192",
+    "name": "\"WRS\" Tee",
+    "description": "Sometimes less is more. WRS. It sits light and breathable against the skin, layers easily under a flannel or light jacket, and holds its shape wear after wear. This shirt belongs in the hands of someone who prefers nights out chasing city lights, sunrise drives, and music that sounds best from an open window.Product features- 100% Airlume combed and ring-spun cotton for a soft, breathable feel (lightweight 4.2 oz/yd²).- Retail crew neckline with ribbed knit collar and shoulder tape for shape retention and clean fit.- Side seams and tear-away label for comfort, structure, and minimal irritation.- Prints use DTF/DTG methods for crisp, detailed front and sleeve graphics; back text is subtle and precise.- REACH certified; responsibly manufactured (Bella+Canvas supply chain, humane, FLA and WRAP standards).Care instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2",
+    "variants": [
+      {
+        "id": 18328,
+        "name": "\"WRS\" Tee / Heather True Royal / 2XL",
+        "size": "2XL",
+        "color": "Heather True Royal",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18544,
+        "name": "\"WRS\" Tee / White / 2XL",
+        "size": "2XL",
+        "color": "White",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38722,
+        "name": "\"WRS\" Tee / Heather Aqua / 2XL",
+        "size": "2XL",
+        "color": "Heather Aqua",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38794,
+        "name": "\"WRS\" Tee / Black Heather / 2XL",
+        "size": "2XL",
+        "color": "Black Heather",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18440,
+        "name": "\"WRS\" Tee / Pink / 2XL",
+        "size": "2XL",
+        "color": "Pink",
+        "price": "42.83",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18104,
+        "name": "\"WRS\" Tee / Black / 2XL",
+        "size": "2XL",
+        "color": "Black",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18376,
+        "name": "\"WRS\" Tee / Maroon / 2XL",
+        "size": "2XL",
+        "color": "Maroon",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18152,
+        "name": "\"WRS\" Tee / Dark Grey Heather / 2XL",
+        "size": "2XL",
+        "color": "Dark Grey Heather",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18400,
+        "name": "\"WRS\" Tee / Navy / 2XL",
+        "size": "2XL",
+        "color": "Navy",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39589,
+        "name": "\"WRS\" Tee / Brown / 2XL",
+        "size": "2XL",
+        "color": "Brown",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18545,
+        "name": "\"WRS\" Tee / White / 3XL",
+        "size": "3XL",
+        "color": "White",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18105,
+        "name": "\"WRS\" Tee / Black / 3XL",
+        "size": "3XL",
+        "color": "Black",
+        "price": "35.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18106,
+        "name": "\"WRS\" Tee / Black / 4XL",
+        "size": "4XL",
+        "color": "Black",
+        "price": "38.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18397,
+        "name": "\"WRS\" Tee / Navy / M",
+        "size": "M",
+        "color": "Navy",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18541,
+        "name": "\"WRS\" Tee / White / M",
+        "size": "M",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18447,
+        "name": "\"WRS\" Tee / Red / XL",
+        "size": "XL",
+        "color": "Red",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39583,
+        "name": "\"WRS\" Tee / Brown / L",
+        "size": "L",
+        "color": "Brown",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18396,
+        "name": "\"WRS\" Tee / Navy / S",
+        "size": "S",
+        "color": "Navy",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18100,
+        "name": "\"WRS\" Tee / Black / S",
+        "size": "S",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39586,
+        "name": "\"WRS\" Tee / Brown / XL",
+        "size": "XL",
+        "color": "Brown",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18151,
+        "name": "\"WRS\" Tee / Dark Grey Heather / XL",
+        "size": "XL",
+        "color": "Dark Grey Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18399,
+        "name": "\"WRS\" Tee / Navy / XL",
+        "size": "XL",
+        "color": "Navy",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38716,
+        "name": "\"WRS\" Tee / Heather Aqua / L",
+        "size": "L",
+        "color": "Heather Aqua",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38791,
+        "name": "\"WRS\" Tee / Black Heather / XL",
+        "size": "XL",
+        "color": "Black Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38713,
+        "name": "\"WRS\" Tee / Heather Aqua / M",
+        "size": "M",
+        "color": "Heather Aqua",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18436,
+        "name": "\"WRS\" Tee / Pink / S",
+        "size": "S",
+        "color": "Pink",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18103,
+        "name": "\"WRS\" Tee / Black / XL",
+        "size": "XL",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18373,
+        "name": "\"WRS\" Tee / Maroon / M",
+        "size": "M",
+        "color": "Maroon",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18148,
+        "name": "\"WRS\" Tee / Dark Grey Heather / S",
+        "size": "S",
+        "color": "Dark Grey Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38785,
+        "name": "\"WRS\" Tee / Black Heather / M",
+        "size": "M",
+        "color": "Black Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38719,
+        "name": "\"WRS\" Tee / Heather Aqua / XL",
+        "size": "XL",
+        "color": "Heather Aqua",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39580,
+        "name": "\"WRS\" Tee / Brown / M",
+        "size": "M",
+        "color": "Brown",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18101,
+        "name": "\"WRS\" Tee / Black / M",
+        "size": "M",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18446,
+        "name": "\"WRS\" Tee / Red / L",
+        "size": "L",
+        "color": "Red",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18542,
+        "name": "\"WRS\" Tee / White / L",
+        "size": "L",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18398,
+        "name": "\"WRS\" Tee / Navy / L",
+        "size": "L",
+        "color": "Navy",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38788,
+        "name": "\"WRS\" Tee / Black Heather / L",
+        "size": "L",
+        "color": "Black Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 80529,
+        "name": "\"WRS\" Tee / Heather Prism Lilac / S",
+        "size": "S",
+        "color": "Heather Prism Lilac",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18149,
+        "name": "\"WRS\" Tee / Dark Grey Heather / M",
+        "size": "M",
+        "color": "Dark Grey Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18439,
+        "name": "\"WRS\" Tee / Pink / XL",
+        "size": "XL",
+        "color": "Pink",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18324,
+        "name": "\"WRS\" Tee / Heather True Royal / S",
+        "size": "S",
+        "color": "Heather True Royal",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 39577,
+        "name": "\"WRS\" Tee / Brown / S",
+        "size": "S",
+        "color": "Brown",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18150,
+        "name": "\"WRS\" Tee / Dark Grey Heather / L",
+        "size": "L",
+        "color": "Dark Grey Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18444,
+        "name": "\"WRS\" Tee / Red / S",
+        "size": "S",
+        "color": "Red",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18102,
+        "name": "\"WRS\" Tee / Black / L",
+        "size": "L",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18372,
+        "name": "\"WRS\" Tee / Maroon / S",
+        "size": "S",
+        "color": "Maroon",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18540,
+        "name": "\"WRS\" Tee / White / S",
+        "size": "S",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38710,
+        "name": "\"WRS\" Tee / Heather Aqua / S",
+        "size": "S",
+        "color": "Heather Aqua",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 38782,
+        "name": "\"WRS\" Tee / Black Heather / S",
+        "size": "S",
+        "color": "Black Heather",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18543,
+        "name": "\"WRS\" Tee / White / XL",
+        "size": "XL",
+        "color": "White",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18374,
+        "name": "\"WRS\" Tee / Maroon / L",
+        "size": "L",
+        "color": "Maroon",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18437,
+        "name": "\"WRS\" Tee / Pink / M",
+        "size": "M",
+        "color": "Pink",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18445,
+        "name": "\"WRS\" Tee / Red / M",
+        "size": "M",
+        "color": "Red",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18438,
+        "name": "\"WRS\" Tee / Pink / L",
+        "size": "L",
+        "color": "Pink",
+        "price": "38.75",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18326,
+        "name": "\"WRS\" Tee / Heather True Royal / L",
+        "size": "L",
+        "color": "Heather True Royal",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18375,
+        "name": "\"WRS\" Tee / Maroon / XL",
+        "size": "XL",
+        "color": "Maroon",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18325,
+        "name": "\"WRS\" Tee / Heather True Royal / M",
+        "size": "M",
+        "color": "Heather True Royal",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18099,
+        "name": "\"WRS\" Tee / Black / XS",
+        "size": "XS",
+        "color": "Black",
+        "price": "30.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      },
+      {
+        "id": 18448,
+        "name": "\"WRS\" Tee / Red / 2XL",
+        "size": "2XL",
+        "color": "Red",
+        "price": "32.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f67d989110dda910062192/18398/102044/wrs-tee.jpg?camera_label=front-2"
+      }
+    ]
+  },
+  {
     "id": "69f55ed1db88631ee30952f1",
     "name": "\"Nivens Zen\" Tee",
     "description": "Zen Master Nivens invites you to seek the inner stillness, inviting the music to awaken your movement. The true beat. It sits light and breathable against the skin, layers easily under a flannel or light jacket, and holds its shape wear after wear. This shirt belongs in the hands of someone who prefers nights out chasing city lights, sunrise drives, and music that sounds best from an open window.Product features- 100% Airlume combed and ring-spun cotton for a soft, breathable feel (lightweight 4.2 oz/yd²).- Retail crew neckline with ribbed knit collar and shoulder tape for shape retention and clean fit.- Side seams and tear-away label for comfort, structure, and minimal irritation.- Prints use DTF/DTG methods for crisp, detailed front and sleeve graphics; back text is subtle and precise.- REACH certified; responsibly manufactured (Bella+Canvas supply chain, humane, FLA and WRAP standards).Care instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
@@ -2191,7 +2730,7 @@
   {
     "id": "69f41922632399bb16087dd4",
     "name": "\"Follow Me\" Tee",
-    "description": "SMLXL2XL3XL Width, in 18.00 20.00 22.00 24.00 26.00 28.00 Length, in 28.00 29.00 30.00 31.00 32.00 33.00 Sleeve length, in 8.23 8.50 8.74 9.02 9.25 9.49 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 SMLXL2XL3XL Width, in 18.00 20.00 22.00 24.00 26.00 28.00 Length, in 28.00 29.00 30.00 31.00 32.00 33.00 Sleeve length, in 8.23 8.50 8.74 9.02 9.25 9.49 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 A lightweight, ring-spun cotton tee that brings a gentle, whimsical touch to everyday wear. The shirt features a calm, bespectacled bunny illustration—soft lines, muted colors, and a subtle portal-like glow beneath—giving it a quiet, imaginative energy. It sits comfortably at the chest on a clean crew neckline and a classic fit, pairing easily with jeans, layered looks, or loungewear. Wear it when you want something soft against your skin and a little story on your front: curious, thoughtful, and quietly playful.Product features- 100% ring-spun cotton (lightweight 153 g/m²) for a soft, breathable feel- Tubular knit construction—no side seams for a smooth, clean silhouette- Ribbed crew neckline with shoulder tape to maintain shape and prevent stretching- Pearlized tear-away label for itch-free comfort; meets Oeko-Tex and EU safety standards- DTG/DTF printing options for vibrant front artwork and detailed sleeve/neck printsCare instructions- Do not dryclean- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Machine wash: cold (max 30C or 90F), with similar colors",
+    "description": "Nivens with a gentle entreaty to follow down the glowing rabbit hole to where the dance truly begins. A lightweight, ring-spun cotton tee that brings a gentle, whimsical touch to everyday wear. It sits comfortably at the chest on a clean crew neckline and a classic fit, pairing easily with jeans, layered looks, or loungewear. Wear it when you want something soft against your skin and a little story on your front: curious, thoughtful, and quietly playful.Product features- 100% ring-spun cotton (lightweight 153 g/m²) for a soft, breathable feel- Tubular knit construction—no side seams for a smooth, clean silhouette- Ribbed crew neckline with shoulder tape to maintain shape and prevent stretching- Pearlized tear-away label for itch-free comfort; meets Oeko-Tex and EU safety standards- DTG/DTF printing options for vibrant front artwork and detailed sleeve/neck printsCare instructions- Do not dryclean- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Machine wash: cold (max 30C or 90F), with similar colors",
     "thumbnailUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
     "variants": [
       {
@@ -2201,7 +2740,8 @@
         "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38160,
@@ -2210,7 +2750,8 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38161,
@@ -2219,7 +2760,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38197,
@@ -2228,7 +2770,8 @@
         "color": "Dark Chocolate",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 63295,
@@ -2237,7 +2780,8 @@
         "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38180,
@@ -2246,7 +2790,8 @@
         "color": "Military Green",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38191,
@@ -2255,7 +2800,8 @@
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38200,
@@ -2264,7 +2810,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38188,
@@ -2273,7 +2820,8 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38186,
@@ -2282,7 +2830,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38203,
@@ -2291,7 +2840,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38202,
@@ -2300,7 +2850,8 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38158,
@@ -2309,7 +2860,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38174,
@@ -2318,7 +2870,8 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38189,
@@ -2327,7 +2880,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38205,
@@ -2336,7 +2890,8 @@
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38155,
@@ -2345,7 +2900,8 @@
         "color": "Dark Chocolate",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38190,
@@ -2354,7 +2910,8 @@
         "color": "Sport Grey",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38176,
@@ -2363,7 +2920,8 @@
         "color": "Sport Grey",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38166,
@@ -2372,7 +2930,8 @@
         "color": "Military Green",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 63290,
@@ -2381,7 +2940,8 @@
         "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38183,
@@ -2390,7 +2950,8 @@
         "color": "Dark Chocolate",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38163,
@@ -2399,7 +2960,8 @@
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38175,
@@ -2408,7 +2970,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38206,
@@ -2417,7 +2980,8 @@
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38192,
@@ -2426,7 +2990,8 @@
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38162,
@@ -2435,7 +3000,8 @@
         "color": "Sport Grey",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38178,
@@ -2444,7 +3010,8 @@
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38177,
@@ -2453,7 +3020,8 @@
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38204,
@@ -2462,7 +3030,8 @@
         "color": "Sport Grey",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38169,
@@ -2471,7 +3040,8 @@
         "color": "Dark Chocolate",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 63305,
@@ -2480,7 +3050,8 @@
         "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38164,
@@ -2489,7 +3060,8 @@
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38194,
@@ -2498,7 +3070,8 @@
         "color": "Military Green",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38172,
@@ -2507,7 +3080,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 42118,
@@ -2516,7 +3090,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 42117,
@@ -2525,7 +3100,8 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 42115,
@@ -2534,7 +3110,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38219,
@@ -2543,7 +3120,8 @@
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38191/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38217,
@@ -2552,7 +3130,8 @@
         "color": "Royal",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38189/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38220,
@@ -2561,7 +3140,8 @@
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38192/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 63310,
@@ -2570,7 +3150,8 @@
         "color": "Dark Heather",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/63300/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38211,
@@ -2579,7 +3160,8 @@
         "color": "Dark Chocolate",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38183/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38214,
@@ -2588,7 +3170,8 @@
         "color": "Navy",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38186/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38218,
@@ -2597,7 +3180,8 @@
         "color": "Sport Grey",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38190/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38222,
@@ -2606,7 +3190,8 @@
         "color": "Military Green",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38194/97993/follow-me-tee.jpg?camera_label=back"
       },
       {
         "id": 38216,
@@ -2615,82 +3200,613 @@
         "color": "Red",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97992/follow-me-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41922632399bb16087dd4/38188/97993/follow-me-tee.jpg?camera_label=back"
       }
     ]
   },
   {
     "id": "69f41786d289a2e3d000a234",
-    "name": "Rabbit Ticket Tank",
-    "description": "A high-quality print of this slim fit tank-top will turn heads. Bystanders won't be disappointed - the racerback cut looks good on any woman's shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit. .: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
-    "thumbnailUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/rabbit-ticket-tank.jpg?camera_label=front-2",
+    "name": "WRS \"Rabbit Ticket\" Tank",
+    "description": "Get your ticket to follow the white rabbit. This slim fit tank will turn heads. Bystanders won&#39;t be disappointed and neither will you - the racerback cut looks good on any woman&#39;s shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit. .: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
     "variants": [
       {
+        "id": 25940,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Heather Grey",
+        "size": "Heather Grey",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 25941,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Heather Grey",
+        "size": "Heather Grey",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
         "id": 19289,
-        "name": "Rabbit Ticket Tank / L / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Black",
         "size": "Solid Black",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19357,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Royal",
+        "size": "Solid Royal",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 25942,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Heather Grey",
+        "size": "Heather Grey",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19360,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Royal",
+        "size": "Solid Royal",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
       {
         "id": 22208,
-        "name": "Rabbit Ticket Tank / XS / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Black",
         "size": "Solid Black",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
       {
         "id": 19287,
-        "name": "Rabbit Ticket Tank / S / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Black",
         "size": "Solid Black",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
       {
         "id": 19290,
-        "name": "Rabbit Ticket Tank / XL / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Black",
         "size": "Solid Black",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19359,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Royal",
+        "size": "Solid Royal",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19358,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Royal",
+        "size": "Solid Royal",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
       {
         "id": 19288,
-        "name": "Rabbit Ticket Tank / M / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Black",
         "size": "Solid Black",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 25939,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Heather Grey",
+        "size": "Heather Grey",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19298,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Dark Gray",
+        "size": "Solid Dark Gray",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19300,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Dark Gray",
+        "size": "Solid Dark Gray",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19297,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Dark Gray",
+        "size": "Solid Dark Gray",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19299,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Dark Gray",
+        "size": "Solid Dark Gray",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64926,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 22212,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19313,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64928,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 22213,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64925,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64924,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 22219,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 25938,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Heather Grey",
+        "size": "Heather Grey",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19312,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19315,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19345,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19307,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 22222,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Solid Royal",
+        "size": "Solid Royal",
+        "color": "XS",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64927,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19343,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19308,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "M",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19314,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19344,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19309,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "L",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19310,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "XL",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19342,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "S",
+        "price": "30.53",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
       {
         "id": 19291,
-        "name": "Rabbit Ticket Tank / 2XL / Solid Black",
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Black",
         "size": "Solid Black",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/rabbit-ticket-tank.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/rabbit-ticket-tank.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19361,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Royal",
+        "size": "Solid Royal",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19359/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 25943,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Heather Grey",
+        "size": "Heather Grey",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/25941/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19301,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Dark Gray",
+        "size": "Solid Dark Gray",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19316,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Kelly Green",
+        "size": "Solid Kelly Green",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19311,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Indigo",
+        "size": "Solid Indigo",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19309/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 19346,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Purple Rush",
+        "size": "Solid Purple Rush",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19344/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 64929,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Solid Cardinal Red",
+        "size": "Solid Cardinal Red",
+        "color": "2XL",
+        "price": "33.97",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120724,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / Hot Pink",
+        "size": "Hot Pink",
+        "color": "2XL",
+        "price": "33.95",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120713,
+        "name": "WRS \"Rabbit Ticket\" Tank / 2XL / White",
+        "size": "White",
+        "color": "2XL",
+        "price": "33.95",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120716,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / Hot Pink",
+        "size": "Hot Pink",
+        "color": "S",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120705,
+        "name": "WRS \"Rabbit Ticket\" Tank / S / White",
+        "size": "White",
+        "color": "S",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120720,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / Hot Pink",
+        "size": "Hot Pink",
+        "color": "L",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120707,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / White",
+        "size": "White",
+        "color": "M",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120718,
+        "name": "WRS \"Rabbit Ticket\" Tank / M / Hot Pink",
+        "size": "Hot Pink",
+        "color": "M",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120709,
+        "name": "WRS \"Rabbit Ticket\" Tank / L / White",
+        "size": "White",
+        "color": "L",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120711,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / White",
+        "size": "White",
+        "color": "XL",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120703,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / White",
+        "size": "White",
+        "color": "XS",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120714,
+        "name": "WRS \"Rabbit Ticket\" Tank / XS / Hot Pink",
+        "size": "Hot Pink",
+        "color": "XS",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
+      },
+      {
+        "id": 120722,
+        "name": "WRS \"Rabbit Ticket\" Tank / XL / Hot Pink",
+        "size": "Hot Pink",
+        "color": "XL",
+        "price": "30.55",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       }
     ]
   },
   {
     "id": "69f3ef38ecf20bee5e091484",
     "name": "\"Precious Nivens\" Crop Hoodie",
-    "description": "XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 Nothing looks more stylish and chic than a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a super stylish crop-top hoodie, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
+    "description": "Our precious Nivens appears looking very demure, very mindful, knowing that nothing looks more stylish and chic than a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a great look, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
     "thumbnailUrl": "https://images.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
     "variants": [
       {
@@ -2938,7 +4054,7 @@
   {
     "id": "69f3ebb04610656b2d0f5311",
     "name": "Follow the Nivens Hoodie ",
-    "description": "This midweight fleece hoodie wraps you in a quiet, curious energy — like slipping into a warm alleyway that leads somewhere unexpected. The front shows a subtle circular emblem, while the back features a soft-illustrated white rabbit beneath a cool, blue waterfall and the words “FOLLOW THE WHITE RABBIT.” It reads gentle and whimsical, built for slow mornings with a book or late-night walks searching for small adventures. The dropped shoulders and classic fit give a relaxed silhouette that layers easily over tees. Wear it when you want comfort that nudges toward wonder: cozy enough for coffee runs, breathable for travel days, and thoughtfully made with sustainable and socially responsible production standards.Product features- 2-piece color-matched jersey lined hood for warmth and clean lines- Relaxed fit with dropped shoulders for easy layering- Front pouch pocket for hands and small items- Medium-heavy 8.4 oz fabric: soft 80/20 ring-spun cotton/poly blend (color-dependent blends)- OEKO-TEX Standard 100, FLA partner and WRAP-certified manufacturingCare instructions- Machine wash: cold (max 30C or 90F), gentle cycle- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
+    "description": "This midweight fleece hoodie wraps you in a quiet, curious energy — like slipping into a dream that leads somewhere unexpected. The front showcases the White Rabbit Society emblem, while a calm and captivating Nivens adorns the back with an entreaty to “FOLLOW THE WHITE RABBIT.” It reads gentle and whimsical, built for cold ballrooms at the end of a late-night social, slow mornings with a book, or late-night walks leading to serenity or adventure. The dropped shoulders and classic fit give a relaxed silhouette that layers easily over tees. Wear it when you want comfort that nudges toward wonder: cozy enough for coffee runs, breathable for travel days, and thoughtfully made with sustainable and socially responsible production standards.Product features- 2-piece color-matched jersey lined hood for warmth and clean lines- Relaxed fit with dropped shoulders for easy layering- Front pouch pocket for hands and small items- Medium-heavy 8.4 oz fabric: soft 80/20 ring-spun cotton/poly blend (color-dependent blends)- OEKO-TEX Standard 100, FLA partner and WRAP-certified manufacturingCare instructions- Machine wash: cold (max 30C or 90F), gentle cycle- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
     "thumbnailUrl": "https://images.printify.com/mockup/69f3ebb04610656b2d0f5311/109419/104654/follow-the-nivens-hoodie.jpg?camera_label=front",
     "variants": [
       {
@@ -3395,556 +4511,616 @@
   },
   {
     "id": "69f3da116bea0ab7a7072a38",
-    "name": "Precious Nivens Tank",
-    "description": "XSSMLXL2XL Width, in 13.98 15.00 15.98 16.97 17.99 18.98 Length, in 26.97 27.48 27.95 28.46 28.98 29.49 A high-quality print of this slim fit tank-top will turn heads. Bystanders won't be disappointed - the racerback cut looks good on any woman's shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit. .: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
+    "name": "\"Precious Nivens\" Tank",
+    "description": "Our precious Nivens adorns this high-quality slim fit tank-top looking very demure, very mindful, knowing that neither you nor bystanders will be disappointed - the racerback cut looks good on any woman&#39;s shoulders..: Made with extra light fabric (60% combed, ring-spun cotton and 40% polyester: 4 oz/yd² (135 g/m²)) this racerback tank is supremely lightweight and an excellent choice for the active lifestyle..: The classic fit along make the tank a comfortable choice under high performance while the scooped neckline brings a sporty touch to the whole outfit..: For a completely scratch-free experience, all tanks come with a tear-away label for unhindered performance on a daily basis..: Neck label print area is decorated with Direct-to-Film (DTF) or Direct-to-garment (DTG) methods.",
     "thumbnailUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
     "variants": [
       {
         "id": 25940,
-        "name": "Precious Nivens Tank / M / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / M / Heather Grey",
         "size": "Heather Grey",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 25941,
-        "name": "Precious Nivens Tank / L / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / L / Heather Grey",
         "size": "Heather Grey",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19328,
-        "name": "Precious Nivens Tank / M / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / M / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19289,
-        "name": "Precious Nivens Tank / L / Solid Black",
+        "name": "\"Precious Nivens\" Tank / L / Solid Black",
         "size": "Solid Black",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19357,
-        "name": "Precious Nivens Tank / S / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / S / Solid Royal",
         "size": "Solid Royal",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 25942,
-        "name": "Precious Nivens Tank / XL / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / XL / Heather Grey",
         "size": "Heather Grey",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19360,
-        "name": "Precious Nivens Tank / XL / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Royal",
         "size": "Solid Royal",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22208,
-        "name": "Precious Nivens Tank / XS / Solid Black",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Black",
         "size": "Solid Black",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19385,
-        "name": "Precious Nivens Tank / XL / Solid White",
+        "name": "\"Precious Nivens\" Tank / XL / Solid White",
         "size": "Solid White",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19287,
-        "name": "Precious Nivens Tank / S / Solid Black",
+        "name": "\"Precious Nivens\" Tank / S / Solid Black",
         "size": "Solid Black",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19329,
-        "name": "Precious Nivens Tank / L / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / L / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19290,
-        "name": "Precious Nivens Tank / XL / Solid Black",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Black",
         "size": "Solid Black",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19382,
-        "name": "Precious Nivens Tank / S / Solid White",
+        "name": "\"Precious Nivens\" Tank / S / Solid White",
         "size": "Solid White",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19359,
-        "name": "Precious Nivens Tank / L / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / L / Solid Royal",
         "size": "Solid Royal",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19327,
-        "name": "Precious Nivens Tank / S / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / S / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19330,
-        "name": "Precious Nivens Tank / XL / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19358,
-        "name": "Precious Nivens Tank / M / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / M / Solid Royal",
         "size": "Solid Royal",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22216,
-        "name": "Precious Nivens Tank / XS / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19288,
-        "name": "Precious Nivens Tank / M / Solid Black",
+        "name": "\"Precious Nivens\" Tank / M / Solid Black",
         "size": "Solid Black",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19384,
-        "name": "Precious Nivens Tank / L / Solid White",
+        "name": "\"Precious Nivens\" Tank / L / Solid White",
         "size": "Solid White",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 25939,
-        "name": "Precious Nivens Tank / S / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / S / Heather Grey",
         "size": "Heather Grey",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22227,
-        "name": "Precious Nivens Tank / XS / Solid White",
+        "name": "\"Precious Nivens\" Tank / XS / Solid White",
         "size": "Solid White",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19383,
-        "name": "Precious Nivens Tank / M / Solid White",
+        "name": "\"Precious Nivens\" Tank / M / Solid White",
         "size": "Solid White",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22212,
-        "name": "Precious Nivens Tank / XS / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Indigo",
         "size": "Solid Indigo",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19334,
-        "name": "Precious Nivens Tank / L / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / L / Solid Military Green",
         "size": "Solid Military Green",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19313,
-        "name": "Precious Nivens Tank / M / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / M / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22213,
-        "name": "Precious Nivens Tank / XS / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19333,
-        "name": "Precious Nivens Tank / M / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / M / Solid Military Green",
         "size": "Solid Military Green",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22219,
-        "name": "Precious Nivens Tank / XS / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19335,
-        "name": "Precious Nivens Tank / XL / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Military Green",
         "size": "Solid Military Green",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 25938,
-        "name": "Precious Nivens Tank / XS / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / XS / Heather Grey",
         "size": "Heather Grey",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19312,
-        "name": "Precious Nivens Tank / S / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / S / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19315,
-        "name": "Precious Nivens Tank / XL / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22217,
-        "name": "Precious Nivens Tank / XS / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Military Green",
         "size": "Solid Military Green",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19345,
-        "name": "Precious Nivens Tank / XL / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19307,
-        "name": "Precious Nivens Tank / S / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / S / Solid Indigo",
         "size": "Solid Indigo",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 22222,
-        "name": "Precious Nivens Tank / XS / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / XS / Solid Royal",
         "size": "Solid Royal",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19343,
-        "name": "Precious Nivens Tank / M / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / M / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19308,
-        "name": "Precious Nivens Tank / M / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / M / Solid Indigo",
         "size": "Solid Indigo",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19314,
-        "name": "Precious Nivens Tank / L / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / L / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19344,
-        "name": "Precious Nivens Tank / L / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / L / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19332,
-        "name": "Precious Nivens Tank / S / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / S / Solid Military Green",
         "size": "Solid Military Green",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19309,
-        "name": "Precious Nivens Tank / L / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / L / Solid Indigo",
         "size": "Solid Indigo",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19310,
-        "name": "Precious Nivens Tank / XL / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / XL / Solid Indigo",
         "size": "Solid Indigo",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19342,
-        "name": "Precious Nivens Tank / S / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / S / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19331,
-        "name": "Precious Nivens Tank / 2XL / Solid Midnight Navy",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Midnight Navy",
         "size": "Solid Midnight Navy",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19329/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19291,
-        "name": "Precious Nivens Tank / 2XL / Solid Black",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Black",
         "size": "Solid Black",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19361,
-        "name": "Precious Nivens Tank / 2XL / Solid Royal",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Royal",
         "size": "Solid Royal",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19359/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19386,
-        "name": "Precious Nivens Tank / 2XL / Solid White",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid White",
         "size": "Solid White",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19384/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 25943,
-        "name": "Precious Nivens Tank / 2XL / Heather Grey",
+        "name": "\"Precious Nivens\" Tank / 2XL / Heather Grey",
         "size": "Heather Grey",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/25941/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19316,
-        "name": "Precious Nivens Tank / 2XL / Solid Kelly Green",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Kelly Green",
         "size": "Solid Kelly Green",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19311,
-        "name": "Precious Nivens Tank / 2XL / Solid Indigo",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Indigo",
         "size": "Solid Indigo",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19309/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19346,
-        "name": "Precious Nivens Tank / 2XL / Solid Purple Rush",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Purple Rush",
         "size": "Solid Purple Rush",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19344/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 19336,
-        "name": "Precious Nivens Tank / 2XL / Solid Military Green",
+        "name": "\"Precious Nivens\" Tank / 2XL / Solid Military Green",
         "size": "Solid Military Green",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19334/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120724,
-        "name": "Precious Nivens Tank / 2XL / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / 2XL / Hot Pink",
         "size": "Hot Pink",
         "color": "2XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120716,
-        "name": "Precious Nivens Tank / S / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / S / Hot Pink",
         "size": "Hot Pink",
         "color": "S",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120720,
-        "name": "Precious Nivens Tank / L / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / L / Hot Pink",
         "size": "Hot Pink",
         "color": "L",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120718,
-        "name": "Precious Nivens Tank / M / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / M / Hot Pink",
         "size": "Hot Pink",
         "color": "M",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120714,
-        "name": "Precious Nivens Tank / XS / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / XS / Hot Pink",
         "size": "Hot Pink",
         "color": "XS",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       },
       {
         "id": 120722,
-        "name": "Precious Nivens Tank / XL / Hot Pink",
+        "name": "\"Precious Nivens\" Tank / XL / Hot Pink",
         "size": "Hot Pink",
         "color": "XL",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2"
+        "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back"
       }
     ]
   },
   {
     "id": "69f3d8634da671d6620487fe",
     "name": "\"Follow Nivens\" Tee",
-    "description": "XSSMLXL2XL3XL4XL5XL Width, in 16.50 18.00 20.00 22.00 24.00 26.00 28.00 30.00 32.00 Length, in 27.00 28.00 29.00 30.00 31.00 32.00 33.00 34.00 35.00 Sleeve length, in 8.60 8.90 9.20 9.50 9.70 10.00 10.40 10.80 11.20 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 1.50 1.50 1.50 This lightweight crew-neck tee carries a playful, slightly rebellious energy. A crisp white canvas showcases a bold, neon-green graphic of a bespectacled white rabbit mid-stride, framed by the rallying line “Follow the White Rabbit” and the subtle WCS emblem on the chest and sleeve. The shirt feels breathable and easy to layer — wear it to shows, late-night meetups, or while wandering city streets hunting the next secret spot. The vibe is curious and adventurous: smart, a little mischievous, and unmistakably club-like. Thoughtful details like a tear-away label, ribbed collar, and side seams keep the fit neat and comfortable through repeated wear.This tee suits collectors of graphic streetwear and fans of modern, slightly retro-inspired illustration. It pairs well with denim, layered under an open flannel or bomber, or worn solo to make the neon rabbit the focal point. Suitable for evenings out, fan gatherings, conventions, or casual weekend outings where you want to signal curiosity and community.Product features- 100% Airlume combed & ring-spun cotton (lightweight 4.2 oz) for breathability and a soft hand- Retail crew-neck fit with ribbed knit collar, side seams and shoulder tape for shape and durability- Crisp, detailed prints: DTF or DTG techniques used depending on placement for vibrant, long-lasting graphics- Tear-away label for comfort; age: adult sizing; REACH certified- Multiple fabric blends for heathered colors; responsibly produced under fair-labor certificationsCare instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
+    "description": "This lightweight crew-neck tee carries a playful, slightly rebellious energy. A new WRS logo entreats you on the front, and an energized Nivens adorns the back, framed by the rallying line “Follow the White Rabbit,”ready to lead you onto the dance floor. The shirt feels breathable and easy to layer — wear it to shows, late-night meetups, or while wandering city streets hunting the next secret spot. The vibe is curious and adventurous: smart, a little mischievous, and unmistakably club-like. Thoughtful details like a tear-away label, ribbed collar, and side seams keep the fit neat and comfortable through repeated wear.This tee suits collectors of graphic streetwear and fans of modern, slightly retro-inspired illustration. It pairs well with denim, layered under an open flannel or bomber, or worn solo to make the neon rabbit the focal point. Suitable for evenings out, fan gatherings, conventions, or casual weekend outings where you want to signal curiosity and community.Product features- 100% Airlume combed &amp; ring-spun cotton (lightweight 4.2 oz) for breathability and a soft hand- Retail crew-neck fit with ribbed knit collar, side seams and shoulder tape for shape and durability- Crisp, detailed prints: DTF or DTG techniques used depending on placement for vibrant, long-lasting graphics- Tear-away label for comfort; age: adult sizing; REACH certified- Multiple fabric blends for heathered colors; responsibly produced under fair-labor certificationsCare instructions- Machine wash: cold (max 30C or 90F)- Non-chlorine: bleach as needed- Tumble dry: low heat- Iron, steam or dry: medium heat- Do not dryclean",
     "thumbnailUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2",
     "variants": [
       {
@@ -5760,7 +6936,7 @@
   {
     "id": "69f3b353b6929f396905e10c",
     "name": "WRS OG Rabbit Crop Hoodie",
-    "description": "XSSML Width, in 20.00 22.01 24.00 25.98 Length, in 17.50 18.39 19.29 20.24 Sleeve length, in 20.50 21.00 21.50 22.00 Size tolerance, in 1.00 1.00 1.00 1.00 Nothing looks more stylish and chic than a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a super stylish crop-top hoodie, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
+    "description": "Nothing looks more stylish and chic than repping the White Rabbit Society in a well-designed crop hoodie. As such, this one won’t disappoint. It’s not just a super stylish crop-top hoodie, it is also super comfy due to being made from soft three-end fleece with ultra tight-knit construction. It’s that tight-knitting that makes printed surfaces really stand out..: 85% combed, ring-spun cotton, 15% recycled polyester.: Medium fabric (7.0 oz /yd² (240 g/m²)).: Relaxed fit.: Raw bottom hem.: Soft 3-end fleece.: Under 5% shrinkage.: Tear-away label.: Storm is printed with the DTF (Direct-To-Film) decoration method",
     "thumbnailUrl": "https://images.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
     "variants": [
       {
@@ -6007,590 +7183,639 @@
   },
   {
     "id": "69f3a3af436937417709add9",
-    "name": "\"If It Glows\" Shirt",
-    "description": "SMLXL2XL3XL4XL Width, in 18.25 20.25 22.00 24.00 26.00 27.75 29.75 Length, in 26.62 28.00 29.37 30.75 31.62 32.50 33.50 Sleeve length from center back, in 16.25 17.75 19.00 20.50 21.75 23.25 24.63 Size tolerance, in 1.50 1.50 1.50 1.50 1.50 1.50 1.50 This relaxed, heavyweight tee brings playful attitude and street-ready comfort together. The garment-dyed cotton has a lived-in softness and depth of color that settles into your wardrobe like an old favorite. Bold, slightly distressed green lettering reads “IF IT GLOWS IT WON’T SAY NO” with a small rabbit motif—a cheeky, rebellious graphic that reads loud without shouting. Wear it on late-night runs, to underground shows, or when you want a statement that’s equal parts ironic and confident. The roomy fit and substantial 6.1 oz fabric feel steady on the body while the tubular knit and sewn-in label keep the silhouette clean. Sized from S to 4XL and offered in many colors, this tee is built to be lived in and lived up to.Product features- 100% ring-spun US cotton for durable, soft comfort- Garment-dyed finish for soft texture and vintage look- Heavyweight 6.1 oz fabric with relaxed fit- Tubular, no side seams and double-needle stitching for durability- Available S–4XL with a sewn-in labelCare instructions- Machine wash: cold (max 30C or 90F)- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
-    "thumbnailUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
+    "name": "\"If It Glows\" Tee",
+    "description": "This relaxed, heavyweight tee brings playful attitude and street-ready comfort together. The garment-dyed cotton has a lived-in softness and depth of color that settles into your wardrobe like an old favorite. One of our core maxims: “IF IT GLOWS IT WON’T SAY NO” with a small rabbit motif.. Wear it to dance events, on late-night runs, to underground shows, or anytime you want to proclaim you are ready to say &quot;YES&quot; to a dance. The roomy fit and substantial 6.1 oz fabric feel steady on the body while the tubular knit and sewn-in label keep the silhouette clean. Sized from S to 4XL and offered in many colors, this tee is built to be lived in and lived up to.Product features- 100% ring-spun US cotton for durable, soft comfort- Garment-dyed finish for soft texture and vintage look- Heavyweight 6.1 oz fabric with relaxed fit- Tubular, no side seams and double-needle stitching for durability- Available S–4XL with a sewn-in labelCare instructions- Machine wash: cold (max 30C or 90F)- Do not bleach- Tumble dry: low heat- Iron, steam or dry: low heat- Do not dryclean",
+    "thumbnailUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
     "variants": [
       {
         "id": 79135,
-        "name": "\"If It Glows\" Shirt / Graphite / 3XL",
+        "name": "\"If It Glows\" Tee / Graphite / 3XL",
         "size": "3XL",
         "color": "Graphite",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79164,
-        "name": "\"If It Glows\" Shirt / True Navy / 3XL",
+        "name": "\"If It Glows\" Tee / True Navy / 3XL",
         "size": "3XL",
         "color": "True Navy",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79146,
-        "name": "\"If It Glows\" Shirt / Light Green / 3XL",
+        "name": "\"If It Glows\" Tee / Light Green / 3XL",
         "size": "3XL",
         "color": "Light Green",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79169,
-        "name": "\"If It Glows\" Shirt / White / 3XL",
+        "name": "\"If It Glows\" Tee / White / 3XL",
         "size": "3XL",
         "color": "White",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79133,
-        "name": "\"If It Glows\" Shirt / Granite / 3XL",
+        "name": "\"If It Glows\" Tee / Granite / 3XL",
         "size": "3XL",
         "color": "Granite",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79114,
-        "name": "\"If It Glows\" Shirt / Black / 3XL",
+        "name": "\"If It Glows\" Tee / Black / 3XL",
         "size": "3XL",
         "color": "Black",
-        "price": "25.00",
+        "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79148,
-        "name": "\"If It Glows\" Shirt / Midnight / 3XL",
+        "name": "\"If It Glows\" Tee / Midnight / 3XL",
         "size": "3XL",
         "color": "Midnight",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102357,
-        "name": "\"If It Glows\" Shirt / Espresso / 3XL",
+        "name": "\"If It Glows\" Tee / Espresso / 3XL",
         "size": "3XL",
         "color": "Espresso",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79139,
-        "name": "\"If It Glows\" Shirt / Hemp / 3XL",
+        "name": "\"If It Glows\" Tee / Hemp / 3XL",
         "size": "3XL",
         "color": "Hemp",
         "price": "35.50",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102353,
-        "name": "\"If It Glows\" Shirt / Espresso / M",
+        "name": "\"If It Glows\" Tee / Espresso / M",
         "size": "M",
         "color": "Espresso",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73199,
-        "name": "\"If It Glows\" Shirt / White / S",
+        "name": "\"If It Glows\" Tee / White / S",
         "size": "S",
         "color": "White",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73204,
-        "name": "\"If It Glows\" Shirt / Black / L",
+        "name": "\"If It Glows\" Tee / Black / L",
         "size": "L",
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79009,
-        "name": "\"If It Glows\" Shirt / Light Green / XL",
+        "name": "\"If It Glows\" Tee / Light Green / XL",
         "size": "XL",
         "color": "Light Green",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78962,
-        "name": "\"If It Glows\" Shirt / Graphite / M",
+        "name": "\"If It Glows\" Tee / Graphite / M",
         "size": "M",
         "color": "Graphite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79017,
-        "name": "\"If It Glows\" Shirt / Midnight / M",
+        "name": "\"If It Glows\" Tee / Midnight / M",
         "size": "M",
         "color": "Midnight",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78964,
-        "name": "\"If It Glows\" Shirt / Graphite / XL",
+        "name": "\"If It Glows\" Tee / Graphite / XL",
         "size": "XL",
         "color": "Graphite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79006,
-        "name": "\"If It Glows\" Shirt / Light Green / S",
+        "name": "\"If It Glows\" Tee / Light Green / S",
         "size": "S",
         "color": "Light Green",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78982,
-        "name": "\"If It Glows\" Shirt / Hemp / M",
+        "name": "\"If It Glows\" Tee / Hemp / M",
         "size": "M",
         "color": "Hemp",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102352,
-        "name": "\"If It Glows\" Shirt / Espresso / S",
+        "name": "\"If It Glows\" Tee / Espresso / S",
         "size": "S",
         "color": "Espresso",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78961,
-        "name": "\"If It Glows\" Shirt / Graphite / S",
+        "name": "\"If It Glows\" Tee / Graphite / S",
         "size": "S",
         "color": "Graphite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73208,
-        "name": "\"If It Glows\" Shirt / Black / XL",
+        "name": "\"If It Glows\" Tee / Black / XL",
         "size": "XL",
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73200,
-        "name": "\"If It Glows\" Shirt / Black / M",
+        "name": "\"If It Glows\" Tee / Black / M",
         "size": "M",
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78963,
-        "name": "\"If It Glows\" Shirt / Graphite / L",
+        "name": "\"If It Glows\" Tee / Graphite / L",
         "size": "L",
         "color": "Graphite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73196,
-        "name": "\"If It Glows\" Shirt / Black / S",
+        "name": "\"If It Glows\" Tee / Black / S",
         "size": "S",
         "color": "Black",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73203,
-        "name": "\"If It Glows\" Shirt / White / M",
+        "name": "\"If It Glows\" Tee / White / M",
         "size": "M",
         "color": "White",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79008,
-        "name": "\"If It Glows\" Shirt / Light Green / L",
+        "name": "\"If It Glows\" Tee / Light Green / L",
         "size": "L",
         "color": "Light Green",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102354,
-        "name": "\"If It Glows\" Shirt / Espresso / L",
+        "name": "\"If It Glows\" Tee / Espresso / L",
         "size": "L",
         "color": "Espresso",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78981,
-        "name": "\"If It Glows\" Shirt / Hemp / S",
+        "name": "\"If It Glows\" Tee / Hemp / S",
         "size": "S",
         "color": "Hemp",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79016,
-        "name": "\"If It Glows\" Shirt / Midnight / S",
+        "name": "\"If It Glows\" Tee / Midnight / S",
         "size": "S",
         "color": "Midnight",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102355,
-        "name": "\"If It Glows\" Shirt / Espresso / XL",
+        "name": "\"If It Glows\" Tee / Espresso / XL",
         "size": "XL",
         "color": "Espresso",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73982,
-        "name": "\"If It Glows\" Shirt / Granite / L",
+        "name": "\"If It Glows\" Tee / Granite / L",
         "size": "L",
         "color": "Granite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73989,
-        "name": "\"If It Glows\" Shirt / Granite / XL",
+        "name": "\"If It Glows\" Tee / Granite / XL",
         "size": "XL",
         "color": "Granite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73968,
-        "name": "\"If It Glows\" Shirt / Granite / S",
+        "name": "\"If It Glows\" Tee / Granite / S",
         "size": "S",
         "color": "Granite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79007,
-        "name": "\"If It Glows\" Shirt / Light Green / M",
+        "name": "\"If It Glows\" Tee / Light Green / M",
         "size": "M",
         "color": "Light Green",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73211,
-        "name": "\"If It Glows\" Shirt / White / XL",
+        "name": "\"If It Glows\" Tee / White / XL",
         "size": "XL",
         "color": "White",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79083,
-        "name": "\"If It Glows\" Shirt / True Navy / L",
+        "name": "\"If It Glows\" Tee / True Navy / L",
         "size": "L",
         "color": "True Navy",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73975,
-        "name": "\"If It Glows\" Shirt / Granite / M",
+        "name": "\"If It Glows\" Tee / Granite / M",
         "size": "M",
         "color": "Granite",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73207,
-        "name": "\"If It Glows\" Shirt / White / L",
+        "name": "\"If It Glows\" Tee / White / L",
         "size": "L",
         "color": "White",
         "price": "25.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79019,
-        "name": "\"If It Glows\" Shirt / Midnight / XL",
+        "name": "\"If It Glows\" Tee / Midnight / XL",
         "size": "XL",
         "color": "Midnight",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79018,
-        "name": "\"If It Glows\" Shirt / Midnight / L",
+        "name": "\"If It Glows\" Tee / Midnight / L",
         "size": "L",
         "color": "Midnight",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79081,
-        "name": "\"If It Glows\" Shirt / True Navy / S",
+        "name": "\"If It Glows\" Tee / True Navy / S",
         "size": "S",
         "color": "True Navy",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78984,
-        "name": "\"If It Glows\" Shirt / Hemp / XL",
+        "name": "\"If It Glows\" Tee / Hemp / XL",
         "size": "XL",
         "color": "Hemp",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79082,
-        "name": "\"If It Glows\" Shirt / True Navy / M",
+        "name": "\"If It Glows\" Tee / True Navy / M",
         "size": "M",
         "color": "True Navy",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78983,
-        "name": "\"If It Glows\" Shirt / Hemp / L",
+        "name": "\"If It Glows\" Tee / Hemp / L",
         "size": "L",
         "color": "Hemp",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79084,
-        "name": "\"If It Glows\" Shirt / True Navy / XL",
+        "name": "\"If It Glows\" Tee / True Navy / XL",
         "size": "XL",
         "color": "True Navy",
         "price": "30.01",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78965,
-        "name": "\"If It Glows\" Shirt / Graphite / 2XL",
+        "name": "\"If It Glows\" Tee / Graphite / 2XL",
         "size": "2XL",
         "color": "Graphite",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79010,
-        "name": "\"If It Glows\" Shirt / Light Green / 2XL",
+        "name": "\"If It Glows\" Tee / Light Green / 2XL",
         "size": "2XL",
         "color": "Light Green",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73996,
-        "name": "\"If It Glows\" Shirt / Granite / 2XL",
+        "name": "\"If It Glows\" Tee / Granite / 2XL",
         "size": "2XL",
         "color": "Granite",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73212,
-        "name": "\"If It Glows\" Shirt / Black / 2XL",
+        "name": "\"If It Glows\" Tee / Black / 2XL",
         "size": "2XL",
         "color": "Black",
-        "price": "25.00",
+        "price": "27.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 73215,
-        "name": "\"If It Glows\" Shirt / White / 2XL",
+        "name": "\"If It Glows\" Tee / White / 2XL",
         "size": "2XL",
         "color": "White",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79020,
-        "name": "\"If It Glows\" Shirt / Midnight / 2XL",
+        "name": "\"If It Glows\" Tee / Midnight / 2XL",
         "size": "2XL",
         "color": "Midnight",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 79085,
-        "name": "\"If It Glows\" Shirt / True Navy / 2XL",
+        "name": "\"If It Glows\" Tee / True Navy / 2XL",
         "size": "2XL",
         "color": "True Navy",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 78985,
-        "name": "\"If It Glows\" Shirt / Hemp / 2XL",
+        "name": "\"If It Glows\" Tee / Hemp / 2XL",
         "size": "2XL",
         "color": "Hemp",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102356,
-        "name": "\"If It Glows\" Shirt / Espresso / 2XL",
+        "name": "\"If It Glows\" Tee / Espresso / 2XL",
         "size": "2XL",
         "color": "Espresso",
         "price": "32.10",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101476,
-        "name": "\"If It Glows\" Shirt / White / 4XL",
+        "name": "\"If It Glows\" Tee / White / 4XL",
         "size": "4XL",
         "color": "White",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101471,
-        "name": "\"If It Glows\" Shirt / True Navy / 4XL",
+        "name": "\"If It Glows\" Tee / True Navy / 4XL",
         "size": "4XL",
         "color": "True Navy",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101443,
-        "name": "\"If It Glows\" Shirt / Graphite / 4XL",
+        "name": "\"If It Glows\" Tee / Graphite / 4XL",
         "size": "4XL",
         "color": "Graphite",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101441,
-        "name": "\"If It Glows\" Shirt / Granite / 4XL",
+        "name": "\"If It Glows\" Tee / Granite / 4XL",
         "size": "4XL",
         "color": "Granite",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101456,
-        "name": "\"If It Glows\" Shirt / Midnight / 4XL",
+        "name": "\"If It Glows\" Tee / Midnight / 4XL",
         "size": "4XL",
         "color": "Midnight",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101423,
-        "name": "\"If It Glows\" Shirt / Black / 4XL",
+        "name": "\"If It Glows\" Tee / Black / 4XL",
         "size": "4XL",
         "color": "Black",
         "price": "30.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-shirt.jpg?camera_label=front",
-        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-shirt.jpg?camera_label=back"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/73204/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101454,
-        "name": "\"If It Glows\" Shirt / Light Green / 4XL",
+        "name": "\"If It Glows\" Tee / Light Green / 4XL",
         "size": "4XL",
         "color": "Light Green",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 102358,
-        "name": "\"If It Glows\" Shirt / Espresso / 4XL",
+        "name": "\"If It Glows\" Tee / Espresso / 4XL",
         "size": "4XL",
         "color": "Espresso",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
       },
       {
         "id": 101447,
-        "name": "\"If It Glows\" Shirt / Hemp / 4XL",
+        "name": "\"If It Glows\" Tee / Hemp / 4XL",
         "size": "4XL",
         "color": "Hemp",
         "price": "38.75",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-shirt.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
+        "backPreviewUrl": "https://images.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
       }
     ]
   }
