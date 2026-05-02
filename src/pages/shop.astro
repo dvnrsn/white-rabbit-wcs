@@ -103,8 +103,8 @@ const products = productsData as Product[];
           <div class="dialog-price" id="dialog-price"></div>
 
           <div class="dialog-actions">
-            <button class="btn-buy" id="btn-stripe" disabled aria-label="Coming soon">
-              Coming Soon
+            <button class="btn-buy" id="btn-stripe">
+              Buy Now
             </button>
           </div>
 
@@ -255,6 +255,7 @@ const products = productsData as Product[];
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          productId: currentProduct.id,
           variantId: variant.id,
           variantName: variant.name,
           price: variant.price,
@@ -269,7 +270,7 @@ const products = productsData as Product[];
     } catch (err) {
       dialogError.textContent = 'Something went wrong. Please try again.';
       btnStripe.disabled = false;
-      btnStripe.textContent = 'Coming Soon';
+      btnStripe.textContent = 'Buy Now';
     }
   });
 </script>
