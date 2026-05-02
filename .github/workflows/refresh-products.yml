@@ -1,4 +1,4 @@
-name: Refresh Printful Products
+name: Refresh Printify Products
 
 on:
   workflow_dispatch:
@@ -26,11 +26,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install --prod
 
-      - name: Fetch Printful products
+      - name: Fetch Printify products
         run: node scripts/fetch-products.js
         env:
-          PRINTFUL_API_KEY: ${{ secrets.PRINTFUL_API_KEY }}
-          PRINTFUL_STORE_ID: ${{ secrets.PRINTFUL_STORE_ID }}
+          PRINTIFY_API_TOKEN: ${{ secrets.PRINTIFY_API_TOKEN }}
+          PRINTIFY_SHOP_ID: ${{ secrets.PRINTIFY_SHOP_ID }}
 
       - name: Commit and push if changed
         run: |
