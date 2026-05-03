@@ -1,3 +1,9 @@
+export interface ProductImage {
+  src: string;
+  position: string;
+  variantIds: number[];
+}
+
 export interface ProductVariant {
   id: number;
   name: string;
@@ -14,6 +20,7 @@ export interface Product {
   name: string;
   description: string;
   thumbnailUrl: string;
+  images: ProductImage[];
   variants: ProductVariant[];
 }
 
