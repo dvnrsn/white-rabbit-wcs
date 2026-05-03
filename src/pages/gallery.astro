@@ -54,7 +54,7 @@ if (accountId && apiToken) {
         uploaded: new Date(obj.last_modified),
       });
     }
-    cursor = data.result_info.is_truncated ? data.result_info.cursor : undefined;
+    cursor = data.result_info?.is_truncated ? data.result_info.cursor : undefined;
   } while (cursor);
 
   items.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
