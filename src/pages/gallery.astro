@@ -302,6 +302,17 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     gap: 8px;
   }
 
+  @media (max-width: 640px) {
+    .grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .grid-item {
+      aspect-ratio: 1;
+    }
+  }
+
   .grid-item {
     background: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -332,75 +343,64 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     inset: 0;
     background: rgba(0, 0, 0, 0.92);
     z-index: 1000;
+    align-items: center;
+    justify-content: center;
   }
 
-  .lightbox.open {
-    display: block;
-  }
+  .lightbox.open { display: flex; }
 
   .lightbox-media {
-    position: absolute;
-    top: 52px;
-    left: 52px;
-    right: 52px;
-    bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
   }
 
   .lightbox-media img,
   .lightbox-media video {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 100vw;
+    max-height: 100vh;
     width: auto;
     height: auto;
     object-fit: contain;
     display: block;
   }
 
-  .lightbox-close {
+  .lightbox-close,
+  .lightbox-nav {
     position: absolute;
-    top: 8px;
-    right: 8px;
     background: none;
     border: none;
-    color: var(--text-primary);
-    font-size: 2rem;
+    color: #fff;
     cursor: pointer;
-    line-height: 1;
-    opacity: 0.7;
+    opacity: 0.8;
     transition: opacity 0.2s;
-    padding: 8px;
     min-width: 44px;
     min-height: 44px;
     display: flex;
     align-items: center;
     justify-content: center;
+    z-index: 1;
   }
 
-  .lightbox-close:hover { opacity: 1; }
+  .lightbox-close:hover,
+  .lightbox-nav:hover { opacity: 1; }
+
+  .lightbox-close {
+    top: 12px;
+    right: 12px;
+    font-size: 2rem;
+    line-height: 1;
+  }
 
   .lightbox-nav {
-    position: absolute;
-    top: 52px;
-    bottom: 16px;
-    width: 48px;
-    background: none;
-    border: none;
-    color: var(--text-primary);
-    font-size: 2.5rem;
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 44px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 3rem;
+    padding: 0 12px;
   }
 
-  .lightbox-nav:hover { opacity: 1; }
   .lightbox-prev { left: 0; }
   .lightbox-next { right: 0; }
 </style>
