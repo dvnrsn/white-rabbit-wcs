@@ -173,7 +173,7 @@ const products = productsData as Product[];
       const el = document.createElement('img');
       el.src = img.src;
       el.alt = '';
-      el.loading = 'lazy';
+      el.loading = i === activeIdx ? 'eager' : 'lazy';
       btn.appendChild(el);
       btn.addEventListener('click', () => {
         currentImageIdx = i;
