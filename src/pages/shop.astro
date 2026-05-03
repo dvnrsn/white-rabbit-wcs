@@ -483,15 +483,18 @@ const products = productsData as Product[];
   }
 
   .dialog-image-wrap {
-    aspect-ratio: 1;
     background: #111;
-    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 340px;
   }
 
   .dialog-image {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-height: 340px;
+    object-fit: contain;
+    display: block;
   }
 
   .dialog-thumbs {
