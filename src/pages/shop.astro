@@ -32,7 +32,7 @@ const products = productsData as Product[];
             const priceRange = minPrice === maxPrice
               ? `$${minPrice.toFixed(2)}`
               : `$${minPrice.toFixed(2)} – $${maxPrice.toFixed(2)}`;
-            const backUrl = product.variants[0]?.backPreviewUrl;
+            const backUrl = product.variants.find(v => v.backPreviewUrl)?.backPreviewUrl;
 
             return (
               <article
@@ -174,10 +174,12 @@ const products = productsData as Product[];
     if (!currentProduct) return;
 
     const colors = [...new Set(currentProduct.variants.map(v => v.color).filter(Boolean))];
-    const sizes  = [...new Set(currentProduct.variants.map(v => v.size).filter(Boolean))];
+    const sizesForColor = [...new Set(
+      currentProduct.variants.filter(v => !v.color || v.color === selectedColor).map(v => v.size).filter(Boolean)
+    )];
 
     colorGroup.style.display = colors.length > 0 ? '' : 'none';
-    sizeGroup.style.display  = sizes.length  > 0 ? '' : 'none';
+    sizeGroup.style.display  = sizesForColor.length > 0 ? '' : 'none';
 
     colorSelect.innerHTML = '';
     colors.forEach(color => {
@@ -189,13 +191,19 @@ const products = productsData as Product[];
     });
 
     sizeSelect.innerHTML = '';
-    sizes.forEach(size => {
+    sizesForColor.forEach(size => {
       const opt = document.createElement('option');
       opt.value = size;
       opt.textContent = size;
       if (size === selectedSize) opt.selected = true;
       sizeSelect.appendChild(opt);
     });
+
+    // Reset size if current selection isn't valid for this color
+    if (!sizesForColor.includes(selectedSize)) {
+      selectedSize = sizesForColor[0] ?? '';
+      sizeSelect.value = selectedSize;
+    }
   }
 
   colorSelect.addEventListener('change', () => { selectedColor = colorSelect.value; updateDialog(); });
