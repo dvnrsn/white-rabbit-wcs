@@ -101,7 +101,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
               <div class="grid">
                 {albumItems.map((item) => (
                   <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
-                    {item.isVideo ? <video src={item.url} muted preload="metadata" /> : <img src={item.url} alt={item.name} loading="lazy" decoding="async" />}
+                    {item.isVideo
+                      ? <video data-src={item.url} muted preload="none" />
+                      : <img data-src={item.url} alt={item.name} decoding="async" />}
                   </button>
                 ))}
               </div>
@@ -194,6 +196,21 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     triggerEl?.focus();
     triggerEl = null;
   }
+
+  // Load images inside a <details> when it's opened
+  function loadMedia(container: Element) {
+    container.querySelectorAll<HTMLImageElement | HTMLVideoElement>("[data-src]").forEach(el => {
+      if (!el.getAttribute("src")) {
+        el.setAttribute("src", el.dataset.src!);
+        el.removeAttribute("data-src");
+      }
+    });
+  }
+
+  document.querySelectorAll("details").forEach(details => {
+    if (details.open) loadMedia(details);
+    details.addEventListener("toggle", () => { if (details.open) loadMedia(details); });
+  });
 
   gridItems.forEach((btn, i) => {
     btn.addEventListener("click", () => open(i, btn));
