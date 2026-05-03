@@ -121,44 +121,67 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   </main>
 
   <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
-    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
-    <div class="lightbox-media" id="lightbox-media"></div>
-    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Close lightbox">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous image">&#8249;</button>
+    <div class="lightbox-media" id="lightbox-media" aria-live="polite"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next image">&#8250;</button>
   </div>
 </Layout>
 
 <script>
   const lightbox = document.getElementById("lightbox")!;
   const mediaEl = document.getElementById("lightbox-media")!;
-  const closeBtn = document.getElementById("lightbox-close")!;
-  const prevBtn = document.getElementById("lightbox-prev")!;
-  const nextBtn = document.getElementById("lightbox-next")!;
+  const closeBtn = document.getElementById("lightbox-close") as HTMLButtonElement;
+  const prevBtn = document.getElementById("lightbox-prev") as HTMLButtonElement;
+  const nextBtn = document.getElementById("lightbox-next") as HTMLButtonElement;
 
-  const items = [...document.querySelectorAll<HTMLButtonElement>(".grid-item")].map(btn => ({
+  const gridItems = [...document.querySelectorAll<HTMLButtonElement>(".grid-item")];
+  const items = gridItems.map((btn, i) => ({
     url: btn.dataset.url!,
     isVideo: btn.dataset.video === "true",
+    label: btn.getAttribute("aria-label") ?? `Photo ${i + 1}`,
   }));
 
   let currentIndex = 0;
+  let triggerEl: HTMLElement | null = null;
+
+  const focusable = () => lightbox.querySelectorAll<HTMLElement>(
+    'button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+
+  function trapFocus(e: KeyboardEvent) {
+    if (e.key !== "Tab") return;
+    const els = [...focusable()];
+    if (!els.length) return;
+    const first = els[0], last = els[els.length - 1];
+    if (e.shiftKey) {
+      if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+    } else {
+      if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  }
 
   function show(index: number) {
     currentIndex = (index + items.length) % items.length;
-    const { url, isVideo } = items[currentIndex];
+    const { url, isVideo, label } = items[currentIndex];
     mediaEl.innerHTML = isVideo
-      ? `<video src="${url}" controls autoplay playsinline></video>`
-      : `<img src="${url}" alt="" />`;
+      ? `<video src="${url}" controls autoplay playsinline aria-label="${label}"></video>`
+      : `<img src="${url}" alt="${label}" />`;
+    lightbox.setAttribute("aria-label", `Image viewer — ${label} (${currentIndex + 1} of ${items.length})`);
     prevBtn.style.display = items.length > 1 ? "" : "none";
     nextBtn.style.display = items.length > 1 ? "" : "none";
   }
 
-  function open(index: number) {
+  function open(index: number, trigger: HTMLElement) {
+    triggerEl = trigger;
     show(index);
-    lightbox.setAttribute("aria-hidden", "false");
+    lightbox.removeAttribute("aria-hidden");
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
     document.documentElement.style.overflow = "hidden";
+    closeBtn.focus();
+    lightbox.addEventListener("keydown", trapFocus);
   }
 
   function close() {
@@ -167,10 +190,13 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     mediaEl.innerHTML = "";
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
+    lightbox.removeEventListener("keydown", trapFocus);
+    triggerEl?.focus();
+    triggerEl = null;
   }
 
-  document.querySelectorAll<HTMLButtonElement>(".grid-item").forEach((btn, i) => {
-    btn.addEventListener("click", () => open(i));
+  gridItems.forEach((btn, i) => {
+    btn.addEventListener("click", () => open(i, btn));
   });
 
   closeBtn.addEventListener("click", close);
