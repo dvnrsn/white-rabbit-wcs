@@ -341,24 +341,28 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   }
 
   .lightbox-media {
-    max-width: 90vw;
-    max-height: 90vh;
+    width: calc(100vw - 96px);
+    max-height: calc(100vh - 80px);
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 40px;
   }
 
   .lightbox-media img,
   .lightbox-media video {
-    max-width: 90vw;
-    max-height: 90vh;
+    max-width: 100%;
+    max-height: calc(100vh - 80px);
+    width: auto;
+    height: auto;
     object-fit: contain;
+    display: block;
   }
 
   .lightbox-close {
     position: absolute;
-    top: 20px;
-    right: 24px;
+    top: 12px;
+    right: 16px;
     background: none;
     border: none;
     color: var(--text-primary);
@@ -367,6 +371,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     line-height: 1;
     opacity: 0.7;
     transition: opacity 0.2s;
+    padding: 8px;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .lightbox-close:hover { opacity: 1; }
@@ -378,15 +385,17 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     background: none;
     border: none;
     color: var(--text-primary);
-    font-size: 3rem;
+    font-size: 2.5rem;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.2s;
-    padding: 0 16px;
+    padding: 8px 12px;
     line-height: 1;
+    min-width: 44px;
+    min-height: 44px;
   }
 
   .lightbox-nav:hover { opacity: 1; }
-  .lightbox-prev { left: 8px; }
-  .lightbox-next { right: 8px; }
+  .lightbox-prev { left: 0; }
+  .lightbox-next { right: 0; }
 </style>
