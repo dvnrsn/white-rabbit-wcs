@@ -229,6 +229,8 @@ const products = productsData as Product[];
     updateDialog();
 
     dialog.showModal();
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   }
 
   // Open dialog when clicking a product card
@@ -248,6 +250,8 @@ const products = productsData as Product[];
   // Return focus on close
   dialog.addEventListener('close', () => {
     (document.activeElement as HTMLElement)?.blur();
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   });
 
   // Stripe checkout (coming soon — enable once STRIPE_SECRET_KEY is set)

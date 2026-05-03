@@ -95,23 +95,26 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
 
       {hasContent && Array.from(albums.entries()).map(([album, albumItems]) => (
         <section class="album">
-          {album && <h2 class="album-title">{album.replace(/-/g, " ")}</h2>}
-          <div class="grid">
-            {albumItems.map((item) => (
-              <button
-                class="grid-item"
-                data-url={item.url}
-                data-video={item.isVideo ? "true" : undefined}
-                aria-label={item.name}
-              >
-                {item.isVideo ? (
-                  <video src={item.url} muted preload="metadata" />
-                ) : (
-                  <img src={item.url} alt={item.name} loading="lazy" decoding="async" />
-                )}
-              </button>
-            ))}
-          </div>
+          {album ? (
+            <details open>
+              <summary class="album-title">{album.replace(/-/g, " ")}</summary>
+              <div class="grid">
+                {albumItems.map((item) => (
+                  <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
+                    {item.isVideo ? <video src={item.url} muted preload="metadata" /> : <img src={item.url} alt={item.name} loading="lazy" decoding="async" />}
+                  </button>
+                ))}
+              </div>
+            </details>
+          ) : (
+            <div class="grid">
+              {albumItems.map((item) => (
+                <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
+                  {item.isVideo ? <video src={item.url} muted preload="metadata" /> : <img src={item.url} alt={item.name} loading="lazy" decoding="async" />}
+                </button>
+              ))}
+            </div>
+          )}
         </section>
       ))}
     </div>
@@ -120,7 +123,9 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightbox-close" aria-label="Close">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous">&#8249;</button>
     <div class="lightbox-media" id="lightbox-media"></div>
+    <button class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next">&#8250;</button>
   </div>
 </Layout>
 
@@ -128,14 +133,32 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   const lightbox = document.getElementById("lightbox")!;
   const mediaEl = document.getElementById("lightbox-media")!;
   const closeBtn = document.getElementById("lightbox-close")!;
+  const prevBtn = document.getElementById("lightbox-prev")!;
+  const nextBtn = document.getElementById("lightbox-next")!;
 
-  function open(url: string, isVideo: boolean) {
+  const items = [...document.querySelectorAll<HTMLButtonElement>(".grid-item")].map(btn => ({
+    url: btn.dataset.url!,
+    isVideo: btn.dataset.video === "true",
+  }));
+
+  let currentIndex = 0;
+
+  function show(index: number) {
+    currentIndex = (index + items.length) % items.length;
+    const { url, isVideo } = items[currentIndex];
     mediaEl.innerHTML = isVideo
       ? `<video src="${url}" controls autoplay playsinline></video>`
       : `<img src="${url}" alt="" />`;
+    prevBtn.style.display = items.length > 1 ? "" : "none";
+    nextBtn.style.display = items.length > 1 ? "" : "none";
+  }
+
+  function open(index: number) {
+    show(index);
     lightbox.setAttribute("aria-hidden", "false");
     lightbox.classList.add("open");
     document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
   }
 
   function close() {
@@ -143,17 +166,23 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     lightbox.classList.remove("open");
     mediaEl.innerHTML = "";
     document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
   }
 
-  document.querySelectorAll<HTMLButtonElement>(".grid-item").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      open(btn.dataset.url!, btn.dataset.video === "true");
-    });
+  document.querySelectorAll<HTMLButtonElement>(".grid-item").forEach((btn, i) => {
+    btn.addEventListener("click", () => open(i));
   });
 
   closeBtn.addEventListener("click", close);
+  prevBtn.addEventListener("click", (e) => { e.stopPropagation(); show(currentIndex - 1); });
+  nextBtn.addEventListener("click", (e) => { e.stopPropagation(); show(currentIndex + 1); });
   lightbox.addEventListener("click", (e) => { if (e.target === lightbox) close(); });
-  document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+  document.addEventListener("keydown", (e) => {
+    if (!lightbox.classList.contains("open")) return;
+    if (e.key === "Escape") close();
+    if (e.key === "ArrowLeft") show(currentIndex - 1);
+    if (e.key === "ArrowRight") show(currentIndex + 1);
+  });
 </script>
 
 <style>
@@ -189,6 +218,10 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     margin-bottom: 56px;
   }
 
+  details.album-accordion {
+    margin-bottom: 56px;
+  }
+
   .album-title {
     font-size: 1rem;
     font-weight: 600;
@@ -196,6 +229,28 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     text-transform: uppercase;
     color: var(--accent-primary);
     margin-bottom: 20px;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    user-select: none;
+  }
+
+  .album-title::-webkit-details-marker { display: none; }
+
+  .album-title::before {
+    content: "▶";
+    font-size: 0.6em;
+    transition: transform 0.2s;
+  }
+
+  details[open] > .album-title::before {
+    transform: rotate(90deg);
+  }
+
+  details > .grid {
+    margin-top: 20px;
   }
 
   .grid {
@@ -271,7 +326,24 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     transition: opacity 0.2s;
   }
 
-  .lightbox-close:hover {
-    opacity: 1;
+  .lightbox-close:hover { opacity: 1; }
+
+  .lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 3rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 0 16px;
+    line-height: 1;
   }
+
+  .lightbox-nav:hover { opacity: 1; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
 </style>
