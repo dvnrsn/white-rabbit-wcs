@@ -47,7 +47,7 @@ if (accountId && apiToken) {
       const name = segments[segments.length - 1];
       items.push({
         key: obj.key,
-        url: `${PUBLIC_BUCKET_URL}/${encodeURIComponent(obj.key)}`,
+        url: `${PUBLIC_BUCKET_URL}/${obj.key.split("/").map(encodeURIComponent).join("/")}`,
         name,
         album,
         isVideo: VIDEO_EXTS.test(obj.key),
