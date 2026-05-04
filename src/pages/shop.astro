@@ -485,16 +485,20 @@ const products = productsData as Product[];
   .dialog-image-wrap {
     background: #111;
     overflow: hidden;
+    width: 100%;
     height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .dialog-image {
-    width: 100%;
-    height: 100%;
-    min-width: 0;
-    min-height: 0;
-    object-fit: contain;
     display: block;
+    max-width: 100%;
+    max-height: 300px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
   }
 
   .dialog-thumbs {
@@ -510,7 +514,7 @@ const products = productsData as Product[];
   .dialog-thumbs::-webkit-scrollbar-track { background: transparent; }
   .dialog-thumbs::-webkit-scrollbar-thumb { background: var(--border-color); }
 
-  .thumb {
+  :global(.thumb) {
     flex-shrink: 0;
     width: 60px;
     height: 60px;
@@ -522,10 +526,10 @@ const products = productsData as Product[];
     transition: border-color 0.15s;
   }
 
-  .thumb:hover { border-color: var(--border-accent); }
-  .thumb.active { border-color: var(--accent-primary); }
+  :global(.thumb:hover) { border-color: var(--border-accent); }
+  :global(.thumb.active) { border-color: var(--accent-primary); }
 
-  .thumb img {
+  :global(.thumb img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
