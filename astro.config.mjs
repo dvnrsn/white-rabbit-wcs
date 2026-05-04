@@ -13,4 +13,9 @@ export default defineConfig({
   adapter: cloudflare(),
   site: "https://whiterabbitwcs.com",
   integrations: [sitemap(), keystatic(), react()],
+  vite: {
+    optimizeDeps: {
+      include: ["rrule"],
+    },
+  },
 });
