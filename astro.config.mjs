@@ -14,9 +14,6 @@ export default defineConfig({
   site: "https://whiterabbitwcs.com",
   integrations: [sitemap(), keystatic(), react()],
   vite: {
-    optimizeDeps: {
-      include: ["rrule"],
-    },
     ssr: {
       noExternal: ["rrule"],
     },
