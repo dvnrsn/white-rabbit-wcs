@@ -359,8 +359,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     min-width: 0;
   }
 
-  .lightbox-media img,
-  .lightbox-media video {
+  :global(.lightbox-media img),
+  :global(.lightbox-media video) {
     min-width: 0;
     max-width: 100%;
     max-height: 100vh;
@@ -371,8 +371,8 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   }
 
   @media (max-width: 640px) {
-    .lightbox-media img,
-    .lightbox-media video {
+    :global(.lightbox-media img),
+    :global(.lightbox-media video) {
       width: 100%;
       height: auto;
     }
