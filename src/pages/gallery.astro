@@ -43,7 +43,7 @@ if (accountId && apiToken) {
     for (const obj of data.result) {
       if (!IMAGE_EXTS.test(obj.key) && !VIDEO_EXTS.test(obj.key)) continue;
       const segments = obj.key.split("/");
-      const album = segments.length > 1 ? segments[0] : null;
+      const album = segments.length > 1 ? segments.slice(0, -1).join("/") : null;
       const name = segments[segments.length - 1];
       items.push({
         key: obj.key,
@@ -97,7 +97,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
         <section class="album">
           {album ? (
             <details open>
-              <summary class="album-title">{album.replace(/-/g, " ")}</summary>
+              <summary class="album-title">{album.split("/").map(s => s.replace(/-/g, " ")).join(" / ")}</summary>
               <div class="grid">
                 {albumItems.map((item) => (
                   <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
