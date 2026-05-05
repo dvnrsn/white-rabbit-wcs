@@ -96,7 +96,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
       {hasContent && Array.from(albums.entries()).map(([album, albumItems]) => (
         <section class="album">
           {album ? (
-            <details open>
+            <details>
               <summary class="album-title">{album.split("/").map(s => s.replace(/-/g, " ")).join(" / ")}</summary>
               <div class="grid">
                 {albumItems.map((item) => (
