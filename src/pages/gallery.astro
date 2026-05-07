@@ -11,6 +11,10 @@ const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp|avif)$/i;
 const env = (Astro.locals as any).runtime?.env;
 const accountId = env?.WHITE_RABBIT_ACCOUNT_ID;
 const apiToken = env?.WHITE_RABBIT_R2_API_TOKEN;
+const kv = env?.SESSION;
+
+const KV_KEY = "gallery:items";
+const KV_TTL = 3600; // 1 hour
 
 type GalleryItem = {
   key: string;
@@ -24,40 +28,52 @@ type GalleryItem = {
 let items: GalleryItem[] = [];
 
 if (accountId && apiToken) {
-  let cursor: string | undefined;
-  do {
-    const url = new URL(
-      `https://api.cloudflare.com/client/v4/accounts/${accountId}/r2/buckets/${BUCKET_NAME}/objects`
-    );
-    if (cursor) url.searchParams.set("cursor", cursor);
-    url.searchParams.set("per_page", "50");
+  // Try KV cache first
+  const cached = kv ? await kv.get(KV_KEY, "json") as GalleryItem[] | null : null;
 
-    const res = await fetch(url.toString(), {
-      headers: { Authorization: `Bearer ${apiToken}` },
-    });
-    const data = await res.json() as {
-      result: { key: string; last_modified: string }[];
-      result_info: { cursor: string; is_truncated: boolean };
-    };
+  if (cached) {
+    items = cached.map(i => ({ ...i, uploaded: new Date(i.uploaded) }));
+  } else {
+    let cursor: string | undefined;
+    const fetched: GalleryItem[] = [];
+    do {
+      const url = new URL(
+        `https://api.cloudflare.com/client/v4/accounts/${accountId}/r2/buckets/${BUCKET_NAME}/objects`
+      );
+      if (cursor) url.searchParams.set("cursor", cursor);
+      url.searchParams.set("per_page", "50");
 
-    for (const obj of data.result) {
-      if (!IMAGE_EXTS.test(obj.key) && !VIDEO_EXTS.test(obj.key)) continue;
-      const segments = obj.key.split("/");
-      const album = segments.length > 1 ? segments.slice(0, -1).join("/") : null;
-      const name = segments[segments.length - 1];
-      items.push({
-        key: obj.key,
-        url: `${PUBLIC_BUCKET_URL}/${obj.key.split("/").map(encodeURIComponent).join("/")}`,
-        name,
-        album,
-        isVideo: VIDEO_EXTS.test(obj.key),
-        uploaded: new Date(obj.last_modified),
+      const res = await fetch(url.toString(), {
+        headers: { Authorization: `Bearer ${apiToken}` },
       });
-    }
-    cursor = data.result_info?.is_truncated ? data.result_info.cursor : undefined;
-  } while (cursor);
+      const data = await res.json() as {
+        result: { key: string; last_modified: string }[];
+        result_info: { cursor: string; is_truncated: boolean };
+      };
 
-  items.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+      for (const obj of data.result) {
+        if (!IMAGE_EXTS.test(obj.key) && !VIDEO_EXTS.test(obj.key)) continue;
+        const segments = obj.key.split("/");
+        const album = segments.length > 1 ? segments.slice(0, -1).join("/") : null;
+        const name = segments[segments.length - 1];
+        fetched.push({
+          key: obj.key,
+          url: `${PUBLIC_BUCKET_URL}/${obj.key.split("/").map(encodeURIComponent).join("/")}`,
+          name,
+          album,
+          isVideo: VIDEO_EXTS.test(obj.key),
+          uploaded: new Date(obj.last_modified),
+        });
+      }
+      cursor = data.result_info?.is_truncated ? data.result_info.cursor : undefined;
+    } while (cursor);
+
+    fetched.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+    items = fetched;
+
+    // Store in KV for next requests
+    if (kv) await kv.put(KV_KEY, JSON.stringify(fetched), { expirationTtl: KV_TTL });
+  }
 }
 
 // Group by album
