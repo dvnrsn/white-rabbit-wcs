@@ -1,8 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
+import MonthCalendar from '../components/MonthCalendar.astro';
 import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
 import { generateEventListSchema } from '../lib/schema';
+
 export function getStaticPaths() {
   return [
     {
@@ -46,7 +48,16 @@ export function getStaticPaths() {
 
 const { filterType, filterValue, title, description } = Astro.props;
 
-// Fetch events from Google Calendar
+const PHOENIX_METRO = ['Phoenix','Scottsdale','Tempe','Mesa','Glendale','Chandler','Gilbert','Peoria','Surprise','Avondale'];
+
+function getCity(event: CalendarEvent): string {
+  if (event.city) return event.city;
+  const match = (event.address || '').match(/,\s*([^,]+),\s*AZ/i);
+  const raw = match ? match[1].trim() : '';
+  if (!raw) return '';
+  return PHOENIX_METRO.some(c => raw.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : raw;
+}
+
 let events: CalendarEvent[] = [];
 try {
   const calendarId = import.meta.env.PUBLIC_GOOGLE_CALENDAR_ID;
@@ -55,50 +66,22 @@ try {
   console.error('Error fetching Google Calendar:', error);
 }
 
-// Helper to extract city from address
-function getCity(address: string): string {
-  const cityMatch = address.match(/,\s*([^,]+),\s*AZ/);
-  const rawCity = cityMatch ? cityMatch[1].trim() : 'Phoenix';
-  const phoenixMetro = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
-  return phoenixMetro.some(c => rawCity.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : rawCity;
-}
-
-// Filter events based on filter type
 events = events.filter(event => {
-  if (filterType === 'city') {
-    return getCity(event.address) === filterValue;
-  } else if (filterType === 'type') {
-    return event.type === filterValue;
-  }
+  if (filterType === 'city') return getCity(event) === filterValue;
+  if (filterType === 'type') return event.type === filterValue;
   return true;
 });
 
-// Sort events by date and time
-events = [...events].sort((a, b) => {
-  const dateComparison = new Date(a.date).getTime() - new Date(b.date).getTime();
-  if (dateComparison !== 0) return dateComparison;
+events = [...events].sort((a, b) =>
+  a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime)
+);
 
-  const [aHours, aMinutes] = a.startTime.split(':').map(Number);
-  const [bHours, bMinutes] = b.startTime.split(':').map(Number);
-  return (aHours * 60 + aMinutes) - (bHours * 60 + bMinutes);
-});
-
-// Separate upcoming and past events
-const nowUtc = new Date();
-const arizonaOffset = -7 * 60;
-const nowArizona = new Date(nowUtc.getTime() + arizonaOffset * 60 * 1000);
-const todayArizona = new Date(nowArizona.getFullYear(), nowArizona.getMonth(), nowArizona.getDate());
-
-const upcomingEvents = events.filter(event => {
-  const eventDate = new Date(event.date + 'T00:00:00');
-  return eventDate >= todayArizona;
-});
-const pastEvents = events.filter(event => {
-  const eventDate = new Date(event.date + 'T00:00:00');
-  return eventDate < todayArizona;
-});
+const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/Phoenix' });
+const upcomingEvents = events.filter(e => e.date >= today);
+const pastEvents = events.filter(e => e.date < today).reverse();
 
 const schema = generateEventListSchema(upcomingEvents);
+const showCalendar = filterType === 'city';
 ---
 
 <Layout
@@ -110,43 +93,92 @@ const schema = generateEventListSchema(upcomingEvents);
     <div class="container">
       <header class="page-header">
         <h1 class="page-title gradient-text">{title}</h1>
-        <a href="/events" class="view-all-link">View All Events →</a>
+        <div class="header-right">
+          {showCalendar && (
+            <div class="view-toggle" role="group" aria-label="View mode">
+              <button id="view-month-btn" class="view-btn active" aria-label="Month view" title="Month view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                  <line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+              </button>
+              <button id="view-list-btn" class="view-btn" aria-label="List view" title="List view">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/>
+                  <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/>
+                </svg>
+              </button>
+            </div>
+          )}
+          <a href="/events" class="view-all-link">All Events →</a>
+        </div>
       </header>
 
-      {upcomingEvents.length > 0 && (
-        <section class="events-section">
-          <div class="events-list">
-            {upcomingEvents.map(event => (
-              <div class="event-item">
-                <EventCard event={event} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {pastEvents.length > 0 && (
-        <section class="events-section past-events">
-          <h2 class="section-title">> Past Events</h2>
-          <div class="events-list">
-            {pastEvents.map(event => (
-              <div class="event-item">
-                <EventCard event={event} />
-              </div>
-            ))}
-          </div>
-        </section>
-      )}
-
-      {upcomingEvents.length === 0 && pastEvents.length === 0 && (
-        <div class="no-events">
-          <p>Your events are currently chasing the White Rabbit. Please stand by.</p>
-          <a href="/events" class="view-all-link">View All Events →</a>
+      {showCalendar && (
+        <div id="month-view">
+          <MonthCalendar events={events} />
         </div>
       )}
+
+      <div id="list-view" class={showCalendar ? 'hidden' : ''}>
+        {upcomingEvents.length > 0 && (
+          <section class="events-section">
+            <div class="events-list">
+              {upcomingEvents.map(event => (
+                <div class="event-item">
+                  <EventCard event={event} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {pastEvents.length > 0 && (
+          <section class="events-section past-events">
+            <h2 class="section-title">> Past Events</h2>
+            <div class="events-list">
+              {pastEvents.map(event => (
+                <div class="event-item">
+                  <EventCard event={event} />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {upcomingEvents.length === 0 && pastEvents.length === 0 && (
+          <div class="no-events">
+            <p>No events found. Check back soon or <a href="/events" class="view-all-link">view all events</a>.</p>
+          </div>
+        )}
+      </div>
     </div>
   </main>
 </Layout>
+
+{showCalendar && (
+  <script>
+    const monthBtn = document.getElementById('view-month-btn');
+    const listBtn  = document.getElementById('view-list-btn');
+    const monthView = document.getElementById('month-view');
+    const listView  = document.getElementById('list-view');
+
+    function setView(v: 'month' | 'list') {
+      const isMonth = v === 'month';
+      monthView!.classList.toggle('hidden', !isMonth);
+      listView!.classList.toggle('hidden', isMonth);
+      monthBtn!.classList.toggle('active', isMonth);
+      listBtn!.classList.toggle('active', !isMonth);
+      localStorage.setItem('white-rabbit-view', v);
+    }
+
+    monthBtn!.addEventListener('click', () => setView('month'));
+    listBtn!.addEventListener('click',  () => setView('list'));
+
+    const saved = localStorage.getItem('white-rabbit-view') as 'month' | 'list' | null;
+    if (saved) setView(saved);
+  </script>
+)}
 
 <style>
   .events-page {
@@ -156,28 +188,69 @@ const schema = generateEventListSchema(upcomingEvents);
   .page-header {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 3rem;
-    gap: 1rem;
+    align-items: center;
+    margin-bottom: 12px;
+    gap: 8px;
     flex-wrap: wrap;
   }
 
   .page-title {
-    font-size: clamp(2rem, 6vw, 3rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
     letter-spacing: 0.05em;
     margin: 0;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .view-toggle {
+    display: flex;
+    gap: 2px;
+  }
+
+  .view-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-muted);
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .view-btn:hover,
+  .view-btn.active {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
   }
 
   .view-all-link {
     color: var(--accent-primary);
     text-decoration: none;
-    font-size: 1rem;
-    letter-spacing: 0.1em;
-    transition: opacity 0.3s;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    transition: opacity 0.2s;
+    white-space: nowrap;
+    font-family: var(--font-secondary);
   }
 
-  .view-all-link:hover {
-    opacity: 0.8;
+  .view-all-link:hover { opacity: 0.7; }
+
+  .hidden { display: none !important; }
+
+  #month-view {
+    width: 100%;
+  }
+
+  @media (min-width: 900px) {
+    #month-view { max-width: none; }
   }
 
   .events-section {
@@ -202,43 +275,18 @@ const schema = generateEventListSchema(upcomingEvents);
   }
 
   @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
   }
 
-  .past-events {
-    opacity: 0.7;
-  }
-
-  .past-events .section-title {
-    color: var(--text-muted);
-  }
+  .past-events { opacity: 0.7; }
+  .past-events .section-title { color: var(--text-muted); }
 
   .no-events {
     text-align: center;
     padding: 4rem 2rem;
     color: var(--text-muted);
-    font-size: 1.2rem;
-  }
-
-  .no-events .view-all-link {
-    display: inline-block;
-    margin-top: 1rem;
-  }
-
-  @media (max-width: 768px) {
-    .page-header {
-      margin-bottom: 2rem;
-    }
-
-    .page-title {
-      font-size: clamp(1.5rem, 6vw, 2rem);
-    }
+    font-size: 1.1rem;
+    font-family: var(--font-secondary);
   }
 </style>
