@@ -200,7 +200,7 @@ const schema = generateEventListSchema(upcomingEvents);
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 24px;
+    margin-bottom: 12px;
     gap: 8px;
   }
 
@@ -264,7 +264,7 @@ const schema = generateEventListSchema(upcomingEvents);
   }
 
   .page-title {
-    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-size: clamp(1.5rem, 4vw, 2rem);
     letter-spacing: 0.1em;
     margin: 0;
   }
@@ -482,16 +482,12 @@ const schema = generateEventListSchema(upcomingEvents);
 
   @media (max-width: 768px) {
     .page-header {
-      margin-bottom: 32px;
+      margin-bottom: 12px;
       align-items: center;
     }
 
     #month-view {
       max-width: 100%;
-    }
-
-    .page-title {
-      font-size: clamp(2rem, 8vw, 3rem);
     }
 
     /* Mobile: pin dropdown to the top-right of the viewport */
