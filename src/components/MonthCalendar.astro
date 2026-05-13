@@ -8,23 +8,26 @@ interface Props {
 const { events } = Astro.props;
 ---
 
-<div class="month-calendar">
+<div class="month-calendar" id="month-calendar">
   <div class="cal-pane">
     <div class="cal-header">
-      <button class="cal-nav" id="cal-prev" aria-label="Previous month">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="15 18 9 12 15 6"/>
-        </svg>
-      </button>
       <span class="cal-month-label" id="cal-month-label"></span>
-      <button class="cal-nav" id="cal-next" aria-label="Next month">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <polyline points="9 18 15 12 9 6"/>
-        </svg>
-      </button>
+      <div class="cal-nav-group">
+        <button class="cal-nav" id="cal-prev" aria-label="Previous month">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="cal-today-btn" id="cal-today">Today</button>
+        <button class="cal-nav" id="cal-next" aria-label="Next month">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <div class="cal-dow-row" aria-hidden="true">
+    <div class="cal-dow-row" id="cal-dow-row" aria-hidden="true">
       <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
     </div>
 
@@ -41,63 +44,107 @@ const { events } = Astro.props;
 
   const calEvents = JSON.parse(document.getElementById('cal-event-data')!.textContent!);
   const calToday = Temporal.Now.plainDateISO('America/Phoenix').toString();
+
   const MONTHS = [
     'January','February','March','April','May','June',
     'July','August','September','October','November','December'
   ];
+  const DOW_FULL    = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const DOW_COMPACT = ['S','M','T','W','T','F','S'];
 
-  function pad(n) { return String(n).padStart(2, '0'); }
+  const FULL_BP  = 900;
+  const MAX_ROWS = 3;
 
-  function toDateStr(d) {
+  function pad(n: number) { return String(n).padStart(2, '0'); }
+  function toDateStr(d: Date) {
     return `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`;
   }
-
-  function fmtTime(t) {
+  function fmtTime(t: string) {
     if (!t) return '';
     const [h, m] = t.split(':').map(Number);
     return `${h % 12 || 12}:${pad(m)} ${h >= 12 ? 'PM' : 'AM'}`;
   }
+  function isFullMode() { return window.innerWidth >= FULL_BP; }
 
-  const TYPE_COLORS = {
+  const TYPE_COLORS: Record<string, string> = {
     social:      'var(--type-social)',
     class:       'var(--type-class)',
     workshop:    'var(--type-workshop)',
     competition: 'var(--type-competition)',
   };
-  function typeColor(type) {
+  function typeColor(type: string) {
     return TYPE_COLORS[type] || 'var(--text-muted)';
   }
 
-  // Index events by date
-  const byDate = Object.create(null);
-  for (const ev of calEvents) {
-    if (!byDate[ev.date]) byDate[ev.date] = [];
-    byDate[ev.date].push(ev);
+  let activeTypeFilter = localStorage.getItem('white-rabbit-type-filter') || 'all';
+  let activeCityFilter = localStorage.getItem('white-rabbit-city-filter') || 'all';
+
+  const PHOENIX_METRO_CAL = ['Phoenix','Scottsdale','Tempe','Mesa','Glendale','Chandler','Gilbert','Peoria','Surprise','Avondale'];
+
+  function getCity(ev: any): string {
+    if (ev.city) return ev.city;
+    const match = (ev.address || '').match(/,\s*([^,]+),\s*AZ/i);
+    const raw = match ? match[1].trim() : '';
+    if (!raw) return '';
+    return PHOENIX_METRO_CAL.some(c => raw.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : raw;
   }
 
+  function eventMatchesFilter(ev: any) {
+    const allowedTypes = activeTypeFilter.split(',');
+    const typeOk = activeTypeFilter === 'all' || allowedTypes.includes(ev.type);
+    const cityOk  = activeCityFilter  === 'all' || getCity(ev) === activeCityFilter;
+    return typeOk && cityOk;
+  }
+
+  // Index events by date (rebuilt whenever filters change)
+  const byDate: Record<string, any[]> = Object.create(null);
+
+  function rebuildByDate() {
+    for (const key of Object.keys(byDate)) delete byDate[key];
+    for (const ev of calEvents) {
+      if (!eventMatchesFilter(ev)) continue;
+      if (!byDate[ev.date]) byDate[ev.date] = [];
+      byDate[ev.date].push(ev);
+    }
+  }
+
+  rebuildByDate();
+
+  document.addEventListener('wr-filter', (e: any) => {
+    activeTypeFilter = e.detail.type;
+    activeCityFilter = e.detail.city;
+    rebuildByDate();
+    render();
+  });
+
   const todayParts = calToday.split('-').map(Number);
-  let year = todayParts[0];
-  let month = todayParts[1] - 1; // 0-indexed
+  let year     = todayParts[0];
+  let month    = todayParts[1] - 1;
   let selected = calToday;
 
-  // Lazily create a single dialog on <body> for event details
-  function openEventDialog(ev) {
-    const trigger = document.activeElement;
+  // ── Event detail dialog ──────────────────────────────────────────────────────
 
-    let dialog = document.getElementById('cal-event-detail');
+  function openEventDialog(ev: any) {
+    const trigger = document.activeElement as HTMLElement;
+
+    let dialog = document.getElementById('cal-event-detail') as HTMLDialogElement | null;
     if (!dialog) {
       dialog = document.createElement('dialog');
       dialog.id = 'cal-event-detail';
       dialog.setAttribute('aria-modal', 'true');
       dialog.setAttribute('aria-labelledby', 'ced-title');
       document.body.appendChild(dialog);
-      dialog.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+      dialog.addEventListener('click', e => { if (e.target === dialog) (dialog as HTMLDialogElement).close(); });
     }
 
     dialog.addEventListener('close', () => trigger?.focus(), { once: true });
 
-    const color = typeColor(ev.type);
-    const time = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+    const color    = typeColor(ev.type);
+    const timeStr  = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+    const ig       = ev.instagram ? ev.instagram.match(/instagram\.com\/([^/?]+)/i)?.[1] : null;
+    const mapQuery = encodeURIComponent(ev.address || ev.venue || '');
+    const isIOS    = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
+    const mapUrl   = mapQuery ? (isIOS ? `https://maps.apple.com/?q=${mapQuery}` : `https://www.google.com/maps/search/?api=1&query=${mapQuery}`) : null;
 
     dialog.innerHTML = `
       <div class="ced-inner">
@@ -105,92 +152,121 @@ const { events } = Astro.props;
         <div class="ced-type" style="color:${color};border-color:${color}" aria-hidden="true">${ev.type}</div>
         <h2 class="ced-title" id="ced-title">${ev.title}</h2>
         <div class="ced-meta">
-          <div class="ced-meta-row"><span aria-hidden="true">🕰️</span> ${time}</div>
-          ${ev.venue ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> ${ev.venue}</div>` : ''}
-          ${ev.price ? `<div class="ced-meta-row"><span aria-hidden="true">💵</span> ${ev.price}</div>` : ''}
-          ${ev.level ? `<div class="ced-meta-row"><span aria-hidden="true">🎯</span> ${ev.level}</div>` : ''}
+          <div class="ced-meta-row"><span aria-hidden="true">🕰️</span> ${timeStr}</div>
+          ${ev.venue && mapUrl  ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="ced-map-link">${ev.venue}</a></div>` : ''}
+          ${ev.venue && !mapUrl ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> ${ev.venue}</div>` : ''}
+          ${ev.price       ? `<div class="ced-meta-row"><span aria-hidden="true">💵</span> ${ev.price}</div>`    : ''}
+          ${ev.level       ? `<div class="ced-meta-row"><span aria-hidden="true">🎯</span> ${ev.level}</div>`    : ''}
+          ${ev.organizer   ? `<div class="ced-meta-row"><span aria-hidden="true">👤</span> ${ev.organizer}</div>`: ''}
         </div>
         ${ev.description ? `<p class="ced-desc">${ev.description}</p>` : ''}
         <div class="ced-links">
-          ${ev.url      ? `<a href="${ev.url}"       target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🔗</span> Event page</a>` : ''}
-          ${ev.instagram? `<a href="${ev.instagram}" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">📸</span> Instagram</a>`  : ''}
-          ${ev.website  ? `<a href="${ev.website}"   target="_blank" rel="noopener noreferrer"><span aria-hidden="true">🌐</span> Website</a>`    : ''}
+          ${ev.url       ? `<a href="${ev.url}"       target="_blank" rel="noopener noreferrer">🔗 Event page</a>` : ''}
+          ${ig           ? `<a href="${ev.instagram}" target="_blank" rel="noopener noreferrer">📸 @${ig}</a>`      : ''}
+          ${ev.website   ? `<a href="${ev.website}"   target="_blank" rel="noopener noreferrer">🌐 Website</a>`    : ''}
         </div>
         <button class="ced-close-btn">Close</button>
       </div>
     `;
 
-    dialog.querySelector('.ced-close').addEventListener('click', () => dialog.close());
-    dialog.querySelector('.ced-close-btn').addEventListener('click', () => dialog.close());
+    dialog.querySelector('.ced-close')!.addEventListener('click', () => (dialog as HTMLDialogElement).close());
+    dialog.querySelector('.ced-close-btn')!.addEventListener('click', () => (dialog as HTMLDialogElement).close());
     dialog.showModal();
-    dialog.querySelector('.ced-close').focus();
+    (dialog.querySelector('.ced-close') as HTMLElement)?.focus();
   }
 
-  function render() {
-    document.getElementById('cal-month-label').textContent =
-      `${MONTHS[month]} ${year}`;
+  // ── Day popover (full mode "+N more") ────────────────────────────────────────
 
-    const grid = document.getElementById('cal-grid');
-    grid.innerHTML = '';
+  let activePopover: HTMLElement | null = null;
 
-    const firstDow = new Date(year, month, 1).getDay();
-    const daysInMonth = new Date(year, month + 1, 0).getDate();
+  function openDayPopover(ds: string, anchor: HTMLElement, evs: any[]) {
+    closePopover();
 
-    // Leading overflow from prev month
-    for (let i = 0; i < firstDow; i++) {
-      const d = new Date(year, month, 1 - firstDow + i);
-      grid.appendChild(makeCell(d.getDate(), toDateStr(d), true));
+    const d         = new Date(ds + 'T12:00:00');
+    const dateLabel = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+    const pop = document.createElement('div');
+    pop.className = 'day-popover';
+    pop.setAttribute('role', 'dialog');
+    pop.setAttribute('aria-label', `Events for ${dateLabel}`);
+
+    const hdr = document.createElement('div');
+    hdr.className = 'popover-header';
+
+    const dateEl = document.createElement('span');
+    dateEl.className = 'popover-date';
+    dateEl.textContent = dateLabel;
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'popover-close';
+    closeBtn.setAttribute('aria-label', 'Close');
+    closeBtn.textContent = '✕';
+    closeBtn.addEventListener('click', closePopover);
+
+    hdr.appendChild(dateEl);
+    hdr.appendChild(closeBtn);
+    pop.appendChild(hdr);
+
+    evs.forEach(ev => {
+      const row = document.createElement('button');
+      row.className = 'popover-ev-row';
+      row.style.setProperty('--pop-color', typeColor(ev.type));
+
+      const timeEl = document.createElement('span');
+      timeEl.className = 'popover-ev-time';
+      timeEl.textContent = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+
+      const titleEl = document.createElement('span');
+      titleEl.className = 'popover-ev-title';
+      titleEl.textContent = ev.title;
+
+      row.appendChild(timeEl);
+      row.appendChild(titleEl);
+      row.addEventListener('click', () => { closePopover(); openEventDialog(ev); });
+      pop.appendChild(row);
+    });
+
+    document.body.appendChild(pop);
+    activePopover = pop;
+
+    // Position near anchor
+    const rect    = anchor.getBoundingClientRect();
+    const scrollY = window.scrollY;
+    const scrollX = window.scrollX;
+    const popW    = 280;
+    let top  = rect.bottom + scrollY + 6;
+    let left = rect.left + scrollX + rect.width / 2 - popW / 2;
+    const vpW = document.documentElement.clientWidth;
+    left = Math.max(8 + scrollX, Math.min(left, scrollX + vpW - popW - 8));
+    // If below viewport, show above
+    if (rect.bottom + 200 > window.innerHeight) {
+      top = rect.top + scrollY - 200 - 6;
+      if (top < scrollY + 8) top = rect.bottom + scrollY + 6;
     }
+    pop.style.top   = `${top}px`;
+    pop.style.left  = `${left}px`;
+    pop.style.width = `${popW}px`;
 
-    // Current month
-    for (let n = 1; n <= daysInMonth; n++) {
-      const d = new Date(year, month, n);
-      grid.appendChild(makeCell(n, toDateStr(d), false));
-    }
-
-    // Trailing overflow into next month
-    const total = firstDow + daysInMonth;
-    const trail = total % 7 === 0 ? 0 : 7 - (total % 7);
-    for (let n = 1; n <= trail; n++) {
-      const d = new Date(year, month + 1, n);
-      grid.appendChild(makeCell(n, toDateStr(d), true));
-    }
-
-    renderDayEvents();
+    setTimeout(() => {
+      document.addEventListener('click', handlePopoverOutside);
+    }, 0);
   }
 
-  function makeIndicator(ds) {
-    const evs = byDate[ds];
-    if (!evs) return null;
-
-    const isPast  = ds < calToday;
-    const types   = [...new Set(evs.map(ev => ev.type))];
-
-    const wrap = document.createElement('div');
-    wrap.className = 'ev-indicators';
-    if (isPast) wrap.style.opacity = '0.35';
-
-    if (types.length === 1) {
-      const dot = document.createElement('span');
-      dot.className = 'ev-dot';
-      dot.style.background = typeColor(types[0]);
-      wrap.appendChild(dot);
-    } else {
-      const pill = document.createElement('span');
-      pill.className = 'ev-pill';
-      types.forEach(type => {
-        const seg = document.createElement('span');
-        seg.className = 'ev-pill-seg';
-        seg.style.background = typeColor(type);
-        pill.appendChild(seg);
-      });
-      wrap.appendChild(pill);
+  function handlePopoverOutside(e: MouseEvent) {
+    if (activePopover && !activePopover.contains(e.target as Node)) {
+      closePopover();
     }
-
-    return wrap;
   }
 
-  function makeCell(dayNum, ds, dim) {
+  function closePopover() {
+    activePopover?.remove();
+    activePopover = null;
+    document.removeEventListener('click', handlePopoverOutside);
+  }
+
+  // ── Compact-mode cell (original mini-calendar behavior) ──────────────────────
+
+  function makeCompactCell(dayNum: number, ds: string, dim: boolean) {
     const btn = document.createElement('button');
     btn.className = 'cal-day';
     if (dim) btn.classList.add('dim');
@@ -198,19 +274,20 @@ const { events } = Astro.props;
     if (ds === calToday) btn.classList.add('is-today');
     if (ds === selected) btn.classList.add('is-selected');
 
-    const d = new Date(ds + 'T12:00:00');
-    const evCount = byDate[ds]?.length || 0;
+    const d        = new Date(ds + 'T12:00:00');
+    const evCount  = byDate[ds]?.length || 0;
     const dateLabel = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
     btn.setAttribute('aria-label', evCount > 0 ? `${dateLabel}, ${evCount} event${evCount > 1 ? 's' : ''}` : dateLabel);
     if (ds === calToday) btn.setAttribute('aria-current', 'date');
     if (ds === selected) btn.setAttribute('aria-pressed', 'true');
 
-    const hasWR = (byDate[ds] ?? []).some(e => e.title.toLowerCase().includes('white rabbit'));
+    // White Rabbit easter egg
+    const hasWR = (byDate[ds] ?? []).some((e: any) => e.title.toLowerCase().includes('white rabbit'));
     if (hasWR) {
       const svgNS = 'http://www.w3.org/2000/svg';
-      const svg = document.createElementNS(svgNS, 'svg');
+      const svg   = document.createElementNS(svgNS, 'svg');
       svg.setAttribute('viewBox', '0 0 40 52');
-      svg.setAttribute('width', '40');
+      svg.setAttribute('width',  '40');
       svg.setAttribute('height', '52');
       svg.setAttribute('aria-hidden', 'true');
       svg.setAttribute('stroke', '#fff');
@@ -218,17 +295,14 @@ const { events } = Astro.props;
       svg.setAttribute('stroke-opacity', '0.15');
       svg.setAttribute('fill', 'none');
       svg.style.cssText = 'position:absolute;top:-16px;left:50%;transform:translateX(-50%);pointer-events:none;overflow:visible';
-      // Left ear
       const le = document.createElementNS(svgNS, 'ellipse');
       le.setAttribute('cx', '12'); le.setAttribute('cy', '11');
       le.setAttribute('rx', '5'); le.setAttribute('ry', '13');
       le.setAttribute('transform', 'rotate(-7 12 11)');
-      // Right ear
       const re = document.createElementNS(svgNS, 'ellipse');
       re.setAttribute('cx', '28'); re.setAttribute('cy', '11');
       re.setAttribute('rx', '5'); re.setAttribute('ry', '13');
       re.setAttribute('transform', 'rotate(7 28 11)');
-      // Head
       const head = document.createElementNS(svgNS, 'circle');
       head.setAttribute('cx', '20'); head.setAttribute('cy', '36'); head.setAttribute('r', '15');
       svg.appendChild(le); svg.appendChild(re); svg.appendChild(head);
@@ -236,18 +310,17 @@ const { events } = Astro.props;
     }
 
     const numEl = document.createElement('span');
-    numEl.className = 'day-num';
-    numEl.textContent = dayNum;
+    numEl.className   = 'day-num';
+    numEl.textContent = String(dayNum);
     btn.appendChild(numEl);
 
     const indicator = makeIndicator(ds);
     if (indicator) btn.appendChild(indicator);
 
     btn.addEventListener('click', () => {
-      // Navigate to the clicked month if it's an overflow cell
       const clicked = new Date(ds + 'T12:00:00');
       if (clicked.getMonth() !== month || clicked.getFullYear() !== year) {
-        year = clicked.getFullYear();
+        year  = clicked.getFullYear();
         month = clicked.getMonth();
       }
       selected = ds;
@@ -257,48 +330,210 @@ const { events } = Astro.props;
     return btn;
   }
 
+  // ── Full-mode cell (golatindance-style list) ─────────────────────────────────
+
+  function makeFullCell(dayNum: number, ds: string, dim: boolean) {
+    const cell = document.createElement('div');
+    cell.className = 'cal-day';
+    if (dim)           cell.classList.add('dim');
+    if (ds < calToday) cell.classList.add('is-past');
+    if (ds === calToday) cell.classList.add('is-today');
+
+    const hasWR = (byDate[ds] ?? []).some((e: any) => e.title.toLowerCase().includes('white rabbit'));
+    if (hasWR) cell.classList.add('has-rabbit');
+
+    // Rabbit ears — same SVG as compact mode, aligned over the day number (left:0 aligns SVG cx=20 with day-num center at 6+14=20px)
+    if (hasWR) {
+      const svgNS = 'http://www.w3.org/2000/svg';
+      const svg   = document.createElementNS(svgNS, 'svg');
+      svg.setAttribute('viewBox', '0 0 40 52');
+      svg.setAttribute('width',  '40');
+      svg.setAttribute('height', '52');
+      svg.setAttribute('aria-hidden', 'true');
+      svg.setAttribute('stroke', '#fff');
+      svg.setAttribute('stroke-width', '1.5');
+      svg.setAttribute('stroke-opacity', '0.15');
+      svg.setAttribute('fill', 'none');
+      svg.style.cssText = 'position:absolute;top:-16px;left:0;pointer-events:none;overflow:visible';
+      const le = document.createElementNS(svgNS, 'ellipse');
+      le.setAttribute('cx', '12'); le.setAttribute('cy', '11');
+      le.setAttribute('rx', '5'); le.setAttribute('ry', '13');
+      le.setAttribute('transform', 'rotate(-7 12 11)');
+      const re = document.createElementNS(svgNS, 'ellipse');
+      re.setAttribute('cx', '28'); re.setAttribute('cy', '11');
+      re.setAttribute('rx', '5'); re.setAttribute('ry', '13');
+      re.setAttribute('transform', 'rotate(7 28 11)');
+      const head = document.createElementNS(svgNS, 'circle');
+      head.setAttribute('cx', '20'); head.setAttribute('cy', '36'); head.setAttribute('r', '15');
+      svg.appendChild(le); svg.appendChild(re); svg.appendChild(head);
+      cell.appendChild(svg);
+    }
+
+    // Day number circle
+    const numEl = document.createElement('span');
+    numEl.className   = 'day-num';
+    numEl.textContent = String(dayNum);
+    if (ds === calToday) numEl.setAttribute('aria-current', 'date');
+    cell.appendChild(numEl);
+
+    const evs   = (byDate[ds] || []).slice().sort((a: any, b: any) => a.startTime.localeCompare(b.startTime));
+    const shown  = evs.slice(0, MAX_ROWS);
+    const hidden = evs.slice(MAX_ROWS);
+
+    shown.forEach((ev: any) => cell.appendChild(makeFullEvRow(ev, ds)));
+
+    if (hidden.length > 0) {
+      const more = document.createElement('button');
+      more.className   = 'ev-overflow';
+      more.textContent = `+ ${hidden.length} more`;
+      more.addEventListener('click', e => { e.stopPropagation(); openDayPopover(ds, cell, evs); });
+      cell.appendChild(more);
+    }
+
+    return cell;
+  }
+
+  function makeFullEvRow(ev: any, ds: string) {
+    const isPast = ds < calToday;
+    const row    = document.createElement('button');
+    row.className = 'full-ev' + (isPast ? ' is-past' : '');
+    row.style.setProperty('--ev-color', typeColor(ev.type));
+    row.setAttribute('aria-label', `${ev.title}, ${fmtTime(ev.startTime)}`);
+
+    const timeStr = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
+
+    const timeEl  = document.createElement('div');
+    timeEl.className   = 'full-ev-time';
+    timeEl.textContent = timeStr;
+
+    const titleEl = document.createElement('div');
+    titleEl.className   = 'full-ev-title';
+    titleEl.textContent = ev.title;
+
+    row.appendChild(timeEl);
+    row.appendChild(titleEl);
+    row.addEventListener('click', e => { e.stopPropagation(); openEventDialog(ev); });
+
+    return row;
+  }
+
+  // ── Dispatch to compact or full ──────────────────────────────────────────────
+
+  function makeCell(dayNum: number, ds: string, dim: boolean) {
+    return isFullMode() ? makeFullCell(dayNum, ds, dim) : makeCompactCell(dayNum, ds, dim);
+  }
+
+  function makeIndicator(ds: string) {
+    const evs = byDate[ds];
+    if (!evs) return null;
+
+    const isPast = ds < calToday;
+    const types  = [...new Set(evs.map((ev: any) => ev.type))];
+
+    const wrap = document.createElement('div');
+    wrap.className = 'ev-indicators';
+    if (isPast) wrap.style.opacity = '0.35';
+
+    if (types.length === 1) {
+      const dot = document.createElement('span');
+      dot.className         = 'ev-dot';
+      dot.style.background  = typeColor(types[0] as string);
+      wrap.appendChild(dot);
+    } else {
+      const pill = document.createElement('span');
+      pill.className = 'ev-pill';
+      types.forEach(type => {
+        const seg = document.createElement('span');
+        seg.className        = 'ev-pill-seg';
+        seg.style.background = typeColor(type as string);
+        pill.appendChild(seg);
+      });
+      wrap.appendChild(pill);
+    }
+
+    return wrap;
+  }
+
+  // ── Render ───────────────────────────────────────────────────────────────────
+
+  function updateDowRow() {
+    const row    = document.getElementById('cal-dow-row')!;
+    const spans  = row.querySelectorAll('span');
+    const labels = isFullMode() ? DOW_FULL : DOW_COMPACT;
+    spans.forEach((span, i) => { span.textContent = labels[i]; });
+  }
+
+  function render() {
+    const cal  = document.getElementById('month-calendar')!;
+    const full = isFullMode();
+    cal.classList.toggle('is-full', full);
+
+    document.getElementById('cal-month-label')!.textContent = `${MONTHS[month]} ${year}`;
+    updateDowRow();
+
+    const grid = document.getElementById('cal-grid')!;
+    grid.innerHTML = '';
+
+    const firstDow    = new Date(year, month, 1).getDay();
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+
+    for (let i = 0; i < firstDow; i++) {
+      const d = new Date(year, month, 1 - firstDow + i);
+      grid.appendChild(makeCell(d.getDate(), toDateStr(d), true));
+    }
+    for (let n = 1; n <= daysInMonth; n++) {
+      grid.appendChild(makeCell(n, toDateStr(new Date(year, month, n)), false));
+    }
+    const total = firstDow + daysInMonth;
+    const trail = total % 7 === 0 ? 0 : 7 - (total % 7);
+    for (let n = 1; n <= trail; n++) {
+      const d = new Date(year, month + 1, n);
+      grid.appendChild(makeCell(n, toDateStr(d), true));
+    }
+
+    if (!full) renderDayEvents();
+  }
+
   function renderDayEvents() {
-    const el = document.getElementById('cal-day-events');
+    const el = document.getElementById('cal-day-events')!;
     el.innerHTML = '';
 
-    const d = new Date(selected + 'T12:00:00');
+    const d     = new Date(selected + 'T12:00:00');
     const label = document.createElement('div');
-    label.className = 'day-label';
+    label.className   = 'day-label';
     label.textContent = `${MONTHS[d.getMonth()]} ${d.getDate()}`;
     el.appendChild(label);
 
-    const evs = (byDate[selected] || [])
-      .slice()
-      .sort((a, b) => a.startTime.localeCompare(b.startTime));
+    const evs = (byDate[selected] || []).slice().sort((a: any, b: any) => a.startTime.localeCompare(b.startTime));
 
     if (!evs.length) {
       const p = document.createElement('p');
-      p.className = 'day-empty';
+      p.className   = 'day-empty';
       p.textContent = 'No events';
       el.appendChild(p);
       return;
     }
 
-    evs.forEach((ev, i) => {
+    evs.forEach((ev: any, i: number) => {
       const item = document.createElement('button');
       item.className = 'day-ev';
       item.setAttribute('aria-label', `${ev.title}, ${fmtTime(ev.startTime)}`);
       item.addEventListener('click', () => openEventDialog(ev));
 
       const dotEl = document.createElement('span');
-      dotEl.className = 'day-ev-dot';
+      dotEl.className      = 'day-ev-dot';
       dotEl.style.background = typeColor(ev.type);
 
       const timeEl = document.createElement('div');
-      timeEl.className = 'day-ev-time';
+      timeEl.className   = 'day-ev-time';
       timeEl.textContent = fmtTime(ev.startTime) + (ev.endTime ? ` – ${fmtTime(ev.endTime)}` : '');
 
       const titleEl = document.createElement('div');
-      titleEl.className = 'day-ev-title';
+      titleEl.className   = 'day-ev-title';
       titleEl.textContent = ev.title;
 
       const arrowEl = document.createElement('span');
-      arrowEl.className = 'day-ev-arrow';
+      arrowEl.className   = 'day-ev-arrow';
       arrowEl.textContent = '→';
 
       item.append(dotEl, timeEl, titleEl, arrowEl);
@@ -312,52 +547,58 @@ const { events } = Astro.props;
     });
   }
 
-  document.getElementById('cal-prev').addEventListener('click', () => {
+  // ── Controls ─────────────────────────────────────────────────────────────────
+
+  document.getElementById('cal-prev')!.addEventListener('click', () => {
     month = (month + 11) % 12;
     if (month === 11) year--;
     render();
   });
 
-  document.getElementById('cal-next').addEventListener('click', () => {
+  document.getElementById('cal-next')!.addEventListener('click', () => {
     month = (month + 1) % 12;
     if (month === 0) year++;
     render();
+  });
+
+  document.getElementById('cal-today')!.addEventListener('click', () => {
+    const parts = calToday.split('-').map(Number);
+    year     = parts[0];
+    month    = parts[1] - 1;
+    selected = calToday;
+    render();
+  });
+
+  // Resize: re-render when crossing breakpoint
+  let lastFull = isFullMode();
+  let resizeTimer: ReturnType<typeof setTimeout>;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      const nowFull = isFullMode();
+      if (nowFull !== lastFull) {
+        lastFull = nowFull;
+        closePopover();
+        render();
+      }
+    }, 150);
   });
 
   render();
 </script>
 
 <style is:global>
+  /* ── Type colors ────────────────────────────────────────────────────────────── */
   .month-calendar {
     width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-
     --type-social:      oklch(88% 0.29 142);
     --type-class:       oklch(74% 0.14 215);
     --type-workshop:    oklch(74% 0.18 47);
     --type-competition: oklch(68% 0.18 292);
   }
 
-  .cal-pane {
-    min-width: 0;
-  }
-
-  @media (min-width: 768px) {
-    .month-calendar {
-      grid-template-columns: 1fr 320px;
-      gap: 0 2rem;
-      align-items: start;
-    }
-
-    .cal-day-events {
-      margin-top: 0 !important;
-      border-top: none !important;
-      border-left: 1px solid var(--border-color);
-      padding-top: 0 !important;
-      padding-left: 2rem;
-    }
-  }
+  /* ── Shared layout ──────────────────────────────────────────────────────────── */
+  .cal-pane { min-width: 0; }
 
   .cal-header {
     display: flex;
@@ -365,6 +606,12 @@ const { events } = Astro.props;
     justify-content: space-between;
     margin-bottom: 12px;
     padding: 0 2px;
+  }
+
+  .cal-nav-group {
+    display: flex;
+    align-items: center;
+    gap: 0;
   }
 
   .cal-month-label {
@@ -379,8 +626,8 @@ const { events } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     background: none;
     border: none;
     color: var(--text-secondary);
@@ -392,6 +639,23 @@ const { events } = Astro.props;
 
   .cal-nav:hover {
     background: var(--bg-secondary);
+    color: var(--accent-primary);
+  }
+
+  .cal-today-btn {
+    font-size: 0.8rem;
+    padding: 5px 14px;
+    background: none;
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-family: var(--font-secondary);
+    letter-spacing: 0.04em;
+    transition: border-color 0.2s, color 0.2s;
+  }
+
+  .cal-today-btn:hover {
+    border-color: var(--accent-primary);
     color: var(--accent-primary);
   }
 
@@ -407,9 +671,7 @@ const { events } = Astro.props;
     font-family: var(--font-secondary);
   }
 
-  .cal-dow-row span {
-    padding: 4px 0;
-  }
+  .cal-dow-row span { padding: 4px 0; }
 
   .cal-grid {
     display: grid;
@@ -418,6 +680,7 @@ const { events } = Astro.props;
     overflow: visible;
   }
 
+  /* ── Compact mode (< 900px) ─────────────────────────────────────────────────── */
   .cal-day {
     position: relative;
     display: flex;
@@ -436,9 +699,7 @@ const { events } = Astro.props;
     -webkit-tap-highlight-color: transparent;
   }
 
-  .cal-day:hover {
-    background: var(--bg-secondary);
-  }
+  .cal-day:hover { background: var(--bg-secondary); }
 
   .day-num {
     width: 32px;
@@ -449,73 +710,44 @@ const { events } = Astro.props;
     border-radius: 50%;
     font-size: 0.88rem;
     color: var(--text-secondary);
-    transition: background 0.15s, color 0.15s, border-color 0.15s;
+    transition: background 0.15s, color 0.15s;
   }
 
-  .day-rabbit-svg {
-    position: absolute;
-    top: -16px;
-    left: 50%;
-    transform: translateX(-50%);
-    fill: none;
-    stroke: #fff;
-    stroke-width: 1.5;
-    opacity: 0.5;
-    pointer-events: none;
-    overflow: visible;
-  }
-
-  /* Other-month overflow days: very dim */
-  .cal-day.dim .day-num {
-    color: #333;
-  }
-
-  /* Past days within the displayed month: noticeably muted */
-  .cal-day.is-past:not(.dim) .day-num {
-    color: var(--text-muted);
-  }
-
-  .cal-day.is-today .day-num {
-    background: var(--accent-primary);
-    color: var(--bg-primary);
-    font-weight: 700;
-  }
-
+  .cal-day.dim .day-num          { color: #333; }
+  .cal-day.is-past:not(.dim) .day-num { color: var(--text-muted); }
+  .cal-day.is-today .day-num     { background: var(--accent-primary); color: var(--bg-primary); font-weight: 700; }
   .cal-day.is-selected:not(.is-today) .day-num {
     border: 1.5px solid var(--accent-primary);
     color: var(--accent-primary);
   }
 
-  .ev-indicators {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  .ev-indicators { display: flex; align-items: center; justify-content: center; }
+  .ev-dot        { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+  .ev-pill       { display: flex; height: 5px; border-radius: 3px; overflow: hidden; gap: 1.5px; }
+  .ev-pill-seg   { width: 9px; }
 
-  .ev-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    flex-shrink: 0;
-  }
-
-  .ev-pill {
-    display: flex;
-    height: 5px;
-    border-radius: 3px;
-    overflow: hidden;
-    gap: 1.5px;
-  }
-
-  .ev-pill-seg {
-    width: 9px;
-  }
-
-  /* Day events panel */
+  /* Day events panel (compact sidebar) */
   .cal-day-events {
     margin-top: 20px;
     border-top: 1px solid var(--border-color);
     padding-top: 12px;
+  }
+
+  @media (min-width: 768px) {
+    .month-calendar:not(.is-full) {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 0 2rem;
+      align-items: start;
+    }
+
+    .month-calendar:not(.is-full) .cal-day-events {
+      margin-top: 0;
+      border-top: none;
+      border-left: 1px solid var(--border-color);
+      padding-top: 0;
+      padding-left: 2rem;
+    }
   }
 
   .day-label {
@@ -550,58 +782,250 @@ const { events } = Astro.props;
     font-family: var(--font-secondary);
   }
 
-  .day-ev:hover .day-ev-title {
-    color: var(--accent-primary);
+  .day-ev:hover .day-ev-title { color: var(--accent-primary); }
+  .day-ev:hover .day-ev-arrow { color: var(--accent-primary); transform: translateX(3px); }
+
+  .day-ev-dot   { grid-column: 1; grid-row: 1/3; width: 8px; height: 8px; border-radius: 50%; align-self: center; flex-shrink: 0; }
+  .day-ev-time  { grid-column: 2; font-size: 0.78rem; color: var(--text-muted); margin-bottom: 3px; font-family: var(--font-secondary); }
+  .day-ev-title { grid-column: 2; font-size: 0.95rem; font-weight: 600; font-family: var(--font-secondary); transition: color 0.15s; line-height: 1.3; }
+  .day-ev-arrow { grid-column: 3; grid-row: 1/3; color: var(--text-muted); font-size: 1.1rem; transition: color 0.15s, transform 0.15s; align-self: center; }
+  .day-ev-hr    { border: none; border-top: 1px solid var(--border-color); margin: 0; }
+
+  /* ── Full mode (≥ 900px) ────────────────────────────────────────────────────── */
+  .month-calendar.is-full {
+    display: block;
+    --type-social:      oklch(72% 0.14 142);
+    --type-class:       oklch(65% 0.10 215);
+    --type-workshop:    oklch(68% 0.12 47);
+    --type-competition: oklch(62% 0.12 292);
   }
 
-  .day-ev:hover .day-ev-arrow {
-    color: var(--accent-primary);
-    transform: translateX(3px);
+  .month-calendar.is-full .cal-day-events {
+    display: none;
   }
 
-  .day-ev-dot {
-    grid-column: 1;
-    grid-row: 1 / 3;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    align-self: center;
-    flex-shrink: 0;
+  /* DOW row */
+  .month-calendar.is-full .cal-dow-row {
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--border-color);
   }
 
-  .day-ev-time {
-    grid-column: 2;
-    font-size: 0.78rem;
-    color: var(--text-muted);
-    margin-bottom: 3px;
-    font-family: var(--font-secondary);
+  .month-calendar.is-full .cal-dow-row span {
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
   }
 
-  .day-ev-title {
-    grid-column: 2;
-    font-size: 0.95rem;
-    font-weight: 600;
-    font-family: var(--font-secondary);
-    transition: color 0.15s;
-    line-height: 1.3;
-  }
-
-  .day-ev-arrow {
-    grid-column: 3;
-    grid-row: 1 / 3;
-    color: var(--text-muted);
-    font-size: 1.1rem;
-    transition: color 0.15s, transform 0.15s;
-    align-self: center;
-  }
-
-  .day-ev-hr {
-    border: none;
+  /* Grid — height = viewport minus all chrome above (nav + container pad + page header + cal header + dow row + bottom pad) */
+  .month-calendar.is-full .cal-grid {
+    gap: 0;
+    border-left: 1px solid var(--border-color);
     border-top: 1px solid var(--border-color);
-    margin: 0;
+    grid-auto-rows: 1fr;
+    height: calc(100dvh - 14rem);
+    overflow: hidden;
   }
 
-  /* Event detail dialog */
+  /* Day cells */
+  .month-calendar.is-full .cal-day {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 0;
+    padding: 6px 0 4px;
+    border-right: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    border-radius: 0;
+    gap: 1px;
+    cursor: default;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .month-calendar.is-full .cal-day.has-rabbit {
+    overflow: visible;
+    z-index: 1;
+  }
+
+  .month-calendar.is-full .cal-day:hover {
+    background: rgba(255, 255, 255, 0.015);
+  }
+
+  /* Day number */
+  .month-calendar.is-full .day-num {
+    font-size: 0.9rem;
+    font-weight: 600;
+    width: 28px;
+    height: 28px;
+    align-self: flex-start;
+    margin: 0 0 3px 6px;
+    color: var(--text-secondary);
+  }
+
+  .month-calendar.is-full .cal-day.dim {
+    background: rgba(0, 0, 0, 0.25);
+  }
+
+  .month-calendar.is-full .cal-day.dim .day-num {
+    color: #2d2d2d;
+  }
+
+  .month-calendar.is-full .cal-day.is-past:not(.dim) .day-num {
+    color: var(--text-muted);
+  }
+
+  .month-calendar.is-full .cal-day.is-today .day-num {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    font-weight: 700;
+  }
+
+  .month-calendar.is-full .cal-day.is-selected:not(.is-today) .day-num {
+    border: 1.5px solid var(--accent-primary);
+    color: var(--accent-primary);
+  }
+
+  /* Full-mode event row — colored text + left border */
+  .full-ev {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    margin: 0;
+    padding: 0 6px;
+    border: none;
+    border-left: 2.5px solid var(--ev-color, var(--text-muted));
+    border-radius: 0 3px 3px 0;
+    background: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-secondary);
+    transition: background 0.15s;
+    overflow: hidden;
+  }
+
+  .full-ev:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .full-ev.is-past {
+    opacity: 0.4;
+  }
+
+  .full-ev-time {
+    display: none;
+  }
+
+  .full-ev-title {
+    font-size: 0.7rem;
+    color: var(--ev-color, var(--text-secondary));
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 500;
+  }
+
+  /* "+N more" */
+  .ev-overflow {
+    display: block;
+    width: 100%;
+    margin: 1px 0 0;
+    padding: 1px 6px;
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-secondary);
+    font-weight: 500;
+    transition: color 0.15s;
+  }
+
+  .ev-overflow:hover {
+    color: var(--accent-primary);
+  }
+
+  /* ── Day popover ────────────────────────────────────────────────────────────── */
+  .day-popover {
+    position: absolute;
+    z-index: 1000;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-accent);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+  }
+
+  .popover-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 12px 8px;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .popover-date {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    font-family: var(--font-secondary);
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+  }
+
+  .popover-close {
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 2px 4px;
+    transition: color 0.15s;
+    line-height: 1;
+  }
+
+  .popover-close:hover { color: var(--text-primary); }
+
+  .popover-ev-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    width: 100%;
+    padding: 8px 12px;
+    background: none;
+    border: none;
+    border-left: 3px solid var(--pop-color, var(--text-muted));
+    cursor: pointer;
+    text-align: left;
+    font-family: var(--font-secondary);
+    transition: background 0.15s;
+    margin: 2px 0;
+  }
+
+  .popover-ev-row:hover { background: rgba(255, 255, 255, 0.04); }
+
+  .popover-ev-time {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+  }
+
+  .popover-ev-title {
+    font-size: 0.88rem;
+    color: var(--text-primary);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+    transition: color 0.15s;
+  }
+
+  .popover-ev-row:hover .popover-ev-title { color: var(--accent-primary); }
+
+  /* ── Event detail dialog ────────────────────────────────────────────────────── */
   #cal-event-detail {
     position: fixed;
     inset: 0;
@@ -709,6 +1133,15 @@ const { events } = Astro.props;
 
   .ced-links a:hover { text-decoration: underline; }
 
+  .ced-map-link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: var(--border-color);
+    text-underline-offset: 2px;
+    transition: color 0.15s;
+  }
+  .ced-map-link:hover { color: var(--accent-primary); }
+
   .ced-close-btn {
     align-self: flex-start;
     padding: 0.6rem 1.25rem;
@@ -722,12 +1155,7 @@ const { events } = Astro.props;
     display: none;
   }
 
-  .ced-close-btn:hover {
-    border-color: var(--accent-primary);
-    color: var(--accent-primary);
-  }
+  .ced-close-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
 
-  @media (max-width: 640px) {
-    .ced-close-btn { display: block; }
-  }
+  @media (max-width: 640px) { .ced-close-btn { display: block; } }
 </style>

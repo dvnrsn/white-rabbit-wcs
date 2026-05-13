@@ -61,18 +61,29 @@ function parseDateTime(dt) {
   };
 }
 
+const PHOENIX_METRO = ['Phoenix', 'Scottsdale', 'Tempe', 'Mesa', 'Glendale', 'Chandler', 'Gilbert', 'Peoria', 'Surprise', 'Avondale'];
+
+function extractCity(address) {
+  const match = (address || '').match(/,\s*([^,]+),\s*AZ/i);
+  const raw = match ? match[1].trim() : '';
+  if (!raw) return '';
+  return PHOENIX_METRO.some(c => raw.toLowerCase().includes(c.toLowerCase())) ? 'Phoenix' : raw;
+}
+
 function commonFields(item) {
   const custom = parseDescription(item.description || '');
   const start = parseDateTime(item.start);
   const end = parseDateTime(item.end || item.start);
+  const address = item.location || '';
   return {
     id: item.id,
     title: item.summary || 'Untitled Event',
     description: custom.description || '',
     startTime: start.time,
     endTime: end.time,
-    venue: custom.venue || item.location || 'TBA',
-    address: item.location || '',
+    venue: custom.venue || address || 'TBA',
+    address,
+    city: extractCity(address),
     price: custom.price || 'Free',
     level: custom.level || '',
     type: custom.type || 'social',

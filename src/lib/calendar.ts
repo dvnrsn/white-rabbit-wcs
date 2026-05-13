@@ -11,6 +11,7 @@ export interface CalendarEvent {
   endTime: string;
   venue: string;
   address: string;
+  city: string;
   price: string;
   level: string;
   type: string;
