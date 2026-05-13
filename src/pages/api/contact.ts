@@ -1,4 +1,5 @@
 import type { APIContext } from "astro";
+import { env as cfEnv } from "cloudflare:workers";
 import { createMimeMessage } from "mimetext";
 
 export const prerender = false;
@@ -23,11 +24,10 @@ const FROM_NAME = "White Rabbit WCS";
 const TO = "whiterabbitwcs@gmail.com";
 
 async function sendEmail(
-  env: Record<string, unknown>,
   subject: string,
   text: string
 ): Promise<void> {
-  const binding = env.SEND_EMAIL as { send: (msg: unknown) => Promise<void> } | undefined;
+  const binding = (cfEnv as any).SEND_EMAIL as { send: (msg: unknown) => Promise<void> } | undefined;
   if (!binding) {
     console.log(`[contact] would send email\nSubject: ${subject}\n\n${text}`);
     return;
@@ -52,9 +52,8 @@ async function verifyTurnstile(token: string, secretKey: string): Promise<{ succ
   return { success: data.success, codes: data["error-codes"] ?? [] };
 }
 
-export async function POST({ request, locals }: APIContext) {
-  const env = (locals.runtime?.env ?? {}) as Record<string, unknown>;
-  const turnstileSecret = env.TURNSTILE_SECRET_KEY as string | undefined;
+export async function POST({ request }: APIContext) {
+  const turnstileSecret = (cfEnv as any).TURNSTILE_SECRET_KEY as string | undefined;
 
   let body: Record<string, string>;
   try {
@@ -87,7 +86,6 @@ export async function POST({ request, locals }: APIContext) {
 
   if (type === "feedback") {
     await sendEmail(
-      env,
       `New feedback from ${name}`,
       [`Name: ${name}`, `Email: ${email}`, ``, `Message:`, message].join("\n")
     );
@@ -95,7 +93,6 @@ export async function POST({ request, locals }: APIContext) {
 
   if (type === "discord") {
     await sendEmail(
-      env,
       `New Discord request from ${name}`,
       [
         `Name: ${name}`,
