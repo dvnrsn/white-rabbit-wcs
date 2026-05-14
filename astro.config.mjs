@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import keystatic from "@keystatic/astro";
@@ -11,6 +11,7 @@ import react from "@astrojs/react";
 export default defineConfig({
   output: "static",
   adapter: cloudflare(),
+  image: { service: passthroughImageService() },
   site: "https://whiterabbitwcs.com",
   integrations: [sitemap(), keystatic(), react()],
   vite: {
