@@ -1,16 +1,20 @@
 ---
 export const prerender = false;
 
+import { env as cfEnv } from "cloudflare:workers";
 import Layout from "../layouts/Layout.astro";
 
 const PUBLIC_BUCKET_URL = "https://pub-acd9a4df04b04e13a687ac0f697b36c5.r2.dev";
 const BUCKET_NAME = "white-rabbit-gallery";
 const VIDEO_EXTS = /\.(mp4|mov|webm)$/i;
 const IMAGE_EXTS = /\.(jpg|jpeg|png|gif|webp|avif)$/i;
+const KV_KEY = "gallery:listing";
+const KV_TTL = 3600;
 
-const env = (Astro.locals as any).runtime?.env;
-const accountId = env?.WHITE_RABBIT_ACCOUNT_ID;
-const apiToken = env?.WHITE_RABBIT_R2_API_TOKEN;
+const e = cfEnv as any;
+const accountId = e.WHITE_RABBIT_ACCOUNT_ID as string | undefined;
+const apiToken  = e.WHITE_RABBIT_R2_API_TOKEN as string | undefined;
+const kv        = e.SESSION as { get: (k: string, t: string) => Promise<any>; put: (k: string, v: string, o?: any) => Promise<void> } | undefined;
 
 type GalleryItem = {
   key: string;
@@ -21,16 +25,15 @@ type GalleryItem = {
   uploaded: Date;
 };
 
-let items: GalleryItem[] = [];
-
-if (accountId && apiToken) {
+async function fetchFromR2(): Promise<GalleryItem[]> {
+  const fetched: GalleryItem[] = [];
   let cursor: string | undefined;
   do {
     const url = new URL(
       `https://api.cloudflare.com/client/v4/accounts/${accountId}/r2/buckets/${BUCKET_NAME}/objects`
     );
     if (cursor) url.searchParams.set("cursor", cursor);
-    url.searchParams.set("per_page", "50");
+    url.searchParams.set("per_page", "1000");
 
     const res = await fetch(url.toString(), {
       headers: { Authorization: `Bearer ${apiToken}` },
@@ -45,7 +48,7 @@ if (accountId && apiToken) {
       const segments = obj.key.split("/");
       const album = segments.length > 1 ? segments.slice(0, -1).join("/") : null;
       const name = segments[segments.length - 1];
-      items.push({
+      fetched.push({
         key: obj.key,
         url: `${PUBLIC_BUCKET_URL}/${obj.key.split("/").map(encodeURIComponent).join("/")}`,
         name,
@@ -57,7 +60,22 @@ if (accountId && apiToken) {
     cursor = data.result_info?.is_truncated ? data.result_info.cursor : undefined;
   } while (cursor);
 
-  items.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+  fetched.sort((a, b) => b.uploaded.getTime() - a.uploaded.getTime());
+  return fetched;
+}
+
+let items: GalleryItem[] = [];
+
+if (accountId && apiToken) {
+  const cached = kv ? await kv.get(KV_KEY, "json") as GalleryItem[] | null : null;
+
+  if (cached) {
+    items = cached.map(i => ({ ...i, uploaded: new Date(i.uploaded) }));
+  } else {
+    items = await fetchFromR2();
+    // Store in KV; don't await so the response isn't held up on the write
+    kv?.put(KV_KEY, JSON.stringify(items), { expirationTtl: KV_TTL });
+  }
 }
 
 // Group by album
