@@ -95,6 +95,25 @@ Markdown posts live in `src/content/posts/` and are managed via Astro Content Co
 | `keystatic.config.ts` | Keystatic CMS schema — collections and singletons |
 | `src/content/pages/` | Singleton CMS data (home, community, music page copy) |
 
+### Gallery
+
+`src/pages/gallery.astro` is an SSR page that lists photos and videos from the `white-rabbit-gallery` R2 bucket.
+
+**How it works:**
+
+1. On request, check the `SESSION` KV namespace for a cached listing under the key `gallery:listing`
+2. **Cache hit** → deserialize and render immediately (instant)
+3. **Cache miss** → call the Cloudflare R2 listing API, render, then write the result to KV in the background (TTL: 1 hour). The background write uses a fire-and-forget `kv.put()` so the response isn't held up
+4. Images are served directly from the R2 public URL (`pub-*.r2.dev`), not proxied through the Worker
+
+The cold-cache path (first request after TTL expires) is slow — ~10s for a large bucket — because it paginates the R2 API. Every subsequent request within the hour is instant from KV.
+
+**To force a cache refresh** (e.g. after uploading new photos): delete the `gallery:listing` key from the `SESSION` KV namespace in the Cloudflare dashboard, or wait for the 1-hour TTL to expire.
+
+Required env vars (set via `wrangler secret put`):
+- `WHITE_RABBIT_ACCOUNT_ID` — Cloudflare account ID
+- `WHITE_RABBIT_R2_API_TOKEN` — R2 API token with read access to `white-rabbit-gallery`
+
 ### CI / Automated Refresh
 
 `.github/workflows/daily-rebuild.yml` runs daily (6 AM UTC) — fetches the calendar, commits `events.json` if changed, then Cloudflare redeploys. `.github/workflows/debug-calendar.yml` is manually triggered and uploads `calendar.ics` + `events.json` as artifacts for troubleshooting.
