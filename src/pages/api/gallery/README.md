@@ -2,22 +2,38 @@
 
 Photos and videos are stored in the `white-rabbit-gallery` Cloudflare R2 bucket and served from its public URL (`pub-acd9a4df04b04e13a687ac0f697b36c5.r2.dev`).
 
-## How the listing works
+## Caching strategy
 
-`src/pages/gallery.astro` is an SSR page. On each request:
+`src/pages/gallery.astro` uses **stale-while-revalidate** backed by the `SESSION` KV namespace.
 
-1. Check the `SESSION` KV namespace for a cached listing under the key `gallery:listing`
-2. **Cache hit** → deserialize and render immediately (instant)
-3. **Cache miss** → paginate the Cloudflare R2 listing API, render, then write to KV in the background without blocking the response (TTL: 1 hour)
+Two KV keys:
 
-The cold-cache path (first request after the TTL expires) takes ~10s for a large bucket. Every subsequent request within the hour is instant.
+| Key | Value | TTL |
+|---|---|---|
+| `gallery:listing` | Full JSON listing of all items | None (permanent) |
+| `gallery:listing:fresh` | `"1"` freshness marker | 1 hour |
 
-## Forcing a cache refresh
+**On each request:**
 
-After uploading new photos, do one of:
+1. Read both keys in parallel
+2. **Warm cache** (both keys present) → render instantly, no background work
+3. **Stale cache** (listing present, freshness marker expired) → render instantly from stale data, refresh KV in the background via `ctx.waitUntil()` — user never waits
+4. **Cold cache** (no listing at all) → fetch from R2 API synchronously (~10s), then write to KV in background
 
-- Delete the `gallery:listing` key from the `SESSION` KV namespace in the Cloudflare dashboard
-- Wait for the 1-hour TTL to expire
+After the initial cold load, no user ever waits for the R2 API.
+
+## Purge endpoint
+
+`POST /api/gallery/purge` fetches a fresh listing from R2 and writes it to KV synchronously, so the very next gallery request is instant.
+
+**Auth:** Bearer token matched against the `GALLERY_PURGE_SECRET` env var.
+
+```bash
+curl -X POST https://whiterabbitwcs.com/api/gallery/purge \
+  -H "Authorization: Bearer $GALLERY_PURGE_SECRET"
+```
+
+Call this from the GitHub Actions workflow after uploading new photos (see issue #47).
 
 ## Required env vars
 
@@ -27,3 +43,4 @@ Set via `wrangler secret put`:
 |---|---|
 | `WHITE_RABBIT_ACCOUNT_ID` | Cloudflare account ID |
 | `WHITE_RABBIT_R2_API_TOKEN` | R2 API token with read access to `white-rabbit-gallery` |
+| `GALLERY_PURGE_SECRET` | Secret token for the purge endpoint |
