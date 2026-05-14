@@ -584,7 +584,7 @@
         "size": "One size",
         "color": "Black / Charcoal",
         "price": "25.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/69f7e7d0326aab68050280c1/105363/102226/wrs-logo-trucker.jpg?camera_label=front"
       },
       {
