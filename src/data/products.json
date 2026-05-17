@@ -1,5 +1,99 @@
 [
   {
+    "id": "6a092ca89f8684947c0e7eb5",
+    "name": "Scrunchie",
+    "description": "A youth favorite, the scrunchie, is now all yours to personalize. Each custom scrunchie is 100% made with supremely soft jersey-knit fabric for a comfortable feel with no pulling. Soft and stretchy, each scrunchie comes with added elastic for extra support..: 100% Polyester jersey knit fabric.: One size: 4'' × 4'' (10.16cm × 10.16cm ).: All over print.: Elastic band inside.: White thread color",
+    "thumbnailUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front",
+    "images": [
+      {
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front",
+        "position": "front",
+        "variantIds": [
+          82840
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/58732/scrunchie.jpg?camera_label=back",
+        "position": "back",
+        "variantIds": [
+          82840
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55755/scrunchie.jpg?camera_label=context-1",
+        "position": "context-1",
+        "variantIds": [
+          82840
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55851/scrunchie.jpg?camera_label=context-2",
+        "position": "context-2",
+        "variantIds": [
+          82840
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 82840,
+        "name": "Scrunchie / 4'' × 4''",
+        "size": "4'' × 4''",
+        "color": "",
+        "price": "18.38",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front"
+      }
+    ]
+  },
+  {
+    "id": "6a092aa1d8cb7913fd085c8c",
+    "name": "WRS Bunny Flag Vehicle Shade",
+    "description": "Follow the white rabbit to keep your vehicle cool. Made for car enthusiasts who love adding a custom flair to their ride, these personalized car sun shades are here to deliver coolness in spades. Available in two sizes - 30''x55''(1pc) and 28''x28'' (2pcs) - these sun shades are made with 100% durable polyester and feature an aluminized film cushion. Their foldable design adds daily convenience as it can be installed and removed in a flash. .: Front: 100% Polyester.: Back: 100% Aluminized film cushion.: Size options: 30'' × 55'' (1pc) and 28'' × 28'' (2pcs).: Protects the seats and dashboard from sun damage .: Comes with suction cups.: Quick and easy installation",
+    "thumbnailUrl": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101391/wrs-bunny-flag-vehicle-shade.jpg?camera_label=front",
+    "images": [
+      {
+        "src": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101391/wrs-bunny-flag-vehicle-shade.jpg?camera_label=front",
+        "position": "front",
+        "variantIds": [
+          104143
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101577/wrs-bunny-flag-vehicle-shade.jpg?camera_label=back",
+        "position": "back",
+        "variantIds": [
+          104143
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101575/wrs-bunny-flag-vehicle-shade.jpg?camera_label=folded",
+        "position": "folded",
+        "variantIds": [
+          104143
+        ]
+      },
+      {
+        "src": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101610/wrs-bunny-flag-vehicle-shade.jpg?camera_label=closeup",
+        "position": "closeup",
+        "variantIds": [
+          104143
+        ]
+      }
+    ],
+    "variants": [
+      {
+        "id": 104143,
+        "name": "WRS Bunny Flag Vehicle Shade / 30'' × 55'' (1pc)",
+        "size": "30'' × 55'' (1pc)",
+        "color": "",
+        "price": "40.00",
+        "inStock": true,
+        "previewUrl": "https://images.printify.com/mockup/6a092aa1d8cb7913fd085c8c/104143/101391/wrs-bunny-flag-vehicle-shade.jpg?camera_label=front"
+      }
+    ]
+  },
+  {
     "id": "6a079a4ce006ab566109c73a",
     "name": "Nivens \"Fire\" Tee",
     "description": "Our good friend Nivens loves your dancing! The retail fit sits cleanly for layering or standing alone, while the soft Airlume combed ring-spun cotton keeps things breathable during long days or late-night dancing. It carries movement, attitude, and a little bit of mischief. Product features- 100% Airlume combed and ring-spun cotton for a soft, breathable feel- Retail crew-neck fit with ribbed knit collar and shoulder tape for shape retention- Side seams provide structure and longer-lasting shape- Do not dryclean. Follow the white rabbit. West coast swing.",
