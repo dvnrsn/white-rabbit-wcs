@@ -28,6 +28,7 @@ export interface PrintifyOrderRecipient {
   first_name: string;
   last_name: string;
   email: string;
+  phone: string;
   address1: string;
   city: string;
   region: string;
@@ -54,7 +55,7 @@ export async function createPrintifyOrder(
         quantity: i.quantity,
       })),
       shipping_method: 1,
-      address_to: { phone: '0000000000', ...recipient },
+      address_to: recipient,
     }),
   });
 

@@ -43,6 +43,9 @@ export async function POST({ request, locals }: APIContext) {
     shipping_address_collection: {
       allowed_countries: ['US'],
     },
+    phone_number_collection: {
+      enabled: true,
+    },
     metadata: {
       printify_product_id: String(body.productId ?? ''),
       printify_variant_id: String(variantId),
