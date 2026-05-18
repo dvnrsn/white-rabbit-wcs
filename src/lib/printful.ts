@@ -40,8 +40,9 @@ export async function createPrintifyOrder(
   apiToken: string,
   shopId: string,
   recipient: PrintifyOrderRecipient,
-  items: { productId: string; variantId: number; quantity: number }[]
+  items: { productId: string; variantId: number; quantity: number; externalId?: string }[]
 ): Promise<void> {
+  const externalId = items[0]?.externalId;
   const headers = {
     Authorization: `Bearer ${apiToken}`,
     'Content-Type': 'application/json',
@@ -51,6 +52,7 @@ export async function createPrintifyOrder(
     method: 'POST',
     headers,
     body: JSON.stringify({
+      ...(externalId ? { external_id: externalId } : {}),
       line_items: items.map(i => ({
         product_id: i.productId,
         variant_id: i.variantId,
@@ -63,18 +65,6 @@ export async function createPrintifyOrder(
 
   if (!createRes.ok) {
     const body = await createRes.text();
-    throw new Error(`Printify order create failed: ${createRes.status} ${body}`);
-  }
-
-  const order = await createRes.json() as { id: string };
-
-  const sendRes = await fetch(
-    `https://api.printify.com/v1/shops/${shopId}/orders/${order.id}/send_to_production.json`,
-    { method: 'POST', headers }
-  );
-
-  if (!sendRes.ok) {
-    const body = await sendRes.text();
-    throw new Error(`Printify send_to_production failed: ${sendRes.status} ${body}`);
+    throw new Error(`Printify order failed: ${createRes.status} ${body}`);
   }
 }
