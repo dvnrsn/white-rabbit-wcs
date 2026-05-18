@@ -43,7 +43,7 @@ export async function POST({ request, locals }: APIContext) {
     return new Response('Missing variant', { status: 400 });
   }
 
-  const shipping = session.shipping_details;
+  const shipping = session.collected_information?.shipping_details;
   if (!shipping?.address) {
     console.error('[stripe-webhook] No shipping address on session');
     return new Response('No shipping address', { status: 400 });
