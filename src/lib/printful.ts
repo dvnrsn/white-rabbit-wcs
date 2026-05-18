@@ -42,14 +42,12 @@ export async function createPrintifyOrder(
   recipient: PrintifyOrderRecipient,
   items: { productId: string; variantId: number; quantity: number }[]
 ): Promise<void> {
-  const headers = {
-    Authorization: `Bearer ${apiToken}`,
-    'Content-Type': 'application/json',
-  };
-
-  const createRes = await fetch(`https://api.printify.com/v1/shops/${shopId}/orders.json`, {
+  const res = await fetch(`https://api.printify.com/v1/shops/${shopId}/orders.json`, {
     method: 'POST',
-    headers,
+    headers: {
+      Authorization: `Bearer ${apiToken}`,
+      'Content-Type': 'application/json',
+    },
     body: JSON.stringify({
       line_items: items.map(i => ({
         product_id: i.productId,
@@ -61,20 +59,8 @@ export async function createPrintifyOrder(
     }),
   });
 
-  if (!createRes.ok) {
-    const body = await createRes.text();
-    throw new Error(`Printify order create failed: ${createRes.status} ${body}`);
-  }
-
-  const order = await createRes.json() as { id: string };
-
-  const sendRes = await fetch(
-    `https://api.printify.com/v1/shops/${shopId}/orders/${order.id}/send_to_production.json`,
-    { method: 'POST', headers }
-  );
-
-  if (!sendRes.ok) {
-    const body = await sendRes.text();
-    throw new Error(`Printify send_to_production failed: ${sendRes.status} ${body}`);
+  if (!res.ok) {
+    const body = await res.text();
+    throw new Error(`Printify order failed: ${res.status} ${body}`);
   }
 }
