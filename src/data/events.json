@@ -205,23 +205,6 @@
       "rrule": "FREQ=WEEKLY;WKST=SU;COUNT=4;BYDAY=WE"
     },
     {
-      "id": "1v2p6iduemnk5b851im9oqot0p",
-      "title": "Prescott BeatMob",
-      "description": "Join us at Northern Arizona’s friendliest dance social! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in! No experience necessary! \n\nLesson | 6pm \nSocial | 7pm",
-      "startTime": "18:00",
-      "endTime": "21:30",
-      "venue": "The Hazeltine Theater Prescott",
-      "address": "The Hazeltine Theater, Restaurants near, 208 N Marina St, Prescott, AZ 86301, USA",
-      "city": "Prescott",
-      "price": "$10 ($5 Social Only)",
-      "level": "",
-      "type": "social",
-      "organizer": "Sky Smith",
-      "instagram": "https://www.instagram.com/prescottbeatmob/",
-      "dtstart": "2026-03-25",
-      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE"
-    },
-    {
       "id": "20q9itufnfp94roi936ntg6ol3",
       "title": "Full Swing",
       "description": "West Coast Swing Social Dance ONLY!\n\nAll Stars+ Free Admission\n\nFOLLOW US ON INSTA @FULLSWING.AZ FOR COMMUNITY UPDATES, SUPPORT, AND EVENTS!",
@@ -256,6 +239,26 @@
       "website": "https://www.instagram.com/fullswing.az/",
       "dtstart": "2026-03-31",
       "rrule": "FREQ=WEEKLY;UNTIL=20260526T065959Z;BYDAY=TU"
+    },
+    {
+      "id": "1v2p6iduemnk5b851im9oqot0p",
+      "title": "Prescott BeatMob",
+      "description": "Join us at Northern Arizona’s friendliest dance social! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in! No experience necessary! \n\nLesson | 6pm \nSocial | 7pm",
+      "startTime": "18:00",
+      "endTime": "21:30",
+      "venue": "The Hazeltine Theater Prescott",
+      "address": "The Hazeltine Theater, Restaurants near, 208 N Marina St, Prescott, AZ 86301, USA",
+      "city": "Prescott",
+      "price": "$10 ($5 Social Only)",
+      "level": "",
+      "type": "social",
+      "organizer": "Sky Smith",
+      "instagram": "https://www.instagram.com/prescottbeatmob/",
+      "dtstart": "2026-03-25",
+      "rrule": "FREQ=WEEKLY;INTERVAL=2;BYDAY=WE",
+      "exdates": [
+        "2026-05-20"
+      ]
     }
   ],
   "single": [
@@ -470,6 +473,22 @@
       "type": "social",
       "organizer": "White Rabbit WCS",
       "date": "2026-05-06"
+    },
+    {
+      "id": "1v2p6iduemnk5b851im9oqot0p_20260521T010000Z",
+      "title": "Prescott BeatMob - Social Only",
+      "description": "This week we’re mixing things up with a playlist made entirely of requests from YOU! 🫵 \n\nWe’ll be throwin’ down to a whole range of hot new hits + throwbacks in West Coast Swing, Country Swing, Zouk, 2-Step, & yes, even some LINE DANCES 🤠\n\nCome spend Wednesday with with us with less doomscrolling 👉 more dancing!",
+      "startTime": "19:00",
+      "endTime": "21:30",
+      "venue": "The Hazeltine Theater Prescott",
+      "address": "The Hazeltine Theater, Restaurants near, 208 N Marina St, Prescott, AZ 86301, USA",
+      "city": "Prescott",
+      "price": "$5 Social Only)",
+      "level": "",
+      "type": "social",
+      "organizer": "Sky Smith",
+      "instagram": "https://www.instagram.com/prescottbeatmob/",
+      "date": "2026-05-20"
     }
   ]
 }
