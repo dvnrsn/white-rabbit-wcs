@@ -192,9 +192,17 @@ const products = productsData as Product[];
   function renderOptions() {
     if (!currentProduct) return;
     const colors = [...new Set(currentProduct.variants.map(v => v.color).filter(Boolean))];
+    const SIZE_ORDER = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL', '6XL'];
     const sizesForColor = [...new Set(
       currentProduct.variants.filter(v => !v.color || v.color === selectedColor).map(v => v.size).filter(Boolean)
-    )];
+    )].sort((a, b) => {
+      const ai = SIZE_ORDER.indexOf(a);
+      const bi = SIZE_ORDER.indexOf(b);
+      if (ai === -1 && bi === -1) return a.localeCompare(b);
+      if (ai === -1) return 1;
+      if (bi === -1) return -1;
+      return ai - bi;
+    });
 
     colorGroup.style.display = colors.length > 0 ? '' : 'none';
     sizeGroup.style.display  = sizesForColor.length > 0 ? '' : 'none';
@@ -233,8 +241,9 @@ const products = productsData as Product[];
 
   function openProduct(product: Product) {
     currentProduct = product;
-    selectedColor = product.variants[0]?.color ?? '';
-    selectedSize  = product.variants[0]?.size  ?? '';
+    const blackVariant = product.variants.find(v => v.color?.toLowerCase() === 'black');
+    selectedColor = blackVariant?.color ?? product.variants[0]?.color ?? '';
+    selectedSize  = (blackVariant ?? product.variants[0])?.size ?? '';
 
     dialogName.textContent = product.name;
     dialogDesc.textContent = product.description;
@@ -503,16 +512,11 @@ const products = productsData as Product[];
 
   .dialog-thumbs {
     display: flex;
+    flex-wrap: wrap;
     gap: 6px;
-    overflow-x: auto;
     padding: 2px 0 4px;
-    scrollbar-width: thin;
-    scrollbar-color: var(--border-color) transparent;
+    max-width: 100%;
   }
-
-  .dialog-thumbs::-webkit-scrollbar { height: 4px; }
-  .dialog-thumbs::-webkit-scrollbar-track { background: transparent; }
-  .dialog-thumbs::-webkit-scrollbar-thumb { background: var(--border-color); }
 
   :global(.thumb) {
     flex-shrink: 0;
