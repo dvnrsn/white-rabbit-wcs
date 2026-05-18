@@ -18,9 +18,15 @@ export const POST: APIRoute = async ({ request }) => {
   const apiToken   = e.WHITE_RABBIT_R2_API_TOKEN as string | undefined;
   const kv         = e.SESSION as { put: (k: string, v: string, o?: any) => Promise<void> } | undefined;
 
-  // Auth
+  // Auth — timing-safe comparison to prevent token oracle via response time
   const token = (request.headers.get("Authorization") ?? "").replace(/^Bearer\s+/i, "");
-  if (!secret || token !== secret) {
+  const enc = new TextEncoder();
+  const secretBytes = enc.encode(secret ?? "");
+  const tokenBytes  = enc.encode(token);
+  const valid = secret &&
+    secretBytes.byteLength === tokenBytes.byteLength &&
+    crypto.subtle.timingSafeEqual(secretBytes, tokenBytes);
+  if (!valid) {
     return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
   }
 

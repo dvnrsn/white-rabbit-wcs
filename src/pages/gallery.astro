@@ -87,9 +87,12 @@ if (accountId && apiToken) {
     items = (cached as GalleryItem[]).map(i => ({ ...i, uploaded: new Date(i.uploaded) }));
 
     if (!fresh) {
-      // Stale: refresh in background, user still gets instant response
+      // Stale: fetch and store entirely in background — user gets instant response
       const { ctx } = getRequestContext();
-      ctx.waitUntil(storeInKV(await fetchFromR2(accountId, apiToken)));
+      ctx.waitUntil((async () => {
+        const refreshed = await fetchFromR2(accountId, apiToken);
+        await storeInKV(refreshed);
+      })());
     }
   } else {
     // Cold cache: fetch synchronously (unavoidable on first ever load)
