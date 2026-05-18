@@ -1,8 +1,10 @@
 ---
 export const prerender = false;
 
-import { env as cfEnv, getRequestContext } from "cloudflare:workers";
+import { env as cfEnv } from "cloudflare:workers";
 import Layout from "../layouts/Layout.astro";
+
+const ctx = (Astro.locals as any).runtime?.ctx as { waitUntil: (p: Promise<any>) => void } | undefined;
 
 const PUBLIC_BUCKET_URL = "https://pub-acd9a4df04b04e13a687ac0f697b36c5.r2.dev";
 const BUCKET_NAME = "white-rabbit-gallery";
@@ -88,8 +90,7 @@ if (accountId && apiToken) {
 
     if (!fresh) {
       // Stale: fetch and store entirely in background — user gets instant response
-      const { ctx } = getRequestContext();
-      ctx.waitUntil((async () => {
+      ctx?.waitUntil((async () => {
         const refreshed = await fetchFromR2(accountId, apiToken);
         await storeInKV(refreshed);
       })());
@@ -97,8 +98,7 @@ if (accountId && apiToken) {
   } else {
     // Cold cache: fetch synchronously (unavoidable on first ever load)
     items = await fetchFromR2(accountId, apiToken);
-    const { ctx } = getRequestContext();
-    ctx.waitUntil(storeInKV(items));
+    ctx?.waitUntil(storeInKV(items));
   }
 }
 
