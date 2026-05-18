@@ -54,7 +54,7 @@ export async function createPrintifyOrder(
         quantity: i.quantity,
       })),
       shipping_method: 1,
-      address_to: recipient,
+      address_to: { phone: '0000000000', ...recipient },
     }),
   });
 
