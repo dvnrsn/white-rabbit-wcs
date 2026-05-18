@@ -1,5 +1,6 @@
 import type { APIContext } from 'astro';
 import Stripe from 'stripe';
+import { env as cfEnv } from 'cloudflare:workers';
 import { createPrintifyOrder } from '../../lib/printful';
 
 export const prerender = false;
@@ -11,6 +12,7 @@ export async function POST({ request, locals }: APIContext) {
   const webhookSecret = env.STRIPE_WEBHOOK_SECRET;
   const printifyToken = env.PRINTIFY_API_TOKEN;
   const printifyShopId = env.PRINTIFY_SHOP_ID;
+  const kv = (cfEnv as unknown as Env).SESSION;
 
   if (!stripeKey || !webhookSecret || !printifyToken || !printifyShopId) {
     return new Response('Missing env vars', { status: 500 });
@@ -31,6 +33,16 @@ export async function POST({ request, locals }: APIContext) {
 
   if (event.type !== 'checkout.session.completed') {
     return new Response('OK', { status: 200 });
+  }
+
+  // Idempotency: skip if we've already processed this Stripe event
+  const idempotencyKey = `stripe_event:${event.id}`;
+  if (kv) {
+    const already = await kv.get(idempotencyKey);
+    if (already) {
+      console.log(`[stripe-webhook] Duplicate event ${event.id}, skipping`);
+      return new Response('OK', { status: 200 });
+    }
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
@@ -68,11 +80,16 @@ export async function POST({ request, locals }: APIContext) {
         country: shipping.address.country ?? 'US',
         zip: shipping.address.postal_code ?? '',
       },
-      [{ productId, variantId, quantity }]
+      [{ productId, variantId, quantity, externalId: session.id }]
     );
   } catch (err) {
     console.error('[stripe-webhook] Printify order failed:', err);
     return new Response(`Printify error: ${err}`, { status: 500 });
+  }
+
+  // Mark this event as processed (7-day TTL covers Stripe's full retry window)
+  if (kv) {
+    await kv.put(idempotencyKey, session.id, { expirationTtl: 604800 });
   }
 
   console.log(`[stripe-webhook] Printify order created for session ${session.id}`);
