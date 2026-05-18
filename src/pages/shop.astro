@@ -191,7 +191,7 @@ const products = productsData as Product[];
 
   function renderOptions() {
     if (!currentProduct) return;
-    const colors = [...new Set(currentProduct.variants.map(v => v.color).filter(Boolean))];
+    const colors = [...new Set(currentProduct.variants.map(v => v.color).filter(Boolean))].sort((a, b) => a.localeCompare(b));
     const SIZE_ORDER = ['XS', 'S', 'M', 'L', 'XL', '2XL', '3XL', '4XL', '5XL', '6XL'];
     const sizesForColor = [...new Set(
       currentProduct.variants.filter(v => !v.color || v.color === selectedColor).map(v => v.size).filter(Boolean)
