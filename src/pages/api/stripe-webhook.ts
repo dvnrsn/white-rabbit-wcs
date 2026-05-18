@@ -61,7 +61,7 @@ export async function POST({ request, locals }: APIContext) {
         first_name: firstName,
         last_name: lastName,
         email: session.customer_details?.email ?? '',
-        phone: session.customer_details?.phone ?? '',
+        phone: session.customer_details?.phone ?? '0000000000',
         address1: shipping.address.line1 ?? '',
         city: shipping.address.city ?? '',
         region: shipping.address.state ?? '',
