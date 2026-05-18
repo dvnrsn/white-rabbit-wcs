@@ -13,7 +13,7 @@ This repo is the source for [whiterabbitwcs.com](https://whiterabbitwcs.com): an
 | Framework | Astro 5 (static output + Cloudflare Workers adapter) |
 | Deployment | Cloudflare Workers — auto-deploys on push to `main` |
 | CMS | Keystatic (Git-based, admin UI at `/keystatic`) |
-| Merch | Printful API → `src/data/products.json` → Stripe checkout |
+| Merch | Printify API → `src/data/products.json` → Stripe checkout |
 | Calendar | Google Calendar iCal → daily GitHub Actions rebuild |
 | Package manager | pnpm |
 
@@ -23,7 +23,7 @@ This repo is the source for [whiterabbitwcs.com](https://whiterabbitwcs.com): an
 
 **Event Calendar** — Google Calendar integration with daily refresh via GitHub Actions. Filter by event type and city. Event cards link to Apple Maps (iOS) or Google Maps. Recurring events expanded up to 2 future occurrences. Data stored in `src/data/events.json` and committed to the repo so builds are never blocked by API availability.
 
-**Shop** — Printful product catalog with variant selection (size/color), front/back T-shirt image preview, and Stripe checkout. Product data fetched via `scripts/fetch-products.js` and committed to `src/data/products.json`.
+**Shop** — Printify product catalog with variant selection (size/color), front/back image preview, and Stripe checkout. Product data fetched via `scripts/fetch-products.js` and committed to `src/data/products.json`.
 
 **Community** — Instructor and venue directories, a WCS resource list, and a gear guide — all managed through Keystatic.
 
@@ -57,8 +57,8 @@ KEYSTATIC_GITHUB_CLIENT_ID=...
 KEYSTATIC_GITHUB_CLIENT_SECRET=...
 KEYSTATIC_SECRET=...
 PUBLIC_KEYSTATIC_GITHUB_APP_SLUG=...
-PRINTFUL_API_KEY=...
-PRINTFUL_STORE_ID=...
+PRINTIFY_API_TOKEN=...
+PRINTIFY_SHOP_ID=...
 STRIPE_SECRET_KEY=...
 STRIPE_WEBHOOK_SECRET=...
 PUBLIC_STRIPE_PUBLISHABLE_KEY=...
@@ -100,13 +100,15 @@ GitHub Actions (`daily-rebuild.yml`) runs this daily at 6 AM UTC and redeploys i
 
 ## Merch Pipeline
 
-1. `scripts/fetch-products.js` pulls the Printful store catalog (variants, prices, front/back mockup URLs)
+1. `scripts/fetch-products.js` pulls the Printify store catalog (variants, prices, front/back mockup URLs)
 2. Output written to `src/data/products.json` and committed
-3. Shop page reads the JSON at build time; checkout hits `/api/checkout` → Stripe
+3. Shop page reads the JSON at build time; customer checks out via Stripe
+4. Stripe webhook (`/api/stripe-webhook`) creates an order in Printify on successful payment
+5. Orders land as drafts in Printify for manual review before fulfillment
 
-To refresh manually:
+To refresh product data manually:
 ```bash
-PRINTFUL_API_KEY=xxx PRINTFUL_STORE_ID=xxx node scripts/fetch-products.js
+PRINTIFY_API_TOKEN=xxx PRINTIFY_SHOP_ID=xxx node scripts/fetch-products.js
 ```
 
 ---
