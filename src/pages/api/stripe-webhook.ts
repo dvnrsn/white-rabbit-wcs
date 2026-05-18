@@ -53,21 +53,26 @@ export async function POST({ request, locals }: APIContext) {
   const firstName = nameParts[0];
   const lastName = nameParts.slice(1).join(' ') || '-';
 
-  await createPrintifyOrder(
-    printifyToken,
-    printifyShopId,
-    {
-      first_name: firstName,
-      last_name: lastName,
-      email: session.customer_details?.email ?? '',
-      address1: shipping.address.line1 ?? '',
-      city: shipping.address.city ?? '',
-      region: shipping.address.state ?? '',
-      country: shipping.address.country ?? 'US',
-      zip: shipping.address.postal_code ?? '',
-    },
-    [{ productId, variantId, quantity }]
-  );
+  try {
+    await createPrintifyOrder(
+      printifyToken,
+      printifyShopId,
+      {
+        first_name: firstName,
+        last_name: lastName,
+        email: session.customer_details?.email ?? '',
+        address1: shipping.address.line1 ?? '',
+        city: shipping.address.city ?? '',
+        region: shipping.address.state ?? '',
+        country: shipping.address.country ?? 'US',
+        zip: shipping.address.postal_code ?? '',
+      },
+      [{ productId, variantId, quantity }]
+    );
+  } catch (err) {
+    console.error('[stripe-webhook] Printify order failed:', err);
+    return new Response(`Printify error: ${err}`, { status: 500 });
+  }
 
   console.log(`[stripe-webhook] Printify order created for session ${session.id}`);
   return new Response('OK', { status: 200 });
