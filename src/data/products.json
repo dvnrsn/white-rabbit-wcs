@@ -1,33 +1,33 @@
 [
   {
     "id": "6a092ca89f8684947c0e7eb5",
-    "name": "Scrunchie",
-    "description": "A youth favorite, the scrunchie, is now all yours to personalize. Each custom scrunchie is 100% made with supremely soft jersey-knit fabric for a comfortable feel with no pulling. Soft and stretchy, each scrunchie comes with added elastic for extra support..: 100% Polyester jersey knit fabric.: One size: 4'' × 4'' (10.16cm × 10.16cm ).: All over print.: Elastic band inside.: White thread color",
-    "thumbnailUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front",
+    "name": "White Rabbit Scrunchie",
+    "description": "All-time favorite, the scrunchie, is now ready to help you follow the white rabbit. 100% made with supremely soft jersey-knit fabric for a comfortable feel with no pulling. Soft and stretchy, each scrunchie comes with added elastic for extra support..: 100% Polyester jersey knit fabric.: One size: 4&#39;&#39; × 4&#39;&#39; (10.16cm × 10.16cm ).: All over print.: Elastic band inside.: White thread color",
+    "thumbnailUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/white-rabbit-scrunchie.jpg?camera_label=front",
     "images": [
       {
-        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front",
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/white-rabbit-scrunchie.jpg?camera_label=front",
         "position": "front",
         "variantIds": [
           82840
         ]
       },
       {
-        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/58732/scrunchie.jpg?camera_label=back",
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/58732/white-rabbit-scrunchie.jpg?camera_label=back",
         "position": "back",
         "variantIds": [
           82840
         ]
       },
       {
-        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55755/scrunchie.jpg?camera_label=context-1",
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55755/white-rabbit-scrunchie.jpg?camera_label=context-1",
         "position": "context-1",
         "variantIds": [
           82840
         ]
       },
       {
-        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55851/scrunchie.jpg?camera_label=context-2",
+        "src": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55851/white-rabbit-scrunchie.jpg?camera_label=context-2",
         "position": "context-2",
         "variantIds": [
           82840
@@ -37,12 +37,12 @@
     "variants": [
       {
         "id": 82840,
-        "name": "Scrunchie / 4'' × 4''",
+        "name": "White Rabbit Scrunchie / 4'' × 4''",
         "size": "4'' × 4''",
         "color": "",
-        "price": "18.38",
+        "price": "16.00",
         "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/scrunchie.jpg?camera_label=front"
+        "previewUrl": "https://images.printify.com/mockup/6a092ca89f8684947c0e7eb5/82840/55476/white-rabbit-scrunchie.jpg?camera_label=front"
       }
     ]
   },
