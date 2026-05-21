@@ -489,6 +489,21 @@
       "organizer": "Sky Smith",
       "instagram": "https://www.instagram.com/prescottbeatmob/",
       "date": "2026-05-20"
+    },
+    {
+      "id": "75lcetnhbqbj4rqbj2e077ldca",
+      "title": "Westie Bomb - Low-Key Piano Bar",
+      "description": "We should be there around 8pm!",
+      "startTime": "20:00",
+      "endTime": "23:00",
+      "venue": "Low Key Piano Bar, 501 S Mill Ave b101, Tempe, AZ 85281, USA",
+      "address": "Low Key Piano Bar, 501 S Mill Ave b101, Tempe, AZ 85281, USA",
+      "city": "Phoenix",
+      "price": "Free",
+      "level": "",
+      "type": "social",
+      "organizer": "White Rabbit WCS",
+      "date": "2026-05-23"
     }
   ]
 }
