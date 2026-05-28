@@ -261,21 +261,6 @@
       "date": "2026-08-01"
     },
     {
-      "id": "7k52ti6vamofbd74bb3gep67ja",
-      "title": "White Rabbit at CDC (5th Anniversary!)",
-      "description": "Details TBA!",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$15",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-05-30"
-    },
-    {
       "id": "1d35pap14slp1080bo2doclrof",
       "title": "White Rabbit at CDC",
       "description": "Details TBA!",
@@ -471,6 +456,22 @@
       "type": "social",
       "organizer": "White Rabbit WCS",
       "date": "2026-07-11"
+    },
+    {
+      "id": "7k52ti6vamofbd74bb3gep67ja",
+      "title": "White Rabbit at CDC (5th Anniversary!)",
+      "description": "Follow the white rabbit.\n\nWhite Rabbit is turning 5 and we’re celebrating in style!\nIn honor of this significant milestone, and of all the great memories we've been able to create as a community because of it, The White Rabbit Society has finally acceded to Nivens' perpetual requests (demands) to host our first formal gala event:\n\n🎩🐇 The Bunny Ball 🐇🎩\n\nThe Rabbit Hole opens at 8PM, and the first hour is dedicated entirely to YOU, our incredible community. Expect a truly special evening filled with:\n\n✨ White Rabbit magic\n🪩 The Open energy\n📸 Red carpet photos & interviews\n🥂 Mocktails & mingling\n🍓 Hors d’oeuvres\n🎟️ FREE raffle with prizes to local Arizona events\n🎭 Surprise performances\n👑 Crowning of our new Social Dance Champions\n\nFollowed by:\n\n💃 A full night of dancing 💃\nDress in your finest (or the \"finest\" you're willing to dance all night in - seriously, don't stress on the dress code) and get your photo taken on the red carpet!\n✨ More details will continue to be released in the discussion section.\n\n⏰ Schedule:\n8pm Gala Celebration\n9pm Dance party\n\n🎟️ $15 All night\n💸 Cash/Zelle preferred\nZelle: Sarah Hightower\n\nRemember:\n🐇 If it glows it won't say \"no\"\n🖤 White Rabbit is a safe space for all\n💬 No unsolicited feedback on the social floor\n\nAlso, per the CDC liquor license, no outside alcohol is permitted.\n5 years of following the white rabbit, let's celebrate! All are welcome, see you there!",
+      "startTime": "20:00",
+      "endTime": "01:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "social",
+      "organizer": "The White Rabbit Society",
+      "website": "https://whiterabbitwcs.com/",
+      "date": "2026-05-30"
     }
   ]
 }
