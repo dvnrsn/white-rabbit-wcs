@@ -1,5 +1,9 @@
 import type { APIContext } from 'astro';
 import Stripe from 'stripe';
+import productsData from '../../data/products.json';
+
+type Variant = { id: number; name: string; price: string };
+type Product = { id: string; name: string; variants: Variant[] };
 
 export const prerender = false;
 
@@ -11,17 +15,20 @@ export async function POST({ request, locals }: APIContext) {
 
   const origin = request.headers.get('origin') ?? 'http://localhost:4321';
 
-  let body: { productId: string; variantId: number; variantName: string; price: string; productName: string; quantity?: number };
+  let body: { variantId: number; quantity?: number };
   try {
     body = await request.json();
   } catch {
     return new Response('Invalid JSON', { status: 400 });
   }
 
-  const { variantId, variantName, price, productName, quantity = 1 } = body;
-  if (!variantId || !price || !productName) {
-    return new Response('Missing required fields', { status: 400 });
-  }
+  const { variantId, quantity = 1 } = body;
+  if (!variantId) return new Response('Missing required fields', { status: 400 });
+
+  const products = productsData as Product[];
+  const product = products.find(p => p.variants.some(v => v.id === variantId));
+  const variant = product?.variants.find(v => v.id === variantId);
+  if (!product || !variant) return new Response('Unknown variant', { status: 400 });
 
   const stripe = new Stripe(stripeKey);
 
@@ -32,10 +39,10 @@ export async function POST({ request, locals }: APIContext) {
         quantity,
         price_data: {
           currency: 'usd',
-          unit_amount: Math.round(parseFloat(price) * 100),
+          unit_amount: Math.round(parseFloat(variant.price) * 100),
           product_data: {
-            name: productName,
-            description: variantName,
+            name: product.name,
+            description: variant.name,
           },
         },
       },
@@ -47,7 +54,7 @@ export async function POST({ request, locals }: APIContext) {
       enabled: true,
     },
     metadata: {
-      printify_product_id: String(body.productId ?? ''),
+      printify_product_id: product.id,
       printify_variant_id: String(variantId),
       quantity: String(quantity),
     },
