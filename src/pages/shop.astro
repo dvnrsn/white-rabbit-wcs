@@ -2,13 +2,22 @@
 import Layout from '../layouts/Layout.astro';
 import type { Product } from '../lib/printful';
 import productsData from '../data/products.json';
+import { generateProductSchema, generateBreadcrumbSchema } from '../lib/schema';
 
 const products = productsData as Product[];
+const schema = [
+  ...products.map(p => generateProductSchema(p)),
+  generateBreadcrumbSchema([
+    { name: "Home", url: "https://whiterabbitwcs.com" },
+    { name: "Shop", url: "https://whiterabbitwcs.com/shop" },
+  ]),
+];
 ---
 
 <Layout
   title="Shop - The White Rabbit Society"
   description="WCS apparel and gear. Cop the merch, support White Rabbit, look good."
+  schema={schema}
 >
   <main class="shop-page">
     <div class="container">

@@ -141,6 +141,50 @@ export function generateVenueSchema(venue: {
 }
 
 /**
+ * Generate Product schema for a shop item
+ */
+export function generateProductSchema(product: {
+  id: string;
+  name: string;
+  description: string;
+  thumbnailUrl: string;
+  variants: Array<{ price: string; inStock: boolean; name: string }>;
+}) {
+  const prices = product.variants.map(v => parseFloat(v.price));
+  const minPrice = Math.min(...prices);
+  const maxPrice = Math.max(...prices);
+  const anyInStock = product.variants.some(v => v.inStock);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    image: product.thumbnailUrl,
+    url: `https://whiterabbitwcs.com/shop`,
+    brand: {
+      "@type": "Brand",
+      name: "White Rabbit WCS",
+    },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: minPrice.toFixed(2),
+      highPrice: maxPrice.toFixed(2),
+      priceCurrency: "USD",
+      availability: anyInStock
+        ? "https://schema.org/InStock"
+        : "https://schema.org/OutOfStock",
+      offerCount: product.variants.length,
+      seller: {
+        "@type": "Organization",
+        name: "White Rabbit WCS",
+        url: "https://whiterabbitwcs.com",
+      },
+    },
+  };
+}
+
+/**
  * Generate BreadcrumbList schema for navigation
  */
 export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
