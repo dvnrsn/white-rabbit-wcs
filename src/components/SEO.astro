@@ -6,7 +6,7 @@ interface Props {
   type?: "website" | "article" | "event";
   publishedTime?: string;
   modifiedTime?: string;
-  schema?: object;
+  schema?: object | object[];
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -62,8 +62,6 @@ const siteName = "White Rabbit WCS";
 <meta name="geo.placename" content="Arizona" />
 
 <!-- Structured Data -->
-{
-  schema && (
-    <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-  )
-}
+{schema && (Array.isArray(schema) ? schema : [schema]).map(s => (
+  <script type="application/ld+json" set:html={JSON.stringify(s)} />
+))}
