@@ -38,6 +38,7 @@ export default config({
               label: "Image",
               directory: "public/images/hero",
               publicPath: "/images/hero/",
+              validation: { isRequired: true },
             }),
             alt: fields.text({ label: "Alt text" }),
           }),
