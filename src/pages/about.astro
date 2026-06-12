@@ -1,8 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { generateOrganizationSchema } from "../lib/schema";
+import { generateOrganizationSchema, generateFAQSchema } from "../lib/schema";
 
-const schema = generateOrganizationSchema();
+const schema = [
+  generateOrganizationSchema(),
+  generateFAQSchema([
+    {
+      question: "What is White Rabbit WCS?",
+      answer: "White Rabbit WCS (The White Rabbit Society) is Arizona's premier West Coast Swing dance community, based in Phoenix. Founded after COVID restrictions lifted, it grew from intimate home socials into Arizona's largest monthly WCS event, hosting 200+ dancers. It is led by three Event Directors — Joe Herrington, Sarah Hightower, and Travis Swartzlander.",
+    },
+    {
+      question: "Where does White Rabbit WCS hold events?",
+      answer: "White Rabbit WCS hosts events primarily in the Phoenix metro area, with events also in Tucson and Prescott. The monthly social is their flagship event. Find the full schedule at whiterabbitwcs.com/events.",
+    },
+    {
+      question: "Is White Rabbit WCS open to beginners?",
+      answer: "Yes. White Rabbit WCS welcomes all levels — from first-timers to seasoned competitors. Their code of conduct emphasizes a safe, inclusive space for everyone regardless of dance background or experience level.",
+    },
+    {
+      question: "How do I contact White Rabbit WCS?",
+      answer: "You can reach White Rabbit WCS by email at whiterabbitwcs@gmail.com, or follow them on Instagram at @whiterabbit.wcs and on Facebook at facebook.com/whiterabbitwcs.",
+    },
+  ]),
+];
 ---
 
 <Layout
