@@ -687,7 +687,7 @@
         "size": "S",
         "color": "Stonewash Green",
         "price": "37.98",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images.printify.com/mockup/6a234821afc612eee001b1d4/99999/96004/copy-of-wrs-og-logo-front-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images.printify.com/mockup/6a234821afc612eee001b1d4/99999/99665/copy-of-wrs-og-logo-front-tee.jpg?camera_label=back"
       },
