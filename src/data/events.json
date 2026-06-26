@@ -167,23 +167,6 @@
       "rrule": "FREQ=MONTHLY;BYDAY=1SU"
     },
     {
-      "id": "7v031vs4nq3npmqpeambsrrpjq",
-      "title": "Sparky's Westies ",
-      "description": "This is available for ASU Students only! \nBeginner Lesson: 7 - 7:30pm\nIntermediate Lesson: 7:30 - 8:15pm\nPractice: 8:15 - 9pm",
-      "startTime": "19:00",
-      "endTime": "21:00",
-      "venue": "ASU Performing and Media Arts",
-      "address": "ASU Performing and Media Arts, 970 E University Dr, Tempe, AZ 85288, USA",
-      "city": "Phoenix",
-      "price": "Free",
-      "level": "",
-      "type": "class",
-      "organizer": "Shayla Bouise",
-      "website": "https://sundevilcentral.eoss.asu.edu/sparkyswesties/home/",
-      "dtstart": "2026-04-13",
-      "rrule": "FREQ=WEEKLY;WKST=SU;UNTIL=20260608T065959Z;INTERVAL=2;BYDAY=MO"
-    },
-    {
       "id": "7pmta0h4v4goikrjc5h2lqa15m",
       "title": "Bram's ",
       "description": "Lessons | 6:30pm - 8pm \nSocial | 8 - 11pm \n$10 All Night \nNRG BallroomTempe, AZ",
