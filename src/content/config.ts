@@ -54,6 +54,7 @@ const djs = defineCollection({
     style: z.array(z.string()).default([]),
     resident: z.boolean().default(false),
     photo: z.string().optional(),
+    website: z.string().url().optional(),
     spotify: z.string().url().optional(),
     mixcloud: z.string().url().optional(),
     soundcloud: z.string().url().optional(),

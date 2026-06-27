@@ -96,8 +96,17 @@ function toSpotifyEmbed(url: string): string {
                     <span class="tag">{s}</span>
                   ))}
                 </div>
-                {(dj.instagram || dj.spotify || dj.mixcloud || dj.soundcloud) && (
+                {(dj.website || dj.instagram || dj.spotify || dj.mixcloud || dj.soundcloud) && (
                   <div class="dj-links">
+                    {dj.website && (
+                      <a href={dj.website} class="dj-link" target="_blank" rel="noopener noreferrer" aria-label="Website">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10"/>
+                          <line x1="2" y1="12" x2="22" y2="12"/>
+                          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                        </svg>
+                      </a>
+                    )}
                     {dj.instagram && (
                       <a href={`https://instagram.com/${dj.instagram.replace(/^@/, "")}`} class="dj-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
