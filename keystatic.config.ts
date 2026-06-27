@@ -166,6 +166,7 @@ export default config({
           directory: "public/images/djs",
           publicPath: "/images/djs/",
         }),
+        website: fields.url({ label: "Website", validation: { isRequired: false } }),
         spotify: fields.url({ label: "Spotify", validation: { isRequired: false } }),
         mixcloud: fields.url({ label: "Mixcloud", validation: { isRequired: false } }),
         soundcloud: fields.url({ label: "SoundCloud", validation: { isRequired: false } }),
