@@ -697,7 +697,7 @@
         "size": "S",
         "color": "White",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/100000/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/100000/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -1571,7 +1571,7 @@
         "size": "S",
         "color": "White",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images.printify.com/mockup/6a234821afc612eee001b1d4/100000/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images.printify.com/mockup/6a234821afc612eee001b1d4/100000/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
