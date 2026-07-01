@@ -174,6 +174,21 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
 </Layout>
 
 <script>
+  function reportError(payload: Record<string, unknown>) {
+    const data = JSON.stringify({ ...payload, page: window.location.pathname });
+    navigator.sendBeacon("/api/client-error", new Blob([data], { type: "application/json" }));
+  }
+
+  window.onerror = (message, source, lineno, colno, error) => {
+    reportError({ message: String(message), source, lineno, colno, stack: error?.stack });
+    return false;
+  };
+
+  window.addEventListener("unhandledrejection", (e) => {
+    const err = e.reason instanceof Error ? e.reason : null;
+    reportError({ message: err?.message ?? String(e.reason), stack: err?.stack });
+  });
+
   const lightbox = document.getElementById("lightbox")!;
   const mediaEl = document.getElementById("lightbox-media")!;
   const closeBtn = document.getElementById("lightbox-close") as HTMLButtonElement;
