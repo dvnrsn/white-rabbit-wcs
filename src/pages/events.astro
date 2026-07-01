@@ -3,7 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import EventCard from '../components/EventCard.astro';
 import MonthCalendar from '../components/MonthCalendar.astro';
 import { fetchGoogleCalendarEvents, type CalendarEvent } from '../lib/calendar';
-import { generateEventListSchema } from '../lib/schema';
+import { generateEventListSchema, generateBreadcrumbSchema } from '../lib/schema';
 // Fetch events from Google Calendar
 let events: CalendarEvent[] = [];
 let calendarError: string | null = null;
@@ -27,7 +27,13 @@ const pastEvents = events
   .filter(e => e.date < today)
   .sort((a, b) => b.date.localeCompare(a.date) || b.startTime.localeCompare(a.startTime));
 
-const schema = generateEventListSchema(upcomingEvents);
+const schema = [
+  generateEventListSchema(upcomingEvents),
+  generateBreadcrumbSchema([
+    { name: "Home", url: "https://whiterabbitwcs.com" },
+    { name: "Events", url: "https://whiterabbitwcs.com/events" },
+  ]),
+];
 
 
 ---
