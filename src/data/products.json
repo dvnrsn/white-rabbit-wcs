@@ -2814,15 +2814,6 @@
         "previewUrl": "https://images.printify.com/mockup/6a079a4ce006ab566109c73a/18102/102044/nivens-fire-tee.jpg?camera_label=front-2"
       },
       {
-        "id": 18162,
-        "name": "Nivens \"Fire\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
-        "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/6a079a4ce006ab566109c73a/18102/102044/nivens-fire-tee.jpg?camera_label=front-2"
-      },
-      {
         "id": 80583,
         "name": "Nivens \"Fire\" Tee / Oxblood Black / 4XL",
         "size": "4XL",
@@ -4431,15 +4422,6 @@
         "name": "Nivens \"Yezzir\" Tee / Black / 4XL",
         "size": "4XL",
         "color": "Black",
-        "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/6a07821b11bc2d08af02fdd5/18102/102044/nivens-yezzir-tee.jpg?camera_label=front-2"
-      },
-      {
-        "id": 18162,
-        "name": "Nivens \"Yezzir\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
         "price": "38.00",
         "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/6a07821b11bc2d08af02fdd5/18102/102044/nivens-yezzir-tee.jpg?camera_label=front-2"
@@ -6058,15 +6040,6 @@
         "previewUrl": "https://images.printify.com/mockup/6a07800dc663ba0d0d00b10c/18102/102044/nivens-alright-tee.jpg?camera_label=front-2"
       },
       {
-        "id": 18162,
-        "name": "Nivens \"Alright\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
-        "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/6a07800dc663ba0d0d00b10c/18102/102044/nivens-alright-tee.jpg?camera_label=front-2"
-      },
-      {
         "id": 80583,
         "name": "Nivens \"Alright\" Tee / Oxblood Black / 4XL",
         "size": "4XL",
@@ -7675,15 +7648,6 @@
         "name": "Nivens \"Girl, Same\" Tee / Black / 4XL",
         "size": "4XL",
         "color": "Black",
-        "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/6a078001c663ba0d0d00b10b/18102/102044/nivens-girl-same-tee.jpg?camera_label=front-2"
-      },
-      {
-        "id": 18162,
-        "name": "Nivens \"Girl, Same\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
         "price": "38.00",
         "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/6a078001c663ba0d0d00b10b/18102/102044/nivens-girl-same-tee.jpg?camera_label=front-2"
@@ -17472,7 +17436,7 @@
         "size": "Solid Kelly Green",
         "color": "XL",
         "price": "30.53",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
@@ -19422,7 +19386,7 @@
         "size": "Solid Kelly Green",
         "color": "XL",
         "price": "25.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
@@ -20262,15 +20226,6 @@
         "name": "\"Follow Nivens\" Tee / Black / 4XL",
         "size": "4XL",
         "color": "Black",
-        "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
-      },
-      {
-        "id": 18162,
-        "name": "\"Follow Nivens\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
         "price": "38.00",
         "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
@@ -21577,15 +21532,6 @@
         "size": "4XL",
         "color": "Black",
         "price": "38.00",
-        "inStock": true,
-        "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
-      },
-      {
-        "id": 18162,
-        "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / 4XL",
-        "size": "4XL",
-        "color": "Deep Heather",
-        "price": "51.11",
         "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
       },
