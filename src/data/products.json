@@ -17436,7 +17436,7 @@
         "size": "Solid Kelly Green",
         "color": "XL",
         "price": "30.53",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images.printify.com/mockup/69f41786d289a2e3d000a234/19314/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
@@ -19386,7 +19386,7 @@
         "size": "Solid Kelly Green",
         "color": "XL",
         "price": "25.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/111806/precious-nivens-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images.printify.com/mockup/69f3da116bea0ab7a7072a38/19314/49/precious-nivens-tank.jpg?camera_label=back"
       },
