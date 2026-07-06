@@ -254,20 +254,17 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     triggerEl = null;
   }
 
-  // Load images inside a <details> when it's opened
-  function loadMedia(container: Element) {
-    container.querySelectorAll<HTMLImageElement | HTMLVideoElement>("[data-src]").forEach(el => {
-      if (!el.getAttribute("src")) {
-        el.setAttribute("src", el.dataset.src!);
-        el.removeAttribute("data-src");
-      }
-    });
-  }
+  const mediaObserver = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      const el = entry.target as HTMLImageElement | HTMLVideoElement;
+      el.src = el.dataset.src!;
+      el.removeAttribute("data-src");
+      mediaObserver.unobserve(el);
+    }
+  }, { rootMargin: "300px" });
 
-  document.querySelectorAll("details").forEach(details => {
-    if (details.open) loadMedia(details);
-    details.addEventListener("toggle", () => { if (details.open) loadMedia(details); });
-  });
+  document.querySelectorAll<HTMLImageElement | HTMLVideoElement>("[data-src]").forEach(el => mediaObserver.observe(el));
 
   gridItems.forEach((btn, i) => {
     btn.addEventListener("click", () => open(i, btn));
