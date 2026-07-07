@@ -142,20 +142,14 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
               <summary class="album-title">{album.split("/").map(s => s.replace(/-/g, " ")).join(" / ")}</summary>
               <div class="grid">
                 {albumItems.map((item) => (
-                  <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
-                    {item.isVideo
-                      ? <video data-src={item.url} muted preload="none" />
-                      : <img data-src={item.url} alt={item.name} decoding="async" />}
-                  </button>
+                  <button class="grid-item" data-url={item.url} data-key={item.key} aria-label={item.name} />
                 ))}
               </div>
             </details>
           ) : (
             <div class="grid">
               {albumItems.map((item) => (
-                <button class="grid-item" data-url={item.url} data-video={item.isVideo ? "true" : undefined} aria-label={item.name}>
-                  {item.isVideo ? <video src={item.url} muted preload="metadata" /> : <img src={item.url} alt={item.name} loading="lazy" decoding="async" />}
-                </button>
+                <button class="grid-item" data-url={item.url} data-key={item.key} aria-label={item.name} />
               ))}
             </div>
           )}
@@ -198,7 +192,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   const gridItems = [...document.querySelectorAll<HTMLButtonElement>(".grid-item")];
   const items = gridItems.map((btn, i) => ({
     url: btn.dataset.url!,
-    isVideo: btn.dataset.video === "true",
+    key: btn.dataset.key!,
     label: btn.getAttribute("aria-label") ?? `Photo ${i + 1}`,
   }));
 
@@ -258,7 +252,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   function close() {
     lightbox.setAttribute("aria-hidden", "true");
     lightbox.classList.remove("open");
-    mediaEl.innerHTML = "";
+    mediaEl.replaceChildren();
     document.body.style.overflow = "";
     document.documentElement.style.overflow = "";
     lightbox.removeEventListener("keydown", trapFocus);
@@ -266,17 +260,35 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     triggerEl = null;
   }
 
-  const mediaObserver = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      const el = entry.target as HTMLImageElement | HTMLVideoElement;
-      el.src = el.dataset.src!;
-      el.removeAttribute("data-src");
-      mediaObserver.unobserve(el);
+  // Load thumbnail when cell approaches viewport
+  const loadObserver = new IntersectionObserver((entries) => {
+    for (const { isIntersecting, target } of entries) {
+      if (!isIntersecting) continue;
+      const btn = target as HTMLButtonElement;
+      if (!btn.querySelector("img")) {
+        btn.appendChild(Object.assign(document.createElement("img"), {
+          src: `/api/thumb?key=${encodeURIComponent(btn.dataset.key!)}`,
+          alt: btn.getAttribute("aria-label") ?? "",
+          decoding: "async",
+        }));
+      }
+      loadObserver.unobserve(btn);
+      unloadObserver.observe(btn);
     }
-  }, { rootMargin: "300px" });
+  }, { rootMargin: "500px" });
 
-  document.querySelectorAll<HTMLImageElement | HTMLVideoElement>("[data-src]").forEach(el => mediaObserver.observe(el));
+  // Unload thumbnail when cell scrolls far off screen (frees memory)
+  const unloadObserver = new IntersectionObserver((entries) => {
+    for (const { isIntersecting, target } of entries) {
+      if (isIntersecting) continue;
+      const btn = target as HTMLButtonElement;
+      btn.querySelector("img")?.remove();
+      unloadObserver.unobserve(btn);
+      loadObserver.observe(btn);
+    }
+  }, { rootMargin: "1200px" });
+
+  gridItems.forEach(btn => loadObserver.observe(btn));
 
   gridItems.forEach((btn, i) => {
     btn.addEventListener("click", () => open(i, btn));
@@ -292,6 +304,13 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     if (e.key === "ArrowLeft") show(currentIndex - 1);
     if (e.key === "ArrowRight") show(currentIndex + 1);
   });
+
+  let touchStartX = 0;
+  lightbox.addEventListener("touchstart", (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+  lightbox.addEventListener("touchend", (e) => {
+    const dx = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) dx < 0 ? show(currentIndex + 1) : show(currentIndex - 1);
+  }, { passive: true });
 </script>
 
 <style>
@@ -394,19 +413,11 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     transform: scale(1.02);
   }
 
-  .grid-item img,
-  .grid-item video {
+  :global(.grid-item img) {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
     display: block;
-  }
-
-  @media (max-width: 640px) {
-    .grid-item img,
-    .grid-item video {
-      object-fit: cover;
-    }
   }
 
   /* Lightbox */
