@@ -108,6 +108,7 @@ export async function POST({ request, locals }: APIContext) {
         email: customerEmail,
         phone: session.customer_details?.phone ?? '0000000000',
         address1: shipping.address.line1 ?? '',
+        ...(shipping.address.line2 ? { address2: shipping.address.line2 } : {}),
         city: shipping.address.city ?? '',
         region: shipping.address.state ?? '',
         country: shipping.address.country ?? 'US',
@@ -135,6 +136,12 @@ export async function POST({ request, locals }: APIContext) {
       const product = products.find(p => p.id === productId);
       const variant = product?.variants.find(v => v.id === variantId);
       const itemLine = product ? `${quantity} x ${product.name}${variant ? ` (${variant.name})` : ''}` : 'your item';
+      const addressLines = [
+        shipping.name,
+        shipping.address.line1,
+        shipping.address.line2,
+        [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
+      ].filter(Boolean);
 
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
@@ -147,9 +154,7 @@ export async function POST({ request, locals }: APIContext) {
           itemLine,
           ``,
           `Shipping to:`,
-          shipping.name ?? '',
-          shipping.address.line1 ?? '',
-          [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
+          ...addressLines,
           ``,
           `Printify will handle production and shipping — you'll get a shipping notification once it's on its way.`,
           ``,

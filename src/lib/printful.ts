@@ -30,6 +30,7 @@ export interface PrintifyOrderRecipient {
   email: string;
   phone: string;
   address1: string;
+  address2?: string;
   city: string;
   region: string;
   country: string;
