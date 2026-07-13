@@ -224,9 +224,21 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   function show(index: number) {
     currentIndex = (index + items.length) % items.length;
     const { url, isVideo, label } = items[currentIndex];
-    mediaEl.innerHTML = isVideo
-      ? `<video src="${url}" controls autoplay playsinline aria-label="${label}"></video>`
-      : `<img src="${url}" alt="${label}" />`;
+    mediaEl.replaceChildren();
+    if (isVideo) {
+      const vid = document.createElement('video');
+      vid.src = url;
+      vid.controls = true;
+      vid.autoplay = true;
+      vid.playsInline = true;
+      vid.setAttribute('aria-label', label);
+      mediaEl.appendChild(vid);
+    } else {
+      const img = document.createElement('img');
+      img.src = url;
+      img.alt = label;
+      mediaEl.appendChild(img);
+    }
     lightbox.setAttribute("aria-label", `Image viewer — ${label} (${currentIndex + 1} of ${items.length})`);
     prevBtn.style.display = items.length > 1 ? "" : "none";
     nextBtn.style.display = items.length > 1 ? "" : "none";
