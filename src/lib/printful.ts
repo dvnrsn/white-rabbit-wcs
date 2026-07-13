@@ -30,6 +30,7 @@ export interface PrintifyOrderRecipient {
   email: string;
   phone: string;
   address1: string;
+  address2?: string;
   city: string;
   region: string;
   country: string;
@@ -41,7 +42,7 @@ export async function createPrintifyOrder(
   shopId: string,
   recipient: PrintifyOrderRecipient,
   items: { productId: string; variantId: number; quantity: number; externalId?: string }[]
-): Promise<void> {
+): Promise<{ id: string }> {
   const externalId = items[0]?.externalId;
   const headers = {
     Authorization: `Bearer ${apiToken}`,
@@ -67,4 +68,6 @@ export async function createPrintifyOrder(
     const body = await createRes.text();
     throw new Error(`Printify order failed: ${createRes.status} ${body}`);
   }
+
+  return createRes.json();
 }

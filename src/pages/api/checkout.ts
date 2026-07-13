@@ -19,11 +19,15 @@ export async function POST({ request, locals }: APIContext) {
   try {
     body = await request.json();
   } catch {
+    console.error('[checkout] Invalid JSON body');
     return new Response('Invalid JSON', { status: 400 });
   }
 
   const { productId, variantId, quantity = 1 } = body;
-  if (!productId || !variantId) return new Response('Missing required fields', { status: 400 });
+  if (!productId || !variantId) {
+    console.error('[checkout] Missing productId/variantId in request body');
+    return new Response('Missing required fields', { status: 400 });
+  }
 
   // Printify variant ids are scoped to the underlying blank (e.g. a Bella
   // Canvas blueprint), not to a specific design — the same variant id is
@@ -33,39 +37,50 @@ export async function POST({ request, locals }: APIContext) {
   const products = productsData as Product[];
   const product = products.find(p => p.id === productId);
   const variant = product?.variants.find(v => v.id === variantId);
-  if (!product || !variant) return new Response('Unknown product/variant', { status: 400 });
+  if (!product || !variant) {
+    console.error(`[checkout] Unknown productId=${productId} variantId=${variantId} (not found in products.json)`);
+    return new Response('Unknown product/variant', { status: 400 });
+  }
 
   const stripe = new Stripe(stripeKey);
 
-  const session = await stripe.checkout.sessions.create({
-    mode: 'payment',
-    line_items: [
-      {
-        quantity,
-        price_data: {
-          currency: 'usd',
-          unit_amount: Math.round(parseFloat(variant.price) * 100),
-          product_data: {
-            name: product.name,
-            description: variant.name,
+  let session: Stripe.Checkout.Session;
+  try {
+    session = await stripe.checkout.sessions.create({
+      mode: 'payment',
+      line_items: [
+        {
+          quantity,
+          price_data: {
+            currency: 'usd',
+            unit_amount: Math.round(parseFloat(variant.price) * 100),
+            product_data: {
+              name: product.name,
+              description: variant.name,
+            },
           },
         },
+      ],
+      shipping_address_collection: {
+        allowed_countries: ['US'],
       },
-    ],
-    shipping_address_collection: {
-      allowed_countries: ['US'],
-    },
-    phone_number_collection: {
-      enabled: true,
-    },
-    metadata: {
-      printify_product_id: product.id,
-      printify_variant_id: String(variantId),
-      quantity: String(quantity),
-    },
-    success_url: `${origin}/shop/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `${origin}/shop`,
-  });
+      phone_number_collection: {
+        enabled: true,
+      },
+      metadata: {
+        printify_product_id: product.id,
+        printify_variant_id: String(variantId),
+        quantity: String(quantity),
+      },
+      success_url: `${origin}/shop/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${origin}/shop`,
+    });
+  } catch (err) {
+    console.error(`[checkout] Stripe session creation failed for productId=${product.id} variantId=${variantId}:`, err);
+    return new Response(`Stripe error: ${err}`, { status: 500 });
+  }
+
+  console.log(`[checkout] Created session ${session.id} for productId=${product.id} variantId=${variantId} quantity=${quantity}`);
 
   return new Response(JSON.stringify({ url: session.url }), {
     headers: { 'Content-Type': 'application/json' },

@@ -7,9 +7,32 @@ Product data is fetched from Printify and committed to `src/data/products.json`.
 1. Customer selects product/variant → `/api/checkout` creates a Stripe Checkout session
 2. Stripe redirects to hosted checkout; on success, fires a webhook to `/api/stripe-webhook`
 3. Webhook calls `createPrintifyOrder` in `src/lib/printful.ts`, which creates a **draft** order in Printify
-4. Draft sits in the Printify dashboard for manual review — hit "Send to production" there to fulfill
+4. Webhook sends the customer an order-confirmation email via Resend (best-effort — failure is logged but doesn't fail the webhook or retry the Printify order)
+5. Draft sits in the Printify dashboard for manual review — hit "Send to production" there to fulfill
+
+Printify itself never emails the customer here — this is a custom API integration, not a connected storefront, so Printify only talks to the merchant account. All customer-facing email is this app's responsibility.
 
 Orders are intentionally left as drafts (the `send_to_production` API call is omitted) so each order can be reviewed before Printify charges for fulfillment.
+
+## Debugging
+
+`checkout.ts` and `stripe-webhook.ts` log to Cloudflare Workers Logs (`console.log`/`console.error`, viewable in the Cloudflare dashboard or `wrangler tail`). Webhook logs are prefixed `[stripe-webhook] [<stripe event id>]` so every line for one order can be grepped out together; checkout logs are prefixed `[checkout]` and include the Stripe session id, which correlates to the webhook logs for the same order.
+
+## Customer Order-Confirmation Email
+
+Sent from the webhook via [Resend](https://resend.com)'s HTTP API (`sendResendEmail` in `src/lib/email.ts`), gated behind a `RESEND_API_KEY` secret. Chosen over Cloudflare's own Email Service because Cloudflare requires a Workers Paid plan ($5/mo flat) just to send to arbitrary (non-pre-verified) recipients, whereas Resend's free tier — 3,000 emails/month, 100/day — costs $0 and comfortably covers this shop's volume.
+
+Setup (one-time, outside this repo):
+
+1. Sign up at resend.com (free)
+2. Add and verify the sending domain (`whiterabbitwcs.com`) — Resend walks you through the SPF/DKIM DNS records
+3. Create an API key, then `wrangler secret put RESEND_API_KEY`
+
+Until `RESEND_API_KEY` is set, `sendResendEmail()` falls back to a `console.log` stub — safe to deploy either way, but customers won't actually receive anything until Resend is configured.
+
+This is separate from the `SEND_EMAIL` binding used by the contact form, which stays on Cloudflare's own Email Routing since it only ever sends to the site's own inbox (free, no plan requirement, no domain onboarding needed — it was already working).
+
+Stripe's own automatic payment-receipt email (Dashboard → Settings → Customer emails → "Successful payments") is a separate, independent toggle and worth enabling too — it's the payment record, not a replacement for the order-confirmation email above.
 
 ## Payment Model
 
@@ -30,6 +53,7 @@ To update the Printify payment method: **printify.com → Wallet → Payments**.
 | `src/pages/api/checkout.ts` | Creates Stripe Checkout session |
 | `src/pages/api/stripe-webhook.ts` | Handles `checkout.session.completed`, creates Printify order |
 | `src/lib/printful.ts` | `createPrintifyOrder` — Printify API wrapper (filename is legacy) |
+| `src/lib/email.ts` | `sendResendEmail` (order confirmations, via Resend) and `sendEmail` (contact form, via Cloudflare `send_email` binding) |
 | `src/data/products.json` | Pre-fetched product catalog (committed; update via fetch script) |
 
 ## Refreshing Product Data
