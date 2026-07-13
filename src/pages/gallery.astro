@@ -142,14 +142,14 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
               <summary class="album-title">{album.split("/").map(s => s.replace(/-/g, " ")).join(" / ")}</summary>
               <div class="grid">
                 {albumItems.map((item) => (
-                  <button class="grid-item" data-url={item.url} data-key={item.key} aria-label={item.name} />
+                  <button class="grid-item" data-url={item.url} data-key={item.key} data-video={item.isVideo ? "true" : undefined} aria-label={item.name} />
                 ))}
               </div>
             </details>
           ) : (
             <div class="grid">
               {albumItems.map((item) => (
-                <button class="grid-item" data-url={item.url} data-key={item.key} aria-label={item.name} />
+                <button class="grid-item" data-url={item.url} data-key={item.key} data-video={item.isVideo ? "true" : undefined} aria-label={item.name} />
               ))}
             </div>
           )}
@@ -193,6 +193,7 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   const items = gridItems.map((btn, i) => ({
     url: btn.dataset.url!,
     key: btn.dataset.key!,
+    isVideo: btn.dataset.video === "true",
     label: btn.getAttribute("aria-label") ?? `Photo ${i + 1}`,
   }));
 
@@ -218,21 +219,11 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
   function show(index: number) {
     currentIndex = (index + items.length) % items.length;
     const { url, isVideo, label } = items[currentIndex];
-    mediaEl.replaceChildren();
-    if (isVideo) {
-      const vid = document.createElement('video');
-      vid.src = url;
-      vid.controls = true;
-      vid.autoplay = true;
-      vid.playsInline = true;
-      vid.setAttribute('aria-label', label);
-      mediaEl.appendChild(vid);
-    } else {
-      const img = document.createElement('img');
-      img.src = url;
-      img.alt = label;
-      mediaEl.appendChild(img);
-    }
+    mediaEl.replaceChildren(
+      isVideo
+        ? Object.assign(document.createElement("video"), { src: url, controls: true, autoplay: true, playsInline: true, ariaLabel: label })
+        : Object.assign(document.createElement("img"), { src: url, alt: label })
+    );
     lightbox.setAttribute("aria-label", `Image viewer — ${label} (${currentIndex + 1} of ${items.length})`);
     prevBtn.style.display = items.length > 1 ? "" : "none";
     nextBtn.style.display = items.length > 1 ? "" : "none";
@@ -265,6 +256,17 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     for (const { isIntersecting, target } of entries) {
       if (!isIntersecting) continue;
       const btn = target as HTMLButtonElement;
+      if (btn.dataset.video === "true") {
+        // Video: static placeholder tile, no network fetch — never needs unloading
+        if (!btn.querySelector(".video-placeholder")) {
+          btn.appendChild(Object.assign(document.createElement("span"), {
+            className: "video-placeholder",
+            innerHTML: '<svg viewBox="0 0 24 24" width="32" height="32" aria-hidden="true"><path fill="currentColor" d="M8 5v14l11-7z"/></svg>',
+          }));
+        }
+        loadObserver.unobserve(btn);
+        continue;
+      }
       if (!btn.querySelector("img")) {
         btn.appendChild(Object.assign(document.createElement("img"), {
           src: `/api/thumb?key=${encodeURIComponent(btn.dataset.key!)}`,
@@ -418,6 +420,16 @@ Astro.response.headers.set("Cache-Control", "public, max-age=3600, s-maxage=8640
     height: 100%;
     object-fit: cover;
     display: block;
+  }
+
+  :global(.grid-item .video-placeholder) {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-secondary);
+    color: var(--accent-primary);
   }
 
   /* Lightbox */
