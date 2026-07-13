@@ -2,13 +2,14 @@ import type { APIContext } from 'astro';
 import Stripe from 'stripe';
 import { env as cfEnv } from 'cloudflare:workers';
 import { createPrintifyOrder } from '../../lib/printful';
-import { sendResendEmail } from '../../lib/email';
+import { sendEmail, sendResendEmail } from '../../lib/email';
 import productsData from '../../data/products.json';
 
 export const prerender = false;
 
 const ORDER_FROM_ADDR = 'orders@whiterabbitwcs.com';
 const ORDER_FROM_NAME = 'White Rabbit WCS';
+const MERCHANT_TO = 'whiterabbitwcs@gmail.com';
 
 // Every log line is prefixed with this and the Stripe event id so a single
 // order can be grepped out of Cloudflare's aggregate Worker logs.
@@ -28,6 +29,7 @@ export async function POST({ request, locals }: APIContext) {
   const printifyShopId = env.PRINTIFY_SHOP_ID;
   const kv = (cfEnv as unknown as Env).SESSION;
   const resendApiKey = env.RESEND_API_KEY;
+  const merchantEmailBinding = (cfEnv as any).SEND_EMAIL as { send: (msg: unknown) => Promise<void> } | undefined;
 
   if (!stripeKey || !webhookSecret || !printifyToken || !printifyShopId) {
     logError(undefined, `Missing env vars: ${[
@@ -128,21 +130,21 @@ export async function POST({ request, locals }: APIContext) {
 
   log(event.id, `Printify draft order ${printifyOrder.id} created for session ${session.id}`);
 
+  const products = productsData as { id: string; name: string; variants: { id: number; name: string }[] }[];
+  const product = products.find(p => p.id === productId);
+  const variant = product?.variants.find(v => v.id === variantId);
+  const itemLine = product ? `${quantity} x ${product.name}${variant ? ` (${variant.name})` : ''}` : 'your item';
+  const addressLines = [
+    shipping.name,
+    shipping.address.line1,
+    shipping.address.line2,
+    [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
+  ].filter(Boolean);
+
   // Best-effort: an email failure shouldn't turn into a duplicate Printify
-  // order on Stripe's retry, so this never affects the response status.
+  // order on Stripe's retry, so neither of these ever affects the response status.
   if (customerEmail) {
     try {
-      const products = productsData as { id: string; name: string; variants: { id: number; name: string }[] }[];
-      const product = products.find(p => p.id === productId);
-      const variant = product?.variants.find(v => v.id === variantId);
-      const itemLine = product ? `${quantity} x ${product.name}${variant ? ` (${variant.name})` : ''}` : 'your item';
-      const addressLines = [
-        shipping.name,
-        shipping.address.line1,
-        shipping.address.line2,
-        [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
-      ].filter(Boolean);
-
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
         fromName: ORDER_FROM_NAME,
@@ -167,6 +169,29 @@ export async function POST({ request, locals }: APIContext) {
     }
   } else {
     logError(event.id, `No customer email on session ${session.id} — confirmation email skipped`);
+  }
+
+  try {
+    await sendEmail(merchantEmailBinding, {
+      fromAddr: ORDER_FROM_ADDR,
+      fromName: ORDER_FROM_NAME,
+      to: MERCHANT_TO,
+      subject: `New order: ${itemLine}`,
+      text: [
+        itemLine,
+        ``,
+        `Customer: ${shipping.name ?? session.customer_details?.name ?? 'Unknown'}${customerEmail ? ` <${customerEmail}>` : ''}`,
+        ``,
+        `Shipping to:`,
+        ...addressLines,
+        ``,
+        `Printify draft order: ${printifyOrder.id} (review and send to production at printify.com)`,
+        `Stripe session: ${session.id}`,
+      ].join('\n'),
+    });
+    log(event.id, `Merchant notification sent for session ${session.id}`);
+  } catch (err) {
+    logError(event.id, `Merchant notification failed for session ${session.id}`, err);
   }
 
   return new Response('OK', { status: 200 });

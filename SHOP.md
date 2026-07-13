@@ -7,7 +7,7 @@ Product data is fetched from Printify and committed to `src/data/products.json`.
 1. Customer selects product/variant → `/api/checkout` creates a Stripe Checkout session
 2. Stripe redirects to hosted checkout; on success, fires a webhook to `/api/stripe-webhook`
 3. Webhook calls `createPrintifyOrder` in `src/lib/printful.ts`, which creates a **draft** order in Printify
-4. Webhook sends the customer an order-confirmation email via Resend (best-effort — failure is logged but doesn't fail the webhook or retry the Printify order)
+4. Webhook sends the customer an order-confirmation email via Resend, and a new-order notification to `whiterabbitwcs@gmail.com` (both best-effort — failure is logged but doesn't fail the webhook or retry the Printify order)
 5. Draft sits in the Printify dashboard for manual review — hit "Send to production" there to fulfill
 
 Printify itself never emails the customer here — this is a custom API integration, not a connected storefront, so Printify only talks to the merchant account. All customer-facing email is this app's responsibility.
@@ -27,6 +27,10 @@ Setup (one-time, outside this repo):
 1. Sign up at resend.com (free)
 2. Add and verify the sending domain (`whiterabbitwcs.com`) — Resend walks you through the SPF/DKIM DNS records
 3. Create an API key, then `wrangler secret put RESEND_API_KEY`
+
+## Merchant New-Order Notification
+
+Sent to `whiterabbitwcs@gmail.com` via the same `SEND_EMAIL` Cloudflare binding the contact form uses (`sendEmail` in `src/lib/email.ts`) — no separate setup needed, it's already configured. If order volume ever makes this noisy, filter it on the Gmail side rather than touching the code (the sender is `orders@whiterabbitwcs.com`).
 
 Until `RESEND_API_KEY` is set, `sendResendEmail()` falls back to a `console.log` stub — safe to deploy either way, but customers won't actually receive anything until Resend is configured.
 
