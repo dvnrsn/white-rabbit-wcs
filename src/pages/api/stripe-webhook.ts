@@ -172,6 +172,13 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   try {
+    // Stripe's dashboard search accepts any object id directly; there's no
+    // confirmed direct deep-link for a specific Printify order, so that one
+    // links to the general orders list instead (search there by the id below).
+    const stripeDashboardBase = stripeKey.startsWith('sk_test_')
+      ? 'https://dashboard.stripe.com/test/search?query='
+      : 'https://dashboard.stripe.com/search?query=';
+
     await sendEmail(merchantEmailBinding, {
       fromAddr: ORDER_FROM_ADDR,
       fromName: ORDER_FROM_NAME,
@@ -185,8 +192,8 @@ export async function POST({ request, locals }: APIContext) {
         `Shipping to:`,
         ...addressLines,
         ``,
-        `Printify draft order: ${printifyOrder.id} (review and send to production at printify.com)`,
-        `Stripe session: ${session.id}`,
+        `Printify draft order: ${printifyOrder.id} — review and send to production at https://printify.com/app/orders (search for this order id)`,
+        `Stripe: ${stripeDashboardBase}${encodeURIComponent(session.id)}`,
       ].join('\n'),
     });
     log(event.id, `Merchant notification sent for session ${session.id}`);
