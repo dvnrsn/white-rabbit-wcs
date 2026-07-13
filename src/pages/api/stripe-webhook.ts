@@ -2,8 +2,22 @@ import type { APIContext } from 'astro';
 import Stripe from 'stripe';
 import { env as cfEnv } from 'cloudflare:workers';
 import { createPrintifyOrder } from '../../lib/printful';
+import { sendResendEmail } from '../../lib/email';
+import productsData from '../../data/products.json';
 
 export const prerender = false;
+
+const ORDER_FROM_ADDR = 'orders@whiterabbitwcs.com';
+const ORDER_FROM_NAME = 'White Rabbit WCS';
+
+// Every log line is prefixed with this and the Stripe event id so a single
+// order can be grepped out of Cloudflare's aggregate Worker logs.
+function log(eventId: string | undefined, msg: string) {
+  console.log(`[stripe-webhook]${eventId ? ` [${eventId}]` : ''} ${msg}`);
+}
+function logError(eventId: string | undefined, msg: string, err?: unknown) {
+  console.error(`[stripe-webhook]${eventId ? ` [${eventId}]` : ''} ${msg}`, err ?? '');
+}
 
 export async function POST({ request, locals }: APIContext) {
   const env = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
@@ -13,13 +27,23 @@ export async function POST({ request, locals }: APIContext) {
   const printifyToken = env.PRINTIFY_API_TOKEN;
   const printifyShopId = env.PRINTIFY_SHOP_ID;
   const kv = (cfEnv as unknown as Env).SESSION;
+  const resendApiKey = env.RESEND_API_KEY;
 
   if (!stripeKey || !webhookSecret || !printifyToken || !printifyShopId) {
+    logError(undefined, `Missing env vars: ${[
+      !stripeKey && 'STRIPE_SECRET_KEY',
+      !webhookSecret && 'STRIPE_WEBHOOK_SECRET',
+      !printifyToken && 'PRINTIFY_API_TOKEN',
+      !printifyShopId && 'PRINTIFY_SHOP_ID',
+    ].filter(Boolean).join(', ')}`);
     return new Response('Missing env vars', { status: 500 });
   }
 
   const sig = request.headers.get('stripe-signature');
-  if (!sig) return new Response('No signature', { status: 400 });
+  if (!sig) {
+    logError(undefined, 'Request had no stripe-signature header');
+    return new Response('No signature', { status: 400 });
+  }
 
   const rawBody = await request.text();
   const stripe = new Stripe(stripeKey);
@@ -28,8 +52,11 @@ export async function POST({ request, locals }: APIContext) {
   try {
     event = await stripe.webhooks.constructEventAsync(rawBody, sig, webhookSecret);
   } catch (err) {
+    logError(undefined, 'Signature verification failed', err);
     return new Response(`Webhook signature failed: ${err}`, { status: 400 });
   }
+
+  log(event.id, `Received event type=${event.type}`);
 
   if (event.type !== 'checkout.session.completed') {
     return new Response('OK', { status: 200 });
@@ -40,9 +67,11 @@ export async function POST({ request, locals }: APIContext) {
   if (kv) {
     const already = await kv.get(idempotencyKey);
     if (already) {
-      console.log(`[stripe-webhook] Duplicate event ${event.id}, skipping`);
+      log(event.id, `Duplicate event, already processed as session ${already}, skipping`);
       return new Response('OK', { status: 200 });
     }
+  } else {
+    logError(event.id, 'SESSION KV binding unavailable — idempotency check skipped, duplicate orders are possible');
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
@@ -50,29 +79,33 @@ export async function POST({ request, locals }: APIContext) {
   const variantId = Number(session.metadata?.printify_variant_id);
   const quantity = Number(session.metadata?.quantity ?? 1);
 
+  log(event.id, `session=${session.id} productId=${productId} variantId=${variantId} quantity=${quantity}`);
+
   if (!productId || !variantId) {
-    console.error('[stripe-webhook] Missing printify metadata in session');
+    logError(event.id, `Missing printify metadata on session ${session.id}: ${JSON.stringify(session.metadata)}`);
     return new Response('Missing variant', { status: 400 });
   }
 
   const shipping = session.collected_information?.shipping_details;
   if (!shipping?.address) {
-    console.error('[stripe-webhook] No shipping address on session');
+    logError(event.id, `No shipping address on session ${session.id}`);
     return new Response('No shipping address', { status: 400 });
   }
 
   const nameParts = (shipping.name ?? session.customer_details?.name ?? 'Customer').split(' ');
   const firstName = nameParts[0];
   const lastName = nameParts.slice(1).join(' ') || '-';
+  const customerEmail = session.customer_details?.email ?? '';
 
+  let printifyOrder: { id: string };
   try {
-    await createPrintifyOrder(
+    printifyOrder = await createPrintifyOrder(
       printifyToken,
       printifyShopId,
       {
         first_name: firstName,
         last_name: lastName,
-        email: session.customer_details?.email ?? '',
+        email: customerEmail,
         phone: session.customer_details?.phone ?? '0000000000',
         address1: shipping.address.line1 ?? '',
         city: shipping.address.city ?? '',
@@ -83,7 +116,7 @@ export async function POST({ request, locals }: APIContext) {
       [{ productId, variantId, quantity, externalId: session.id }]
     );
   } catch (err) {
-    console.error('[stripe-webhook] Printify order failed:', err);
+    logError(event.id, `Printify order creation failed for session ${session.id}`, err);
     return new Response(`Printify error: ${err}`, { status: 500 });
   }
 
@@ -92,6 +125,44 @@ export async function POST({ request, locals }: APIContext) {
     await kv.put(idempotencyKey, session.id, { expirationTtl: 604800 });
   }
 
-  console.log(`[stripe-webhook] Printify order created for session ${session.id}`);
+  log(event.id, `Printify draft order ${printifyOrder.id} created for session ${session.id}`);
+
+  // Best-effort: an email failure shouldn't turn into a duplicate Printify
+  // order on Stripe's retry, so this never affects the response status.
+  if (customerEmail) {
+    try {
+      const products = productsData as { id: string; name: string; variants: { id: number; name: string }[] }[];
+      const product = products.find(p => p.id === productId);
+      const variant = product?.variants.find(v => v.id === variantId);
+      const itemLine = product ? `${quantity} x ${product.name}${variant ? ` (${variant.name})` : ''}` : 'your item';
+
+      await sendResendEmail(resendApiKey, {
+        fromAddr: ORDER_FROM_ADDR,
+        fromName: ORDER_FROM_NAME,
+        to: customerEmail,
+        subject: 'Your White Rabbit order is confirmed',
+        text: [
+          `Thanks, ${firstName}! Your order is confirmed.`,
+          ``,
+          itemLine,
+          ``,
+          `Shipping to:`,
+          shipping.name ?? '',
+          shipping.address.line1 ?? '',
+          [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
+          ``,
+          `Printify will handle production and shipping — you'll get a shipping notification once it's on its way.`,
+          ``,
+          `Order reference: ${session.id}`,
+        ].join('\n'),
+      });
+      log(event.id, `Order confirmation email sent to ${customerEmail}`);
+    } catch (err) {
+      logError(event.id, `Order confirmation email failed for session ${session.id}`, err);
+    }
+  } else {
+    logError(event.id, `No customer email on session ${session.id} — confirmation email skipped`);
+  }
+
   return new Response('OK', { status: 200 });
 }
