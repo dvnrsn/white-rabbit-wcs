@@ -297,6 +297,7 @@ const schema = [
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          productId: currentProduct.id,
           variantId: variant.id,
           quantity: 1,
         }),

@@ -15,20 +15,25 @@ export async function POST({ request, locals }: APIContext) {
 
   const origin = request.headers.get('origin') ?? 'http://localhost:4321';
 
-  let body: { variantId: number; quantity?: number };
+  let body: { productId: string; variantId: number; quantity?: number };
   try {
     body = await request.json();
   } catch {
     return new Response('Invalid JSON', { status: 400 });
   }
 
-  const { variantId, quantity = 1 } = body;
-  if (!variantId) return new Response('Missing required fields', { status: 400 });
+  const { productId, variantId, quantity = 1 } = body;
+  if (!productId || !variantId) return new Response('Missing required fields', { status: 400 });
 
+  // Printify variant ids are scoped to the underlying blank (e.g. a Bella
+  // Canvas blueprint), not to a specific design — the same variant id is
+  // reused across every product built on that blank. Resolving by variant
+  // id alone can silently match the wrong product, so productId must be
+  // used to pin down which product first.
   const products = productsData as Product[];
-  const product = products.find(p => p.variants.some(v => v.id === variantId));
+  const product = products.find(p => p.id === productId);
   const variant = product?.variants.find(v => v.id === variantId);
-  if (!product || !variant) return new Response('Unknown variant', { status: 400 });
+  if (!product || !variant) return new Response('Unknown product/variant', { status: 400 });
 
   const stripe = new Stripe(stripeKey);
 
