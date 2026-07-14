@@ -20,6 +20,80 @@ function logError(eventId: string | undefined, msg: string, err?: unknown) {
   console.error(`[stripe-webhook]${eventId ? ` [${eventId}]` : ''} ${msg}`, err ?? '');
 }
 
+// Stripe's dashboard search accepts any object id directly; this is the
+// fastest way to hand off from a notification email to the actual object.
+function stripeDashboardLink(stripeKey: string, id: string): string {
+  const base = stripeKey.startsWith('sk_test_')
+    ? 'https://dashboard.stripe.com/test/search?query='
+    : 'https://dashboard.stripe.com/search?query=';
+  return `${base}${encodeURIComponent(id)}`;
+}
+
+// Disputes are time-sensitive: Stripe auto-loses them if you don't submit
+// evidence by the deadline, and they cost a fee regardless of outcome.
+// Merchant-only, like the refund email -- the customer already knows they
+// filed a dispute with their bank.
+async function handleChargeDisputeCreated(
+  event: Stripe.Event,
+  kv: Env['SESSION'] | undefined,
+  merchantEmailBinding: { send: (msg: unknown) => Promise<void> } | undefined,
+  stripeKey: string
+): Promise<void> {
+  const idempotencyKey = `stripe_event:${event.id}`;
+  if (kv) {
+    const already = await kv.get(idempotencyKey);
+    if (already) {
+      log(event.id, `Duplicate dispute event, skipping`);
+      return;
+    }
+  } else {
+    logError(event.id, 'SESSION KV binding unavailable — idempotency check skipped, duplicate dispute emails are possible');
+  }
+
+  const dispute = event.data.object as Stripe.Dispute;
+  const amount = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: dispute.currency.toUpperCase(),
+  }).format(dispute.amount / 100);
+  const dueBy = dispute.evidence_details?.due_by
+    ? new Date(dispute.evidence_details.due_by * 1000).toLocaleDateString('en-US', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })
+    : 'unknown -- check the dashboard';
+  const chargeId = typeof dispute.charge === 'string' ? dispute.charge : dispute.charge?.id;
+
+  try {
+    await sendEmail(merchantEmailBinding, {
+      fromAddr: ORDER_FROM_ADDR,
+      fromName: ORDER_FROM_NAME,
+      to: MERCHANT_TO,
+      subject: `Dispute filed: ${amount} (respond by ${dueBy})`,
+      text: [
+        `A customer has disputed a charge for ${amount}.`,
+        ``,
+        `Reason: ${dispute.reason}`,
+        `Status: ${dispute.status}`,
+        `Respond by: ${dueBy}`,
+        ``,
+        `This needs a response in the Stripe dashboard before the deadline, or you automatically lose the dispute.`,
+        ``,
+        `Dispute: ${stripeDashboardLink(stripeKey, dispute.id)}`,
+        chargeId ? `Charge: ${stripeDashboardLink(stripeKey, chargeId)}` : '',
+      ].filter(Boolean).join('\n'),
+    });
+    log(event.id, `Dispute notification sent for dispute ${dispute.id}`);
+  } catch (err) {
+    logError(event.id, `Dispute notification failed for dispute ${dispute.id}`, err);
+  }
+
+  if (kv) {
+    await kv.put(idempotencyKey, dispute.id, { expirationTtl: 604800 });
+  }
+}
+
 export async function POST({ request, locals }: APIContext) {
   const env = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
 
@@ -59,6 +133,11 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   log(event.id, `Received event type=${event.type}`);
+
+  if (event.type === 'charge.dispute.created') {
+    await handleChargeDisputeCreated(event, kv, merchantEmailBinding, stripeKey);
+    return new Response('OK', { status: 200 });
+  }
 
   if (event.type !== 'checkout.session.completed') {
     return new Response('OK', { status: 200 });
@@ -176,13 +255,6 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   try {
-    // Stripe's dashboard search accepts any object id directly; there's no
-    // confirmed direct deep-link for a specific Printify order, so that one
-    // links to the general orders list instead (search there by the id below).
-    const stripeDashboardBase = stripeKey.startsWith('sk_test_')
-      ? 'https://dashboard.stripe.com/test/search?query='
-      : 'https://dashboard.stripe.com/search?query=';
-
     await sendEmail(merchantEmailBinding, {
       fromAddr: ORDER_FROM_ADDR,
       fromName: ORDER_FROM_NAME,
@@ -196,8 +268,11 @@ export async function POST({ request, locals }: APIContext) {
         `Shipping to:`,
         ...addressLines,
         ``,
+        // There's no confirmed direct deep-link for a specific Printify
+        // order, so that one links to the general orders list instead
+        // (search there by the id below).
         `Printify draft order: ${printifyOrder.id} — review and send to production at https://printify.com/app/orders (search for this order id)`,
-        `Stripe: ${stripeDashboardBase}${encodeURIComponent(session.id)}`,
+        `Stripe: ${stripeDashboardLink(stripeKey, session.id)}`,
       ].join('\n'),
     });
     log(event.id, `Merchant notification sent for session ${session.id}`);
