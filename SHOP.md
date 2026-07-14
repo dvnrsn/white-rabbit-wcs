@@ -44,6 +44,14 @@ This is separate from the `SEND_EMAIL` binding used by the contact form, which s
 
 Stripe's own automatic payment-receipt email (Dashboard → Settings → Customer emails → "Successful payments") is a separate, independent toggle and worth enabling too — it's the payment record, not a replacement for the order-confirmation email above.
 
+## Refund Confirmation Email
+
+Sent from the webhook (`handleChargeRefunded` in `stripe-webhook.ts`) when Stripe fires `charge.refunded` — covers both full and partial refunds, and reflects the actual amount refunded (not necessarily the full order total). No merchant notification for this one; whoever issues the refund already knows it happened.
+
+**Requires a manual step**: the Stripe webhook endpoint must be subscribed to the `charge.refunded` event, not just `checkout.session.completed`. Check Stripe Dashboard → Developers → Webhooks → your endpoint → and add it to the selected events if it's not already there, or this code will simply never receive the event.
+
+Recipient email comes from the Charge object (`receipt_email` or `billing_details.email`) rather than looking up the original Checkout Session, so it works even without re-fetching anything — but it also means the email is intentionally generic (doesn't reference which item was refunded), since product/variant metadata isn't reliably available on the Charge object without an extra API round-trip.
+
 ## Dispute Notification
 
 Sent to `whiterabbitwcs@gmail.com` (`handleChargeDisputeCreated` in `stripe-webhook.ts`) when Stripe fires `charge.dispute.created`. Disputes are time-sensitive — Stripe auto-loses them if you don't submit evidence by the deadline, and charges a fee regardless of outcome — so the email includes the amount, reason, and response deadline, plus dashboard links to both the dispute and the original charge.
