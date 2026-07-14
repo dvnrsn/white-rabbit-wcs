@@ -17,8 +17,8 @@ Orders are intentionally left as drafts (the `send_to_production` API call is om
 ## Security
 
 - `success_url`/`cancel_url` use a hardcoded `SITE_ORIGIN` (the deployed site's own URL) rather than the client-supplied `Origin` header. That header is trivially spoofable and, unvalidated, would let anyone redirect a paying customer to an arbitrary domain after a real Stripe payment completes.
-- `/api/checkout` requires a Cloudflare Turnstile token, same as the contact form (`verifyTurnstile` in `src/lib/turnstile.ts`), gated behind `TURNSTILE_SECRET_KEY`. Without it the endpoint could be scripted to generate unlimited Stripe Checkout sessions.
-- Both `checkout.ts` and `stripe-webhook.ts` log the real error server-side but return a generic message to the caller — never leak exception text in the HTTP response.
+- `/api/checkout` requires a Cloudflare Turnstile token, same as the contact form (`verifyTurnstile` in `src/lib/turnstile.ts`), gated behind `TURNSTILE_SECRET_KEY`. Without it the endpoint could be scripted to generate unlimited Stripe Checkout sessions. If that secret is ever missing in production, `checkout.ts` logs an error immediately rather than silently running with no abuse protection.
+- `checkout.ts` logs the real error server-side but returns a generic message to the browser for customer-facing failures — never leak exception text to a customer. `stripe-webhook.ts` is more targeted: the signature-check failure response is reachable by anyone (bots/scanners hit public webhook URLs constantly, and a bad signature usually means the caller isn't really Stripe), so that one stays generic. The Printify-order-creation failure response only fires *after* a verified Stripe signature, so its only audience is Stripe's own retry logic and your webhook dashboard — that one keeps the real error detail, since there's no attacker to withhold it from and it's genuinely useful for debugging from the Stripe side.
 
 ## Debugging
 

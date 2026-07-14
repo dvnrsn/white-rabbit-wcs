@@ -120,7 +120,11 @@ export async function POST({ request, locals }: APIContext) {
     );
   } catch (err) {
     logError(event.id, `Printify order creation failed for session ${session.id}`, err);
-    return new Response('Order processing failed', { status: 500 });
+    // Unlike the signature-check failure above, this path only runs after a
+    // verified Stripe signature -- the only caller who ever sees this
+    // response is Stripe's own retry logic and your webhook dashboard, so
+    // there's no attacker audience to withhold detail from here.
+    return new Response(`Printify error: ${err}`, { status: 500 });
   }
 
   // Mark this event as processed (7-day TTL covers Stripe's full retry window)
