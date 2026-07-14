@@ -285,6 +285,9 @@ export async function POST({ request, locals }: APIContext) {
   const product = products.find(p => p.id === productId);
   const variant = product?.variants.find(v => v.id === variantId);
   const itemLine = product ? `${quantity} x ${product.name}${variant ? ` (${variant.name})` : ''}` : 'your item';
+  const amountPaid = typeof session.amount_total === 'number'
+    ? new Intl.NumberFormat('en-US', { style: 'currency', currency: session.currency?.toUpperCase() ?? 'USD' }).format(session.amount_total / 100)
+    : null;
   const addressLines = [
     shipping.name,
     shipping.address.line1,
@@ -297,7 +300,7 @@ export async function POST({ request, locals }: APIContext) {
   if (customerEmail) {
     try {
       const html = await render(
-        OrderConfirmationEmail({ firstName, itemLine, addressLines })
+        OrderConfirmationEmail({ firstName, itemLine, amountPaid, addressLines })
       );
 
       await sendResendEmail(resendApiKey, {
@@ -310,6 +313,7 @@ export async function POST({ request, locals }: APIContext) {
           `Thanks, ${firstName}! Your order is confirmed.`,
           ``,
           itemLine,
+          ...(amountPaid ? [`Total charged: ${amountPaid}`] : []),
           ``,
           `Shipping to:`,
           ...addressLines,

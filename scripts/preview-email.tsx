@@ -13,7 +13,7 @@ import productsData from '../src/data/products.json' with { type: 'json' };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-type Product = { name: string; variants: { name: string }[] };
+type Product = { name: string; variants: { name: string; price: string }[] };
 const products = productsData as Product[];
 const sampleProduct = products[0];
 const sampleVariant = sampleProduct?.variants[0];
@@ -24,6 +24,9 @@ const html = await render(
     itemLine: sampleProduct
       ? `1 x ${sampleProduct.name}${sampleVariant ? ` (${sampleVariant.name})` : ''}`
       : '1 x Sample Product',
+    amountPaid: sampleVariant
+      ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(parseFloat(sampleVariant.price))
+      : '$35.00',
     addressLines: ['Alex Rivera', '123 Main St', 'Apt 4B', 'Phoenix, AZ 85001'],
   })
 );
