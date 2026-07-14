@@ -35,7 +35,7 @@ export function OrderConfirmationEmail({ firstName, itemLine, addressLines }: Or
       <Preview>Your White Rabbit order is confirmed</Preview>
       <Body style={{ backgroundColor: colors.bg, fontFamily: fontSans, margin: 0, padding: '32px 0' }}>
         <Container style={{ maxWidth: 480, margin: '0 auto', padding: '0 24px' }}>
-          <Text style={{ fontSize: 40, textAlign: 'center', margin: '0 0 8px' }}>🐇</Text>
+          <Text style={{ fontSize: 36, textAlign: 'center', margin: '0 0 8px' }}>🐰👍</Text>
           <Heading
             style={{
               color: colors.accent,

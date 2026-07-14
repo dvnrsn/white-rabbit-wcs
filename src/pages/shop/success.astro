@@ -6,18 +6,7 @@ import Layout from '../../layouts/Layout.astro';
   <main class="result-page">
     <div class="container">
       <div class="result-block">
-        <div class="result-icon">
-          <svg viewBox="0 0 64 64" width="44" height="44" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <rect x="15" y="3" width="8" height="22" rx="4" fill="currentColor" transform="rotate(-14 19 14)" />
-            <rect x="27" y="3" width="8" height="22" rx="4" fill="currentColor" transform="rotate(10 31 14)" />
-            <circle cx="25" cy="32" r="14" fill="currentColor" />
-            <circle cx="21" cy="30" r="1.8" fill="var(--accent-primary)" />
-            <circle cx="29" cy="30" r="1.8" fill="var(--accent-primary)" />
-            <circle cx="25" cy="36" r="1.4" fill="var(--accent-primary)" />
-            <rect x="42" y="38" width="14" height="13" rx="5" fill="currentColor" />
-            <rect x="47" y="24" width="6" height="16" rx="3" fill="currentColor" transform="rotate(8 50 32)" />
-          </svg>
-        </div>
+        <div class="result-icon" aria-hidden="true">🐰👍</div>
         <h1 class="result-title gradient-text">Order Confirmed</h1>
         <p class="result-text">
           Your order is in. Our rabbit hole crew is already hopping on production
@@ -53,10 +42,11 @@ import Layout from '../../layouts/Layout.astro';
     height: 72px;
     border-radius: 50%;
     background: var(--accent-primary);
-    color: var(--bg-primary);
     display: flex;
     align-items: center;
     justify-content: center;
+    font-size: 1.7rem;
+    letter-spacing: -2px;
   }
 
   .result-title {
