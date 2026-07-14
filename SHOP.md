@@ -14,6 +14,25 @@ Printify itself never emails the customer here — this is a custom API integrat
 
 Orders are intentionally left as drafts (the `send_to_production` API call is omitted) so each order can be reviewed before Printify charges for fulfillment.
 
+## Shipping/Delivery Notification
+
+Sent from `src/pages/api/printify-webhook/[token].ts` when Printify fires `order:shipment:created` or `order:shipment:delivered` — a separate webhook system from Stripe's, since it's Printify (not Stripe) that knows when something ships.
+
+Printify's shipment payload only carries its own order id, not the customer. `stripe-webhook.ts` stashes `{email, firstName, itemLine}` in KV keyed by `printify_order:<id>` right after creating the Printify order, and this endpoint looks it up when the shipment event arrives (90-day TTL).
+
+**Setup, one-time, outside this repo:**
+
+1. Generate a random token (e.g. `openssl rand -hex 32`) and set it as both a Cloudflare secret and env var for the registration script:
+   ```bash
+   wrangler secret put PRINTIFY_WEBHOOK_TOKEN
+   ```
+2. Register the webhooks with Printify (no dashboard UI for this, API only):
+   ```bash
+   PRINTIFY_API_TOKEN=xxx PRINTIFY_SHOP_ID=xxx PRINTIFY_WEBHOOK_TOKEN=xxx pnpm register-printify-webhooks
+   ```
+
+**Security note**: Printify's webhook API has no signing/secret scheme (confirmed against their OpenAPI spec — the webhook object is just `{topic, url, shop_id, id}`). The random token in the URL path, checked in constant time, is the only practical protection available; combined with the KV-lookup gate (unrecognized order ids are silently ignored), the realistic worst case of a forged request is negligible.
+
 ## Security
 
 - `success_url`/`cancel_url` use a hardcoded `SITE_ORIGIN` (the deployed site's own URL) rather than the client-supplied `Origin` header. That header is trivially spoofable and, unvalidated, would let anyone redirect a paying customer to an arbitrary domain after a real Stripe payment completes.
