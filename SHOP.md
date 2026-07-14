@@ -44,6 +44,14 @@ This is separate from the `SEND_EMAIL` binding used by the contact form, which s
 
 Stripe's own automatic payment-receipt email (Dashboard → Settings → Customer emails → "Successful payments") is a separate, independent toggle and worth enabling too — it's the payment record, not a replacement for the order-confirmation email above.
 
+## Dispute Notification
+
+Sent to `whiterabbitwcs@gmail.com` (`handleChargeDisputeCreated` in `stripe-webhook.ts`) when Stripe fires `charge.dispute.created`. Disputes are time-sensitive — Stripe auto-loses them if you don't submit evidence by the deadline, and charges a fee regardless of outcome — so the email includes the amount, reason, and response deadline, plus dashboard links to both the dispute and the original charge.
+
+Merchant-only, like the new-order notification — the customer already knows they filed it with their bank, since that's how disputes are initiated (not through this site or Stripe directly).
+
+**Requires the same manual step as the refund email**: the Stripe webhook endpoint must be subscribed to `charge.dispute.created` in Dashboard → Developers → Webhooks → your endpoint, alongside `checkout.session.completed` and `charge.refunded`.
+
 ## Payment Model
 
 Stripe and Printify billing are completely separate:
