@@ -60,6 +60,24 @@ Merchant-only, like the new-order notification — the customer already knows th
 
 **Requires the same manual step as the refund email**: the Stripe webhook endpoint must be subscribed to `charge.dispute.created` in Dashboard → Developers → Webhooks → your endpoint, alongside `checkout.session.completed` and `charge.refunded`.
 
+## Testing
+
+**Email copy/design only** — no Stripe, Printify, or Resend involved:
+
+```bash
+pnpm preview-email
+```
+
+Renders `src/emails/OrderConfirmation.tsx` with a real product from `products.json` and sample shipping data, writes it to `.email-preview.html` (gitignored), and opens it in the browser.
+
+**Full order flow** — checkout → webhook → Printify draft → both emails, with zero real money:
+
+1. Switch to Stripe test mode (Dashboard toggle) and copy the test `sk_test_...` key
+2. Run `pnpm dev`, and in another terminal: `stripe listen --forward-to localhost:4321/api/stripe-webhook` — put the printed webhook signing secret and the test secret key in `.dev.vars`
+3. Go to `localhost:4321/shop`, buy something, pay with `4242 4242 4242 4242` (any future expiry/CVC)
+
+Printify has no sandbox/test mode, so this still creates a real (draft, free, deletable) order in the actual Printify shop — clean those up afterward. `RESEND_API_KEY` and the Cloudflare `SEND_EMAIL` binding both fall back to a `console.log` stub if unset locally, so leaving them out of `.dev.vars` is a safe way to test the flow without sending real email.
+
 ## Payment Model
 
 Stripe and Printify billing are completely separate:

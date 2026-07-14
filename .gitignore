@@ -32,3 +32,6 @@ src/data/calendar.ics
 # local Claude Code settings (may contain locally-configured API keys)
 .claude/settings.local.json
 .wrangler/
+
+# email preview output
+.email-preview.html
