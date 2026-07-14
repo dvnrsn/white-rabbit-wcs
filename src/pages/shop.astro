@@ -12,6 +12,8 @@ const schema = [
     { name: "Shop", url: "https://whiterabbitwcs.com/shop" },
   ]),
 ];
+
+const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
 ---
 
 <Layout
@@ -111,6 +113,7 @@ const schema = [
           <div class="dialog-price" id="dialog-price"></div>
 
           <div class="dialog-actions">
+            {siteKey && <div class="cf-turnstile" data-sitekey={siteKey} data-theme="dark"></div>}
             <button class="btn-buy" id="btn-stripe">
               Buy Now
             </button>
@@ -122,6 +125,8 @@ const schema = [
     </div>
   </dialog>
 </Layout>
+
+{siteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
 
 <script>
   import type { Product, ProductVariant, ProductImage } from '../lib/printful';
@@ -285,12 +290,28 @@ const schema = [
     document.documentElement.style.overflow = "";
   });
 
+  declare global {
+    interface Window {
+      turnstile?: { reset: (widget?: string | HTMLElement) => void };
+    }
+  }
+
   btnStripe?.addEventListener('click', async () => {
     const variant = getVariant();
     if (!variant || !currentProduct) return;
 
+    const turnstileWidget = document.querySelector('.cf-turnstile');
+    const turnstileInput = document.querySelector<HTMLInputElement>('[name=cf-turnstile-response]');
+    const turnstileToken = turnstileInput?.value ?? '';
+
+    if (turnstileWidget && !turnstileToken) {
+      dialogError.textContent = 'Please wait for the security check to complete.';
+      return;
+    }
+
     btnStripe.disabled = true;
     btnStripe.textContent = 'Redirecting…';
+    dialogError.textContent = '';
 
     try {
       const res = await fetch('/api/checkout', {
@@ -300,6 +321,7 @@ const schema = [
           productId: currentProduct.id,
           variantId: variant.id,
           quantity: 1,
+          turnstileToken: turnstileToken || 'dev',
         }),
       });
 
@@ -310,6 +332,7 @@ const schema = [
       dialogError.textContent = 'Something went wrong. Please try again.';
       btnStripe.disabled = false;
       btnStripe.textContent = 'Buy Now';
+      window.turnstile?.reset();
     }
   });
 </script>

@@ -14,6 +14,12 @@ Printify itself never emails the customer here — this is a custom API integrat
 
 Orders are intentionally left as drafts (the `send_to_production` API call is omitted) so each order can be reviewed before Printify charges for fulfillment.
 
+## Security
+
+- `success_url`/`cancel_url` use a hardcoded `SITE_ORIGIN` (the deployed site's own URL) rather than the client-supplied `Origin` header. That header is trivially spoofable and, unvalidated, would let anyone redirect a paying customer to an arbitrary domain after a real Stripe payment completes.
+- `/api/checkout` requires a Cloudflare Turnstile token, same as the contact form (`verifyTurnstile` in `src/lib/turnstile.ts`), gated behind `TURNSTILE_SECRET_KEY`. Without it the endpoint could be scripted to generate unlimited Stripe Checkout sessions.
+- Both `checkout.ts` and `stripe-webhook.ts` log the real error server-side but return a generic message to the caller — never leak exception text in the HTTP response.
+
 ## Debugging
 
 `checkout.ts` and `stripe-webhook.ts` log to Cloudflare Workers Logs (`console.log`/`console.error`, viewable in the Cloudflare dashboard or `wrangler tail`). Webhook logs are prefixed `[stripe-webhook] [<stripe event id>]` so every line for one order can be grepped out together; checkout logs are prefixed `[checkout]` and include the Stripe session id, which correlates to the webhook logs for the same order.

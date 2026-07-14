@@ -1,11 +1,18 @@
 import type { APIContext } from 'astro';
 import Stripe from 'stripe';
 import productsData from '../../data/products.json';
+import { verifyTurnstile } from '../../lib/turnstile';
 
 type Variant = { id: number; name: string; price: string };
 type Product = { id: string; name: string; variants: Variant[] };
 
 export const prerender = false;
+
+// Falls back to the deployed site's canonical origin rather than trusting
+// the client-supplied Origin header, which is trivially spoofable (e.g.
+// via curl) and would otherwise let an attacker redirect a paying customer
+// to an arbitrary domain after a real Stripe payment completes.
+const SITE_ORIGIN = import.meta.env.DEV ? 'http://localhost:4321' : import.meta.env.SITE;
 
 export async function POST({ request, locals }: APIContext) {
   const env = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
@@ -13,9 +20,7 @@ export async function POST({ request, locals }: APIContext) {
   const stripeKey = env.STRIPE_SECRET_KEY;
   if (!stripeKey) return new Response('Stripe not configured', { status: 500 });
 
-  const origin = request.headers.get('origin') ?? 'http://localhost:4321';
-
-  let body: { productId: string; variantId: number; quantity?: number };
+  let body: { productId: string; variantId: number; quantity?: number; turnstileToken?: string };
   try {
     body = await request.json();
   } catch {
@@ -23,10 +28,19 @@ export async function POST({ request, locals }: APIContext) {
     return new Response('Invalid JSON', { status: 400 });
   }
 
-  const { productId, variantId, quantity = 1 } = body;
+  const { productId, variantId, quantity = 1, turnstileToken } = body;
   if (!productId || !variantId) {
     console.error('[checkout] Missing productId/variantId in request body');
     return new Response('Missing required fields', { status: 400 });
+  }
+
+  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
+  if (turnstileSecret) {
+    const { success, codes } = await verifyTurnstile(turnstileToken ?? '', turnstileSecret);
+    if (!success) {
+      console.error(`[checkout] Turnstile verification failed: ${codes.join(', ')}`);
+      return new Response('Verification failed. Please try again.', { status: 400 });
+    }
   }
 
   // Printify variant ids are scoped to the underlying blank (e.g. a Bella
@@ -72,12 +86,12 @@ export async function POST({ request, locals }: APIContext) {
         printify_variant_id: String(variantId),
         quantity: String(quantity),
       },
-      success_url: `${origin}/shop/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${origin}/shop`,
+      success_url: `${SITE_ORIGIN}/shop/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${SITE_ORIGIN}/shop`,
     });
   } catch (err) {
     console.error(`[checkout] Stripe session creation failed for productId=${product.id} variantId=${variantId}:`, err);
-    return new Response(`Stripe error: ${err}`, { status: 500 });
+    return new Response('Something went wrong. Please try again.', { status: 500 });
   }
 
   console.log(`[checkout] Created session ${session.id} for productId=${product.id} variantId=${variantId} quantity=${quantity}`);
