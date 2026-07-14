@@ -10,7 +10,8 @@
     "lint": "oxlint --type-aware",
     "format": "oxfmt",
     "fetch-products": "node scripts/fetch-products.js",
-    "preview-email": "tsx scripts/preview-email.tsx"
+    "preview-email": "tsx scripts/preview-email.tsx",
+    "register-printify-webhooks": "node scripts/register-printify-webhooks.js"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^12.6.12",

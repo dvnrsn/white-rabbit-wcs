@@ -295,6 +295,17 @@ export async function POST({ request, locals }: APIContext) {
     [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
   ].filter((line): line is string => Boolean(line));
 
+  // Printify's shipment webhooks only carry its own order id, not the
+  // customer -- stash the lookup now so /api/printify-webhook can notify
+  // the right person later. 90 days covers even a badly delayed shipment.
+  if (kv && customerEmail) {
+    await kv.put(
+      `printify_order:${printifyOrder.id}`,
+      JSON.stringify({ email: customerEmail, firstName, itemLine }),
+      { expirationTtl: 60 * 60 * 24 * 90 }
+    );
+  }
+
   // Best-effort: an email failure shouldn't turn into a duplicate Printify
   // order on Stripe's retry, so neither of these ever affects the response status.
   if (customerEmail) {
