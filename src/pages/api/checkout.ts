@@ -41,6 +41,11 @@ export async function POST({ request, locals }: APIContext) {
       console.error(`[checkout] Turnstile verification failed: ${codes.join(', ')}`);
       return new Response('Verification failed. Please try again.', { status: 400 });
     }
+  } else if (!import.meta.env.DEV) {
+    // Not fatal -- checkout still works -- but silently running with no
+    // abuse protection in production is worth knowing about immediately
+    // rather than discovering it later via a spam/fraud spike.
+    console.error('[checkout] TURNSTILE_SECRET_KEY not configured -- abuse protection is disabled');
   }
 
   // Printify variant ids are scoped to the underlying blank (e.g. a Bella

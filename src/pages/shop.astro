@@ -131,6 +131,12 @@ const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
 <script>
   import type { Product, ProductVariant, ProductImage } from '../lib/printful';
 
+  declare global {
+    interface Window {
+      turnstile?: { reset: (widget?: string | HTMLElement) => void };
+    }
+  }
+
   const dialog = document.getElementById('product-dialog') as HTMLDialogElement;
   const dialogClose = document.getElementById('dialog-close');
   const dialogImage = document.getElementById('dialog-image') as HTMLImageElement;
@@ -144,6 +150,20 @@ const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
   const sizeGroup = document.getElementById('size-group') as HTMLElement;
   const btnStripe = document.getElementById('btn-stripe') as HTMLButtonElement;
   const dialogError = document.getElementById('dialog-error') as HTMLElement;
+  const turnstileWidget = document.querySelector('.cf-turnstile');
+
+  // If Turnstile's script never loads (ad blocker, privacy extension,
+  // network block on challenges.cloudflare.com), the widget silently never
+  // resolves and the button-click check below would repeat the same "please
+  // wait" message forever. After a grace period, swap to a message that
+  // actually explains what might be wrong.
+  let turnstileTimedOut = false;
+  if (turnstileWidget) {
+    setTimeout(() => {
+      const input = document.querySelector<HTMLInputElement>('[name=cf-turnstile-response]');
+      if (!input?.value) turnstileTimedOut = true;
+    }, 8000);
+  }
 
   let currentProduct: Product | null = null;
   let selectedColor = '';
@@ -290,22 +310,17 @@ const siteKey = "0x4AAAAAAC-SjNYO1rM3LezP";
     document.documentElement.style.overflow = "";
   });
 
-  declare global {
-    interface Window {
-      turnstile?: { reset: (widget?: string | HTMLElement) => void };
-    }
-  }
-
   btnStripe?.addEventListener('click', async () => {
     const variant = getVariant();
     if (!variant || !currentProduct) return;
 
-    const turnstileWidget = document.querySelector('.cf-turnstile');
     const turnstileInput = document.querySelector<HTMLInputElement>('[name=cf-turnstile-response]');
     const turnstileToken = turnstileInput?.value ?? '';
 
     if (turnstileWidget && !turnstileToken) {
-      dialogError.textContent = 'Please wait for the security check to complete.';
+      dialogError.textContent = turnstileTimedOut
+        ? "Security check couldn't load. If you're using an ad blocker or privacy extension, try disabling it for this site, then reload the page."
+        : 'Please wait for the security check to complete.';
       return;
     }
 
