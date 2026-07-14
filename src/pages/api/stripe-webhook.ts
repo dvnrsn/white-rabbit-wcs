@@ -314,7 +314,7 @@ export async function POST({ request, locals }: APIContext) {
           `Shipping to:`,
           ...addressLines,
           ``,
-          `Our rabbit hole crew is already hopping on production and shipping. We can't promise this shirt will fix your frame, but it will absolutely upgrade your dance floor swagger.`,
+          `Our rabbit hole crew is already hopping on production and shipping. We can't promise this gear will fix your frame, but it will absolutely upgrade your dance floor swagger.`,
           ``,
           `Questions? Just reply to this email.`,
         ].join('\n'),

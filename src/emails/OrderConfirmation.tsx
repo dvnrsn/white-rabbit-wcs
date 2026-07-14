@@ -82,7 +82,7 @@ export function OrderConfirmationEmail({ firstName, itemLine, addressLines }: Or
           </Section>
           <Text style={{ color: colors.textMuted, fontSize: 14, lineHeight: '22px', textAlign: 'center' }}>
             Our rabbit hole crew is already hopping on production and shipping. We
-            can&apos;t promise this shirt will fix your frame, but it will
+            can&apos;t promise this gear will fix your frame, but it will
             absolutely upgrade your dance floor swagger.
           </Text>
           <Hr style={{ borderColor: colors.border, margin: '24px 0' }} />
