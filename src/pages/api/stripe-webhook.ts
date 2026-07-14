@@ -55,7 +55,7 @@ export async function POST({ request, locals }: APIContext) {
     event = await stripe.webhooks.constructEventAsync(rawBody, sig, webhookSecret);
   } catch (err) {
     logError(undefined, 'Signature verification failed', err);
-    return new Response(`Webhook signature failed: ${err}`, { status: 400 });
+    return new Response('Invalid request', { status: 400 });
   }
 
   log(event.id, `Received event type=${event.type}`);
@@ -120,7 +120,7 @@ export async function POST({ request, locals }: APIContext) {
     );
   } catch (err) {
     logError(event.id, `Printify order creation failed for session ${session.id}`, err);
-    return new Response(`Printify error: ${err}`, { status: 500 });
+    return new Response('Order processing failed', { status: 500 });
   }
 
   // Mark this event as processed (7-day TTL covers Stripe's full retry window)
