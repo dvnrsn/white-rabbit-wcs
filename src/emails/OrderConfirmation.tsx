@@ -13,6 +13,7 @@ import {
 export interface OrderConfirmationEmailProps {
   firstName: string;
   itemLine: string;
+  amountPaid: string | null;
   addressLines: string[];
 }
 
@@ -28,7 +29,7 @@ const colors = {
 const fontMono = '"Courier New", Courier, monospace';
 const fontSans = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
 
-export function OrderConfirmationEmail({ firstName, itemLine, addressLines }: OrderConfirmationEmailProps) {
+export function OrderConfirmationEmail({ firstName, itemLine, amountPaid, addressLines }: OrderConfirmationEmailProps) {
   return (
     <Html>
       <Head />
@@ -60,9 +61,14 @@ export function OrderConfirmationEmail({ firstName, itemLine, addressLines }: Or
               margin: '24px 0',
             }}
           >
-            <Text style={{ color: colors.accent, fontFamily: fontMono, fontSize: 14, margin: '0 0 12px' }}>
+            <Text style={{ color: colors.accent, fontFamily: fontMono, fontSize: 14, margin: '0 0 4px' }}>
               {itemLine}
             </Text>
+            {amountPaid && (
+              <Text style={{ color: colors.text, fontFamily: fontMono, fontSize: 14, fontWeight: 700, margin: '0 0 12px' }}>
+                Total charged: {amountPaid}
+              </Text>
+            )}
             <Text
               style={{
                 color: colors.textMuted,
