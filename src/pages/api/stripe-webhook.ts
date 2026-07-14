@@ -94,6 +94,67 @@ async function handleChargeDisputeCreated(
   }
 }
 
+// Refunds are always initiated by the merchant (via Stripe dashboard or
+// API), so there's no equivalent "merchant notification" here -- whoever
+// issued the refund already knows. This only tells the customer.
+async function handleChargeRefunded(
+  event: Stripe.Event,
+  kv: Env['SESSION'] | undefined,
+  resendApiKey: string | undefined
+): Promise<void> {
+  const idempotencyKey = `stripe_event:${event.id}`;
+  if (kv) {
+    const already = await kv.get(idempotencyKey);
+    if (already) {
+      log(event.id, `Duplicate refund event, skipping`);
+      return;
+    }
+  } else {
+    logError(event.id, 'SESSION KV binding unavailable — idempotency check skipped, duplicate refund emails are possible');
+  }
+
+  const charge = event.data.object as Stripe.Charge;
+  const email = charge.receipt_email ?? charge.billing_details?.email ?? '';
+
+  if (email) {
+    const isFullRefund = charge.amount_refunded >= charge.amount;
+    const amountRefunded = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: charge.currency.toUpperCase(),
+    }).format(charge.amount_refunded / 100);
+    const firstName = (charge.billing_details?.name ?? 'there').split(' ')[0];
+
+    try {
+      await sendResendEmail(resendApiKey, {
+        fromAddr: ORDER_FROM_ADDR,
+        fromName: ORDER_FROM_NAME,
+        to: email,
+        subject: isFullRefund ? 'Your White Rabbit order has been refunded' : 'A refund has been issued for your White Rabbit order',
+        text: [
+          `Hi ${firstName},`,
+          ``,
+          isFullRefund
+            ? `Your order has been fully refunded. ${amountRefunded} is on its way back to your original payment method.`
+            : `A partial refund of ${amountRefunded} has been issued back to your original payment method.`,
+          ``,
+          `It can take 5-10 business days to show up on your statement, depending on your bank.`,
+          ``,
+          `Questions? Just reply to this email.`,
+        ].join('\n'),
+      });
+      log(event.id, `Refund confirmation email sent to ${email}`);
+    } catch (err) {
+      logError(event.id, `Refund confirmation email failed for charge ${charge.id}`, err);
+    }
+  } else {
+    logError(event.id, `No email on charge ${charge.id} — refund confirmation skipped`);
+  }
+
+  if (kv) {
+    await kv.put(idempotencyKey, charge.id, { expirationTtl: 604800 });
+  }
+}
+
 export async function POST({ request, locals }: APIContext) {
   const env = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
 
@@ -136,6 +197,11 @@ export async function POST({ request, locals }: APIContext) {
 
   if (event.type === 'charge.dispute.created') {
     await handleChargeDisputeCreated(event, kv, merchantEmailBinding, stripeKey);
+    return new Response('OK', { status: 200 });
+  }
+
+  if (event.type === 'charge.refunded') {
+    await handleChargeRefunded(event, kv, resendApiKey);
     return new Response('OK', { status: 200 });
   }
 
