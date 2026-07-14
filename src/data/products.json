@@ -3138,7 +3138,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -3316,7 +3315,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -3494,7 +3492,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -3672,7 +3669,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -4751,7 +4747,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -4929,7 +4924,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -5107,7 +5101,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -5285,7 +5278,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -6364,7 +6356,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -6542,7 +6533,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -6720,7 +6710,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -6898,7 +6887,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -7977,7 +7965,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -8155,7 +8142,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -8333,7 +8319,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -8511,7 +8496,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -18235,30 +18219,6 @@
         ]
       },
       {
-        "src": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/120720/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
-        "position": "front-2",
-        "variantIds": [
-          120724,
-          120716,
-          120720,
-          120718,
-          120714,
-          120722
-        ]
-      },
-      {
-        "src": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/120709/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
-        "position": "front-2",
-        "variantIds": [
-          120713,
-          120705,
-          120707,
-          120709,
-          120711,
-          120703
-        ]
-      },
-      {
         "src": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/48/wrs-rabbit-ticket-tank.jpg?camera_label=front",
         "position": "front",
         "variantIds": [
@@ -18375,30 +18335,6 @@
           19344,
           19342,
           19346
-        ]
-      },
-      {
-        "src": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/120720/49/wrs-rabbit-ticket-tank.jpg?camera_label=back",
-        "position": "back",
-        "variantIds": [
-          120724,
-          120716,
-          120720,
-          120718,
-          120714,
-          120722
-        ]
-      },
-      {
-        "src": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/120709/49/wrs-rabbit-ticket-tank.jpg?camera_label=back",
-        "position": "back",
-        "variantIds": [
-          120713,
-          120705,
-          120707,
-          120709,
-          120711,
-          120703
         ]
       },
       {
@@ -20170,18 +20106,6 @@
         ]
       },
       {
-        "src": "https://images-api.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/111806/precious-nivens-tank.jpg?camera_label=front-2",
-        "position": "front-2",
-        "variantIds": [
-          120724,
-          120716,
-          120720,
-          120718,
-          120714,
-          120722
-        ]
-      },
-      {
         "src": "https://images-api.printify.com/mockup/69f3da116bea0ab7a7072a38/19289/49/precious-nivens-tank.jpg?camera_label=back",
         "position": "back",
         "variantIds": [
@@ -20287,18 +20211,6 @@
           19344,
           19342,
           19346
-        ]
-      },
-      {
-        "src": "https://images-api.printify.com/mockup/69f3da116bea0ab7a7072a38/120720/49/precious-nivens-tank.jpg?camera_label=back",
-        "position": "back",
-        "variantIds": [
-          120724,
-          120716,
-          120720,
-          120718,
-          120714,
-          120722
         ]
       },
       {
@@ -20897,7 +20809,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -21075,7 +20986,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -22183,7 +22093,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,
@@ -22361,7 +22270,6 @@
         "variantIds": [
           18160,
           18161,
-          18162,
           18156,
           18158,
           18159,

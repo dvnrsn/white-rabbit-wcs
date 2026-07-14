@@ -1,22 +1,6 @@
 {
   "recurring": [
     {
-      "id": "dlbqokvmlrk5df5m4a1nq2la4n",
-      "title": "Late Nite Vibe",
-      "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
-      "startTime": "19:00",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$8",
-      "level": "",
-      "type": "social",
-      "organizer": "Yu Sun",
-      "dtstart": "2026-01-14",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE"
-    },
-    {
       "id": "5ack9ht4a7urs4kd1fhumfmqj2",
       "title": "Scootin' Boots",
       "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
@@ -181,6 +165,75 @@
       "organizer": "White Rabbit WCS",
       "dtstart": "2026-05-16",
       "rrule": "FREQ=MONTHLY;BYDAY=3SA"
+    },
+    {
+      "id": "g31gsachps39rh2ul7ivt6eq5f",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! Weekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8 pm - 12 am - Social ($10)\n(Or $15 for both Lesson and Social) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "19:00",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "dtstart": "2026-08-11",
+      "rrule": "FREQ=WEEKLY;WKST=SU;UNTIL=20260818T065959Z;BYDAY=TU"
+    },
+    {
+      "id": "5frev55pj92ls6jqk28tgcrcuq",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "18:30",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "dtstart": "2026-08-11",
+      "rrule": "FREQ=WEEKLY;WKST=SU;BYDAY=TU"
+    },
+    {
+      "id": "dlbqokvmlrk5df5m4a1nq2la4n",
+      "title": "Late Nite Vibe",
+      "description": "Join Late Nite Vibe for our weekly Wednesday night WCS social! DJs spinning the best tracks all night.\n\n7 pm - Beginner lesson ($5)\n8 pm - Intermediate lesson ($5)\n9 pm - 12 am - Social ($8)\n(Or $15 for whole night)",
+      "startTime": "19:00",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$8",
+      "level": "",
+      "type": "social",
+      "organizer": "Yu Sun",
+      "dtstart": "2026-01-14",
+      "rrule": "FREQ=WEEKLY;UNTIL=20260715T065959Z;BYDAY=WE"
+    },
+    {
+      "id": "dlbqokvmlrk5df5m4a1nq2la4n_R20260716T020000",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n7 pm - Beginner/Intermediate lesson ($10)\n8 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "dtstart": "2026-07-15",
+      "rrule": "FREQ=WEEKLY;UNTIL=20260805T065959Z;BYDAY=WE",
+      "exdates": [
+        "2026-07-15",
+        "2026-07-22",
+        "2026-07-29"
+      ]
     }
   ],
   "single": [
@@ -213,21 +266,6 @@
       "type": "social",
       "organizer": "White Rabbit WCS",
       "date": "2026-06-27"
-    },
-    {
-      "id": "5a91vvp1rg0bfg4mjph74r1eee",
-      "title": "White Rabbit at Imperial Ballroom",
-      "description": "Details TBA!",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$15",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-07-25"
     },
     {
       "id": "1e8u9e1k5fl17b7n5vbfodr8lc",
@@ -445,6 +483,66 @@
       "organizer": "Sky Smith",
       "instagram": "https://www.instagram.com/prescottbeatmob/",
       "date": "2026-12-02"
+    },
+    {
+      "id": "5a91vvp1rg0bfg4mjph74r1eee",
+      "title": "White Rabbit: Unplugged feat. Drew Mitchell!",
+      "description": "Follow the white rabbit.\n\nNivens had a blast at P4J, and he hopes you did too. While there, he had a sit-down with one of his closest friends, local phenom and WSDC All-Star Drew Mitchell, about the significance and importance of blues and swung rhythm, as it applies to our beloved WCS.\n\nAs a result, Drew has agreed to help elevate all of our dancing with his comprehensive approach to the topic, \"Am I Swung Over? Or is it the Blues?\" A class that focuses on integrating the techniques of blues and swung rhythms and why that matters. Far more than just learning how to dance to a specific genre of music, this class will expand your ability to effectively dance and enjoy all genres, by delving into the power and nuance of rhythm and timing.\n\nSchedule:\n8pm: \"Am I Swung Over? Or is it the Blues?\" with Drew Mitchell\n9pm: Dance Party!\n$15 (Includes class)\n\nCash/Zelle preferred\nZelle: Sarah Hightower\n\nRemember:\n- If it glows it won't say \"no\"\n- White Rabbit is a safe space for all\n- No unsolicited feedback on the social floor\n\nAlso, per the CDC liquor license, no outside alcohol is permitted.\n\nBeat the heat this month with another great night of that cool White Rabbit vibe! All are welcome, see you there!",
+      "startTime": "20:00",
+      "endTime": "01:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "Free",
+      "level": "",
+      "type": "social",
+      "organizer": "The White Rabbit SocietyPrice: $15",
+      "date": "2026-07-25"
+    },
+    {
+      "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260716T020000Z",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n7 pm - Beginner/Intermediate lesson ($10)\n8 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "date": "2026-07-15"
+    },
+    {
+      "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260723T020000Z",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n7 pm - Beginner/Intermediate lesson ($10)\n8 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "date": "2026-07-22"
+    },
+    {
+      "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260730T020000Z",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n7 pm - Beginner/Intermediate lesson ($10)\n8 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "19:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "date": "2026-07-29"
     }
   ]
 }
