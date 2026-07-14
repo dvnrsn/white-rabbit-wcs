@@ -4,6 +4,7 @@ export interface SendEmailOptions {
   to: string;
   subject: string;
   text: string;
+  html?: string;
 }
 
 type SendEmailBinding = { send: (msg: unknown) => Promise<void> };
@@ -41,7 +42,7 @@ export async function sendEmail(binding: SendEmailBinding | undefined, opts: Sen
  * local dev, or before Resend is set up).
  */
 export async function sendResendEmail(apiKey: string | undefined, opts: SendEmailOptions): Promise<void> {
-  const { fromAddr, fromName, to, subject, text } = opts;
+  const { fromAddr, fromName, to, subject, text, html } = opts;
 
   if (!apiKey) {
     console.log(`[email] would send (via Resend) to ${to}\nSubject: ${subject}\n\n${text}`);
@@ -59,6 +60,7 @@ export async function sendResendEmail(apiKey: string | undefined, opts: SendEmai
       to,
       subject,
       text,
+      ...(html ? { html } : {}),
     }),
   });
 

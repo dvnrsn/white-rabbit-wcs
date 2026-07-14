@@ -3,6 +3,8 @@ import Stripe from 'stripe';
 import { env as cfEnv } from 'cloudflare:workers';
 import { createPrintifyOrder } from '../../lib/printful';
 import { sendEmail, sendResendEmail } from '../../lib/email';
+import { render } from '@react-email/render';
+import { OrderConfirmationEmail } from '../../emails/OrderConfirmation';
 import productsData from '../../data/products.json';
 
 export const prerender = false;
@@ -288,17 +290,22 @@ export async function POST({ request, locals }: APIContext) {
     shipping.address.line1,
     shipping.address.line2,
     [shipping.address.city, shipping.address.state, shipping.address.postal_code].filter(Boolean).join(', '),
-  ].filter(Boolean);
+  ].filter((line): line is string => Boolean(line));
 
   // Best-effort: an email failure shouldn't turn into a duplicate Printify
   // order on Stripe's retry, so neither of these ever affects the response status.
   if (customerEmail) {
     try {
+      const html = await render(
+        OrderConfirmationEmail({ firstName, itemLine, addressLines })
+      );
+
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
         fromName: ORDER_FROM_NAME,
         to: customerEmail,
         subject: 'Your White Rabbit order is confirmed',
+        html,
         text: [
           `Thanks, ${firstName}! Your order is confirmed.`,
           ``,
