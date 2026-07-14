@@ -307,9 +307,9 @@ export async function POST({ request, locals }: APIContext) {
           `Shipping to:`,
           ...addressLines,
           ``,
-          `Printify will handle production and shipping — you'll get a shipping notification once it's on its way.`,
+          `Our rabbit hole crew is already hopping on production and shipping. We can't promise this shirt will fix your frame, but it will absolutely upgrade your dance floor swagger.`,
           ``,
-          `Order reference: ${session.id}`,
+          `Questions? Just reply to this email.`,
         ].join('\n'),
       });
       log(event.id, `Order confirmation email sent to ${customerEmail}`);
