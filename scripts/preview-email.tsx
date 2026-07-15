@@ -1,7 +1,7 @@
 // Renders one of src/emails/*.tsx to HTML with sample data and opens it in
 // the browser. No Stripe/Printify/Resend involved -- for fast iteration on
 // email copy/design only.
-// Run with: pnpm preview-email [confirmation|shipped|delivered]
+// Run with: pnpm preview-email [confirmation|shipped|delivered|refunded]
 
 import { writeFileSync } from 'fs';
 import { join, dirname } from 'path';
@@ -11,6 +11,7 @@ import { render } from '@react-email/render';
 import { OrderConfirmationEmail } from '../src/emails/OrderConfirmation';
 import { OrderShippedEmail } from '../src/emails/OrderShipped';
 import { OrderDeliveredEmail } from '../src/emails/OrderDelivered';
+import { OrderRefundedEmail } from '../src/emails/OrderRefunded';
 import productsData from '../src/data/products.json' with { type: 'json' };
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -42,6 +43,14 @@ const templates = {
       carrier: { code: 'usps', trackingNumber: '9400111899223344556677', trackingUrl: 'https://tools.usps.com/go/TrackConfirmAction' },
     }),
   delivered: () => OrderDeliveredEmail({ firstName: 'Alex', itemLine: sampleItemLine }),
+  refunded: () =>
+    OrderRefundedEmail({
+      firstName: 'Alex',
+      amountRefunded: sampleVariant
+        ? new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(parseFloat(sampleVariant.price))
+        : '$35.00',
+      isFullRefund: true,
+    }),
 };
 
 if (!(template in templates)) {
