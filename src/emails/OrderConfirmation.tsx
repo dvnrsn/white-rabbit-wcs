@@ -9,6 +9,7 @@ import {
   Section,
   Text,
 } from '@react-email/components';
+import { colors, fontMono, fontSans } from './theme';
 
 export interface OrderConfirmationEmailProps {
   firstName: string;
@@ -16,18 +17,6 @@ export interface OrderConfirmationEmailProps {
   amountPaid: string | null;
   addressLines: string[];
 }
-
-const colors = {
-  bg: '#0d0d0d',
-  card: '#1a1a1a',
-  accent: '#00ff41',
-  text: '#f0f0f0',
-  textMuted: '#b0b0b0',
-  border: 'rgba(255, 255, 255, 0.15)',
-};
-
-const fontMono = '"Courier New", Courier, monospace';
-const fontSans = '-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif';
 
 export function OrderConfirmationEmail({ firstName, itemLine, amountPaid, addressLines }: OrderConfirmationEmailProps) {
   return (

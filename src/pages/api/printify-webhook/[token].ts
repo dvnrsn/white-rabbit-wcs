@@ -1,7 +1,10 @@
 import type { APIRoute } from 'astro';
 import { env as cfEnv } from 'cloudflare:workers';
+import { render } from '@react-email/render';
 import { sendResendEmail } from '../../../lib/email';
 import { alertDev } from '../../../lib/alert';
+import { OrderShippedEmail } from '../../../emails/OrderShipped';
+import { OrderDeliveredEmail } from '../../../emails/OrderDelivered';
 
 export const prerender = false;
 
@@ -101,8 +104,17 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
       [
         `Printify sent a ${payload.type} event for order ${printifyOrderId}, but there's no stored customer mapping for it, so no email went out.`,
         ``,
+        `Likely cause: this order was placed before shipment notifications existed (no mapping was ever written), or the original KV write in stripe-webhook.ts failed at checkout time.`,
+        ``,
+        `To fix: look up order ${printifyOrderId} in the Printify dashboard's Orders search to find the customer's email and item, then either email them directly or re-seed the mapping so a future shipment event on this order picks it up automatically:`,
+        ``,
+        `  wrangler kv key put --binding=SESSION "printify_order:${printifyOrderId}" '{"email":"<their email>","firstName":"<first name>","itemLine":"<item description>"}' --remote --expiration-ttl 7776000`,
+        ``,
         `Event id: ${payload.id}`,
-        `This can happen for orders placed before shipment notifications existed, or if the original KV write failed.`,
+        `Event type: ${payload.type}`,
+        ``,
+        `Raw event payload:`,
+        JSON.stringify(payload, null, 2),
       ].join('\n')
     );
     await kv.put(idempotencyKey, '1', { expirationTtl: 604800 });
@@ -122,11 +134,22 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
           ].filter((line): line is string => Boolean(line))
         : [];
 
+      const html = await render(
+        OrderShippedEmail({
+          firstName,
+          itemLine,
+          carrier: carrier
+            ? { code: carrier.code, trackingNumber: carrier.tracking_number, trackingUrl: carrier.tracking_url }
+            : undefined,
+        })
+      );
+
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
         fromName: ORDER_FROM_NAME,
         to: email,
         subject: 'Your White Rabbit order has shipped',
+        html,
         text: [
           `Hi ${firstName},`,
           ``,
@@ -139,11 +162,14 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
       });
       log(`Shipped email sent to ${email} for Printify order ${printifyOrderId}`);
     } else {
+      const html = await render(OrderDeliveredEmail({ firstName, itemLine }));
+
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
         fromName: ORDER_FROM_NAME,
         to: email,
         subject: 'Your White Rabbit order was delivered',
+        html,
         text: [
           `Hi ${firstName},`,
           ``,
