@@ -1802,7 +1802,7 @@
         "size": "L",
         "color": "Stonewash Green",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99999/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99999/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -2676,7 +2676,7 @@
         "size": "L",
         "color": "Stonewash Green",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99999/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99999/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
