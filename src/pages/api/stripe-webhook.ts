@@ -5,6 +5,7 @@ import { createPrintifyOrder } from '../../lib/printful';
 import { sendEmail, sendResendEmail } from '../../lib/email';
 import { render } from '@react-email/render';
 import { OrderConfirmationEmail } from '../../emails/OrderConfirmation';
+import { OrderRefundedEmail } from '../../emails/OrderRefunded';
 import productsData from '../../data/products.json';
 
 export const prerender = false;
@@ -127,11 +128,14 @@ async function handleChargeRefunded(
     const firstName = (charge.billing_details?.name ?? 'there').split(' ')[0];
 
     try {
+      const html = await render(OrderRefundedEmail({ firstName, amountRefunded, isFullRefund }));
+
       await sendResendEmail(resendApiKey, {
         fromAddr: ORDER_FROM_ADDR,
         fromName: ORDER_FROM_NAME,
         to: email,
         subject: isFullRefund ? 'Your White Rabbit order has been refunded' : 'A refund has been issued for your White Rabbit order',
+        html,
         text: [
           `Hi ${firstName},`,
           ``,
