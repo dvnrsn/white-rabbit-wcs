@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { env as cfEnv } from 'cloudflare:workers';
 import { sendResendEmail } from '../../../lib/email';
+import { alertDev } from '../../../lib/alert';
 
 export const prerender = false;
 
@@ -37,24 +38,6 @@ function logError(msg: string, err?: unknown) {
   console.error(`[printify-webhook] ${msg}`, err ?? '');
 }
 
-// Dev alert, not merchant-facing -- goes to DEV_ALERT_EMAIL (a Cloudflare
-// secret, not hardcoded, since this repo is public) via Resend rather than
-// the SEND_EMAIL binding, since that binding can only reach the verified
-// merchant inbox. Failures here are already logged by the caller -- this is
-// a best-effort nudge on top, so a broken alert path should never mask the
-// original error.
-async function alertDev(resendApiKey: string | undefined, devAlertTo: string | undefined, subject: string, text: string) {
-  if (!devAlertTo) {
-    logError('DEV_ALERT_EMAIL not configured, skipping dev alert');
-    return;
-  }
-  try {
-    await sendResendEmail(resendApiKey, { fromAddr: ORDER_FROM_ADDR, fromName: ORDER_FROM_NAME, to: devAlertTo, subject, text });
-  } catch (err) {
-    logError('Dev alert email failed', err);
-  }
-}
-
 export const POST: APIRoute = async ({ request, params, locals }) => {
   const e = cfEnv as any;
   const webhookToken = e.PRINTIFY_WEBHOOK_TOKEN as string | undefined;
@@ -63,7 +46,6 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
     | undefined;
   const env = (locals as { runtime?: { env?: Record<string, string> } }).runtime?.env ?? {};
   const resendApiKey = env.RESEND_API_KEY;
-  const devAlertTo = env.DEV_ALERT_EMAIL;
 
   // Printify has no webhook signing scheme (confirmed against their OpenAPI
   // spec -- the webhook object is just {topic, url, shop_id, id}, no secret
@@ -114,8 +96,7 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
   if (!mappingRaw) {
     logError(`No stored mapping for Printify order ${printifyOrderId} -- can't notify, skipping`);
     await alertDev(
-      resendApiKey,
-      devAlertTo,
+      env,
       `Printify order ${printifyOrderId}: shipment notification not sent`,
       [
         `Printify sent a ${payload.type} event for order ${printifyOrderId}, but there's no stored customer mapping for it, so no email went out.`,
@@ -176,8 +157,7 @@ export const POST: APIRoute = async ({ request, params, locals }) => {
   } catch (err) {
     logError(`Notification email failed for Printify order ${printifyOrderId}`, err);
     await alertDev(
-      resendApiKey,
-      devAlertTo,
+      env,
       `Printify order ${printifyOrderId}: shipment notification failed to send`,
       [
         `The ${payload.type} email to ${email} for order ${printifyOrderId} failed to send.`,
