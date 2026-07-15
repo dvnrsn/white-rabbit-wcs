@@ -30,8 +30,14 @@ Printify's shipment payload only carries its own order id, not the customer. `st
    ```bash
    PRINTIFY_API_TOKEN=xxx PRINTIFY_SHOP_ID=xxx PRINTIFY_WEBHOOK_TOKEN=xxx pnpm register-printify-webhooks
    ```
+3. Set `DEV_ALERT_EMAIL` as a Cloudflare secret (see Failure alerting below):
+   ```bash
+   wrangler secret put DEV_ALERT_EMAIL
+   ```
 
 **Security note**: Printify's webhook API has no signing/secret scheme (confirmed against their OpenAPI spec — the webhook object is just `{topic, url, shop_id, id}`). The random token in the URL path, checked in constant time, is the only practical protection available; combined with the KV-lookup gate (unrecognized order ids are silently ignored), the realistic worst case of a forged request is negligible.
+
+**Failure alerting**: unlike the order-confirmation email (best-effort, log-only), a shipment/delivery notification that can't be sent — either because the KV order→customer mapping is missing, or because the Resend send itself fails — also emails a developer address via Resend (not the merchant inbox, and not the `SEND_EMAIL` binding, which can only reach that one verified address), since a silently dropped shipment email is easy to miss in Workers logs alone. The destination address is set via the `DEV_ALERT_EMAIL` secret rather than hardcoded, since this repo is public. Without it, alerts fall back to a logged warning instead of failing.
 
 ## Security
 
