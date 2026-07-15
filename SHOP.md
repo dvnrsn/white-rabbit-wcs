@@ -37,7 +37,7 @@ Printify's shipment payload only carries its own order id, not the customer. `st
 
 **Security note**: Printify's webhook API has no signing/secret scheme (confirmed against their OpenAPI spec — the webhook object is just `{topic, url, shop_id, id}`). The random token in the URL path, checked in constant time, is the only practical protection available; combined with the KV-lookup gate (unrecognized order ids are silently ignored), the realistic worst case of a forged request is negligible.
 
-**Failure alerting**: unlike the order-confirmation email (best-effort, log-only), a shipment/delivery notification that can't be sent — either because the KV order→customer mapping is missing, or because the Resend send itself fails — also emails a developer address via Resend (not the merchant inbox, and not the `SEND_EMAIL` binding, which can only reach that one verified address), since a silently dropped shipment email is easy to miss in Workers logs alone. The destination address is set via the `DEV_ALERT_EMAIL` secret rather than hardcoded, since this repo is public. Without it, alerts fall back to a logged warning instead of failing.
+**Failure alerting**: unlike the order-confirmation email (best-effort, log-only), a shipment/delivery notification that can't be sent — either because the KV order→customer mapping is missing, or because the Resend send itself fails — also calls `alertDev()` (`src/lib/alert.ts`), a small general-purpose "closest thing to Sentry" helper: it emails a developer address via Resend (not the merchant inbox, and not the `SEND_EMAIL` binding, which can only reach that one verified address), since a silently dropped shipment email is easy to miss in Workers logs alone. The destination address is set via the `DEV_ALERT_EMAIL` secret rather than hardcoded, since this repo is public. Without it, alerts fall back to a logged warning instead of failing. `alertDev()` takes the same `env` object every handler already extracts from `locals.runtime.env`, so any other endpoint can call it the same way.
 
 ## Security
 
@@ -123,6 +123,7 @@ To update the Printify payment method: **printify.com → Wallet → Payments**.
 | `src/pages/api/stripe-webhook.ts` | Handles `checkout.session.completed`, creates Printify order |
 | `src/lib/printful.ts` | `createPrintifyOrder` — Printify API wrapper (filename is legacy) |
 | `src/lib/email.ts` | `sendResendEmail` (order confirmations, via Resend) and `sendEmail` (contact form, via Cloudflare `send_email` binding) |
+| `src/lib/alert.ts` | `alertDev` — best-effort dev-facing ops alert via Resend, for silent failures any endpoint hits |
 | `src/data/products.json` | Pre-fetched product catalog (committed; update via fetch script) |
 
 ## Refreshing Product Data
