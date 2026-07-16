@@ -2,6 +2,129 @@
 
 Product data is fetched from Printify and committed to `src/data/products.json`. The shop page is entirely static at build time; SSR only activates for `/api/checkout` and `/api/stripe-webhook`.
 
+## Webhook Flows
+
+Two independent webhooks drive the whole customer-email pipeline: Stripe's (`/api/stripe-webhook`, all payment/refund/dispute events) and Printify's (`/api/printify-webhook/[token]`, shipment/delivery events). Neither trusts the other directly — they hand off through the `SESSION` KV namespace, since Printify's shipment payload only carries its own order id, not the customer.
+
+### Stripe event routing
+
+Every Stripe event that reaches the site funnels through one handler, which branches on `event.type` before doing anything else:
+
+```mermaid
+flowchart TD
+    A["POST /api/stripe-webhook"] --> B{"Signature valid?"}
+    B -- no --> C["400 Invalid request"]
+    B -- yes --> D{"event.type"}
+    D -- "charge.dispute.created" --> E["handleChargeDisputeCreated\n(merchant-only alert)"]
+    D -- "charge.refunded" --> F["handleChargeRefunded\n(branded customer email)"]
+    D -- "checkout.session.completed" --> G["Create Printify draft order\n+ customer + merchant emails"]
+    D -- anything else --> H["200 OK, ignored"]
+    E --> Z["200 OK"]
+    F --> Z
+    G --> Z
+```
+
+### Order confirmation — `checkout.session.completed`
+
+```mermaid
+sequenceDiagram
+    actor Customer
+    participant Checkout as /api/checkout
+    participant Stripe
+    participant Webhook as /api/stripe-webhook
+    participant KV as SESSION (KV)
+    participant Printify
+    participant Resend
+    participant Merchant
+
+    Customer->>Checkout: Selects product/variant (Turnstile-verified)
+    Checkout->>Stripe: Create Checkout session
+    Stripe-->>Customer: Hosted checkout page
+    Customer->>Stripe: Pays
+    Stripe->>Webhook: checkout.session.completed
+    Webhook->>KV: get stripe_event:<id>
+    KV-->>Webhook: not found
+    Webhook->>Printify: createPrintifyOrder (draft, externalId=session.id)
+    Printify-->>Webhook: draft order id
+    Webhook->>KV: put stripe_event:<id> (7d TTL)
+    Webhook->>KV: put printify_order:<orderId> → {email, firstName, itemLine} (90d TTL)
+    Webhook->>Resend: OrderConfirmationEmail (branded HTML)
+    Resend-->>Customer: "Your order is confirmed"
+    Webhook->>Merchant: New-order notification (Cloudflare SEND_EMAIL)
+    Webhook-->>Stripe: 200 OK
+```
+
+The `printify_order:<orderId>` KV entry written here is the only link between this webhook and the shipment flow below — if that write fails or the KV binding is missing, shipment/delivery emails for that order have nothing to look up later.
+
+### Shipment & delivery notifications — Printify webhook
+
+```mermaid
+sequenceDiagram
+    participant Printify
+    participant Webhook as /api/printify-webhook/:token
+    participant KV as SESSION (KV)
+    participant Resend
+    actor Customer
+    participant Dev as alertDev()
+
+    Printify->>Webhook: order:shipment:created / delivered
+    Webhook->>Webhook: Verify token (timing-safe compare)
+    Webhook->>KV: get printify_event:<id>
+    KV-->>Webhook: not found
+    Webhook->>KV: get printify_order:<printifyOrderId>
+    alt mapping found
+        KV-->>Webhook: {email, firstName, itemLine}
+        Webhook->>Resend: OrderShippedEmail / OrderDeliveredEmail (branded HTML)
+        Resend-->>Customer: "Your order has shipped / was delivered"
+        opt send fails
+            Webhook->>Dev: alertDev("...failed to send")
+        end
+    else no mapping
+        Webhook->>Dev: alertDev("...mapping missing, manual follow-up needed")
+    end
+    Webhook->>KV: put printify_event:<id> (7d TTL)
+    Webhook-->>Printify: 200 OK
+```
+
+Printify has no webhook signing scheme, so the `:token` path segment (checked in constant time) plus the KV-lookup gate is the only protection here — an unrecognized order id is just silently ignored rather than trusted.
+
+### Refund confirmation — `charge.refunded`
+
+```mermaid
+sequenceDiagram
+    participant Stripe
+    participant Webhook as /api/stripe-webhook
+    participant KV as SESSION (KV)
+    participant Resend
+    actor Customer
+
+    Stripe->>Webhook: charge.refunded
+    Webhook->>KV: get/put stripe_event:<id> (idempotency)
+    Webhook->>Webhook: isFullRefund = amount_refunded >= amount
+    Webhook->>Resend: OrderRefundedEmail (branded HTML)
+    Resend-->>Customer: "Refunded" / "Partial refund issued"
+    Webhook-->>Stripe: 200 OK
+```
+
+No merchant notification here — whoever issued the refund (via the Stripe dashboard) already knows.
+
+### Dispute alert — `charge.dispute.created`
+
+```mermaid
+sequenceDiagram
+    participant Stripe
+    participant Webhook as /api/stripe-webhook
+    participant KV as SESSION (KV)
+    participant Merchant
+
+    Stripe->>Webhook: charge.dispute.created
+    Webhook->>KV: get/put stripe_event:<id> (idempotency)
+    Webhook->>Merchant: Dispute email (amount, reason, deadline, dashboard links)
+    Webhook-->>Stripe: 200 OK
+```
+
+Merchant-only, and time-sensitive — Stripe auto-loses undisputed evidence deadlines, and charges a fee regardless of outcome.
+
 ## Order Flow
 
 1. Customer selects product/variant → `/api/checkout` creates a Stripe Checkout session
