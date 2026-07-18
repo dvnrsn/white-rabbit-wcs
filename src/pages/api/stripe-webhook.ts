@@ -97,6 +97,55 @@ async function handleChargeDisputeCreated(
   }
 }
 
+// checkout.session.completed fires as soon as the customer finishes the
+// checkout form -- for asynchronous payment methods (e.g. ACH bank debit)
+// that does NOT mean the payment cleared. Real settlement arrives later via
+// checkout.session.async_payment_succeeded/failed. This handler covers the
+// failure side: no Printify order was ever created for this session (see
+// the payment_status guard in POST below), so there's nothing to cancel --
+// just let the merchant know in case the customer asks what happened.
+async function handleAsyncPaymentFailed(
+  event: Stripe.Event,
+  kv: Env['SESSION'] | undefined,
+  merchantEmailBinding: { send: (msg: unknown) => Promise<void> } | undefined
+): Promise<void> {
+  const idempotencyKey = `stripe_event:${event.id}`;
+  if (kv) {
+    const already = await kv.get(idempotencyKey);
+    if (already) {
+      log(event.id, `Duplicate async-payment-failed event, skipping`);
+      return;
+    }
+  }
+
+  const session = event.data.object as Stripe.Checkout.Session;
+  log(event.id, `Async payment failed for session ${session.id} -- no order was created`);
+
+  try {
+    await sendEmail(merchantEmailBinding, {
+      fromAddr: ORDER_FROM_ADDR,
+      fromName: ORDER_FROM_NAME,
+      to: MERCHANT_TO,
+      subject: `Checkout payment failed (no order created)`,
+      text: [
+        `A customer completed checkout, but their payment method (likely a bank debit) failed to clear.`,
+        ``,
+        `No Printify order was created for this session -- there's nothing to cancel.`,
+        ``,
+        `Session: ${session.id}`,
+        `Customer: ${session.customer_details?.email ?? 'unknown'}`,
+      ].join('\n'),
+    });
+    log(event.id, `Async-payment-failed notification sent for session ${session.id}`);
+  } catch (err) {
+    logError(event.id, `Async-payment-failed notification failed for session ${session.id}`, err);
+  }
+
+  if (kv) {
+    await kv.put(idempotencyKey, session.id, { expirationTtl: 604800 });
+  }
+}
+
 // Refunds are always initiated by the merchant (via Stripe dashboard or
 // API), so there's no equivalent "merchant notification" here -- whoever
 // issued the refund already knows. This only tells the customer.
@@ -211,7 +260,12 @@ export async function POST({ request, locals }: APIContext) {
     return new Response('OK', { status: 200 });
   }
 
-  if (event.type !== 'checkout.session.completed') {
+  if (event.type === 'checkout.session.async_payment_failed') {
+    await handleAsyncPaymentFailed(event, kv, merchantEmailBinding);
+    return new Response('OK', { status: 200 });
+  }
+
+  if (event.type !== 'checkout.session.completed' && event.type !== 'checkout.session.async_payment_succeeded') {
     return new Response('OK', { status: 200 });
   }
 
@@ -228,6 +282,17 @@ export async function POST({ request, locals }: APIContext) {
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
+
+  // checkout.session.completed fires the instant the customer submits the
+  // form, before an async payment method (ACH, etc.) has actually cleared.
+  // Fulfilling here regardless would ship product against a payment that
+  // can still fail. Defer: this same session re-arrives, with payment_status
+  // now 'paid', as checkout.session.async_payment_succeeded once it clears.
+  if (session.payment_status !== 'paid') {
+    log(event.id, `session=${session.id} payment_status=${session.payment_status} — awaiting async payment confirmation, deferring fulfillment`);
+    return new Response('OK', { status: 200 });
+  }
+
   const productId = session.metadata?.printify_product_id ?? '';
   const variantId = Number(session.metadata?.printify_variant_id);
   const quantity = Number(session.metadata?.quantity ?? 1);
