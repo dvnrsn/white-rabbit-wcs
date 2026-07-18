@@ -17,10 +17,14 @@ flowchart TD
     B -- yes --> D{"event.type"}
     D -- "charge.dispute.created" --> E["handleChargeDisputeCreated\n(merchant-only alert)"]
     D -- "charge.refunded" --> F["handleChargeRefunded\n(branded customer email)"]
-    D -- "checkout.session.completed" --> G["Create Printify draft order\n+ customer + merchant emails"]
+    D -- "checkout.session.async_payment_failed" --> P["handleAsyncPaymentFailed\n(merchant-only alert, no order existed)"]
+    D -- "checkout.session.completed\nor async_payment_succeeded" --> Q{"payment_status\n== 'paid'?"}
+    Q -- no --> R["200 OK, defer\n(await async_payment_succeeded)"]
+    Q -- yes --> G["Create Printify draft order\n+ customer + merchant emails"]
     D -- anything else --> H["200 OK, ignored"]
     E --> Z["200 OK"]
     F --> Z
+    P --> Z
     G --> Z
 ```
 
@@ -44,6 +48,11 @@ sequenceDiagram
     Stripe->>Webhook: checkout.session.completed
     Webhook->>KV: get stripe_event:<id>
     KV-->>Webhook: not found
+    alt payment_status != 'paid' (async method still pending)
+        Webhook-->>Stripe: 200 OK (deferred, no order created)
+        Note over Stripe,Webhook: later, once it clears...
+        Stripe->>Webhook: checkout.session.async_payment_succeeded (payment_status now 'paid')
+    end
     Webhook->>Printify: createPrintifyOrder (draft, externalId=session.id)
     Printify-->>Webhook: draft order id
     Webhook->>KV: put stripe_event:<id> (7d TTL)
@@ -129,13 +138,18 @@ Merchant-only, and time-sensitive — Stripe auto-loses undisputed evidence dead
 
 1. Customer selects product/variant → `/api/checkout` creates a Stripe Checkout session
 2. Stripe redirects to hosted checkout; on success, fires a webhook to `/api/stripe-webhook`
-3. Webhook calls `createPrintifyOrder` in `src/lib/printful.ts`, which creates a **draft** order in Printify
-4. Webhook sends the customer an order-confirmation email via Resend, and a new-order notification to `whiterabbitwcs@gmail.com` (both best-effort — failure is logged but doesn't fail the webhook or retry the Printify order)
-5. Draft sits in the Printify dashboard for manual review — hit "Send to production" there to fulfill
+3. Webhook checks `session.payment_status` — if it's not yet `'paid'` (an asynchronous payment method like ACH bank debit was used), the webhook returns 200 without creating an order and waits for Stripe to fire `checkout.session.async_payment_succeeded` once the debit actually clears. Synchronous methods (card, Apple Pay, etc.) are already `'paid'` by the time `checkout.session.completed` fires, so this is a no-op for the common case.
+4. Once `payment_status` is `'paid'`, the webhook calls `createPrintifyOrder` in `src/lib/printful.ts`, which creates a **draft** order in Printify
+5. Webhook sends the customer an order-confirmation email via Resend, and a new-order notification to `whiterabbitwcs@gmail.com` (both best-effort — failure is logged but doesn't fail the webhook or retry the Printify order)
+6. Draft sits in the Printify dashboard for manual review — hit "Send to production" there to fulfill
+
+If the async payment method fails instead of clearing, Stripe fires `checkout.session.async_payment_failed`; `handleAsyncPaymentFailed` just notifies the merchant for visibility — no Printify order was ever created, so there's nothing to cancel.
 
 Printify itself never emails the customer here — this is a custom API integration, not a connected storefront, so Printify only talks to the merchant account. All customer-facing email is this app's responsibility.
 
 Orders are intentionally left as drafts (the `send_to_production` API call is omitted) so each order can be reviewed before Printify charges for fulfillment.
+
+**Requires a manual step**: the Stripe webhook endpoint must also be subscribed to `checkout.session.async_payment_succeeded` and `checkout.session.async_payment_failed`, not just `checkout.session.completed` — Dashboard → Developers → Webhooks → your endpoint. Without these, an order paid for via an async method never gets fulfilled at all (it's deferred forever).
 
 ## Shipping/Delivery Notification
 

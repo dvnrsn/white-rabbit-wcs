@@ -3,6 +3,10 @@ import type { APIContext } from "astro";
 export const prerender = false;
 
 export async function GET({ locals }: APIContext) {
+  if (!import.meta.env.DEV) {
+    return new Response("Not found", { status: 404 });
+  }
+
   const runtime = locals.runtime;
 
   // Try to get calendar ID from runtime env (Cloudflare) or import.meta.env (build time)
