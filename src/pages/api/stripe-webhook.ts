@@ -119,7 +119,10 @@ async function handleAsyncPaymentFailed(
   }
 
   const session = event.data.object as Stripe.Checkout.Session;
-  log(event.id, `Async payment failed for session ${session.id} -- no order was created`);
+  log(
+    event.id,
+    `Async payment failed for session ${session.id} email=${session.customer_details?.email ?? 'unknown'} -- no order was created`
+  );
 
   try {
     await sendEmail(merchantEmailBinding, {
@@ -248,7 +251,15 @@ export async function POST({ request, locals }: APIContext) {
     return new Response('Invalid request', { status: 400 });
   }
 
-  log(event.id, `Received event type=${event.type}`);
+  // checkout.session.completed/async_payment_succeeded/async_payment_failed
+  // all carry the same session id -- logging it on this first line (before
+  // any type-specific branching) means every log for one checkout, across
+  // however many of those events Stripe ends up sending, can be found by
+  // grepping for the session id alone, not just the (different) event id.
+  const eventSessionId = event.type.startsWith('checkout.session.')
+    ? (event.data.object as Stripe.Checkout.Session).id
+    : undefined;
+  log(event.id, `Received event type=${event.type}${eventSessionId ? ` session=${eventSessionId}` : ''}`);
 
   if (event.type === 'charge.dispute.created') {
     await handleChargeDisputeCreated(event, kv, merchantEmailBinding, stripeKey);
@@ -288,8 +299,13 @@ export async function POST({ request, locals }: APIContext) {
   // Fulfilling here regardless would ship product against a payment that
   // can still fail. Defer: this same session re-arrives, with payment_status
   // now 'paid', as checkout.session.async_payment_succeeded once it clears.
+  const customerEmailForLog = session.customer_details?.email ?? 'unknown';
+
   if (session.payment_status !== 'paid') {
-    log(event.id, `session=${session.id} payment_status=${session.payment_status} — awaiting async payment confirmation, deferring fulfillment`);
+    log(
+      event.id,
+      `session=${session.id} email=${customerEmailForLog} payment_status=${session.payment_status} — awaiting async payment confirmation, deferring fulfillment`
+    );
     return new Response('OK', { status: 200 });
   }
 
@@ -297,7 +313,10 @@ export async function POST({ request, locals }: APIContext) {
   const variantId = Number(session.metadata?.printify_variant_id);
   const quantity = Number(session.metadata?.quantity ?? 1);
 
-  log(event.id, `session=${session.id} productId=${productId} variantId=${variantId} quantity=${quantity}`);
+  log(
+    event.id,
+    `session=${session.id} email=${customerEmailForLog} via=${event.type} productId=${productId} variantId=${variantId} quantity=${quantity}`
+  );
 
   if (!productId || !variantId) {
     logError(event.id, `Missing printify metadata on session ${session.id}: ${JSON.stringify(session.metadata)}`);
