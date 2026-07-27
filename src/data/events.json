@@ -244,21 +244,6 @@
   ],
   "single": [
     {
-      "id": "33mvgba2t0lkk3c213sqcbb5i4",
-      "title": "Arizona Dance Classic",
-      "description": "https://arizonadanceclassic.com/",
-      "startTime": "17:30",
-      "endTime": "20:30",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$50",
-      "level": "",
-      "type": "competition",
-      "organizer": "UCWDC",
-      "date": "2026-08-01"
-    },
-    {
       "id": "1d35pap14slp1080bo2doclrof",
       "title": "White Rabbit at CDC",
       "description": "Details TBA!",
@@ -563,6 +548,21 @@
       "type": "social",
       "organizer": "Joe Herrington & Drew Mitchell",
       "date": "2026-08-11"
+    },
+    {
+      "id": "33mvgba2t0lkk3c213sqcbb5i4",
+      "title": "Arizona Dance Classic",
+      "description": "https://arizonadanceclassic.com/",
+      "startTime": "00:00",
+      "endTime": "00:00",
+      "venue": "TBA",
+      "address": "",
+      "city": "",
+      "price": "$50",
+      "level": "",
+      "type": "competition",
+      "organizer": "UCWDC",
+      "date": "2026-07-31"
     }
   ]
 }
