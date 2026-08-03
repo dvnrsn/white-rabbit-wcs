@@ -244,21 +244,6 @@
   ],
   "single": [
     {
-      "id": "1e8u9e1k5fl17b7n5vbfodr8lc",
-      "title": "White Rabbit at CDC",
-      "description": "Details TBA!",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$15",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-08-22"
-    },
-    {
       "id": "3chritqf1qa2vo1hb095jdc4nc",
       "title": "White Rabbit at CDC",
       "description": "Details TBA!",
@@ -505,21 +490,6 @@
       "date": "2026-07-29"
     },
     {
-      "id": "5frev55pj92ls6jqk28tgcrcuq_20260812T013000Z",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "date": "2026-08-04"
-    },
-    {
       "id": "g31gsachps39rh2ul7ivt6eq5f_20260812T020000Z",
       "title": "Westie Movement Lab",
       "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8 pm - Social ($10)\n(Or $15 for both Lesson and Social) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
@@ -548,6 +518,36 @@
       "type": "competition",
       "organizer": "UCWDC",
       "date": "2026-07-31"
+    },
+    {
+      "id": "5frev55pj92ls6jqk28tgcrcuq_20260812T013000Z",
+      "title": "Westie Movement Lab",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\nThis week's Spotlight Pro Panel:\nOlivia Burnsed, Drew Mitchell, and Caroline Skaar!\n\nSocial Dance featuring DJ DamnYall!\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry, Pre-register recommended)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "18:30",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "date": "2026-08-04"
+    },
+    {
+      "id": "1e8u9e1k5fl17b7n5vbfodr8lc",
+      "title": "White Rabbit at CDC",
+      "description": "Follow the white rabbit.\n\nIt's that time of year! You may have noticed that Nivens has a lot of favorites, and his very favorite time of year begins near the end of August. That's when we get to host an awesome party and help set the stage for the DCS-to-ESS WCS MEGA WEEK - or as Nivens likes to call it \"The 12 Days of Westiemas!\"\n\nAnd this year Nivens is extra excited to have one of his very favorite people (a longtime friend and trusted collaborator of the White Rabbit Society) for a full WRWC to help us all prepare:\n\nWSDC All-Star Gabriel Sebastian will be teaching two workshops!\n\nGabe \"The Sensation\" Sebastian has risen and proven himself in recent years as a winning competitor, highly regarded instructor, and esteemed community leader - in both the West Coast and Country world, locally and nationally - and we couldn't be happier to host him this month!\n\nSchedule:\n7pm: Int/Adv Workshop (Details TBA)\n8pm: All Levels Workshop (Details TBA)\n9pm White Rabbit Social/Party\n\nWorkshops: $20 each\nSocial: $15\nPre-register for all three (Both workshops + Social): $50\n(Offer ends Friday, 8/21)\n\nCash and Zelle preffered\n(please contact Sarah Hightower to pre-register)\n\nRemember:\n- If it glows it won't say \"no\"\n- White Rabbit is a safe space for all\n- No unsolicited feedback on the social floor\n\nWe are super excited for this month! Let's keep the momentum of our amazing community going and growing with that late-night White Rabbit vibe we all know and love! All are welcome! See you there!\n\n(Per CDC liquor license, no outside alcohol is permitted)",
+      "startTime": "19:00",
+      "endTime": "01:00",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "social/workshops",
+      "organizer": "The White Rabbit Society",
+      "date": "2026-08-22"
     }
   ]
 }
