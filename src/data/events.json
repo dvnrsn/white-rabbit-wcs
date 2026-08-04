@@ -17,22 +17,6 @@
       "rrule": "FREQ=WEEKLY;BYDAY=TH"
     },
     {
-      "id": "lt2bpaopio9gm1j3sqgr7gqbsj",
-      "title": "Westie Wednesday Classes",
-      "description": "West Coast Swing Lessons! \n\nBeginner Lesson: 7:30-8:30pm\nIntermediate Lesson: 8:30-9:30pm\nNo Social Dance",
-      "startTime": "19:30",
-      "endTime": "21:30",
-      "venue": "Country Nomads",
-      "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
-      "city": "Phoenix",
-      "price": "$15",
-      "level": "",
-      "type": "class",
-      "organizer": "Gabe Sebastian",
-      "dtstart": "2026-04-01",
-      "rrule": "FREQ=WEEKLY;BYDAY=WE"
-    },
-    {
       "id": "122gvbua6ihdl1lb2fg3am1ikf",
       "title": "DCS Fridays!",
       "description": "West Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11pm\n\n$10 for social only \nAll Stars+ Free Admission",
@@ -204,25 +188,6 @@
       ]
     },
     {
-      "id": "5frev55pj92ls6jqk28tgcrcuq",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "dtstart": "2026-08-11",
-      "rrule": "FREQ=WEEKLY;WKST=SU;BYDAY=TU",
-      "exdates": [
-        "2026-08-11"
-      ]
-    },
-    {
       "id": "g31gsachps39rh2ul7ivt6eq5f",
       "title": "Westie Movement Lab",
       "description": "Let's cook in the Westie Movement Lab! Weekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8 pm - 12 am - Social ($10)\n(Or $15 for both Lesson and Social) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
@@ -240,6 +205,73 @@
       "exdates": [
         "2026-08-11"
       ]
+    },
+    {
+      "id": "okfh3v22e1fv6k4esei98f36rs",
+      "title": "🤠 Fridays @ the Warehouse",
+      "description": "We’re turning the Warehouse Event Center is turning into a full country dance night with lessons, social dancing, great music, a food truck, local vendors, drinks, and plenty of room to dance.\n\nNO experience necessary\n\nGrab your friends, throw on your boots, and come be part of Prescott’s new hottest dance event!\n\nWhether you are coming to learn, dance, shop, grab some food, meet new people, or just enjoy the atmosphere, this is the place to be.\n\n📌 The Warehouse Event Center\n5880 N Prairie Ln\nPrescott Valley, AZ 86314\nhttps://maps.app.goo.gl/ukfwpF7zgXs51jdU7?g_st=ic\n \nFridays\n18+\nDoors open at 6pm\nLine dance lessons at 6:30pm\nPartner dance lessons at 7pm\nOpen floor 7:45pm-midnight…ish😉\n\nPrescott nightlife just got a whole lot more exciting 🤩 Come dance with us!",
+      "startTime": "18:00",
+      "endTime": "23:55",
+      "venue": "TBA",
+      "address": "",
+      "city": "",
+      "price": "Free",
+      "level": "",
+      "type": "social",
+      "organizer": "White Rabbit WCS",
+      "dtstart": "2026-08-14",
+      "rrule": "FREQ=WEEKLY"
+    },
+    {
+      "id": "5frev55pj92ls6jqk28tgcrcuq",
+      "title": "Westie Movement Lab - CDC",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "18:30",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "dtstart": "2026-08-11",
+      "rrule": "FREQ=WEEKLY;WKST=SU;BYDAY=TU",
+      "exdates": [
+        "2026-08-11"
+      ]
+    },
+    {
+      "id": "lt2bpaopio9gm1j3sqgr7gqbsj",
+      "title": "Westie Wednesday Classes",
+      "description": "West Coast Swing Lessons! \n\nBeginner Lesson: 7:30-8:30pm\nIntermediate Lesson: 8:30-9:30pm\nNo Social Dance",
+      "startTime": "19:30",
+      "endTime": "21:30",
+      "venue": "Country Nomads",
+      "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "class",
+      "organizer": "Gabe Sebastian",
+      "dtstart": "2026-04-01",
+      "rrule": "FREQ=WEEKLY;UNTIL=20260805T065959Z;BYDAY=WE"
+    },
+    {
+      "id": "lt2bpaopio9gm1j3sqgr7gqbsj_R20260806T023000",
+      "title": "Westie Movement Lab - Nomad's",
+      "description": "West Coast Swing Lessons! \n\nBeginner Lesson: 7:30pm\nIntermediate Lesson: 8pm\nSocial Dance: 9pm",
+      "startTime": "19:30",
+      "endTime": "00:00",
+      "venue": "Country Nomads",
+      "address": "Country Nomads, 835 E Southern Ave, Mesa, AZ 85204, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "class",
+      "organizer": "Gabe Sebastian",
+      "dtstart": "2026-08-05",
+      "rrule": "FREQ=WEEKLY;BYDAY=WE"
     }
   ],
   "single": [
@@ -520,21 +552,6 @@
       "date": "2026-07-31"
     },
     {
-      "id": "5frev55pj92ls6jqk28tgcrcuq_20260812T013000Z",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\nThis week's Spotlight Pro Panel:\nOlivia Burnsed, Drew Mitchell, and Caroline Skaar!\n\nSocial Dance featuring DJ DamnYall!\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry, Pre-register recommended)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "date": "2026-08-04"
-    },
-    {
       "id": "1e8u9e1k5fl17b7n5vbfodr8lc",
       "title": "White Rabbit at CDC",
       "description": "Follow the white rabbit.\n\nIt's that time of year! You may have noticed that Nivens has a lot of favorites, and his very favorite time of year begins near the end of August. That's when we get to host an awesome party and help set the stage for the DCS-to-ESS WCS MEGA WEEK - or as Nivens likes to call it \"The 12 Days of Westiemas!\"\n\nAnd this year Nivens is extra excited to have one of his very favorite people (a longtime friend and trusted collaborator of the White Rabbit Society) for a full WRWC to help us all prepare:\n\nWSDC All-Star Gabriel Sebastian will be teaching two workshops!\n\nGabe \"The Sensation\" Sebastian has risen and proven himself in recent years as a winning competitor, highly regarded instructor, and esteemed community leader - in both the West Coast and Country world, locally and nationally - and we couldn't be happier to host him this month!\n\nSchedule:\n7pm: Int/Adv Workshop (Details TBA)\n8pm: All Levels Workshop (Details TBA)\n9pm White Rabbit Social/Party\n\nWorkshops: $20 each\nSocial: $15\nPre-register for all three (Both workshops + Social): $50\n(Offer ends Friday, 8/21)\n\nCash and Zelle preffered\n(please contact Sarah Hightower to pre-register)\n\nRemember:\n- If it glows it won't say \"no\"\n- White Rabbit is a safe space for all\n- No unsolicited feedback on the social floor\n\nWe are super excited for this month! Let's keep the momentum of our amazing community going and growing with that late-night White Rabbit vibe we all know and love! All are welcome! See you there!\n\n(Per CDC liquor license, no outside alcohol is permitted)",
@@ -548,6 +565,21 @@
       "type": "social/workshops",
       "organizer": "The White Rabbit Society",
       "date": "2026-08-22"
+    },
+    {
+      "id": "5frev55pj92ls6jqk28tgcrcuq_20260812T013000Z",
+      "title": "Westie Movement Lab - CDC",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\nThis week's Spotlight Pro Panel:\nOlivia Burnsed, Drew Mitchell, and Caroline Skaar!\n\nSocial Dance featuring DJ DamnYall!\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry, Pre-register recommended)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
+      "startTime": "18:30",
+      "endTime": "23:30",
+      "venue": "Creative Dance Collective",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$10",
+      "level": "",
+      "type": "social",
+      "organizer": "Joe Herrington & Drew Mitchell",
+      "date": "2026-08-04"
     }
   ]
 }
