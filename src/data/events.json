@@ -272,6 +272,22 @@
       "organizer": "Gabe Sebastian",
       "dtstart": "2026-08-05",
       "rrule": "FREQ=WEEKLY;BYDAY=WE"
+    },
+    {
+      "id": "1klmt46vfffoq4t521jpureqak",
+      "title": "Caroline’s WCS class and Guided Social ",
+      "description": "",
+      "startTime": "20:15",
+      "endTime": "22:15",
+      "venue": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 Phoenix, AZ  85032 United States",
+      "address": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 Phoenix, AZ  85032 United States",
+      "city": "Phoenix",
+      "price": "Free",
+      "level": "",
+      "type": "social",
+      "organizer": "White Rabbit WCS",
+      "dtstart": "2026-08-13",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH"
     }
   ],
   "single": [
@@ -550,6 +566,21 @@
       "type": "social/contest",
       "organizer": "White Rabbit WCS",
       "date": "2026-08-22"
+    },
+    {
+      "id": "5si57tokda4ss33ifbrv5ff867",
+      "title": "Bombing the Pants: DCS-->ESS Edition",
+      "description": "It's that time of year again! Time for The Pants!\nhttps://monkeypantsbar.com/\n\nThe 12 Days of Westiemas is a magical time. When all the leads and follows dance to their hearts content, all nights come alive with the spirit of West Coast Swing, and dreams come true.\n\nIt starts the week of DCS (which is going to be awesome) and continues to the final night of ESS (which is also going to be awesome), and we have a WCS party every night in between.\n\nThis will be our FIFTH YEAR (whew lol) Bombing the Pants for this occasion, and each time has been a total blast. Monkey Pants doesn't usually have karaoke on Mondays, but because they love us (and I mean all of you, dear reader), they are graciously setting it up for us to enjoy and entertain (ourselves and everyone else lol).\n\nRest assured though, participation (actual singing) is required of none, and open to all!\n\nIf you've never partied at The Pants with us before, it's a great place for cheap drinks, good vibes, and a great time. Whether you're looking for a chill hangout night, or something a little closer to wild, this one's for you.\n\nAll are welcome! Come out and have a good time! No cover, plenty of parking, close to AZ Grand Resort, great food, special guests!\n\nSee you there!",
+      "startTime": "20:00",
+      "endTime": "01:30",
+      "venue": "Monkey Pants",
+      "address": "Monkey Pants Bar & Grill, 3223 S Mill Ave, Tempe, AZ 85282, USA",
+      "city": "Phoenix",
+      "price": "Free",
+      "level": "",
+      "type": "westie bomb",
+      "organizer": "Joe Herrington",
+      "date": "2026-08-31"
     }
   ]
 }
