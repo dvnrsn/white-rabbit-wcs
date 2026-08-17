@@ -182,7 +182,6 @@
       "dtstart": "2026-07-15",
       "rrule": "FREQ=WEEKLY;UNTIL=20260805T065959Z;BYDAY=WE",
       "exdates": [
-        "2026-07-15",
         "2026-07-22",
         "2026-07-29"
       ]
@@ -461,21 +460,6 @@
       "type": "social",
       "organizer": "The White Rabbit SocietyPrice: $15",
       "date": "2026-07-25"
-    },
-    {
-      "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260716T020000Z",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n7 pm - Beginner/Intermediate lesson ($10)\n8 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "19:00",
-      "endTime": "00:00",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "date": "2026-07-15"
     },
     {
       "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260723T020000Z",
