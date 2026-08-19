@@ -185,6 +185,24 @@ export function generateProductSchema(product: {
 }
 
 /**
+ * Generate FAQPage schema
+ */
+export function generateFAQSchema(faqs: Array<{ question: string; answer: string }>) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map(({ question, answer }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  };
+}
+
+/**
  * Generate BreadcrumbList schema for navigation
  */
 export function generateBreadcrumbSchema(items: Array<{ name: string; url: string }>) {
