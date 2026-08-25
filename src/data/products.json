@@ -1722,7 +1722,7 @@
         "size": "L",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -2596,7 +2596,7 @@
         "size": "L",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
@@ -9734,26 +9734,6 @@
         "size": "2XL",
         "color": "Alpine Green",
         "price": "65.00",
-        "inStock": true,
-        "previewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109874/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=front",
-        "backPreviewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109875/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=back"
-      },
-      {
-        "id": 119573,
-        "name": "\"Follow the white rabbit\" Full Zip Hoodie  / Alpine Green / L",
-        "size": "L",
-        "color": "Alpine Green",
-        "price": "60.00",
-        "inStock": true,
-        "previewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109874/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=front",
-        "backPreviewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109875/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=back"
-      },
-      {
-        "id": 119574,
-        "name": "\"Follow the white rabbit\" Full Zip Hoodie  / Alpine Green / M",
-        "size": "M",
-        "color": "Alpine Green",
-        "price": "60.00",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109874/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f80e67a1a4c45aad053515/119573/109875/follow-the-white-rabbit-full-zip-hoodie.jpg?camera_label=back"
@@ -18777,7 +18757,7 @@
         "size": "Solid Dark Gray",
         "color": "2XL",
         "price": "33.97",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
