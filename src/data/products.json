@@ -1722,7 +1722,7 @@
         "size": "L",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -2596,7 +2596,7 @@
         "size": "L",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
@@ -18757,7 +18757,7 @@
         "size": "Solid Dark Gray",
         "color": "2XL",
         "price": "33.97",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19299/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
