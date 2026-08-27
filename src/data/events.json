@@ -285,7 +285,7 @@
       "type": "social",
       "organizer": "White Rabbit WCS",
       "dtstart": "2026-08-13",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH"
+      "rrule": "FREQ=WEEKLY;UNTIL=20260827T065959Z;BYDAY=TH"
     }
   ],
   "single": [
@@ -444,21 +444,6 @@
       "organizer": "Sky Smith",
       "instagram": "https://www.instagram.com/prescottbeatmob/",
       "date": "2026-12-02"
-    },
-    {
-      "id": "5a91vvp1rg0bfg4mjph74r1eee",
-      "title": "White Rabbit: Unplugged feat. Drew Mitchell!",
-      "description": "Follow the white rabbit.\n\nNivens had a blast at P4J, and he hopes you did too. While there, he had a sit-down with one of his closest friends, local phenom and WSDC All-Star Drew Mitchell, about the significance and importance of blues and swung rhythm, as it applies to our beloved WCS.\n\nAs a result, Drew has agreed to help elevate all of our dancing with his comprehensive approach to the topic, \"Am I Swung Over? Or is it the Blues?\" A class that focuses on integrating the techniques of blues and swung rhythms and why that matters. Far more than just learning how to dance to a specific genre of music, this class will expand your ability to effectively dance and enjoy all genres, by delving into the power and nuance of rhythm and timing.\n\nSchedule:\n8pm: \"Am I Swung Over? Or is it the Blues?\" with Drew Mitchell\n9pm: Dance Party!\n$15 (Includes class)\n\nCash/Zelle preferred\nZelle: Sarah Hightower\n\nRemember:\n- If it glows it won't say \"no\"\n- White Rabbit is a safe space for all\n- No unsolicited feedback on the social floor\n\nAlso, per the CDC liquor license, no outside alcohol is permitted.\n\nBeat the heat this month with another great night of that cool White Rabbit vibe! All are welcome, see you there!",
-      "startTime": "20:00",
-      "endTime": "01:00",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "Free",
-      "level": "",
-      "type": "social",
-      "organizer": "The White Rabbit SocietyPrice: $15",
-      "date": "2026-07-25"
     },
     {
       "id": "dlbqokvmlrk5df5m4a1nq2la4n_20260730T020000Z",
