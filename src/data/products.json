@@ -24559,7 +24559,7 @@
         "size": "True Navy",
         "color": "4XL",
         "price": "40.03",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
       },
