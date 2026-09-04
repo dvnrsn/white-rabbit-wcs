@@ -24,7 +24,7 @@ export function generateOrganizationSchema() {
     },
     sameAs: [
       "https://www.instagram.com/whiterabbit.wcs/",
-      // Add other social media URLs here
+      "https://www.facebook.com/whiterabbitwcs",
     ],
   };
 }
@@ -137,6 +137,28 @@ export function generateVenueSchema(venue: {
       : undefined,
     telephone: venue.phone,
     url: venue.website,
+  };
+}
+
+/**
+ * Generate WebSite schema with SearchAction
+ */
+export function generateWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "White Rabbit WCS",
+    url: "https://whiterabbitwcs.com",
+    description:
+      "Arizona's West Coast Swing dance community. Find WCS events, socials, workshops, and connect with dancers across Phoenix, Tucson, and Prescott.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: {
+        "@type": "EntryPoint",
+        urlTemplate: "https://whiterabbitwcs.com/events?q={search_term_string}",
+      },
+      "query-input": "required name=search_term_string",
+    },
   };
 }
 
