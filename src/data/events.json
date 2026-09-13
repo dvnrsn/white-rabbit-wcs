@@ -151,25 +151,6 @@
       "rrule": "FREQ=MONTHLY;BYDAY=3SA"
     },
     {
-      "id": "g31gsachps39rh2ul7ivt6eq5f",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! Weekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8 pm - 12 am - Social ($10)\n(Or $15 for both Lesson and Social) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "19:00",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "dtstart": "2026-08-11",
-      "rrule": "FREQ=WEEKLY;WKST=SU;UNTIL=20260818T065959Z;BYDAY=TU",
-      "exdates": [
-        "2026-08-11"
-      ]
-    },
-    {
       "id": "okfh3v22e1fv6k4esei98f36rs",
       "title": "🤠 Fridays @ the Warehouse",
       "description": "We’re turning the Warehouse Event Center is turning into a full country dance night with lessons, social dancing, great music, a food truck, local vendors, drinks, and plenty of room to dance.\n\nNO experience necessary\n\nGrab your friends, throw on your boots, and come be part of Prescott’s new hottest dance event!\n\nWhether you are coming to learn, dance, shop, grab some food, meet new people, or just enjoy the atmosphere, this is the place to be.\n\n📌 The Warehouse Event Center\n5880 N Prairie Ln\nPrescott Valley, AZ 86314\nhttps://maps.app.goo.gl/ukfwpF7zgXs51jdU7?g_st=ic\n \nFridays\n18+\nDoors open at 6pm\nLine dance lessons at 6:30pm\nPartner dance lessons at 7pm\nOpen floor 7:45pm-midnight…ish😉\n\nPrescott nightlife just got a whole lot more exciting 🤩 Come dance with us!",
@@ -199,10 +180,7 @@
       "type": "social",
       "organizer": "Joe Herrington & Drew Mitchell",
       "dtstart": "2026-08-11",
-      "rrule": "FREQ=WEEKLY;WKST=SU;BYDAY=TU",
-      "exdates": [
-        "2026-08-11"
-      ]
+      "rrule": "FREQ=WEEKLY;WKST=SU;BYDAY=TU"
     },
     {
       "id": "lt2bpaopio9gm1j3sqgr7gqbsj",
@@ -315,22 +293,6 @@
       "date": "2026-09-03"
     },
     {
-      "id": "hb1b30t11ucrr824fappqq0hvg",
-      "title": "Prescott BeatMob",
-      "description": "Join us at Northern Arizona’s friendliest dance social! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in! No experience necessary! \n\nLesson | 6pm \nSocial | 7pm",
-      "startTime": "18:00",
-      "endTime": "21:30",
-      "venue": "The Hazeltine Theater Prescott",
-      "address": "The Hazeltine Theater, Restaurants near, 208 N Marina St, Prescott, AZ 86301, USA",
-      "city": "Prescott",
-      "price": "$10 ($5 Social Only)",
-      "level": "",
-      "type": "social",
-      "organizer": "Sky Smith",
-      "instagram": "https://www.instagram.com/prescottbeatmob/",
-      "date": "2026-08-12"
-    },
-    {
       "id": "7ur8dbh32ifuh6jf37fddfhnhs",
       "title": "Prescott BeatMob",
       "description": "Join us at Northern Arizona’s friendliest dance social! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in! No experience necessary! \n\nLesson | 6pm \nSocial | 7pm",
@@ -393,36 +355,6 @@
       "organizer": "Sky Smith",
       "instagram": "https://www.instagram.com/prescottbeatmob/",
       "date": "2026-12-02"
-    },
-    {
-      "id": "g31gsachps39rh2ul7ivt6eq5f_20260812T020000Z",
-      "title": "Westie Movement Lab",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\n6:30 pm - Beginner Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8 pm - Social ($10)\n(Or $15 for both Lesson and Social) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "date": "2026-08-11"
-    },
-    {
-      "id": "5frev55pj92ls6jqk28tgcrcuq_20260812T013000Z",
-      "title": "Westie Movement Lab - CDC",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at CDC.\n\nThis week's Spotlight Pro Panel:\nOlivia Burnsed, Drew Mitchell, and Caroline Skaar!\n\nSocial Dance featuring DJ DamnYall!\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry, Pre-register recommended)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
-      "venue": "Creative Dance Collective",
-      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
-      "city": "Phoenix",
-      "price": "$10",
-      "level": "",
-      "type": "social",
-      "organizer": "Joe Herrington & Drew Mitchell",
-      "date": "2026-08-04"
     },
     {
       "id": "1e8u9e1k5fl17b7n5vbfodr8lc",
