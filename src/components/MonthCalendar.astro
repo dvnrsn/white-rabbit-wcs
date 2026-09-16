@@ -146,31 +146,83 @@ const { events } = Astro.props;
     const isIOS    = /iPad|iPhone|iPod/.test(navigator.userAgent) && !(window as any).MSStream;
     const mapUrl   = mapQuery ? (isIOS ? `https://maps.apple.com/?q=${mapQuery}` : `https://www.google.com/maps/search/?api=1&query=${mapQuery}`) : null;
 
-    dialog.innerHTML = `
-      <div class="ced-inner">
-        <button class="ced-close" aria-label="Close dialog">✕</button>
-        <div class="ced-type" style="color:${color};border-color:${color}" aria-hidden="true">${ev.type}</div>
-        <h2 class="ced-title" id="ced-title">${ev.title}</h2>
-        <div class="ced-meta">
-          <div class="ced-meta-row"><span aria-hidden="true">🕰️</span> ${timeStr}</div>
-          ${ev.venue && mapUrl  ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> <a href="${mapUrl}" target="_blank" rel="noopener noreferrer" class="ced-map-link">${ev.venue}</a></div>` : ''}
-          ${ev.venue && !mapUrl ? `<div class="ced-meta-row"><span aria-hidden="true">📍</span> ${ev.venue}</div>` : ''}
-          ${ev.price       ? `<div class="ced-meta-row"><span aria-hidden="true">💵</span> ${ev.price}</div>`    : ''}
-          ${ev.level       ? `<div class="ced-meta-row"><span aria-hidden="true">🎯</span> ${ev.level}</div>`    : ''}
-          ${ev.organizer   ? `<div class="ced-meta-row"><span aria-hidden="true">👤</span> ${ev.organizer}</div>`: ''}
-        </div>
-        ${ev.description ? `<p class="ced-desc">${ev.description}</p>` : ''}
-        <div class="ced-links">
-          ${ev.url       ? `<a href="${ev.url}"       target="_blank" rel="noopener noreferrer">🔗 Event page</a>` : ''}
-          ${ig           ? `<a href="${ev.instagram}" target="_blank" rel="noopener noreferrer">📸 @${ig}</a>`      : ''}
-          ${ev.website   ? `<a href="${ev.website}"   target="_blank" rel="noopener noreferrer">🌐 Website</a>`    : ''}
-        </div>
-        <button class="ced-close-btn">Close</button>
-      </div>
-    `;
+    function mkRow(emoji: string, content: Node | string) {
+      const row = document.createElement('div');
+      row.className = 'ced-meta-row';
+      const icon = document.createElement('span');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.textContent = emoji;
+      row.appendChild(icon);
+      row.append(' ');
+      if (typeof content === 'string') row.append(content);
+      else row.appendChild(content);
+      return row;
+    }
 
-    dialog.querySelector('.ced-close')!.addEventListener('click', () => (dialog as HTMLDialogElement).close());
-    dialog.querySelector('.ced-close-btn')!.addEventListener('click', () => (dialog as HTMLDialogElement).close());
+    function mkLink(href: string, text: string, extraClass?: string) {
+      const a = document.createElement('a');
+      a.href = href;
+      a.target = '_blank';
+      a.rel = 'noopener noreferrer';
+      a.textContent = text;
+      if (extraClass) a.className = extraClass;
+      return a;
+    }
+
+    const inner = document.createElement('div');
+    inner.className = 'ced-inner';
+
+    const btnClose = document.createElement('button');
+    btnClose.className = 'ced-close';
+    btnClose.setAttribute('aria-label', 'Close dialog');
+    btnClose.textContent = '✕';
+
+    const typeEl = document.createElement('div');
+    typeEl.className = 'ced-type';
+    typeEl.setAttribute('aria-hidden', 'true');
+    typeEl.style.color = color;
+    typeEl.style.borderColor = color;
+    typeEl.textContent = ev.type ?? '';
+
+    const titleEl = document.createElement('h2');
+    titleEl.className = 'ced-title';
+    titleEl.id = 'ced-title';
+    titleEl.textContent = ev.title ?? '';
+
+    const meta = document.createElement('div');
+    meta.className = 'ced-meta';
+    meta.appendChild(mkRow('🕰️', timeStr));
+    if (ev.venue && mapUrl)  meta.appendChild(mkRow('📍', mkLink(mapUrl, ev.venue, 'ced-map-link')));
+    if (ev.venue && !mapUrl) meta.appendChild(mkRow('📍', ev.venue));
+    if (ev.price)            meta.appendChild(mkRow('💵', ev.price));
+    if (ev.level)            meta.appendChild(mkRow('🎯', ev.level));
+    if (ev.organizer)        meta.appendChild(mkRow('👤', ev.organizer));
+
+    inner.append(btnClose, typeEl, titleEl, meta);
+
+    if (ev.description) {
+      const desc = document.createElement('p');
+      desc.className = 'ced-desc';
+      desc.textContent = ev.description;
+      inner.appendChild(desc);
+    }
+
+    const links = document.createElement('div');
+    links.className = 'ced-links';
+    if (ev.url)       links.appendChild(mkLink(ev.url,       '🔗 Event page'));
+    if (ig)           links.appendChild(mkLink(ev.instagram, `📸 @${ig}`));
+    if (ev.website)   links.appendChild(mkLink(ev.website,   '🌐 Website'));
+    inner.appendChild(links);
+
+    const btnCloseBottom = document.createElement('button');
+    btnCloseBottom.className = 'ced-close-btn';
+    btnCloseBottom.textContent = 'Close';
+    inner.appendChild(btnCloseBottom);
+
+    dialog.replaceChildren(inner);
+
+    btnClose.addEventListener('click', () => (dialog as HTMLDialogElement).close());
+    btnCloseBottom.addEventListener('click', () => (dialog as HTMLDialogElement).close());
     dialog.showModal();
     (dialog.querySelector('.ced-close') as HTMLElement)?.focus();
   }
