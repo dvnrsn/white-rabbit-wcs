@@ -628,7 +628,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "38.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a4c2007390f20d3a707fea4/18102/102044/nivens-dance-hoppy-tee.jpg?camera_label=front-2"
       },
       {
@@ -4079,7 +4079,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "38.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a079a4ce006ab566109c73a/18102/102044/nivens-fire-tee.jpg?camera_label=front-2"
       },
       {
@@ -5688,7 +5688,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "38.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a07821b11bc2d08af02fdd5/18102/102044/nivens-yezzir-tee.jpg?camera_label=front-2"
       },
       {
@@ -7297,7 +7297,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "38.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a07800dc663ba0d0d00b10c/18102/102044/nivens-alright-tee.jpg?camera_label=front-2"
       },
       {
@@ -8906,7 +8906,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "38.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a078001c663ba0d0d00b10b/18102/102044/nivens-girl-same-tee.jpg?camera_label=front-2"
       },
       {
@@ -22693,7 +22693,7 @@
         "size": "4XL",
         "color": "Synthetic Green",
         "price": "51.11",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18102/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2"
       },
       {
@@ -24078,7 +24078,7 @@
         "name": "\"If It Glows\" Tee / M / Espresso",
         "size": "Espresso",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24088,7 +24088,7 @@
         "name": "\"If It Glows\" Tee / S / White",
         "size": "White",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24108,7 +24108,7 @@
         "name": "\"If It Glows\" Tee / XL / Light Green",
         "size": "Light Green",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24118,7 +24118,7 @@
         "name": "\"If It Glows\" Tee / M / Graphite",
         "size": "Graphite",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24128,7 +24128,7 @@
         "name": "\"If It Glows\" Tee / M / Midnight",
         "size": "Midnight",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24138,7 +24138,7 @@
         "name": "\"If It Glows\" Tee / XL / Graphite",
         "size": "Graphite",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24148,7 +24148,7 @@
         "name": "\"If It Glows\" Tee / S / Light Green",
         "size": "Light Green",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24158,7 +24158,7 @@
         "name": "\"If It Glows\" Tee / M / Hemp",
         "size": "Hemp",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24168,7 +24168,7 @@
         "name": "\"If It Glows\" Tee / S / Espresso",
         "size": "Espresso",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24178,7 +24178,7 @@
         "name": "\"If It Glows\" Tee / S / Graphite",
         "size": "Graphite",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24208,7 +24208,7 @@
         "name": "\"If It Glows\" Tee / L / Graphite",
         "size": "Graphite",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24228,7 +24228,7 @@
         "name": "\"If It Glows\" Tee / M / White",
         "size": "White",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24238,7 +24238,7 @@
         "name": "\"If It Glows\" Tee / L / Light Green",
         "size": "Light Green",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24248,7 +24248,7 @@
         "name": "\"If It Glows\" Tee / L / Espresso",
         "size": "Espresso",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24258,7 +24258,7 @@
         "name": "\"If It Glows\" Tee / S / Hemp",
         "size": "Hemp",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24268,7 +24268,7 @@
         "name": "\"If It Glows\" Tee / S / Midnight",
         "size": "Midnight",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24278,7 +24278,7 @@
         "name": "\"If It Glows\" Tee / XL / Espresso",
         "size": "Espresso",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24288,7 +24288,7 @@
         "name": "\"If It Glows\" Tee / L / Granite",
         "size": "Granite",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24298,7 +24298,7 @@
         "name": "\"If It Glows\" Tee / XL / Granite",
         "size": "Granite",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24308,7 +24308,7 @@
         "name": "\"If It Glows\" Tee / S / Granite",
         "size": "Granite",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24318,7 +24318,7 @@
         "name": "\"If It Glows\" Tee / M / Light Green",
         "size": "Light Green",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24328,7 +24328,7 @@
         "name": "\"If It Glows\" Tee / XL / White",
         "size": "White",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24338,7 +24338,7 @@
         "name": "\"If It Glows\" Tee / L / True Navy",
         "size": "True Navy",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24348,7 +24348,7 @@
         "name": "\"If It Glows\" Tee / M / Granite",
         "size": "Granite",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24368,7 +24368,7 @@
         "name": "\"If It Glows\" Tee / XL / Midnight",
         "size": "Midnight",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24378,7 +24378,7 @@
         "name": "\"If It Glows\" Tee / L / Midnight",
         "size": "Midnight",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24388,7 +24388,7 @@
         "name": "\"If It Glows\" Tee / S / True Navy",
         "size": "True Navy",
         "color": "S",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24398,7 +24398,7 @@
         "name": "\"If It Glows\" Tee / XL / Hemp",
         "size": "Hemp",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24408,7 +24408,7 @@
         "name": "\"If It Glows\" Tee / M / True Navy",
         "size": "True Navy",
         "color": "M",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24418,7 +24418,7 @@
         "name": "\"If It Glows\" Tee / L / Hemp",
         "size": "Hemp",
         "color": "L",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24428,7 +24428,7 @@
         "name": "\"If It Glows\" Tee / XL / True Navy",
         "size": "True Navy",
         "color": "XL",
-        "price": "30.75",
+        "price": "30.81",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24438,7 +24438,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Graphite",
         "size": "Graphite",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24448,7 +24448,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Light Green",
         "size": "Light Green",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24458,7 +24458,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Granite",
         "size": "Granite",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24478,7 +24478,7 @@
         "name": "\"If It Glows\" Tee / 2XL / White",
         "size": "White",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24488,7 +24488,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Midnight",
         "size": "Midnight",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24498,7 +24498,7 @@
         "name": "\"If It Glows\" Tee / 2XL / True Navy",
         "size": "True Navy",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24508,7 +24508,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Hemp",
         "size": "Hemp",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24518,7 +24518,7 @@
         "name": "\"If It Glows\" Tee / 2XL / Espresso",
         "size": "Espresso",
         "color": "2XL",
-        "price": "32.86",
+        "price": "32.88",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24528,7 +24528,7 @@
         "name": "\"If It Glows\" Tee / 4XL / White",
         "size": "White",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73207/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24538,7 +24538,7 @@
         "name": "\"If It Glows\" Tee / 4XL / True Navy",
         "size": "True Navy",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79083/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24548,7 +24548,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Graphite",
         "size": "Graphite",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78963/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24558,7 +24558,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Granite",
         "size": "Granite",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/73982/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24568,7 +24568,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Midnight",
         "size": "Midnight",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24588,7 +24588,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Light Green",
         "size": "Light Green",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79008/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24598,7 +24598,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Espresso",
         "size": "Espresso",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/102354/98446/if-it-glows-tee.jpg?camera_label=back"
@@ -24608,7 +24608,7 @@
         "name": "\"If It Glows\" Tee / 4XL / Hemp",
         "size": "Hemp",
         "color": "4XL",
-        "price": "40.03",
+        "price": "40.28",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/78983/98446/if-it-glows-tee.jpg?camera_label=back"
