@@ -1,22 +1,6 @@
 {
   "recurring": [
     {
-      "id": "5ack9ht4a7urs4kd1fhumfmqj2",
-      "title": "Scootin' Boots",
-      "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
-      "startTime": "18:30",
-      "endTime": "21:00",
-      "venue": "Scootin' Boots Dance Hall, 515 N Stapley Dr, Mesa, AZ 85203, USA",
-      "address": "Scootin' Boots Dance Hall, 515 N Stapley Dr, Mesa, AZ 85203, USA",
-      "city": "Phoenix",
-      "price": "$10 per person",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "dtstart": "2026-04-02",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH"
-    },
-    {
       "id": "122gvbua6ihdl1lb2fg3am1ikf",
       "title": "DCS Fridays!",
       "description": "West Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11pm\n\n$10 for social only \nAll Stars+ Free Admission",
@@ -245,6 +229,23 @@
       "organizer": "Travis Swartzlander",
       "website": "https://desertcityswing.com/",
       "dtstart": "2026-09-17",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH"
+    },
+    {
+      "id": "5ack9ht4a7urs4kd1fhumfmqj2",
+      "title": "Scootin' Boots",
+      "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
+      "startTime": "18:30",
+      "endTime": "21:00",
+      "venue": "Scootin' Boots Dance Hall, 515 N Stapley Dr, Mesa, AZ 85203, USA",
+      "address": "Scootin' Boots Dance Hall, 515 N Stapley Dr, Mesa, AZ 85203, USA",
+      "city": "Phoenix",
+      "price": "$10 per person",
+      "level": "",
+      "type": "social",
+      "organizer": "Scootin' Boots Dance Hall",
+      "website": "https://www.scootinboots.com/",
+      "dtstart": "2026-04-02",
       "rrule": "FREQ=WEEKLY;BYDAY=TH"
     }
   ],
