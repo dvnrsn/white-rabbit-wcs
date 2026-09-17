@@ -251,21 +251,6 @@
   ],
   "single": [
     {
-      "id": "3chritqf1qa2vo1hb095jdc4nc",
-      "title": "White Rabbit at CDC",
-      "description": "Details TBA!",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$15",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-09-26"
-    },
-    {
       "id": "6oomo5icna60segv6rg9nebimj",
       "title": "White Rabbit at Imperial Ballroom (Dancegiving!)",
       "description": "Details TBA!",
@@ -403,6 +388,21 @@
       "type": "westie bomb",
       "organizer": "Joe Herrington",
       "date": "2026-08-31"
+    },
+    {
+      "id": "3chritqf1qa2vo1hb095jdc4nc",
+      "title": "White Rabbit at CDC",
+      "description": "The return of the White Rabbit Time Machine!\nFeaturing Gabe Sebastian!\nDetails TBA!",
+      "startTime": "00:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "social",
+      "organizer": "The White Rabbit Society",
+      "date": "2026-10-31"
     }
   ]
 }
