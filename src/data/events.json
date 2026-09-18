@@ -199,23 +199,6 @@
       "rrule": "FREQ=WEEKLY;UNTIL=20260827T065959Z;BYDAY=TH"
     },
     {
-      "id": "007fhu6s9rk7osd7opep0o56i8",
-      "title": "Swing in the North",
-      "description": "West Coast Swing Pop-up series!\n\n7-8pm Lesson\n8-10pm Social\n\n$15 Class only\n$10 Social only\n$20 Both\n\nAll levels welcome, no experience needed.\nNo registration necessary, pay at the door.",
-      "startTime": "19:00",
-      "endTime": "22:00",
-      "venue": "Scottsdale Dance Lessons",
-      "address": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 85032, Phoenix, AZ 85032, USA",
-      "city": "Phoenix",
-      "price": "$15/$10",
-      "level": "",
-      "type": "lesson/social",
-      "organizer": "Travis Swartzlander",
-      "website": "https://desertcityswing.com/",
-      "dtstart": "2026-09-17",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH"
-    },
-    {
       "id": "5ack9ht4a7urs4kd1fhumfmqj2",
       "title": "Scootin' Boots",
       "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
@@ -231,6 +214,23 @@
       "website": "https://www.scootinboots.com/",
       "dtstart": "2026-04-02",
       "rrule": "FREQ=WEEKLY;BYDAY=TH"
+    },
+    {
+      "id": "007fhu6s9rk7osd7opep0o56i8",
+      "title": "Swing in the North",
+      "description": "West Coast Swing Pop-up series!\n\n7-8pm Lesson\n8-10pm Social\n\n$15 Class only\n$10 Social only\n$20 Both\n\nAll levels welcome, no experience needed.\nNo registration necessary, pay at the door.",
+      "startTime": "19:00",
+      "endTime": "22:00",
+      "venue": "Scottsdale Dance Lessons",
+      "address": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 85032, Phoenix, AZ 85032, USA",
+      "city": "Phoenix",
+      "price": "$15/$10",
+      "level": "",
+      "type": "lesson/social",
+      "organizer": "Travis Swartzlander",
+      "website": "https://desertcityswing.com/",
+      "dtstart": "2026-09-17",
+      "rrule": "FREQ=WEEKLY;WKST=SU;INTERVAL=2;BYDAY=TH"
     }
   ],
   "single": [
