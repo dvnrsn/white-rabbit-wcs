@@ -183,22 +183,6 @@
       "rrule": "FREQ=WEEKLY;BYDAY=WE"
     },
     {
-      "id": "1klmt46vfffoq4t521jpureqak",
-      "title": "Caroline’s WCS class and Guided Social ",
-      "description": "",
-      "startTime": "20:15",
-      "endTime": "22:15",
-      "venue": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 Phoenix, AZ  85032 United States",
-      "address": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 Phoenix, AZ  85032 United States",
-      "city": "Phoenix",
-      "price": "Free",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "dtstart": "2026-08-13",
-      "rrule": "FREQ=WEEKLY;UNTIL=20260827T065959Z;BYDAY=TH"
-    },
-    {
       "id": "5ack9ht4a7urs4kd1fhumfmqj2",
       "title": "Scootin' Boots",
       "description": "Beginner Lesson: 6:30 - 7:15pm\nBeyond the Basics Lesson: 7:15 - 8:00 PM\n\nOpen Dancing: 8:00 - 10:00 PM\nCombined dance with Traditional Country",
