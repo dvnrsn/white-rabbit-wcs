@@ -17390,7 +17390,7 @@
         "size": "Hot Pink/ White/ Hot Pink",
         "color": "One size",
         "price": "25.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f54244f208e8ff51041ac5/243675/109489/follow-the-white-rabbit-big-foam-trucker.jpg?camera_label=front"
       },
       {
@@ -18967,7 +18967,7 @@
         "size": "S",
         "color": "Black",
         "price": "40.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/68295/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
       },
@@ -23483,7 +23483,7 @@
         "size": "S",
         "color": "Black",
         "price": "40.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/68295/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/68295/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
       },
