@@ -1,0 +1,156 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+export const prerender = false;
+
+const AUTH_COOKIE = 'events_debug_auth';
+const runtimePassword = Astro.locals.runtime?.env?.EVENTS_DEBUG_PASSWORD;
+const configuredPassword = runtimePassword || import.meta.env.EVENTS_DEBUG_PASSWORD || '';
+const passwordConfigured = configuredPassword.length > 0;
+
+let isAuthorized = Astro.cookies.get(AUTH_COOKIE)?.value === '1';
+let authError: string | null = null;
+
+if (Astro.request.method === 'POST') {
+  const formData = await Astro.request.formData();
+  const submittedPassword = String(formData.get('password') ?? '');
+
+  if (!passwordConfigured) {
+    authError = 'EVENTS_DEBUG_PASSWORD is not configured on the server.';
+  } else if (submittedPassword === configuredPassword) {
+    Astro.cookies.set(AUTH_COOKIE, '1', {
+      httpOnly: true,
+      sameSite: 'lax',
+      secure: Astro.url.protocol === 'https:',
+      path: '/events-debug',
+      maxAge: 60 * 30,
+    });
+    return Astro.redirect('/events-debug');
+  } else {
+    authError = 'Incorrect password.';
+    isAuthorized = false;
+  }
+}
+
+let debugOutput = '';
+let debugError: string | null = null;
+
+if (passwordConfigured && isAuthorized) {
+  try {
+    const apiUrl = new URL('/api/events-debug.json', Astro.url);
+    const response = await fetch(apiUrl, {
+      headers: {
+        'x-events-debug-password': configuredPassword,
+      },
+    });
+
+    const responseText = await response.text();
+
+    if (!response.ok) {
+      debugError = `Failed to load debug data (${response.status}). ${responseText}`;
+    } else {
+      debugOutput = responseText;
+    }
+  } catch (error) {
+    debugError = error instanceof Error ? error.message : String(error);
+  }
+}
+---
+
+<Layout
+  title="Events Debug - White Rabbit WCS"
+  description="Protected events debug output"
+>
+  <main class="debug-page">
+    <div class="container">
+      <h1 class="page-title">Events Debug</h1>
+
+      {!passwordConfigured && (
+        <p class="error-message">Set <strong>EVENTS_DEBUG_PASSWORD</strong> to enable this page.</p>
+      )}
+
+      {passwordConfigured && !isAuthorized && (
+        <form method="post" class="password-form">
+          <label for="password">Enter password</label>
+          <input
+            id="password"
+            name="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button type="submit">View debug data</button>
+          {authError && <p class="error-message">{authError}</p>}
+        </form>
+      )}
+
+      {passwordConfigured && isAuthorized && (
+        <section>
+          {debugError && <p class="error-message">{debugError}</p>}
+          {!debugError && <pre class="debug-output">{debugOutput}</pre>}
+        </section>
+      )}
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .debug-page {
+    min-height: calc(100vh - 80px);
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .password-form {
+    display: grid;
+    gap: 0.75rem;
+    max-width: 420px;
+  }
+
+  .password-form label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .password-form input {
+    width: 100%;
+    padding: 0.75rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    border-radius: 0.5rem;
+    font: inherit;
+  }
+
+  .password-form button {
+    width: fit-content;
+    padding: 0.65rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font: inherit;
+    cursor: pointer;
+  }
+
+  .debug-output {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--bg-secondary);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .error-message {
+    color: var(--accent-secondary);
+    margin-top: 0.5rem;
+  }
+</style>

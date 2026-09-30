@@ -1,0 +1,13 @@
+# R2 API Tests
+# Add to VS Code settings.json rest-client.environmentVariables:
+# "r2": { "accountId": "your-account-id", "apiToken": "cfat_..." }
+
+@baseUrl = https://api.cloudflare.com/client/v4/accounts/{{accountId}}/r2
+
+### List buckets
+GET {{baseUrl}}/buckets
+Authorization: Bearer {{apiToken}}
+
+### List objects in gallery bucket
+GET {{baseUrl}}/buckets/white-rabbit-gallery/objects
+Authorization: Bearer {{apiToken}}
