@@ -1,9 +1,33 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { generateOrganizationSchema } from "../lib/schema";
+import { generateOrganizationSchema, generateFAQSchema } from "../lib/schema";
 import { getCollection, getEntry } from "astro:content";
 
-const schema = generateOrganizationSchema();
+const schema = [
+  generateOrganizationSchema(),
+  generateFAQSchema([
+    {
+      question: "What do I need to start West Coast Swing dancing?",
+      answer: "Very little — comfortable clothes and a willingness to learn. For footwear, suede-soled dance shoes are the standard (look for low heels with a flexible sole), but beginners often start in smooth-soled street shoes. Most importantly, just show up to a social or beginner class.",
+    },
+    {
+      question: "What shoes should I wear for West Coast Swing?",
+      answer: "Suede-soled dance shoes are recommended for WCS. Popular brands include Very Fine, Ray Rose, and Freed of London. Avoid rubber-soled shoes as they grip the floor too much. Discount Dance Supply and Dance Naturals carry WCS-appropriate shoes online.",
+    },
+    {
+      question: "Where can I take West Coast Swing lessons in Arizona?",
+      answer: "Arizona has a strong WCS teaching community. The White Rabbit Society community page lists local instructors across Phoenix, Scottsdale, and Tempe. Classes range from beginner drop-ins to advanced workshops.",
+    },
+    {
+      question: "Where can I dance West Coast Swing in Phoenix?",
+      answer: "White Rabbit WCS hosts the largest monthly West Coast Swing social in Arizona, plus regular classes and workshops throughout the Phoenix metro. Check whiterabbitwcs.com/events for the full schedule of socials, workshops, and competitions.",
+    },
+    {
+      question: "What is the West Coast Swing Dance Council (WSDC)?",
+      answer: "The WSDC (West Coast Swing Dance Council) is the official governing body for competitive West Coast Swing. It maintains the points registry used at sanctioned competitions worldwide. Competitive dancers accumulate WSDC points to move up in division rankings.",
+    },
+  ]),
+];
 
 const DUMMY_INSTRUCTORS = [
   { name: "Sarah M.", level: "Advanced / Pro", specialties: ["Footwork", "Connection", "Musicality"], location: "Phoenix" },
