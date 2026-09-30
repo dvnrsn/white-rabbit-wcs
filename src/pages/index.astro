@@ -4,10 +4,10 @@ import { join } from "path";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 import FeedbackForm from "../components/FeedbackForm.astro";
-import { generateOrganizationSchema } from "../lib/schema";
+import { generateOrganizationSchema, generateWebSiteSchema } from "../lib/schema";
 import { getEntry } from "astro:content";
 
-const schema = generateOrganizationSchema();
+const schema = [generateOrganizationSchema(), generateWebSiteSchema()];
 const homeData = await getEntry("pages", "home");
 const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map((item) => {
   const base = item.image.replace(/\.(png|jpe?g|webp)$/i, "");
