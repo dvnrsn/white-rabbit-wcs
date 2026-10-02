@@ -214,7 +214,7 @@
       "organizer": "Travis Swartzlander",
       "website": "https://desertcityswing.com/",
       "dtstart": "2026-09-17",
-      "rrule": "FREQ=WEEKLY;WKST=SU;INTERVAL=2;BYDAY=TH"
+      "rrule": "FREQ=WEEKLY;WKST=SU;UNTIL=20261001T065959Z;INTERVAL=2;BYDAY=TH"
     }
   ],
   "single": [
@@ -232,21 +232,6 @@
       "type": "social",
       "organizer": "White Rabbit WCS",
       "date": "2026-11-21"
-    },
-    {
-      "id": "24388a6igqag6ev9acc6s5ap37",
-      "title": "Desert City Swing Convention",
-      "description": "",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "Free",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-08-27"
     },
     {
       "id": "3gdcl177h3s8r10c44v7gvsj1v",
@@ -328,21 +313,6 @@
       "date": "2026-12-02"
     },
     {
-      "id": "5si57tokda4ss33ifbrv5ff867",
-      "title": "Bombing the Pants: DCS-->ESS Edition",
-      "description": "It's that time of year again! Time for The Pants!\nhttps://monkeypantsbar.com/\n\nThe 12 Days of Westiemas is a magical time. When all the leads and follows dance to their hearts content, all nights come alive with the spirit of West Coast Swing, and dreams come true.\n\nIt starts the week of DCS (which is going to be awesome) and continues to the final night of ESS (which is also going to be awesome), and we have a WCS party every night in between.\n\nThis will be our FIFTH YEAR (whew lol) Bombing the Pants for this occasion, and each time has been a total blast. Monkey Pants doesn't usually have karaoke on Mondays, but because they love us (and I mean all of you, dear reader), they are graciously setting it up for us to enjoy and entertain (ourselves and everyone else lol).\n\nRest assured though, participation (actual singing) is required of none, and open to all!\n\nIf you've never partied at The Pants with us before, it's a great place for cheap drinks, good vibes, and a great time. Whether you're looking for a chill hangout night, or something a little closer to wild, this one's for you.\n\nAll are welcome! Come out and have a good time! No cover, plenty of parking, close to AZ Grand Resort, great food, special guests!\n\nSee you there!",
-      "startTime": "20:00",
-      "endTime": "01:30",
-      "venue": "Monkey Pants",
-      "address": "Monkey Pants Bar & Grill, 3223 S Mill Ave, Tempe, AZ 85282, USA",
-      "city": "Phoenix",
-      "price": "Free",
-      "level": "",
-      "type": "westie bomb",
-      "organizer": "Joe Herrington",
-      "date": "2026-08-31"
-    },
-    {
       "id": "3chritqf1qa2vo1hb095jdc4nc",
       "title": "White Rabbit at CDC",
       "description": "The return of the White Rabbit Time Machine!\nFeaturing Gabe Sebastian!\nDetails TBA!",
@@ -356,6 +326,22 @@
       "type": "social",
       "organizer": "The White Rabbit Society",
       "date": "2026-10-31"
+    },
+    {
+      "id": "gut9a5nfd7u1jk3paqolk6ae5k",
+      "title": "Swing in the North",
+      "description": "West Coast Swing Pop-up series!\n\n7-8pm Lesson\n8-10pm Social\n\n$15 Class only\n$10 Social only\n$20 Both\n\nAll levels welcome, no experience needed.\nNo registration necessary, pay at the door.",
+      "startTime": "19:00",
+      "endTime": "22:00",
+      "venue": "Scottsdale Dance Lessons",
+      "address": "Scottsdale Dance Lessons, 3851 E Thunderbird Rd Ste 109 85032, Phoenix, AZ 85032, USA",
+      "city": "Phoenix",
+      "price": "$15/$10",
+      "level": "",
+      "type": "lesson/social",
+      "organizer": "Travis Swartzlander",
+      "website": "https://desertcityswing.com/",
+      "date": "2026-09-24"
     }
   ]
 }

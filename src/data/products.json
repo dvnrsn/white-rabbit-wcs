@@ -1792,7 +1792,7 @@
         "size": "S",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99950/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -1912,7 +1912,7 @@
         "size": "L",
         "color": "Royal Pine",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99995/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/99995/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -1952,7 +1952,7 @@
         "size": "S",
         "color": "White",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/100000/96004/wrs-og-logo-back-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a3dd89d29e5b8cbf30b158c/100000/99665/wrs-og-logo-back-crop.jpg?camera_label=back"
       },
@@ -2666,7 +2666,7 @@
         "size": "S",
         "color": "Heather Grey",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99950/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
@@ -2786,7 +2786,7 @@
         "size": "L",
         "color": "Royal Pine",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99995/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/99995/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
@@ -2826,7 +2826,7 @@
         "size": "S",
         "color": "White",
         "price": "30.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/100000/96004/wrs-og-logo-front-crop.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/6a234821afc612eee001b1d4/100000/99665/wrs-og-logo-front-crop.jpg?camera_label=back"
       },
@@ -17353,7 +17353,7 @@
         "size": "Royal",
         "color": "One size / Royal / White",
         "price": "25.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f54244f208e8ff51041ac5/243672/109489/follow-the-white-rabbit-big-foam-trucker.jpg?camera_label=front"
       },
       {
@@ -17362,7 +17362,7 @@
         "size": "Navy",
         "color": "One size / Navy / White",
         "price": "25.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f54244f208e8ff51041ac5/243673/109489/follow-the-white-rabbit-big-foam-trucker.jpg?camera_label=front"
       },
       {
