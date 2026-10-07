@@ -19007,7 +19007,7 @@
         "size": "M",
         "color": "White",
         "price": "54.08",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/68297/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/68297/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
       },
@@ -23523,7 +23523,7 @@
         "size": "M",
         "color": "White",
         "price": "40.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/68297/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/68297/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
       },
