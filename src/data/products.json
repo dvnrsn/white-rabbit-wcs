@@ -17362,7 +17362,7 @@
         "size": "Navy",
         "color": "One size / Navy / White",
         "price": "25.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f54244f208e8ff51041ac5/243673/109489/follow-the-white-rabbit-big-foam-trucker.jpg?camera_label=front"
       },
       {
