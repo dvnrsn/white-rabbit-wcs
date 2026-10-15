@@ -21191,7 +21191,7 @@
         "size": "2XL",
         "color": "Dark Olive",
         "price": "30.00",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d8634da671d6620487fe/18102/102044/follow-nivens-tee.jpg?camera_label=front-2"
       },
       {
