@@ -19446,7 +19446,7 @@
         "size": "Solid Cardinal Red",
         "color": "S",
         "price": "30.53",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
