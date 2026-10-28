@@ -19396,7 +19396,7 @@
         "size": "Solid Cardinal Red",
         "color": "M",
         "price": "30.53",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
@@ -19446,7 +19446,7 @@
         "size": "Solid Cardinal Red",
         "color": "S",
         "price": "30.53",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/19289/111806/wrs-rabbit-ticket-tank.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f41786d289a2e3d000a234/64927/49/wrs-rabbit-ticket-tank.jpg?camera_label=back"
       },
@@ -25656,7 +25656,7 @@
         "size": "Midnight",
         "color": "4XL",
         "price": "40.28",
-        "inStock": false,
+        "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98445/if-it-glows-tee.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3a3af436937417709add9/79018/98446/if-it-glows-tee.jpg?camera_label=back"
       },
