@@ -200,11 +200,11 @@
       "rrule": "FREQ=WEEKLY;WKST=SU;UNTIL=20261103T065959Z;BYDAY=TU"
     },
     {
-      "id": "5frev55pj92ls6jqk28tgcrcuq_R20261104T013000",
+      "id": "insf8g5fkh3ehaflo5sg0ih686",
       "title": "Westie Movement Lab - Stage 12 West",
-      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at \"Jolie's Secret\" (Stage 12 West, Mesa).\n\n6:30 pm - Beginner/Intermediate Lesson ($10)\n7:30 pm - Spotlight Practice (Free with paid entry)\n8:00 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 7:30-8:30pm - $2 Off Alcohol Drinks",
-      "startTime": "18:30",
-      "endTime": "23:30",
+      "description": "Let's cook in the Westie Movement Lab! \nWeekly WCS Social Dance at \"Jolie's Secret\" (Stage 12 West, Mesa).\n\n7:00 pm - Beginner/Intermediate Lesson ($10)\n8:00 pm - Spotlight Practice (Free with paid entry)\n8:30 pm - Social ($10)\n($15 for both - Cash/Zelle/Venmo) \n\nHappy Hour 8:00-9:00pm",
+      "startTime": "19:00",
+      "endTime": "00:00",
       "venue": "\"Jolie's Secret\" Speakeasy at Stage 12 West",
       "address": "Stage 12 West, 12 W Main St, Mesa, AZ 85201, USA",
       "city": "Phoenix",
@@ -217,37 +217,6 @@
     }
   ],
   "single": [
-    {
-      "id": "6oomo5icna60segv6rg9nebimj",
-      "title": "White Rabbit at Imperial Ballroom (Dancegiving!)",
-      "description": "Details TBA!",
-      "startTime": "00:00",
-      "endTime": "00:00",
-      "venue": "TBA",
-      "address": "",
-      "city": "",
-      "price": "$15",
-      "level": "",
-      "type": "social",
-      "organizer": "White Rabbit WCS",
-      "date": "2026-11-21"
-    },
-    {
-      "id": "664c2bb1lj7625kop8mpjcf4a8",
-      "title": "Prescott BeatMob",
-      "description": "Join us at Northern Arizona’s friendliest dance social! Come learn something new or challenge your skills to a mix of mostly West Coast Swing, with plenty of Country Swing tracks & a little bit of Night Club-2-Step, AZ-2-Step, & even East Coast Swing thrown in! No experience necessary! \n\nLesson | 6pm \nSocial | 7pm",
-      "startTime": "18:00",
-      "endTime": "21:30",
-      "venue": "The Hazeltine Theater Prescott",
-      "address": "The Hazeltine Theater, Restaurants near, 208 N Marina St, Prescott, AZ 86301, USA",
-      "city": "Prescott",
-      "price": "$10 ($5 Social Only)",
-      "level": "",
-      "type": "social",
-      "organizer": "Sky Smith",
-      "instagram": "https://www.instagram.com/prescottbeatmob/",
-      "date": "2026-10-07"
-    },
     {
       "id": "psuuddu4ajsa7kh0ljhk4can3o",
       "title": "Prescott BeatMob",
@@ -294,6 +263,21 @@
       "type": "social",
       "organizer": "The White Rabbit Society",
       "date": "2026-10-31"
+    },
+    {
+      "id": "6oomo5icna60segv6rg9nebimj",
+      "title": "White Rabbit at CDC (Dancegiving!)",
+      "description": "Details TBA!",
+      "startTime": "00:00",
+      "endTime": "00:00",
+      "venue": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "address": "Creative Dance Collective, 2107 W Guadalupe Rd, Mesa, AZ 85202, USA",
+      "city": "Phoenix",
+      "price": "$15",
+      "level": "",
+      "type": "social",
+      "organizer": "White Rabbit WCS",
+      "date": "2026-11-21"
     }
   ]
 }
