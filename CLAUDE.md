@@ -96,6 +96,7 @@ See [`SHOP.md`](./SHOP.md) for the full order flow, payment model, key files, an
 | `src/layouts/Layout.astro` | Root layout wrapping all pages |
 | `scripts/fetch-calendar.js` | iCal → JSON pipeline |
 | `src/data/events.json` | Pre-generated event data (source of truth at build time) |
+| `src/data/event-details.json` | Optional hand-written event details (times, description, performers, image) keyed by calendar event id; used for Event JSON-LD and never overwritten by the calendar sync |
 | `keystatic.config.ts` | Keystatic CMS schema — collections and singletons |
 | `src/content/pages/` | Singleton CMS data (home, community, music page copy) |
 
