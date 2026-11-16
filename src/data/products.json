@@ -20056,7 +20056,7 @@
         "size": "M",
         "color": "Lilac",
         "price": "48.65",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/109751/104959/precious-nivens-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3ef38ecf20bee5e091484/109751/104960/precious-nivens-crop-hoodie.jpg?camera_label=back"
       },
@@ -23449,7 +23449,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / XL",
         "size": "XL",
         "color": "Evergreen",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23459,7 +23459,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / S",
         "size": "S",
         "color": "Deep Heather",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23469,7 +23469,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / M",
         "size": "M",
         "color": "Navy",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23479,7 +23479,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / L",
         "size": "L",
         "color": "Deep Heather",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23489,7 +23489,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / M",
         "size": "M",
         "color": "White",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23499,7 +23499,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / XL",
         "size": "XL",
         "color": "Red",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23509,7 +23509,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / L",
         "size": "L",
         "color": "Brown",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23519,7 +23519,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / S",
         "size": "S",
         "color": "Navy",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23539,7 +23539,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / M",
         "size": "M",
         "color": "Evergreen",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23549,7 +23549,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / XL",
         "size": "XL",
         "color": "Brown",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23559,7 +23559,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / XL",
         "size": "XL",
         "color": "Navy",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23569,7 +23569,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / XL",
         "size": "XL",
         "color": "Oxblood Black",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23579,7 +23579,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / S",
         "size": "S",
         "color": "Evergreen",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23589,7 +23589,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / M",
         "size": "M",
         "color": "Oxblood Black",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23609,7 +23609,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / M",
         "size": "M",
         "color": "Maroon",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23619,7 +23619,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / L",
         "size": "L",
         "color": "Military Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23629,7 +23629,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / L",
         "size": "L",
         "color": "Oxblood Black",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23639,7 +23639,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / XL",
         "size": "XL",
         "color": "Deep Heather",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23649,7 +23649,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / M",
         "size": "M",
         "color": "Brown",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23669,7 +23669,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / L",
         "size": "L",
         "color": "Red",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23679,7 +23679,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / L",
         "size": "L",
         "color": "White",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23689,7 +23689,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / L",
         "size": "L",
         "color": "Navy",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23699,7 +23699,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / XL",
         "size": "XL",
         "color": "Military Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23709,7 +23709,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / S",
         "size": "S",
         "color": "Military Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23719,7 +23719,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / S",
         "size": "S",
         "color": "Heather True Royal",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23729,7 +23729,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / S",
         "size": "S",
         "color": "Brown",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23739,7 +23739,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / S",
         "size": "S",
         "color": "Red",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23759,7 +23759,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / S",
         "size": "S",
         "color": "Maroon",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23769,7 +23769,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / S",
         "size": "S",
         "color": "White",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23779,7 +23779,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / L",
         "size": "L",
         "color": "Evergreen",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23789,7 +23789,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / XL",
         "size": "XL",
         "color": "Heather True Royal",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23799,7 +23799,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / XL",
         "size": "XL",
         "color": "White",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23809,7 +23809,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / M",
         "size": "M",
         "color": "Deep Heather",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23819,7 +23819,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / L",
         "size": "L",
         "color": "Maroon",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23829,7 +23829,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / M",
         "size": "M",
         "color": "Military Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23839,7 +23839,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / M",
         "size": "M",
         "color": "Red",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23849,7 +23849,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / L",
         "size": "L",
         "color": "Heather True Royal",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23859,7 +23859,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / XL",
         "size": "XL",
         "color": "Maroon",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23869,7 +23869,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / M",
         "size": "M",
         "color": "Heather True Royal",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23879,7 +23879,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / S",
         "size": "S",
         "color": "Oxblood Black",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23899,7 +23899,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / XS",
         "size": "XS",
         "color": "Military Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23909,7 +23909,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / XS",
         "size": "XS",
         "color": "Heather Grass Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23919,7 +23919,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / XS",
         "size": "XS",
         "color": "Maroon",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23929,7 +23929,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / XS",
         "size": "XS",
         "color": "Evergreen",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23939,7 +23939,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / XS",
         "size": "XS",
         "color": "Brown",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23949,7 +23949,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / XS",
         "size": "XS",
         "color": "Oxblood Black",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23959,7 +23959,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / M",
         "size": "M",
         "color": "Heather Grass Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23969,7 +23969,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / L",
         "size": "L",
         "color": "Heather Grass Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23979,7 +23979,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / XS",
         "size": "XS",
         "color": "Navy",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23989,7 +23989,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / S",
         "size": "S",
         "color": "Heather Grass Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -23999,7 +23999,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / XS",
         "size": "XS",
         "color": "Deep Heather",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24009,7 +24009,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / XS",
         "size": "XS",
         "color": "White",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24019,7 +24019,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / XS",
         "size": "XS",
         "color": "Red",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24029,7 +24029,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / XL",
         "size": "XL",
         "color": "Heather Grass Green",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24039,7 +24039,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / XS",
         "size": "XS",
         "color": "Heather True Royal",
-        "price": "39.06",
+        "price": "39.13",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24049,7 +24049,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / 2XL",
         "size": "2XL",
         "color": "Red",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24059,7 +24059,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather True Royal / 2XL",
         "size": "2XL",
         "color": "Heather True Royal",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18326/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24069,7 +24069,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / 2XL",
         "size": "2XL",
         "color": "Deep Heather",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24079,7 +24079,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / 2XL",
         "size": "2XL",
         "color": "Evergreen",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24089,7 +24089,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / 2XL",
         "size": "2XL",
         "color": "Military Green",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24099,7 +24099,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / 2XL",
         "size": "2XL",
         "color": "White",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24109,7 +24109,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / 2XL",
         "size": "2XL",
         "color": "Oxblood Black",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24119,7 +24119,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Synthetic Green / 2XL",
         "size": "2XL",
         "color": "Synthetic Green",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24139,7 +24139,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / 2XL",
         "size": "2XL",
         "color": "Maroon",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24149,7 +24149,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / 2XL",
         "size": "2XL",
         "color": "Navy",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24159,7 +24159,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / 2XL",
         "size": "2XL",
         "color": "Brown",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24169,7 +24169,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / 2XL",
         "size": "2XL",
         "color": "Heather Grass Green",
-        "price": "43.25",
+        "price": "43.36",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24179,7 +24179,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / 3XL",
         "size": "3XL",
         "color": "Navy",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24189,7 +24189,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / 3XL",
         "size": "3XL",
         "color": "Maroon",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24199,7 +24199,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / 3XL",
         "size": "3XL",
         "color": "White",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24209,7 +24209,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / 3XL",
         "size": "3XL",
         "color": "Military Green",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24229,7 +24229,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / 3XL",
         "size": "3XL",
         "color": "Red",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24239,7 +24239,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Synthetic Green / 3XL",
         "size": "3XL",
         "color": "Synthetic Green",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24249,7 +24249,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / 3XL",
         "size": "3XL",
         "color": "Evergreen",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24259,7 +24259,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Deep Heather / 3XL",
         "size": "3XL",
         "color": "Deep Heather",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18158/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24269,7 +24269,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / 3XL",
         "size": "3XL",
         "color": "Oxblood Black",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24279,7 +24279,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / 3XL",
         "size": "3XL",
         "color": "Brown",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24289,7 +24289,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / 3XL",
         "size": "3XL",
         "color": "Heather Grass Green",
-        "price": "47.33",
+        "price": "47.48",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24299,7 +24299,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Brown / 4XL",
         "size": "4XL",
         "color": "Brown",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/39583/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24309,7 +24309,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Evergreen / 4XL",
         "size": "4XL",
         "color": "Evergreen",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18174/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24319,7 +24319,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Maroon / 4XL",
         "size": "4XL",
         "color": "Maroon",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18374/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24339,7 +24339,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Oxblood Black / 4XL",
         "size": "4XL",
         "color": "Oxblood Black",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80579/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24349,7 +24349,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Synthetic Green / 4XL",
         "size": "4XL",
         "color": "Synthetic Green",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/80603/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24359,7 +24359,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / 4XL",
         "size": "4XL",
         "color": "Red",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24369,7 +24369,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Military Green / 4XL",
         "size": "4XL",
         "color": "Military Green",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/64319/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24379,7 +24379,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Navy / 4XL",
         "size": "4XL",
         "color": "Navy",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18398/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24389,7 +24389,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / 4XL",
         "size": "4XL",
         "color": "White",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24399,7 +24399,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Heather Grass Green / 4XL",
         "size": "4XL",
         "color": "Heather Grass Green",
-        "price": "52.16",
+        "price": "52.15",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/67483/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24419,7 +24419,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / White / 5XL",
         "size": "5XL",
         "color": "White",
-        "price": "53.35",
+        "price": "53.23",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18542/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24429,7 +24429,7 @@
         "name": "\"Dance Anyway - Nivens\" Tee / Red / 5XL",
         "size": "5XL",
         "color": "Red",
-        "price": "53.35",
+        "price": "53.23",
         "inStock": true,
         "previewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102044/dance-anyway-nivens-tee.jpg?camera_label=front-2",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3d39f19578904a201b330/18446/102045/dance-anyway-nivens-tee.jpg?camera_label=back-2"
@@ -24770,7 +24770,7 @@
         "size": "M",
         "color": "Lilac",
         "price": "40.00",
-        "inStock": true,
+        "inStock": false,
         "previewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/109751/104959/wrs-og-rabbit-crop-hoodie.jpg?camera_label=front",
         "backPreviewUrl": "https://images-api.printify.com/mockup/69f3b353b6929f396905e10c/109751/104960/wrs-og-rabbit-crop-hoodie.jpg?camera_label=back"
       },
