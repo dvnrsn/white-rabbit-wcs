@@ -1,0 +1,17 @@
+{
+  "_readme": "Optional extra details for calendar events, keyed by the Google Calendar event id from src/data/events.json. events.json is rewritten by the daily calendar sync, so put hand-written details here instead. Anything filled in here is used for the event's Google structured data (JSON-LD). Fields: name, description, startTime/endTime (24h HH:MM, Arizona time; an endTime earlier than startTime means after midnight), url, image (site path or full URL), performers (list of { name, role, url }).",
+  "6oomo5icna60segv6rg9nebimj": {
+    "name": "White Rabbit Unplugged: Dancegiving feat. Josh Clark",
+    "description": "White Rabbit Unplugged: Dancegiving at Creative Dance Collective in Mesa. West Coast Swing lesson with Josh Clark at 8pm, then a dance party from 9pm to 1am with DJs DamnYall, Herringtone and Slayla. $15 includes the class. EveryBunny welcome!",
+    "startTime": "20:00",
+    "endTime": "01:00",
+    "url": "https://www.facebook.com/events/1442836968063644/",
+    "image": "/images/instructors/josh-clark/photo.png",
+    "performers": [
+      { "name": "Josh Clark", "role": "Instructor", "url": "https://www.instagram.com/joshdclark86/" },
+      { "name": "DJ DamnYall", "role": "DJ" },
+      { "name": "DJ Herringtone", "role": "DJ", "url": "https://www.instagram.com/herrington.ftw/" },
+      { "name": "DJ Slayla", "role": "DJ", "url": "https://www.instagram.com/shayla.bouise/" }
+    ]
+  }
+}

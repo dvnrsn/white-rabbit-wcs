@@ -4,10 +4,15 @@ import { join } from "path";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 import FeedbackForm from "../components/FeedbackForm.astro";
-import { generateOrganizationSchema } from "../lib/schema";
+import { generateOrganizationSchema, generateWhiteRabbitEventSchemas } from "../lib/schema";
+import { fetchGoogleCalendarEvents } from "../lib/calendar";
 import { getEntry } from "astro:content";
 
-const schema = generateOrganizationSchema();
+const today = new Date().toLocaleDateString("en-CA", { timeZone: "America/Phoenix" });
+const schema = [
+  generateOrganizationSchema(),
+  ...generateWhiteRabbitEventSchemas(await fetchGoogleCalendarEvents(), today),
+];
 const homeData = await getEntry("pages", "home");
 const heroImages = (homeData?.data.heroImages?.filter((i) => i.image) ?? []).map((item) => {
   const base = item.image.replace(/\.(png|jpe?g|webp)$/i, "");
