@@ -151,23 +151,6 @@
       "rrule": "FREQ=WEEKLY;BYDAY=MO"
     },
     {
-      "id": "fmvjntrsb4dn4faa4g5jd21jtg",
-      "title": "Tucson Swing Dance Club",
-      "description": "West Coast Swing Lesson & Social Dance! \n\nBeginner Lesson: 7:00 - 7:45pm \nIntermediate Lesson: 7:45pm - 8:30pm \n\nSocial Dance: 8:30 - 10:30pm\n\nFirst visit free (not on workshop nights).\nSave money with a TSDC Membership!",
-      "startTime": "19:00",
-      "endTime": "22:30",
-      "venue": "Dream Dance",
-      "address": "Dream Dance, 405 E Wetmore Rd #125, Tucson, AZ 85705, USA",
-      "city": "Tucson",
-      "price": "$7 members / $10 guests",
-      "level": "",
-      "type": "social",
-      "organizer": "Tucson Swing Dance Club",
-      "website": "https://tsdc.net/",
-      "dtstart": "2026-12-03",
-      "rrule": "FREQ=WEEKLY;BYDAY=TH"
-    },
-    {
       "id": "1707orfbpcmta9hda9dqdndpao",
       "title": "GPSDC FatCat Friday!",
       "description": "West Coast Swing Lessons & Social! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm \nSocial Dance: 8:30 - 11pm",
@@ -254,23 +237,6 @@
       "website": "https://www.instagram.com/carrielynnelucas/",
       "dtstart": "2026-11-26",
       "rrule": "FREQ=WEEKLY;BYDAY=TH"
-    },
-    {
-      "id": "d4d95ldb3sn3423bm3iq6ugbjk",
-      "title": "DCS Fridays!",
-      "description": "West Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11:30pm\n\n$10 for social only \nAll Stars+ Free Admission",
-      "startTime": "19:00",
-      "endTime": "23:30",
-      "venue": "NRG Ballroom",
-      "address": "NRG Ballroom, 931 E Elliot Rd # 101, Tempe, AZ 85284, USA",
-      "city": "Phoenix",
-      "price": "$15 for lessons & social",
-      "level": "",
-      "type": "social",
-      "organizer": "Mike Gadberry",
-      "website": "https://desertcityswing.com/",
-      "dtstart": "2026-11-27",
-      "rrule": "FREQ=WEEKLY;BYDAY=FR"
     },
     {
       "id": "1lq9v47jpsulf68se34jlo593k",
@@ -373,6 +339,48 @@
       "website": "https://shallwedancephoenix.com/social-dances",
       "dtstart": "2026-11-28",
       "rrule": "FREQ=MONTHLY;BYDAY=2SA,4SA"
+    },
+    {
+      "id": "fmvjntrsb4dn4faa4g5jd21jtg",
+      "title": "Tucson Swing Dance Club",
+      "description": "West Coast Swing Lesson & Social Dance! \n\nBeginner Lesson: 7:00 - 7:45pm \nIntermediate Lesson: 7:45pm - 8:30pm \n\nSocial Dance: 8:30 - 10:30pm\n\nFirst visit free (not on workshop nights).\nSave money with a TSDC Membership!",
+      "startTime": "19:00",
+      "endTime": "22:30",
+      "venue": "Dream Dance",
+      "address": "Dream Dance, 405 E Wetmore Rd #125, Tucson, AZ 85705, USA",
+      "city": "Tucson",
+      "price": "$7 members / $10 guests",
+      "level": "",
+      "type": "social",
+      "organizer": "Tucson Swing Dance Club",
+      "website": "https://tsdc.net/",
+      "dtstart": "2026-12-03",
+      "rrule": "FREQ=WEEKLY;BYDAY=TH",
+      "exdates": [
+        "2026-12-24",
+        "2026-12-31"
+      ]
+    },
+    {
+      "id": "d4d95ldb3sn3423bm3iq6ugbjk",
+      "title": "DCS Fridays!",
+      "description": "West Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11:30pm\n\n$10 for social only \nAll Stars+ Free Admission",
+      "startTime": "19:00",
+      "endTime": "23:30",
+      "venue": "NRG Ballroom",
+      "address": "NRG Ballroom, 931 E Elliot Rd # 101, Tempe, AZ 85284, USA",
+      "city": "Phoenix",
+      "price": "$15 for lessons & social",
+      "level": "",
+      "type": "social",
+      "organizer": "Mike Gadberry",
+      "website": "https://desertcityswing.com/",
+      "dtstart": "2026-11-27",
+      "rrule": "FREQ=WEEKLY;BYDAY=FR",
+      "exdates": [
+        "2026-12-25",
+        "2027-01-01"
+      ]
     }
   ],
   "single": [
@@ -470,6 +478,70 @@
       "organizer": "Tucson Swing Dance Club",
       "website": "https://tsdc.net/",
       "date": "2026-11-26"
+    },
+    {
+      "id": "fmvjntrsb4dn4faa4g5jd21jtg_20261225T020000Z",
+      "title": "CANCELLED (Christmas Eve) – Tucson Swing Dance Club",
+      "description": "Cancelled: TSDC is closed Christmas Eve (Dec 24), per tsdc.net.\n\nWest Coast Swing Lesson & Social Dance! \n\nBeginner Lesson: 7:00 - 7:45pm \nIntermediate Lesson: 7:45pm - 8:30pm \n\nSocial Dance: 8:30 - 10:30pm\n\nFirst visit free (not on workshop nights).\nSave money with a TSDC Membership!",
+      "startTime": "19:00",
+      "endTime": "22:30",
+      "venue": "Dream Dance",
+      "address": "Dream Dance, 405 E Wetmore Rd #125, Tucson, AZ 85705, USA",
+      "city": "Tucson",
+      "price": "$7 members / $10 guests",
+      "level": "",
+      "type": "social",
+      "organizer": "Tucson Swing Dance Club",
+      "website": "https://tsdc.net/",
+      "date": "2026-12-24"
+    },
+    {
+      "id": "fmvjntrsb4dn4faa4g5jd21jtg_20270101T020000Z",
+      "title": "CANCELLED (New Year's Eve) – Tucson Swing Dance Club",
+      "description": "Cancelled: TSDC is closed New Year's Eve (Dec 31), per tsdc.net.\n\nWest Coast Swing Lesson & Social Dance! \n\nBeginner Lesson: 7:00 - 7:45pm \nIntermediate Lesson: 7:45pm - 8:30pm \n\nSocial Dance: 8:30 - 10:30pm\n\nFirst visit free (not on workshop nights).\nSave money with a TSDC Membership!",
+      "startTime": "19:00",
+      "endTime": "22:30",
+      "venue": "Dream Dance",
+      "address": "Dream Dance, 405 E Wetmore Rd #125, Tucson, AZ 85705, USA",
+      "city": "Tucson",
+      "price": "$7 members / $10 guests",
+      "level": "",
+      "type": "social",
+      "organizer": "Tucson Swing Dance Club",
+      "website": "https://tsdc.net/",
+      "date": "2026-12-31"
+    },
+    {
+      "id": "d4d95ldb3sn3423bm3iq6ugbjk_20261226T020000Z",
+      "title": "CANCELLED (Christmas Day) – DCS Fridays!",
+      "description": "Cancelled: NRG's calendar does not list DCS on Christmas Day (Dec 25). It lists NRG's own \"Friday Night Function: NO CLASSES & SOCIAL DANCE,\" 7:00–11:00 PM, instead. Source: https://nrgballroom.com/event/friday-night-function-no-classes-social-dance/\n\nWest Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11:30pm\n\n$10 for social only \nAll Stars+ Free Admission",
+      "startTime": "19:00",
+      "endTime": "23:30",
+      "venue": "NRG Ballroom",
+      "address": "NRG Ballroom, 931 E Elliot Rd # 101, Tempe, AZ 85284, USA",
+      "city": "Phoenix",
+      "price": "$15 for lessons & social",
+      "level": "",
+      "type": "social",
+      "organizer": "Mike Gadberry",
+      "website": "https://desertcityswing.com/",
+      "date": "2026-12-25"
+    },
+    {
+      "id": "d4d95ldb3sn3423bm3iq6ugbjk_20270102T020000Z",
+      "title": "CANCELLED (New Year's Day) – DCS Fridays!",
+      "description": "Cancelled: NRG's calendar lists no evening class or social on New Year's Day (Jan 1, 2027). The only NRG event that day is Jazzercise, 8:30–9:30 AM. Source: https://nrgballroom.com/events/2027-01/\n\nWest Coast Swing Lessons & Social Dance! \n\nBeginner Lesson: 7 - 7:45pm\nIntermediate Lesson: 7:45 - 8:30pm\nSocial Dance: 8:30 - 11:30pm\n\n$10 for social only \nAll Stars+ Free Admission",
+      "startTime": "19:00",
+      "endTime": "23:30",
+      "venue": "NRG Ballroom",
+      "address": "NRG Ballroom, 931 E Elliot Rd # 101, Tempe, AZ 85284, USA",
+      "city": "Phoenix",
+      "price": "$15 for lessons & social",
+      "level": "",
+      "type": "social",
+      "organizer": "Mike Gadberry",
+      "website": "https://desertcityswing.com/",
+      "date": "2027-01-01"
     }
   ]
 }
